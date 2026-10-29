@@ -1,0 +1,423 @@
+{
+  "status": "complete",
+  "verdict": "Ready with fixes",
+  "scope": {
+    "base": "7e4431dc0f4b209b6b24d2f628a2ff8adad88e4b",
+    "branch": "feat/filter-workbench",
+    "head_sha": "7e4431dc0f4b209b6b24d2f628a2ff8adad88e4b",
+    "pr_url": null,
+    "files_changed": 24,
+    "files": [
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      "README.md",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "src/App.tsx",
+      "src/components/Rules.tsx",
+      "src/domain/pick5.ts",
+      "src/lib/history.ts",
+      "src/lib/plans.ts",
+      "src/main.tsx",
+      "src/pages/History.tsx",
+      "src/pages/Workbench.tsx",
+      "src/pages/history.css",
+      "src/styles.css",
+      "src/workers/filter.worker.ts",
+      "tests/app.test.tsx",
+      "tests/history.test.ts",
+      "tests/pick5.test.ts",
+      "tests/plans.test.ts",
+      "tests/worker-ui.test.tsx",
+      "tsconfig.json",
+      "vite.config.ts"
+    ],
+    "scope_mode": "standalone",
+    "untracked_included": "Explicit caller override includes all new implementation, tests, lock/config and CI files.",
+    "milestone": "M0/M1 first delivery, twelve defined basic filters and six history forms",
+    "snapshot": "/tmp/compound-engineering-501/ce-code-review/20261018-223010-c2dd2dcb/milestone-tree",
+    "manifest_sha256": "83c36588d882f75df3759dc478adf9d9a2aca92973654cec6c9faf015526d211",
+    "expanded_scope_excluded": "Later requested F01-F34 implementation is outside this frozen milestone review."
+  },
+  "intent": "Deliver orange/cream browser-local Pick5 filtering with leading-zero preservation, worker cancellation/stale-result protection, saved schemes, validated CSV history and six visual forms. Review final M0/M1 milestone rather than later expanded implementation.",
+  "intent_confidence": "explicit",
+  "reviewers": [
+    "correctness",
+    "testing",
+    "maintainability",
+    "security",
+    "performance",
+    "reliability",
+    "adversarial",
+    "julik-frontend-races"
+  ],
+  "findings": [
+    {
+      "#": 1,
+      "autofix_class": "gated_auto",
+      "confidence": 100,
+      "evidence": [
+        "src/styles.css:1025 -- .help-grid {",
+        "The milestone snapshot's src/styles.css has 1,380 lines; the file is entirely new in this diff.",
+        "src/styles.css:937 -- .plans-grid {",
+        "src/styles.css:1340 --   .plans-grid,",
+        "src/pages/History.tsx:11 -- import \"./history.css\";"
+      ],
+      "file": "src/styles.css",
+      "first_evidence": "src/styles.css:1025 -- .help-grid {",
+      "independent_reviewers": [
+        "maintainability"
+      ],
+      "line": 1025,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "maintainability"
+      ],
+      "severity": "P1",
+      "suggested_fix": "Extract the plans and help selectors (including their media-query overrides) into page-level CSS files, import them from their owning page components, and keep only shared rules in styles.css; verify the four views at desktop and mobile widths for cascade changes.",
+      "title": "Split the stylesheet that crosses 1,000 lines",
+      "why_it_matters": "The new global stylesheet is 1,380 lines and now contains separate workbench, plans, help, modal, and responsive sections. A change to one page's styles must be traced through the shared base rules and a long responsive block, making cascade interactions across pages harder to review. Move the plans and help rules with their responsive overrides into page-level stylesheets, following the existing history.css pattern, and leave shared primitives in styles.css.",
+      "validation": {
+        "#": 1,
+        "validated": true,
+        "reason": "The new 1,380-line global stylesheet mixes plans and help selectors with workbench rules and places their responsive overrides in shared media blocks, so extracting those page-specific rules would make future page edits and cascade review materially more local, as the existing history.css arrangement demonstrates."
+      }
+    },
+    {
+      "#": 2,
+      "autofix_class": "gated_auto",
+      "confidence": 75,
+      "evidence": [
+        "src/App.tsx:286 -- const incoming = decodePlans(await f.text());",
+        "src/App.tsx:288-290 -- (p) => !plans.some((x) => x.id === p.id), ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:383-385 -- onClick={() => { if (confirm(...)) persist(plans.filter((x) => x.id !== p.id)); }}",
+        "src/App.tsx:286 --                   const incoming = decodePlans(await f.text());",
+        "src/App.tsx:287-290 -- const fresh = incoming.filter((p) => !plans.some((x) => x.id === p.id)); ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:260-266 -- The import button remains enabled and opens the file picker during a pending read."
+      ],
+      "file": "src/App.tsx",
+      "first_evidence": "src/App.tsx:286 -- const incoming = decodePlans(await f.text());",
+      "independent_reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "line": 286,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "severity": "P1",
+      "suggested_fix": "After await f.text(), merge incoming plans against the latest plans state, preferably through a ref kept current by every successful persist or a single serialized mutation path; then write the merged state. Add a deferred File.text test that deletes or saves a plan before import resolves.",
+      "title": "Pending plan import can undo newer plan changes",
+      "why_it_matters": "A user can start importing a JSON file and then delete a plan while the file is being read. When the read completes, the import uses the plans array captured before deletion and persists it, bringing the deleted plan back. A save made during the read can likewise disappear. Build the merged list from the latest plans state when the file read completes, and serialize the read and write against other plan mutations.",
+      "validation": {
+        "#": 2,
+        "validated": true,
+        "reason": "The plan import callback resumes after await f.text() with its pre-read plans closure, while deletion and saving remain available and persist newer state, so its later persist([...fresh, ...plans]) can restore a deleted plan or discard a newer save."
+      }
+    },
+    {
+      "#": 3,
+      "autofix_class": "gated_auto",
+      "confidence": 75,
+      "evidence": [
+        "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:77-79 -- setAll(result); setSource(`导入文件：${f.name}`); setNotice(`已导入 ${result.length} 条记录`);",
+        "src/pages/History.tsx:127-130 -- onClick={() => { setAll(makeDemo()); setSource(\"演示数据 · 非真实开奖\"); setNotice(\"已切换到演示数据\"); }}",
+        "src/pages/History.tsx:76 --       const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:127-130 -- Restore Demo sets demo state without invalidating an in-flight import."
+      ],
+      "file": "src/pages/History.tsx",
+      "first_evidence": "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+      "independent_reviewers": [
+        "reliability",
+        "julik-frontend-races"
+      ],
+      "line": 76,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "severity": "P2",
+      "suggested_fix": "Track a monotonically increasing selection ID in a ref. Increment it when starting an import and when restoring demo; after await f.text(), only set all/source/notice/error if the ID still matches. Cover out-of-order file reads and restore during a pending import.",
+      "title": "History import can overwrite a newer data choice",
+      "why_it_matters": "A user can choose a CSV, then click Restore demo or choose another CSV while the first file is still being read. The earlier import may finish last and replace the newer dataset, so the page shows data contrary to the latest selection. Give each import and restore action a generation number and ignore completions from earlier generations.",
+      "validation": {
+        "#": 3,
+        "validated": true,
+        "reason": "History import awaits f.text() without a generation check, while Restore demo and another file selection can update all/source/notice during that wait, allowing the older read to finish last and overwrite the user's newer choice."
+      }
+    }
+  ],
+  "actionable_findings": [
+    {
+      "#": 1,
+      "autofix_class": "gated_auto",
+      "confidence": 100,
+      "evidence": [
+        "src/styles.css:1025 -- .help-grid {",
+        "The milestone snapshot's src/styles.css has 1,380 lines; the file is entirely new in this diff.",
+        "src/styles.css:937 -- .plans-grid {",
+        "src/styles.css:1340 --   .plans-grid,",
+        "src/pages/History.tsx:11 -- import \"./history.css\";"
+      ],
+      "file": "src/styles.css",
+      "first_evidence": "src/styles.css:1025 -- .help-grid {",
+      "independent_reviewers": [
+        "maintainability"
+      ],
+      "line": 1025,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "maintainability"
+      ],
+      "severity": "P1",
+      "suggested_fix": "Extract the plans and help selectors (including their media-query overrides) into page-level CSS files, import them from their owning page components, and keep only shared rules in styles.css; verify the four views at desktop and mobile widths for cascade changes.",
+      "title": "Split the stylesheet that crosses 1,000 lines",
+      "why_it_matters": "The new global stylesheet is 1,380 lines and now contains separate workbench, plans, help, modal, and responsive sections. A change to one page's styles must be traced through the shared base rules and a long responsive block, making cascade interactions across pages harder to review. Move the plans and help rules with their responsive overrides into page-level stylesheets, following the existing history.css pattern, and leave shared primitives in styles.css.",
+      "validation": {
+        "#": 1,
+        "validated": true,
+        "reason": "The new 1,380-line global stylesheet mixes plans and help selectors with workbench rules and places their responsive overrides in shared media blocks, so extracting those page-specific rules would make future page edits and cascade review materially more local, as the existing history.css arrangement demonstrates."
+      }
+    },
+    {
+      "#": 2,
+      "autofix_class": "gated_auto",
+      "confidence": 75,
+      "evidence": [
+        "src/App.tsx:286 -- const incoming = decodePlans(await f.text());",
+        "src/App.tsx:288-290 -- (p) => !plans.some((x) => x.id === p.id), ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:383-385 -- onClick={() => { if (confirm(...)) persist(plans.filter((x) => x.id !== p.id)); }}",
+        "src/App.tsx:286 --                   const incoming = decodePlans(await f.text());",
+        "src/App.tsx:287-290 -- const fresh = incoming.filter((p) => !plans.some((x) => x.id === p.id)); ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:260-266 -- The import button remains enabled and opens the file picker during a pending read."
+      ],
+      "file": "src/App.tsx",
+      "first_evidence": "src/App.tsx:286 -- const incoming = decodePlans(await f.text());",
+      "independent_reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "line": 286,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "severity": "P1",
+      "suggested_fix": "After await f.text(), merge incoming plans against the latest plans state, preferably through a ref kept current by every successful persist or a single serialized mutation path; then write the merged state. Add a deferred File.text test that deletes or saves a plan before import resolves.",
+      "title": "Pending plan import can undo newer plan changes",
+      "why_it_matters": "A user can start importing a JSON file and then delete a plan while the file is being read. When the read completes, the import uses the plans array captured before deletion and persists it, bringing the deleted plan back. A save made during the read can likewise disappear. Build the merged list from the latest plans state when the file read completes, and serialize the read and write against other plan mutations.",
+      "validation": {
+        "#": 2,
+        "validated": true,
+        "reason": "The plan import callback resumes after await f.text() with its pre-read plans closure, while deletion and saving remain available and persist newer state, so its later persist([...fresh, ...plans]) can restore a deleted plan or discard a newer save."
+      }
+    },
+    {
+      "#": 3,
+      "autofix_class": "gated_auto",
+      "confidence": 75,
+      "evidence": [
+        "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:77-79 -- setAll(result); setSource(`导入文件：${f.name}`); setNotice(`已导入 ${result.length} 条记录`);",
+        "src/pages/History.tsx:127-130 -- onClick={() => { setAll(makeDemo()); setSource(\"演示数据 · 非真实开奖\"); setNotice(\"已切换到演示数据\"); }}",
+        "src/pages/History.tsx:76 --       const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:127-130 -- Restore Demo sets demo state without invalidating an in-flight import."
+      ],
+      "file": "src/pages/History.tsx",
+      "first_evidence": "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+      "independent_reviewers": [
+        "reliability",
+        "julik-frontend-races"
+      ],
+      "line": 76,
+      "owner": "downstream-resolver",
+      "pre_existing": false,
+      "requires_verification": true,
+      "reviewers": [
+        "julik-frontend-races",
+        "reliability"
+      ],
+      "severity": "P2",
+      "suggested_fix": "Track a monotonically increasing selection ID in a ref. Increment it when starting an import and when restoring demo; after await f.text(), only set all/source/notice/error if the ID still matches. Cover out-of-order file reads and restore during a pending import.",
+      "title": "History import can overwrite a newer data choice",
+      "why_it_matters": "A user can choose a CSV, then click Restore demo or choose another CSV while the first file is still being read. The earlier import may finish last and replace the newer dataset, so the page shows data contrary to the latest selection. Give each import and restore action a generation number and ignore completions from earlier generations.",
+      "validation": {
+        "#": 3,
+        "validated": true,
+        "reason": "History import awaits f.text() without a generation check, while Restore demo and another file selection can update all/source/notice during that wait, allowing the older read to finish last and overwrite the user's newer choice."
+      }
+    }
+  ],
+  "triage_groups": [
+    {
+      "title": "Keep asynchronous imports consistent with latest user state",
+      "findings": [
+        2,
+        3
+      ],
+      "context": "Apply queue: file reads complete after later state mutations.",
+      "preferred_resolution": "Fix plan latest-state merging (#2), then history generation invalidation (#3), with deferred-read regression tests.",
+      "why": "Prevents persisted scheme changes and newer dataset choices being overwritten by older operations."
+    }
+  ],
+  "pre_existing_findings": [],
+  "requirements_completeness": {
+    "plan": "docs/implementation.md",
+    "plan_source": "explicit",
+    "plan_readiness": "legacy first-delivery execution slice",
+    "checks": [
+      {
+        "unit": "1",
+        "status": "met",
+        "evidence": "Twelve basic predicates, full 100000 and leading-zero tests."
+      },
+      {
+        "unit": "2",
+        "status": "partially addressed",
+        "evidence": "Workbench, cancellation/stale guards, plans and export implemented; pending import lost-update defect #2 remains."
+      },
+      {
+        "unit": "3",
+        "status": "partially addressed",
+        "evidence": "Dedicated history route and all six forms implemented; pending history import supersession defect #3 remains."
+      },
+      {
+        "unit": "4",
+        "status": "met for source/tests/CI/docs; browser QA owned by caller",
+        "evidence": "Frozen snapshot test run passes 29/29; CI runs real frozen install/tests/build. This review did not conduct browser QA."
+      }
+    ],
+    "deferred": "M2/M3 advanced rules and live history ingestion were intentionally outside this milestone. Later user expansion requires a separate review."
+  },
+  "learnings": [],
+  "agent_native_gaps": [],
+  "deployment_notes": [],
+  "residual_risks": [],
+  "testing_gaps": [
+    "Follow-up accepted for expanded phase: capture/assert complete worker request input and display an input-sensitive response, beyond lifecycle-only mock assertions.",
+    "Follow-up accepted for expanded phase: import a small known CSV and assert representative values for all six history views, position changes and selected ranges."
+  ],
+  "coverage": {
+    "roster": "full risk-selected roster, not lite",
+    "reviewer_outcomes": {
+      "correctness": "complete",
+      "testing": "complete",
+      "maintainability": "complete",
+      "security": "complete",
+      "performance": "complete",
+      "reliability": "complete",
+      "adversarial": "complete",
+      "julik-frontend-races": "complete"
+    },
+    "conditional_reasons": {
+      "correctness": "all code review",
+      "testing": "new domain and React integration tests, Worker behavior",
+      "maintainability": "new complete application and cross-module contracts",
+      "security": "untrusted CSV/JSON import and local persistence",
+      "performance": "100000 candidate filtering and history imports up to 10MiB",
+      "reliability": "Worker errors/cancellation, async file reads, localStorage failure handling",
+      "adversarial": "persistence writes and CI verification mechanism; local fallback",
+      "julik-frontend-races": "Worker messages, async file imports, effect/event/timer lifecycle"
+    },
+    "project_standards": "Not selected: successful search found no applicable CODING_STANDARDS.md, AGENTS.md or CLAUDE.md in reviewed tree.",
+    "compound_packs": {
+      "roots": [],
+      "warnings": [],
+      "errors": []
+    },
+    "learnings": "Not selected: no matching solutions corpus or declared packs.",
+    "cross_model": {
+      "status": "not_run",
+      "host_harness": "codex",
+      "host_serving_family": "codex",
+      "reason": "No installed different-provider CLI route; local adversarial fallback fully completed.",
+      "peer_started": false,
+      "independence_verified": false
+    },
+    "independence": "Separate local reviewer agents; no cross-family corroboration claimed. Source-provenance independent_reviewers preserved from initial helper outputs after synthetic semantic reconciliation. No confidence promotion applied.",
+    "validators": {
+      "batch_count": 1,
+      "selected": 3,
+      "validated_true": 3,
+      "validated_false": 0,
+      "cross_model_skip_count": 0,
+      "verdicts": [
+        {
+          "#": 1,
+          "validated": true,
+          "reason": "The new 1,380-line global stylesheet mixes plans and help selectors with workbench rules and places their responsive overrides in shared media blocks, so extracting those page-specific rules would make future page edits and cascade review materially more local, as the existing history.css arrangement demonstrates."
+        },
+        {
+          "#": 2,
+          "validated": true,
+          "reason": "The plan import callback resumes after await f.text() with its pre-read plans closure, while deletion and saving remain available and persist newer state, so its later persist([...fresh, ...plans]) can restore a deleted plan or discard a newer save."
+        },
+        {
+          "#": 3,
+          "validated": true,
+          "reason": "History import awaits f.text() without a generation check, while Restore demo and another file selection can update all/source/notice during that wait, allowing the older read to finish last and overwrite the user's newer choice."
+        }
+      ],
+      "infrastructure_failures": 0
+    },
+    "suppressed_by_confidence": {},
+    "mode_aware_demotions": 2,
+    "malformed_findings": 0,
+    "malformed_returns": 0,
+    "quote_gate_demotions": 0,
+    "semantic_duplicate_pairs": 2,
+    "rejected_claims": [
+      {
+        "claim": "CI requires an untracked lockfile",
+        "reason": "Lockfile exists and is explicitly included in authorized precommit scope; initial source-only scratch copy omission is not an app defect."
+      }
+    ],
+    "settlement_suppression": "No session-settled decisions were contradicted.",
+    "superseded_initial_gaps": "Lifecycle cancellation/stale-response coverage added by caller and present in frozen snapshot.",
+    "previous_defects_resolved_before_freeze": [
+      "Restoring duplicate-kind AND rules",
+      "Imported/default rule ID collision",
+      "History state lost on navigation",
+      "History condition replacement",
+      "Save modal Tab trap and focus return"
+    ],
+    "testing": {
+      "command": "node node_modules/vitest/vitest.mjs run --root /private/tmp/compound-engineering-501/ce-code-review/20261018-223010-c2dd2dcb/milestone-tree",
+      "runtime": "/Users/mldh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "outcome": "passed",
+      "test_files": 5,
+      "tests_passed": 29,
+      "tests_failed": 0,
+      "time": "2026-10-18 22:50:48 Asia/Shanghai",
+      "note": "Initial /tmp alias run could not resolve two jsdom suites; reran using canonical /private/tmp path, all passed."
+    },
+    "browser_qa": "Not performed by this reviewer; caller QA is separate.",
+    "project_source_mutations": false,
+    "snapshot_note": "Lock/workspace files were added to scratch copy after initial source-only snapshot omission; SHA256 manifest records final reviewed snapshot.",
+    "fix_order": [
+      2,
+      3,
+      1
+    ]
+  },
+  "artifact_path": "/tmp/compound-engineering-501/ce-code-review/20261018-223010-c2dd2dcb",
+  "durable_artifact_path": "/Users/mldh/Documents/Codex/2026-10-18/zuo/outputs/pl5/docs/reviews/2026-10-18-ce-code-review/review.json",
+  "run_id": "20261018-223010-c2dd2dcb",
+  "completed_at": "2026-10-18T14:58:00.915172+00:00"
+}

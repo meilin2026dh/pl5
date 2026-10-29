@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "findings": [
+    {
+      "title": "Malformed request target terminates server",
+      "status": "fixed",
+      "severity": "P1",
+      "file": "server/index.mjs",
+      "verification": "Independent validator captured current createServer handler: //% and http://[ return 400; subsequent /api/health returns 200 with ok:true."
+    },
+    {
+      "title": "Strict combination rejects unused stale minimum",
+      "status": "fixed",
+      "severity": "P2",
+      "file": "src/domain/advanced.ts",
+      "verification": "Independent validator: strict minimum2 with one enabled group accepted; atLeast minimum2 rejects. Advanced-boundaries regression passes. atLeast remains explicit user-adjusted threshold by deliberate product decision."
+    },
+    {
+      "title": "Changing candidate source retains stale set preview",
+      "status": "fixed",
+      "severity": "P2",
+      "file": "src/components/CandidateSource.tsx",
+      "verification": "Independent validator confirms effect invalidates preview/source token when candidates change; source-ui regression passes."
+    }
+  ],
+  "cross_model_skip_count": 0,
+  "independence": "Security validator verified correctness issue; correctness validator verified source preview; orchestrator synthesized server validator. Same serving model, separate contexts."
+}

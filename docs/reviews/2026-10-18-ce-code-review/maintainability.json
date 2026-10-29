@@ -1,0 +1,27 @@
+{
+  "reviewer": "maintainability",
+  "findings": [
+    {
+      "title": "Split the stylesheet that crosses 1,000 lines",
+      "severity": "P1",
+      "file": "src/styles.css",
+      "line": 1025,
+      "why_it_matters": "The new global stylesheet is 1,380 lines and now contains separate workbench, plans, help, modal, and responsive sections. A change to one page's styles must be traced through the shared base rules and a long responsive block, making cascade interactions across pages harder to review. Move the plans and help rules with their responsive overrides into page-level stylesheets, following the existing history.css pattern, and leave shared primitives in styles.css.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Extract the plans and help selectors (including their media-query overrides) into page-level CSS files, import them from their owning page components, and keep only shared rules in styles.css; verify the four views at desktop and mobile widths for cascade changes.",
+      "confidence": 100,
+      "evidence": [
+        "src/styles.css:1025 -- .help-grid {",
+        "The milestone snapshot's src/styles.css has 1,380 lines; the file is entirely new in this diff.",
+        "src/styles.css:937 -- .plans-grid {",
+        "src/styles.css:1340 --   .plans-grid,",
+        "src/pages/History.tsx:11 -- import \"./history.css\";"
+      ],
+      "pre_existing": false
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

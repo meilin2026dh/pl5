@@ -1,0 +1,25 @@
+{
+  "reviewer": "security",
+  "findings": [
+    {
+      "title": "Malformed URL terminates server",
+      "severity": "P1",
+      "file": "server/index.mjs",
+      "line": 33,
+      "confidence": 100,
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "pre_existing": false,
+      "suggested_fix": "Wrap URL construction and return HTTP 400.",
+      "first_evidence": "server/index.mjs:33: const url = new URL(req.url || \"/\", `http://${host}:${port}`);",
+      "why_it_matters": "Malformed //% request throws before catches and rejects async HTTP listener.",
+      "evidence": [
+        "server/index.mjs:33: const url = new URL(req.url || \"/\", `http://${host}:${port}`);",
+        "Malformed //% request throws before catches and rejects async HTTP listener."
+      ]
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

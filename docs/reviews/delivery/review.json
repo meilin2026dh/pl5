@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "verdict": "Ready to merge",
+  "scope": {
+    "base": "7e4431dc0f4b209b6b24d2f628a2ff8adad88e4b",
+    "branch": "feat/filter-workbench",
+    "head_sha": "7e4431dc0f4b209b6b24d2f628a2ff8adad88e4b",
+    "pr_url": null,
+    "files_changed": 37,
+    "mode": "explicit caller-authorized full delivery snapshot, including untracked source"
+  },
+  "intent": "Deliver the accepted F01-F34 filtering service, local worker calculation, candidate operations, plan preservation, official history data, six historical displays, and cutoff-safe replay. Review source, server, tests and delivery configuration.",
+  "intent_confidence": "explicit",
+  "reviewers": [
+    "correctness",
+    "security",
+    "testing",
+    "maintainability",
+    "performance",
+    "api-contract",
+    "reliability",
+    "adversarial",
+    "julik-frontend-races"
+  ],
+  "findings": [],
+  "actionable_findings": [],
+  "triage_groups": [],
+  "pre_existing_findings": [],
+  "requirements_completeness": {
+    "source": "explicit caller accepted feature scope; README feature matrix",
+    "met": [
+      "38 rule kinds covering F01-F34",
+      "advanced editing and tolerance grouping",
+      "external candidates and four set operations",
+      "saved plans import/export and recovery",
+      "official history provider and source metadata",
+      "independent history page and six displays",
+      "historical replay uses prior records only"
+    ],
+    "not_addressed": []
+  },
+  "learnings": [],
+  "agent_native_gaps": [],
+  "deployment_notes": [],
+  "residual_risks": [],
+  "testing_gaps": [],
+  "coverage": {
+    "resolved_findings": [
+      {
+        "title": "Malformed request target terminates server",
+        "status": "fixed",
+        "severity": "P1",
+        "file": "server/index.mjs",
+        "verification": "Independent validator captured current createServer handler: //% and http://[ return 400; subsequent /api/health returns 200 with ok:true."
+      },
+      {
+        "title": "Strict combination rejects unused stale minimum",
+        "status": "fixed",
+        "severity": "P2",
+        "file": "src/domain/advanced.ts",
+        "verification": "Independent validator: strict minimum2 with one enabled group accepted; atLeast minimum2 rejects. Advanced-boundaries regression passes. atLeast remains explicit user-adjusted threshold by deliberate product decision."
+      },
+      {
+        "title": "Changing candidate source retains stale set preview",
+        "status": "fixed",
+        "severity": "P2",
+        "file": "src/components/CandidateSource.tsx",
+        "verification": "Independent validator confirms effect invalidates preview/source token when candidates change; source-ui regression passes."
+      }
+    ],
+    "verification": {
+      "suite": "12 files / 74 tests passed; node node_modules/vitest/vitest.mjs run",
+      "typecheck": "node node_modules/typescript/bin/tsc -b exited 0"
+    },
+    "reviewer_execution": "Correctness and security independent child contexts; testing/maintainability supplemental lenses in correctness context; reliability/performance/API supplemental lenses in security context; adversarial/frontend lifecycle in correctness follow-up. Supplemental lenses are not independent identities for confidence promotion.",
+    "cross_model": "No allowlisted different-provider CLI installed; local adversarial fallback, no external dispatch.",
+    "standards": "No applicable repository CODING_STANDARDS.md/AGENTS.md/CLAUDE.md found.",
+    "scope_signals": "Official helper against HEAD returns 10 executable tracked changed lines,3 uncounted files,lite false. Caller explicitly required full current untracked delivery snapshot; manifest is authoritative reviewed scope.",
+    "failed_reviewers": [],
+    "suppressed_candidates": 1,
+    "validator_drops": 0,
+    "settlement": "C01-C08 undefined catalog labels excluded from promised formula coverage; atLeast threshold changes remain explicit, no silent normalization.",
+    "limitations": "This review does not claim external serving-family corroboration, live production deployment or broad multi-client load testing. Existing milestone review covers earlier source; final snapshot manifest records this pass."
+  },
+  "artifact_path": "/Users/mldh/Documents/Codex/2026-10-18/zuo/outputs/pl5/docs/reviews/delivery",
+  "run_id": "2026-10-18-delivery",
+  "completed_at": "2026-10-18T15:22:14.566752+00:00"
+}

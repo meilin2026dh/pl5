@@ -1,0 +1,8 @@
+{
+  "reviewer": "adversarial",
+  "findings": [],
+  "residual_risks": [],
+  "testing_gaps": [
+    "CI runs the real typecheck, production build and domain tests, but jsdom app tests never construct a browser Worker. Cancellation, stale-message rejection and the bundled module-worker startup require real-browser validation before release; this review inspected those paths statically and did not run browser verification."
+  ]
+}

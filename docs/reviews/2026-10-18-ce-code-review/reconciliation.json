@@ -1,0 +1,23 @@
+{
+  "rejected": [
+    {
+      "original_number": 1,
+      "reason": "Lockfile exists in explicitly included untracked implementation; absence from initial source-only scratch copy was snapshot omission, not a code defect."
+    }
+  ],
+  "merged": [
+    [
+      3,
+      4
+    ],
+    [
+      6,
+      5
+    ]
+  ],
+  "demoted_to_testing_gaps": [
+    7,
+    8
+  ],
+  "demotion_reason": "Test-only follow-up with no demonstrated current wrong result; accepted for expanded phase by caller. Lifecycle mock correctly verifies its stated cancellation purpose, and frozen source data flow was reviewed."
+}

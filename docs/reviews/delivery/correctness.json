@@ -1,0 +1,25 @@
+{
+  "reviewer": "correctness",
+  "findings": [
+    {
+      "title": "Tolerance minimum invalid after rule removal",
+      "severity": "P2",
+      "file": "src/components/AdvancedRules.tsx",
+      "line": 302,
+      "confidence": 100,
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "pre_existing": false,
+      "suggested_fix": "Clamp minimum after active group changes; strict does not enforce unused threshold.",
+      "first_evidence": "src/components/AdvancedRules.tsx:302: rules: input.rules.filter((s) => s.id !== r.id),",
+      "why_it_matters": "Deleting an active condition leaves minimum above group count, including strict mode.",
+      "evidence": [
+        "src/components/AdvancedRules.tsx:302: rules: input.rules.filter((s) => s.id !== r.id),",
+        "Deleting an active condition leaves minimum above group count, including strict mode."
+      ]
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

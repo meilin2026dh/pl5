@@ -1,0 +1,10 @@
+{
+  "command": "node node_modules/vitest/vitest.mjs run --root /private/tmp/compound-engineering-501/ce-code-review/20261018-223010-c2dd2dcb/milestone-tree",
+  "runtime": "/Users/mldh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "outcome": "passed",
+  "test_files": 5,
+  "tests_passed": 29,
+  "tests_failed": 0,
+  "time": "2026-10-18 22:50:48 Asia/Shanghai",
+  "note": "Initial /tmp alias run could not resolve two jsdom suites; reran using canonical /private/tmp path, all passed."
+}

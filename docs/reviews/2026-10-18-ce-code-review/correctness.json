@@ -1,0 +1,8 @@
+{
+  "reviewer": "correctness",
+  "findings": [],
+  "residual_risks": [],
+  "testing_gaps": [
+    "Worker lifecycle has no automated coverage: tests/app.test.tsx does not simulate a running request followed by changed input, cancel, or a late response. Add a controllable Worker mock to verify stale results cannot enable export after those user actions."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "reviewer": "julik-frontend-races",
+  "findings": [
+    {
+      "title": "Pending plan import can undo newer plan changes",
+      "severity": "P1",
+      "file": "src/App.tsx",
+      "line": 286,
+      "why_it_matters": "A user can start importing a JSON file and then delete a plan while the file is being read. When the read completes, the import uses the plans array captured before deletion and persists it, bringing the deleted plan back. A save made during the read can likewise disappear. Build the merged list from the latest plans state when the file read completes, and serialize the read and write against other plan mutations.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "After await f.text(), merge incoming plans against the latest plans state, preferably through a ref kept current by every successful persist or a single serialized mutation path; then write the merged state. Add a deferred File.text test that deletes or saves a plan before import resolves.",
+      "confidence": 75,
+      "evidence": [
+        "src/App.tsx:286 -- const incoming = decodePlans(await f.text());",
+        "src/App.tsx:288-290 -- (p) => !plans.some((x) => x.id === p.id), ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:383-385 -- onClick={() => { if (confirm(...)) persist(plans.filter((x) => x.id !== p.id)); }}"
+      ],
+      "pre_existing": false
+    },
+    {
+      "title": "History import can overwrite a newer data choice",
+      "severity": "P2",
+      "file": "src/pages/History.tsx",
+      "line": 76,
+      "why_it_matters": "A user can choose a CSV, then click Restore demo or choose another CSV while the first file is still being read. The earlier import may finish last and replace the newer dataset, so the page shows data contrary to the latest selection. Give each import and restore action a generation number and ignore completions from earlier generations.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Track a monotonically increasing selection ID in a ref. Increment it when starting an import and when restoring demo; after await f.text(), only set all/source/notice/error if the ID still matches. Cover out-of-order file reads and restore during a pending import.",
+      "confidence": 75,
+      "evidence": [
+        "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:77-79 -- setAll(result); setSource(`导入文件：${f.name}`); setNotice(`已导入 ${result.length} 条记录`);",
+        "src/pages/History.tsx:127-130 -- onClick={() => { setAll(makeDemo()); setSource(\"演示数据 · 非真实开奖\"); setNotice(\"已切换到演示数据\"); }}"
+      ],
+      "pre_existing": false
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

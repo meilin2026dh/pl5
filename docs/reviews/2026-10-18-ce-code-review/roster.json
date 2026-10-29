@@ -1,0 +1,34 @@
+{
+  "correctness": {
+    "tier": "session",
+    "reason": "all code review"
+  },
+  "testing": {
+    "tier": "mid",
+    "reason": "new domain and React integration tests, Worker behavior"
+  },
+  "maintainability": {
+    "tier": "mid",
+    "reason": "new complete application and cross-module contracts"
+  },
+  "security": {
+    "tier": "session",
+    "reason": "untrusted CSV/JSON import and local persistence"
+  },
+  "performance": {
+    "tier": "mid",
+    "reason": "100000 candidate filtering and history imports up to 10MiB"
+  },
+  "reliability": {
+    "tier": "mid",
+    "reason": "Worker errors/cancellation, async file reads, localStorage failure handling"
+  },
+  "adversarial": {
+    "tier": "session",
+    "reason": "persistence writes and CI verification mechanism; local fallback"
+  },
+  "julik-frontend-races": {
+    "tier": "mid",
+    "reason": "Worker messages, async file imports, effect/event/timer lifecycle"
+  }
+}

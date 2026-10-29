@@ -1,0 +1,44 @@
+{
+  "reviewer": "testing",
+  "findings": [
+    {
+      "title": "Worker mock cannot detect a wrong filter request",
+      "severity": "P2",
+      "file": "tests/worker-ui.test.tsx",
+      "line": 25,
+      "why_it_matters": "The calculation UI tests pass even if the workbench sends stale or incorrect selections to the worker: the fake worker saves only the request ID and returns the same number for every input. A user could see results for different selections than the ones shown on screen while the domain and UI tests both remain green. Capture the posted input and assert it after a selection change, then return a result derived from that input so the UI result assertion exercises the connection.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Have WorkerPort.postMessage record the full input; in a UI test, change a position or rule before calculating, assert the posted input, and generate a small input-sensitive result for the displayed-output assertion.",
+      "confidence": 75,
+      "evidence": [
+        "tests/worker-ui.test.tsx:25 -- postMessage(message: { requestId: number }) {",
+        "tests/worker-ui.test.tsx:33 -- result: { numbers: [\"00000\"], initial: 100000, steps: [] },",
+        "src/pages/Workbench.tsx:123 -- w.postMessage({ requestId: id, input });"
+      ],
+      "pre_existing": false
+    },
+    {
+      "title": "History view tests never assert displayed data",
+      "severity": "P2",
+      "file": "tests/app.test.tsx",
+      "line": 85,
+      "why_it_matters": "All six history displays are in the requested scope, but the UI tests only verify navigation, retained range settings, and adding a rule. A rendering regression in frequency counts, heatmap positions, category percentages, line values, or detail rows would pass the suite even though users rely on those numbers to choose filters. Drive a small known CSV through the import UI and assert representative values across the six tabs and the selected range.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Add a history component test using a short CSV with distinct known digits and metrics; select each of the six tabs and assert its visible data, including a changed observation range and position.",
+      "confidence": 75,
+      "evidence": [
+        "src/pages/History.tsx:180 -- {tabs.map(([id, label]) => (",
+        "src/pages/History.tsx:76 -- const result = parseHistoryCsv(await f.text());",
+        "tests/app.test.tsx:85 -- it(\"keeps history view settings when navigating away and back\", () => {",
+        "tests/history.test.ts:9 -- describe(\"history CSV\", () => {"
+      ],
+      "pre_existing": false
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

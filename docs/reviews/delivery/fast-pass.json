@@ -1,0 +1,25 @@
+{
+  "reviewer": "fast-pass",
+  "findings": [
+    {
+      "title": "Changing source retains obsolete set preview",
+      "severity": "P2",
+      "file": "src/components/CandidateSource.tsx",
+      "line": 36,
+      "confidence": 50,
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "pre_existing": false,
+      "suggested_fix": "Invalidate preview and pending imports when A changes.",
+      "first_evidence": "src/components/CandidateSource.tsx:36: onChange({ ...latest.current, candidates: list });",
+      "why_it_matters": "Loading another A retains old preview, allowing old result to overwrite new candidates.",
+      "evidence": [
+        "src/components/CandidateSource.tsx:36: onChange({ ...latest.current, candidates: list });",
+        "Loading another A retains old preview, allowing old result to overwrite new candidates."
+      ]
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}

@@ -1,0 +1,60 @@
+{
+  "reviewer": "reliability",
+  "findings": [
+    {
+      "title": "CI install requires an untracked lockfile",
+      "severity": "P1",
+      "file": ".github/workflows/ci.yml",
+      "line": 19,
+      "why_it_matters": "Every fresh CI checkout runs a frozen pnpm install without a committed lockfile, so the verification job fails before tests or the production build run. The local untracked lockfile can make development checks appear green while CI has different inputs. Commit the lockfile generated for the declared pnpm version so CI can reproduce the same dependency graph.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Track pnpm-lock.yaml in the repository, then verify the workflow's pnpm install --frozen-lockfile from a clean checkout.",
+      "confidence": 100,
+      "evidence": [
+        ".github/workflows/ci.yml:19 --       - run: pnpm install --frozen-lockfile",
+        "The frozen milestone tree contains no pnpm-lock.yaml; git ls-tree -r --name-only 7e4431d -- pnpm-lock.yaml returned nothing, and the working checkout reports ?? pnpm-lock.yaml."
+      ],
+      "pre_existing": false
+    },
+    {
+      "title": "Overlapping plan imports can discard a completed import",
+      "severity": "P2",
+      "file": "src/App.tsx",
+      "line": 286,
+      "why_it_matters": "If a user chooses another JSON file while the first read is pending, both handlers later merge against the same captured plans array. Whichever read finishes last writes its own import over the earlier successful one, although both can report success. Serialize imports or merge with the latest plan state when each read completes.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Track an import-in-progress state and disable a second selection until persistence finishes, or merge decoded plans against a current state ref with a test using out-of-order File.text() resolutions.",
+      "confidence": 75,
+      "evidence": [
+        "src/App.tsx:286 --                   const incoming = decodePlans(await f.text());",
+        "src/App.tsx:287-290 -- const fresh = incoming.filter((p) => !plans.some((x) => x.id === p.id)); ... if (persist([...fresh, ...plans]))",
+        "src/App.tsx:260-266 -- The import button remains enabled and opens the file picker during a pending read."
+      ],
+      "pre_existing": false
+    },
+    {
+      "title": "Earlier history read can overwrite a newer selection",
+      "severity": "P2",
+      "file": "src/pages/History.tsx",
+      "line": 76,
+      "why_it_matters": "A slow CSV read can finish after a later import or after the user restores demo data, replacing the source that the user chose most recently. The displayed charts then switch unexpectedly to the older file. A monotonically increasing import token can discard completions from superseded reads.",
+      "autofix_class": "gated_auto",
+      "owner": "downstream-resolver",
+      "requires_verification": true,
+      "suggested_fix": "Increment an import token on every new file selection and on Restore Demo; after await f.text(), update history state only if that token is still current, with an out-of-order read test.",
+      "confidence": 75,
+      "evidence": [
+        "src/pages/History.tsx:76 --       const result = parseHistoryCsv(await f.text());",
+        "src/pages/History.tsx:77-79 -- setAll(result); setSource(`导入文件：${f.name}`); setNotice(`已导入 ${result.length} 条记录`);",
+        "src/pages/History.tsx:127-130 -- Restore Demo sets demo state without invalidating an in-flight import."
+      ],
+      "pre_existing": false
+    }
+  ],
+  "residual_risks": [],
+  "testing_gaps": []
+}
