@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-01",
+  "candidates": [
+    "00000",
+    "01234",
+    "12345",
+    "54321",
+    "02468",
+    "24888",
+    "89000",
+    "56789"
+  ],
+  "runs": [
+    {
+      "kind": "inversions",
+      "values": "10",
+      "numbers": [
+        "54321"
+      ]
+    },
+    {
+      "kind": "mathPrimePattern",
+      "label": "数学质合形态",
+      "values": "?PP?P",
+      "numbers": [
+        "12345"
+      ]
+    },
+    {
+      "kind": "mathClassCounts",
+      "label": "数学质合分布",
+      "values": "3:1:1",
+      "numbers": [
+        "12345",
+        "54321"
+      ]
+    },
+    {
+      "kind": "sumModulo",
+      "label": "和值取模",
+      "values": "1",
+      "modulus": "7",
+      "numbers": [
+        "12345",
+        "54321"
+      ]
+    },
+    {
+      "kind": "productTail",
+      "label": "五位乘积尾数",
+      "values": "0",
+      "numbers": [
+        "00000",
+        "01234",
+        "02468",
+        "12345",
+        "54321",
+        "56789",
+        "89000"
+      ]
+    },
+    {
+      "kind": "digitGcd",
+      "label": "五位最大公约数",
+      "values": "2",
+      "numbers": [
+        "02468",
+        "24888"
+      ]
+    },
+    {
+      "kind": "digitLcm",
+      "label": "五位最小公倍数",
+      "values": "60",
+      "numbers": [
+        "12345",
+        "54321"
+      ]
+    },
+    {
+      "kind": "pairGcd",
+      "values": "2",
+      "positions": "0,1",
+      "numbers": [
+        "02468",
+        "24888"
+      ]
+    },
+    {
+      "kind": "pairLcm",
+      "values": "72",
+      "positions": "0,1",
+      "numbers": [
+        "89000"
+      ]
+    }
+  ]
+}

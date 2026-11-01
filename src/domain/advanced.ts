@@ -1,5 +1,15 @@
+import { digitClass, gcd, lcm, inversionCount, mathClassCounts } from "./math";
 import type { FilterInput, Rule, HistoryRecord } from "./pick5";
 export const advancedLabels = {
+  mathPrimePattern: "数学质合形态",
+  mathClassCounts: "数学质合分布",
+  sumModulo: "和值取模",
+  productTail: "五位乘积尾数",
+  inversions: "排列逆序数",
+  digitGcd: "五位最大公约数",
+  digitLcm: "五位最小公倍数",
+  pairGcd: "两码最大公约数",
+  pairLcm: "两码最小公倍数",
   danGroups: "分组胆码",
   oddPattern: "奇偶形态",
   bigPattern: "大小形态",
@@ -168,6 +178,8 @@ export function validateAdvanced(input: FilterInput): void {
       !["sum", "span"].includes(p.metric)
     )
       fail("历史差指标不合法");
+    if (r.kind === "sumModulo" && !integer(p.modulus, 2, 100))
+      fail("和值取模的模数必须为2至100的整数");
     if (r.kind === "remainderSum" && ![3, 4, 5].includes(p.modulus!))
       fail("余数和模数必须为3、4或5");
     if (
@@ -207,23 +219,25 @@ export function validateAdvanced(input: FilterInput): void {
       )
         fail("分区个数合计必须为5");
     }
-    const pattern = ["oddPattern", "bigPattern", "primePattern"].includes(
-      r.kind,
-    )
-      ? /^[01?]{5}$/
-      : r.kind === "routePattern"
-        ? /^[012?]{5}$/
-        : r.kind === "routeCounts"
-          ? /^\d:\d:\d$/
-          : r.kind === "neighborCounts"
-            ? /^\d:\d:\d$/
-            : undefined;
+    const patterns: Partial<Record<Rule["kind"], RegExp>> = {
+      mathPrimePattern: /^[PCN?]{5}$/,
+      mathClassCounts: /^[0-5]:[0-5]:[0-5]$/,
+      oddPattern: /^[01?]{5}$/,
+      bigPattern: /^[01?]{5}$/,
+      primePattern: /^[01?]{5}$/,
+      routePattern: /^[012?]{5}$/,
+      routeCounts: /^\d:\d:\d$/,
+      neighborCounts: /^\d:\d:\d$/,
+    };
+    const pattern = patterns[r.kind];
     for (const v of r.values) {
       if (pattern) {
         if (
           typeof v !== "string" ||
           !pattern.test(v) ||
-          ((r.kind === "routeCounts" || r.kind === "neighborCounts") &&
+          (["routeCounts", "neighborCounts", "mathClassCounts"].includes(
+            r.kind,
+          ) &&
             v.split(":").reduce((a, b) => a + Number(b), 0) !== 5)
         )
           fail("形态值格式错误");
@@ -232,18 +246,21 @@ export function validateAdvanced(input: FilterInput): void {
       } else if (
         !["historyExclude", "danGroups", "partition"].includes(r.kind)
       ) {
+        const limits: Partial<Record<Rule["kind"], number>> = {
+          inversions: 10,
+          digitLcm: 2520,
+          pairLcm: 72,
+          sum: 45,
+          classSum: 45,
+          pairSum: 18,
+          remainderSum: 20,
+          frequency: 100000,
+          omission: 100000,
+          samePosition: 5,
+          historyOverlap: 5,
+        };
         const max =
-          r.kind === "sum" || r.kind === "classSum"
-            ? 45
-            : r.kind === "pairSum"
-              ? 18
-              : r.kind === "remainderSum"
-                ? 20
-                : r.kind === "frequency" || r.kind === "omission"
-                  ? 100000
-                  : ["samePosition", "historyOverlap"].includes(r.kind)
-                    ? 5
-                    : 9;
+          r.kind === "sumModulo" ? p.modulus! - 1 : (limits[r.kind] ?? 9);
         if (
           typeof v !== "number" ||
           !Number.isFinite(v) ||
@@ -330,7 +347,15 @@ export function advancedPredicate(
         (g, i) => d.filter((n) => g.includes(n)).length === p.counts![i],
       );
     if (kind === "historyExclude") return !historyNumbers.has(number);
-    if (kind === "oddPattern") value = d.map((n) => n % 2).join("");
+    if (kind === "mathPrimePattern") value = d.map(digitClass).join("");
+    else if (kind === "mathClassCounts") value = mathClassCounts(d);
+    else if (kind === "sumModulo") value = sum(d) % p.modulus!;
+    else if (kind === "productTail")
+      value = d.reduce((a, b) => (a * b) % 10, 1);
+    else if (kind === "inversions") value = inversionCount(d);
+    else if (kind === "digitGcd") value = d.reduce(gcd, 0);
+    else if (kind === "digitLcm") value = d.reduce(lcm, 1);
+    else if (kind === "oddPattern") value = d.map((n) => n % 2).join("");
     else if (kind === "bigPattern")
       value = d.map((n) => Number(n >= 5)).join("");
     else if (kind === "primePattern")
@@ -357,15 +382,27 @@ export function advancedPredicate(
       const count = pairs.filter((pair) => {
         const a = d[pair[0]!]!,
           b = d[pair[1]!]!;
-        return v.includes(
-          kind === "pairSum"
-            ? a + b
-            : kind === "pairDiff"
-              ? Math.abs(a - b)
-              : kind === "pairTail"
-                ? (a + b) % 10
-                : (a * b) % 10,
-        );
+        let pairValue: number;
+        switch (kind) {
+          case "pairGcd":
+            pairValue = gcd(a, b);
+            break;
+          case "pairLcm":
+            pairValue = lcm(a, b);
+            break;
+          case "pairSum":
+            pairValue = a + b;
+            break;
+          case "pairDiff":
+            pairValue = Math.abs(a - b);
+            break;
+          case "pairTail":
+            pairValue = (a + b) % 10;
+            break;
+          default:
+            pairValue = (a * b) % 10;
+        }
+        return v.includes(pairValue);
       }).length;
       return (
         count >= (p.countMin ?? 1) && count <= (p.countMax ?? pairs.length)
@@ -398,9 +435,13 @@ export function advancedPredicate(
       value = index;
     } else return false;
     if (
-      ["oddPattern", "bigPattern", "primePattern", "routePattern"].includes(
-        kind,
-      )
+      [
+        "mathPrimePattern",
+        "oddPattern",
+        "bigPattern",
+        "primePattern",
+        "routePattern",
+      ].includes(kind)
     )
       return v.some(
         (pattern) =>
@@ -416,6 +457,15 @@ export const advancedDefaults: Record<
   AdvancedKind,
   { values: (number | string)[]; params?: Rule["params"] }
 > = {
+  mathPrimePattern: { values: ["?PP?P"] },
+  mathClassCounts: { values: ["3:1:1"] },
+  sumModulo: { values: [0], params: { modulus: 5 } },
+  productTail: { values: [0] },
+  inversions: { values: [0] },
+  digitGcd: { values: [1] },
+  digitLcm: { values: [60] },
+  pairGcd: { values: [1], params: { countMin: 1, countMax: 10 } },
+  pairLcm: { values: [6], params: { countMin: 1, countMax: 10 } },
   danGroups: {
     values: [],
     params: {

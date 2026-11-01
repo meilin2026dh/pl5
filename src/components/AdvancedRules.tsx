@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { mathFeatures } from "../domain/math";
+import { advancedPredicate } from "../domain/advanced";
 import { Plus, Pencil, Trash2, Settings2 } from "lucide-react";
 import {
   validateInput,
@@ -21,7 +23,20 @@ const historyKinds = [
   "omission",
   "frequency",
 ];
+const mathKinds = [
+  "mathPrimePattern",
+  "mathClassCounts",
+  "sumModulo",
+  "productTail",
+  "inversions",
+  "digitGcd",
+  "digitLcm",
+  "pairGcd",
+  "pairLcm",
+];
 const stringKinds = [
+  "mathPrimePattern",
+  "mathClassCounts",
   "oddPattern",
   "bigPattern",
   "primePattern",
@@ -33,6 +48,23 @@ const stringKinds = [
 const noValues = ["danGroups", "partition", "historyExclude"];
 const placeNames = ["万位", "千位", "百位", "十位", "个位"];
 export const explanations: Record<AdvancedKind, string> = {
+  mathPrimePattern:
+    "数学口径：P=质数2357，C=合数4689，N=既非质数也非合数01；?不限。例如?PP?P。",
+  mathClassCounts:
+    "按位置统计质数:合数:其他的个数，三类合计5。0和1单列，重复数字重复计入。例如3:1:1。",
+  sumModulo:
+    "先求五位和值，再对自选模数2—100取余；允许值0至模数减1。区别于逐位取余再相加的余数和。",
+  productTail:
+    "五位数字全部相乘后取个位，范围0—9；任何一位为0则结果0，前导零也参与。",
+  inversions:
+    "按万到个的原始顺序，统计i<j且前位数字大于后位的对数，范围0—10；相等不计。12345为0，54321为10。",
+  digitGcd: "五位数字整体最大公约数，范围0—9；gcd(0,a)=a，全零结果0。",
+  digitLcm:
+    "五位数字整体最小公倍数，范围0—2520；约定任何位为0则结果0，包含全零。",
+  pairGcd:
+    "指定位置对或全部10个位置对的最大公约数，范围0—9。可限制匹配对数；gcd(0,a)=a，gcd(0,0)=0。",
+  pairLcm:
+    "指定位置对或全部10个位置对的最小公倍数，范围0—72。可限制匹配对数；任一操作数为0则结果0。",
   danGroups: "每组数字按命中的不同数字种数计算。每组可设精确数，或共用范围。",
   oddPattern: "五位有序形态：1为奇，0为偶，?为不限。例如1?0??。",
   bigPattern: "五位有序形态：1为大（5–9），0为小（0–4），?为不限。",
@@ -171,6 +203,23 @@ export default function AdvancedRules({
       setError((e as Error).message);
     }
   };
+  const [mathSample, setMathSample] = useState("12345");
+  let mathPreview: ReturnType<typeof mathFeatures> | undefined;
+  let mathPreviewMatch = "",
+    mathPreviewError = "";
+  if (draft && mathKinds.includes(kind)) {
+    try {
+      mathPreview = mathFeatures(mathSample);
+      const r = { ...draft, values: parseValues(values, kind), enabled: true };
+      validateInput({ ...input, rules: [r], combination: undefined });
+      const raw = advancedPredicate(r, input)(mathSample);
+      mathPreviewMatch = (r.mode === "exclude" ? !raw : raw)
+        ? "预览通过当前草稿"
+        : "预览不通过当前草稿";
+    } catch (e) {
+      mathPreviewError = (e as Error).message;
+    }
+  }
   const groups = new Set(
     input.rules.filter((r) => r.enabled).map((r) => r.group ?? r.id),
   ).size;
@@ -477,19 +526,31 @@ export default function AdvancedRules({
                 </select>
               </label>
             )}
-            {kind === "remainderSum" && (
+            {["remainderSum", "sumModulo"].includes(kind) && (
               <label className="field-label">
                 模数
-                <select
-                  value={draft.params?.modulus ?? 3}
-                  onChange={(e) => param({ modulus: Number(e.target.value) })}
-                >
-                  {[3, 4, 5].map((n) => (
-                    <option key={n} value={n}>
-                      {n}
-                    </option>
-                  ))}
-                </select>
+                {kind === "sumModulo" ? (
+                  <input
+                    aria-label="和值取模模数"
+                    type="number"
+                    min={2}
+                    max={100}
+                    step={1}
+                    value={draft.params?.modulus ?? 5}
+                    onChange={(e) => param({ modulus: Number(e.target.value) })}
+                  />
+                ) : (
+                  <select
+                    value={draft.params?.modulus ?? 3}
+                    onChange={(e) => param({ modulus: Number(e.target.value) })}
+                  >
+                    {[3, 4, 5].map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </select>
+                )}
               </label>
             )}
             {["danGroups", "partition"].includes(kind) && (
@@ -628,6 +689,40 @@ export default function AdvancedRules({
                   }
                 />
               </label>
+            )}
+            {mathKinds.includes(kind) && (
+              <div className="tolerance-box" aria-label="数学特征预览">
+                <label>
+                  预览五位号码
+                  <input
+                    aria-label="数学预览号码"
+                    value={mathSample}
+                    maxLength={5}
+                    inputMode="numeric"
+                    onChange={(e) => setMathSample(e.target.value)}
+                  />
+                </label>
+                {mathPreview && (
+                  <p className="small">
+                    数学质合形态 {mathPreview.pattern} · 分布{" "}
+                    {mathPreview.counts}
+                    <br />
+                    和值 {mathPreview.sum} · 和值取模{" "}
+                    {mathPreview.sum % (draft.params?.modulus || 5)}（模
+                    {draft.params?.modulus || 5}） · 五位积尾{" "}
+                    {mathPreview.productTail}
+                    <br />
+                    逆序数 {mathPreview.inversions} · 五位公约数{" "}
+                    {mathPreview.gcd} · 五位公倍数 {mathPreview.lcm}
+                  </p>
+                )}
+                <strong className="small">
+                  {mathPreviewError || mathPreviewMatch}
+                </strong>
+                <p className="small muted">
+                  预览按本条草稿及包含/排除模式计算；应用后才加入整体缩水。P/C/N使用数学分类。
+                </p>
+              </div>
             )}
             {kind === "positionTrend" && (
               <small>up=上升，equal=相等，down=下降。</small>
