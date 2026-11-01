@@ -1,3 +1,4 @@
+import DiscoveryLab from "../components/DiscoveryLab";
 import SequenceResearchLab from "../components/SequenceResearchLab";
 import ProbabilityLab from "../components/ProbabilityLab";
 import EvidenceLab from "../components/EvidenceLab";
@@ -192,6 +193,9 @@ export default function Workbench({
           <a className="button secondary" href="#sequence-research-title">
             增量与求解
           </a>
+          <a className="button secondary" href="#discovery-title">
+            评分与集合
+          </a>
           <a className="button secondary" href="#probability-title">
             自适应概率
           </a>
@@ -327,6 +331,7 @@ export default function Workbench({
           <ResearchRules input={input} onChange={setInput} />
           <SelectionLab input={input} onChange={setInput} />
           <SequenceResearchLab input={input} onChange={setInput} />
+          <DiscoveryLab input={input} onChange={setInput} />
           <ProbabilityLab input={input} onChange={setInput} />
           <EvidenceLab input={input} onChange={setInput} />
           <InnovationLab input={input} onChange={setInput} />

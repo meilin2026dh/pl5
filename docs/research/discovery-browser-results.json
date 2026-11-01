@@ -1,0 +1,279 @@
+{
+  "date": "2026-11-01",
+  "tests": {
+    "files": 52,
+    "tests": 284,
+    "types": true,
+    "build": true
+  },
+  "review": "no blocking or important findings; empirical AUC is not significance gate",
+  "browser": {
+    "tensor": true,
+    "ratio": true,
+    "walk": true,
+    "reportReadback": true,
+    "loadUndo": true,
+    "cancel": "not confirmed; unit-tested",
+    "mobile": "not run"
+  },
+  "results": {
+    "tensor": {
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.25,
+            "loss": 11.521365903535349
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.543326804033955
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.580721716413597
+          },
+          {
+            "weight": 1,
+            "loss": 11.63961742172491
+          }
+        ],
+        "weight": 0
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 30,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.512925464970232,
+        "uniformLoss": 11.512925464970229
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "output": [
+        "00000",
+        "00111",
+        "00022",
+        "00033",
+        "00104",
+        "00045",
+        "00126",
+        "00057",
+        "00068",
+        "00079",
+        "00084",
+        "00096",
+        "00110",
+        "00102",
+        "00123",
+        "00041",
+        "00017",
+        "00108",
+        "00125",
+        "00119"
+      ],
+      "calibrationSize": 100000
+    },
+    "walk": {
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.25,
+            "loss": 11.521365903535349
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.543326804033955
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.580721716413597
+          },
+          {
+            "weight": 1,
+            "loss": 11.63961742172491
+          }
+        ],
+        "weight": 0
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 30,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.512925464970232,
+        "uniformLoss": 11.512925464970229
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "output": [
+        "00000",
+        "00111",
+        "00022",
+        "00033",
+        "00104",
+        "00045",
+        "00126",
+        "00057",
+        "00068",
+        "00079",
+        "00084",
+        "00096",
+        "00110",
+        "00102",
+        "00123",
+        "00041",
+        "00017",
+        "00108",
+        "00125",
+        "00119"
+      ],
+      "calibrationSize": 100000
+    },
+    "ratio": {
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0.25,
+            "loss": 11.509914563555492
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.510629178691286
+          },
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.514913109391816
+          },
+          {
+            "weight": 1,
+            "loss": 11.522753223643301
+          }
+        ],
+        "weight": 0.25
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 26,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.520658606479298,
+        "uniformLoss": 11.512925464970229
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "output": [
+        "03062",
+        "01742",
+        "81662",
+        "83752",
+        "97762",
+        "07652",
+        "91052",
+        "03763",
+        "73042",
+        "03692",
+        "01063",
+        "84062",
+        "07042",
+        "71762",
+        "04752",
+        "93662",
+        "07562",
+        "01012",
+        "03442",
+        "08662"
+      ],
+      "calibrationSize": 90732
+    }
+  }
+}
