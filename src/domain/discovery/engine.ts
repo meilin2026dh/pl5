@@ -1,3 +1,7 @@
+import { fitJoint } from "./joint";
+import { fitGraph } from "./graph";
+import { fitContrast } from "./contrast";
+import { uncertainty } from "./uncertainty";
 import { filter, validateInput, type FilterInput } from "../pick5";
 import { researchHistory } from "../research/statistics";
 import { defaultResearch } from "../research/types";
@@ -18,6 +22,8 @@ export type FoldReceipt = {
   validation: unknown;
   calibration: unknown;
   config: DiscoveryConfig;
+  extra: unknown;
+  uncertainty: unknown;
 };
 export function analyzeDiscovery(
   input: FilterInput,
@@ -51,6 +57,44 @@ export function analyzeDiscovery(
       c.rank,
       c.seed,
     );
+  const decisions = uncertainty(
+    train.map((r) => r.number),
+    c.delta ?? 0.02,
+    c.posteriorRisk ?? 0.05,
+  );
+  progress?.("拟合选定联合/图/表示模型；只使用训练段");
+  const trained =
+    c.model === "joint"
+      ? fitJoint(
+          train.map((r) => r.number),
+          c.seed,
+        )
+      : c.model === "gnn"
+        ? fitGraph(
+            train.map((r) => r.number),
+            c.seed,
+          )
+        : c.model === "contrast"
+          ? fitContrast(
+              train.map((r) => r.number),
+              c.seed,
+            )
+          : null;
+  const extra = trained
+    ? JSON.parse(JSON.stringify(trained))
+    : c.model === "uncertainty"
+      ? { kind: "posterior-abstaining-soft-score", policy: decisions.policy }
+      : null;
+  const value = (s: string) =>
+    c.model === "tensor"
+      ? tt.prob(s)
+      : c.model === "ratio"
+        ? Math.exp(ratio.score(s))
+        : c.model === "uncertainty"
+          ? Math.exp(decisions.score(s))
+          : trained && "prob" in trained
+            ? trained.prob(s)
+            : Math.exp((trained as ReturnType<typeof fitGraph>).score(s));
   const rng = seededRandom(c.seed + 1),
     pairs = val.flatMap((r) => [
       { number: r.number, y: 1 },
@@ -67,9 +111,7 @@ export function analyzeDiscovery(
     }, 0) / pairs.length;
   progress?.("全十万组合正规化；验证段选择均匀混合");
   const raw = Float64Array.from({ length: 100000 }, (_, i) =>
-    c.model === "tensor"
-      ? tt.prob(String(i).padStart(5, "0"))
-      : Math.exp(ratio.score(String(i).padStart(5, "0"))),
+    value(String(i).padStart(5, "0")),
   );
   const z = raw.reduce((s, x) => s + x, 0);
   for (let i = 0; i < raw.length; i++) raw[i] /= z;
@@ -131,7 +173,18 @@ export function analyzeDiscovery(
       calibration: range(cal),
       test: range(test),
     },
-    modelDigest: JSON.stringify({ ratio: ratio.parameters, tt: tt.parameters }),
+    modelDigest: JSON.stringify({
+      ratio: ratio.parameters,
+      tt: tt.parameters,
+      extra,
+    }),
+    extra,
+    uncertainty: {
+      cells: decisions.cells,
+      delta: decisions.delta,
+      risk: decisions.risk,
+      policy: decisions.policy,
+    },
     training: {
       ratioSamples: ratio.samples,
       tensorParameters: tt.count,
@@ -207,6 +260,8 @@ export function walkDiscovery(
       validation: r.validation,
       calibration: r.calibration,
       config: r.config,
+      extra: r.extra,
+      uncertainty: r.uncertainty,
     })),
   };
 }

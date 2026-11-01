@@ -4,7 +4,9 @@ export type DiscoveryConfig = {
   calibration: number;
   test: number;
   rank: 1 | 2 | 4;
-  model: "ratio" | "tensor";
+  model: "ratio" | "tensor" | "joint" | "gnn" | "contrast" | "uncertainty";
+  delta?: number;
+  posteriorRisk?: number;
   coverage: number;
   pool: number;
   budget: number;
@@ -40,7 +42,9 @@ export function validateDiscovery(c: DiscoveryConfig) {
       throw Error(`研究参数${key}超限`);
   if (
     ![1, 2, 4].includes(c.rank) ||
-    !["ratio", "tensor"].includes(c.model) ||
+    !["ratio", "tensor", "joint", "gnn", "contrast", "uncertainty"].includes(
+      c.model,
+    ) ||
     !Number.isFinite(c.coverage) ||
     c.coverage <= 0 ||
     c.coverage >= 1 ||
@@ -51,4 +55,18 @@ export function validateDiscovery(c: DiscoveryConfig) {
     typeof c.referenceIssue !== "string"
   )
     throw Error("研究模型/覆盖/预算参数错误");
+  if (["joint", "gnn", "contrast"].includes(c.model) && c.train > 200)
+    throw Error("新增神经模型训练上限200期，请显式调整");
+  if (
+    c.delta !== undefined &&
+    (!Number.isFinite(c.delta) || c.delta < 0 || c.delta > 0.09)
+  )
+    throw Error("偏差阈值超限");
+  if (
+    c.posteriorRisk !== undefined &&
+    (!Number.isFinite(c.posteriorRisk) ||
+      c.posteriorRisk < 0.001 ||
+      c.posteriorRisk > 0.2)
+  )
+    throw Error("后验风险超限");
 }

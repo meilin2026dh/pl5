@@ -99,7 +99,7 @@ export default function DiscoveryLab({
       <input
         aria-label={label}
         type="number"
-        value={c[key]}
+        value={c[key] ?? (key === "delta" ? 0.02 : 0.05)}
         min={min}
         max={max}
         step={step}
@@ -120,7 +120,7 @@ export default function DiscoveryLab({
       </header>
       <p className="research-context">
         来源：{input.historySource ?? "未标注"} · {input.history?.length ?? 0}
-        期。对抗MLP、非负张量列车、普通保形集合与DPP贪心近似。不是GAN、加权保形或精确DPP抽样。AUC仅诊断，未实现显著性门控；重复查看过的时间外区间不再是未见测试。先在历史走势载入真实历史。
+        期。对抗MLP、张量列车、联合注意力、GNN、遮位对比与后验三态软决策，共用普通校准和DPP。不是GAN、加权保形或精确DPP抽样。AUC仅诊断，未实现显著性门控；重复查看过的时间外区间不再是未见测试。先在历史走势载入真实历史。
       </p>
       <div className="research-grid">
         <label>
@@ -134,6 +134,10 @@ export default function DiscoveryLab({
           >
             <option value="tensor">非负张量列车</option>
             <option value="ratio">密度比对抗MLP</option>
+            <option value="joint">跨位置联合Transformer</option>
+            <option value="gnn">位置数字GNN对照</option>
+            <option value="contrast">遮位对比表示（人工任务）</option>
+            <option value="uncertainty">后验三态软决策</option>
           </select>
         </label>
         <label>
@@ -159,6 +163,8 @@ export default function DiscoveryLab({
         {num("实验预算注数", "budget", 1, 64)}
         {num("DPP核宽度", "sigma", 0.2, 5, 0.1)}
         {num("集合实验种子", "seed", 0, 4294967295)}
+        {num("实际偏差δ", "delta", 0, 0.09, 0.005)}
+        {num("后验联合风险上限", "posteriorRisk", 0.001, 0.2, 0.005)}
         <label>
           集合历史截止期
           <input
@@ -169,7 +175,8 @@ export default function DiscoveryLab({
         </label>
       </div>
       <p className="research-context">
-        至少需要{c.train + c.validation + c.calibration + c.test}
+        新增神经模型训练上限200期；联合模型学习整注前缀，不额外输入跨期状态。至少需要
+        {c.train + c.validation + c.calibration + c.test}
         期。冻结训练→验证选均匀混合→校准→最终检验；三折回放另需{2 * c.test}
         期，每折重新拟合。α对应真实样本遗漏风险，不是候选淘汰比例。DPP后不继承校准覆盖保证；公平独立下n注精确覆盖=n/100000。
       </p>
@@ -187,13 +194,15 @@ export default function DiscoveryLab({
         <div aria-label="评分与集合结果">
           <h3>冻结模型的时间外结果</h3>
           <p>
-            对抗验证 AUC {result.validation.auc.toFixed(4)} · BCE{" "}
+            共同MLP对照 AUC {result.validation.auc.toFixed(4)} · BCE{" "}
             {result.validation.bce.toFixed(5)}（均匀分类基线{" "}
             {result.validation.uniformBce.toFixed(5)}）；验证选混合λ=
             {result.validation.weight}。
           </p>
           <p>
-            TT参数{result.training.tensorParameters}；校准集合
+            所选模型 {c.model}；新增模型参数
+            {result.extra?.parameterCount ?? "—"}；TT对照参数
+            {result.training.tensorParameters}；校准集合
             {result.calibration.size}注；DPP {result.numbers.length}注 / 请求
             {c.budget}注，停止原因 {result.dpp.stop}
             。完整校准集合与预算集合分开统计。
@@ -247,6 +256,7 @@ export default function DiscoveryLab({
               {JSON.stringify(
                 {
                   training: result.training,
+                  extra: result.extra,
                   validation: result.validation,
                   dpp: result.dpp,
                 },
@@ -254,6 +264,44 @@ export default function DiscoveryLab({
                 2,
               )}
             </pre>
+          </details>
+          <details>
+            <summary>位置数字不确定性（50项）</summary>
+            <p>
+              {result.uncertainty.policy} 实际偏差δ={result.uncertainty.delta}
+              ，联合后验风险上限={result.uncertainty.risk}
+              。新增神经模型训练最多200期；对比视图是人工任务，不是已标注异常。
+            </p>
+            <table aria-label="后验三态决策">
+              <thead>
+                <tr>
+                  <th>位置</th>
+                  <th>数字</th>
+                  <th>均值</th>
+                  <th>保守区间</th>
+                  <th>判断</th>
+                </tr>
+              </thead>
+              <tbody>
+                {result.uncertainty.cells.map((x) => (
+                  <tr key={`${x.position}-${x.digit}`}>
+                    <td>{"万千百十个"[x.position]}</td>
+                    <td>{x.digit}</td>
+                    <td>{x.mean.toFixed(4)}</td>
+                    <td>
+                      [{x.low.toFixed(4)}, {x.high.toFixed(4)}]
+                    </td>
+                    <td>
+                      {x.state === "high"
+                        ? "偏高"
+                        : x.state === "low"
+                          ? "偏低"
+                          : "证据不足，保留"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </details>
           <div className="research-actions">
             <button

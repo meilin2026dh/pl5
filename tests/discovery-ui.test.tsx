@@ -82,3 +82,27 @@ it("runs real engine, loads and undoes; cancels stale output", () => {
   expect(w.dead).toBe(true);
   expect(screen.queryByRole("button", { name: "载入实验预算集合" })).toBeNull();
 });
+it("exposes all four modes, uncertainty settings and three-state evidence", () => {
+  vi.stubGlobal("Worker", W);
+  render(<H />);
+  for (const value of ["joint", "gnn", "contrast", "uncertainty"]) {
+    fireEvent.change(screen.getByLabelText("实验评分模型"), {
+      target: { value },
+    });
+    expect(
+      JSON.parse(screen.getByTestId("input").textContent!).discovery.model,
+    ).toBe(value);
+  }
+  fireEvent.change(screen.getByLabelText("实际偏差δ"), {
+    target: { value: ".03" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "运行评分与集合实验" }));
+  const w = W.all.at(-1)!,
+    result = analyzeDiscovery(w.request.input, w.request.config);
+  act(() => w.onmessage({ data: { id: w.request.id, result } }));
+  fireEvent.click(
+    screen.getByText("位置数字不确定性（50项）", { exact: true }),
+  );
+  expect(screen.getByRole("table", { name: "后验三态决策" })).toBeTruthy();
+  expect(result.uncertainty.delta).toBe(0.03);
+});
