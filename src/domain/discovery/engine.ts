@@ -1,3 +1,8 @@
+import { fitIsolation } from "./isolation";
+import { fitAutoencoder } from "./autoencoder";
+import { fitMaxent } from "./maxent";
+import { fitWavelet } from "./wavelet";
+import { fitCopula } from "./copula";
 import { fitJoint } from "./joint";
 import { fitGraph } from "./graph";
 import { fitContrast } from "./contrast";
@@ -79,7 +84,26 @@ export function analyzeDiscovery(
               train.map((r) => r.number),
               c.seed,
             )
-          : null;
+          : c.model === "isolation"
+            ? fitIsolation(
+                train.map((r) => r.number),
+                c.seed,
+              )
+            : c.model === "autoencoder"
+              ? fitAutoencoder(
+                  train.map((r) => r.number),
+                  c.seed,
+                )
+              : c.model === "maxent"
+                ? fitMaxent(train.map((r) => r.number))
+                : c.model === "wavelet"
+                  ? fitWavelet(train.map((r) => r.number))
+                  : c.model === "copula"
+                    ? fitCopula(
+                        train.map((r) => r.number),
+                        c.seed,
+                      )
+                    : null;
   const extra = trained
     ? JSON.parse(JSON.stringify(trained))
     : c.model === "uncertainty"

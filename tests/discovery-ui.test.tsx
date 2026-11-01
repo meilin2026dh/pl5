@@ -106,3 +106,29 @@ it("exposes all four modes, uncertainty settings and three-state evidence", () =
   expect(screen.getByRole("table", { name: "后验三态决策" })).toBeTruthy();
   expect(result.uncertainty.delta).toBe(0.03);
 });
+it("exposes five structured anomaly modes and reports model limits", () => {
+  vi.stubGlobal("Worker", W);
+  render(<H />);
+  for (const value of [
+    "isolation",
+    "autoencoder",
+    "maxent",
+    "wavelet",
+    "copula",
+  ]) {
+    fireEvent.change(screen.getByLabelText("实验评分模型"), {
+      target: { value },
+    });
+    expect(
+      JSON.parse(screen.getByTestId("input").textContent!).discovery.model,
+    ).toBe(value);
+  }
+  fireEvent.click(screen.getByRole("button", { name: "运行评分与集合实验" }));
+  const w = W.all.at(-1)!,
+    result = analyzeDiscovery(w.request.input, w.request.config);
+  act(() => w.onmessage({ data: { id: w.request.id, result } }));
+  expect(screen.getByText(/25万采样直方图/, { selector: "p" })).toBeTruthy();
+  expect(document.querySelector("pre")!.textContent!.length).toBeLessThan(
+    50000,
+  );
+});

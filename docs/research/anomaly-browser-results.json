@@ -1,0 +1,557 @@
+{
+  "date": "2026-11-01",
+  "tests": {
+    "files": 54,
+    "tests": 298,
+    "aeFiniteDifferenceParameters": 454,
+    "types": true,
+    "build": true
+  },
+  "review": {
+    "blocking": 0,
+    "important": 0,
+    "resolved": [
+      "energy vs true PMF wording",
+      "copula reproducibility and future-answer invariance"
+    ]
+  },
+  "browser": {
+    "modes": [
+      "isolation",
+      "maxent",
+      "autoencoder",
+      "wavelet",
+      "copula"
+    ],
+    "fullReportReadback": true,
+    "copulaHistogramBins": 100000,
+    "copulaDraws": 250000,
+    "forestWalkFolds": 3,
+    "errors": [],
+    "cancel": "not separately confirmed",
+    "mobile": "not run"
+  },
+  "results": {
+    "isolation": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "isolation",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": ""
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0.25,
+            "loss": 11.511040853181008
+          },
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.513371487401937
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.519986756389692
+          },
+          {
+            "weight": 1,
+            "loss": 11.531270333968559
+          }
+        ],
+        "weight": 0.25
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 27,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.50877619914388,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 90265,
+      "settings": {
+        "trees": 32,
+        "sampleSize": 64,
+        "height": 6,
+        "seed": 20261101,
+        "energyScale": 8
+      }
+    },
+    "maxent": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "maxent",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": ""
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0.25,
+            "loss": 11.509771933115312
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.511486358321585
+          },
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.517817917865134
+          },
+          {
+            "weight": 1,
+            "loss": 11.528879905133053
+          }
+        ],
+        "weight": 0.25
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 28,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.515991056472869,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 94887,
+      "settings": {
+        "iterations": 12,
+        "rate": 0.5,
+        "l2": 0.01,
+        "features": "50位置指示+10对位置×100数字对指示",
+        "partition": "全100000精确枚举"
+      }
+    },
+    "autoencoder": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "autoencoder",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": ""
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.25,
+            "loss": 11.51493778337928
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.517354871333218
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.520177148216549
+          },
+          {
+            "weight": 1,
+            "loss": 11.523407548304585
+          }
+        ],
+        "weight": 0
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 30,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.512925464970232,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 100000,
+      "settings": {
+        "epochs": 3,
+        "rate": 0.02,
+        "l2": 0.0001,
+        "gradientClip": 5,
+        "encoder": [
+          50,
+          4
+        ],
+        "decoder": [
+          4,
+          50
+        ],
+        "loss": "五位置softmax平均重构交叉熵",
+        "seed": 20261101
+      }
+    },
+    "wavelet": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "wavelet",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": ""
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.25,
+            "loss": 11.51422352315574
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.515792664637274
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.517632982760071
+          },
+          {
+            "weight": 1,
+            "loss": 11.519745530594124
+          }
+        ],
+        "weight": 0
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 30,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.512925464970232,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 100000,
+      "settings": {
+        "window": 16,
+        "depth": 2,
+        "wavelet": "orthonormal Haar",
+        "order": "natural aa/ad/da/dd",
+        "sdFloor": 0.001,
+        "z2Cap": 25
+      }
+    },
+    "copula": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "copula",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": ""
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.25,
+            "loss": 11.52914609493958
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.562499573309667
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.614952387402214
+          },
+          {
+            "weight": 1,
+            "loss": 11.695086479053145
+          }
+        ],
+        "weight": 0
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 30,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.512925464970232,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 100000,
+      "settings": {
+        "samples": 250000,
+        "seed": 20261101,
+        "correlationShrinkage": 0.5,
+        "marginAlpha": 1,
+        "histogramAlpha": 1,
+        "fit": "离散边缘中点normal-score相关近似；非矩形似然最优化"
+      }
+    },
+    "walk": {
+      "config": {
+        "train": 200,
+        "validation": 50,
+        "calibration": 100,
+        "test": 30,
+        "rank": 2,
+        "model": "isolation",
+        "coverage": 0.9,
+        "pool": 128,
+        "budget": 20,
+        "sigma": 1,
+        "seed": 20261101,
+        "referenceIssue": "26290"
+      },
+      "ranges": {
+        "train": {
+          "start": "25262",
+          "end": "26110",
+          "count": 200
+        },
+        "validation": {
+          "start": "26111",
+          "end": "26160",
+          "count": 50
+        },
+        "calibration": {
+          "start": "26161",
+          "end": "26260",
+          "count": 100
+        },
+        "test": {
+          "start": "26261",
+          "end": "26290",
+          "count": 30
+        }
+      },
+      "validation": {
+        "auc": 0.4712,
+        "bce": 0.7010539584813461,
+        "uniformBce": 0.6931471805599453,
+        "trials": [
+          {
+            "weight": 0.25,
+            "loss": 11.511040853181008
+          },
+          {
+            "weight": 0,
+            "loss": 11.512925464970229
+          },
+          {
+            "weight": 0.5,
+            "loss": 11.513371487401937
+          },
+          {
+            "weight": 0.75,
+            "loss": 11.519986756389692
+          },
+          {
+            "weight": 1,
+            "loss": 11.531270333968559
+          }
+        ],
+        "weight": 0.25
+      },
+      "evaluation": {
+        "periods": 30,
+        "calibratedHits": 27,
+        "budgetHits": 0,
+        "expectedHits": 0.006,
+        "lift": 0,
+        "retention": 0.0002,
+        "elimination": 0.9998,
+        "loss": 11.50877619914388,
+        "uniformLoss": 11.512925464970229
+      },
+      "calibrationSize": 90265,
+      "settings": {
+        "trees": 32,
+        "sampleSize": 64,
+        "height": 6,
+        "seed": 20261101,
+        "energyScale": 8
+      }
+    }
+  }
+}

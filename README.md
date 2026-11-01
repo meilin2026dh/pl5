@@ -102,3 +102,5 @@ CSV需要 `issue,date,number` 表头，日期 `YYYY-MM-DD`，号码恰好五位�
 工作台“评分与集合”提供原始数字对抗MLP、非负张量列车、冻结普通校准、DPP贪心近似MAP和三折重训回放。完整校准集合与预算集合分开统计，后者不继承覆盖保证。实现、实际结果和限制见[研发记录](docs/research/discovery-lab.md)。
 
 “评分与集合”现增加262参数整注联合注意力、241参数位置数字GNN、220参数遮位对比表示及后验三态软决策。新增神经模式训练最多200期，信息不足不硬删除。实现、291项测试及官方数据实测见[实施记录](docs/research/joint-graph-uncertainty.md)。
+
+“评分与集合”新增离散Gaussian Copula MC、Isolation Forest、最大熵、自编码重构及冻结Haar小波包。能量评分与正规化概率明确分开，模型限制在页面与完整报告保留。实现、298项测试及12方向取舍见[实施记录](docs/research/structured-anomaly-models.md)。

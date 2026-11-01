@@ -4,7 +4,18 @@ export type DiscoveryConfig = {
   calibration: number;
   test: number;
   rank: 1 | 2 | 4;
-  model: "ratio" | "tensor" | "joint" | "gnn" | "contrast" | "uncertainty";
+  model:
+    | "ratio"
+    | "tensor"
+    | "joint"
+    | "gnn"
+    | "contrast"
+    | "uncertainty"
+    | "isolation"
+    | "autoencoder"
+    | "maxent"
+    | "wavelet"
+    | "copula";
   delta?: number;
   posteriorRisk?: number;
   coverage: number;
@@ -42,9 +53,19 @@ export function validateDiscovery(c: DiscoveryConfig) {
       throw Error(`研究参数${key}超限`);
   if (
     ![1, 2, 4].includes(c.rank) ||
-    !["ratio", "tensor", "joint", "gnn", "contrast", "uncertainty"].includes(
-      c.model,
-    ) ||
+    ![
+      "ratio",
+      "tensor",
+      "joint",
+      "gnn",
+      "contrast",
+      "uncertainty",
+      "isolation",
+      "autoencoder",
+      "maxent",
+      "wavelet",
+      "copula",
+    ].includes(c.model) ||
     !Number.isFinite(c.coverage) ||
     c.coverage <= 0 ||
     c.coverage >= 1 ||
@@ -55,7 +76,10 @@ export function validateDiscovery(c: DiscoveryConfig) {
     typeof c.referenceIssue !== "string"
   )
     throw Error("研究模型/覆盖/预算参数错误");
-  if (["joint", "gnn", "contrast"].includes(c.model) && c.train > 200)
+  if (
+    ["joint", "gnn", "contrast", "autoencoder"].includes(c.model) &&
+    c.train > 200
+  )
     throw Error("新增神经模型训练上限200期，请显式调整");
   if (
     c.delta !== undefined &&

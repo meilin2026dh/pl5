@@ -6,6 +6,26 @@ import {
   type DiscoveryConfig,
 } from "../domain/discovery/config";
 import type { DiscoveryResult } from "../domain/discovery/engine";
+function diagnosticPreview(value: unknown, depth = 0): unknown {
+  if (depth > 6) return "详见复制的完整报告";
+  if (Array.isArray(value))
+    return value.length > 64
+      ? {
+          items: value.length,
+          preview: value
+            .slice(0, 16)
+            .map((v) => diagnosticPreview(v, depth + 1)),
+        }
+      : value.map((v) => diagnosticPreview(v, depth + 1));
+  if (value && typeof value === "object")
+    return Object.fromEntries(
+      Object.entries(value).map(([k, v]) => [
+        k,
+        diagnosticPreview(v, depth + 1),
+      ]),
+    );
+  return value;
+}
 export default function DiscoveryLab({
   input,
   onChange,
@@ -138,6 +158,11 @@ export default function DiscoveryLab({
             <option value="gnn">位置数字GNN对照</option>
             <option value="contrast">遮位对比表示（人工任务）</option>
             <option value="uncertainty">后验三态软决策</option>
+            <option value="copula">离散Gaussian Copula（MC近似）</option>
+            <option value="isolation">Isolation Forest隔离异常</option>
+            <option value="maxent">最大熵位置关联模型</option>
+            <option value="autoencoder">自编码重构能量</option>
+            <option value="wavelet">Haar小波包（冻结上下文）</option>
           </select>
         </label>
         <label>
@@ -175,7 +200,7 @@ export default function DiscoveryLab({
         </label>
       </div>
       <p className="research-context">
-        新增神经模型训练上限200期；联合模型学习整注前缀，不额外输入跨期状态。至少需要
+        新增神经模型训练上限200期；联合模型学习整注前缀，不额外输入跨期状态。小波上下文冻结，Copula为25万次离散采样近似；隔离森林、自编码和小波能量经全空间正规化，非已证明的开奖分布。至少需要
         {c.train + c.validation + c.calibration + c.test}
         期。冻结训练→验证选均匀混合→校准→最终检验；三折回放另需{2 * c.test}
         期，每折重新拟合。α对应真实样本遗漏风险，不是候选淘汰比例。DPP后不继承校准覆盖保证；公平独立下n注精确覆盖=n/100000。
@@ -200,7 +225,7 @@ export default function DiscoveryLab({
             {result.validation.weight}。
           </p>
           <p>
-            所选模型 {c.model}；新增模型参数
+            所选模型 {c.model}；模型规模计数
             {result.extra?.parameterCount ?? "—"}；TT对照参数
             {result.training.tensorParameters}；校准集合
             {result.calibration.size}注；DPP {result.numbers.length}注 / 请求
@@ -238,6 +263,9 @@ export default function DiscoveryLab({
             </tbody>
           </table>
           <p>{result.note}</p>
+          {result.extra?.note && (
+            <p className="research-context">{result.extra.note}</p>
+          )}
           <p>预算集合：{result.numbers.join(" ")}</p>
           {result.walkForward && (
             <p>
@@ -252,11 +280,14 @@ export default function DiscoveryLab({
           )}
           <details>
             <summary>验证混合与训练诊断</summary>
+            <p>
+              页面大数组显示摘要；复制完整报告保留全部参数、图、直方图与输入。
+            </p>
             <pre>
               {JSON.stringify(
                 {
                   training: result.training,
-                  extra: result.extra,
+                  extra: diagnosticPreview(result.extra),
                   validation: result.validation,
                   dpp: result.dpp,
                 },
