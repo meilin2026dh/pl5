@@ -1,3 +1,4 @@
+import { fitResidual } from "./residual";
 import type { HistoryRecord } from "../pick5";
 import { seededRandom } from "./config";
 function snapshot(rows: HistoryRecord[]) {
@@ -95,7 +96,7 @@ function train(data: Sample[], hidden: number, rate: number, seed: number) {
 }
 export function learnScorer(
   rows: HistoryRecord[],
-  kind: "bayes" | "neural",
+  kind: "bayes" | "neural" | "resnet",
   autoTune: boolean,
   seed: number,
 ) {
@@ -117,6 +118,21 @@ export function learnScorer(
         posteriorWeights: current.weights,
       },
     };
+  if (kind === "resnet") {
+    const fitted = fitResidual(rows, seed);
+    return {
+      weights: current.weights,
+      score: (n: string) =>
+        [...n].reduce(
+          (s, d, p) => s + Math.log(fitted.probabilities[p][Number(d)]),
+          0,
+        ),
+      diagnostics: {
+        ...fitted.diagnostics,
+        probabilities: fitted.probabilities,
+      },
+    };
+  }
   const random = seededRandom(seed),
     samples: Sample[] = [];
   for (let t = 20; t < rows.length; t++) {

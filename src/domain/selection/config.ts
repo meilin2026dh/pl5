@@ -1,6 +1,6 @@
 export type SelectionConfig = {
   method: "exact" | "mcga" | "anneal";
-  scorer: "bayes" | "neural";
+  scorer: "bayes" | "neural" | "resnet";
   window: number;
   referenceIssue?: string;
   seed: number;
@@ -18,6 +18,7 @@ export type SelectionConfig = {
   jaccard: number;
   maxSame: number;
   autoTune: boolean;
+  outputJaccard?: number;
 };
 export const defaultSelection: SelectionConfig = {
   method: "exact",
@@ -38,6 +39,7 @@ export const defaultSelection: SelectionConfig = {
   jaccard: 0.85,
   maxSame: 3,
   autoTune: true,
+  outputJaccard: 1,
 };
 export function validateSelection(c: SelectionConfig) {
   if (
@@ -45,9 +47,17 @@ export function validateSelection(c: SelectionConfig) {
     typeof c !== "object" ||
     Array.isArray(c) ||
     !["exact", "mcga", "anneal"].includes(c.method) ||
-    !["bayes", "neural"].includes(c.scorer)
+    !["bayes", "neural", "resnet"].includes(c.scorer)
   )
     throw new Error("精选方法或评分器错误");
+  if (
+    c.outputJaccard !== undefined &&
+    (typeof c.outputJaccard !== "number" ||
+      !Number.isFinite(c.outputJaccard) ||
+      c.outputJaccard < 0 ||
+      c.outputJaccard > 1)
+  )
+    throw new Error("输出Jaccard上限须为0至1");
   const limits = {
     window: [40, 500],
     seed: [0, 4294967295],

@@ -44,16 +44,22 @@ export function validateResearchConfig(
     if (c.window - c.folds * c.validationSize < 10)
       throw new Error("历史不足：滚动验证后至少需要10期训练记录");
   if (c.method === "potential") validatePotential(c.potential, c.window);
+  if (c.method === "markovScore" && c.window < 2)
+    throw new Error("转移路径评分至少需要2期历史");
   const method = c.method === "auto" ? c.family : c.method;
   if (method === "hotcold" && !integer(c.parameter, 1, 10))
     throw new Error("Top K须为1至10整数");
   if (
-    ["omission", "multiset", "samePosition", "positionNeighbor"].includes(
-      method,
-    ) &&
+    [
+      "omission",
+      "multiset",
+      "samePosition",
+      "positionNeighbor",
+      "difference",
+    ].includes(method) &&
     !integer(
       c.parameter,
-      method === "multiset" ? 1 : 0,
+      ["multiset", "difference"].includes(method) ? 1 : 0,
       method === "samePosition" || method === "positionNeighbor" ? 5 : 100000,
     )
   )

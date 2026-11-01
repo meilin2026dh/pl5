@@ -268,3 +268,46 @@ it("replays full portfolios with strictly prior training and rolls rule cutoffs"
     ),
   ).toBe(true);
 });
+it("enforces set Jaccard independently of positional overlap", () => {
+  const c = {
+    ...defaultSelection,
+    window: 40,
+    recent: 0,
+    acMin: -4,
+    minLarge: 0,
+    maxLarge: 4,
+    outputJaccard: 0.6,
+    budget: 10,
+  };
+  const r = selectPortfolio(
+    { ...input, candidates: ["12345", "54321", "67890"] },
+    c,
+  );
+  expect(r.numbers).toHaveLength(2);
+  for (let i = 0; i < r.numbers.length; i++)
+    for (const b of r.numbers.slice(i + 1)) {
+      const a = new Set(r.numbers[i]),
+        other = new Set(b);
+      const intersection = [...a].filter((d) => other.has(d)).length;
+      expect(intersection / new Set([...a, ...other]).size).toBeLessThanOrEqual(
+        0.6,
+      );
+    }
+});
+it("residual scoring excludes rows after the selected cutoff", () => {
+  const c = {
+    ...defaultSelection,
+    scorer: "resnet" as const,
+    window: 40,
+    referenceIssue: "40",
+    recent: 0,
+    acMin: -4,
+    minLarge: 0,
+    maxLarge: 4,
+    budget: 3,
+  };
+  const candidates = ["12345", "54321", "67890"];
+  expect(selectPortfolio({ ...input, candidates }, c)).toEqual(
+    selectPortfolio({ ...input, candidates, history: history.slice(0, 40) }, c),
+  );
+});

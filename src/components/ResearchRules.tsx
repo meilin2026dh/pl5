@@ -1,3 +1,4 @@
+import MarkovPreview from "./MarkovPreview";
 import PotentialEditor from "./PotentialEditor";
 import { defaultPotential } from "../domain/research/potential";
 import { researchHistory } from "../domain/research/statistics";
@@ -17,13 +18,15 @@ import { validateResearchConfig } from "../domain/research/config";
 function parameterFor(method: ResearchMethod): number {
   if (method === "hotcold") return 7;
   if (method === "omission") return 20;
-  if (method === "multiset") return 1;
+  if (method === "multiset" || method === "difference") return 1;
   if (method === "samePosition" || method === "positionNeighbor") return 2;
   if (method === "sumSigma") return 2;
   if (method === "sumQuantile" || method === "spanQuantile") return 0.9;
   return 0.02;
 }
 const parameterHelp: Partial<Record<ResearchMethod, string>> = {
+  difference:
+    "相邻位有符号差分形态在历史窗口内的最低出现次数（至少1）；未出现的形态不保留。",
   hotcold: "每个位置保留频次最高的 K 个数字（1—10）",
   omission: "每个位置的遗漏期数上限",
   bayes: "逐位平滑概率下限（0—1）",
@@ -424,6 +427,9 @@ export default function ResearchRules({
               />
             </label>
           </div>
+          {["markov", "markovScore"].includes(config.method) && (
+            <MarkovPreview config={config} history={input.history} />
+          )}
           {config.method === "potential" && (
             <PotentialEditor
               config={config}

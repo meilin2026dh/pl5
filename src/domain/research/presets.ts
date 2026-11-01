@@ -5,6 +5,7 @@ const spec = (method: FilterMethod, parameter: number): FilterSpec => ({
   parameter,
 });
 export const parameterGrids: Record<FilterMethod, number[]> = {
+  difference: [1, 2, 3],
   hotcold: [4, 5, 6, 7, 8, 9],
   omission: [4, 5, 6, 8, 10, 14, 20, 30],
   bayes: [0.07, 0.08, 0.09, 0.095, 0.1, 0.105, 0.11, 0.12],

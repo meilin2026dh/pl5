@@ -83,6 +83,29 @@ export function fitScores(
   if (!s.n || s.counts.length !== 5) throw new Error("评分需要历史数据");
   if (config.method === "potential")
     return fitPotential(s.rows, config.potential!);
+  if (config.method === "markovScore") {
+    const counts = s.transitions.map((matrix, p) => matrix[s.last[p]]);
+    const probabilities = counts.map((row) => {
+      const total = row.reduce((a, b) => a + b, 0);
+      return row.map((v) => (v + 1) / (total + 10));
+    });
+    return {
+      score: (n) =>
+        [...n].reduce(
+          (total, d, p) => total + Math.log(probabilities[p][Number(d)]),
+          0,
+        ),
+      details: {
+        model: "五位置一步转移后验路径log似然",
+        referenceNumber: s.last.join(""),
+        alpha: 1,
+        transitions: s.transitions,
+        probabilities,
+        observedOutCounts: counts.map((row) => row.reduce((a, b) => a + b, 0)),
+        policy: "无出边的当前状态采用均匀后验；按观测相邻记录定义转移",
+      },
+    };
+  }
   if (config.method === "heatScore") {
     const table = logTable(iid(s, 0.5));
     return {

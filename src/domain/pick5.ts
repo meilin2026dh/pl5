@@ -1,3 +1,4 @@
+import { validateAudit, type AuditConfig } from "./audit/config";
 import { validateSelection, type SelectionConfig } from "./selection/config";
 import {
   prepareRelation,
@@ -73,6 +74,7 @@ export type Rule = {
     class?: "big" | "small" | "odd" | "even" | "prime" | "composite";
     partitions?: number[][];
     referenceIssue?: string;
+    startIssue?: string;
     metric?: "sum" | "span";
     absolute?: boolean;
     window?: number;
@@ -80,13 +82,18 @@ export type Rule = {
 };
 export type HistoryRecord = { issue: string; date: string; number: string };
 export type FilterInput = {
+  audit?: AuditConfig;
   selection?: SelectionConfig;
   positions: number[][];
   rules: Rule[];
   candidates?: string[];
   history?: HistoryRecord[];
   historySource?: string;
-  combination?: { mode: "strict" | "atLeast"; minimum: number };
+  combination?: {
+    mode: "strict" | "atLeast" | "violations";
+    minimum: number;
+    maxViolations?: number;
+  };
 };
 export type FilterResult = {
   research?: { id: string; label: string; diagnostics: ResearchDiagnostics }[];
@@ -185,6 +192,7 @@ export function validateInput(input: FilterInput): void {
   if (!input || !Array.isArray(input.positions) || input.positions.length !== 5)
     throw new Error("必须设置五个位置");
   if (input.selection !== undefined) validateSelection(input.selection);
+  if (input.audit !== undefined) validateAudit(input.audit);
   for (const values of input.positions) {
     if (!Array.isArray(values) || values.length === 0)
       throw new Error("每个位置至少选择一个数字");
@@ -298,7 +306,8 @@ export function filter(input: FilterInput): FilterResult {
   const initial =
     candidates?.length ??
     positions.reduce((total, values) => total * values.length, 1);
-  const tolerant = input.combination?.mode === "atLeast";
+  const soft = input.combination?.mode === "violations";
+  const tolerant = input.combination?.mode === "atLeast" || soft;
   const research = rules
     .filter(
       (rule) =>
@@ -344,6 +353,7 @@ export function filter(input: FilterInput): FilterResult {
     }
     const values = needsMetrics ? metrics(prefix) : undefined;
     const groups = new Map<string, boolean>();
+    let violations = 0;
     for (let index = 0; index < rules.length; index++) {
       const rule = rules[index]!;
       const step = steps[index]!;
@@ -367,6 +377,10 @@ export function filter(input: FilterInput): FilterResult {
         pass = rule.values.includes(values![rule.kind as keyof Metrics]);
       }
       if (rule.mode === "exclude") pass = !pass;
+      if (soft) {
+        violations += Number(!pass);
+        continue;
+      }
       if (tolerant) {
         const key = rule.group ?? rule.id;
         groups.set(key, (groups.get(key) ?? true) && pass);
@@ -376,10 +390,12 @@ export function filter(input: FilterInput): FilterResult {
       step.after++;
     }
     if (
+      !soft &&
       tolerant &&
       [...groups.values()].filter(Boolean).length < input.combination!.minimum
     )
       return;
+    if (soft && violations > input.combination!.maxViolations!) return;
     numbers.push(prefix);
   }
   if (candidates) candidates.forEach((candidate) => visit(candidate, 5));
@@ -392,7 +408,7 @@ export function filter(input: FilterInput): FilterResult {
       steps: [
         {
           id: "combination",
-          label: "容错组合",
+          label: soft ? "逐条违规预算" : "容错组合",
           before: initial,
           after: numbers.length,
         },

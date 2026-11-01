@@ -1,3 +1,4 @@
+import { differenceSignature } from "./difference";
 import type { HistoryRecord } from "../pick5";
 import type { ResearchConfig, ResearchStats } from "./types";
 export function researchHistory(
@@ -44,6 +45,8 @@ export function researchHistory(
 }
 export function feature(method: string, d: number[]): string {
   switch (method) {
+    case "difference":
+      return differenceSignature(d.join(""));
     case "oddFrequency":
       return String(d.filter((x) => x % 2).length);
     case "bigFrequency":
@@ -82,6 +85,7 @@ export function buildStats(rows: HistoryRecord[]): ResearchStats {
   const frequencies: ResearchStats["frequencies"] = {},
     multisets = new Map<string, number>();
   const methods = [
+    "difference",
     "oddFrequency",
     "bigFrequency",
     "primeFrequency",

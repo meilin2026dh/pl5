@@ -157,6 +157,7 @@ export default function SelectionLab({
           >
             <option value="bayes">贝叶斯逐位后验</option>
             <option value="neural">35维浅层网络结构分</option>
+            <option value="resnet">微型残差Conv1D时序形态分</option>
           </select>
         </label>
         {numeric("精选历史窗口", "window", 40, 500)}
@@ -186,9 +187,21 @@ export default function SelectionLab({
           {numeric("精选历史同位重号上限", "historySame", 0, 5)}
           {numeric("精选历史Jaccard上限", "jaccard", 0, 1, 0.05)}
           {numeric("精选输出同位重号上限", "maxSame", 0, 4)}
+          <label>
+            精选输出Jaccard上限
+            <input
+              aria-label="精选输出Jaccard上限"
+              type="number"
+              min={0}
+              max={1}
+              step={0.05}
+              value={c.outputJaccard ?? 1}
+              onChange={(e) => patch({ outputJaccard: Number(e.target.value) })}
+            />
+          </label>
         </div>
         <p className="research-context">
-          AC=不同非零绝对差种数−4，范围−4至5；排序含重复位，间距大于等于下限为大。近期0期关闭历史约束。Jaccard按不同数字集合比较，等于上限可保留；输出限制按位置比较。
+          AC=不同非零绝对差种数−4，范围−4至5；排序含重复位，间距大于等于下限为大。近期0期关闭历史约束。Jaccard按不同数字集合比较，等于上限可保留；输出同时限制同位置重合数和数字集合Jaccard相似度。
         </p>
       </details>
       {c.method !== "exact" && (
@@ -201,6 +214,11 @@ export default function SelectionLab({
             {numeric("搜索迭代代数", "generations", 1, 500)}
           </div>
         </details>
+      )}
+      {c.scorer === "resnet" && (
+        <p className="research-context">
+          五条位置链、8期独热输入、4通道、两层因果卷积及残差跳连，共990参数；15轮训练，时间留出比较一步马尔可夫与均匀基线。训练只在所选截止期内进行；形态分不是中奖保证。
+        </p>
       )}
       {c.scorer === "neural" && (
         <>

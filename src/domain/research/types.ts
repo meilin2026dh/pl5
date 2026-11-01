@@ -1,6 +1,7 @@
 import { defaultPotential, type PotentialConfig } from "./potential";
 import type { HistoryRecord } from "../pick5";
 export const filterMethods = [
+  "difference",
   "hotcold",
   "omission",
   "bayes",
@@ -21,6 +22,7 @@ export const filterMethods = [
 ] as const;
 export type FilterMethod = (typeof filterMethods)[number];
 export const scoreMethods = [
+  "markovScore",
   "potential",
   "heatScore",
   "bma",
@@ -68,6 +70,8 @@ export const defaultResearch: ResearchConfig = {
   preset: "A",
 };
 export const researchLabels: Record<ResearchMethod, string> = {
+  difference: "有符号差分形态白名单",
+  markovScore: "马尔可夫路径似然评分",
   hotcold: "逐位冷热Top K",
   omission: "逐位遗漏上限",
   bayes: "贝叶斯平滑阈值",

@@ -81,7 +81,7 @@ function snapshot(rule: Rule, input: FilterInput): HistoryRecord[] {
     issues.add(row.issue);
     dates.add(row.date);
   }
-  const rows = [...input.history].sort(
+  let rows = [...input.history].sort(
     (a, b) => a.date.localeCompare(b.date) || a.issue.localeCompare(b.issue),
   );
   if (rule.params?.referenceIssue) {
@@ -89,7 +89,12 @@ function snapshot(rule: Rule, input: FilterInput): HistoryRecord[] {
       (row) => row.issue === rule.params!.referenceIssue,
     );
     if (i < 0) fail("参考期不在历史快照中");
-    return rows.slice(0, i + 1);
+    rows = rows.slice(0, i + 1);
+  }
+  if (rule.params?.startIssue) {
+    const i = rows.findIndex((row) => row.issue === rule.params!.startIssue);
+    if (i < 0) fail("历史起始期不在参考快照中");
+    rows = rows.slice(i);
   }
   return rows;
 }
@@ -106,11 +111,11 @@ export function validateAdvanced(input: FilterInput): void {
     const c = input.combination;
     if (
       !c ||
-      !["strict", "atLeast"].includes(c.mode) ||
+      !["strict", "atLeast", "violations"].includes(c.mode) ||
       !integer(
         c.minimum,
         0,
-        c.mode === "strict"
+        c.mode !== "atLeast"
           ? Number.MAX_SAFE_INTEGER
           : new Set(
               input.rules.filter((r) => r?.enabled).map((r) => r.group ?? r.id),
@@ -118,6 +123,8 @@ export function validateAdvanced(input: FilterInput): void {
       )
     )
       fail("容错组合最少组数不合法");
+    if (c.mode === "violations" && !integer(c.maxViolations, 0, 1000))
+      fail("逐条违规预算须为0至1000整数");
   }
   for (const r of input.rules) {
     if (!r || !Object.hasOwn(advancedLabels, r.kind)) continue;
@@ -174,6 +181,11 @@ export function validateAdvanced(input: FilterInput): void {
       (typeof p.referenceIssue !== "string" || !p.referenceIssue.trim())
     )
       fail("参考期号不合法");
+    if (
+      p.startIssue !== undefined &&
+      (typeof p.startIssue !== "string" || !p.startIssue.trim())
+    )
+      fail("历史起始期不合法");
     if (p.absolute !== undefined && typeof p.absolute !== "boolean")
       fail("绝对值参数不合法");
     if (

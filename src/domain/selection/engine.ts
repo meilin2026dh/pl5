@@ -189,7 +189,13 @@ export function selectPortfolio(
   progress?.("按分数贪心构造多样性组合");
   const selected: string[] = [];
   for (const n of searched) {
-    if (selected.every((m) => samePositions(n, m) <= c.maxSame))
+    if (
+      selected.every(
+        (m) =>
+          samePositions(n, m) <= c.maxSame &&
+          jaccard(n, m) <= (c.outputJaccard ?? 1),
+      )
+    )
       selected.push(n);
     if (selected.length >= c.budget) break;
   }

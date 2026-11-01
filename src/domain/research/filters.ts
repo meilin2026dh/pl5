@@ -12,13 +12,16 @@ export function validateFilterParameter(
   if (!filterMethods.includes(method) || !Number.isFinite(parameter))
     throw new Error("研究参数无效");
   const integer = [
+    "difference",
     "hotcold",
     "omission",
     "samePosition",
     "positionNeighbor",
     "multiset",
   ].includes(method);
-  const minimum = method === "hotcold" || method === "multiset" ? 1 : 0;
+  const minimum = ["hotcold", "multiset", "difference"].includes(method)
+    ? 1
+    : 0;
   let maximum = Infinity;
   if (method === "hotcold") maximum = 10;
   else if (method === "samePosition" || method === "positionNeighbor")
@@ -92,6 +95,18 @@ export function fitFilter(
           : d.reduce((a, b) => a + b, 0);
       return value >= lo && value <= hi;
     };
+  } else if (method === "difference") {
+    const frequencies = stats.frequencies.difference;
+    const allowed = [...frequencies]
+      .filter(([, count]) => count >= parameter)
+      .map(([key]) => key);
+    const set = new Set(allowed);
+    Object.assign(diagnostics, {
+      allowed,
+      observedClasses: frequencies.size,
+      policy: "有符号相邻位差分；未出现形态不保留，无回退",
+    });
+    testDigits = (d) => set.has(feature("difference", d));
   } else if (method.endsWith("Frequency")) {
     const keys =
       method === "distinctFrequency"

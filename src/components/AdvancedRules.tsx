@@ -257,7 +257,8 @@ export default function AdvancedRules({
                 onChange({
                   ...input,
                   combination: {
-                    mode: e.target.value as "strict" | "atLeast",
+                    mode: e.target.value as "strict" | "atLeast" | "violations",
+                    maxViolations: input.combination?.maxViolations ?? 0,
                     minimum: Math.min(
                       input.combination?.minimum ?? groups,
                       groups,
@@ -268,6 +269,7 @@ export default function AdvancedRules({
             >
               <option value="strict">全部满足</option>
               <option value="atLeast">条件组容错</option>
+              <option value="violations">逐条违规预算</option>
             </select>
           </label>
           {input.combination?.mode === "atLeast" && (
@@ -291,7 +293,33 @@ export default function AdvancedRules({
               / {groups} 组
             </label>
           )}
-          <p>同名规则组内全部满足；空组名各自独立。0组表示不限制。</p>
+          {input.combination?.mode === "violations" && (
+            <label>
+              最多违反条件数
+              <input
+                aria-label="最多违反条件数"
+                type="number"
+                min={0}
+                max={1000}
+                value={input.combination.maxViolations ?? 0}
+                onChange={(e) =>
+                  onChange({
+                    ...input,
+                    combination: {
+                      mode: "violations",
+                      minimum: 0,
+                      maxViolations: Number(e.target.value),
+                    },
+                  })
+                }
+              />
+            </label>
+          )}
+          <p>
+            {input.combination?.mode === "violations"
+              ? "逐条计数启用条件，包含/排除判定后计违规；同名组也逐条计数。预算大于等于条件数时不限制，不承诺对应固定注数。"
+              : "同名规则组内全部满足；空组名各自独立。0组表示不限制。"}
+          </p>
         </div>
         {list.length > 0 && (
           <div className="advanced-list">
