@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-01",
+  "base": "100000 ordered five-digit candidates",
+  "results": [
+    {
+      "method": "line",
+      "label": "直线",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 26 组保留 原始组合 100,000 精简比例 99.97% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "polyline",
+      "label": "折线",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 99,974 组保留 原始组合 100,000 精简比例 0.03% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "v",
+      "label": "V型（先降后升）",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 6,168 组保留 原始组合 100,000 精简比例 93.83% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "invertedV",
+      "label": "倒V型（先升后降）",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 6,168 组保留 原始组合 100,000 精简比例 93.83% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "arithmetic",
+      "label": "等差规律",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 26 组保留 原始组合 100,000 精简比例 99.97% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "geometric",
+      "label": "等比规律",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 800 组保留 原始组合 100,000 精简比例 99.20% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "fibonacci",
+      "label": "斐波那契规律",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 11 组保留 原始组合 100,000 精简比例 99.99% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "triangle",
+      "label": "三角形点集",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 42,030 组保留 原始组合 100,000 精简比例 57.97% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "trapezoid",
+      "label": "梯形点集",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 29,160 组保留 原始组合 100,000 精简比例 70.84% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "mirror",
+      "label": "镜像对称",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 6,780 组保留 原始组合 100,000 精简比例 93.22% 条件过滤已完成，结果可核对、可导出。 5"
+    },
+    {
+      "method": "central",
+      "label": "中心对称",
+      "preview": true,
+      "result": "\t\t\t\t238 text 筛选结果 计算完成 1,290 组保留 原始组合 100,000 精简比例 98.71% 条件过滤已完成，结果可核对、可导出。 5"
+    }
+  ],
+  "historyReplay": "Passed on an explicitly marked demo snapshot, reference 2026199; rolling replay completed",
+  "downloads": "Not exercised"
+}

@@ -1,0 +1,23 @@
+{
+  "julik-frontend-races|src/components/ResearchRules.tsx|70|invalidate research drafts when their source rule changes": {
+    "title": "Invalidate research drafts when their source rule changes",
+    "severity": "P2",
+    "file": "src/components/ResearchRules.tsx",
+    "line": 70,
+    "why_it_matters": "An open research editor can silently restore an obsolete condition after Reset All or loading another saved plan. Workbench stays mounted while navigating, so its draft survives; when the original rule ID disappears, Save appends the old draft into the replacement rules. Editing a rule and then disabling its visible checkbox also saves the draft's old enabled=true value back over the checkbox change. Track the source rule separately and invalidate or reconcile that draft when its live rule changes, rather than treating a missing edited rule as a newly created one.",
+    "autofix_class": "gated_auto",
+    "owner": "downstream-resolver",
+    "requires_verification": true,
+    "suggested_fix": "Track whether the draft was started as an edit and retain its source rule identity/version. Clear or reject an edit draft if that source disappears during reset/plan restoration; reconcile external enabled changes when saving instead of replacing the entire current rule with the stale snapshot. Add regression coverage for edit→disable→save and edit→reset/load-plan→save.",
+    "confidence": 75,
+    "evidence": [
+      "src/components/ResearchRules.tsx:70-72 -- rules: input.rules.some((r) => r.id === draft.id) ? input.rules.map((r) => (r.id === draft.id ? draft : r)) : [...input.rules, draft],",
+      "src/components/ResearchRules.tsx:51 -- ? { ...rule, research: { ...rule.research! } }",
+      "src/App.tsx:250 -- <div hidden={path !== \"/workbench\"}> (Workbench remains mounted across navigation).",
+      "src/App.tsx:182 -- id: crypto.randomUUID(), (restoring a plan replaces all source identities).",
+      "src/pages/Workbench.tsx:152 -- rules: defaultRules(), (Reset All removes research source rules)."
+    ],
+    "pre_existing": false,
+    "first_evidence": "src/components/ResearchRules.tsx:70-72 -- rules: input.rules.some((r) => r.id === draft.id) ? input.rules.map((r) => (r.id === draft.id ? draft : r)) : [...input.rules, draft],"
+  }
+}

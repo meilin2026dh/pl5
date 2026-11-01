@@ -1,0 +1,84 @@
+[
+  {
+    "reviewer": "correctness",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": [
+      "Add an end-to-end replay regression for a non-uniform scoring model with seeded ranking and a future outcome chosen to differ from the past-only selection; existing replay integration exercises hotcold only, while the complete-universe integration ranking test uses an entirely uniform model."
+    ]
+  },
+  {
+    "reviewer": "security",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "performance",
+    "findings": [],
+    "residual_risks": [
+      "Greedy replay has substantial computation cost at the supported interactive scale: a non-mutating Node benchmark of backtest(input, 30), using 500 deterministic dated records and one greedy rule with defaultResearch settings (100-record window, 3 folds, 57 candidates), took 23,790 ms and returned 30 evaluable results; the same replay with BMA took 585 ms. This is a measured latency tradeoff, not a contract violation: full-universe rolling fitting is explicitly required, and Backtest runs it in a terminable Worker. The 200-period UI option and browser/device latency were not measured."
+    ],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "testing",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": [
+      "tests/replay-worker-ui.test.tsx:47-65 exercises only cancelled and obsolete jobs. Add one completed replay asserting displayed retained/removed rows and a worker error reply asserting the alert and restored run button; otherwise regressions in the newly added rows/error response handling in src/components/Backtest.tsx:64-70 escape this suite. Also assert the existing terminate spy when cancelling to protect the actual CPU-stop contract independently of stale-output suppression."
+    ]
+  },
+  {
+    "reviewer": "maintainability",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "reliability",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "julik-frontend-races",
+    "findings": [
+      {
+        "title": "Invalidate research drafts when their source rule changes",
+        "severity": "P2",
+        "file": "src/components/ResearchRules.tsx",
+        "line": 70,
+        "why_it_matters": "An open research editor can silently restore an obsolete condition after Reset All or loading another saved plan. Workbench stays mounted while navigating, so its draft survives; when the original rule ID disappears, Save appends the old draft into the replacement rules. Editing a rule and then disabling its visible checkbox also saves the draft's old enabled=true value back over the checkbox change. Track the source rule separately and invalidate or reconcile that draft when its live rule changes, rather than treating a missing edited rule as a newly created one.",
+        "autofix_class": "gated_auto",
+        "owner": "downstream-resolver",
+        "requires_verification": true,
+        "suggested_fix": "Track whether the draft was started as an edit and retain its source rule identity/version. Clear or reject an edit draft if that source disappears during reset/plan restoration; reconcile external enabled changes when saving instead of replacing the entire current rule with the stale snapshot. Add regression coverage for edit→disable→save and edit→reset/load-plan→save.",
+        "confidence": 75,
+        "evidence": [
+          "src/components/ResearchRules.tsx:70-72 -- rules: input.rules.some((r) => r.id === draft.id) ? input.rules.map((r) => (r.id === draft.id ? draft : r)) : [...input.rules, draft],",
+          "src/components/ResearchRules.tsx:51 -- ? { ...rule, research: { ...rule.research! } }",
+          "src/App.tsx:250 -- <div hidden={path !== \"/workbench\"}> (Workbench remains mounted across navigation).",
+          "src/App.tsx:182 -- id: crypto.randomUUID(), (restoring a plan replaces all source identities).",
+          "src/pages/Workbench.tsx:152 -- rules: defaultRules(), (Reset All removes research source rules)."
+        ],
+        "pre_existing": false,
+        "first_evidence": "src/components/ResearchRules.tsx:70-72 -- rules: input.rules.some((r) => r.id === draft.id) ? input.rules.map((r) => (r.id === draft.id ? draft : r)) : [...input.rules, draft],"
+      }
+    ],
+    "residual_risks": [],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "adversarial",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": []
+  },
+  {
+    "reviewer": "fast-pass",
+    "findings": [],
+    "residual_risks": [],
+    "testing_gaps": []
+  }
+]

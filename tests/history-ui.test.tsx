@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import React from "react";
-import { afterEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
   cleanup,
   fireEvent,
@@ -10,6 +10,9 @@ import {
   act,
 } from "@testing-library/react";
 import History from "../src/pages/History";
+beforeEach(() => {
+  vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("离线")));
+});
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
@@ -31,12 +34,14 @@ it("loads the requested official range, displays known metrics and applies date 
   vi.stubGlobal("fetch", fetcher);
   const onDataChange = vi.fn();
   render(<History onApply={() => {}} onDataChange={onDataChange} />);
+  await screen.findByText("中国体彩网");
+  expect(fetcher.mock.calls[0][0]).toBe("/api/history?pages=2");
   fireEvent.change(screen.getByLabelText("真实开奖期数"), {
     target: { value: "1000" },
   });
   fireEvent.click(screen.getByRole("button", { name: "获取官方开奖" }));
   await screen.findByText("中国体彩网");
-  expect(fetcher.mock.calls[0][0]).toBe("/api/history?pages=10");
+  expect(fetcher.mock.calls[1][0]).toBe("/api/history?pages=10");
   await waitFor(() =>
     expect(onDataChange).toHaveBeenLastCalledWith(
       fixture.draws,
@@ -99,7 +104,7 @@ it("ignores an official response that finishes after demo reset", async () => {
     ),
   );
   render(<History onApply={() => {}} />);
-  fireEvent.click(screen.getByRole("button", { name: "获取官方开奖" }));
+  await waitFor(() => expect(finish).toBeTypeOf("function"));
   fireEvent.click(screen.getByRole("button", { name: "恢复演示" }));
   await act(async () => {
     finish({ ok: true, json: async () => fixture });

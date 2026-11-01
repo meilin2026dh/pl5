@@ -1,4 +1,16 @@
 import {
+  prepareGeometry,
+  validateGeometry,
+  geometryHistory,
+  type GeometryConfig,
+} from "./geometry";
+import {
+  prepareResearch,
+  validateResearchConfig,
+  researchHistory,
+} from "./research";
+import type { ResearchConfig, ResearchDiagnostics } from "./research/types";
+import {
   advancedLabels,
   validateAdvanced,
   advancedPredicate,
@@ -18,6 +30,8 @@ export type Metrics = {
   sumMod3: number;
 };
 export type RuleKind =
+  | "geometry"
+  | "research"
   | AdvancedKind
   | "sum"
   | "tail"
@@ -38,6 +52,8 @@ export type Rule = {
   mode: "include" | "exclude";
   values: (number | string)[];
   group?: string;
+  research?: ResearchConfig;
+  geometry?: GeometryConfig;
   params?: {
     positions?: number[];
     groups?: number[][];
@@ -63,6 +79,7 @@ export type FilterInput = {
   combination?: { mode: "strict" | "atLeast"; minimum: number };
 };
 export type FilterResult = {
+  research?: { id: string; label: string; diagnostics: ResearchDiagnostics }[];
   numbers: string[];
   initial: number;
   steps: { id: string; label: string; before: number; after: number }[];
@@ -70,6 +87,8 @@ export type FilterResult = {
 
 export const ruleLabels: Record<RuleKind, string> = {
   ...advancedLabels,
+  research: "实验方法",
+  geometry: "空间形态",
   sum: "和值",
   tail: "和尾",
   span: "跨度",
@@ -189,9 +208,25 @@ export function validateInput(input: FilterInput): void {
     if (
       rule.enabled &&
       rule.values.length === 0 &&
-      !["historyExclude", "danGroups", "partition"].includes(rule.kind)
+      ![
+        "historyExclude",
+        "danGroups",
+        "partition",
+        "research",
+        "geometry",
+      ].includes(rule.kind)
     )
       throw new Error(`${ruleLabels[rule.kind]}至少选择一个值`);
+    if (rule.kind === "geometry") {
+      validateGeometry(rule.geometry);
+      if (rule.enabled) geometryHistory(rule.geometry, input.history);
+      continue;
+    }
+    if (rule.kind === "research") {
+      validateResearchConfig(rule.research);
+      if (rule.enabled) researchHistory(rule.research, input.history);
+      continue;
+    }
     if (rule.kind === "dan" && rule.params !== undefined) {
       const p = rule.params;
       if (
@@ -246,10 +281,27 @@ export function filter(input: FilterInput): FilterResult {
     candidates?.length ??
     positions.reduce((total, values) => total * values.length, 1);
   const tolerant = input.combination?.mode === "atLeast";
+  const research = rules
+    .filter((rule) => rule.kind === "research" || rule.kind === "geometry")
+    .map((rule) => ({
+      id: rule.id,
+      label: ruleLabels[rule.kind],
+      prepared:
+        rule.kind === "geometry"
+          ? prepareGeometry(rule.geometry!, input.history)
+          : prepareResearch(rule.research!, input.history),
+    }));
+  const researchDiagnostics = research.map(({ id, label, prepared }) => ({
+    id,
+    label,
+    diagnostics: prepared.diagnostics,
+  }));
   const predicates = rules.map((rule) =>
-    Object.hasOwn(advancedLabels, rule.kind)
-      ? advancedPredicate(rule, input)
-      : undefined,
+    rule.kind === "research" || rule.kind === "geometry"
+      ? research.find((r) => r.id === rule.id)!.prepared.test
+      : Object.hasOwn(advancedLabels, rule.kind)
+        ? advancedPredicate(rule, input)
+        : undefined,
   );
   const numbers: string[] = [];
   // One metrics calculation per candidate, regardless of the number of active rules.
@@ -309,6 +361,7 @@ export function filter(input: FilterInput): FilterResult {
     return {
       numbers,
       initial,
+      research: researchDiagnostics,
       steps: [
         {
           id: "combination",
@@ -318,5 +371,5 @@ export function filter(input: FilterInput): FilterResult {
         },
       ],
     };
-  return { numbers, initial, steps };
+  return { numbers, initial, steps, research: researchDiagnostics };
 }

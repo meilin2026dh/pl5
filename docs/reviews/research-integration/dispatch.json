@@ -1,0 +1,30 @@
+{
+  "run_id": "20261029-research-integration",
+  "branch": "feat/filter-workbench",
+  "head_sha": "84dbe409bf591f1c03ddd0e0d39f34de7467ed45",
+  "base": "614edab",
+  "explicit_untracked": true,
+  "docs_root": "docs",
+  "peer": {
+    "started": false,
+    "reason": "No installed different-family CLI found (claude, grok, cursor-agent absent). Host Codex, local adversarial fallback."
+  },
+  "roster": [
+    "correctness",
+    "security",
+    "performance",
+    "testing",
+    "maintainability",
+    "reliability",
+    "julik-frontend-races",
+    "adversarial"
+  ],
+  "skips": {
+    "project-standards": "No applicable AGENTS.md/CLAUDE.md/CODING_STANDARDS.md in repository",
+    "api-contract": "No externally consumed contract changes, only internal optional additions",
+    "learnings": "No solutions corpus or declared packs",
+    "agent-native": "No agent-facing surface",
+    "data-migration": "No schema or migration",
+    "previous-comments": "No PR review target"
+  }
+}

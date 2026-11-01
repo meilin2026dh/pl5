@@ -82,7 +82,10 @@ export default function History({
           setNotice("已恢复本机历史数据缓存");
         }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (generation.current === ticket) void fetchOfficial();
+      });
     return () => {
       generation.current++;
       request.current?.abort();
@@ -209,7 +212,7 @@ export default function History({
         classification === "big"
           ? m.big
           : classification === "prime"
-            ? digits.filter((n) => [2, 3, 5, 7].includes(n)).length
+            ? m.prime
             : m.odd;
       const label =
         classification === "012"
@@ -290,6 +293,15 @@ export default function History({
           恢复演示
         </button>
       </div>
+      {metadata?.sourceUrl && !metadata.stale && (
+        <p className="h-help" role="status">
+          北京时间 {new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Shanghai" }).format(new Date())} ·
+          官方最新已公布：{all.at(-1)?.date}（第 {all.at(-1)?.issue} 期）。
+          {all.at(-1)?.date !== new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Shanghai" }).format(new Date())
+            ? "今日结果尚未返回，可点击获取官方开奖再次检查。"
+            : "今日开奖已更新。"}
+        </p>
+      )}
       {metadata?.sourceUrl && (
         <p className="h-help">
           <a href={metadata.sourceUrl} target="_blank" rel="noreferrer">
@@ -520,7 +532,7 @@ export default function History({
               >
                 <option value="odd">奇偶比</option>
                 <option value="big">大小比（5–9 为大）</option>
-                <option value="prime">质数比（2、3、5、7）</option>
+                <option value="prime">质类比（1、2、3、5、7）</option>
                 <option value="012">012 路个数</option>
               </select>
             </label>
@@ -790,9 +802,6 @@ export default function History({
         )}
         {view === "table" && (
           <>
-            <button className="button secondary h-export" onClick={download}>
-              ↓ 导出当前范围 CSV
-            </button>
             <div className="h-table-scroll">
               <table className="h-table">
                 <thead>
@@ -861,7 +870,7 @@ export default function History({
             大小 {metrics(selected.number).big}:
             {5 - metrics(selected.number).big}
           </p>
-          <p className="muted">大小以 5 为界；质数为 2、3、5、7。</p>
+          <p className="muted">大小以 5 为界；质类为 1、2、3、5、7（彩票分类约定）。</p>
         </section>
       )}
       <section className="card h-apply">

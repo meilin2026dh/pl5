@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { parseOfficial, mergeDraws } from "../server/provider.ts";
+import { describe, it, expect, vi } from "vitest";
+import { parseOfficial, mergeDraws, officialHistory } from "../server/provider.ts";
 describe("official history boundary", () => {
   it("preserves zeros and sorts official five-digit draws", () => {
     expect(
@@ -47,4 +47,16 @@ describe("official history boundary", () => {
     expect(mergeDraws([a, a])).toEqual([a]);
     expect(() => mergeDraws([a, { ...a, number: "99999" }])).toThrow();
   });
+});
+
+it("queries the official service again so newly published draws are not hidden by a five-minute cache", async () => {
+  const fetcher = vi.spyOn(globalThis, "fetch").mockResolvedValue({
+    ok: true,
+    text: async () => JSON.stringify({success: true, value: {list: [{lotteryGameNum: "350133", lotteryDrawNum: "26287", lotteryDrawTime: "2026-10-28", lotteryDrawResult: "15448"}]}}),
+  } as Response);
+  try {
+    await officialHistory(1);
+    await officialHistory(1);
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  } finally { fetcher.mockRestore(); }
 });

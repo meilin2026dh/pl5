@@ -1,5 +1,6 @@
 import { filter, type FilterInput, type HistoryRecord } from "./pick5";
 const historical = new Set([
+  "research",
   "historyExclude",
   "samePosition",
   "historyOverlap",
@@ -29,7 +30,12 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       status: "insufficient",
     };
     if (
-      input.rules.some((r) => r.enabled && historical.has(r.kind)) &&
+      input.rules.some(
+        (r) =>
+          r.enabled &&
+          (historical.has(r.kind) ||
+            (r.kind === "geometry" && r.geometry?.source === "history")),
+      ) &&
       !past.length
     )
       return result;
@@ -38,9 +44,22 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       : [...row.number].every((d, p) => input.positions[p].includes(Number(d)));
     if (!allowed) return { ...result, status: "outside" };
     const rules = input.rules.map((r) =>
-      historical.has(r.kind)
-        ? { ...r, params: { ...r.params, referenceIssue: past.at(-1)?.issue } }
-        : r,
+      r.kind === "geometry" && r.geometry?.source === "history"
+        ? {
+            ...r,
+            geometry: { ...r.geometry, referenceIssue: past.at(-1)?.issue },
+          }
+        : r.kind === "research"
+          ? {
+              ...r,
+              research: { ...r.research!, referenceIssue: past.at(-1)?.issue },
+            }
+          : historical.has(r.kind)
+            ? {
+                ...r,
+                params: { ...r.params, referenceIssue: past.at(-1)?.issue },
+              }
+            : r,
     );
     try {
       return {
@@ -58,7 +77,7 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       const message = (e as Error).message;
       return {
         ...result,
-        status: /历史不足|历史过滤需要/.test(message)
+        status: /历史不足|历史过滤需要|研究方法需要历史/.test(message)
           ? "insufficient"
           : "error",
         reason: message,

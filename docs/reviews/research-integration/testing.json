@@ -1,0 +1,8 @@
+{
+  "reviewer": "testing",
+  "findings": [],
+  "residual_risks": [],
+  "testing_gaps": [
+    "tests/replay-worker-ui.test.tsx:47-65 exercises only cancelled and obsolete jobs. Add one completed replay asserting displayed retained/removed rows and a worker error reply asserting the alert and restored run button; otherwise regressions in the newly added rows/error response handling in src/components/Backtest.tsx:64-70 escape this suite. Also assert the existing terminate spy when cancelling to protect the actual CPU-stop contract independently of stale-output suppression."
+  ]
+}

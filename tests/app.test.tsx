@@ -151,3 +151,12 @@ it("keeps keyboard focus inside the save dialog and restores the trigger focus",
   expect(screen.queryByRole("dialog")).toBeNull();
   expect(document.activeElement).toBe(trigger);
 });
+it("starts a new plan with fresh positions and rules instead of reopening the current draft", () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", {name: "万位号码0"}));
+  fireEvent.click(screen.getByRole("button", {name: "和值 45"}));
+  fireEvent.click(screen.getByRole("link", {name: "我的方案"}));
+  fireEvent.click(screen.getByRole("button", {name: "新建方案"}));
+  expect(screen.getByRole("button", {name: "万位号码0"}).getAttribute("aria-pressed")).toBe("true");
+  expect((screen.getByRole("checkbox", {name: /^和值$/}) as HTMLInputElement).checked).toBe(false);
+});

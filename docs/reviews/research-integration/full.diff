@@ -1,0 +1,3223 @@
+diff --git a/docs/superpowers/plans/2026-10-29-experiment-integration.md b/docs/superpowers/plans/2026-10-29-experiment-integration.md
+new file mode 100644
+index 0000000..cb6e37b
+--- /dev/null
++++ b/docs/superpowers/plans/2026-10-29-experiment-integration.md
+@@ -0,0 +1,86 @@
++# 实验算法完整研究版实施计划
++
++> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
++
++**Goal:** 将用户上传的实验算法吸收为可复现、可保存、可回放的网站功能。
++
++**Architecture:** 独立纯TypeScript研究模块提供准备好的谓词及诊断信息。排名在完整10万组上预计算；筛选、规则组和候选来源继续复用当前Worker。自动选参内部按时间分割，最后重新拟合。
++
++**Tech Stack:** 现有React、TypeScript、Vite、Vitest、Web Worker；不引入Python服务或新依赖。
++
++**Spec:** ../specs/2026-10-29-experiment-integration-design.md
++
++## Global Constraints
++
++- 原始outputs/实验结果目录只读；测试夹具在work生成后只纳入必要小文件。
++- 五位字符串保留前导零；完整排名基准固定100000组。
++- 所有参数、参考期、窗口、种子、并列策略随规则和方案保存。
++- 预测效力与实现一致性分开表述，不把模拟结果当真实开奖证据。
++- 在特性分支完成，保留用户WIP；不将原始实验CSV、HTML报告直接打入前端。
++
++## Review Focus
++
++1. 排名回放不能只对目标一条候选排名；验证同一目标在全量/外部候选下排名判定一致。
++2. 自动选择不得读入验证答案训练；改变后续答案不能改变更早切点拟合。
++3. 全并列时精确N与边界全收的含义不同；零信号需要显示退化。
++4. D-S分窗余数不能丢，极端冲突不能输出NaN或Infinity。
++5. 历史/参数变化使诊断和过滤结果同时失效；JSON恢复完整研究配置。
++
++---
++
++### Task 1: 统计过滤与公式夹具
++
++**Files:** Create src/domain/research/types.ts, statistics.ts, filters.ts; tests/research-filters.test.ts, tests/fixtures/research-reference.json; docs/research/experiment-audit.md.
++
++**Interfaces:** ResearchConfig包含method、window、referenceIssue、数值参数、保留比例、并列策略和seed。prepareResearch(config, history)返回 {test(number):boolean, diagnostics:ResearchDiagnostics}，不依赖React。
++
++- [ ] 用固定历史、前导零和手算小样本建立失败测试；对冷热TopK、贝叶斯阈值、Markov、sigma、分位数、形态频率、邻号和多重集分别断言。
++- [ ] 从源Python只读运行生成夹具，记录公式与参数，测试TS输出与Python谓词一致。
++- [ ] 实现统计快照、参数校验与公式；零方差时采用数学标准差0并记录与源or1回退的差异，遗漏未知不当精确值。
++- [ ] 执行该模块测试，记录red→green证据。
++
++### Task 2: 评分、模型融合与排名
++
++**Files:** Create src/domain/research/models.ts, ranking.ts; tests/research-models.test.ts.
++
++**Interfaces:** fitScores(config, stats)返回 {score(number):number, details}；rankSelection(config, model)返回全量号码保留集合与排名诊断，由Task1的prepareResearch路由。
++
++- [ ] 建立失败测试：概率归一化、七模型权重和为1、均匀历史退化、source Python分数对照、前导零、固定seed重现、全并列N条/全部100000条两种策略。
++- [ ] 实现稳定logGamma与log-sum-exp、热度、BMA、DS-IDM、Dempster和真实命名的单位置最佳模型。
++- [ ] Dempster均衡分窗覆盖全部记录，保存每步冲突；近全冲突明确失败。
++- [ ] 全量100000排名预计算，明确量化精度和并列规则；外部大底只在之后取交集。
++- [ ] 执行模块测试和性能测量。
++
++### Task 3: 自动选择与无未来数据验证
++
++**Files:** Create src/domain/research/tuning.ts, presets.ts; tests/research-tuning.test.ts.
++
++**Interfaces:** tuneResearch(config, history)返回选中参数/组合及逐折覆盖与平均保留数；最终由prepareResearch重新拟合。presets导出57候选定义和A—F组合包。
++
++- [ ] 失败测试：训练/验证隔离、重复号码按期计数、目标不可达时回退、候选并列确定性、贪心达到目标后收敛、三种选择标准。
++- [ ] 实现滚动训练/验证、三种选择标准与57候选贪心，验证掩码不能用全历史拟合。
++- [ ] 复用已缓存的折统计和候选掩码，避免每候选反复构建全量统计；输入长度不足明确报错。
++- [ ] 执行针对性测试。
++
++### Task 4: 规则引擎、回放、方案集成
++
++**Files:** Modify src/domain/pick5.ts, advanced.ts, backtest.ts, src/lib/plans.ts（仅需要时）；tests/backtest.test.ts, plans.test.ts, research-integration.test.ts.
++
++**Interfaces:** 新研究规则kind及ResearchConfig纳入Rule类型、标签、校验、准备谓词；FilterResult允许附带诊断。现有规则格式向后兼容。
++
++- [ ] 先测研究规则包含/排除、分组容错、外部大底、截止期、JSON备份恢复、逐期回放一致性。
++- [ ] 注册研究规则并严格验证；回放每期使用此前历史，排名仍以全量100000构建。
++- [ ] 在Worker保留请求标识、取消与错误协议；输入变更废弃诊断。
++- [ ] 执行集成及现有回归测试。
++
++### Task 5: 实验方法界面与交付
++
++**Files:** Create src/components/ResearchRules.tsx, research.css；Modify Workbench.tsx、App.tsx帮助、必要高级规则显示路由；tests/research-ui.test.tsx；README.md与验证记录。
++
++**Interfaces:** ResearchRules接收FilterInput/onChange，使用统一配置校验并添加/编辑研究规则；已计算诊断来自FilterResult，不在主线程执行全量模型。
++
++- [ ] 先测方法选择、参数校验、添加/编辑、历史缺失提示、方案复现以及条件变化使结果失效。
++- [ ] 实现分组方法、窗口与参考期、保留比例/并列/种子、选参标准及诊断信息，保持橙色视觉。
++- [ ] 补充公式说明、来源审计、模拟实验结论与已修正差异；不把best-model称为BMA。
++- [ ] 执行完整pnpm test、pnpm typecheck、pnpm build；浏览器核验研究规则→保存→恢复→计算→历史回放及移动布局。
++- [ ] 简化检查及独立完整代码审查，修复有效发现；更新研发笔记并生成可运行交付包。发布沿用已授权仓库与账号，提交前核验远程状态。
+diff --git a/docs/superpowers/specs/2026-10-29-experiment-integration-design.md b/docs/superpowers/specs/2026-10-29-experiment-integration-design.md
+new file mode 100644
+index 0000000..fddffb4
+--- /dev/null
++++ b/docs/superpowers/specs/2026-10-29-experiment-integration-design.md
+@@ -0,0 +1,38 @@
++# 完整研究版：实验算法吸收设计
++
++用户已选择完整研究版：吸收上传的实验代码，接入明确的新公式，并提供评分、BMA/D-S及自动选参；所有方法保留参数、历史截止期和计算说明。本文为该增量的实施设计，独立产品方案仍是范围主文档。
++
++## 来源与已核验事实
++
++原件保留于 outputs/实验结果。主要来源为 pailie5_lab.py、pailie5_exhaustive.py、pailie5_bma_ds.py、validate_filters.py。
++
++2026-10-29在副本上执行 validate_filters.main(1)：57个参数化候选过滤器 × 100000号码，均与独立朴素谓词逐位一致。这证明该轮实现一致性，不证明预测能力。来源实验以独立均匀/人为有偏的模拟数据为主；穷举组合_汇总.json中第二阶段优胜者相对对照的差异z约-0.967，未形成可靠优势。不得把原件的冠军或lift当成真实开奖验证。
++
++## 采用方式与替代方案
++
++已选择完整研究版：算法迁移为TypeScript纯函数，复用Worker、规则组合、方案与历史回放。另一种较小方案是只加入固定参数条件，不提供评分和选参；用户未选择。直接运行Python服务会引入第二运行时并绕开现有输入快照与取消机制，因此不采用。
++
++## 算法范围
++
++1. 统计过滤：逐位频次Top K、遗漏上限、Dirichlet平滑阈值、一阶马尔可夫平滑阈值、和值标准差带、和值/跨度中心分位区间、七类历史形态频率、同位重号、同位距离<=1的邻号、排序数字多重集历史次数。
++2. 评分：平滑热度对数似然、七模型BMA（均匀、四种IID浓度、两种Markov浓度）、D-S/IDM的belief和plausibility、Dempster分窗融合。源文件称稀疏BMA的实现实为均匀与五个单位置IID模型的最佳模型选择，按真实口径提供和命名，不伪称模型平均。
++3. 自动选参：按时间滚动分割的三种原选择标准（覆盖>=60%时lift优先、覆盖>=90%时最小集合、验证全中时最小集合），显示未达目标时的回退；支持57候选池的贪心集成，以及原A—F固定组合包。
++4. 普通过滤、包含/排除、组容错、外部大底、方案保存与JSON备份、历史截止和回放全部兼容；不在交互页面执行425866组合穷举。
++
++## 计算契约
++
++- 历史严格校验、按日期排序、截止到用户参考期；训练窗口用最近N条，历史不足明确报错。逐期回放不得使用目标期及以后数据。
++- 排名基准固定为完整00000—99999，不因外部候选源改变。默认保留比例边界上的全部并列，同时显示目标条数与实际条数；可选固定种子打破并列以精确保留N条。种子、并列策略、浮点量化口径一同保存。
++- 为避免10万组浮点假序，评分在明确精度下量化后比较；相等权重/无信息时报告退化，不宣称高置信度。BMA使用logGamma、log-sum-exp和归一化权重；包含Markov首期均匀概率。
++- Dempster分窗覆盖全部历史记录；冲突接近1时明确报错，不除零。展示各次合成冲突，不把相互关联的历史窗口视为已证实独立证据。
++- 自动选参候选在各训练切点独立拟合，在紧随其后的验证段评估。贪心选择采用相同的分割，不用完整历史模型回头筛训练内的验证答案；最终选中参数/组合才在截止期前的全窗口重拟合。
++- 验证命中按期计数，重复开奖号码也逐期保留。排序/自动选参的回放使用完整排名基准，不能退化为只对目标号码排序。
++- 计算通过Worker执行并支持取消、过期输入失效、错误回传。历史缓存和持久化方案不需更换存储架构。
++
++## 界面
++
++在工作台增加「实验方法」卡片，方法分组、参数、历史窗口/参考期、排名保留与并列策略、种子、自动选择标准和验证分割均有清楚标签；原基础/进阶编辑保持原布局。研究结果展示拟合范围、派生允许值/阈值、实际排名保留数、BMA权重或D-S冲突、自动选择证据与数据用途。用户确认后添加为可编辑规则，修改条件则旧结果失效。
++
++## 验收
++
++用源Python生成固定历史与候选期的公式对照夹具，TypeScript逐位/逐分数比较。另测空历史、参考期、全并列、固定种子、零方差、未出现数字、分窗余数、近全冲突、重复开奖、训练验证隔离和方案恢复。完整测试、类型检查、生产构建、真实浏览器流程、独立代码审查通过后交付；源目录不改写，不上传实验原始大表。
+diff --git a/src/App.tsx b/src/App.tsx
+index 417b8d0..f60514c 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -469,10 +469,12 @@ export default function App() {
+                       <dt>{label}</dt>
+                       <dd>
+                         {
+                           {
+                             ...explanations,
++                            research:
++                              "17类历史统计过滤、热度/BMA/D-S评分、滚动选参、贪心和组合包。按参考期以前的窗口拟合；评分以全量10万组为基准。参数、并列策略和种子随方案保存。模拟实验未证明预测优势，诊断可在计算后查看。",
+                             sum: "五位相加，0–45。",
+                             tail: "和值除以10的余数，0–9。",
+                             span: "最大数字减最小数字，0–9。",
+                             odd: "奇数13579，比例为奇:偶。",
+                             big: "大数56789，比例为大:小。",
+diff --git a/src/components/Backtest.tsx b/src/components/Backtest.tsx
+index 401389b..4e904ac 100644
+--- a/src/components/Backtest.tsx
++++ b/src/components/Backtest.tsx
+@@ -1,8 +1,8 @@
+-import { useState } from "react";
++import { useState, useRef, useEffect } from "react";
+ import { History, Play } from "lucide-react";
+-import { backtest, type ReplayRow } from "../domain/backtest";
++import { type ReplayRow } from "../domain/backtest";
+ import { type FilterInput } from "../domain/pick5";
+ import { download } from "../lib/plans";
+ const statuses = {
+   retained: "保留",
+   removed: "过滤移除",
+@@ -12,20 +12,67 @@ const statuses = {
+ };
+ export default function Backtest({ input }: { input: FilterInput }) {
+   const [count, setCount] = useState(30),
+     [result, setResult] = useState<ReplayRow[]>([]),
+     [stamp, setStamp] = useState(""),
+-    [error, setError] = useState("");
++    [error, setError] = useState(""),
++    [busy, setBusy] = useState(false);
++  const worker = useRef<Worker | null>(null),
++    seq = useRef(0);
+   const serialized = JSON.stringify(input),
+     stale = Boolean(result.length) && stamp !== serialized;
++  const live = useRef(serialized);
++  live.current = serialized;
++  const cancel = () => {
++    worker.current?.terminate();
++    worker.current = null;
++    ++seq.current;
++    setBusy(false);
++  };
++  useEffect(() => {
++    cancel();
++  }, [serialized, count]);
++  useEffect(
++    () => () => {
++      worker.current?.terminate();
++      ++seq.current;
++    },
++    [],
++  );
+   const run = () => {
++    cancel();
++    const id = ++seq.current;
++    setBusy(true);
++    setError("");
+     try {
+-      setResult(backtest(input, count));
+-      setStamp(serialized);
+-      setError("");
+-    } catch (e) {
+-      setError((e as Error).message);
++      const w = new Worker(
++        new URL("../workers/filter.worker.ts", import.meta.url),
++        { type: "module" },
++      );
++      worker.current = w;
++      w.onmessage = (event) => {
++        if (event.data.requestId !== seq.current || live.current !== serialized)
++          return;
++        w.terminate();
++        worker.current = null;
++        setBusy(false);
++        if (event.data.error) {
++          setError(event.data.error);
++          return;
++        }
++        setResult(event.data.rows);
++        setStamp(serialized);
++      };
++      w.onerror = () => {
++        if (id !== seq.current) return;
++        cancel();
++        setError("回放计算失败，请重试");
++      };
++      w.postMessage({ operation: "backtest", requestId: id, input, count });
++    } catch {
++      cancel();
++      setError("当前浏览器无法启动回放线程");
+     }
+   };
+   const valid = result.filter((r) =>
+     ["retained", "removed", "outside"].includes(r.status),
+   );
+@@ -55,18 +102,18 @@ export default function Backtest({ input }: { input: FilterInput }) {
+               <option value={n} key={n}>
+                 最近{n}期
+               </option>
+             ))}
+           </select>
+-          <button className="button secondary" onClick={run}>
++          <button className="button secondary" onClick={busy ? cancel : run}>
+             <Play size={14} />
+-            运行历史回放
++            {busy ? "取消回放" : "运行历史回放"}
+           </button>
+           {result.length > 0 && (
+             <button
+               className="button secondary"
+-              disabled={stale}
++              disabled={stale || busy}
+               onClick={() =>
+                 download(
+                   "pl5-回放.csv",
+                   "issue,date,number,reference,status\n" +
+                     result
+diff --git a/src/domain/backtest.ts b/src/domain/backtest.ts
+index 619a6dd..bc95c97 100644
+--- a/src/domain/backtest.ts
++++ b/src/domain/backtest.ts
+@@ -1,7 +1,8 @@
+ import { filter, type FilterInput, type HistoryRecord } from "./pick5";
+ const historical = new Set([
++  "research",
+   "historyExclude",
+   "samePosition",
+   "historyOverlap",
+   "neighborCounts",
+   "historyDelta",
+@@ -36,13 +37,21 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
+     const allowed = base
+       ? base.has(row.number)
+       : [...row.number].every((d, p) => input.positions[p].includes(Number(d)));
+     if (!allowed) return { ...result, status: "outside" };
+     const rules = input.rules.map((r) =>
+-      historical.has(r.kind)
+-        ? { ...r, params: { ...r.params, referenceIssue: past.at(-1)?.issue } }
+-        : r,
++      r.kind === "research"
++        ? {
++            ...r,
++            research: { ...r.research!, referenceIssue: past.at(-1)?.issue },
++          }
++        : historical.has(r.kind)
++          ? {
++              ...r,
++              params: { ...r.params, referenceIssue: past.at(-1)?.issue },
++            }
++          : r,
+     );
+     try {
+       return {
+         ...result,
+         status: filter({
+@@ -56,11 +65,11 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
+       };
+     } catch (e) {
+       const message = (e as Error).message;
+       return {
+         ...result,
+-        status: /历史不足|历史过滤需要/.test(message)
++        status: /历史不足|历史过滤需要|研究方法需要历史/.test(message)
+           ? "insufficient"
+           : "error",
+         reason: message,
+       };
+     }
+diff --git a/src/domain/pick5.ts b/src/domain/pick5.ts
+index e9a89e4..94bbb92 100644
+--- a/src/domain/pick5.ts
++++ b/src/domain/pick5.ts
+@@ -1,5 +1,11 @@
++import {
++  prepareResearch,
++  validateResearchConfig,
++  researchHistory,
++} from "./research";
++import type { ResearchConfig, ResearchDiagnostics } from "./research/types";
+ import {
+   advancedLabels,
+   validateAdvanced,
+   advancedPredicate,
+   type AdvancedKind,
+@@ -16,10 +22,11 @@ export type Metrics = {
+   repeat: string;
+   consecutive: number;
+   sumMod3: number;
+ };
+ export type RuleKind =
++  | "research"
+   | AdvancedKind
+   | "sum"
+   | "tail"
+   | "span"
+   | "odd"
+@@ -36,10 +43,11 @@ export type Rule = {
+   kind: RuleKind;
+   enabled: boolean;
+   mode: "include" | "exclude";
+   values: (number | string)[];
+   group?: string;
++  research?: ResearchConfig;
+   params?: {
+     positions?: number[];
+     groups?: number[][];
+     counts?: number[];
+     countMin?: number;
+@@ -61,17 +69,19 @@ export type FilterInput = {
+   history?: HistoryRecord[];
+   historySource?: string;
+   combination?: { mode: "strict" | "atLeast"; minimum: number };
+ };
+ export type FilterResult = {
++  research?: { id: string; label: string; diagnostics: ResearchDiagnostics }[];
+   numbers: string[];
+   initial: number;
+   steps: { id: string; label: string; before: number; after: number }[];
+ };
+ 
+ export const ruleLabels: Record<RuleKind, string> = {
+   ...advancedLabels,
++  research: "实验方法",
+   sum: "和值",
+   tail: "和尾",
+   span: "跨度",
+   odd: "奇数个数",
+   big: "大数个数",
+@@ -187,13 +197,20 @@ export function validateInput(input: FilterInput): void {
+     )
+       throw new Error("过滤规则格式错误");
+     if (
+       rule.enabled &&
+       rule.values.length === 0 &&
+-      !["historyExclude", "danGroups", "partition"].includes(rule.kind)
++      !["historyExclude", "danGroups", "partition", "research"].includes(
++        rule.kind,
++      )
+     )
+       throw new Error(`${ruleLabels[rule.kind]}至少选择一个值`);
++    if (rule.kind === "research") {
++      validateResearchConfig(rule.research);
++      if (rule.enabled) researchHistory(rule.research, input.history);
++      continue;
++    }
+     if (rule.kind === "dan" && rule.params !== undefined) {
+       const p = rule.params;
+       if (
+         !p ||
+         typeof p !== "object" ||
+@@ -244,14 +261,28 @@ export function filter(input: FilterInput): FilterResult {
+     : undefined;
+   const initial =
+     candidates?.length ??
+     positions.reduce((total, values) => total * values.length, 1);
+   const tolerant = input.combination?.mode === "atLeast";
++  const research = rules
++    .filter((rule) => rule.kind === "research")
++    .map((rule) => ({
++      id: rule.id,
++      label: "实验方法",
++      prepared: prepareResearch(rule.research!, input.history),
++    }));
++  const researchDiagnostics = research.map(({ id, label, prepared }) => ({
++    id,
++    label,
++    diagnostics: prepared.diagnostics,
++  }));
+   const predicates = rules.map((rule) =>
+-    Object.hasOwn(advancedLabels, rule.kind)
+-      ? advancedPredicate(rule, input)
+-      : undefined,
++    rule.kind === "research"
++      ? research.find((r) => r.id === rule.id)!.prepared.test
++      : Object.hasOwn(advancedLabels, rule.kind)
++        ? advancedPredicate(rule, input)
++        : undefined,
+   );
+   const numbers: string[] = [];
+   // One metrics calculation per candidate, regardless of the number of active rules.
+   const needsMetrics = rules.some(
+     (rule, index) =>
+@@ -307,16 +338,17 @@ export function filter(input: FilterInput): FilterResult {
+   else visit("", 0);
+   if (tolerant)
+     return {
+       numbers,
+       initial,
++      research: researchDiagnostics,
+       steps: [
+         {
+           id: "combination",
+           label: "容错组合",
+           before: initial,
+           after: numbers.length,
+         },
+       ],
+     };
+-  return { numbers, initial, steps };
++  return { numbers, initial, steps, research: researchDiagnostics };
+ }
+diff --git a/src/domain/research/config.ts b/src/domain/research/config.ts
+new file mode 100644
+index 0000000..f1054d1
+--- /dev/null
++++ b/src/domain/research/config.ts
+@@ -0,0 +1,72 @@
++import { filterMethods, scoreMethods, type ResearchConfig } from "./types";
++const finite = (v: unknown, lo: number, hi: number) =>
++  typeof v === "number" && Number.isFinite(v) && v >= lo && v <= hi;
++const integer = (v: unknown, lo: number, hi: number) =>
++  finite(v, lo, hi) && Number.isInteger(v);
++export function validateResearchConfig(
++  value: unknown,
++): asserts value is ResearchConfig {
++  if (!value || typeof value !== "object" || Array.isArray(value))
++    throw new Error("实验参数格式错误");
++  const c = value as ResearchConfig;
++  if (
++    ![...filterMethods, ...scoreMethods, "auto", "greedy", "preset"].includes(
++      c.method,
++    ) ||
++    !filterMethods.includes(c.family)
++  )
++    throw new Error("实验方法不合法");
++  if (
++    !integer(c.window, 1, 100000) ||
++    !integer(c.seed, 0, 4294967295) ||
++    !integer(c.windows, 2, 20) ||
++    !integer(c.folds, 1, 5) ||
++    !integer(c.validationSize, 1, 200) ||
++    !integer(c.maxSteps, 1, 8)
++  )
++    throw new Error("实验窗口、种子或验证设置超出范围");
++  if (
++    !finite(c.parameter, 0, 100000) ||
++    !finite(c.retain, 0.00001, 1) ||
++    !finite(c.targetCoverage, 0, 1) ||
++    !["inclusive", "seeded"].includes(c.ties) ||
++    !["lift60", "cov90", "strict"].includes(c.selection) ||
++    !["A", "B", "C", "D", "E", "F"].includes(c.preset)
++  )
++    throw new Error("实验参数或选择策略不合法");
++  if (
++    c.referenceIssue !== undefined &&
++    (typeof c.referenceIssue !== "string" || !c.referenceIssue.trim())
++  )
++    throw new Error("实验参考期格式错误");
++  if (c.method === "auto" || c.method === "greedy")
++    if (c.window - c.folds * c.validationSize < 10)
++      throw new Error("历史不足：滚动验证后至少需要10期训练记录");
++  const method = c.method === "auto" ? c.family : c.method;
++  if (method === "hotcold" && !integer(c.parameter, 1, 10))
++    throw new Error("Top K须为1至10整数");
++  if (
++    ["omission", "multiset", "samePosition", "positionNeighbor"].includes(
++      method,
++    ) &&
++    !integer(
++      c.parameter,
++      method === "multiset" ? 1 : 0,
++      method === "samePosition" || method === "positionNeighbor" ? 5 : 100000,
++    )
++  )
++    throw new Error("实验计数阈值超出范围");
++  if (
++    [
++      "bayes",
++      "markov",
++      "sumQuantile",
++      "spanQuantile",
++      ...filterMethods.filter((m) => m.endsWith("Frequency")),
++    ].includes(method) &&
++    !finite(c.parameter, 0, 1)
++  )
++    throw new Error("概率、频率或分位比例须在0至1之间");
++  if (method === "sumSigma" && !finite(c.parameter, 0, 10))
++    throw new Error("标准差倍数须在0至10之间");
++}
+diff --git a/src/domain/research/types.ts b/src/domain/research/types.ts
+new file mode 100644
+index 0000000..ded9cf2
+--- /dev/null
++++ b/src/domain/research/types.ts
+@@ -0,0 +1,117 @@
++import type { HistoryRecord } from "../pick5";
++export const filterMethods = [
++  "hotcold",
++  "omission",
++  "bayes",
++  "markov",
++  "sumSigma",
++  "sumQuantile",
++  "spanQuantile",
++  "oddFrequency",
++  "bigFrequency",
++  "primeFrequency",
++  "distinctFrequency",
++  "consecutiveFrequency",
++  "routeFrequency",
++  "tailFrequency",
++  "samePosition",
++  "positionNeighbor",
++  "multiset",
++] as const;
++export type FilterMethod = (typeof filterMethods)[number];
++export const scoreMethods = [
++  "heatScore",
++  "bma",
++  "dsPlausibility",
++  "dsBelief",
++  "dsDempster",
++  "sparseBest",
++] as const;
++export type ScoreMethod = (typeof scoreMethods)[number];
++export type ResearchMethod =
++  FilterMethod | ScoreMethod | "auto" | "greedy" | "preset";
++export type ResearchConfig = {
++  method: ResearchMethod;
++  window: number;
++  referenceIssue?: string;
++  parameter: number;
++  family: FilterMethod;
++  selection: "lift60" | "cov90" | "strict";
++  retain: number;
++  ties: "inclusive" | "seeded";
++  seed: number;
++  windows: number;
++  folds: number;
++  validationSize: number;
++  targetCoverage: number;
++  maxSteps: number;
++  preset: "A" | "B" | "C" | "D" | "E" | "F";
++};
++export const defaultResearch: ResearchConfig = {
++  method: "hotcold",
++  window: 100,
++  parameter: 7,
++  family: "hotcold",
++  selection: "cov90",
++  retain: 0.25,
++  ties: "inclusive",
++  seed: 20261029,
++  windows: 5,
++  folds: 3,
++  validationSize: 10,
++  targetCoverage: 0.9,
++  maxSteps: 8,
++  preset: "A",
++};
++export const researchLabels: Record<ResearchMethod, string> = {
++  hotcold: "逐位冷热Top K",
++  omission: "逐位遗漏上限",
++  bayes: "贝叶斯平滑阈值",
++  markov: "马尔可夫转移阈值",
++  sumSigma: "和值标准差带",
++  sumQuantile: "和值中心分位",
++  spanQuantile: "跨度中心分位",
++  oddFrequency: "奇偶个数频率",
++  bigFrequency: "大小个数频率",
++  primeFrequency: "质合个数频率",
++  distinctFrequency: "不同数字数频率",
++  consecutiveFrequency: "连号对数频率",
++  routeFrequency: "012路个数频率",
++  tailFrequency: "和尾频率",
++  samePosition: "同位重号上限",
++  positionNeighbor: "同位重邻上限",
++  multiset: "数字多重集历史次数",
++  heatScore: "平滑热度评分",
++  bma: "BMA七模型平均",
++  dsPlausibility: "D-S IDM似然度",
++  dsBelief: "D-S IDM信念度",
++  dsDempster: "D-S分窗融合",
++  sparseBest: "单位置最佳模型",
++  auto: "滚动自动选参",
++  greedy: "贪心组合",
++  preset: "固定组合包",
++};
++export type ResearchDiagnostics = Record<string, unknown>;
++export type PreparedResearch = {
++  test: (number: string) => boolean;
++  diagnostics: ResearchDiagnostics;
++};
++export type ResearchStats = {
++  rows: HistoryRecord[];
++  digits: number[][];
++  n: number;
++  counts: number[][];
++  omissions: number[][];
++  transitions: number[][][];
++  last: number[];
++  sums: number[];
++  spans: number[];
++  mean: number;
++  sd: number;
++  frequencies: Record<string, Map<string, number>>;
++  multisets: Map<string, number>;
++};
++export type ScoreModel = {
++  score: (number: string) => number;
++  details: ResearchDiagnostics;
++};
+diff --git a/src/pages/Workbench.tsx b/src/pages/Workbench.tsx
+index da21910..2f2ff39 100644
+--- a/src/pages/Workbench.tsx
++++ b/src/pages/Workbench.tsx
+@@ -1,5 +1,9 @@
++import ResearchRules, {
++  ResearchDiagnosticsView,
++} from "../components/ResearchRules";
++import "../components/research.css";
+ import { useEffect, useRef, useState } from "react";
+ import {
+   ArrowRight,
+   Check,
+   ChevronLeft,
+@@ -277,10 +281,11 @@ export default function Workbench({
+           <AdvancedRules
+             input={input}
+             onChange={setInput}
+             historySource={input.historySource ?? "未载入历史数据"}
+           />
++          <ResearchRules input={input} onChange={setInput} />
+           <div className="action-bar">
+             {busy ? (
+               <button className="button primary start-button" onClick={cancel}>
+                 <X size={16} />
+                 取消计算
+@@ -498,9 +503,12 @@ export default function Workbench({
+           </div>
+         ) : (
+           <p className="muted small">计算后可查看每个条件移除的组合数量。</p>
+         )}
+       </section>
++      {valid && result.research && (
++        <ResearchDiagnosticsView items={result.research} />
++      )}
+       <Backtest input={input} />
+     </>
+   );
+ }
+diff --git a/src/workers/filter.worker.ts b/src/workers/filter.worker.ts
+index 0868a77..20ee6ec 100644
+--- a/src/workers/filter.worker.ts
++++ b/src/workers/filter.worker.ts
+@@ -1,12 +1,23 @@
++import { backtest } from "../domain/backtest";
+ import { filter, type FilterInput } from "../domain/pick5";
+ self.onmessage = (
+-  event: MessageEvent<{ requestId: number; input: FilterInput }>,
++  event: MessageEvent<{
++    requestId: number;
++    input: FilterInput;
++    operation?: "backtest";
++    count?: number;
++  }>,
+ ) => {
+   const { requestId, input } = event.data;
+   try {
+-    self.postMessage({ requestId, result: filter(input) });
++    if (event.data.operation === "backtest")
++      self.postMessage({
++        requestId,
++        rows: backtest(input, event.data.count ?? 30),
++      });
++    else self.postMessage({ requestId, result: filter(input) });
+   } catch (e) {
+     self.postMessage({
+       requestId,
+       error: e instanceof Error ? e.message : "计算失败，请重试",
+     });
+diff --git a/tests/research-config.test.ts b/tests/research-config.test.ts
+new file mode 100644
+index 0000000..2d71f65
+--- /dev/null
++++ b/tests/research-config.test.ts
+@@ -0,0 +1,19 @@
++import { it, expect } from "vitest";
++import { validateResearchConfig } from "../src/domain/research/config";
++import { defaultResearch } from "../src/domain/research/types";
++it("validates finite bounded settings and rejects coercion", () => {
++  expect(() => validateResearchConfig(defaultResearch)).not.toThrow();
++  for (const change of [
++    { window: 0 },
++    { seed: NaN },
++    { retain: 0 },
++    { method: "unknown" },
++    { parameter: "7" },
++    { folds: 6 },
++    { ties: "random" },
++    { referenceIssue: 5 },
++  ])
++    expect(() =>
++      validateResearchConfig({ ...defaultResearch, ...change }),
++    ).toThrow();
++});
+
+UNTRACKED EXPLICITLY INCLUDED docs/research/experiment-audit.md
+# 实验算法来源与迁移审计
+
+## 来源和验证口径
+
+原件 `outputs/实验结果` 保持只读。统计过滤来自 `pailie5_lab.py` 的 Stats 和 f_* 方法，独立参考 `validate_filters.py`。原件 SHA-256：
+
+- pailie5_lab.py：`df231800672516ef7891e18390bf9f50c7b3f9e5e9d771587ab56f95c8b75564`
+- validate_filters.py：`d392a5a33e39670bacf6e64636e55d7c54711831937266e8fb1d1cd7ab8a455a`
+
+`tests/fixtures/research-reference.json` 保存 Python random.Random(8142) 生成的75条固定历史。原始 Python 的17个谓词各执行全部00000—99999，记录保留数量及按候选顺序对0/1字节做的32位 FNV-1a。TypeScript测试重新穷举比较两个量。这是实现一致性验证，不是预测能力证据；没有导入模拟冠军结果或原始大表。Python导入禁用字节码写入，没有执行原件 main 或写出报告。
+
+## 统计过滤公式
+
+- 逐位冷热：各位置频次降序，数字升序破并列，保留前K个。
+- 遗漏：从窗口最后记录反向数最近出现间隔，<=T；窗口内未见标记未知并排除。
+- 贝叶斯：Dirichlet(1)平滑，(次数+1)/(N+10)>=q。
+- 马尔可夫：最后一期对应转移行，(转移次数+1)/(行总数+10)>=q。
+- 和值标准差：总体方差，均值±kσ含边界。
+- 和值/跨度中心分位：分位索引 floor(q*N)，截到[0,N-1]；取中心比例区间含边界。
+- 七类形态频率：奇数个数、大数个数（>=5）、质数个数（彩票口径含1，即1/2/3/5/7）、不同数字数、排序后相邻差1的对数（不先去重）、012路组成、和尾。频率>=阈值；若为空取频率最高的一个形态，按来源键空间顺序破并列。
+- 同位重号/重邻：与窗口最后记录逐位比较，相等或距离<=1的位置总数<=参数；邻号含本号，无0/9环绕。
+- 数字多重集：数字排序后形成五字符键（保留重复与前导零），历史出现次数>=参数。
+
+## 明确修正与限制
+
+1. 原 Python 标准差为0时回退到1。迁移采用数学上的σ=0，仅保留历史均值对应和值。
+2. 原 Python 对窗口内未见数字赋遗漏N，可能把未知当精确值。迁移以-1表示未知，始终排除。遗漏解释为可用窗口中的观测记录间隔；历史缺期时不宣称连续开奖期的精确遗漏。
+3. 统计历史先严格检查整个快照（即使记录在参考期之后），禁止重复期号、重复日期、非法日历日期、非五位号码；按日期排序后截到参考期，再取恰好N条，不足直接报错。
+4. 迁移保留来源频率无允许值时的众数回退，在诊断中明确 `fallback`。
+5. 模拟数据上公式一致、覆盖或lift均不证明真实开奖优势。自动选择和评分模块须另按时间切分验证，不可用验证答案拟合。
+
+## 本模块测试记录
+
+先建立统计与谓词测试，执行时因模块尚未实现而失败；随后实现并比较17个来源全量掩码。增加未知遗漏、零方差、频率回退、参数边界、历史全快照校验及截止期测试。仅执行本模块focused测试，完整交付检查由集成阶段统一执行。
+
+UNTRACKED EXPLICITLY INCLUDED src/components/ResearchRules.tsx
+import { researchHistory } from "../domain/research/statistics";
+import { useState, type ReactNode } from "react";
+import type { FilterInput, FilterResult, Rule } from "../domain/pick5";
+import {
+  defaultResearch,
+  filterMethods,
+  scoreMethods,
+  researchLabels,
+  type ResearchConfig,
+  type ResearchMethod,
+  type FilterMethod,
+} from "../domain/research/types";
+import { validateResearchConfig } from "../domain/research/config";
+
+function parameterFor(method: ResearchMethod): number {
+  if (method === "hotcold") return 7;
+  if (method === "omission") return 20;
+  if (method === "multiset") return 1;
+  if (method === "samePosition" || method === "positionNeighbor") return 2;
+  if (method === "sumSigma") return 2;
+  if (method === "sumQuantile" || method === "spanQuantile") return 0.9;
+  return 0.02;
+}
+const parameterHelp: Partial<Record<ResearchMethod, string>> = {
+  hotcold: "每个位置保留频次最高的 K 个数字（1—10）",
+  omission: "每个位置的遗漏期数上限",
+  bayes: "逐位平滑概率下限（0—1）",
+  markov: "逐位转移概率下限（0—1）",
+  sumSigma: "距历史均值的标准差倍数",
+  sumQuantile: "中心区间覆盖比例（0—1）",
+  spanQuantile: "中心区间覆盖比例（0—1）",
+  samePosition: "与上一期同位置相同数字的个数上限",
+  positionNeighbor: "与上一期同位置距离不超过1的个数上限",
+  multiset: "排序数字多重集在历史中出现次数下限",
+};
+export default function ResearchRules({
+  input,
+  onChange,
+}: {
+  input: FilterInput;
+  onChange: (input: FilterInput) => void;
+}) {
+  const [draft, setDraft] = useState<Rule | null>(null);
+  const [error, setError] = useState("");
+  const config = draft?.research;
+  const patch = (update: Partial<ResearchConfig>) =>
+    setDraft((d) => d && { ...d, research: { ...d.research!, ...update } });
+  const start = (rule?: Rule) => {
+    setDraft(
+      rule
+        ? { ...rule, research: { ...rule.research! } }
+        : {
+            id: crypto.randomUUID(),
+            kind: "research",
+            enabled: true,
+            mode: "include",
+            values: [],
+            research: { ...defaultResearch },
+          },
+    );
+    setError("");
+  };
+  const save = () => {
+    if (!draft || !config) return;
+    try {
+      validateResearchConfig(config);
+      researchHistory(config, input.history);
+      onChange({
+        ...input,
+        rules: input.rules.some((r) => r.id === draft.id)
+          ? input.rules.map((r) => (r.id === draft.id ? draft : r))
+          : [...input.rules, draft],
+      });
+      setDraft(null);
+      setError("");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "实验参数错误");
+    }
+  };
+  const numeric = (
+    label: string,
+    key: {[K in keyof ResearchConfig]: ResearchConfig[K] extends number ? K : never}[keyof ResearchConfig] & string,
+    value: number,
+    min: number,
+    max: number,
+    step = 1,
+    percent = false,
+  ) => (
+    <label>
+      {label}
+      <input
+        aria-label={label}
+        type="number"
+        min={min}
+        max={max}
+        step={step}
+        value={Number.isFinite(value) ? value : ""}
+        onChange={(e) =>
+          patch({
+            [key]:
+              e.target.value === ""
+                ? NaN
+                : Number(e.target.value) / (percent ? 100 : 1),
+          })
+        }
+      />
+    </label>
+  );
+  const scoring =
+    config &&
+    scoreMethods.includes(config.method as (typeof scoreMethods)[number]);
+  return (
+    <section className="research-card" aria-labelledby="research-title">
+      <header>
+        <div>
+          <span className="research-kicker">RESEARCH LAB</span>
+          <h2 id="research-title">实验方法</h2>
+        </div>
+        <button type="button" onClick={() => start()}>
+          添加实验方法
+        </button>
+      </header>
+      <p className="research-context">
+        历史来源：{input.historySource || "未载入"} ·{" "}
+        {input.history?.length ?? 0}期。参数在计算时由后台 Worker
+        拟合；实验方法不代表预测优势。
+      </p>
+      <ul className="research-rules">
+        {input.rules
+          .filter((r) => r.kind === "research" && r.research)
+          .map((r) => (
+            <li key={r.id}>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={r.enabled}
+                  onChange={(e) =>
+                    onChange({
+                      ...input,
+                      rules: input.rules.map((x) =>
+                        x.id === r.id ? { ...x, enabled: e.target.checked } : x,
+                      ),
+                    })
+                  }
+                />
+                {researchLabels[r.research!.method]}
+              </label>
+              <span>
+                {r.mode === "exclude" ? "排除" : "包含"} · 最近
+                {r.research!.window}期{r.group ? ` · 组 ${r.group}` : ""}
+              </span>
+              <button
+                type="button"
+                aria-label={`编辑 ${researchLabels[r.research!.method]}`}
+                onClick={() => start(r)}
+              >
+                编辑
+              </button>
+              <button
+                type="button"
+                aria-label={`删除 ${researchLabels[r.research!.method]}`}
+                onClick={() => {
+                  onChange({
+                    ...input,
+                    rules: input.rules.filter((x) => x.id !== r.id),
+                  });
+                  if (draft?.id === r.id) setDraft(null);
+                }}
+              >
+                删除
+              </button>
+            </li>
+          ))}
+      </ul>
+      {draft && config && (
+        <div className="research-editor">
+          <h3>
+            {input.rules.some((r) => r.id === draft.id)
+              ? "编辑实验条件"
+              : "新建实验条件"}
+          </h3>
+          <div className="research-fields">
+            <label>
+              实验方法
+              <select
+                aria-label="实验方法"
+                value={config.method}
+                onChange={(e) => {
+                  const method = e.target.value as ResearchMethod;
+                  patch({
+                    method,
+                    parameter: parameterFor(
+                      method === "auto" ? config.family : method,
+                    ),
+                  });
+                }}
+              >
+                <optgroup label="统计过滤">
+                  {filterMethods.map((m) => (
+                    <option key={m} value={m}>
+                      {researchLabels[m]}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="排名评分">
+                  {scoreMethods.map((m) => (
+                    <option key={m} value={m}>
+                      {researchLabels[m]}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="选择与组合">
+                  {(["auto", "greedy", "preset"] as const).map((m) => (
+                    <option key={m} value={m}>
+                      {researchLabels[m]}
+                    </option>
+                  ))}
+                </optgroup>
+              </select>
+            </label>
+            {numeric("历史窗口（期）", "window", config.window, 1, 100000)}
+            <label>
+              参考期（留空为最新）
+              <input
+                aria-label="参考期（留空为最新）"
+                value={config.referenceIssue ?? ""}
+                placeholder="例如 20260200"
+                onChange={(e) =>
+                  patch({ referenceIssue: e.target.value.trim() || undefined })
+                }
+              />
+            </label>
+            {!scoring &&
+              !["auto", "greedy", "preset"].includes(config.method) &&
+              numeric(
+                "方法参数",
+                "parameter",
+                config.parameter,
+                0,
+                100000,
+                0.001,
+              )}
+            {config.method === "auto" && (
+              <>
+                <label>
+                  自动选择方法族
+                  <select
+                    aria-label="自动选择方法族"
+                    value={config.family}
+                    onChange={(e) => {
+                      const family = e.target.value as FilterMethod;
+                      patch({ family, parameter: parameterFor(family) });
+                    }}
+                  >
+                    {filterMethods.map((m) => (
+                      <option key={m} value={m}>
+                        {researchLabels[m]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  选择标准
+                  <select
+                    aria-label="选择标准"
+                    value={config.selection}
+                    onChange={(e) =>
+                      patch({
+                        selection: e.target
+                          .value as ResearchConfig["selection"],
+                      })
+                    }
+                  >
+                    <option value="lift60">覆盖≥60%，提升比优先</option>
+                    <option value="cov90">覆盖≥90%，集合最小</option>
+                    <option value="strict">验证全中，集合最小</option>
+                  </select>
+                </label>
+              </>
+            )}
+            {(config.method === "auto" || config.method === "greedy") && (
+              <>
+                {numeric("滚动验证折数", "folds", config.folds, 1, 5)}
+                {numeric(
+                  "每折验证期数",
+                  "validationSize",
+                  config.validationSize,
+                  1,
+                  200,
+                )}
+              </>
+            )}
+            {config.method === "greedy" && (
+              <>
+                {numeric(
+                  "目标覆盖率（%）",
+                  "targetCoverage",
+                  config.targetCoverage * 100,
+                  0,
+                  100,
+                  0.1,
+                  true,
+                )}
+                {numeric("最多组合条件", "maxSteps", config.maxSteps, 1, 8)}
+              </>
+            )}
+            {scoring && (
+              <>
+                {numeric(
+                  "保留比例（%）",
+                  "retain",
+                  config.retain * 100,
+                  0.001,
+                  100,
+                  0.1,
+                  true,
+                )}
+                <label>
+                  并列策略
+                  <select
+                    aria-label="并列策略"
+                    value={config.ties}
+                    onChange={(e) =>
+                      patch({ ties: e.target.value as ResearchConfig["ties"] })
+                    }
+                  >
+                    <option value="inclusive">保留边界全部并列</option>
+                    <option value="seeded">固定种子精确保留</option>
+                  </select>
+                </label>
+                {config.ties === "seeded" &&
+                  numeric("随机种子", "seed", config.seed, 0, 4294967295)}
+                {config.method === "dsDempster" &&
+                  numeric("证据分窗数量", "windows", config.windows, 2, 20)}
+              </>
+            )}
+            {config.method === "preset" && (
+              <label>
+                固定组合包
+                <select
+                  aria-label="固定组合包"
+                  value={config.preset}
+                  onChange={(e) =>
+                    patch({
+                      preset: e.target.value as ResearchConfig["preset"],
+                    })
+                  }
+                >
+                  {["A", "B", "C", "D", "E", "F"].map((p) => (
+                    <option key={p} value={p}>
+                      组合包 {p}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+            <label>
+              规则模式
+              <select
+                aria-label="规则模式"
+                value={draft.mode}
+                onChange={(e) =>
+                  setDraft({ ...draft, mode: e.target.value as Rule["mode"] })
+                }
+              >
+                <option value="include">包含符合项</option>
+                <option value="exclude">排除符合项</option>
+              </select>
+            </label>
+            <label>
+              容错分组（可选）
+              <input
+                aria-label="容错分组（可选）"
+                value={draft.group ?? ""}
+                onChange={(e) =>
+                  setDraft({
+                    ...draft,
+                    group: e.target.value.trim() || undefined,
+                  })
+                }
+              />
+            </label>
+          </div>
+          <p className="research-context">
+            {parameterHelp[config.method] ??
+              (filterMethods.includes(config.method as FilterMethod)
+                ? "历史形态出现频率下限（0—1）"
+                : "排名始终以完整10万组为基准。滚动验证只使用验证期之前的训练数据。")}
+          </p>
+          {error && (
+            <p role="alert" className="research-error">
+              {error}
+            </p>
+          )}
+          <div className="research-actions">
+            <button type="button" onClick={save}>
+              保存实验条件
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setDraft(null);
+                setError("");
+              }}
+            >
+              取消
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+const diagnosticLabels: Record<string, string> = {
+  weights: "模型权重",
+  models: "模型名称",
+  targetCount: "目标保留组数",
+  actualCount: "实际保留组数",
+  boundaryScore: "边界评分",
+  boundaryTies: "边界并列组数",
+  allUniform: "评分是否完全退化为并列",
+  quantizationDecimals: "评分小数精度",
+  ties: "并列策略",
+  universe: "排名基准组数",
+  trainingCount: "训练期数",
+  firstIssue: "起始期",
+  lastIssue: "截止期",
+  firstDate: "起始日期",
+  lastDate: "截止日期",
+  allowed: "允许值",
+  lo: "下界",
+  hi: "上界",
+  mean: "历史均值",
+  sd: "总体标准差",
+  referenceNumber: "参考号码",
+  omissionPolicy: "遗漏口径",
+  strategy: "选择标准",
+  selectedParameter: "选中参数",
+  validationCoverage: "验证覆盖率",
+  validationCount: "验证期数",
+  averageCount: "平均保留组数",
+  candidates: "候选参数比较",
+  trainingEnd: "训练截止期",
+  validationStart: "验证起始期",
+  validationEnd: "验证结束期",
+  steps: "选择步骤",
+  step: "步骤",
+  targetCoverage: "目标验证覆盖率",
+  emptySelection: "是否未选择任何条件",
+  selectionPolicy: "选择口径",
+  derived: "重拟合详情",
+  preset: "组合包",
+  parameter: "方法参数",
+  windowSizes: "分窗期数",
+  scoreScale: "评分尺度",
+  alpha: "平滑浓度",
+  selectedModel: "最佳模型",
+  conflicts: "冲突系数",
+  selected: "选中参数",
+  threshold: "排名阈值",
+  folds: "滚动验证",
+  window: "历史窗口",
+  method: "方法",
+  coverage: "覆盖率",
+  retain: "保留比例",
+  seed: "随机种子",
+  actual: "实际保留",
+  target: "目标保留",
+  referenceIssue: "参考期",
+  training: "训练记录",
+  validation: "验证记录",
+  fallback: "回退说明",
+  details: "计算详情",
+  startIssue: "起始期",
+  endIssue: "截止期",
+};
+function readable(value: unknown, depth = 0): ReactNode {
+  if (value === null || value === undefined) return "—";
+  if (typeof value === "boolean") return value ? "是" : "否";
+  if (typeof value !== "object") return String(value);
+  if (depth >= 5) return "展开层级已达上限";
+  const entries = Array.isArray(value)
+    ? value.slice(0, 30).map((v, i) => [String(i + 1), v] as const)
+    : Object.entries(value).slice(0, 40);
+  return (
+    <>
+      <dl className="research-diagnostics-grid">
+        {entries.map(([k, v]) => (
+          <div key={k}>
+            <dt>{diagnosticLabels[k] ?? k}</dt>
+            <dd>{readable(v, depth + 1)}</dd>
+          </div>
+        ))}
+      </dl>
+      {Array.isArray(value) && value.length > 30 && (
+        <p>其余{value.length - 30}项已省略</p>
+      )}
+    </>
+  );
+}
+export function ResearchDiagnosticsView({
+  items,
+}: {
+  items: NonNullable<FilterResult["research"]>;
+}) {
+  return items.length ? (
+    <section className="research-diagnostics">
+      <h3>实验计算说明</h3>
+      <p>本次输入快照的拟合与选择记录；验证覆盖不等于未来命中保证。</p>
+      {items.map((item) => (
+        <details key={item.id} open>
+          <summary>{item.label}</summary>
+          {readable(item.diagnostics)}
+        </details>
+      ))}
+    </section>
+  ) : null;
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/components/research.css
+.research-card {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #eadfd4;
+  border-radius: 20px;
+  background: #fffdf9;
+}
+.research-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.research-kicker {
+  color: #c65b20;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.research-card h2 {
+  margin: 5px 0 0;
+  font-size: 21px;
+}
+.research-context,
+.research-diagnostics > p {
+  color: #786b61;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.research-card button {
+  border: 1px solid #e6d6c7;
+  background: #fff7ee;
+  color: #a94714;
+  border-radius: 9px;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+.research-rules {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.research-rules li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #f0e7dd;
+  flex-wrap: wrap;
+}
+.research-rules label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.research-rules span {
+  font-size: 12px;
+  color: #88796d;
+  flex: 1;
+}
+.research-editor {
+  margin-top: 18px;
+  padding: 20px;
+  background: #fcf7f0;
+  border-radius: 12px;
+}
+.research-editor h3 {
+  margin: 0 0 18px;
+  font-size: 16px;
+}
+.research-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.research-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  color: #695746;
+}
+.research-fields input,
+.research-fields select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #decebd;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+  color: #453b32;
+}
+.research-fields input:focus,
+.research-fields select:focus {
+  outline: 2px solid #f3a66f;
+  outline-offset: 2px;
+}
+.research-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.research-actions button:first-child {
+  color: white;
+  background: #f36c24;
+  border-color: #f36c24;
+}
+.research-error {
+  color: #ac3227;
+  font-size: 13px;
+}
+.research-diagnostics {
+  margin-top: 20px;
+  font-size: 12px;
+}
+.research-diagnostics details {
+  border: 1px solid #eadfd4;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fffdf9;
+}
+.research-diagnostics summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #a94714;
+}
+.research-diagnostics-grid {
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+.research-diagnostics-grid > div {
+  display: grid;
+  grid-template-columns: minmax(85px, 1fr) minmax(0, 3fr);
+  gap: 10px;
+  padding: 6px 0;
+  border-top: 1px solid #f1e8de;
+}
+.research-diagnostics-grid dt {
+  color: #8c7260;
+}
+.research-diagnostics-grid dd {
+  margin: 0;
+  min-width: 0;
+}
+@media (max-width: 700px) {
+  .research-card {
+    padding: 16px;
+  }
+  .research-fields {
+    grid-template-columns: 1fr;
+  }
+  .research-editor {
+    padding: 14px;
+  }
+  .research-rules span {
+    flex-basis: 100%;
+  }
+  .research-diagnostics-grid > div {
+    grid-template-columns: 1fr;
+  }
+  .research-card > header {
+    align-items: flex-start;
+  }
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/filters.ts
+import { feature } from "./statistics";
+import {
+  filterMethods,
+  type FilterMethod,
+  type PreparedResearch,
+  type ResearchStats,
+} from "./types";
+export function validateFilterParameter(
+  method: FilterMethod,
+  parameter: number,
+): void {
+  if (!filterMethods.includes(method) || !Number.isFinite(parameter))
+    throw new Error("研究参数无效");
+  const integer = [
+    "hotcold",
+    "omission",
+    "samePosition",
+    "positionNeighbor",
+    "multiset",
+  ].includes(method);
+  const minimum = method === "hotcold" || method === "multiset" ? 1 : 0;
+  let maximum=Infinity;
+  if(method==='hotcold')maximum=10;
+  else if(method==='samePosition'||method==='positionNeighbor')maximum=5;
+  else if(['bayes','markov','sumQuantile','spanQuantile'].includes(method)||method.endsWith('Frequency'))maximum=1;
+  if (
+    parameter < minimum ||
+    parameter > maximum ||
+    (integer && !Number.isInteger(parameter))
+  )
+    throw new Error("研究参数超出范围");
+}
+const quantile = (values: number[], q: number) =>
+  values[
+    Math.min(values.length - 1, Math.max(0, Math.floor(q * values.length)))
+  ];
+export function fitFilter(
+  method: FilterMethod,
+  parameter: number,
+  stats: ResearchStats,
+): PreparedResearch & {testDigits:(digits:number[])=>boolean} {
+  validateFilterParameter(method, parameter);
+  const diagnostics: PreparedResearch["diagnostics"] = {
+    method,
+    parameter,
+    trainingCount: stats.n,
+    firstIssue: stats.rows[0].issue,
+    lastIssue: stats.rows[stats.n - 1].issue,
+  };
+  let testDigits: (digits: number[]) => boolean;
+  if (["hotcold", "omission", "bayes", "markov"].includes(method)) {
+    const allowed = stats.counts.map((counts, p) => {
+      if (method === "hotcold")
+        return Array.from({ length: 10 }, (_, d) => d)
+          .sort((a, b) => counts[b] - counts[a] || a - b)
+          .slice(0, parameter);
+      const trans = stats.transitions[p][stats.last[p]],
+        total = trans.reduce((a, b) => a + b, 0);
+      return Array.from({ length: 10 }, (_, d) => d).filter((d) =>
+        method === "omission"
+          ? stats.omissions[p][d] >= 0 && stats.omissions[p][d] <= parameter
+          : method === "bayes"
+            ? (counts[d] + 1) / (stats.n + 10) >= parameter
+            : (trans[d] + 1) / (total + 10) >= parameter,
+      );
+    });
+    diagnostics.allowed = allowed;
+    if (method === "omission")
+      diagnostics.omissionPolicy =
+        "窗口内观测记录间隔；未出现数字未知并排除，不将窗口长当成精确遗漏";
+    testDigits = (d) => d.every((x, p) => allowed[p].includes(x));
+  } else if (["sumSigma", "sumQuantile", "spanQuantile"].includes(method)) {
+    const values = method === "spanQuantile" ? stats.spans : stats.sums,
+      lo =
+        method === "sumSigma"
+          ? stats.mean - parameter * stats.sd
+          : quantile(values, (1 - parameter) / 2),
+      hi =
+        method === "sumSigma"
+          ? stats.mean + parameter * stats.sd
+          : quantile(values, (1 + parameter) / 2);
+    Object.assign(diagnostics, { lo, hi, mean: stats.mean, sd: stats.sd });
+    testDigits = (d) => {
+      const value =
+        method === "spanQuantile"
+          ? Math.max(...d) - Math.min(...d)
+          : d.reduce((a, b) => a + b, 0);
+      return value >= lo && value <= hi;
+    };
+  } else if (method.endsWith("Frequency")) {
+    const keys =
+      method === "distinctFrequency"
+        ? [1, 2, 3, 4, 5]
+        : method === "consecutiveFrequency"
+          ? [0, 1, 2, 3, 4]
+          : method === "tailFrequency"
+            ? Array.from({ length: 10 }, (_, i) => i)
+            : method === "routeFrequency"
+              ? Array.from({ length: 6 }, (_, a) =>
+                  Array.from(
+                    { length: 6 - a },
+                    (_, b) => a * 36 + b * 6 + 5 - a - b,
+                  ),
+                ).flat()
+              : [0, 1, 2, 3, 4, 5];
+    const freq = stats.frequencies[method];
+    let allowed = keys.filter(
+      (k) => (freq.get(String(k)) ?? 0) / stats.n >= parameter,
+    );
+    const fallback = !allowed.length;
+    if (fallback)
+      allowed = [
+        keys.reduce((best, key) =>
+          (freq.get(String(key)) ?? 0) > (freq.get(String(best)) ?? 0)
+            ? key
+            : best,
+        ),
+      ];
+    Object.assign(diagnostics, { allowed, fallback });
+    const set = new Set(allowed.map(String));
+    testDigits = (d) => set.has(feature(method, d));
+  } else if (method === "samePosition" || method === "positionNeighbor") {
+    testDigits = (d) =>
+      d.filter((x, p) =>
+        method === "samePosition"
+          ? x === stats.last[p]
+          : Math.abs(x - stats.last[p]) <= 1,
+      ).length <= parameter;
+    diagnostics.referenceNumber = stats.last.join("");
+  } else {
+    testDigits = (d) =>
+      (stats.multisets.get([...d].sort((a, b) => a - b).join("")) ?? 0) >=
+      parameter;
+  }
+  return {
+    testDigits,
+    test: (number) =>
+      /^\d{5}$/.test(number) && testDigits([...number].map(Number)),
+    diagnostics,
+  };
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/index.ts
+import type { HistoryRecord } from "../pick5";
+import { validateResearchConfig } from "./config";
+import { buildStats, researchHistory } from "./statistics";
+import { fitFilter } from "./filters";
+import { fitScores } from "./models";
+import { rankSelection } from "./ranking";
+import { tuneResearch } from "./tuning";
+import { presets } from "./presets";
+import {
+  filterMethods,
+  researchLabels,
+  type ResearchConfig,
+  type PreparedResearch,
+  type FilterMethod,
+} from "./types";
+export { validateResearchConfig, researchHistory };
+export function prepareResearch(
+  config: ResearchConfig,
+  history?: HistoryRecord[],
+): PreparedResearch {
+  validateResearchConfig(config);
+  const rows = researchHistory(config, history),
+    stats = buildStats(rows);
+  let prepared: PreparedResearch;
+  if (filterMethods.includes(config.method as FilterMethod))
+    prepared = fitFilter(
+      config.method as FilterMethod,
+      config.parameter,
+      stats,
+    );
+  else if (
+    config.method === "auto" ||
+    config.method === "greedy" ||
+    config.method === "preset"
+  ) {
+    const selection =
+      config.method === "preset"
+        ? {
+            selected: presets[config.preset],
+            diagnostics: { preset: config.preset },
+          }
+        : tuneResearch(config, rows);
+    const filters = selection.selected.map((s) =>
+      fitFilter(s.method, s.parameter, stats),
+    );
+    prepared = {
+      test: (number) => filters.every((f) => f.test(number)),
+      diagnostics: {
+        ...selection.diagnostics,
+        selected: selection.selected,
+        derived: filters.map((f) => f.diagnostics),
+      },
+    };
+  } else prepared = rankSelection(config, fitScores(config, stats));
+  return {
+    test: prepared.test,
+    diagnostics: {
+      method: researchLabels[config.method],
+      window: rows.length,
+      firstIssue: rows[0].issue,
+      lastIssue: rows.at(-1)!.issue,
+      firstDate: rows[0].date,
+      lastDate: rows.at(-1)!.date,
+      ...prepared.diagnostics,
+    },
+  };
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/models.ts
+import type { ResearchConfig, ResearchStats, ScoreModel } from "./types";
+
+// Lanczos approximation, valid for positive Dirichlet concentrations.
+export function logGamma(z: number): number {
+  const c = [
+    676.5203681218851, -1259.1392167224028, 771.32342877765313,
+    -176.6150291621406, 12.507343278686905, -0.13857109526572012,
+    9.984369578019572e-6, 1.5056327351493116e-7,
+  ];
+  if (z < 0.5)
+    return (
+      Math.log(Math.PI) - Math.log(Math.sin(Math.PI * z)) - logGamma(1 - z)
+    );
+  z -= 1;
+  let x = 0.99999999999980993;
+  for (let i = 0; i < c.length; i++) x += c[i] / (z + i + 1);
+  const t = z + 7.5;
+  return (
+    0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x)
+  );
+}
+const uniform = () =>
+  Array.from({ length: 5 }, () => Array(10).fill(0.1) as number[]);
+function marginal(row: number[], a: number): number {
+  return (
+    logGamma(10 * a) -
+    logGamma(10 * a + row.reduce((x, y) => x + y, 0)) +
+    row.reduce((s, n) => s + logGamma(a + n) - logGamma(a), 0)
+  );
+}
+function iid(s: ResearchStats, a: number) {
+  return s.counts.map((row) => row.map((c) => (c + a) / (s.n + 10 * a)));
+}
+function sumScore(table: number[][], number: string) {
+  let value = 0;
+  for (let p = 0; p < 5; p++) value += table[p][Number(number[p])];
+  return value;
+}
+function product(table: number[][], number: string) {
+  let value = 1;
+  for (let p = 0; p < 5; p++) value *= table[p][Number(number[p])];
+  return value;
+}
+function logTable(table: number[][]) {
+  return table.map((row) =>
+    row.map((x) => (x === 0 ? -Infinity : Math.log(x))),
+  );
+}
+function normalize(logs: number[]) {
+  const max = Math.max(...logs),
+    values = logs.map((x) => Math.exp(x - max)),
+    total = values.reduce((a, b) => a + b, 0);
+  return values.map((x) => x / total);
+}
+
+/** Dempster combination of singleton masses and the remaining frame mass. */
+export function combineDempster(
+  mass: number[],
+  theta: number,
+  other: number[],
+  otherTheta: number,
+) {
+  let conflict = 0;
+  for (let d = 0; d < 10; d++)
+    for (let e = 0; e < 10; e++) if (d !== e) conflict += mass[d] * other[e];
+  if (!Number.isFinite(conflict) || 1 - conflict <= 1e-12)
+    throw new Error("D-S 证据接近完全冲突，无法可靠归一化");
+  const den = 1 - conflict;
+  return {
+    mass: mass.map(
+      (m, d) => (m * other[d] + m * otherTheta + theta * other[d]) / den,
+    ),
+    theta: (theta * otherTheta) / den,
+    conflict,
+  };
+}
+
+export function fitScores(
+  config: ResearchConfig,
+  s: ResearchStats,
+): ScoreModel {
+  if (!s.n || s.counts.length !== 5) throw new Error("评分需要历史数据");
+  if (config.method === "heatScore") {
+    const table = logTable(iid(s, 0.5));
+    return {
+      score: (n) => sumScore(table, n),
+      details: { alpha: 0.5, scoreScale: "logProbability" },
+    };
+  }
+  if (config.method === "bma") {
+    const names = [
+      "uniform",
+      "iid_a0.5",
+      "iid_a1.0",
+      "iid_a2.0",
+      "iid_a5.0",
+      "mkv_a1.0",
+      "mkv_a5.0",
+    ];
+    const logs = [-5 * s.n * Math.log(10)],
+      predictions = [uniform()];
+    for (const a of [0.5, 1, 2, 5]) {
+      logs.push(s.counts.reduce((total, row) => total + marginal(row, a), 0));
+      predictions.push(iid(s, a));
+    }
+    for (const a of [1, 5]) {
+      logs.push(
+        s.transitions.reduce(
+          (total, position) =>
+            total + position.reduce((v, row) => v + marginal(row, a), 0),
+          0,
+        ) -
+          5 * Math.log(10),
+      );
+      predictions.push(
+        s.transitions.map((position, p) => {
+          const row = position[s.last[p]],
+            den = row.reduce((x, y) => x + y, 0) + 10 * a;
+          return row.map((c) => (c + a) / den);
+        }),
+      );
+    }
+    const weights = normalize(logs);
+    return {
+      score: (n) =>
+        predictions.reduce((v, p, k) => v + weights[k] * product(p, n), 0),
+      details: {
+        models: names,
+        weights,
+        logMarginals: logs,
+        logBayesFactorUniformVsIID1: logs[0] - logs[2],
+        scoreScale: "probability",
+      },
+    };
+  }
+  if (config.method === "sparseBest") {
+    const logs = [
+      -5 * s.n * Math.log(10),
+      ...s.counts.map((row) => marginal(row, 1) - 4 * s.n * Math.log(10)),
+    ];
+    let selected = 0;
+    for (let i = 1; i < logs.length; i++)
+      if (logs[i] > logs[selected]) selected = i;
+    const predictions = uniform();
+    if (selected) predictions[selected - 1] = iid(s, 1)[selected - 1];
+    return {
+      score: (n) => product(predictions, n),
+      details: {
+        selectedPosition: selected - 1,
+        logMarginals: logs,
+        model: "best-of-uniform-and-five-single-position-iid",
+        scoreScale: "probability",
+      },
+    };
+  }
+  if (config.method === "dsPlausibility" || config.method === "dsBelief") {
+    const plus = config.method === "dsPlausibility" ? 10 : 0;
+    const table = logTable(s.counts.map((row) => row.map((c) => c + plus)));
+    return {
+      score: (n) => sumScore(table, n),
+      details: {
+        strength: 10,
+        uncertaintyWidth: 10 / (s.n + 10),
+        scoreScale: "logUnnormalized",
+        omittedLogDenominator: 5 * Math.log(s.n + 10),
+      },
+    };
+  }
+  if (config.method === "dsDempster") {
+    const windows = config.windows;
+    if (
+      !Number.isInteger(windows) ||
+      windows < 1 ||
+      Math.floor(s.n / windows) < 5
+    )
+      throw new Error("D-S 每个分窗至少需要5期历史");
+    const sizes = Array.from(
+      { length: windows },
+      (_, i) => Math.floor(s.n / windows) + (i < s.n % windows ? 1 : 0),
+    );
+    let offset = 0;
+    const counts = sizes.map((size) => {
+      const table = Array.from(
+        { length: 5 },
+        () => Array(10).fill(0) as number[],
+      );
+      for (const row of s.rows.slice(offset, offset + size))
+        for (let p = 0; p < 5; p++) table[p][Number(row.number[p])]++;
+      offset += size;
+      return table;
+    });
+    const conflicts: number[][] = [];
+    const finalMasses: number[][] = [];
+    const ignorance: number[] = [];
+    const table = Array.from({ length: 5 }, (_, p) => {
+      let mass = counts[0][p].map((c) => c / (sizes[0] + 10)),
+        theta = 10 / (sizes[0] + 10);
+      const chain: number[] = [];
+      for (let w = 1; w < windows; w++) {
+        const other = counts[w][p].map((c) => c / (sizes[w] + 10)),
+          otherTheta = 10 / (sizes[w] + 10);
+        const combined = combineDempster(mass, theta, other, otherTheta);
+        chain.push(combined.conflict);
+        mass = combined.mass;
+        theta = combined.theta;
+      }
+      conflicts.push(chain);
+      finalMasses.push(mass);
+      ignorance.push(theta);
+      return mass.map((m) => m + theta);
+    });
+    const logs = logTable(table);
+    return {
+      score: (n) => sumScore(logs, n),
+      details: {
+        windowSizes: sizes,
+        conflicts,
+        finalMasses,
+        ignorance,
+        scoreScale: "logPlausibility",
+        evidenceIndependence: "assumed-not-established",
+      },
+    };
+  }
+  throw new Error("不是评分研究方法");
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/presets.ts
+import type { FilterMethod, ResearchConfig } from "./types";
+export type FilterSpec = { method: FilterMethod; parameter: number };
+const spec = (method: FilterMethod, parameter: number): FilterSpec => ({
+  method,
+  parameter,
+});
+export const parameterGrids: Record<FilterMethod, number[]> = {
+  hotcold: [4, 5, 6, 7, 8, 9],
+  omission: [4, 5, 6, 8, 10, 14, 20, 30],
+  bayes: [0.07, 0.08, 0.09, 0.095, 0.1, 0.105, 0.11, 0.12],
+  markov: [0.03, 0.05, 0.07, 0.09, 0.11],
+  sumSigma: [0.7, 1, 1.3, 1.6, 2, 2.5],
+  sumQuantile: [0.5, 0.7, 0.8, 0.9, 0.95, 0.99],
+  spanQuantile: [0.5, 0.7, 0.8, 0.9, 0.95, 0.99],
+  oddFrequency: [0.01, 0.02, 0.05, 0.08, 0.12],
+  bigFrequency: [0.01, 0.02, 0.05, 0.08, 0.12],
+  primeFrequency: [0.01, 0.02, 0.05, 0.08, 0.12],
+  distinctFrequency: [0.01, 0.02, 0.05, 0.1],
+  consecutiveFrequency: [0.01, 0.02, 0.05, 0.1],
+  routeFrequency: [0.005, 0.01, 0.02, 0.05],
+  tailFrequency: [0.05, 0.08, 0.1, 0.12],
+  samePosition: [1, 2, 3, 4],
+  positionNeighbor: [1, 2, 3, 4],
+  multiset: [1, 2],
+};
+export const pool: FilterSpec[] = [];
+for (const p of [6, 7, 8, 9]) pool.push(spec("hotcold", p));
+for (const p of [4, 6, 8, 12, 20]) pool.push(spec("omission", p));
+for (const p of [0.085, 0.095, 0.105]) pool.push(spec("bayes", p));
+for (const p of [0.04, 0.07, 0.1]) pool.push(spec("markov", p));
+for (const p of [0.8, 1.1, 1.4, 1.8, 2.2]) pool.push(spec("sumSigma", p));
+for (const p of [0.6, 0.8, 0.9, 0.95])
+  pool.push(spec("sumQuantile", p), spec("spanQuantile", p));
+for (const p of [0.02, 0.05, 0.1])
+  for (const m of [
+    "oddFrequency",
+    "bigFrequency",
+    "primeFrequency",
+    "distinctFrequency",
+    "consecutiveFrequency",
+    "routeFrequency",
+    "tailFrequency",
+  ] as const)
+    pool.push(spec(m, p));
+for (const p of [2, 3, 4]) pool.push(spec("samePosition", p));
+for (const p of [2, 3, 4]) pool.push(spec("positionNeighbor", p));
+pool.push(spec("multiset", 1), spec("multiset", 2));
+export const presets: Record<ResearchConfig["preset"], FilterSpec[]> = {
+  A: [spec("hotcold", 7), spec("sumSigma", 1.5), spec("oddFrequency", 0.02)],
+  B: [
+    spec("hotcold", 6),
+    spec("spanQuantile", 0.9),
+    spec("distinctFrequency", 0.02),
+  ],
+  C: [
+    spec("bayes", 0.09),
+    spec("samePosition", 3),
+    spec("consecutiveFrequency", 0.02),
+  ],
+  D: [spec("hotcold", 8), spec("markov", 0.05), spec("primeFrequency", 0.02)],
+  E: [
+    spec("omission", 8),
+    spec("sumQuantile", 0.8),
+    spec("bigFrequency", 0.02),
+  ],
+  F: [
+    spec("hotcold", 7),
+    spec("sumSigma", 1.5),
+    spec("spanQuantile", 0.9),
+    spec("oddFrequency", 0.02),
+    spec("routeFrequency", 0.01),
+  ],
+};
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/ranking.ts
+import type { PreparedResearch, ResearchConfig, ScoreModel } from "./types";
+const TOTAL = 100000;
+// Stable integer avalanche hash: deterministic across browsers, independent of enumeration order.
+function tieHash(index: number, seed: number) {
+  let x = (index ^ (seed >>> 0)) >>> 0;
+  x = Math.imul(x ^ (x >>> 16), 0x7feb352d);
+  x = Math.imul(x ^ (x >>> 15), 0x846ca68b);
+  return (x ^ (x >>> 16)) >>> 0;
+}
+export function rankSelection(
+  config: ResearchConfig,
+  model: ScoreModel,
+): PreparedResearch {
+  if (
+    !Number.isFinite(config.retain) ||
+    config.retain <= 0 ||
+    config.retain > 1
+  )
+    throw new Error("排名保留比例必须大于0且不超过1");
+  if (config.ties !== "inclusive" && config.ties !== "seeded")
+    throw new Error("未知并列策略");
+  if (!Number.isSafeInteger(config.seed))
+    throw new Error("排名种子必须是安全整数");
+  const scores = new Float64Array(TOTAL),
+    order = Array.from({ length: TOTAL }, (_, i) => i),
+    hashes = new Uint32Array(TOTAL);
+  for (let i = 0; i < TOTAL; i++) {
+    const raw = model.score(String(i).padStart(5, "0"));
+    if (Number.isNaN(raw) || raw === Infinity)
+      throw new Error("评分包含无效数值");
+    scores[i] = raw === -Infinity ? -Infinity : Math.round(raw * 1e12) / 1e12;
+    hashes[i] = tieHash(i, config.seed);
+  }
+  order.sort((a, b) =>
+    scores[a] === scores[b]
+      ? config.ties === "seeded"
+        ? hashes[a] - hashes[b] || a - b
+        : a - b
+      : scores[a] > scores[b]
+        ? -1
+        : 1,
+  );
+  const targetCount = Math.max(1, Math.floor(TOTAL * config.retain)),
+    boundary = scores[order[targetCount - 1]];
+  let actualCount = targetCount;
+  if (config.ties === "inclusive")
+    while (actualCount < TOTAL && scores[order[actualCount]] === boundary)
+      actualCount++;
+  const selected = new Uint8Array(TOTAL);
+  for (let i = 0; i < actualCount; i++) selected[order[i]] = 1;
+  let boundaryTies = 0;
+  for (const score of scores) if (score === boundary) boundaryTies++;
+  return {
+    test: (n) => /^\d{5}$/.test(n) && selected[Number(n)] === 1,
+    diagnostics: {
+      ...model.details,
+      universe: TOTAL,
+      targetCount,
+      actualCount,
+      boundaryScore: boundary === -Infinity ? "-Infinity" : boundary,
+      boundaryTies,
+      allUniform: scores[order[0]] === scores[order[TOTAL - 1]],
+      quantizationDecimals: 12,
+      ties: config.ties,
+      seed: config.seed,
+    },
+  };
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/statistics.ts
+import type { HistoryRecord } from "../pick5";
+import type { ResearchConfig, ResearchStats } from "./types";
+export function researchHistory(
+  config: ResearchConfig,
+  history?: HistoryRecord[],
+): HistoryRecord[] {
+  if (!Array.isArray(history) || !history.length)
+    throw new Error("研究方法需要历史数据");
+  const issues = new Set<string>(),
+    dates = new Set<string>();
+  for (const row of history) {
+    if (
+      !row ||
+      typeof row.issue !== "string" ||
+      !row.issue.trim() ||
+      typeof row.number !== "string" ||
+      !/^\d{5}$/.test(row.number) ||
+      typeof row.date !== "string" ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(row.date) ||
+      !Number.isFinite(Date.parse(row.date)) ||
+      new Date(row.date).toISOString().slice(0, 10) !== row.date ||
+      issues.has(row.issue) ||
+      dates.has(row.date)
+    )
+      throw new Error("历史数据格式、期号或日期重复错误");
+    issues.add(row.issue);
+    dates.add(row.date);
+  }
+  let rows = [...history].sort(
+    (a, b) => a.date.localeCompare(b.date) || a.issue.localeCompare(b.issue),
+  );
+  if (config.referenceIssue) {
+    const index = rows.findIndex((row) => row.issue === config.referenceIssue);
+    if (index < 0) throw new Error("参考期不存在");
+    rows = rows.slice(0, index + 1);
+  }
+  if (
+    !Number.isInteger(config.window) ||
+    config.window < 1 ||
+    rows.length < config.window
+  )
+    throw new Error("历史不足指定研究窗口");
+  return rows.slice(-config.window);
+}
+export function feature(method: string, d: number[]): string {
+  switch (method) {
+    case "oddFrequency":
+      return String(d.filter((x) => x % 2).length);
+    case "bigFrequency":
+      return String(d.filter((x) => x >= 5).length);
+    case "primeFrequency":
+      return String(d.filter((x) => [1, 2, 3, 5, 7].includes(x)).length);
+    case "distinctFrequency":
+      return String(new Set(d).size);
+    case "consecutiveFrequency": {
+      const sorted = [...d].sort((a, b) => a - b);
+      return String(
+        sorted.slice(1).filter((x, i) => x - sorted[i] === 1).length,
+      );
+    }
+    case "routeFrequency":
+      return String(
+        d.filter((x) => x % 3 === 0).length * 36 +
+          d.filter((x) => x % 3 === 1).length * 6 +
+          d.filter((x) => x % 3 === 2).length,
+      );
+    case "tailFrequency":
+      return String(d.reduce((a, b) => a + b, 0) % 10);
+    default:
+      throw new Error("未知历史形态");
+  }
+}
+export function buildStats(rows: HistoryRecord[]): ResearchStats {
+  if (!rows.length) throw new Error("历史不能为空");
+  const digits = rows.map((r) => [...r.number].map(Number)),
+    n = rows.length,
+    counts = Array.from({ length: 5 }, () => Array(10).fill(0) as number[]),
+    omissions = Array.from({ length: 5 }, () => Array(10).fill(-1) as number[]),
+    transitions = Array.from({ length: 5 }, () =>
+      Array.from({ length: 10 }, () => Array(10).fill(0) as number[]),
+    );
+  const frequencies: ResearchStats["frequencies"] = {},
+    multisets = new Map<string, number>();
+  const methods = [
+    "oddFrequency",
+    "bigFrequency",
+    "primeFrequency",
+    "distinctFrequency",
+    "consecutiveFrequency",
+    "routeFrequency",
+    "tailFrequency",
+  ];
+  for (const method of methods) frequencies[method] = new Map();
+  for (let i = 0; i < n; i++) {
+    const d = digits[i];
+    for (let p = 0; p < 5; p++) {
+      counts[p][d[p]]++;
+      omissions[p][d[p]] = n - 1 - i;
+      if (i) transitions[p][digits[i - 1][p]][d[p]]++;
+    }
+    for (const method of methods) {
+      const key = feature(method, d),
+        map = frequencies[method];
+      map.set(key, (map.get(key) ?? 0) + 1);
+    }
+    const key = [...d].sort((a, b) => a - b).join("");
+    multisets.set(key, (multisets.get(key) ?? 0) + 1);
+  }
+  const sums = digits.map((d) => d.reduce((a, b) => a + b, 0)),
+    spans = digits.map((d) => Math.max(...d) - Math.min(...d)),
+    mean = sums.reduce((a, b) => a + b, 0) / n,
+    sd = Math.sqrt(sums.reduce((a, b) => a + (b - mean) ** 2, 0) / n);
+  return {
+    rows: [...rows],
+    digits,
+    n,
+    counts,
+    omissions,
+    transitions,
+    last: digits[n - 1],
+    sums: sums.sort((a, b) => a - b),
+    spans: spans.sort((a, b) => a - b),
+    mean,
+    sd,
+    frequencies,
+    multisets,
+  };
+}
+
+UNTRACKED EXPLICITLY INCLUDED src/domain/research/tuning.ts
+import type { HistoryRecord } from "../pick5";
+import { buildStats } from "./statistics";
+import { fitFilter } from "./filters";
+import { parameterGrids, pool, type FilterSpec } from "./presets";
+import type { ResearchConfig, ResearchDiagnostics } from "./types";
+export type ValidationFold = {
+  training: HistoryRecord[];
+  validation: HistoryRecord[];
+};
+export function validationFolds(
+  config: ResearchConfig,
+  rows: HistoryRecord[],
+): ValidationFold[] {
+  const first = rows.length - config.folds * config.validationSize;
+  if (first < 10) throw new Error("历史不足：滚动验证后至少需要10期训练记录");
+  return Array.from({ length: config.folds }, (_, i) => {
+    const cut = first + i * config.validationSize;
+    return {
+      training: rows.slice(0, cut),
+      validation: rows.slice(cut, cut + config.validationSize),
+    };
+  });
+}
+type Evaluation = {
+  parameter: number;
+  coverage: number;
+  averageCount: number;
+  allHit: boolean;
+};
+export function chooseParameter(
+  entries: Evaluation[],
+  strategy: ResearchConfig["selection"],
+): { entry: Evaluation; fallback: boolean } {
+  if (!entries.length) throw new Error("自动选择候选为空");
+  const eligible = entries.filter((e) =>
+    strategy === "strict"
+      ? e.allHit
+      : e.coverage >= (strategy === "cov90" ? 0.9 : 0.6),
+  );
+  const fallback = !eligible.length;
+  const sorted = [...(fallback ? entries : eligible)].sort((a, b) =>
+    fallback
+      ? b.coverage - a.coverage || a.averageCount - b.averageCount
+      : strategy === "lift60"
+        ? (b.averageCount ? b.coverage / b.averageCount : 0) -
+            (a.averageCount ? a.coverage / a.averageCount : 0) ||
+          a.averageCount - b.averageCount
+        : a.averageCount - b.averageCount,
+  );
+  return { entry: sorted[0], fallback };
+}
+let universe: number[][] | undefined;
+const digits = () => universe ??= Array.from({length:100000},(_,i)=>[Math.floor(i/10000),Math.floor(i/1000)%10,Math.floor(i/100)%10,Math.floor(i/10)%10,i%10]);
+function mask(prepared:ReturnType<typeof fitFilter>):{bits:Uint8Array;count:number}{
+ const bits=new Uint8Array(100000),all=digits();let count=0;
+ for(let i=0;i<100000;i++)if(prepared.testDigits(all[i])){bits[i]=1;count++}
+ return {bits,count};
+}
+function hits(bits: Uint8Array, rows: HistoryRecord[]): number {
+  return rows.reduce((n, r) => n + bits[Number(r.number)], 0);
+}
+export function tuneResearch(
+  config: ResearchConfig,
+  rows: HistoryRecord[],
+): { selected: FilterSpec[]; diagnostics: ResearchDiagnostics } {
+  const folds = validationFolds(config, rows),
+    stats = folds.map((f) => buildStats(f.training));
+  const foldInfo = folds.map((f) => ({
+    trainingCount: f.training.length,
+    trainingEnd: f.training.at(-1)!.issue,
+    validationStart: f.validation[0].issue,
+    validationEnd: f.validation.at(-1)!.issue,
+    validationCount: f.validation.length,
+  }));
+  const total = folds.reduce((n, f) => n + f.validation.length, 0);
+  if (config.method === "auto") {
+    const entries = parameterGrids[config.family].map((parameter) => {
+      const outcomes = stats.map((s, i) => {
+        const prepared = fitFilter(config.family, parameter, s),
+          m = mask(prepared);
+        return { count: m.count, hits: hits(m.bits, folds[i].validation) };
+      });
+      const hit = outcomes.reduce((n, o) => n + o.hits, 0);
+      return {
+        parameter,
+        coverage: hit / total,
+        averageCount: outcomes.reduce((n, o) => n + o.count, 0) / folds.length,
+        allHit: hit === total,
+      };
+    });
+    const chosen = chooseParameter(entries, config.selection);
+    return {
+      selected: [{ method: config.family, parameter: chosen.entry.parameter }],
+      diagnostics: {
+        strategy: config.selection,
+        fallback: chosen.fallback,
+        selectedParameter: chosen.entry.parameter,
+        validationCoverage: chosen.entry.coverage,
+        validationCount: total,
+        averageCount: chosen.entry.averageCount,
+        folds: foldInfo,
+        candidates: entries,
+      },
+    };
+  }
+  const candidateMasks = pool.map((spec) =>
+    stats.map((s) => mask(fitFilter(spec.method, spec.parameter, s)).bits),
+  );
+  let current = folds.map(() => new Uint8Array(100000).fill(1));
+  let currentHits = total,
+    currentCount = 100000 * folds.length;
+  const chosen: number[] = [],
+    steps: ResearchDiagnostics[] = [];
+  for (let step = 0; step < config.maxSteps; step++) {
+    let best:
+      { index: number; ratio: number; hit: number; count: number } | undefined;
+    for (let k = 0; k < pool.length; k++) {
+      if (chosen.includes(k)) continue;
+      let count = 0,
+        hit = 0;
+      for (let f = 0; f < folds.length; f++) {
+        const a = current[f],
+          b = candidateMasks[k][f];
+        for (let n = 0; n < 100000; n++) count += a[n] & b[n];
+        for (const row of folds[f].validation) {
+          const n = Number(row.number);
+          hit += a[n] & b[n];
+        }
+      }
+      const removed = currentCount - count;
+      if (removed <= 0) continue;
+      const ratio = removed / folds.length / (currentHits - hit + 1);
+      if (!best || ratio > best.ratio) best = { index: k, ratio, hit, count };
+    }
+    if (!best || best.hit / total < config.targetCoverage) break;
+    chosen.push(best.index);
+    currentHits = best.hit;
+    currentCount = best.count;
+    current = current.map((a, f) =>
+      a.map((v, n) => v & candidateMasks[best!.index][f][n]),
+    );
+    steps.push({
+      step: step + 1,
+      ...pool[best.index],
+      coverage: currentHits / total,
+      averageCount: currentCount / folds.length,
+    });
+    if (currentCount <= folds.length) break;
+  }
+  return {
+    selected: chosen.map((i) => ({ ...pool[i] })),
+    diagnostics: {
+      selected: chosen.map((i) => ({ ...pool[i] })),
+      steps,
+      validationCoverage: currentHits / total,
+      validationCount: total,
+      averageCount: currentCount / folds.length,
+      folds: foldInfo,
+      targetCoverage: config.targetCoverage,
+      emptySelection: !chosen.length,
+      selectionPolicy:
+        "各折先训练后验证；每步最大淘汰/损失比，不能达到覆盖目标则停止",
+    },
+  };
+}
+
+UNTRACKED EXPLICITLY INCLUDED tests/fixtures/research-model-reference.json
+{
+  "source": "pailie5_bma_ds.py bma/ds_idm/ds_dempster; 40 divisible records means no balanced-window deviation",
+  "numbers": [
+    "07418",
+    "41852",
+    "07418",
+    "85296",
+    "96307",
+    "18529",
+    "52963",
+    "18529",
+    "07418",
+    "07418",
+    "29630",
+    "63074",
+    "30741",
+    "18529",
+    "18529",
+    "30741",
+    "85296",
+    "41852",
+    "29630",
+    "29630",
+    "52963",
+    "96307",
+    "52963",
+    "30741",
+    "41852",
+    "63074",
+    "07418",
+    "63074",
+    "52963",
+    "52963",
+    "74185",
+    "18529",
+    "85296",
+    "63074",
+    "63074",
+    "85296",
+    "30741",
+    "96307",
+    "74185",
+    "74185"
+  ],
+  "weights": [
+    0.9976165291658619, 6.506962700660381e-23, 6.699105320702761e-16,
+    1.8071989707788912e-10, 1.3168493971737255e-5, 1.060015030470668e-12,
+    0.002370302158385755
+  ],
+  "scores": [
+    {
+      "number": "00000",
+      "bma": 9.995775902853538e-6,
+      "dsPlausibility": 13.18505644674275,
+      "dsBelief": 6.802394763324311,
+      "dsDempster": -6.705366453005606
+    },
+    {
+      "number": "01234",
+      "bma": 9.995775902853538e-6,
+      "dsPlausibility": 13.185056446742752,
+      "dsBelief": 6.802394763324311,
+      "dsDempster": -6.705366453005606
+    },
+    {
+      "number": "99999",
+      "bma": 9.999672334048173e-6,
+      "dsPlausibility": 13.185056446742752,
+      "dsBelief": 6.802394763324311,
+      "dsDempster": -6.705366453005606
+    },
+    {
+      "number": "14703",
+      "bma": 1.0004348051485144e-5,
+      "dsPlausibility": 13.185056446742752,
+      "dsBelief": 6.802394763324311,
+      "dsDempster": -6.705366453005605
+    },
+    {
+      "number": "77777",
+      "bma": 9.999672334048173e-6,
+      "dsPlausibility": 13.185056446742752,
+      "dsBelief": 6.802394763324311,
+      "dsDempster": -6.705366453005606
+    }
+  ]
+}
+
+UNTRACKED EXPLICITLY INCLUDED tests/fixtures/research-reference.json
+{
+  "source": "Original pailie5_lab.py predicates; Python random seed 8142; FNV-1a over 100000 boolean bytes",
+  "numbers": [
+    "15079",
+    "09046",
+    "50622",
+    "24753",
+    "03937",
+    "64945",
+    "79557",
+    "66883",
+    "19463",
+    "03081",
+    "79029",
+    "40185",
+    "07358",
+    "97599",
+    "06575",
+    "15008",
+    "72703",
+    "39882",
+    "37921",
+    "87542",
+    "19653",
+    "67836",
+    "69467",
+    "78117",
+    "86691",
+    "41209",
+    "79335",
+    "89731",
+    "57560",
+    "25842",
+    "47146",
+    "52416",
+    "09244",
+    "87608",
+    "16097",
+    "28786",
+    "17838",
+    "47334",
+    "51830",
+    "08110",
+    "53075",
+    "45575",
+    "64544",
+    "66402",
+    "69084",
+    "14979",
+    "24626",
+    "06459",
+    "73923",
+    "54903",
+    "48485",
+    "31826",
+    "56637",
+    "60794",
+    "09459",
+    "86308",
+    "19763",
+    "78327",
+    "17470",
+    "64541",
+    "61602",
+    "28928",
+    "53977",
+    "36129",
+    "37502",
+    "72458",
+    "47816",
+    "51024",
+    "84801",
+    "59804",
+    "35478",
+    "57416",
+    "54356",
+    "92920",
+    "42689"
+  ],
+  "cases": [
+    {
+      "method": "hotcold",
+      "parameter": 7,
+      "count": 16807,
+      "hash": 2051968274
+    },
+    {
+      "method": "omission",
+      "parameter": 12,
+      "count": 18432,
+      "hash": 1791605829
+    },
+    {
+      "method": "bayes",
+      "parameter": 0.08,
+      "count": 20160,
+      "hash": 3377508677
+    },
+    {
+      "method": "markov",
+      "parameter": 0.1,
+      "count": 2250,
+      "hash": 4273892261
+    },
+    {
+      "method": "sumSigma",
+      "parameter": 1.2,
+      "count": 63382,
+      "hash": 2176791323
+    },
+    {
+      "method": "sumQuantile",
+      "parameter": 0.7,
+      "count": 63382,
+      "hash": 2176791323
+    },
+    {
+      "method": "spanQuantile",
+      "parameter": 0.7,
+      "count": 86370,
+      "hash": 3543632823
+    },
+    {
+      "method": "oddFrequency",
+      "parameter": 0.2,
+      "count": 78125,
+      "hash": 675089290
+    },
+    {
+      "method": "bigFrequency",
+      "parameter": 0.2,
+      "count": 62500,
+      "hash": 869186189
+    },
+    {
+      "method": "primeFrequency",
+      "parameter": 0.2,
+      "count": 78125,
+      "hash": 579173056
+    },
+    {
+      "method": "distinctFrequency",
+      "parameter": 0.2,
+      "count": 80640,
+      "hash": 2835876613
+    },
+    {
+      "method": "consecutiveFrequency",
+      "parameter": 0.2,
+      "count": 90400,
+      "hash": 620989157
+    },
+    {
+      "method": "routeFrequency",
+      "parameter": 0.2,
+      "count": 11520,
+      "hash": 1220809669
+    },
+    {
+      "method": "tailFrequency",
+      "parameter": 0.2,
+      "count": 10000,
+      "hash": 241109701
+    },
+    {
+      "method": "samePosition",
+      "parameter": 1,
+      "count": 91854,
+      "hash": 667938119
+    },
+    {
+      "method": "positionNeighbor",
+      "parameter": 2,
+      "count": 86338,
+      "hash": 868794559
+    },
+    {
+      "method": "multiset",
+      "parameter": 1,
+      "count": 5610,
+      "hash": 1871275093
+    }
+  ]
+}
+
+UNTRACKED EXPLICITLY INCLUDED tests/replay-worker-ui.test.tsx
+// @vitest-environment jsdom
+import React from "react";
+import { it, expect, vi, afterEach } from "vitest";
+import {
+  render,
+  screen,
+  fireEvent,
+  act,
+  cleanup,
+} from "@testing-library/react";
+import Backtest from "../src/components/Backtest";
+import { defaultPositions, type FilterInput } from "../src/domain/pick5";
+class Port {
+  static all: Port[] = [];
+  onmessage: ((e: any) => void) | null = null;
+  onerror: (() => void) | null = null;
+  message: any;
+  terminate = vi.fn();
+  constructor() {
+    Port.all.push(this);
+  }
+  postMessage(m: any) {
+    this.message = m;
+  }
+  reply() {
+    this.onmessage?.({
+      data: {
+        requestId: this.message.requestId,
+        rows: [
+          {
+            issue: "1",
+            date: "2026-01-01",
+            number: "00000",
+            referenceIssue: "无",
+            status: "retained",
+          },
+        ],
+      },
+    });
+  }
+}
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+  Port.all = [];
+});
+it("runs replay off the UI thread and cancels obsolete replies", () => {
+  vi.stubGlobal("Worker", Port);
+  const input: FilterInput = {
+    positions: defaultPositions(),
+    rules: [],
+    history: [],
+  };
+  const { rerender } = render(<Backtest input={input} />);
+  fireEvent.click(screen.getByText("运行历史回放"));
+  expect(Port.all[0].message.operation).toBe("backtest");
+  fireEvent.click(screen.getByText("取消回放"));
+  act(() => Port.all[0].reply());
+  expect(screen.queryByText("00000")).toBeNull();
+  fireEvent.click(screen.getByText("运行历史回放"));
+  const second = Port.all[1];
+  rerender(<Backtest input={{ ...input, historySource: "changed" }} />);
+  act(() => second.reply());
+  expect(screen.queryByText("00000")).toBeNull();
+});
+
+UNTRACKED EXPLICITLY INCLUDED tests/research-filters.test.ts
+import { describe, it, expect } from "vitest";
+import { buildStats, researchHistory } from "../src/domain/research/statistics";
+import {
+  fitFilter,
+  validateFilterParameter,
+} from "../src/domain/research/filters";
+import fixture from "./fixtures/research-reference.json";
+import {
+  defaultResearch,
+  type FilterMethod,
+} from "../src/domain/research/types";
+const rows = fixture.numbers.map((number, i) => ({
+  issue: String(i + 1),
+  date: new Date(Date.UTC(2024, 0, i + 1)).toISOString().slice(0, 10),
+  number,
+}));
+describe("research source formulas", () => {
+  for (const entry of fixture.cases)
+    it(entry.method, () => {
+      const fitted = fitFilter(
+        entry.method as FilterMethod,
+        entry.parameter,
+        buildStats(rows),
+      );
+      let count = 0;
+      let hash = 2166136261;
+      for (let i = 0; i < 100000; i++) {
+        const keep = fitted.test(String(i).padStart(5, "0"));
+        if (keep) count++;
+        hash = Math.imul(hash ^ (keep ? 1 : 0), 16777619) >>> 0;
+      }
+      expect({ count, hash }).toEqual({ count: entry.count, hash: entry.hash });
+    });
+  it("validates the entire snapshot before cutoff and requires exact window", () => {
+    expect(
+      researchHistory(
+        { ...defaultResearch, window: 2, referenceIssue: "3" },
+        rows,
+      ).map((x) => x.issue),
+    ).toEqual(["2", "3"]);
+    expect(() =>
+      researchHistory({ ...defaultResearch, window: rows.length + 1 }, rows),
+    ).toThrow();
+    expect(() =>
+      researchHistory({ ...defaultResearch, window: 1 }, [
+        ...rows,
+        { ...rows[0], number: "bad" },
+      ]),
+    ).toThrow();
+    expect(() =>
+      researchHistory(
+        { ...defaultResearch, window: 1, referenceIssue: "missing" },
+        rows,
+      ),
+    ).toThrow();
+  });
+  it("rejects unknown omission instead of inventing window length", () => {
+    const stats = buildStats(rows.slice(0, 1));
+    expect(stats.omissions[0][9]).toBe(-1);
+    expect(fitFilter("omission", 100, stats).test("99999")).toBe(false);
+  });
+  it("uses mathematical zero variance and source frequency fallback", () => {
+    const stats = buildStats([
+      { issue: "1", date: "2024-01-01", number: "00000" },
+    ]);
+    expect(stats.sd).toBe(0);
+    expect(fitFilter("sumSigma", 2, stats).test("00001")).toBe(false);
+    expect(fitFilter("oddFrequency", 1.0, stats).test("22222")).toBe(true);
+  });
+  it("frequency fallback chooses the first most frequent feature deterministically", () => {
+    const stats = buildStats([
+      { issue: "1", date: "2024-01-01", number: "00000" },
+      { issue: "2", date: "2024-01-02", number: "11111" },
+    ]);
+    const fitted = fitFilter("oddFrequency", 1, stats);
+    expect(fitted.diagnostics.fallback).toBe(true);
+    expect(fitted.test("22222")).toBe(true);
+    expect(fitted.test("11111")).toBe(false);
+  });
+  it("rejects duplicate dates, duplicate issues and impossible dates, including future rows", () => {
+    for (const extra of [
+      { ...rows[0], issue: "other" },
+      { ...rows[0], date: "2025-01-01" },
+      { issue: "future", date: "2025-02-30", number: "00000" },
+    ])
+      expect(() =>
+        researchHistory(
+          { ...defaultResearch, window: 1, referenceIssue: "1" },
+          [...rows, extra],
+        ),
+      ).toThrow();
+    const reverse = [...rows].reverse();
+    expect(
+      researchHistory({ ...defaultResearch, window: 2 }, reverse).map(
+        (r) => r.issue,
+      ),
+    ).toEqual(["74", "75"]);
+    expect(reverse[0].issue).toBe("75");
+  });
+  it("rejects invalid parameters", () => {
+    for (const [method, value] of [
+      ["hotcold", 1.5],
+      ["bayes", NaN],
+      ["samePosition", 6],
+      ["sumSigma", -1],
+    ] as const)
+      expect(() => validateFilterParameter(method, value)).toThrow();
+  });
+});
+
+UNTRACKED EXPLICITLY INCLUDED tests/research-integration.test.ts
+import { it, expect } from "vitest";
+import {
+  filter,
+  defaultPositions,
+  type FilterInput,
+  type Rule,
+} from "../src/domain/pick5";
+import { defaultResearch } from "../src/domain/research/types";
+import { backtest } from "../src/domain/backtest";
+import { encodePlan, decodePlans } from "../src/lib/plans";
+const history = Array.from({ length: 20 }, (_, i) => ({
+  issue: String(i + 1),
+  date: new Date(Date.UTC(2026, 0, i + 1)).toISOString().slice(0, 10),
+  number: String(i % 10).repeat(5),
+}));
+const rule: Rule = {
+  id: "r",
+  kind: "research",
+  enabled: true,
+  mode: "include",
+  values: [],
+  research: { ...defaultResearch, window: 10, method: "hotcold", parameter: 1 },
+};
+const input: FilterInput = {
+  positions: defaultPositions(),
+  rules: [rule],
+  history,
+  candidates: ["00000", "11111"],
+};
+it("integrates experiment predicates and serializable diagnostics", () => {
+  const r = filter(input);
+  expect(r.numbers).toEqual(["00000"]);
+  expect(r.research?.[0].diagnostics).toBeTruthy();
+  expect(
+    filter({ ...input, rules: [{ ...rule, mode: "exclude" }] }).numbers,
+  ).toEqual(["11111"]);
+});
+it("keeps whole-universe ranking independent of external candidate count", () => {
+  const r = {
+    ...rule,
+    research: {
+      ...defaultResearch,
+      window: 10,
+      method: "heatScore" as const,
+      retain: 0.01,
+      ties: "inclusive" as const,
+    },
+  };
+  const result = filter({ ...input, rules: [r] });
+  expect(result.numbers).toEqual(["00000", "11111"]);
+  expect(result.research?.[0].diagnostics.actualCount).toBe(100000);
+});
+it("roundtrips complete experiment settings", () => {
+  const plan = encodePlan("实验", {
+    ...input,
+    rules: [
+      { ...rule, research: { ...rule.research!, seed: 42, ties: "seeded" } },
+    ],
+  });
+  expect(
+    decodePlans(JSON.stringify({ schemaVersion: 1, plans: [plan] }))[0].input,
+  ).toEqual(plan.input);
+});
+it("overrides frozen references with strictly preceding records in replay", () => {
+  const result = backtest(
+    {
+      ...input,
+      candidates: undefined,
+      rules: [
+        {
+          ...rule,
+          research: { ...rule.research!, referenceIssue: "20", window: 2 },
+        },
+      ],
+    },
+    3,
+  );
+  expect(result.map((r) => r.referenceIssue)).toEqual(["17", "18", "19"]);
+  expect(result.some((r) => r.status === "error")).toBe(false);
+});
+
+UNTRACKED EXPLICITLY INCLUDED tests/research-models.test.ts
+import reference from "./fixtures/research-model-reference.json";
+import { describe, expect, it } from "vitest";
+import { fitScores, combineDempster } from "../src/domain/research/models";
+import { rankSelection } from "../src/domain/research/ranking";
+import {
+  defaultResearch,
+  type ResearchStats,
+} from "../src/domain/research/types";
+function stats(numbers: string[]): ResearchStats {
+  const digits = numbers.map((x) => [...x].map(Number));
+  const counts = Array.from({ length: 5 }, () => Array(10).fill(0));
+  const transitions = Array.from({ length: 5 }, () =>
+    Array.from({ length: 10 }, () => Array(10).fill(0)),
+  );
+  digits.forEach((ds, i) =>
+    ds.forEach((d, p) => {
+      counts[p][d]++;
+      if (i) transitions[p][digits[i - 1][p]][d]++;
+    }),
+  );
+  return {
+    rows: numbers.map((number, i) => ({
+      issue: String(i),
+      date: "2026-01-01",
+      number,
+    })),
+    digits,
+    n: numbers.length,
+    counts,
+    transitions,
+    last: digits.at(-1)!,
+    omissions: [],
+    sums: [],
+    spans: [],
+    mean: 0,
+    sd: 0,
+    frequencies: {},
+    multisets: new Map(),
+  };
+}
+const config = { ...defaultResearch, method: "heatScore" as const };
+describe("research scores and complete-universe ranking", () => {
+  it("refuses near-total conflict instead of dividing by zero", () => {
+    const a = Array(10).fill(0),
+      b = Array(10).fill(0);
+    a[0] = 1;
+    b[9] = 1;
+    expect(() => combineDempster(a, 0, b, 0)).toThrow(/冲突/);
+    a[0] = 1 - 1e-14;
+    b[9] = 1 - 1e-14;
+    expect(() => combineDempster(a, 1e-14, b, 1e-14)).toThrow(/冲突/);
+    const result = combineDempster(
+      [0.5, ...Array(9).fill(0)],
+      0.5,
+      [0, 0.5, ...Array(8).fill(0)],
+      0.5,
+    );
+    expect(result.mass.reduce((x, y) => x + y, 0) + result.theta).toBeCloseTo(
+      1,
+      12,
+    );
+  });
+  it("matches independent Python source scores and exact marginal weights", () => {
+    const st = stats(reference.numbers);
+    for (const method of [
+      "bma",
+      "dsPlausibility",
+      "dsBelief",
+      "dsDempster",
+    ] as const) {
+      const model = fitScores({ ...config, method, windows: 5 }, st);
+      for (const row of reference.scores) {
+        const expected: number | string = row[method] as number | string;
+        if (expected === "-Infinity")
+          expect(model.score(row.number)).toBe(-Infinity);
+        else
+          expect(model.score(row.number)).toBeCloseTo(
+            expected as number,
+            method === "bma" ? 14 : 10,
+          );
+      }
+      if (method === "bma")
+        (model.details.weights as number[]).forEach((w, i) =>
+          expect(w).toBeCloseTo(reference.weights[i], 10),
+        );
+    }
+  });
+  it("uses alpha .5 heat log likelihood and keeps leading zero", () => {
+    const m = fitScores(config, stats(["00000", "12345"]));
+    expect(m.score("00000")).toBeCloseTo(5 * Math.log(1.5 / 7), 12);
+    expect(m.score("99999")).toBeLessThan(m.score("00000"));
+  });
+  it("normalizes seven BMA weights and predictive mass", () => {
+    const m = fitScores(
+      { ...config, method: "bma" },
+      stats(["00000", "12345", "12345", "99999"]),
+    );
+    const weights = m.details.weights as number[];
+    expect(weights).toHaveLength(7);
+    expect(weights.reduce((a, b) => a + b, 0)).toBeCloseTo(1, 12);
+    let sum = 0;
+    for (let i = 0; i < 100000; i++) sum += m.score(String(i).padStart(5, "0"));
+    expect(sum).toBeCloseTo(1, 10);
+  });
+  it("allows zero belief as negative infinity", () => {
+    const m = fitScores({ ...config, method: "dsBelief" }, stats(["00000"]));
+    expect(m.score("11111")).toBe(-Infinity);
+    expect(m.score("00000")).toBe(0);
+  });
+  it("balanced windows cover remainder and reject insufficient windows", () => {
+    const m = fitScores(
+      { ...config, method: "dsDempster", windows: 2 },
+      stats(Array(11).fill("01234")),
+    );
+    expect(m.details.windowSizes).toEqual([6, 5]);
+    expect((m.details.conflicts as number[][])[0]).toHaveLength(1);
+    expect(() =>
+      fitScores(
+        { ...config, method: "dsDempster", windows: 3 },
+        stats(Array(11).fill("01234")),
+      ),
+    ).toThrow();
+  });
+  it("single-position model selects true strongest position", () => {
+    const nums = Array.from(
+      { length: 100 },
+      (_, i) => `0${i % 10}${(i * 3) % 10}${(i * 7) % 10}${(i * 9) % 10}`,
+    );
+    const m = fitScores({ ...config, method: "sparseBest" }, stats(nums));
+    expect(m.details.selectedPosition).toBe(0);
+    expect(m.score("00000")).toBeGreaterThan(m.score("10000"));
+  });
+  it("inclusive and seeded ties report exact intended semantics", () => {
+    const m = { score: () => 1, details: {} };
+    const inclusive = rankSelection({ ...config, retain: 0.01 }, m);
+    expect(inclusive.diagnostics.actualCount).toBe(100000);
+    expect(inclusive.diagnostics.allUniform).toBe(true);
+    const a = rankSelection({ ...config, ties: "seeded", retain: 0.01 }, m),
+      b = rankSelection({ ...config, ties: "seeded", retain: 0.01 }, m),
+      c = rankSelection(
+        { ...config, ties: "seeded", retain: 0.01, seed: 7 },
+        m,
+      );
+    let count = 0,
+      difference = 0;
+    for (let i = 0; i < 100000; i++) {
+      const n = String(i).padStart(5, "0");
+      count += Number(a.test(n));
+      expect(a.test(n)).toBe(b.test(n));
+      difference += Number(a.test(n) !== c.test(n));
+    }
+    expect(count).toBe(1000);
+    expect(difference).toBeGreaterThan(0);
+  });
+  it("rejects NaN and positive infinity but accepts uniform negative infinity", () => {
+    expect(() =>
+      rankSelection(config, { score: () => NaN, details: {} }),
+    ).toThrow();
+    expect(() =>
+      rankSelection(config, { score: () => Infinity, details: {} }),
+    ).toThrow();
+    expect(
+      rankSelection(config, { score: () => -Infinity, details: {} }).diagnostics
+        .actualCount,
+    ).toBe(100000);
+  });
+});
+
+UNTRACKED EXPLICITLY INCLUDED tests/research-tuning.test.ts
+import { it, expect } from "vitest";
+import { pool, presets } from "../src/domain/research/presets";
+import {
+  validationFolds,
+  chooseParameter,
+} from "../src/domain/research/tuning";
+import { defaultResearch } from "../src/domain/research/types";
+const rows = Array.from({ length: 50 }, (_, i) => ({
+  issue: String(i + 1),
+  date: new Date(Date.UTC(2026, 0, i + 1)).toISOString().slice(0, 10),
+  number: "00000",
+}));
+it("retains the 57 source pool entries and six packages", () => {
+  expect(pool.length).toBe(57);
+  expect(Object.keys(presets)).toHaveLength(6);
+});
+it("uses only records preceding each validation segment and counts duplicate outcomes", () => {
+  const folds = validationFolds(
+    { ...defaultResearch, folds: 3, validationSize: 10 },
+    rows,
+  );
+  expect(folds.map((f) => f.training.length)).toEqual([20, 30, 40]);
+  expect(folds.map((f) => f.validation.length)).toEqual([10, 10, 10]);
+  expect(folds[0].training.at(-1)?.issue).toBe("20");
+  expect(folds[0].validation[0].issue).toBe("21");
+});
+it("chooses each objective and makes fallback explicit", () => {
+  const a = [
+    { parameter: 1, coverage: 0.7, averageCount: 20000, allHit: false },
+    { parameter: 2, coverage: 0.95, averageCount: 50000, allHit: false },
+  ];
+  expect(chooseParameter(a, "lift60").entry.parameter).toBe(1);
+  expect(chooseParameter(a, "cov90").entry.parameter).toBe(2);
+  expect(chooseParameter(a, "strict").fallback).toBe(true);
+});
+import { tuneResearch } from "../src/domain/research/tuning";
+it("never trains a fold on its validation answers and counts all repeated periods", () => {
+  const data = rows
+    .slice(0, 30)
+    .map((r, i) => ({ ...r, number: i < 20 ? "00000" : "99999" }));
+  const result = tuneResearch(
+    {
+      ...defaultResearch,
+      method: "auto",
+      window: 30,
+      folds: 1,
+      validationSize: 10,
+      family: "hotcold",
+      selection: "strict",
+    },
+    data,
+  );
+  expect(result.diagnostics.validationCount).toBe(10);
+  expect(result.diagnostics.validationCoverage).toBe(0);
+  expect(result.diagnostics.fallback).toBe(true);
+  expect(result.selected).toEqual([{ method: "hotcold", parameter: 4 }]);
+});
+it("selects a deterministic feasible greedy intersection on frozen folds", () => {
+  const result = tuneResearch(
+    {
+      ...defaultResearch,
+      method: "greedy",
+      window: 30,
+      folds: 1,
+      validationSize: 10,
+      targetCoverage: 1,
+      maxSteps: 2,
+    },
+    rows.slice(0, 30),
+  );
+  expect(result.selected.length).toBeGreaterThan(0);
+  expect(result.diagnostics.validationCount).toBe(10);
+  expect(result.diagnostics.validationCoverage).toBe(1);
+  expect(result.diagnostics.averageCount).toBe(1);
+});
+
+UNTRACKED EXPLICITLY INCLUDED tests/research-ui.test.tsx
+// @vitest-environment jsdom
+import React from "react";
+import { afterEach, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import ResearchRules, {
+  ResearchDiagnosticsView,
+} from "../src/components/ResearchRules";
+import { defaultPositions, type FilterInput } from "../src/domain/pick5";
+afterEach(cleanup);
+const base: FilterInput = {
+  positions: defaultPositions(),
+  rules: [],
+  historySource: "测试历史",
+  history: Array.from({ length: 150 }, (_, i) => ({
+    issue: String(i),
+    date: new Date(Date.UTC(2026, 0, i + 1)).toISOString().slice(0, 10),
+    number: "12345",
+  })),
+  candidates: ["12345"],
+};
+it("saves exact configured payload and restores seed, mode and full input when editing", () => {
+  const onChange = vi.fn();
+  const { rerender } = render(
+    <ResearchRules input={base} onChange={onChange} />,
+  );
+  fireEvent.click(screen.getByRole("button", { name: "添加实验方法" }));
+  fireEvent.change(screen.getByRole("combobox", { name: "实验方法" }), {
+    target: { value: "bma" },
+  });
+  fireEvent.change(screen.getByLabelText("并列策略"), {
+    target: { value: "seeded" },
+  });
+  fireEvent.change(screen.getByLabelText("随机种子"), {
+    target: { value: "42" },
+  });
+  fireEvent.change(screen.getByLabelText("保留比例（%）"), {
+    target: { value: "12" },
+  });
+  fireEvent.change(screen.getByLabelText("规则模式"), {
+    target: { value: "exclude" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "保存实验条件" }));
+  const next = onChange.mock.calls[0][0];
+  expect(next.candidates).toEqual(["12345"]);
+  expect(next.rules[0]).toMatchObject({
+    kind: "research",
+    enabled: true,
+    mode: "exclude",
+    research: { method: "bma", seed: 42, retain: 0.12, ties: "seeded" },
+  });
+  rerender(<ResearchRules input={next} onChange={onChange} />);
+  fireEvent.click(screen.getByRole("button", { name: "编辑 BMA七模型平均" }));
+  expect((screen.getByLabelText("随机种子") as HTMLInputElement).value).toBe(
+    "42",
+  );
+  expect((screen.getByLabelText("规则模式") as HTMLSelectElement).value).toBe(
+    "exclude",
+  );
+});
+it("rejects invalid parameters before updating input", () => {
+  const onChange = vi.fn();
+  render(<ResearchRules input={base} onChange={onChange} />);
+  fireEvent.click(screen.getByRole("button", { name: "添加实验方法" }));
+  fireEvent.change(screen.getByLabelText("方法参数"), {
+    target: { value: "11" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "保存实验条件" }));
+  expect(screen.getByRole("alert").textContent).toContain("Top K");
+  expect(onChange).not.toHaveBeenCalled();
+});
+it("renders bounded readable diagnostics", () => {
+  render(
+    <ResearchDiagnosticsView
+      items={[
+        {
+          id: "x",
+          label: "BMA",
+          diagnostics: {
+            weights: { uniform: 0.5 },
+            selected: { parameter: 7 },
+            folds: [{ coverage: 0.8 }],
+          },
+        },
+      ]}
+    />,
+  );
+  expect(screen.getByText("BMA")).toBeTruthy();
+  expect(screen.getByText("uniform")).toBeTruthy();
+});

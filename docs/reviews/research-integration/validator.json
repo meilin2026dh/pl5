@@ -1,0 +1,9 @@
+{
+  "verdicts": [
+    {
+      "#": 1,
+      "validated": true,
+      "reason": "Reviewed snapshot copied enabled into a persistent draft, replaced current rules wholesale, or appended when ID disappeared; disabling and reset/plan replacement can restore stale conditions."
+    }
+  ]
+}

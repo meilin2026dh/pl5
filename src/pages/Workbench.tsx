@@ -1,3 +1,9 @@
+import { geometryLabels } from "../domain/geometry";
+import GeometryRules from "../components/GeometryRules";
+import ResearchRules, {
+  ResearchDiagnosticsView,
+} from "../components/ResearchRules";
+import "../components/research.css";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -172,10 +178,18 @@ export default function Workbench({
           </h1>
           <p className="muted">把你的想法变成条件，让每一次筛选都有迹可循。</p>
         </div>
-        <button className="button secondary save-top" onClick={onSave}>
-          <Save size={16} />
-          保存方案
-        </button>
+        <div className="head-actions">
+          <a className="button secondary" href="#geometry-title">
+            空间形态
+          </a>
+          <a className="button secondary" href="#research-title">
+            实验方法
+          </a>
+          <button className="button secondary save-top" onClick={onSave}>
+            <Save size={16} />
+            保存方案
+          </button>
+        </div>
       </div>
       <div className="flow-strip">
         <span className="flow-active">
@@ -279,6 +293,8 @@ export default function Workbench({
             onChange={setInput}
             historySource={input.historySource ?? "未载入历史数据"}
           />
+          <ResearchRules input={input} onChange={setInput} />
+          <GeometryRules input={input} onChange={setInput} />
           <div className="action-bar">
             {busy ? (
               <button className="button primary start-button" onClick={cancel}>
@@ -458,7 +474,9 @@ export default function Workbench({
                     {ruleLabels[r.kind]}
                     <span>
                       {r.mode === "exclude" ? "排除" : "保留"}{" "}
-                      {r.values.join("、") || "未选择"}
+                      {r.kind === "geometry"
+                        ? geometryLabels[r.geometry!.method]
+                        : r.values.join("、") || "未选择"}
                     </span>
                   </li>
                 ))}
@@ -500,6 +518,9 @@ export default function Workbench({
           <p className="muted small">计算后可查看每个条件移除的组合数量。</p>
         )}
       </section>
+      {valid && result.research && (
+        <ResearchDiagnosticsView items={result.research} />
+      )}
       <Backtest input={input} />
     </>
   );

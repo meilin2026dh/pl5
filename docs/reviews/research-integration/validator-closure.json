@@ -1,0 +1,7 @@
+{
+  "finding": 1,
+  "resolved": true,
+  "reason": "Independent validator confirmed edited-source identity/signature guards clear missing/replaced sources and preserve latest.enabled; root applied the fix. Review orchestrator reran 13 focused tests successfully.",
+  "verification": "5 suites, 13 tests passed: research-ui, research-app, research-integration, replay-worker-ui, research-worker-contract",
+  "source_sha256": "615d965a72e054d2be7533835e881b5b1ef83e22cad41a25108f9a22946018eb"
+}

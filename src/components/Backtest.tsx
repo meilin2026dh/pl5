@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { History, Play } from "lucide-react";
-import { backtest, type ReplayRow } from "../domain/backtest";
+import { type ReplayRow } from "../domain/backtest";
 import { type FilterInput } from "../domain/pick5";
 import { download } from "../lib/plans";
 const statuses = {
@@ -14,16 +14,63 @@ export default function Backtest({ input }: { input: FilterInput }) {
   const [count, setCount] = useState(30),
     [result, setResult] = useState<ReplayRow[]>([]),
     [stamp, setStamp] = useState(""),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [busy, setBusy] = useState(false);
+  const worker = useRef<Worker | null>(null),
+    seq = useRef(0);
   const serialized = JSON.stringify(input),
     stale = Boolean(result.length) && stamp !== serialized;
+  const live = useRef(serialized);
+  live.current = serialized;
+  const cancel = () => {
+    worker.current?.terminate();
+    worker.current = null;
+    ++seq.current;
+    setBusy(false);
+  };
+  useEffect(() => {
+    cancel();
+  }, [serialized, count]);
+  useEffect(
+    () => () => {
+      worker.current?.terminate();
+      ++seq.current;
+    },
+    [],
+  );
   const run = () => {
+    cancel();
+    const id = ++seq.current;
+    setBusy(true);
+    setError("");
     try {
-      setResult(backtest(input, count));
-      setStamp(serialized);
-      setError("");
-    } catch (e) {
-      setError((e as Error).message);
+      const w = new Worker(
+        new URL("../workers/filter.worker.ts", import.meta.url),
+        { type: "module" },
+      );
+      worker.current = w;
+      w.onmessage = (event) => {
+        if (event.data.requestId !== seq.current || live.current !== serialized)
+          return;
+        w.terminate();
+        worker.current = null;
+        setBusy(false);
+        if (event.data.error) {
+          setError(event.data.error);
+          return;
+        }
+        setResult(event.data.rows);
+        setStamp(serialized);
+      };
+      w.onerror = () => {
+        if (id !== seq.current) return;
+        cancel();
+        setError("回放计算失败，请重试");
+      };
+      w.postMessage({ operation: "backtest", requestId: id, input, count });
+    } catch {
+      cancel();
+      setError("当前浏览器无法启动回放线程");
     }
   };
   const valid = result.filter((r) =>
@@ -42,6 +89,16 @@ export default function Backtest({ input }: { input: FilterInput }) {
         <p className="muted small">
           将当前条件逐期应用于已知开奖号码。每期历史参考重新截止到上一期，原始候选范围也参与核对。这是样本内规则核验，不是未来预测。
         </p>
+        {input.rules.some(
+          (r) =>
+            r.enabled &&
+            r.kind === "research" &&
+            ["auto", "greedy"].includes(r.research?.method ?? ""),
+        ) && (
+          <p className="muted small">
+            自动选择与组合需要逐期重新拟合，回放可能耗时较长，可随时取消。
+          </p>
+        )}
         <div className="head-actions">
           <select
             aria-label="历史回放期数"
@@ -57,14 +114,14 @@ export default function Backtest({ input }: { input: FilterInput }) {
               </option>
             ))}
           </select>
-          <button className="button secondary" onClick={run}>
+          <button className="button secondary" onClick={busy ? cancel : run}>
             <Play size={14} />
-            运行历史回放
+            {busy ? "取消回放" : "运行历史回放"}
           </button>
           {result.length > 0 && (
             <button
               className="button secondary"
-              disabled={stale}
+              disabled={stale || busy}
               onClick={() =>
                 download(
                   "pl5-回放.csv",

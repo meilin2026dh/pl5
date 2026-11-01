@@ -48,6 +48,7 @@ export default function App() {
   useEffect(() => {
     if (path === "/history") setHistoryVisited(true);
   }, [path]);
+  const [workbenchVersion, setWorkbenchVersion] = useState(0);
   const [input, setInput] = useState<FilterInput>(() => ({
     positions: defaultPositions(),
     rules: defaultRules(),
@@ -249,6 +250,7 @@ export default function App() {
       <main className="main-container">
         <div hidden={path !== "/workbench"}>
           <Workbench
+            key={workbenchVersion}
             input={input}
             setInput={setInput}
             onSave={() => {
@@ -285,7 +287,17 @@ export default function App() {
                 </button>
                 <button
                   className="button primary"
-                  onClick={() => go("/workbench")}
+                  onClick={() => {
+                    setInput((previous) => ({
+                      positions: defaultPositions(),
+                      rules: defaultRules(),
+                      history: previous.history,
+                      historySource: previous.historySource,
+                    }));
+                    setWorkbenchVersion((version) => version + 1);
+                    setPlanName("我的筛选方案");
+                    go("/workbench");
+                  }}
                 >
                   <Plus size={16} />
                   新建方案
@@ -453,8 +465,9 @@ export default function App() {
                 </p>
                 <h3>历史数据从哪里来？</h3>
                 <p>
-                  当前历史页默认显示明确标注的演示数据，可导入 issue,date,number
-                  三列CSV，也可点击「获取官方开奖」连接中国体育彩票数据服务。来源和更新时间始终标明；演示走势不代表真实开奖。
+                  历史页打开后自动获取官方最新已公布开奖；当天结果尚未返回时会明确提示。可点击「获取官方开奖」重新检查，也可导入
+                  issue,date,number
+                  三列CSV或手动恢复演示。来源和更新时间始终标明；演示走势不代表真实开奖。
                 </p>
                 <h3>数据保存在哪里？</h3>
                 <p>
@@ -471,6 +484,10 @@ export default function App() {
                         {
                           {
                             ...explanations,
+                            geometry:
+                              "按固定坐标判断直线、折线、V型、递推规律、凸包三角形/梯形及对称形。支持连续3—5位置或历史轨迹追加候选位，参数与参考期随方案保存。",
+                            research:
+                              "17类历史统计过滤、热度/BMA/D-S评分、滚动选参、贪心和组合包。按参考期以前的窗口拟合；评分以全量10万组为基准。参数、并列策略和种子随方案保存。模拟实验未证明预测优势，诊断可在计算后查看。",
                             sum: "五位相加，0–45。",
                             tail: "和值除以10的余数，0–9。",
                             span: "最大数字减最小数字，0–9。",
@@ -508,7 +525,7 @@ export default function App() {
             五序 WUXU <span className="footer-divider">/</span> 把选择变清晰
           </span>
           <span>缩水仅按条件筛选组合，不提高单注中奖概率。</span>
-          <span>PL5 · v0.1</span>
+          <span>PL5 · v0.2</span>
         </footer>
       </main>
       {toast && (

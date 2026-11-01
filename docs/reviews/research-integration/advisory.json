@@ -1,0 +1,7 @@
+{
+  "residual_risks": [
+    "Measured default greedy replay over 30 periods took 23.79 seconds on 500 deterministic history records; BMA took 0.585 seconds. Computation runs in a terminable Worker and the UI now explains the cost. Browser/device latency and the 200-period option were not measured.",
+    "Live browser interaction and mobile visual QA were blocked by host policy; component tests and production build cannot establish that visual acceptance."
+  ],
+  "testing_gaps": []
+}

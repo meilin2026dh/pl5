@@ -1,0 +1,184 @@
+{
+  "source": "Original pailie5_lab.py predicates; Python random seed 8142; FNV-1a over 100000 boolean bytes",
+  "numbers": [
+    "15079",
+    "09046",
+    "50622",
+    "24753",
+    "03937",
+    "64945",
+    "79557",
+    "66883",
+    "19463",
+    "03081",
+    "79029",
+    "40185",
+    "07358",
+    "97599",
+    "06575",
+    "15008",
+    "72703",
+    "39882",
+    "37921",
+    "87542",
+    "19653",
+    "67836",
+    "69467",
+    "78117",
+    "86691",
+    "41209",
+    "79335",
+    "89731",
+    "57560",
+    "25842",
+    "47146",
+    "52416",
+    "09244",
+    "87608",
+    "16097",
+    "28786",
+    "17838",
+    "47334",
+    "51830",
+    "08110",
+    "53075",
+    "45575",
+    "64544",
+    "66402",
+    "69084",
+    "14979",
+    "24626",
+    "06459",
+    "73923",
+    "54903",
+    "48485",
+    "31826",
+    "56637",
+    "60794",
+    "09459",
+    "86308",
+    "19763",
+    "78327",
+    "17470",
+    "64541",
+    "61602",
+    "28928",
+    "53977",
+    "36129",
+    "37502",
+    "72458",
+    "47816",
+    "51024",
+    "84801",
+    "59804",
+    "35478",
+    "57416",
+    "54356",
+    "92920",
+    "42689"
+  ],
+  "cases": [
+    {
+      "method": "hotcold",
+      "parameter": 7,
+      "count": 16807,
+      "hash": 2051968274
+    },
+    {
+      "method": "omission",
+      "parameter": 12,
+      "count": 18432,
+      "hash": 1791605829
+    },
+    {
+      "method": "bayes",
+      "parameter": 0.08,
+      "count": 20160,
+      "hash": 3377508677
+    },
+    {
+      "method": "markov",
+      "parameter": 0.1,
+      "count": 2250,
+      "hash": 4273892261
+    },
+    {
+      "method": "sumSigma",
+      "parameter": 1.2,
+      "count": 63382,
+      "hash": 2176791323
+    },
+    {
+      "method": "sumQuantile",
+      "parameter": 0.7,
+      "count": 63382,
+      "hash": 2176791323
+    },
+    {
+      "method": "spanQuantile",
+      "parameter": 0.7,
+      "count": 86370,
+      "hash": 3543632823
+    },
+    {
+      "method": "oddFrequency",
+      "parameter": 0.2,
+      "count": 78125,
+      "hash": 675089290
+    },
+    {
+      "method": "bigFrequency",
+      "parameter": 0.2,
+      "count": 62500,
+      "hash": 869186189
+    },
+    {
+      "method": "primeFrequency",
+      "parameter": 0.2,
+      "count": 78125,
+      "hash": 579173056
+    },
+    {
+      "method": "distinctFrequency",
+      "parameter": 0.2,
+      "count": 80640,
+      "hash": 2835876613
+    },
+    {
+      "method": "consecutiveFrequency",
+      "parameter": 0.2,
+      "count": 90400,
+      "hash": 620989157
+    },
+    {
+      "method": "routeFrequency",
+      "parameter": 0.2,
+      "count": 11520,
+      "hash": 1220809669
+    },
+    {
+      "method": "tailFrequency",
+      "parameter": 0.2,
+      "count": 10000,
+      "hash": 241109701
+    },
+    {
+      "method": "samePosition",
+      "parameter": 1,
+      "count": 91854,
+      "hash": 667938119
+    },
+    {
+      "method": "positionNeighbor",
+      "parameter": 2,
+      "count": 86338,
+      "hash": 868794559
+    },
+    {
+      "method": "multiset",
+      "parameter": 1,
+      "count": 5610,
+      "hash": 1871275093
+    }
+  ]
+}

@@ -21,10 +21,14 @@ export default function CandidateSource({
     [preview, setPreview] = useState<string[] | null>(null),
     [notice, setNotice] = useState("");
   const file = useRef<HTMLInputElement>(null);
+  const editor = useRef<HTMLTextAreaElement>(null);
+  const details = useRef<HTMLDetailsElement>(null);
+  const lastLoaded = useRef(input.candidates);
   const generation = useRef(0);
   const latest = useRef(input);
   latest.current = input;
   useEffect(() => {
+    if (input.candidates) lastLoaded.current = input.candidates;
     setPreview(null);
     generation.current++;
   }, [input.candidates]);
@@ -42,7 +46,9 @@ export default function CandidateSource({
       setError("");
       setNotice(`已载入${list.length.toLocaleString()}组去重号码`);
     } catch (e) {
+      setNotice("");
       setError((e as Error).message);
+      editor.current?.focus();
     }
   };
   const run = () => {
@@ -72,6 +78,8 @@ export default function CandidateSource({
               generation.current++;
               onChange({ ...input, candidates: undefined });
               setPreview(null);
+              setError("");
+              setNotice("已切换为定位复式；已载入的大底可点击外部大底恢复。");
             }}
           >
             定位复式
@@ -79,15 +87,23 @@ export default function CandidateSource({
           <button
             className={input.candidates ? "active" : ""}
             onClick={() => {
-              setNotice("粘贴或导入号码后，点击载入大底即可切换来源。");
-              file.current?.focus();
+              if (details.current) details.current.open = true;
+              setError("");
+              if (lastLoaded.current) {
+                onChange({ ...latest.current, candidates: lastLoaded.current });
+                setNotice(`已恢复${lastLoaded.current.length.toLocaleString()}组大底号码`);
+              } else {
+                setNotice("请先在下方粘贴五位号码，或点击导入 TXT，再载入大底。灰色文字仅为格式示例。");
+              }
+              editor.current?.focus();
             }}
           >
             外部大底
           </button>
         </div>
       </div>
-      <details open={Boolean(input.candidates)}>
+      {notice && <p className="notice small" role="status">{notice}</p>}
+      <details ref={details} open={Boolean(input.candidates)}>
         <summary>
           导入大底与集合运算{" "}
           <span>
@@ -103,13 +119,18 @@ export default function CandidateSource({
           <label className="field-label">
             集合A号码
             <textarea
+              ref={editor}
               aria-label="大底号码"
+              aria-invalid={Boolean(error)}
+              aria-describedby="candidate-input-help candidate-input-error"
               value={text}
               placeholder={"00127\n01234\n99999"}
               onChange={(e) => setText(e.target.value)}
               rows={4}
             />
           </label>
+          <p id="candidate-input-help" className="muted small">先粘贴或导入实际号码；输入框内的灰色号码只是格式示例。</p>
+          <p id="candidate-input-error" className="validation" role={error ? "alert" : undefined}>{error}</p>
           <div className="head-actions">
             <button
               className="button secondary"
@@ -217,16 +238,6 @@ export default function CandidateSource({
               </div>
             )}
           </details>
-          {notice && (
-            <p className="notice small" role="status">
-              {notice}
-            </p>
-          )}
-          {error && (
-            <p className="validation" role="alert">
-              {error}
-            </p>
-          )}
         </div>
       </details>
     </section>

@@ -50,17 +50,11 @@ export function mergeDraws(draws: Draw[]): Draw[] {
 }
 export const officialUrl =
   "https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry";
-const cache = new Map<number, { draws: Draw[]; at: number }>();
 export async function officialHistory(pages = 2): Promise<Draw[]> {
   if (!Number.isInteger(pages) || pages < 1 || pages > 20)
     throw new Error("查询范围为1至20页，每页最多100期");
   const result: Draw[] = [];
   for (let page = 1; page <= pages; page++) {
-    const cached = cache.get(page);
-    if (cached && Date.now() - cached.at < 300000) {
-      result.push(...cached.draws);
-      continue;
-    }
     const url = new URL(officialUrl);
     for (const [key, value] of Object.entries({
       gameNo: "350133",
@@ -78,7 +72,6 @@ export async function officialHistory(pages = 2): Promise<Draw[]> {
     const text = await response.text();
     if (text.length > 4 * 1024 * 1024) throw new Error("官方响应超过限制");
     const draws = parseOfficial(JSON.parse(text));
-    cache.set(page, { draws, at: Date.now() });
     result.push(...draws);
     if (draws.length < 100) break;
   }

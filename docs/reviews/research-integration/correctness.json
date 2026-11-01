@@ -1,0 +1,8 @@
+{
+  "reviewer": "correctness",
+  "findings": [],
+  "residual_risks": [],
+  "testing_gaps": [
+    "Add an end-to-end replay regression for a non-uniform scoring model with seeded ranking and a future outcome chosen to differ from the past-only selection; existing replay integration exercises hotcold only, while the complete-universe integration ranking test uses an entirely uniform model."
+  ]
+}
