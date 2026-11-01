@@ -258,6 +258,7 @@ export default function App() {
               setSaveOpen(true);
             }}
             notify={notify}
+            onOpenHistory={() => go("/history")}
           />
         </div>
         <div hidden={path !== "/history"}>
@@ -484,6 +485,8 @@ export default function App() {
                         {
                           {
                             ...explanations,
+                            relation:
+                              "跨期重号、邻号传递、镜像、数字延续与指标差值。按滞后和历史截止期计算，支持手动分数范围或过去窗口的分布阈值。观察面板展示指标序列、重复间隔、连续重复、滞后匹配率。",
                             geometry:
                               "按固定坐标判断直线、折线、V型、递推规律、凸包三角形/梯形及对称形。支持连续3—5位置或历史轨迹追加候选位，参数与参考期随方案保存。",
                             research:

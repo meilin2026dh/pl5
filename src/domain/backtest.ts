@@ -1,6 +1,7 @@
 import { filter, type FilterInput, type HistoryRecord } from "./pick5";
 const historical = new Set([
   "research",
+  "relation",
   "historyExclude",
   "samePosition",
   "historyOverlap",
@@ -44,22 +45,30 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       : [...row.number].every((d, p) => input.positions[p].includes(Number(d)));
     if (!allowed) return { ...result, status: "outside" };
     const rules = input.rules.map((r) =>
-      r.kind === "geometry" && r.geometry?.source === "history"
+      r.kind === "relation"
         ? {
             ...r,
-            geometry: { ...r.geometry, referenceIssue: past.at(-1)?.issue },
+            relation: { ...r.relation!, referenceIssue: past.at(-1)?.issue },
           }
-        : r.kind === "research"
+        : r.kind === "geometry" && r.geometry?.source === "history"
           ? {
               ...r,
-              research: { ...r.research!, referenceIssue: past.at(-1)?.issue },
+              geometry: { ...r.geometry, referenceIssue: past.at(-1)?.issue },
             }
-          : historical.has(r.kind)
+          : r.kind === "research"
             ? {
                 ...r,
-                params: { ...r.params, referenceIssue: past.at(-1)?.issue },
+                research: {
+                  ...r.research!,
+                  referenceIssue: past.at(-1)?.issue,
+                },
               }
-            : r,
+            : historical.has(r.kind)
+              ? {
+                  ...r,
+                  params: { ...r.params, referenceIssue: past.at(-1)?.issue },
+                }
+              : r,
     );
     try {
       return {

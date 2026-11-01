@@ -1,4 +1,9 @@
 import {
+  prepareRelation,
+  validateRelation,
+  type RelationConfig,
+} from "./relations";
+import {
   prepareGeometry,
   validateGeometry,
   geometryHistory,
@@ -30,6 +35,7 @@ export type Metrics = {
   sumMod3: number;
 };
 export type RuleKind =
+  | "relation"
   | "geometry"
   | "research"
   | AdvancedKind
@@ -54,6 +60,7 @@ export type Rule = {
   group?: string;
   research?: ResearchConfig;
   geometry?: GeometryConfig;
+  relation?: RelationConfig;
   params?: {
     positions?: number[];
     groups?: number[][];
@@ -89,6 +96,7 @@ export const ruleLabels: Record<RuleKind, string> = {
   ...advancedLabels,
   research: "实验方法",
   geometry: "空间形态",
+  relation: "跨期关联",
   sum: "和值",
   tail: "和尾",
   span: "跨度",
@@ -214,9 +222,15 @@ export function validateInput(input: FilterInput): void {
         "partition",
         "research",
         "geometry",
+        "relation",
       ].includes(rule.kind)
     )
       throw new Error(`${ruleLabels[rule.kind]}至少选择一个值`);
+    if (rule.kind === "relation") {
+      validateRelation(rule.relation);
+      if (rule.enabled) prepareRelation(rule.relation, input.history);
+      continue;
+    }
     if (rule.kind === "geometry") {
       validateGeometry(rule.geometry);
       if (rule.enabled) geometryHistory(rule.geometry, input.history);
@@ -282,14 +296,21 @@ export function filter(input: FilterInput): FilterResult {
     positions.reduce((total, values) => total * values.length, 1);
   const tolerant = input.combination?.mode === "atLeast";
   const research = rules
-    .filter((rule) => rule.kind === "research" || rule.kind === "geometry")
+    .filter(
+      (rule) =>
+        rule.kind === "research" ||
+        rule.kind === "geometry" ||
+        rule.kind === "relation",
+    )
     .map((rule) => ({
       id: rule.id,
       label: ruleLabels[rule.kind],
       prepared:
-        rule.kind === "geometry"
-          ? prepareGeometry(rule.geometry!, input.history)
-          : prepareResearch(rule.research!, input.history),
+        rule.kind === "relation"
+          ? prepareRelation(rule.relation!, input.history)
+          : rule.kind === "geometry"
+            ? prepareGeometry(rule.geometry!, input.history)
+            : prepareResearch(rule.research!, input.history),
     }));
   const researchDiagnostics = research.map(({ id, label, prepared }) => ({
     id,
@@ -297,7 +318,9 @@ export function filter(input: FilterInput): FilterResult {
     diagnostics: prepared.diagnostics,
   }));
   const predicates = rules.map((rule) =>
-    rule.kind === "research" || rule.kind === "geometry"
+    rule.kind === "research" ||
+    rule.kind === "geometry" ||
+    rule.kind === "relation"
       ? research.find((r) => r.id === rule.id)!.prepared.test
       : Object.hasOwn(advancedLabels, rule.kind)
         ? advancedPredicate(rule, input)

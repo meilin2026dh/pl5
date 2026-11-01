@@ -1,3 +1,5 @@
+import PeriodRelations from "../components/PeriodRelations";
+import { relationLabels } from "../domain/relations";
 import { geometryLabels } from "../domain/geometry";
 import GeometryRules from "../components/GeometryRules";
 import ResearchRules, {
@@ -54,11 +56,13 @@ export default function Workbench({
   setInput,
   onSave,
   notify,
+  onOpenHistory,
 }: {
   input: FilterInput;
   setInput: (i: FilterInput) => void;
   onSave: () => void;
   notify: (s: string) => void;
+  onOpenHistory?: () => void;
 }) {
   const [result, setResult] = useState<FilterResult | null>(null),
     [stamp, setStamp] = useState(""),
@@ -179,6 +183,9 @@ export default function Workbench({
           <p className="muted">把你的想法变成条件，让每一次筛选都有迹可循。</p>
         </div>
         <div className="head-actions">
+          <a className="button secondary" href="#period-title">
+            跨期关联
+          </a>
           <a className="button secondary" href="#geometry-title">
             空间形态
           </a>
@@ -295,6 +302,11 @@ export default function Workbench({
           />
           <ResearchRules input={input} onChange={setInput} />
           <GeometryRules input={input} onChange={setInput} />
+          <PeriodRelations
+            input={input}
+            onChange={setInput}
+            onOpenHistory={onOpenHistory}
+          />
           <div className="action-bar">
             {busy ? (
               <button className="button primary start-button" onClick={cancel}>
@@ -474,9 +486,11 @@ export default function Workbench({
                     {ruleLabels[r.kind]}
                     <span>
                       {r.mode === "exclude" ? "排除" : "保留"}{" "}
-                      {r.kind === "geometry"
-                        ? geometryLabels[r.geometry!.method]
-                        : r.values.join("、") || "未选择"}
+                      {r.kind === "relation"
+                        ? relationLabels[r.relation!.method]
+                        : r.kind === "geometry"
+                          ? geometryLabels[r.geometry!.method]
+                          : r.values.join("、") || "未选择"}
                     </span>
                   </li>
                 ))}

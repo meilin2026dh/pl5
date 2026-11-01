@@ -1,0 +1,152 @@
+.period-card {
+  padding: 24px;
+}
+.period-card h2 {
+  font-size: 17px;
+}
+.period-card h3 {
+  font-size: 15px;
+  margin: 24px 0 10px;
+}
+.period-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+.period-fields label,
+.period-preview label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: #776657;
+}
+.period-fields input,
+.period-fields select,
+.period-preview input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #e5dacf;
+  background: #fff;
+  border-radius: 8px;
+  padding: 9px;
+  font: inherit;
+  color: #4a4035;
+}
+.period-help {
+  background: #fff5e9;
+  padding: 12px;
+  border-radius: 9px;
+  color: #8c6542;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.period-preview {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.period-preview label {
+  max-width: 180px;
+}
+.period-rule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid #eee5da;
+}
+.period-rule label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.period-rule small {
+  flex: 1;
+  min-width: 150px;
+  color: #887461;
+}
+.period-scroll {
+  overflow: auto;
+  max-height: 350px;
+  border: 1px solid #eee4d9;
+  border-radius: 10px;
+}
+.period-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.period-scroll th {
+  background: #fff6ec;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+  color: #7a634c;
+}
+.period-scroll th,
+.period-scroll td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1e9df;
+}
+.period-scroll small {
+  display: block;
+  color: #a19283;
+  margin-top: 3px;
+}
+.period-selected {
+  background: #fff3e3;
+}
+.period-number {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.period-observation svg {
+  width: 100%;
+  max-height: 160px;
+  margin: 8px 0;
+}
+.period-fit {
+  background: #fff8f0;
+  border: 1px solid #f0dfc9;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 12px;
+}
+.period-distribution {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.period-distribution span {
+  background: #fff;
+  padding: 6px;
+  border-radius: 6px;
+}
+@media (max-width: 1000px) {
+  .period-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 580px) {
+  .period-fields {
+    grid-template-columns: 1fr;
+  }
+  .period-card {
+    padding: 18px;
+  }
+  .period-card .section-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
