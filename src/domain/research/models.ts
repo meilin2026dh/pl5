@@ -1,3 +1,4 @@
+import { fitPotential } from "./potential";
 import type { ResearchConfig, ResearchStats, ScoreModel } from "./types";
 
 // Lanczos approximation, valid for positive Dirichlet concentrations.
@@ -80,6 +81,8 @@ export function fitScores(
   s: ResearchStats,
 ): ScoreModel {
   if (!s.n || s.counts.length !== 5) throw new Error("评分需要历史数据");
+  if (config.method === "potential")
+    return fitPotential(s.rows, config.potential!);
   if (config.method === "heatScore") {
     const table = logTable(iid(s, 0.5));
     return {

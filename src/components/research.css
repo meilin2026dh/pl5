@@ -166,3 +166,43 @@
     align-items: flex-start;
   }
 }
+.potential-editor {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid #f3dbc5;
+  border-radius: 14px;
+  background: #fffaf4;
+  min-width: 0;
+}
+.potential-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.potential-table th,
+.potential-table td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #efe4d7;
+  white-space: nowrap;
+}
+.potential-table th {
+  background: #fcebd9;
+  color: #755437;
+}
+@media (max-width: 600px) {
+  .potential-editor {
+    padding: 12px;
+  }
+}
+.potential-table th:first-child,
+.potential-table td:first-child {
+  position: sticky;
+  left: 0;
+  background: #fffaf4;
+}
+.potential-table th:first-child {
+  background: #fcebd9;
+}

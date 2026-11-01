@@ -1,3 +1,5 @@
+import PotentialEditor from "./PotentialEditor";
+import { defaultPotential } from "../domain/research/potential";
 import { researchHistory } from "../domain/research/statistics";
 import { useState, useEffect, type ReactNode } from "react";
 import type { FilterInput, FilterResult, Rule } from "../domain/pick5";
@@ -223,6 +225,13 @@ export default function ResearchRules({
                   const method = e.target.value as ResearchMethod;
                   patch({
                     method,
+                    ...(method === "potential"
+                      ? {
+                          potential: config.potential ?? {
+                            ...defaultPotential,
+                          },
+                        }
+                      : {}),
                     parameter: parameterFor(
                       method === "auto" ? config.family : method,
                     ),
@@ -415,6 +424,13 @@ export default function ResearchRules({
               />
             </label>
           </div>
+          {config.method === "potential" && (
+            <PotentialEditor
+              config={config}
+              history={input.history}
+              onChange={(potential) => patch({ potential })}
+            />
+          )}
           <p className="research-context">
             {parameterHelp[config.method] ??
               (filterMethods.includes(config.method as FilterMethod)
@@ -447,6 +463,31 @@ export default function ResearchRules({
   );
 }
 const diagnosticLabels: Record<string, string> = {
+  potentialConfig: "势能参数",
+  blockIssues: "分窗截止期",
+  signals: "逐位势能明细",
+  position: "位置",
+  digits: "数字信号",
+  digit: "数字",
+  recentRate: "短窗频率",
+  baselineRate: "此前基线",
+  band: "动态带宽",
+  z: "标准偏离",
+  momentum: "势能变化",
+  crossing: "临界转换",
+  alternation: "交替比例",
+  states: "冷热序列",
+  score: "势能分",
+  state: "当前状态（热1/中0/冷-1）",
+  thresholdPolicy: "动态阈值口径",
+  clusterPolicy: "聚集口径",
+  cyclePolicy: "周期口径",
+  short: "短窗",
+  blocks: "分窗数",
+  sensitivity: "灵敏带倍数",
+  cycleWeight: "周期权重",
+  clusterWeight: "聚集权重",
+  mode: "侧重方向",
   selectedPosition: "最佳偏离位置（0为万位，-1为均匀）",
   logMarginals: "对数边际似然",
   logBayesFactorUniformVsIID1: "均匀相对IID1对数因子",

@@ -1,3 +1,4 @@
+import { validatePotential } from "./potential";
 import { filterMethods, scoreMethods, type ResearchConfig } from "./types";
 const finite = (v: unknown, lo: number, hi: number) =>
   typeof v === "number" && Number.isFinite(v) && v >= lo && v <= hi;
@@ -42,6 +43,7 @@ export function validateResearchConfig(
   if (c.method === "auto" || c.method === "greedy")
     if (c.window - c.folds * c.validationSize < 10)
       throw new Error("历史不足：滚动验证后至少需要10期训练记录");
+  if (c.method === "potential") validatePotential(c.potential, c.window);
   const method = c.method === "auto" ? c.family : c.method;
   if (method === "hotcold" && !integer(c.parameter, 1, 10))
     throw new Error("Top K须为1至10整数");
