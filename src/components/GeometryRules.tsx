@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { geometryExample } from "../domain/geometryExamples";
+import { useEffect, useMemo, useState } from "react";
 import {
   defaultGeometry,
   geometryLabels,
@@ -49,7 +50,7 @@ export default function GeometryRules({
       null,
     );
   const [error, setError] = useState(""),
-    [sample, setSample] = useState("95159");
+    [manualSample, setManualSample] = useState<string | null>(null);
   useEffect(() => {
     if (!editing) return;
     const original = input.rules.find((r) => r.id === editing.id);
@@ -60,9 +61,15 @@ export default function GeometryRules({
     }
   }, [input.rules, editing]);
   const c = draft?.geometry;
+  const automaticSample = useMemo(
+    () => (c ? geometryExample(c, input.history) : null),
+    [c, input.history],
+  );
+  const sample = manualSample ?? automaticSample ?? "";
   const patch = (change: Partial<GeometryConfig>) =>
     setDraft((d) => d && { ...d, geometry: { ...d.geometry!, ...change } });
   const start = (rule?: Rule) => {
+    setManualSample(null);
     setDraft(
       rule
         ? structuredClone(rule)
@@ -112,7 +119,11 @@ export default function GeometryRules({
   if (c) {
     try {
       if (!/^\d{5}$/.test(sample))
-        throw new Error("预览请输入完整五位号码，保留前导零。");
+        throw new Error(
+          manualSample === null
+            ? "当前条件暂无符合示例，可调整条件或手动输入号码检查。"
+            : "预览请输入完整五位号码，保留前导零。",
+        );
       const p = prepareGeometry(c, input.history),
         digits = p.digits(sample);
       preview = {
@@ -404,9 +415,26 @@ export default function GeometryRules({
                   inputMode="numeric"
                   maxLength={5}
                   value={sample}
-                  onChange={(e) => setSample(e.target.value)}
+                  onChange={(e) => setManualSample(e.target.value)}
                 />
               </label>
+              <p className="muted small">
+                {manualSample === null
+                  ? "自动示例 · 随方法和布局切换"
+                  : "手动号码 · 切换方法时保留"}
+              </p>
+              <button
+                type="button"
+                className="text-button"
+                onClick={() => setManualSample(null)}
+              >
+                使用当前方法示例
+              </button>
+              {!automaticSample && (
+                <p className="muted small">
+                  当前参数或历史下没有可用的符合示例；可调整条件或手动输入号码检查。
+                </p>
+              )}
               <p className="muted small">
                 {c.source === "number"
                   ? "按位置顺序取点，不排序。"

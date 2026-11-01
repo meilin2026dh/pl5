@@ -61,3 +61,66 @@ it("invalidates an open draft if its source rule is removed", () => {
   expect(screen.queryByRole("button", { name: "保存空间条件" })).toBeNull();
   expect(screen.getByRole("alert").textContent).toContain("改变或移除");
 });
+it("switches automatic examples with method/layout and preserves manually entered numbers", () => {
+  render(<Harness />);
+  fireEvent.click(screen.getByRole("button", { name: "添加空间条件" }));
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("13579");
+  fireEvent.change(screen.getByLabelText("空间方法"), {
+    target: { value: "v" },
+  });
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("95159");
+  fireEvent.change(screen.getByLabelText("空间方法"), {
+    target: { value: "invertedV" },
+  });
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("15951");
+  fireEvent.change(screen.getByLabelText("坐标布局"), {
+    target: { value: "phone" },
+  });
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("74269");
+  fireEvent.change(screen.getByLabelText("预览五位号码"), {
+    target: { value: "00123" },
+  });
+  fireEvent.change(screen.getByLabelText("空间方法"), {
+    target: { value: "v" },
+  });
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("00123");
+  expect(screen.getByText("手动号码 · 切换方法时保留")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "使用当前方法示例" }));
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("14863");
+  fireEvent.change(screen.getByLabelText("坐标布局"), {
+    target: { value: "calculator" },
+  });
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("74269");
+});
+it("can restore automatic mode even when the condition has no matching example", () => {
+  render(<Harness />);
+  fireEvent.click(screen.getByRole("button", { name: "添加空间条件" }));
+  fireEvent.change(screen.getByLabelText("预览五位号码"), {
+    target: { value: "12345" },
+  });
+  fireEvent.change(screen.getByLabelText("空间方法"), {
+    target: { value: "geometric" },
+  });
+  fireEvent.change(screen.getByLabelText("路径点数"), {
+    target: { value: "5" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "使用当前方法示例" }));
+  expect(
+    (screen.getByLabelText("预览五位号码") as HTMLInputElement).value,
+  ).toBe("");
+  expect(screen.getByText("自动示例 · 随方法和布局切换")).toBeTruthy();
+});
