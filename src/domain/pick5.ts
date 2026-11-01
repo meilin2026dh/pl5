@@ -1,3 +1,7 @@
+import {
+  validateProbability,
+  type ProbabilityConfig,
+} from "./probability/config";
 import { validateEvidence, type EvidenceConfig } from "./evidence/config";
 import { validateInnovation, type InnovationConfig } from "./innovation/config";
 import { validateAudit, type AuditConfig } from "./audit/config";
@@ -84,6 +88,7 @@ export type Rule = {
 };
 export type HistoryRecord = { issue: string; date: string; number: string };
 export type FilterInput = {
+  probability?: ProbabilityConfig;
   evidence?: EvidenceConfig;
   innovation?: InnovationConfig;
   audit?: AuditConfig;
@@ -195,6 +200,7 @@ const repeatShapes = ["5", "41", "32", "311", "221", "2111", "11111"];
 export function validateInput(input: FilterInput): void {
   if (!input || !Array.isArray(input.positions) || input.positions.length !== 5)
     throw new Error("必须设置五个位置");
+  if (input.probability !== undefined) validateProbability(input.probability);
   if (input.evidence !== undefined) validateEvidence(input.evidence);
   if (input.innovation !== undefined) validateInnovation(input.innovation);
   if (input.selection !== undefined) validateSelection(input.selection);

@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "type": "independent-read-only-native-review",
+  "critical": [],
+  "important": [],
+  "minor": [
+    {
+      "finding": "Decision audit omitted ranking/stage",
+      "resolution": "Added rank, rankBasis, selected stage and shortlist; RED to GREEN regression"
+    },
+    {
+      "finding": "Spec delivery status stale",
+      "resolution": "Updated status and linked implementation record"
+    },
+    {
+      "finding": "Numeric bounds duplicated in form and validation",
+      "resolution": "Deferred maintainability only; current values consistent"
+    }
+  ],
+  "verification": {
+    "files": 46,
+    "tests": 257,
+    "typecheck": true,
+    "build": true,
+    "diffCheck": true
+  },
+  "scope": "new probability modules/UI/worker/tests and pick5/Workbench seams"
+}
