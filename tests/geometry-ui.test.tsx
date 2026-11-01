@@ -39,26 +39,18 @@ it("adds an actual V filter, previews, edits, toggles and deletes it", () => {
   expect(screen.getByText("预览符合此条件")).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "保存空间条件" }));
   expect(screen.getByTestId("result").textContent).toBe('["95159"]');
-  fireEvent.click(
-    screen.getByRole("button", { name: "编辑空间条件 V型（先降后升）" }),
-  );
+  fireEvent.click(screen.getByRole("button", { name: "编辑空间条件 V型" }));
   fireEvent.change(screen.getByLabelText("空间模式"), {
     target: { value: "exclude" },
   });
   fireEvent.click(screen.getByRole("button", { name: "保存空间条件" }));
   expect(screen.getByTestId("result").textContent).toBe('["13579","15951"]');
-  fireEvent.click(
-    screen.getByRole("checkbox", { name: "启用空间条件 V型（先降后升）" }),
-  );
+  fireEvent.click(screen.getByRole("checkbox", { name: "启用空间条件 V型" }));
   expect(screen.getByTestId("result").textContent).toBe(
     '["13579","15951","95159"]',
   );
-  fireEvent.click(
-    screen.getByRole("button", { name: "删除空间条件 V型（先降后升）" }),
-  );
-  expect(
-    screen.queryByRole("button", { name: "编辑空间条件 V型（先降后升）" }),
-  ).toBeNull();
+  fireEvent.click(screen.getByRole("button", { name: "删除空间条件 V型" }));
+  expect(screen.queryByRole("button", { name: "编辑空间条件 V型" })).toBeNull();
 });
 it("invalidates an open draft if its source rule is removed", () => {
   render(<Harness />);

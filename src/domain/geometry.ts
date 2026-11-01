@@ -4,8 +4,8 @@ import { defaultResearch } from "./research/types";
 export const geometryLabels = {
   line: "直线",
   polyline: "折线",
-  v: "V型（先降后升）",
-  invertedV: "倒V型（先升后降）",
+  v: "V型",
+  invertedV: "倒V型",
   arithmetic: "等差规律",
   geometric: "等比规律",
   fibonacci: "斐波那契规律",
@@ -191,13 +191,16 @@ function matches(digits: number[], c: GeometryConfig): boolean {
   if (c.method === "v" || c.method === "invertedV") {
     const dx = points.slice(1).map((p, i) => p[0] - points[i][0]),
       dy = points.slice(1).map((p, i) => p[1] - points[i][1]);
-    if (!dx.every((v) => v > epsilon) && !dx.every((v) => v < -epsilon))
+    if (!dx.every((v) => v >= -epsilon) && !dx.every((v) => v <= epsilon))
       return false;
     if (dy.some((v) => Math.abs(v) <= c.tolerance + epsilon)) return false;
     const signs = dy.map((v) => Math.sign(v) * (c.method === "v" ? 1 : -1));
     const turn = signs.findIndex((v) => v < 0);
     return (
       turn > 0 &&
+      // Both arms must have horizontal extent; vertical movement along an arm is allowed.
+      Math.abs(points[turn][0] - points[0][0]) > epsilon &&
+      Math.abs(points.at(-1)![0] - points[turn][0]) > epsilon &&
       signs.slice(0, turn).every((v) => v > 0) &&
       signs.slice(turn).every((v) => v < 0)
     );
