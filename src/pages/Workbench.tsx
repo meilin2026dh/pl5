@@ -1,3 +1,4 @@
+import InnovationLab from "../components/InnovationLab";
 import ConditionLab from "../components/ConditionLab";
 import SelectionLab from "../components/SelectionLab";
 import PeriodRelations from "../components/PeriodRelations";
@@ -185,6 +186,9 @@ export default function Workbench({
           <p className="muted">把你的想法变成条件，让每一次筛选都有迹可循。</p>
         </div>
         <div className="head-actions">
+          <a className="button secondary" href="#innovation-title">
+            覆盖审计
+          </a>
           <a className="button secondary" href="#condition-title">
             条件体检
           </a>
@@ -310,6 +314,7 @@ export default function Workbench({
           />
           <ResearchRules input={input} onChange={setInput} />
           <SelectionLab input={input} onChange={setInput} />
+          <InnovationLab input={input} onChange={setInput} />
           <ConditionLab input={input} onChange={setInput} />
           <GeometryRules input={input} onChange={setInput} />
           <PeriodRelations

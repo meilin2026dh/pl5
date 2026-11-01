@@ -35,6 +35,7 @@ pnpm build
 - 数学特征：数学质合三分类、和值自选模数、五位积尾、逆序数、五位/两码最大公约数与最小公倍数，带草稿计算预览。口径与验证见 [数学过滤定义](docs/research/mathematical-filters.md)。
 - 研究实验：18类统计过滤、八种评分方法、滚动选参、贪心及固定组合包，保留窗口与截止期，使用全量组合排名。
 - 多阶段精选：AC/排序间距粗筛、近期同位重号/Jaccard硬约束、全遍历/加权蒙特卡洛+遗传/退火，贝叶斯、35维浅层网络或990参数微型残差Conv1D评分，时间留出网格选参、逐对输出多样性及种子复现。范围、AC纠错及未集成路线见 [研究实现记录](docs/research/multi-stage-selection.md)。
+- 覆盖审计：有限目标域的几何覆盖求解、熵松弛、软排序/抽样、GP-UCB权重试验、逐号决策记录、同预算交换、精确概率与MC区间；不对应3/4位奖级。实现与外部模型路线见 [覆盖审计研究](docs/research/coverage-audit.md)。
 - 条件体检：二值Phi相关矩阵去冗、按注数预算贪心选条件、Walk-forward样本外覆盖/压缩曲线。差分白名单、Markov矩阵及残差模型实现与验证见 [条件体检研究记录](docs/research/condition-health.md)。
 - 冷热势能：短窗与此前基线、动态冷热带、临界越界、分窗交替及候选位置聚集；三种侧重，逐位观察和动态排名阈值，见 [公式与验证](docs/research/hotcold-potential.md)。
 - 空间形态：直线、折线、V/倒V、等差/等比/斐波那契、三角形/梯形、镜像/中心对称；支持三种坐标布局、连续3—5点、历史衔接、容差和SVG预览。定义及边界见 [空间过滤方案](docs/research/spatial-filters.md)。
@@ -70,7 +71,7 @@ CSV需要 `issue,date,number` 表头，日期 `YYYY-MM-DD`，号码恰好五位�
 - `tests`：公式、边界、持久化与交互回归。
 - `.github/workflows/ci.yml`：锁文件安装、测试、构建。
 
-独立维护的[产品方案](https://chatgpt.com/space/page_34895bfa5f0c81919e5ba12e662b6b8e)是范围主文档；[研发笔记](https://chatgpt.com/space/page_b2e368fd3f6481918b75b2dc93a823ce)记录进展。仓库只保存实现与验证记录，不维护第二份主方案。
+独立维护的[产品方案](https://chatgpt.com/space/page_34895bfa5f0c81919e5ba12e662b6b8e)是范围主文档；研发笔记默认记录到本机 Obsidian 的“项目/排列五 PL5”，包括详细需求、算法、问题修复和验证；[原Pages笔记](https://chatgpt.com/space/page_b2e368fd3f6481918b75b2dc93a823ce)保留作历史存档。仓库只保存实现与验证记录，不维护第二份主方案。
 
 ## v0.2 实验方法研究版
 

@@ -206,3 +206,16 @@
 .potential-table th:first-child {
   background: #fcebd9;
 }
+
+.innovation-json {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 360px;
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid #eadfd4;
+  border-radius: 12px;
+  background: #fff8f0;
+  font-size: 11px;
+  line-height: 1.65;
+}
