@@ -1,6 +1,10 @@
+import { structure } from "./structure";
 import { digitClass, gcd, lcm, inversionCount, mathClassCounts } from "./math";
 import type { FilterInput, Rule, HistoryRecord } from "./pick5";
 export const advancedLabels = {
+  ac: "AC差值复杂度",
+  largeGaps: "大间距个数",
+  gapPattern: "排序间距形态",
   mathPrimePattern: "数学质合形态",
   mathClassCounts: "数学质合分布",
   sumModulo: "和值取模",
@@ -178,6 +182,11 @@ export function validateAdvanced(input: FilterInput): void {
       !["sum", "span"].includes(p.metric)
     )
       fail("历史差指标不合法");
+    if (
+      ["largeGaps", "gapPattern"].includes(r.kind) &&
+      !integer(p.gapThreshold, 1, 9)
+    )
+      fail("大间距下限必须为1至9整数");
     if (r.kind === "sumModulo" && !integer(p.modulus, 2, 100))
       fail("和值取模的模数必须为2至100的整数");
     if (r.kind === "remainderSum" && ![3, 4, 5].includes(p.modulus!))
@@ -220,6 +229,7 @@ export function validateAdvanced(input: FilterInput): void {
         fail("分区个数合计必须为5");
     }
     const patterns: Partial<Record<Rule["kind"], RegExp>> = {
+      gapPattern: /^[LS?]{4}$/,
       mathPrimePattern: /^[PCN?]{5}$/,
       mathClassCounts: /^[0-5]:[0-5]:[0-5]$/,
       oddPattern: /^[01?]{5}$/,
@@ -247,6 +257,8 @@ export function validateAdvanced(input: FilterInput): void {
         !["historyExclude", "danGroups", "partition"].includes(r.kind)
       ) {
         const limits: Partial<Record<Rule["kind"], number>> = {
+          ac: 5,
+          largeGaps: 4,
           inversions: 10,
           digitLcm: 2520,
           pairLcm: 72,
@@ -267,7 +279,12 @@ export function validateAdvanced(input: FilterInput): void {
           (r.kind !== "mean" && !Number.isInteger(v)) ||
           (r.kind === "mean" && Math.abs(v * 5 - Math.round(v * 5)) > 1e-8) ||
           v > (r.kind === "historyDelta" ? 45 : max) ||
-          v < (r.kind === "historyDelta" && p.absolute === false ? -45 : 0)
+          v <
+            (r.kind === "ac"
+              ? -4
+              : r.kind === "historyDelta" && p.absolute === false
+                ? -45
+                : 0)
         )
           fail("规则数值超出范围");
       }
@@ -347,7 +364,14 @@ export function advancedPredicate(
         (g, i) => d.filter((n) => g.includes(n)).length === p.counts![i],
       );
     if (kind === "historyExclude") return !historyNumbers.has(number);
-    if (kind === "mathPrimePattern") value = d.map(digitClass).join("");
+    if (kind === "ac") value = structure(number, 3).ac;
+    else if (kind === "largeGaps")
+      value = structure(number, p.gapThreshold!).large;
+    else if (kind === "gapPattern")
+      value = structure(number, p.gapThreshold!)
+        .gaps.map((g) => (g >= p.gapThreshold! ? "L" : "S"))
+        .join("");
+    else if (kind === "mathPrimePattern") value = d.map(digitClass).join("");
     else if (kind === "mathClassCounts") value = mathClassCounts(d);
     else if (kind === "sumModulo") value = sum(d) % p.modulus!;
     else if (kind === "productTail")
@@ -436,6 +460,7 @@ export function advancedPredicate(
     } else return false;
     if (
       [
+        "gapPattern",
         "mathPrimePattern",
         "oddPattern",
         "bigPattern",
@@ -457,6 +482,9 @@ export const advancedDefaults: Record<
   AdvancedKind,
   { values: (number | string)[]; params?: Rule["params"] }
 > = {
+  ac: { values: [0, 1, 2, 3, 4, 5] },
+  largeGaps: { values: [2], params: { gapThreshold: 3 } },
+  gapPattern: { values: ["SSLL"], params: { gapThreshold: 3 } },
   mathPrimePattern: { values: ["?PP?P"] },
   mathClassCounts: { values: ["3:1:1"] },
   sumModulo: { values: [0], params: { modulus: 5 } },

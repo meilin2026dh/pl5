@@ -1,3 +1,4 @@
+import { validateSelection, type SelectionConfig } from "./selection/config";
 import {
   prepareRelation,
   validateRelation,
@@ -68,6 +69,7 @@ export type Rule = {
     countMin?: number;
     countMax?: number;
     modulus?: number;
+    gapThreshold?: number;
     class?: "big" | "small" | "odd" | "even" | "prime" | "composite";
     partitions?: number[][];
     referenceIssue?: string;
@@ -78,6 +80,7 @@ export type Rule = {
 };
 export type HistoryRecord = { issue: string; date: string; number: string };
 export type FilterInput = {
+  selection?: SelectionConfig;
   positions: number[][];
   rules: Rule[];
   candidates?: string[];
@@ -181,6 +184,7 @@ const repeatShapes = ["5", "41", "32", "311", "221", "2111", "11111"];
 export function validateInput(input: FilterInput): void {
   if (!input || !Array.isArray(input.positions) || input.positions.length !== 5)
     throw new Error("必须设置五个位置");
+  if (input.selection !== undefined) validateSelection(input.selection);
   for (const values of input.positions) {
     if (!Array.isArray(values) || values.length === 0)
       throw new Error("每个位置至少选择一个数字");

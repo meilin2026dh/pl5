@@ -1,4 +1,9 @@
-import { filter, type FilterInput, type HistoryRecord } from "./pick5";
+import {
+  filter,
+  type FilterInput,
+  type HistoryRecord,
+  type Rule,
+} from "./pick5";
 const historical = new Set([
   "research",
   "relation",
@@ -44,32 +49,7 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       ? base.has(row.number)
       : [...row.number].every((d, p) => input.positions[p].includes(Number(d)));
     if (!allowed) return { ...result, status: "outside" };
-    const rules = input.rules.map((r) =>
-      r.kind === "relation"
-        ? {
-            ...r,
-            relation: { ...r.relation!, referenceIssue: past.at(-1)?.issue },
-          }
-        : r.kind === "geometry" && r.geometry?.source === "history"
-          ? {
-              ...r,
-              geometry: { ...r.geometry, referenceIssue: past.at(-1)?.issue },
-            }
-          : r.kind === "research"
-            ? {
-                ...r,
-                research: {
-                  ...r.research!,
-                  referenceIssue: past.at(-1)?.issue,
-                },
-              }
-            : historical.has(r.kind)
-              ? {
-                  ...r,
-                  params: { ...r.params, referenceIssue: past.at(-1)?.issue },
-                }
-              : r,
-    );
+    const rules = rulesAtCutoff(input.rules, past.at(-1)?.issue);
     try {
       return {
         ...result,
@@ -93,4 +73,33 @@ export function backtest(input: FilterInput, count: number): ReplayRow[] {
       };
     }
   });
+}
+
+export function rulesAtCutoff(rules: Rule[], referenceIssue?: string): Rule[] {
+  return rules.map((r) =>
+    r.kind === "relation"
+      ? {
+          ...r,
+          relation: { ...r.relation!, referenceIssue: referenceIssue },
+        }
+      : r.kind === "geometry" && r.geometry?.source === "history"
+        ? {
+            ...r,
+            geometry: { ...r.geometry, referenceIssue: referenceIssue },
+          }
+        : r.kind === "research"
+          ? {
+              ...r,
+              research: {
+                ...r.research!,
+                referenceIssue: referenceIssue,
+              },
+            }
+          : historical.has(r.kind)
+            ? {
+                ...r,
+                params: { ...r.params, referenceIssue: referenceIssue },
+              }
+            : r,
+  );
 }

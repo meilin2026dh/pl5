@@ -1,3 +1,4 @@
+import { structure } from "../domain/structure";
 import { useState } from "react";
 import { mathFeatures } from "../domain/math";
 import { advancedPredicate } from "../domain/advanced";
@@ -24,6 +25,9 @@ const historyKinds = [
   "frequency",
 ];
 const mathKinds = [
+  "ac",
+  "largeGaps",
+  "gapPattern",
   "mathPrimePattern",
   "mathClassCounts",
   "sumModulo",
@@ -35,6 +39,7 @@ const mathKinds = [
   "pairLcm",
 ];
 const stringKinds = [
+  "gapPattern",
   "mathPrimePattern",
   "mathClassCounts",
   "oddPattern",
@@ -48,6 +53,10 @@ const stringKinds = [
 const noValues = ["danGroups", "partition", "historyExclude"];
 const placeNames = ["万位", "千位", "百位", "十位", "个位"];
 export const explanations: Record<AdvancedKind, string> = {
+  ac: "五位数字两两非零绝对差去重种数减4，范围-4至5；重复位可使AC为负。不适用5—8占七成的说法。",
+  largeGaps: "五位排序（含重复位），统计四个相邻间距中大于等于下限的个数0—4。",
+  gapPattern:
+    "五位排序后四个间距：L为大于等于下限，S为小于下限，?不限；例如SSLL。零间距属于小间距。",
   mathPrimePattern:
     "数学口径：P=质数2357，C=合数4689，N=既非质数也非合数01；?不限。例如?PP?P。",
   mathClassCounts:
@@ -526,6 +535,21 @@ export default function AdvancedRules({
                 </select>
               </label>
             )}
+            {["largeGaps", "gapPattern"].includes(kind) && (
+              <label className="field-label">
+                大间距下限
+                <input
+                  aria-label="大间距下限"
+                  type="number"
+                  min={1}
+                  max={9}
+                  value={draft.params?.gapThreshold ?? 3}
+                  onChange={(e) =>
+                    param({ gapThreshold: Number(e.target.value) })
+                  }
+                />
+              </label>
+            )}
             {["remainderSum", "sumModulo"].includes(kind) && (
               <label className="field-label">
                 模数
@@ -714,6 +738,23 @@ export default function AdvancedRules({
                     <br />
                     逆序数 {mathPreview.inversions} · 五位公约数{" "}
                     {mathPreview.gcd} · 五位公倍数 {mathPreview.lcm}
+                  </p>
+                )}
+                {mathPreview && (
+                  <p className="small">
+                    AC{" "}
+                    {structure(mathSample, draft.params?.gapThreshold ?? 3).ac}{" "}
+                    · 排序间距{" "}
+                    {structure(
+                      mathSample,
+                      draft.params?.gapThreshold ?? 3,
+                    ).gaps.join("、")}{" "}
+                    · 大间距{" "}
+                    {
+                      structure(mathSample, draft.params?.gapThreshold ?? 3)
+                        .large
+                    }
+                    个
                   </p>
                 )}
                 <strong className="small">
