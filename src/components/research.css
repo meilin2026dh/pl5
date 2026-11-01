@@ -219,3 +219,34 @@
   font-size: 11px;
   line-height: 1.65;
 }
+
+.sequence-lab > label,
+.sequence-lab details > label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 12px 0;
+  font-size: 12px;
+  color: #695746;
+}
+.sequence-lab textarea,
+.sequence-lab > label input,
+.sequence-lab details > label input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #decebd;
+  border-radius: 9px;
+  padding: 11px;
+  color: #453b32;
+  background: #fff;
+  font: inherit;
+}
+.sequence-lab textarea {
+  min-height: 82px;
+  resize: vertical;
+}
+.sequence-lab > button:first-of-type {
+  color: #fff;
+  background: #f36c24;
+  border-color: #f36c24;
+}

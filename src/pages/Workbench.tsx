@@ -1,3 +1,4 @@
+import SequenceResearchLab from "../components/SequenceResearchLab";
 import ProbabilityLab from "../components/ProbabilityLab";
 import EvidenceLab from "../components/EvidenceLab";
 import InnovationLab from "../components/InnovationLab";
@@ -188,6 +189,9 @@ export default function Workbench({
           <p className="muted">把你的想法变成条件，让每一次筛选都有迹可循。</p>
         </div>
         <div className="head-actions">
+          <a className="button secondary" href="#sequence-research-title">
+            增量与求解
+          </a>
           <a className="button secondary" href="#probability-title">
             自适应概率
           </a>
@@ -322,6 +326,7 @@ export default function Workbench({
           />
           <ResearchRules input={input} onChange={setInput} />
           <SelectionLab input={input} onChange={setInput} />
+          <SequenceResearchLab input={input} onChange={setInput} />
           <ProbabilityLab input={input} onChange={setInput} />
           <EvidenceLab input={input} onChange={setInput} />
           <InnovationLab input={input} onChange={setInput} />

@@ -1,6 +1,8 @@
+import { validateSequence, type SequenceConfig } from "./sequence-config";
 export type SelectionConfig = {
   method: "exact" | "mcga" | "anneal";
-  scorer: "bayes" | "neural" | "resnet";
+  scorer: "bayes" | "neural" | "resnet" | "lstm" | "transformer";
+  sequence?: SequenceConfig;
   window: number;
   referenceIssue?: string;
   seed: number;
@@ -47,9 +49,12 @@ export function validateSelection(c: SelectionConfig) {
     typeof c !== "object" ||
     Array.isArray(c) ||
     !["exact", "mcga", "anneal"].includes(c.method) ||
-    !["bayes", "neural", "resnet"].includes(c.scorer)
+    !["bayes", "neural", "resnet", "lstm", "transformer"].includes(c.scorer)
   )
     throw new Error("精选方法或评分器错误");
+  if (c.sequence !== undefined) validateSequence(c.sequence);
+  if (["lstm", "transformer"].includes(c.scorer) && c.window < 80)
+    throw Error("时序评分历史窗口至少80期");
   if (
     c.outputJaccard !== undefined &&
     (typeof c.outputJaccard !== "number" ||

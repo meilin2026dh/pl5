@@ -1,3 +1,5 @@
+import { fitSequence } from "./sequence";
+import type { SequenceConfig } from "./sequence-config";
 import { fitResidual } from "./residual";
 import type { HistoryRecord } from "../pick5";
 import { seededRandom } from "./config";
@@ -96,10 +98,13 @@ function train(data: Sample[], hidden: number, rate: number, seed: number) {
 }
 export function learnScorer(
   rows: HistoryRecord[],
-  kind: "bayes" | "neural" | "resnet",
+  kind: "bayes" | "neural" | "resnet" | "lstm" | "transformer",
   autoTune: boolean,
   seed: number,
+  sequence?: SequenceConfig,
 ) {
+  if (kind === "lstm" || kind === "transformer")
+    return fitSequence(rows, kind, seed, sequence);
   if (rows.length < 40 || rows.length > 500)
     throw new Error("评分历史窗口须为40至500期");
   const current = snapshot(rows);

@@ -33,12 +33,12 @@ afterEach(() => {
   vi.unstubAllGlobals();
   FakeWorker.all = [];
 });
-function Harness() {
+function Harness({ extended = false }: { extended?: boolean }) {
   const [input, setInput] = useState<FilterInput>({
     positions: defaultPositions(),
     rules: [],
     historySource: "测试历史",
-    history: Array.from({ length: 40 }, (_, i) => ({
+    history: Array.from({ length: extended ? 100 : 40 }, (_, i) => ({
       issue: String(i + 1),
       date: new Date(Date.UTC(2026, 0, i + 1)).toISOString().slice(0, 10),
       number: String((i * 7919) % 100000).padStart(5, "0"),
@@ -46,7 +46,9 @@ function Harness() {
     candidates: ["12345", "54321", "01269", "89000", "00000"],
     selection: {
       ...defaultSelection,
-      window: 40,
+      window: extended ? 80 : 40,
+      scorer: extended ? "lstm" : "bayes",
+      sequence: { context: 4, epochs: 1 },
       recent: 0,
       acMin: -4,
       minLarge: 0,
@@ -165,4 +167,15 @@ it("uses the portfolio replay worker contract separately from scalar filtering",
   );
   expect(screen.getByLabelText("精选回放结果")).toBeTruthy();
   expect(screen.queryByLabelText("精选结果")).toBeNull();
+});
+
+it("exposes real sequence training diagnostics and a complete report action", () => {
+  vi.stubGlobal("Worker", FakeWorker);
+  render(<Harness extended />);
+  fireEvent.click(screen.getByRole("button", { name: "运行多阶段精选" }));
+  const w = FakeWorker.all[0],
+    r = selectPortfolio(w.request.input, w.request.config);
+  act(() => w.onmessage!({ data: { id: w.request.id, result: r } }));
+  expect(screen.getByLabelText("时序模型训练诊断")).toBeTruthy();
+  expect(screen.getByRole("button", { name: "复制时序训练报告" })).toBeTruthy();
 });

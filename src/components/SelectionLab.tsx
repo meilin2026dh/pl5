@@ -1,3 +1,5 @@
+import SequenceDiagnostics from "./SequenceDiagnostics";
+import { defaultSequence } from "../domain/selection/sequence-config";
 import { useEffect, useRef, useState } from "react";
 import type { FilterInput } from "../domain/pick5";
 import {
@@ -158,6 +160,10 @@ export default function SelectionLab({
             <option value="bayes">贝叶斯逐位后验</option>
             <option value="neural">35维浅层网络结构分</option>
             <option value="resnet">微型残差Conv1D时序形态分</option>
+            <option value="lstm">微型LSTM（全参数训练）</option>
+            <option value="transformer">
+              微型因果Transformer（全参数训练）
+            </option>
           </select>
         </label>
         {numeric("精选历史窗口", "window", 40, 500)}
@@ -175,6 +181,54 @@ export default function SelectionLab({
           />
         </label>
       </div>
+      {["lstm", "transformer"].includes(c.scorer) && (
+        <div className="research-fields">
+          <label>
+            时序上下文
+            <select
+              aria-label="时序上下文"
+              value={c.sequence?.context ?? 8}
+              onChange={(e) =>
+                patch({
+                  sequence: {
+                    ...defaultSequence,
+                    ...c.sequence,
+                    context: Number(e.target.value) as 4 | 8 | 12,
+                  },
+                })
+              }
+            >
+              {[4, 8, 12].map((n) => (
+                <option key={n} value={n}>
+                  {n}期
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            时序最大训练轮数
+            <input
+              aria-label="时序最大训练轮数"
+              type="number"
+              min={1}
+              max={20}
+              value={c.sequence?.epochs ?? 20}
+              onChange={(e) =>
+                patch({
+                  sequence: {
+                    ...defaultSequence,
+                    ...c.sequence,
+                    epochs: Number(e.target.value),
+                  },
+                })
+              }
+            />
+          </label>
+          <p className="research-context">
+            窗口至少80期。独立训练/验证/诊断；回放限窗口200、10轮、上下文8。诊断不选择权重；注意力不是因果解释。
+          </p>
+        </div>
+      )}
       <details open>
         <summary>结构与历史硬约束</summary>
         <div className="research-fields">
@@ -306,6 +360,27 @@ export default function SelectionLab({
       )}
       {result && (
         <div aria-label="精选结果">
+          <SequenceDiagnostics value={result.diagnostics.scorer} />
+          {["lstm", "transformer"].includes(c.scorer) && (
+            <button
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(
+                    JSON.stringify(
+                      { version: "sequence-model-v1", input, result },
+                      null,
+                      2,
+                    ),
+                  );
+                  setNotice("完整时序训练报告已复制，含输入快照与诊断");
+                } catch {
+                  setNotice("报告复制失败，页面诊断仍可查看");
+                }
+              }}
+            >
+              复制时序训练报告
+            </button>
+          )}
           <p className="research-context">
             输入{result.diagnostics.inputCount}组 → 结构
             {result.diagnostics.coarseCount}组 → 可行

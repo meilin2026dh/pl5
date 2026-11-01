@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-01",
+  "tests": {
+    "files": 50,
+    "tests": 275,
+    "typecheck": true,
+    "build": true
+  },
+  "official": {
+    "rows": 2013,
+    "cutoff": "2026290",
+    "version": "2f4558f04013030e"
+  },
+  "browser": {
+    "training": [
+      "lstm",
+      "transformer"
+    ],
+    "cancel": true,
+    "replayCapRejected": true,
+    "posterior": [
+      "first",
+      "unchanged",
+      "append",
+      "window-drop"
+    ],
+    "loadUndo": true,
+    "mobile": "not run"
+  },
+  "optimal": {
+    "solver": "TypeScript有限域分支定界-v1",
+    "status": "OPTIMAL",
+    "candidates": [
+      "00000",
+      "11111"
+    ],
+    "targets": [
+      "00000",
+      "00001",
+      "11110",
+      "11111"
+    ],
+    "config": {
+      "mode": "min",
+      "budget": 2,
+      "radius": 1,
+      "nodes": 100000,
+      "milliseconds": 5000
+    },
+    "numbers": [
+      "00000",
+      "11111"
+    ],
+    "objective": 2,
+    "bound": 2,
+    "gap": 0,
+    "nodes": 1,
+    "elapsed": 0.20000001788139343,
+    "stop": "complete",
+    "covered": 4,
+    "uncovered": [],
+    "exactProbability": 2e-05,
+    "columnsAfterDominance": 2,
+    "certified": true
+  },
+  "limited": {
+    "solver": "TypeScript有限域分支定界-v1",
+    "status": "FEASIBLE_LIMIT",
+    "candidates": [
+      "00112",
+      "01000",
+      "11022",
+      "11100",
+      "11222",
+      "12122",
+      "20010",
+      "21211"
+    ],
+    "targets": [
+      "00212",
+      "00220",
+      "01110",
+      "01210",
+      "02010",
+      "02121",
+      "02211",
+      "10010",
+      "11110",
+      "20110"
+    ],
+    "config": {
+      "mode": "max",
+      "budget": 3,
+      "radius": 2,
+      "nodes": 1,
+      "milliseconds": 5000
+    },
+    "numbers": [
+      "00112",
+      "01000",
+      "11100"
+    ],
+    "objective": 6,
+    "bound": 8,
+    "gap": 2,
+    "nodes": 1,
+    "elapsed": 0.09999999403953552,
+    "stop": "node-limit",
+    "covered": 6,
+    "uncovered": [
+      "00220",
+      "02121",
+      "02211",
+      "10010"
+    ],
+    "exactProbability": 3e-05,
+    "columnsAfterDominance": 6,
+    "certified": true
+  }
+}

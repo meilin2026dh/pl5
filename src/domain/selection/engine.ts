@@ -109,7 +109,7 @@ export function selectPortfolio(
   };
   if (!feasible.length) return { numbers: [], diagnostics };
   progress?.("拟合评分模型与全遍历对照");
-  const model = learnScorer(rows, c.scorer, c.autoTune, c.seed);
+  const model = learnScorer(rows, c.scorer, c.autoTune, c.seed, c.sequence);
   diagnostics.scorer = model.diagnostics;
   const scores = new Map(feasible.map((n) => [n, model.score(n)]));
   const compare = (a: string, b: string) =>
@@ -216,6 +216,13 @@ export function replaySelection(
   progress?: (s: string) => void,
 ): (ReplayRow & { selected: number })[] {
   validateSelection(c);
+  if (
+    ["lstm", "transformer"].includes(c.scorer) &&
+    (c.window > 200 ||
+      (c.sequence?.epochs ?? 20) > 10 ||
+      (c.sequence?.context ?? 8) > 8)
+  )
+    throw Error("时序回放上限：窗口200、10轮、上下文8；请显式调整后运行");
   const last = researchHistory(
     { ...defaultResearch, window: 1, referenceIssue: c.referenceIssue },
     input.history,
