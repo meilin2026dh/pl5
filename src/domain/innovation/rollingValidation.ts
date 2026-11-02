@@ -20,7 +20,7 @@ export function rollingExclusion(
     throw Error("invalid rolling experiment configuration");
   if (new Set(rows.map(r => r.issue)).size !== rows.length)
     throw Error("duplicate issues");
-  if (rows.some(r => !r.availableBeforeDraw || !/^\\d{5}$/.test(r.draw) ||
+  if (rows.some(r => !r.availableBeforeDraw || !/^\d{5}$/.test(r.draw) ||
       !Number.isInteger(r.externalDigit) || r.externalDigit < 0 || r.externalDigit > 9))
     throw Error("invalid or future feature");
   // Issue identifiers must be monotonically increasing in a consistent format.
