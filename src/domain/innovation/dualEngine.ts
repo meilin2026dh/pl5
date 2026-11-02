@@ -17,7 +17,7 @@ export function evaluateExclusion(rows: readonly AlignedRow[], operator: DigitOp
     throw new Error("invalid evaluation window or position");
   let misses = 0;
   for (const row of rows) {
-    if (!/^\\d{5}$/.test(row.draw) || !Number.isInteger(row.externalDigit) ||
+    if (!/^\d{5}$/.test(row.draw) || !Number.isInteger(row.externalDigit) ||
         row.externalDigit < 0 || row.externalDigit > 9 || !row.availableBeforeDraw)
       throw new Error("invalid row or future information leakage");
     misses += Number(Number(row.draw[position]) === operator.table[row.externalDigit]);
