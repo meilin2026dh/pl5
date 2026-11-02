@@ -31,7 +31,7 @@ export function evolveOperators(
   for (let pos = 0; pos < 5 && candidates.length < maxOperators; pos++) {
     const counts = Array.from({ length: 10 }, () => Array<number>(10).fill(0));
     for (const r of train) {
-      if (!r.availableBeforeDraw || !/^\\d{5}$/.test(r.draw) ||
+      if (!r.availableBeforeDraw || !/^\d{5}$/.test(r.draw) ||
           !Number.isInteger(r.externalDigit) || r.externalDigit < 0 || r.externalDigit > 9)
         throw Error("invalid or future training data");
       counts[r.externalDigit]![Number(r.draw[pos])!]++;
