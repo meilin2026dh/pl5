@@ -1,40 +1,41 @@
-# PL5 V3.7.14 — Actual performance acceptance
+# PL5 V3.7.14 高通量过滤性能测试执行报告
 
-## Scope
-- Universe: all 100,000 PL5 tickets, indexed 00000–99999.
-- Original comparison: the actual vectorized NumPy `pailie5.basic_filters.apply_basic_filters`, NOT an intentionally slow Python loop.
-- 20 deterministic static constraints: digit locations, sums, parity, span, diversity, repetition.
-- Seed 3714, 20 rounds, 20 query configurations per round (4/8/12/20 conjunction rules).
-- Every returned integer ticket compared with NumPy via exact ordered array equality.
+## 研究目标与来源
+以 V3.7.12 全量累计包（2489个文件）为基线，并将 V3.7.13 的15个新增科研文件纳入隔离工作目录，新增**不改变既有过滤语义**的精确位图查询层。V3.7.13 研究文件来源为会话已有源码清单；本次未修改旧文件。
 
-## Measured on the available Linux runtime
+布隆过滤器仅适用于预先构造的集合成员查询；固定十万号码全集优先使用精确12,500字节位图，无任何假阳性或假阴性。不存在“哈希一下便能凭空判断任意数学规则”的能力。
 
-| Measurement | Result |
+## 实测方法
+- 固定枚举号码 00000—99999（包括前导零）。
+- 原版对照为仓库的 `pailie5.basic_filters.apply_basic_filters`，NumPy向量化实现，而非刻意减慢的Python原始循环。
+- 20条独立的静态 `BasicConstraint`，包含和值、跨度、奇偶、不同数字个数、位置约束及重复程度。
+- 查询规模为4、8、12、20条规则，每类5组固定种子的组合，重复20次，共400次。
+- 每次使用 `np.array_equal` 对**全部保留号码的顺序与内容**逐项比较，成功时不计入彩票预测指标。
+- `perf_counter_ns` 测量，NumPy与位图交替先运行降低简单测量顺序偏差；指标数组 `indicator_table` 两种方法均预热。
+
+## 性能实测（仅限这台机器）
+
+| 指标 | 结果 |
 |---|---:|
-| Comparisons | 400 |
-| Result differences | 0 |
-| Original NumPy median | 1.855 ms |
-| Exact bitmap warm-query median | 0.213 ms |
-| Warm-query median ratio | 8.70× |
-| Original NumPy P95 | 3.861 ms |
-| Bitmap P95 | 0.459 ms |
-| Cold build + 20-rule conjunction | 3.948 ms |
-| Replace one rule + recompute all | 0.622 ms |
-| 20 rule bitsets | 250,000 logical bytes |
-| Python integer bytes for 20 | 265,432 |
-| 20-rule combined survivor count | 28,672 / 100,000 |
+| 对照查询数 | 400 |
+| 数组内容不一致次数 | 0 |
+| 旧 NumPy 查询中位耗时 | 1.855 ms |
+| 新位图热缓存查询中位耗时 | 0.213 ms |
+| 热缓存中位耗时比 | 8.70× |
+| 旧 NumPy P95 | 3.861 ms |
+| 新位图 P95 | 0.459 ms |
+| 20规则首次位图编译与全条件查询 | 3.948 ms |
+| 替换1条规则+20规则重查询 | 0.622 ms |
+| 20张位图逻辑字节 | 250,000 bytes |
+| Python大整数存储字节 | 265,432 bytes |
+| 全部20个条件合取后保留数 | 28,672 / 100,000 |
 
-## Functional verification
-- 8 targeted new tests pass, including mask bounds, digit padding, exact AND/OR/NOT, cache invalidation, replace/delete, mutation resistance and delayed predicates.
-- First backend full run: 836 passed, 1 V3.1 historical CLI timeout at 30s; isolated rerun succeeded in 4.65s.
-- Second backend full run: **837 passed** in 188.76s.
-- Historical integration suite: **29 passed**.
-- Cumulative ZIP: **2,518 source/test/doc files**, plus manifest, legacy V3.7.12 2,489 files byte unchanged and V3.7.13 15 files overlaid.
-- Fresh extraction: 2,518 SHA256 matches, 8 targeted tests and 29 integration tests pass.
+一轮20条件合取实际排除 71.33% 号码，这与规则选择有关，**不能声称Bloom或位图天然排除80%—95%**。
 
-## Boundaries
-- Bitmap cache is a performance layer; it is not a lottery forecasting algorithm.
-- Dynamic external state requires explicit invalidation of dependencies; no automatic stale-context detection.
-- No Bloom filter: exact 12.5 KB-per-rule dense bitsets are appropriate for this small fixed domain.
-- Warm benefit depends on reusing cached rule masks; single cold queries may not be faster.
-- Windows Python 3.12 runtime and a full React build have not been verified.
+## 结论和适用范围
+缓存复用环境下比原NumPy实现快，但首次构建仍有成本，因此非所有单次查询都加速；实际加速比受CPU、Python版本、规则选择性和重复利用频率影响。新引擎没有更改过滤逻辑，不是新的彩票预测或命中率模型。
+
+## 验收口径
+- 新单元测试需覆盖位图转换、AND/OR/NOT、前导零、缓存失效、规则替换、外部掩码冻结、延后昂贵谓词、非法输入与提前停止。
+- 完整回归测试与GitHub远程状态、Windows实机测试单独汇报。
+- 此文测量值由 `research_backend/benchmark_high_throughput_v3714.py` 生成；机器元数据见 `benchmark.json`。
