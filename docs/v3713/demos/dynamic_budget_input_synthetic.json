@@ -1,0 +1,66 @@
+{
+  "input_type": "synthetic_demo",
+  "training_end_issue": "100",
+  "model_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "scale_model_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "alpha": 0.2,
+  "calibration_issues": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109"
+  ],
+  "calibration_ranks": [
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    8000,
+    9000
+  ],
+  "calibration_difficulty_scales": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "future_issues": [
+    {
+      "issue": "200",
+      "difficulty_scale": 2,
+      "affordable_max_tickets": 10000
+    },
+    {
+      "issue": "201",
+      "difficulty_scale": 1,
+      "affordable_max_tickets": 12000
+    }
+  ],
+  "holdout": [
+    {
+      "issue": "200",
+      "difficulty_scale": 2,
+      "affordable_max_tickets": 10000,
+      "actual_rank": 12000
+    },
+    {
+      "issue": "201",
+      "difficulty_scale": 1,
+      "affordable_max_tickets": 12000,
+      "actual_rank": 7000
+    }
+  ]
+}
