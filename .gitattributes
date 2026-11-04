@@ -6,3 +6,7 @@ github_vendor/** text eol=lf
 # Git must check out the exact LF form recorded in the canonical archives.
 github_overlay/** text eol=lf
 integration_tests/** text eol=lf
+
+# Canonical previous-version proxies are byte-hashed during upgrades.
+archive/v15_integration_base/server/esseProxy.mjs text eol=lf
+archive/v17_proxy/server/esseProxy.mjs text eol=lf

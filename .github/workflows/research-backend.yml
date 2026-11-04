@@ -43,8 +43,8 @@ jobs:
         run: |
           python --version
           python -c "import pailie5; import numpy; import pandas; print('Research backend imports OK')"
+      - name: Historical cross-module integration regression
+        run: python -m pytest -q integration_tests
       - name: Full research backend regression
         working-directory: research_backend
         run: python -m pytest -q
-      - name: Historical cross-module integration regression
-        run: python -m pytest -q integration_tests
