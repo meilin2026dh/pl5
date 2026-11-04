@@ -1,0 +1,29 @@
+{
+  "schema": "pl5-v3719-public-digest-commitment-1",
+  "study_id": "v3719-phase3-26295-research",
+  "target_issue": "26295",
+  "last_history_issue": "26294",
+  "history_count": 51,
+  "cross_checked_history_count": 20,
+  "notes": "This is a public digest-only research commitment, not a guarantee of pre-draw timing or predictive skill. GitHub stores publication metadata; RFC3161 third-party TSA response has not been obtained. Historical source is manually transcribed; raw pages not independently preserved. The actual sealed candidate sets are in the delivered Phase III archive.",
+  "local_clock_sealed_at_utc": "2026-11-04T23:17:33+00:00",
+  "registration_document_sha256": "0c745cc2afcc1222415e585aecff9c6d65fc44429efe315c2c5902d7e560d7a7",
+  "seal_document_sha256": "ee65f6bff6a76faaa40019647f7fd42dbe3b38f3fef655d430127cb4c76835e4",
+  "seal_json_file_sha256": "58ea4865e6410da6c2e32a04ae17155a287c37b651bb967c7453ca35e7ea67cb",
+  "methods": [
+    "random",
+    "positional",
+    "pairwise",
+    "ensemble",
+    "heuristic_rank"
+  ],
+  "candidate_budget_per_method": 100,
+  "provenance_urls": [
+    "https://www.js-lottery.com/Chart/p5Number",
+    "https://api.js-lottery.com/cms/post-148197.html",
+    "https://www.gstc.org.cn/wanfa/pl5_history"
+  ],
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "rfc3161_verified": false,
+  "published_candidate_sets_in_commit": false
+}
