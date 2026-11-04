@@ -1,0 +1,12 @@
+{
+  "output": "examples/v06_unapproved_baseline_top100.csv",
+  "count": 100,
+  "evidence": {
+    "n_algorithms": 0,
+    "rules": [],
+    "fair_baseline_coverage": 0.001,
+    "ranking_is_uncalibrated": true,
+    "predicted_success_rate_claimed": false
+  },
+  "note": "研究库独立排名，与原正式过滤引擎隔离，绝非实际中奖概率"
+}

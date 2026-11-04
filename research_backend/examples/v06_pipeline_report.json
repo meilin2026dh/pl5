@@ -1,0 +1,111 @@
+{
+  "documents_processed": 1,
+  "cycles": [
+    {
+      "document_key": "demo-local",
+      "source_kind": "local",
+      "new_algorithms": 0,
+      "experiments": [
+        {
+          "fingerprint": "789130431e62be07d3b33ad5",
+          "status": "audited_not_approved",
+          "formula": {
+            "kind": "op",
+            "op": "mod",
+            "args": [
+              {
+                "kind": "op",
+                "op": "max",
+                "args": [
+                  {
+                    "kind": "metric",
+                    "name": "odd_count"
+                  },
+                  {
+                    "kind": "metric",
+                    "name": "tail_sum"
+                  }
+                ]
+              },
+              {
+                "kind": "const",
+                "value": 7
+              }
+            ]
+          },
+          "review_code": "# REVIEW ONLY: DO NOT EXECUTE UNTRUSTED GENERATED CODE\ndef candidate_indicator(metrics):\n    return (max(metrics['odd_count'],metrics['tail_sum'])%7)\n",
+          "audit_id": 1,
+          "audit_sha256": "647de6028eeef836b563b1140793f79145a31ecc2cc2a7f7b1d9dd7a7b2a8d49",
+          "engineering_ok": true,
+          "hits": 0,
+          "n": 60,
+          "adjusted_exploratory_p": 1.0,
+          "null_hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "fingerprint": "1710c7d8ad557e7fb6707fd6",
+          "status": "audited_not_approved",
+          "formula": {
+            "kind": "op",
+            "op": "max",
+            "args": [
+              {
+                "kind": "metric",
+                "name": "odd_count"
+              },
+              {
+                "kind": "metric",
+                "name": "tail_sum"
+              }
+            ]
+          },
+          "review_code": "# REVIEW ONLY: DO NOT EXECUTE UNTRUSTED GENERATED CODE\ndef candidate_indicator(metrics):\n    return max(metrics['odd_count'],metrics['tail_sum'])\n",
+          "audit_id": 2,
+          "audit_sha256": "49effb7f2206b5bba70f7a3e105801cf81dc4c48d25514d6b89c924446439936",
+          "engineering_ok": true,
+          "hits": 0,
+          "n": 60,
+          "adjusted_exploratory_p": 1.0,
+          "null_hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "fingerprint": "759f691401b48c571d21685a",
+          "status": "audited_not_approved",
+          "formula": {
+            "kind": "op",
+            "op": "add",
+            "args": [
+              {
+                "kind": "metric",
+                "name": "head_sum"
+              },
+              {
+                "kind": "metric",
+                "name": "tail_sum"
+              }
+            ]
+          },
+          "review_code": "# REVIEW ONLY: DO NOT EXECUTE UNTRUSTED GENERATED CODE\ndef candidate_indicator(metrics):\n    return (metrics['head_sum']+metrics['tail_sum'])\n",
+          "audit_id": 3,
+          "audit_sha256": "88daf70c2ba1e8846284f51562e1b5cbf295092ba6439cc020facad363cf9231",
+          "engineering_ok": true,
+          "hits": 0,
+          "n": 60,
+          "adjusted_exploratory_p": 1.0,
+          "null_hits": [
+            0,
+            0
+          ]
+        }
+      ],
+      "manual_gate_required": true
+    }
+  ],
+  "note": "自动完成有限公式文法研发与开发集证伪；尚不具备通用论文方法完全复现，不自动激活选号算法。"
+}

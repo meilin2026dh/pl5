@@ -1,0 +1,36 @@
+{
+  "key": "demo-20261101",
+  "mode": "offline",
+  "data": {
+    "state": "skipped",
+    "archive": {
+      "state": "empty",
+      "count": 0,
+      "latest_issue": null,
+      "version": null,
+      "source": "https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry",
+      "origin_cryptographically_verified": false
+    }
+  },
+  "research": {
+    "run_id": "run_v17_f12d4e969a3f7298b02830de",
+    "state": "completed",
+    "steps": [
+      "discover",
+      "hypothesize",
+      "ingest",
+      "invent",
+      "propose_python",
+      "audit",
+      "review"
+    ],
+    "new_formulas": 4,
+    "no_auto_approval": true,
+    "paid_calls": 0,
+    "development_only": false
+  },
+  "publication": "candidate_only",
+  "autonomous_code_execution": false,
+  "automatic_approval": false,
+  "predictive_advantage_proven": false
+}

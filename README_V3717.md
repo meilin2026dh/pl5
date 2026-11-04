@@ -1,26 +1,26 @@
-# PL5 V3.7.17 — 研究流程端到端加速
+# PL5 V3.7.17 — 科研任务端到端加速与前向验收
 
-本分支用于登记 V3.7.17 的加速研究；**当前并非完整、可独立运行的 GitHub 代码发布**。
+**完整累计研究包**。本版在V3.7.16原有源码和研究结果上增量添加，保留旧默认流程。
 
-## 本次在完整累计科研ZIP中实现
+## 新增可选参数
 
-- `pailie5/probability_ranker.py`: opt-in `rolling_rank_backtest(..., target_only=True)`，保持10万注全排序，跳过只用于取一行的10万行Pandas表格。
-- `pailie5/sculpting.py`: opt-in `rolling_sculpt_backtest(..., target_only=True)`，完整保留雕刻和配额逻辑。
-- `pailie5/pattern_rules.py`: opt-in `filter_next(..., optimize_context=True)`，按单期缓存重复计算的跨期特征，不跨期复用。
-- `benchmark_research_performance_v3717.py` 与两个专项测试文件、完整性能报告。
+- `pailie5.probability_ranker.rolling_rank_backtest(..., target_only=True)`
+- `pailie5.sculpting.rolling_sculpt_backtest(..., target_only=True)`
+- `pailie5.pattern_rules.filter_next(..., optimize_context=True)`
 
-## 两轮复现结果（合成历史，不是实盘数据）
+前两项仍对完整10万注排序，只在完成排序后查询实际开奖号，跳过完整10万行Pandas报告构建。第三项仅在当期调用中共享同一跨期指标，**不跨期缓存历史**。所有开关默认False。
 
-| Workflow | seed 3717 | seed 3718 |
-|---|---:|---:|
-| 5期滚动排序 | 3.67× | 4.04× |
-| 5期滚动雕刻 | 1.86× | 2.01× |
-| 3期复杂时序规则分析 | 4.41× | 4.72× |
+## 可重复测试
 
-端到端60次新旧报告完全一致。原版默认调用保持不变。完整后端 **871/871**、历史集成 **29/29** 通过，累计 **900项**；独立解压重新验证新增12项和29项集成测试通过。
+```bash
+cd research_backend
+python -m pytest -q tests/test_target_only_v3717.py tests/test_research_performance_v3717.py
+python benchmark_research_performance_v3717.py --seed 3717 --repeats 10 --output ../docs/v3717/benchmark_rerun.json
+python -m pytest -q tests
+cd ..
+python -m pytest -q integration_tests
+```
 
-## GitHub缺口（未解决）
+实验结果位于 `docs/v3717/benchmark_seed3717.json` 和 `benchmark_seed3718.json`，技术报告见 `docs/v3717/REPORT.md`。
 
-现存研究分支 `research/v3716-e2e-bitmap-integration` 仍没有同步全部累计基础源码，**本分支从它继承，不可单靠检出本分支运行完整Python后端**。本轮完整且有发布校验的交付物是对话中生成的 `PL5_V3717_Full.zip`。应先将该累计源码移植到隔离分支，核对哈希后合并，再运行GitHub检出环境的回归。
-
-不宣称部署到用户Windows `D:\pl5`，不宣称提高彩票预测能力。
+本次数据源仅为内置**合成历史数据**，不能解读为认证真实彩票预测测试；默认旧代码路径仍然不变。源码未部署到用户的Windows `D:\pl5`。

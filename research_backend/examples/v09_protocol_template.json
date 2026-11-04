@@ -1,0 +1,13 @@
+{
+  "document_key": "REPLACE_WITH_DOCUMENT_KEY",
+  "code_id": "REPLACE_WITH_V08_REGISTERED_CODE_SHA256",
+  "method_name": "digit_sum",
+  "method_type": "method_adaptation",
+  "paper_locator": "REPLACE_WITH_PAPER_DOI_AND_EQUATION_PAGE",
+  "math_assumptions": "五位十进制字符、不包含未来期开奖数据。具体数学前提须与论文逐项核对。",
+  "procedure": "执行基础指标参考样例、独立实现核验；此协议不声称已经复现论文原始方法。",
+  "expected_fixture": {
+    "numbers": ["00000", "12345", "99999"],
+    "expected": [0, 15, 45]
+  }
+}
