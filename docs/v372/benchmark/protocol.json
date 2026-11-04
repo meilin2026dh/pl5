@@ -1,0 +1,61 @@
+{
+  "version": "3.7.2",
+  "purpose": "development-stage synthetic structure benchmark",
+  "cases": [
+    "addition",
+    "bilinear",
+    "absolute_product",
+    "squared_sum",
+    "mixed_minimum",
+    "iid_random"
+  ],
+  "configs": [
+    {
+      "seed": 20261102,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    },
+    {
+      "seed": 20261103,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    },
+    {
+      "seed": 20261104,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    }
+  ],
+  "training_pairs": 70,
+  "heldout_pairs": 30,
+  "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+  "selection": "train-only; all cases and seeds reported, including failures",
+  "baseline": "V3.7 fixed 1020 expressions; budgets not compute-matched",
+  "code_sha256": {
+    "research_v372.py": "4d622c843a094e90f41aefc9477ecec46f4a2b257acb176f9a3c21ece9a8ed06",
+    "pailie5/structure_ast_v372.py": "9a0e25e9a47b36d8091c88345fc2ed2d8bdea81086177e1935624096f5bf8676",
+    "pailie5/structure_search_v372.py": "740b02f858c6702c9b4c8fbed933a682b92d911e10b775e0f2a58a3e40ebe66f",
+    "pailie5/structure_evidence_v372.py": "1eb7da1224af12a491655ad2a7a83cb3f0a68eea32b745e7ecaa28e5ac283727",
+    "pailie5/symbolic_operators_v30.py": "e418bcbd36c20f4a15b027e6eeeed05ec53c71c9e9a6336c6ce737a66173405b",
+    "pailie5/math_language_v37.py": "7256db9d656c5079441efd5fc8dedd8be0014744a356b694b9b55c7fdec138b3"
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "recorded_before_trials_utc": "2026-11-02T07:17:36.304726+00:00",
+  "not_external_blind_validation": true
+}
