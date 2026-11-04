@@ -43,7 +43,7 @@ def upgrade(root:Path):
         p.parent.mkdir(parents=True,exist_ok=True)
         backup=p.with_name(p.name+'.before-v21.bak')
         if p.exists() and not backup.exists():shutil.copy2(p,backup)
-        tmp=p.with_name(p.name+'.v21.tmp');tmp.write_text(content,'utf8');tmp.replace(p)
+        tmp=p.with_name(p.name+'.v21.tmp');tmp.write_bytes(content.encode('utf8'));tmp.replace(p)
     return {'state':'installed','prior':result,'files':[str(p.relative_to(root)) for p,_ in changes]}
 
 if __name__=='__main__':
