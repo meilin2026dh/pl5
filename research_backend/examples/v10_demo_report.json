@@ -1,0 +1,11 @@
+{
+  "demo_only": true,
+  "run_id": "run_v10_synthetic_demo",
+  "status": "completed",
+  "steps_completed": 7,
+  "steps_idempotent": true,
+  "paid_calls": 0.0,
+  "official_data_used": false,
+  "code_executed": false,
+  "predictive_edge_proven": false
+}

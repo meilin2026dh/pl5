@@ -1,0 +1,105 @@
+{
+  "demo_only": true,
+  "official_data_used": false,
+  "codes_executed": false,
+  "cross_checks": [
+    {
+      "method": "digit_sum",
+      "crosscheck": {
+        "method": "digit_sum",
+        "tested": 100000,
+        "equivalent": true,
+        "mismatches": [],
+        "result_sha256": "8463b806bb09d7275ead298a0a9b4d14d5d12801c2a852e08204b7faf3ebcd56",
+        "independent_implementations": [
+          "scalar_Python",
+          "NumPy_vectorized"
+        ],
+        "claim_scope": "Only this built-in feature definition; NOT reproduction of a research paper"
+      }
+    },
+    {
+      "method": "odd_count",
+      "crosscheck": {
+        "method": "odd_count",
+        "tested": 100000,
+        "equivalent": true,
+        "mismatches": [],
+        "result_sha256": "d094dd427b546e15553c7eb2fa7963ca592f2fab27f74c2f6d945239c9092d95",
+        "independent_implementations": [
+          "scalar_Python",
+          "NumPy_vectorized"
+        ],
+        "claim_scope": "Only this built-in feature definition; NOT reproduction of a research paper"
+      }
+    }
+  ],
+  "family": {
+    "family_alpha_total": 0.05,
+    "models_registered": 2,
+    "alpha_spent": 0.03333333333333333,
+    "mathematical_budget_not_exceeded": true,
+    "models": [
+      {
+        "model_id": "demo_digit_sum",
+        "series_index": 1,
+        "alpha_family": 0.05,
+        "alpha_allocated": 0.025,
+        "anytime_log_e": -0.07054618,
+        "e_value": 0.93188471,
+        "threshold_log_e": 3.68887945,
+        "evidence_threshold_crossed": false,
+        "verified_prefix": 20,
+        "total_commits": 20,
+        "pending_or_after_gap": 0,
+        "hits_in_prefix": 0,
+        "expected_hits_fair": 0.02,
+        "record_hash_integrity": true,
+        "invalid_records": [],
+        "alpha_weight": 0.5,
+        "predictive_edge_proven": false,
+        "comment": "过门槛仅说明在强前提条件下拒绝公平随机基线；不保证未来命中或证明选定模型有持续预测优势",
+        "assumptions": [
+          "真实开奖前封存并具有可信第三方时间证明",
+          "全部预先登记结果按顺序完整结算",
+          "公平条件下每个5位号码等概率且不同期独立",
+          "注册的模型族与分配规则没有事后更改"
+        ]
+      },
+      {
+        "model_id": "demo_odd_count",
+        "series_index": 2,
+        "alpha_family": 0.05,
+        "alpha_allocated": 0.008333333333333333,
+        "anytime_log_e": -0.07054618,
+        "e_value": 0.93188471,
+        "threshold_log_e": 4.78749174,
+        "evidence_threshold_crossed": false,
+        "verified_prefix": 20,
+        "total_commits": 20,
+        "pending_or_after_gap": 0,
+        "hits_in_prefix": 0,
+        "expected_hits_fair": 0.02,
+        "record_hash_integrity": true,
+        "invalid_records": [],
+        "alpha_weight": 0.16666666666666666,
+        "predictive_edge_proven": false,
+        "comment": "过门槛仅说明在强前提条件下拒绝公平随机基线；不保证未来命中或证明选定模型有持续预测优势",
+        "assumptions": [
+          "真实开奖前封存并具有可信第三方时间证明",
+          "全部预先登记结果按顺序完整结算",
+          "公平条件下每个5位号码等概率且不同期独立",
+          "注册的模型族与分配规则没有事后更改"
+        ]
+      }
+    ],
+    "any_crossing": false,
+    "claims_not_allowed": [
+      "不能将研究性分数解释成校准后的单注中奖概率",
+      "不能保证100注内10期必中",
+      "不得把本地未公证封存当作真实赛前证明",
+      "不能跳过失败或未结算实验进行选择性展示"
+    ]
+  },
+  "warning": "模拟实验不证明任何彩票预测优势；验证的内置指标与候选开放Python算法并非同一个实现"
+}

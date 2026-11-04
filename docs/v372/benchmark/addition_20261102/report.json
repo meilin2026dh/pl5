@@ -1,0 +1,418 @@
+{
+  "case": "addition",
+  "seed": 20261102,
+  "data_type": "synthetic_operation_table",
+  "search": {
+    "operator": {
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "expression": [
+        "binary",
+        "add",
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ],
+      "description": "(a+b) mod 10",
+      "operator_id": "0db6a5bf56e54930f07677eb00ec56a4116c526989ba4c0cb4c7d427f4d4e34e",
+      "source_data_sha256": "82cee5ebddf5f31ee68c4ca3f259f7f0d0b61d39af5da8c41f60fdc635fa36b7",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "production_enabled": false,
+      "predictive_advantage": "NOT_ESTABLISHED"
+    },
+    "training_errors": 0,
+    "training_count": 70,
+    "evaluated_expressions": 338,
+    "distinct_integer_behaviors": 155,
+    "proposals": 671,
+    "config": {
+      "seed": 20261102,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    },
+    "trace": [
+      {
+        "stage": "bootstrap",
+        "generation": 0,
+        "best_expression": [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 3,
+        "origin": "primitive_basis",
+        "parents": [],
+        "evaluated_expressions": 338,
+        "proposals": 671
+      }
+    ],
+    "stop_reason": "short_exact_training_fit",
+    "selection_used": "training_cells_only",
+    "complexity": "node-count penalty; not proof of a minimum description"
+  },
+  "holdout": {
+    "operator_id": "0db6a5bf56e54930f07677eb00ec56a4116c526989ba4c0cb4c7d427f4d4e34e",
+    "data_sha256": "9622fa0821cfe8425e3112521769b4ec39fb978c8a13aafc5c334475c4e19955",
+    "errors": 0,
+    "count": 30,
+    "accuracy": 1.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "0db6a5bf56e54930f07677eb00ec56a4116c526989ba4c0cb4c7d427f4d4e34e",
+    "candidate_table_sha256": "09923b7e4341d29b8a89bc4dd3c7a60a99997a73943c3ef0d50a2552e4ca873f",
+    "target_table_sha256": "09923b7e4341d29b8a89bc4dd3c7a60a99997a73943c3ef0d50a2552e4ca873f",
+    "exact_on_all_100_pairs": true,
+    "whole_table_errors": 0,
+    "first_mismatch": null,
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": true,
+      "commutativity_counterexample": null,
+      "associative": true,
+      "associativity_counterexample": null,
+      "identities": [
+        0
+      ],
+      "all_rows_permutations": true,
+      "all_columns_permutations": true,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 3,
+    "depth": 2,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 55,
+      "formula_plus_exceptions_bits": 62,
+      "preferred": "formula",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_without_refit": {
+    "operator_id": "0db6a5bf56e54930f07677eb00ec56a4116c526989ba4c0cb4c7d427f4d4e34e",
+    "data_sha256": "5ed324f01399ebbd82026ce43d7a069e024dbc479ce7cfb845628d4bf34a58d1",
+    "errors": 30,
+    "count": 30,
+    "accuracy": 0.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_meaning": "same unseen inputs, every true output shifted by +1 mod10; intentionally different operation",
+  "fit_seconds": 0.011114528999996764,
+  "limitations": [
+    "70/30 input-pair holdout, not future lottery draws",
+    "grammar primitives and bounds are supplied by humans",
+    "no model changes after holdout results"
+  ],
+  "fixed_v37_baseline": {
+    "expression": "affine(1,1,0)",
+    "candidates": 1020,
+    "training_errors": 0,
+    "holdout_errors": 0,
+    "holdout_count": 30,
+    "exact_on_all_100_pairs": true,
+    "compute_matched": false
+  }
+}
