@@ -13,6 +13,13 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8,<10"]
 
+# Do not autodiscover data/, pages/, config/ as Python packages.
+# Only these directories contain importable Python packages with __init__.py.
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pailie5*", "autoresearch*"]
+exclude = ["tests*", "pages*", "data*", "config*"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 
