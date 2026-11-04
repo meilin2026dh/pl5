@@ -1,0 +1,3 @@
+# Frozen vendor hashes must not change when Git checks files out on Windows.
+# Keep LF in working tree; never weaken the byte-level scientific test.
+github_vendor/** text eol=lf
