@@ -1,0 +1,44 @@
+name: Research backend cross-platform checks
+
+on:
+  push:
+    branches:
+      - research/v3718-shared-score-source-baseline
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-backend:
+    name: Python 3.12 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: research_backend/pyproject.toml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "11.25.0"
+      - name: Install research dependencies
+        run: python -m pip install -e ./research_backend pytest
+      - name: Verify Python and package import
+        run: |
+          python --version
+          python -c "import pailie5; import numpy; import pandas; print('Research backend imports OK')"
+      - name: Full research backend regression
+        working-directory: research_backend
+        run: python -m pytest -q
+      - name: Historical cross-module integration regression
+        run: python -m pytest -q integration_tests
