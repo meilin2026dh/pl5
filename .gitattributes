@@ -1,3 +1,8 @@
 # Frozen vendor hashes must not change when Git checks files out on Windows.
 # Keep LF in working tree; never weaken the byte-level scientific test.
 github_vendor/** text eol=lf
+
+# Historic ESSE upgrade fixtures are SHA256-protected, not platform text.
+# Git must check out the exact LF form recorded in the canonical archives.
+github_overlay/** text eol=lf
+integration_tests/** text eol=lf
