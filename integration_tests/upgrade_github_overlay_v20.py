@@ -46,7 +46,7 @@ def upgrade(root:Path):
         backup=path.with_name(path.name+'.before-v20.bak')
         if path.exists() and not backup.exists():shutil.copy2(path,backup)
         temp=path.with_name(path.name+'.v20.tmp')
-        temp.write_text(content,'utf8');temp.replace(path)
+        temp.write_bytes(content.encode('utf8'));temp.replace(path)
     return {'state':'installed','prior':old_result,'files':[str(x.relative_to(root)) for x,_ in changes]}
 
 if __name__=='__main__':
