@@ -1,0 +1,251 @@
+{
+  "release": "3.7.3",
+  "recorded_before_fits_utc": "2026-11-02T10:33:58.072418+00:00",
+  "purpose": "equal-evaluation developmental mechanism ablation; not a general ranking or lottery test",
+  "cases": {
+    "shifted_bilinear": {
+      "group": "related_motif",
+      "expression": [
+        "binary",
+        "add",
+        [
+          "binary",
+          "add",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "a"
+          ]
+        ],
+        [
+          "const",
+          3
+        ]
+      ]
+    },
+    "iid_a": {
+      "group": "iid_control",
+      "expression": null
+    }
+  },
+  "seeds": [
+    37301
+  ],
+  "arms": {
+    "full": {
+      "mutation": true,
+      "crossover": true,
+      "complexity": true,
+      "warm_start": true,
+      "guided": true
+    },
+    "no_mutation": {
+      "mutation": false,
+      "crossover": true,
+      "complexity": true,
+      "warm_start": true,
+      "guided": true
+    },
+    "no_crossover": {
+      "mutation": true,
+      "crossover": false,
+      "complexity": true,
+      "warm_start": true,
+      "guided": true
+    },
+    "no_complexity": {
+      "mutation": true,
+      "crossover": true,
+      "complexity": false,
+      "warm_start": true,
+      "guided": true
+    },
+    "no_warm_start": {
+      "mutation": true,
+      "crossover": true,
+      "complexity": true,
+      "warm_start": false,
+      "guided": true
+    },
+    "grammar_only": {
+      "mutation": false,
+      "crossover": false,
+      "complexity": true,
+      "warm_start": false,
+      "guided": false
+    }
+  },
+  "configs": [
+    {
+      "seed": 37301,
+      "evaluation_budget": 2500,
+      "pool_size": 32,
+      "batch_size": 32,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "proposal_factor": 100
+    }
+  ],
+  "train_pairs": 60,
+  "holdout_pairs": 40,
+  "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+  "protocol_type": "local preregistered configuration, not externally timestamped or blind",
+  "warm_bank": [
+    {
+      "source_case": "bilinear",
+      "source_path": "docs/v372/benchmark/bilinear_20261102/operator.json",
+      "file_sha256": "9a79c167542823279a76dcdfe7021d35108e47b064e5ec2a67fae5c844123613",
+      "operator_id": "3f4d6b91e0c5a76dc25961dd39045b7552237b7e1fc7a398f0007e66af40dffd",
+      "source_data_sha256": "c860af07c6477e3e4a0e198b5df858dae8f618bc11304b5835ca6cb386e78303",
+      "expression": [
+        "binary",
+        "add",
+        [
+          "a"
+        ],
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ]
+      ]
+    },
+    {
+      "source_case": "absolute_product",
+      "source_path": "docs/v372/benchmark/absolute_product_20261102/operator.json",
+      "file_sha256": "263f527fae6fce262c42ec14d5fdc450eabba491466bc46642b9c33822a9ec77",
+      "operator_id": "908461adc18c013452bf328deea3e23bdcd038286f6b4e5a35bdcad8e39f3167",
+      "source_data_sha256": "630ab17f82539b923de5dc4ee2a8cc35b4c3c358b8f7cd3ec1b54ac4efd3a829",
+      "expression": [
+        "binary",
+        "absdiff",
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "const",
+          3
+        ]
+      ]
+    },
+    {
+      "source_case": "squared_sum",
+      "source_path": "docs/v372/benchmark/squared_sum_20261102/operator.json",
+      "file_sha256": "e4a7d93018b1b7e383a80bdec34dcdad305859e05b85ea715d9a27da05c8d4a1",
+      "operator_id": "432fe035e2fdbb902af9de48c14ade4e83022ca16cec7531309ea3aab97bd155",
+      "source_data_sha256": "810f498c6b4fe737ebbb3a7600d0a94562ddb4c451dade13b5829e882cbd8633",
+      "expression": [
+        "binary",
+        "mul",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ]
+      ]
+    },
+    {
+      "source_case": "mixed_minimum",
+      "source_path": "docs/v372/benchmark/mixed_minimum_20261102/operator.json",
+      "file_sha256": "fbf88c80c90a7d39b7a2e91501d80f6d82657176c00dd460b03efe0510102fc7",
+      "operator_id": "c120052f5abe0f293acd759f43a728cd5cfbf10450deecb543b3595b20d761c4",
+      "source_data_sha256": "782c837b8ab5999dd67aa507cd23259f71b371f5ca679625349c976c97acb219",
+      "expression": [
+        "binary",
+        "min",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ]
+      ]
+    }
+  ],
+  "warm_start_cost_scope": "destination_search_only; source_acquisition_excluded",
+  "budget_unit": "distinct normalized AST interpreter calls; invalid arithmetic charged; duplicate proposals uncharged",
+  "disabled_slot_policy": "target-independent random grammar proposal; no change after observing held-out scores",
+  "comparison_family": [
+    "full_vs_no_mutation",
+    "full_vs_no_crossover",
+    "full_vs_no_complexity",
+    "full_vs_no_warm_start"
+  ],
+  "analysis": "mean seed scores within task; exact two-sided task sign-flip, Holm across four contrasts; exploratory",
+  "datasets": {
+    "shifted_bilinear_37301": {
+      "train_sha256": "cc0166e1882fb127a57da28a44db258265b5cbb4597ca6d18ffd04056a89c179",
+      "holdout_sha256": "37e5ed2bfc3a9f9b03f535deab2999e152fbbd3f2a035c3fed8e6e66625fd002",
+      "truth_sha256": "0f7b48efc07d3de0794a06af33f9a70c7f75d0271826a29b9938eca66c82e7cc"
+    },
+    "iid_a_37301": {
+      "train_sha256": "10de6c1c88688798fdcbad518c0e1da143422325791498b98e760b7382f42d7e",
+      "holdout_sha256": "c180a2c4192924a2bfd4df7e196f4b5a1cf4fe27d5e9887333048683d8331181",
+      "truth_sha256": "d4b0a3ddb1e992d3fcda7c65a122b2a9f616974344db770ea2f5bd28f0d5704b"
+    }
+  },
+  "code_sha256": {
+    "research_v373.py": "aa0ba70123b870e4e78ae68ac5d8ec46f07ab3f93dda25724036bf13e0acd0ec",
+    "pailie5/ablation_search_v373.py": "c74058b629ccb17ca22830a60db213f966eeac78652318710bb28d68ac9bccf4",
+    "pailie5/ablation_benchmark_v373.py": "0cbd0babbbedeaa61147afd806793971e3964cc40f4a8eceda53a7f476c39446",
+    "pailie5/ablation_statistics_v373.py": "1c160bd2ef0632abe43758149b964d355ec560ec0ff40dd1ea0cc493cffd4c42",
+    "pailie5/structure_ast_v372.py": "9a0e25e9a47b36d8091c88345fc2ed2d8bdea81086177e1935624096f5bf8676",
+    "pailie5/structure_search_v372.py": "740b02f858c6702c9b4c8fbed933a682b92d911e10b775e0f2a58a3e40ebe66f",
+    "pailie5/structure_evidence_v372.py": "1eb7da1224af12a491655ad2a7a83cb3f0a68eea32b745e7ecaa28e5ac283727",
+    "pailie5/symbolic_operators_v30.py": "e418bcbd36c20f4a15b027e6eeeed05ec53c71c9e9a6336c6ce737a66173405b"
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "production_enabled": false
+}

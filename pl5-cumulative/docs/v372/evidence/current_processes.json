@@ -1,0 +1,29 @@
+{
+  "full_suite": {
+    "pid": 2797,
+    "command": [
+      "timeout",
+      "240",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--durations=15",
+      "--junitxml=../docs/v372/evidence/full_suite.xml"
+    ],
+    "log": "/mnt/data/pl5_v372_work/docs/v372/evidence/13_full_suite.txt"
+  },
+  "benchmark": {
+    "pid": 2798,
+    "command": [
+      "timeout",
+      "240",
+      "python",
+      "research_v372.py",
+      "benchmark",
+      "--output",
+      "../docs/v372/benchmark"
+    ],
+    "log": "/mnt/data/pl5_v372_work/docs/v372/evidence/14_benchmark_run.txt"
+  }
+}

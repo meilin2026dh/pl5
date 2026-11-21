@@ -1,0 +1,19 @@
+{
+  "schema": "pl5-v3719-phase2-public-spotcheck-1",
+  "checked_at_date_utc": "2026-11-05",
+  "classification": "SINGLE_ISSUE_MANUAL_PUBLIC_SOURCE_SPOTCHECK_NOT_A_HISTORICAL_DATASET",
+  "entries": [
+    {
+      "issue": "26294",
+      "date": "2026-11-04",
+      "number": "32938",
+      "primary_source_url": "https://api.js-lottery.com/wfzq/p3p5/p5data",
+      "witness_source_url": "https://www.gstc.org.cn/wanfa/pl",
+      "consensus": true,
+      "caution": "Values manually transcribed from the two public pages. No original HTML bytes, independent source signatures or before-publication timestamps are supplied."
+    }
+  ],
+  "eligible_for_walk_forward_backtest": false,
+  "prospective_seal_created": false,
+  "predictive_advantage": "NOT_ESTABLISHED"
+}

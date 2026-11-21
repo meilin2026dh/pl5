@@ -1,0 +1,44 @@
+{
+  "version": "3.7.7-research-preview",
+  "formal_python_distribution_version": "3.7.6",
+  "baseline_archive": "PL5_V3.7.6_hotfix1_integrated.zip",
+  "baseline_files_byte_preserved": 2371,
+  "baseline_sha256": "c323abaf9b2db70823070ac1f6f555ea8cd5846f2f08ca81846727c9e1a43dbf",
+  "locked_protocol_sha256": "d322c122aaebfcba75559cc4b7a5ab4003687867171ba5b1c8072e76d8fd3f3f",
+  "synthetic_trials": 30,
+  "structured_trials": 15,
+  "structured_holdout_correct": 450,
+  "structured_holdout_total": 450,
+  "baseline_grammar_holdout_correct": 118,
+  "baseline_grammar_holdout_total": 450,
+  "negative_controls_rejected": 15,
+  "negative_controls_total": 15,
+  "supplemental_random_tables_rejected": 200,
+  "supplemental_corrupted_training_labels_rejected": 15,
+  "scoped_backend_tests": {
+    "passed": 147,
+    "failed": 0,
+    "command": "python -m pytest -q tests/test_latent_primitives_v377.py tests/test_latent_adversarial_v377.py tests/test_primitive_study_v377.py tests/test_structure_ast_v372.py tests/test_structure_search_v372.py tests/test_v376_security_regressions.py tests/test_scientific_methods_v376.py tests/test_symbolic_v30.py"
+  },
+  "historical_integration_tests": {
+    "passed": 29,
+    "failed": 0,
+    "command": "PYTHONPATH=research_backend python -m pytest -q integration_tests"
+  },
+  "entire_backend_suite": {
+    "collected": 728,
+    "status": "NOT_COMPLETED_TIME_LIMIT",
+    "partial_progress": "31% on second diagnostic attempt",
+    "full_pass_claim": false
+  },
+  "real_lottery_predictive_or_filtering_advantage": false,
+  "github_synced": false,
+  "windows_deployed": false,
+  "react_built": false,
+  "production_enabled": false,
+  "limitations": [
+    "only synthetic known families",
+    "not compute matched",
+    "old autonomous scheduler not yet integrated with V3.7.7 learner"
+  ]
+}

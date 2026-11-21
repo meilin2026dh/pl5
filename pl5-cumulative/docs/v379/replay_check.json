@@ -1,0 +1,9 @@
+{
+  "runs": 2,
+  "unique_tasks": 132,
+  "same_seeds": true,
+  "byte_identical": true,
+  "replay_counts_as_independent_evidence": false,
+  "first_sha256": "aa32530d74f864e96fcb8eb5ad0249a9267a4ba2bd10da581244ce2271a27688",
+  "second_sha256": "aa32530d74f864e96fcb8eb5ad0249a9267a4ba2bd10da581244ce2271a27688"
+}

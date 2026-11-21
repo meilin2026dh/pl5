@@ -1,0 +1,15 @@
+{
+  "completed_unique_trials": 480,
+  "independent_scalar_recomputations": 480,
+  "charged_evaluations": 1200000,
+  "all_budgets_exact": true,
+  "all_code_fingerprints_match_frozen_protocol": true,
+  "protocol_sha256": "c453154719afda1d4a6ac9c661d8924b81a10f498bdd5dc4e2f06730774e1a42",
+  "replicated_trials": 12,
+  "replicated_identical_excluding_timing": true,
+  "replications_count_as_new_evidence": false,
+  "existing_files_unchanged": 775,
+  "existing_files_changed": [],
+  "summary_recomputed_from_frozen_operators": true,
+  "sign_flip_independently_recomputed": true
+}

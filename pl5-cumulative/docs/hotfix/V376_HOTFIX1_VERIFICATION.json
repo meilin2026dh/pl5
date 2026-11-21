@@ -1,0 +1,68 @@
+{
+  "name": "PL5 V3.7.6 Hotfix 1",
+  "source_zip_sha256": "6ea872647fa074822f7017e6a50d9c53fb047e09675175b532912326e826ce77",
+  "modified_paths": [
+    "research_backend/pailie5/nca_v36.py",
+    "research_backend/pailie5/filter_validation_v35.py"
+  ],
+  "added_paths": [
+    "research_backend/pailie5/number_validation.py",
+    "research_backend/tests/test_v376_security_regressions.py"
+  ],
+  "patch_files": [
+    {
+      "path": "research_backend/pailie5/nca_v36.py",
+      "sha256": "8ca20d4501d8042fc3e479648ce28271f6890ccda587ea11a7a7c7f684acc095",
+      "bytes": 4405
+    },
+    {
+      "path": "research_backend/pailie5/filter_validation_v35.py",
+      "sha256": "20379389d9ab7e2f16d3cdaac9ef2f9715c03af71f6a23593e4fd79a747d2b0b",
+      "bytes": 1042
+    },
+    {
+      "path": "research_backend/pailie5/number_validation.py",
+      "sha256": "232f86f5ecce37db1700e78181601982568d3dafb0d542f05860ce5268666a60",
+      "bytes": 569
+    },
+    {
+      "path": "research_backend/tests/test_v376_security_regressions.py",
+      "sha256": "005a555b20e5494dd863e32f96713bb1760ff16669efd371f8a1138af06c98c2",
+      "bytes": 4101
+    }
+  ],
+  "regression_before": {
+    "failed": 22,
+    "passed": 4
+  },
+  "regression_after": {
+    "passed": 31,
+    "failed": 0
+  },
+  "full_backend": {
+    "passed": 709,
+    "failed": 0,
+    "junit": "PL5_V376_defectfix_backend.xml"
+  },
+  "integration": {
+    "passed": 29,
+    "failed": 0,
+    "junit": "PL5_V376_defectfix_integration.xml"
+  },
+  "independent_audit": {
+    "passed": 11,
+    "failed": 0
+  },
+  "extended_audit": {
+    "passed": 7,
+    "failed": 0
+  },
+  "remaining_unverified": [
+    "Windows Python 3.12",
+    "React/Vite",
+    "Streamlit pages",
+    "external timestamp source authenticity",
+    "real lottery advantage"
+  ],
+  "research_autonomy": "paused; no background task enabled"
+}

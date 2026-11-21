@@ -1,0 +1,123 @@
+{
+  "release": "3.7.5",
+  "study": "offline bounded autonomous scientific-question engine",
+  "python": "3.13.5",
+  "source_branch": "research/v375-scientific-questions",
+  "scientific_question_count": 5,
+  "cycles_original": 8,
+  "cycles_added": 4,
+  "cycles_total": 12,
+  "new_cycle_budget_per_arm": 500,
+  "arms_per_cycle": 4,
+  "new_total_charged_evaluation_budget": 8000,
+  "historical_immutable_files_rechecked": 80,
+  "historical_nonstate_files_changed": 0,
+  "tests": {
+    "backend": {
+      "command": "cd research_backend && python -m pytest -q",
+      "passed": 662,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "docs/v375/full_backend.log"
+    },
+    "integration": {
+      "command": "python -m pytest -q integration_tests",
+      "passed": 29,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "docs/v375/integration.log"
+    },
+    "total_passed": 691
+  },
+  "new_cycle_evidence": [
+    {
+      "cycle": 9,
+      "case": "difference_squares",
+      "question_id": "Q-weak_structured_generalization",
+      "hypothesis_id": "H-weak_structured_generalization-structural_capacity",
+      "train_accuracy": 0.4666666666666667,
+      "holdout_accuracy": 0.4,
+      "negative_control": false,
+      "issues": [],
+      "plan_sha256": "f58647fefb0f74a480dd2e4bcbe39e1a4258a4bf45d4f0f77fac788f014272f4"
+    },
+    {
+      "cycle": 10,
+      "case": "difference_squares",
+      "question_id": "Q-weak_structured_generalization",
+      "hypothesis_id": "H-weak_structured_generalization-search_instability",
+      "train_accuracy": 0.4833333333333333,
+      "holdout_accuracy": 0.375,
+      "negative_control": false,
+      "issues": [],
+      "plan_sha256": "c09d528b5bcb2b7f7125c76363d47f39c2d50b065e6dec6d53ca1bfd397a3ff0"
+    },
+    {
+      "cycle": 11,
+      "case": "xor_mixed",
+      "question_id": "Q-generalization_gap",
+      "hypothesis_id": "H-generalization_gap-overfit",
+      "train_accuracy": 0.4,
+      "holdout_accuracy": 0.4,
+      "negative_control": false,
+      "issues": [],
+      "plan_sha256": "8de7a71bf9a7ead49f82f3432ebe431f4ce29d8799adafa2fe5fd093ef6129bd"
+    },
+    {
+      "cycle": 12,
+      "case": "iid_a",
+      "question_id": "Q-periodic_null_control",
+      "hypothesis_id": "H-periodic_null_calibration",
+      "train_accuracy": 0.21666666666666667,
+      "holdout_accuracy": 0.15000000000000002,
+      "negative_control": true,
+      "issues": [
+        "random_data_spurious_fit"
+      ],
+      "plan_sha256": "0c900a1484587484db9d59387a88a3307b641ceed81b888287b812393a4ca532"
+    }
+  ],
+  "research_question_status": [
+    {
+      "id": "Q-weak_structured_generalization",
+      "status": "needs_new_method",
+      "focus_attempts": 2,
+      "evidence_count": 8
+    },
+    {
+      "id": "Q-adaptive_search_not_better_than_grammar_on_this_task",
+      "status": "open",
+      "focus_attempts": 0,
+      "evidence_count": 1
+    },
+    {
+      "id": "Q-generalization_gap",
+      "status": "investigating",
+      "focus_attempts": 1,
+      "evidence_count": 1
+    },
+    {
+      "id": "Q-random_data_spurious_fit",
+      "status": "open",
+      "focus_attempts": 0,
+      "evidence_count": 3
+    },
+    {
+      "id": "Q-frontier_unresolved_structure",
+      "status": "open",
+      "focus_attempts": 0,
+      "evidence_count": 0
+    }
+  ],
+  "limitations": [
+    "Synthetic 10x10 mathematical tables; no empirical lottery filtering advantage established.",
+    "Structured seeds vary the train/holdout split but can reuse the same deterministic 100-cell truth table.",
+    "Problem/hypothesis templates and intervention choices are finite and rule-based, not unrestricted scientific discovery.",
+    "Autonomous code modification and external literature retrieval are not enabled.",
+    "No full React production build or Windows deployment executed.",
+    "No GitHub synchronization or ongoing background cloud process."
+  ],
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "background_running": false
+}

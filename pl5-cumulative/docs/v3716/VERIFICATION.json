@@ -1,0 +1,40 @@
+{
+  "version": "V3.7.16",
+  "backend_pytest": {
+    "passed": 859,
+    "exit": 0
+  },
+  "integration_pytest": {
+    "passed": 29,
+    "exit": 0
+  },
+  "total_tests": 888,
+  "added_tests": 8,
+  "end_to_end": {
+    "data_origin": "bundled_synthetic_demo",
+    "draw_history_authenticated": false,
+    "seed_3716": {
+      "repeats": 15,
+      "ratios": {
+        "pattern_intersection": 1.54279,
+        "rolling_rank": 0.9228,
+        "rolling_sculpt": 1.00548
+      }
+    },
+    "seed_3717": {
+      "repeats": 15,
+      "ratios": {
+        "pattern_intersection": 1.34368,
+        "rolling_rank": 1.05128,
+        "rolling_sculpt": 1.0226
+      }
+    },
+    "strict_equal_in_both_runs": true
+  },
+  "previous_default_unchanged": true,
+  "environment": "Linux container with Python 3.13.5",
+  "windows_verified": false,
+  "github_standalone_repo_verified": false,
+  "production_enabled": false,
+  "lottery_advantage_claimed": false
+}

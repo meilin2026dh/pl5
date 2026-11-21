@@ -1,0 +1,12 @@
+{
+  "cpu_cutoff_counts_may_vary_across_replay": true,
+  "external_blind_verified": false,
+  "first_runs": "internal_paired_final",
+  "logic_sha256": "92b9af30f1b3ecb139add115e898732b0dc52658b464915c1486b31afe1ad010",
+  "logic_sha256_replay": "92b9af30f1b3ecb139add115e898732b0dc52658b464915c1486b31afe1ad010",
+  "logical_results_identical": true,
+  "protocol_same": true,
+  "replay_runs": "internal_paired_replay",
+  "schema": "pl5-v3726-replay-verification-1",
+  "timing_dependent_fields_excluded": true
+}
