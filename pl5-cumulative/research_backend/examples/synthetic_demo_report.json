@@ -1,0 +1,217 @@
+{
+  "version": "0.2.0",
+  "experiment_id": 1,
+  "data_is_demo": true,
+  "dataset_sha256": "bbdc21591bf819ad07c8fe4c534939376a344f30f18c4d94c24ebf9558ceeb57",
+  "total_periods": 1000,
+  "preregistration": {
+    "dataset_sha": "bbdc21591bf819ad07c8fe4c534939376a344f30f18c4d94c24ebf9558ceeb57",
+    "holdout_size": 30,
+    "holdout_start_index": 970,
+    "dev_size": 30,
+    "count": 1000,
+    "seed": 42,
+    "window": 500,
+    "min_train": 100,
+    "dev_alpha": 0.01,
+    "chosen": null,
+    "all_proposals": [
+      {
+        "name": "位置频率偏差",
+        "type": "positional"
+      },
+      {
+        "name": "二位置联合偏差",
+        "type": "pairwise"
+      },
+      {
+        "name": "模型融合",
+        "type": "ensemble"
+      },
+      {
+        "name": "近期加权半衰期50",
+        "type": "recency",
+        "half_life": 50
+      },
+      {
+        "name": "近期加权半衰期150",
+        "type": "recency",
+        "half_life": 150
+      },
+      {
+        "name": "DSL自动合成-1",
+        "type": "blend",
+        "components": [
+          {
+            "type": "positional"
+          },
+          {
+            "type": "recency",
+            "half_life": 80
+          }
+        ],
+        "weights": [
+          2,
+          2
+        ]
+      }
+    ],
+    "llm_note": "内置受限模板自动提案（离线，不调用语言模型）",
+    "no_raw_code_execution": true,
+    "research_only": true
+  },
+  "development": [
+    {
+      "name": "位置频率偏差",
+      "spec": {
+        "name": "位置频率偏差",
+        "type": "positional"
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.00026800486730890565,
+        "std_log_gain": 0.06061501436110061,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.5096603022271017,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    },
+    {
+      "name": "二位置联合偏差",
+      "spec": {
+        "name": "二位置联合偏差",
+        "type": "pairwise"
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.01432807563554075,
+        "std_log_gain": 0.1691595010481666,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.6786509131663532,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    },
+    {
+      "name": "模型融合",
+      "spec": {
+        "name": "模型融合",
+        "type": "ensemble"
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.3965028489818147,
+        "std_log_gain": 0.9493275456203362,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.9889212401833253,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    },
+    {
+      "name": "近期加权半衰期50",
+      "spec": {
+        "name": "近期加权半衰期50",
+        "type": "recency",
+        "half_life": 50
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.01064079156849959,
+        "std_log_gain": 0.0980124518206993,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.723957561330516,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    },
+    {
+      "name": "近期加权半衰期150",
+      "spec": {
+        "name": "近期加权半衰期150",
+        "type": "recency",
+        "half_life": 150
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.005719857569367489,
+        "std_log_gain": 0.06905827674325624,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.6749630752387096,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    },
+    {
+      "name": "DSL自动合成-1",
+      "spec": {
+        "name": "DSL自动合成-1",
+        "type": "blend",
+        "components": [
+          {
+            "type": "positional"
+          },
+          {
+            "type": "recency",
+            "half_life": 80
+          }
+        ],
+        "weights": [
+          2,
+          2
+        ]
+      },
+      "metrics": {
+        "periods": 30,
+        "hits": 0,
+        "baseline_expected_hits": 0.3,
+        "mean_log_gain": -0.4232527472117646,
+        "std_log_gain": 0.9613221794376231,
+        "first_period": "000941",
+        "last_period": "000970"
+      },
+      "one_sided_p": 0.9920569801918009,
+      "p_adjusted": 1.0,
+      "decision": "rejected"
+    }
+  ],
+  "holdout": {
+    "periods": 30,
+    "hits": 0,
+    "baseline_expected_hits": 0.3,
+    "mean_log_gain": 0.0,
+    "std_log_gain": 0.0,
+    "first_period": "000971",
+    "last_period": "001000",
+    "binomial_p": 1.0,
+    "status": "baseline_only_no_dev_evidence",
+    "chosen": null,
+    "theoretical_cover_rate": 0.01
+  },
+  "notes": [
+    "测试集在数据库预注册后才打开；第二次开封会被阻断。",
+    "开发集选择仅依靠开发集历史，封存集没有参与选模型。",
+    "封存集使用逐期推进：允许使用测试集中已开奖的更早期结果更新历史窗口，但不据此改选模型。",
+    "随机公平基线：保留K注的覆盖率为K/100000。",
+    "开发集多模型测试做Bonferroni校正；跨研究和人工择优仍可能导致选择偏差。",
+    "如无证据，选择纯随机对照，而非宣称能够预测。",
+    "用户上传CSV只表示声明来源，程序无法独立鉴定开奖公告真伪。",
+    "不包含自动投注、账户访问或任何资金操作。"
+  ]
+}

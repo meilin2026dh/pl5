@@ -1,0 +1,44 @@
+{
+  "synthetic_only": true,
+  "actual_official_data_used": false,
+  "genuine_prospective_evidence": false,
+  "purpose": "verify software mechanics only",
+  "report": {
+    "registered": 10,
+    "settled_total": 10,
+    "pending": 0,
+    "auditable_contiguous_prefix": 10,
+    "settled_after_pending_not_counted": 0,
+    "observed_hits_in_prefix": 0,
+    "expected_fair_hits_in_prefix": 0.0003,
+    "baseline_total": 0.0003,
+    "nonoverlapping_10_record_blocks": [
+      {
+        "period_start": "2026003",
+        "period_end": "2026012",
+        "any_hit": false,
+        "fair_baseline_any_hit": 0.00029996,
+        "description": "连续10条已封存且按期排序的记录；并非保证覆盖所有实际开奖期"
+      }
+    ],
+    "fixed_horizon_p_value_unadjusted": 1.0,
+    "anytime_e_evidence": {
+      "e_value": 0.99891346,
+      "log_e_value": -0.001087,
+      "interpretation": "e≥20对应固定单模型零假设下≤5%的随时监控误报上界；多模型/选择性公布需额外修正"
+    },
+    "commitment_integrity": {
+      "total": 10,
+      "all_hashes_intact": true,
+      "invalid_periods": []
+    },
+    "predictive_edge_proven": false,
+    "limitations": [
+      "本地不可变数据库和SHA256不能单独证明记录早于开奖或官方数据真实性",
+      "回测选出的策略若在前向期继续优化，需注册新的独立验证系列",
+      "如果有缺失开奖结果，只报告首个缺口之前的连续已结算前缀",
+      "未经校正不得跨模型、多策略重复使用e-process证据",
+      "每10条已注册预测不一定包含所有相邻实际开奖期，不可声称十期必中"
+    ]
+  }
+}
