@@ -1,0 +1,8 @@
+{
+  "trials_compared": 18,
+  "identical_excluding_elapsed_seconds": true,
+  "counts_as_new_evidence": false,
+  "first_protocol_sha256": "02edd6d0eb827f1370b8f598f4a7c06bc2e65a3546a02ae671507a5f4ac70a0a",
+  "second_protocol_sha256": "f59a048bd11ad2908a5363502d197851e8c14e5edbbfdea602dacc493a646886",
+  "same_code_fingerprints": true
+}

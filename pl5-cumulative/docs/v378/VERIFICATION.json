@@ -1,0 +1,90 @@
+{
+  "research_milestone": "3.7.8",
+  "baseline_archive": "PL5_V3.7.7_research_complete.zip",
+  "baseline_file_count": 2394,
+  "baseline_files_preserved_byte_identical": 2394,
+  "baseline_files_modified": [],
+  "environment": "Python 3.13.5 in Linux sandbox",
+  "app_version_in_pyproject": "3.7.6",
+  "backend_tests": {
+    "passed": 743,
+    "log": "docs/v378/full_backend_pytest.txt"
+  },
+  "integration_tests": {
+    "passed": 29,
+    "log": "docs/v378/integration_pytest.txt"
+  },
+  "new_unit_tests": 15,
+  "total_tests_passed": 772,
+  "experiment_protocol_sha256": "2fc097b0dc8104d85ae4d4eca32313636c7ba8048de181eda6592c3871c52dce",
+  "synthetic_trial_count": 160,
+  "experimental_summary": {
+    "negative_abstentions": 60,
+    "negative_trials": 60,
+    "no_real_lottery_advantage": true,
+    "not_compute_matched_to_v377": true,
+    "positive_trials": 100,
+    "positives_exact_holdout": 100,
+    "positives_identified": 100,
+    "trials": 160
+  },
+  "per_case": {
+    "coupled_product": {
+      "trials": 20,
+      "identified": 20,
+      "exact_on_holdout": 20,
+      "old_additive_identified": 0
+    },
+    "coupled_threshold": {
+      "trials": 20,
+      "identified": 20,
+      "exact_on_holdout": 20,
+      "old_additive_identified": 0
+    },
+    "iid_random": {
+      "trials": 20,
+      "identified": 0,
+      "exact_on_holdout": 0,
+      "old_additive_identified": 0
+    },
+    "latent_cubic": {
+      "trials": 20,
+      "identified": 20,
+      "exact_on_holdout": 20,
+      "old_additive_identified": 20
+    },
+    "latent_mixed": {
+      "trials": 20,
+      "identified": 20,
+      "exact_on_holdout": 20,
+      "old_additive_identified": 20
+    },
+    "latent_quadratic": {
+      "trials": 20,
+      "identified": 20,
+      "exact_on_holdout": 20,
+      "old_additive_identified": 20
+    },
+    "piecewise_absolute": {
+      "trials": 20,
+      "identified": 0,
+      "exact_on_holdout": 0,
+      "old_additive_identified": 0
+    },
+    "rank_one_quadratic": {
+      "trials": 20,
+      "identified": 0,
+      "exact_on_holdout": 0,
+      "old_additive_identified": 0
+    }
+  },
+  "not_executed": [
+    "complete React production build",
+    "Windows local deployment",
+    "real financial/external source data alignment",
+    "real lottery predictive/filtration effectiveness",
+    "automated scientific controller integration"
+  ],
+  "deterministic_replay_verified": true,
+  "replay_check": "docs/v378/replay_check.json"
+}

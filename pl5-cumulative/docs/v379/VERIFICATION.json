@@ -1,0 +1,52 @@
+{
+  "release": "PL5 research 3.7.9",
+  "base_archive": "PL5_V3.7.8_research_complete.zip",
+  "base_sha256": "031ca8d61ba683ed3c1bf010062acf94fe6f06140bddd14af81e9863c3c481a8",
+  "original_files": 2408,
+  "original_files_modified": 0,
+  "original_files_missing": 0,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.0.2"
+  },
+  "tests": {
+    "backend": {
+      "passed": 759,
+      "failed": 0,
+      "command": "cd research_backend && python -m pytest -q",
+      "log": "docs/v379/full_backend_test.log"
+    },
+    "integration": {
+      "passed": 29,
+      "failed": 0,
+      "command": "python -m pytest -q integration_tests",
+      "log": "docs/v379/integration_test.log"
+    },
+    "total_passed": 788,
+    "new_tests": 16,
+    "stress_random_tables": 50
+  },
+  "experiment": {
+    "trials": 132,
+    "compatible": 96,
+    "compatible_full_holdout": 96,
+    "negative_abstentions": 36,
+    "additional_over_v378": 68,
+    "protocol_sha256": "e8a55b87ea35151064945da39593d631cd680a2aca2043fcae751eb3a0f1686b",
+    "result_sha256": "aa32530d74f864e96fcb8eb5ad0249a9267a4ba2bd10da581244ce2271a27688",
+    "replay_identical": true,
+    "new_independent_evidence_from_replay": false,
+    "data_origin": "synthetic, bounded model grammar and instance generators"
+  },
+  "not_verified": [
+    "Windows Python 3.12",
+    "React production build",
+    "actual market/draw data",
+    "real lottery filtering advantage",
+    "autonomous agent integration",
+    "GitHub upload"
+  ],
+  "production_enabled": false
+}

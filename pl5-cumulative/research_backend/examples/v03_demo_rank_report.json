@@ -1,0 +1,367 @@
+{
+  "source": "data/synthetic_demo.csv",
+  "data_warning": [],
+  "summary": {
+    "history_length": 1000,
+    "strength": 1.0,
+    "selected_rule_count": 3,
+    "indicators_contributing": 2,
+    "model_type": "uncalibrated_heuristic_softmax",
+    "interpretation": "模型主观权重，非经过样本外验证的真实条件中奖概率",
+    "probability_sum": 0.9999999999999999,
+    "zero_signal": false,
+    "top_k": 1000,
+    "fair_top_k_coverage": 0.01,
+    "model_assigned_top_k_mass": 0.017134595125664842,
+    "top_k_probability_sum_is_not_a_validated_hit_rate": true,
+    "unique_score_count": 6,
+    "max_model_probability": 1.7134595125664842e-05,
+    "min_model_probability": 3.676546899167538e-06,
+    "fair_each_number_probability": 1e-05
+  },
+  "rules": [
+    {
+      "indicator": "same_positions_prev",
+      "transform": "mod2",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 33616,
+      "raw_removed_rate": 0.33616,
+      "removed_after_previous": 33616,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "same_positions_prev/mod2：升降交替",
+      "rule_key": "1018f6275b41ce9b",
+      "selected_for_ranking": true,
+      "heuristic_weight": 0.8147637694448618
+    },
+    {
+      "indicator": "same_positions_prev",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "banned_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "raw_removed": 40951,
+      "raw_removed_rate": 0.40951,
+      "removed_after_previous": 7335,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "same_positions_prev/raw：升降交替",
+      "rule_key": "a29857771c07e27d",
+      "selected_for_ranking": true,
+      "heuristic_weight": 0.7684334714209161
+    },
+    {
+      "indicator": "span",
+      "transform": "mod2",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        0,
+        1
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 47530,
+      "raw_removed_rate": 0.4753,
+      "removed_after_previous": 28168,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "span/mod2：升降交替",
+      "rule_key": "a71fb8eda3dfb56c",
+      "selected_for_ranking": true,
+      "heuristic_weight": 0.7243617880589781
+    },
+    {
+      "indicator": "digit_5",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "digit_5/mod2：连续同值",
+      "rule_key": "7b3542e3232f58e3",
+      "selected_for_ranking": false,
+      "heuristic_weight": 0.0
+    },
+    {
+      "indicator": "odd_count",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        1,
+        1
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "odd_count/mod2：连续同值",
+      "rule_key": "f09b8209efe2744d",
+      "selected_for_ranking": false,
+      "heuristic_weight": 0.0
+    },
+    {
+      "indicator": "sum",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        1,
+        1
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "sum/mod2：连续同值",
+      "rule_key": "753ab640de87bf15",
+      "selected_for_ranking": false,
+      "heuristic_weight": 0.0
+    },
+    {
+      "indicator": "sum",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        17,
+        21,
+        19
+      ],
+      "banned_values": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "raw_removed": 67506,
+      "raw_removed_rate": 0.67506,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "sum/raw：升降交替",
+      "rule_key": "743f84e37807ebc4",
+      "selected_for_ranking": false,
+      "heuristic_weight": 0.0
+    },
+    {
+      "indicator": "span",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        7,
+        6,
+        9
+      ],
+      "banned_values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "raw_removed": 85330,
+      "raw_removed_rate": 0.8533,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "span/raw：升降交替",
+      "rule_key": "409b6325efc82ca2",
+      "selected_for_ranking": false,
+      "heuristic_weight": 0.0
+    }
+  ],
+  "probability_disclaimer": "model_probability为未校准启发式相对权重；公平独立开奖时每注条件概率均为0.00001。",
+  "rolling_rank_backtest": {
+    "periods": 10,
+    "top_k": 1000,
+    "top_k_hits": 0,
+    "observed_top_k_hit_rate": 0.0,
+    "fair_expected_top_k_hits": 0.1,
+    "average_model_log_loss": 11.679964825006355,
+    "fair_log_loss": 11.512925464970229,
+    "log_loss_improvement_vs_fair": -0.16703936003612618,
+    "note": "探索性滚动回测；重复调参会造成数据窥探。只有预注册、封存测试及未来前向验证才能评估可迁移性。",
+    "details": [
+      {
+        "draw_index": 990,
+        "actual": "34234",
+        "rank": 12343,
+        "top_k_hit": false,
+        "model_probability": 1.740609331249208e-05,
+        "model_log_loss": 10.95869022267302,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 3
+      },
+      {
+        "draw_index": 991,
+        "actual": "05395",
+        "rank": 21598,
+        "top_k_hit": false,
+        "model_probability": 9.751023658469483e-06,
+        "model_log_loss": 11.538138287853393,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 3
+      },
+      {
+        "draw_index": 992,
+        "actual": "43953",
+        "rank": 8211,
+        "top_k_hit": false,
+        "model_probability": 1.6814319630936483e-05,
+        "model_log_loss": 10.99327967562238,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 3
+      },
+      {
+        "draw_index": 993,
+        "actual": "45252",
+        "rank": 48154,
+        "top_k_hit": false,
+        "model_probability": 8.392115281718172e-06,
+        "model_log_loss": 11.688217949867614,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 2
+      },
+      {
+        "draw_index": 994,
+        "actual": "71084",
+        "rank": 79183,
+        "top_k_hit": false,
+        "model_probability": 4.830942442652719e-06,
+        "model_log_loss": 12.240468986631326,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 5
+      },
+      {
+        "draw_index": 995,
+        "actual": "19840",
+        "rank": 48865,
+        "top_k_hit": false,
+        "model_probability": 8.959347452834772e-06,
+        "model_log_loss": 11.62281316255428,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 3
+      },
+      {
+        "draw_index": 996,
+        "actual": "87624",
+        "rank": 53295,
+        "top_k_hit": false,
+        "model_probability": 9.02866868330254e-06,
+        "model_log_loss": 11.615105634040017,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 4
+      },
+      {
+        "draw_index": 997,
+        "actual": "26702",
+        "rank": 51810,
+        "top_k_hit": false,
+        "model_probability": 6.935507900293998e-06,
+        "model_log_loss": 11.878856269634207,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 2
+      },
+      {
+        "draw_index": 998,
+        "actual": "54282",
+        "rank": 80364,
+        "top_k_hit": false,
+        "model_probability": 7.140379725027008e-06,
+        "model_log_loss": 11.849744600250043,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 2
+      },
+      {
+        "draw_index": 999,
+        "actual": "39106",
+        "rank": 79845,
+        "top_k_hit": false,
+        "model_probability": 4.059976141128488e-06,
+        "model_log_loss": 12.414333460937238,
+        "fair_log_loss": 11.512925464970229,
+        "selected_rule_count": 3
+      }
+    ]
+  }
+}

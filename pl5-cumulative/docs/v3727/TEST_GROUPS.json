@@ -1,0 +1,72 @@
+[
+  {
+    "elapsed_seconds": 20.2,
+    "exit_code": 0,
+    "group": 1,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_01.log",
+    "planned_tests": 122
+  },
+  {
+    "elapsed_seconds": 19.42,
+    "exit_code": 0,
+    "group": 2,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_02.log",
+    "planned_tests": 115
+  },
+  {
+    "elapsed_seconds": 14.72,
+    "exit_code": 0,
+    "group": 3,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_03.log",
+    "planned_tests": 118
+  },
+  {
+    "elapsed_seconds": 28.4,
+    "exit_code": 0,
+    "group": 4,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_04.log",
+    "planned_tests": 120
+  },
+  {
+    "elapsed_seconds": 17.65,
+    "exit_code": 0,
+    "group": 5,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_05.log",
+    "planned_tests": 118
+  },
+  {
+    "elapsed_seconds": 12.4,
+    "exit_code": 0,
+    "group": 6,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_06.log",
+    "planned_tests": 124
+  },
+  {
+    "elapsed_seconds": 32.26,
+    "exit_code": 0,
+    "group": 7,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_07.log",
+    "planned_tests": 117
+  },
+  {
+    "elapsed_seconds": 7.53,
+    "exit_code": 0,
+    "group": 8,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_08.log",
+    "planned_tests": 107
+  },
+  {
+    "elapsed_seconds": 31.1,
+    "exit_code": 0,
+    "group": 9,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_09.log",
+    "planned_tests": 118
+  },
+  {
+    "elapsed_seconds": 4.57,
+    "exit_code": 0,
+    "group": 10,
+    "log_file": "/mnt/data/_pl5_v3727_test_groups/group_10.log",
+    "planned_tests": 33
+  }
+]

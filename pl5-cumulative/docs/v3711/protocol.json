@@ -1,0 +1,43 @@
+{
+  "alpha": 0.001,
+  "comparison_unit": "candidate full-table feature evaluations",
+  "drift_intervention": "target test labels from independent new rule",
+  "feature_budget_each_arm": 8,
+  "fixed_window_size": 20,
+  "iid_noise_rate_null": 0.02,
+  "noisy_training_intervention": "first training label +1 mod10",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3711-cross-task-protocol-1",
+  "source_cases": [
+    "xor_shift",
+    "abs_scaled",
+    "gcd_shift"
+  ],
+  "source_holdout_cells": 30,
+  "source_seeds": [
+    9311
+  ],
+  "source_train_cells": 70,
+  "source_training_cost_included_in_budget": false,
+  "source_validation": "independent source holdout, zero mistakes",
+  "target_cases": [
+    "xor_shift",
+    "abs_scaled",
+    "gcd_shift",
+    "iid_random",
+    "train_noise",
+    "concept_drift"
+  ],
+  "target_holdout_cells": 30,
+  "target_model_selection": "frozen-source-priority vs canonical grammar order",
+  "target_seeds": [
+    9541,
+    9542,
+    9543,
+    9544,
+    9545,
+    9546
+  ],
+  "target_train_cells": 70
+}

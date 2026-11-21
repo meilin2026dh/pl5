@@ -1,0 +1,14 @@
+{
+  "benchmark": {
+    "pid": 2526,
+    "command": "python research_v373.py --output ../docs/v373/benchmark; echo $? > ../docs/v373/evidence/05_benchmark.exit"
+  },
+  "full_backend": {
+    "pid": 2527,
+    "command": "python -m pytest -q --junitxml=../docs/v373/evidence/full_backend.xml; echo $? > ../docs/v373/evidence/06_full_backend.exit"
+  },
+  "integration": {
+    "pid": 2528,
+    "command": "python -m pytest -q integration_tests --junitxml=docs/v373/evidence/integration.xml; echo $? > docs/v373/evidence/07_integration.exit"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "pl5-v377-preregistered-experiment-1",
+  "cases": [
+    "latent_quadratic",
+    "latent_cubic",
+    "latent_mixed",
+    "coupled_product",
+    "coupled_threshold",
+    "iid_random"
+  ],
+  "seeds": [
+    712,
+    713,
+    714,
+    715,
+    716
+  ],
+  "train_pairs_per_trial": 70,
+  "test_pairs_per_trial": 30,
+  "split_seed_formula": "seed*17+8",
+  "target_seed_formula": "seed*17+7",
+  "max_baseline_evaluations_per_trial": 500,
+  "model_class": "two inferred unary digit maps, additive mod10",
+  "baseline_class": "V3.7.2 safe integer AST grammar",
+  "baseline_config": {
+    "generations": 3,
+    "population": 24,
+    "beam_width": 12,
+    "max_nodes": 9,
+    "max_depth": 5,
+    "complexity_penalty": 0.01
+  },
+  "selection": "training-only; no holdout-driven model switch",
+  "statistical_scope": "descriptive synthetic paired controls, no confirmatory inference",
+  "cost_comparison": "NOT_COMPUTE_MATCHED",
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED"
+}

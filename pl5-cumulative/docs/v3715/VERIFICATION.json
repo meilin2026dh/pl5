@@ -1,0 +1,83 @@
+{
+  "version": "V3.7.15 research preview",
+  "universe_size": 100000,
+  "base_archive_name": "PL5_V3714_Full.zip",
+  "base_archive_sha256": "226c85e43577f04030771d3079d41f13b6d62036df0358c79dc9a07c06f446a4",
+  "source_files_v3715": [
+    "README_V3715.md",
+    "research_backend/pailie5/ga_cs_optimizer_v3715.py",
+    "research_backend/benchmark_ga_cs_v3715.py",
+    "research_backend/tests/test_ga_cs_optimizer_v3715.py",
+    "research_backend/tests/test_ga_cs_benchmark_v3715.py",
+    "docs/v3715/DESIGN.md",
+    "docs/v3715/REPORT.md",
+    "docs/v3715/benchmark_verified.json",
+    "docs/v3715/robustness_study.py",
+    "docs/v3715/robustness_results.json",
+    "docs/v3715/verify_robustness.py",
+    "docs/v3715/robustness_oracle_verification.json",
+    "docs/v3715/green_all_new.log",
+    "docs/v3715/backend_full_final.log",
+    "docs/v3715/integration_full.log",
+    "docs/v3715/red_test.log",
+    "docs/v3715/red_benchmark_test.log",
+    "docs/v3715/red_oracle_test.log"
+  ],
+  "new_file_hashes_sha256": {
+    "README_V3715.md": "b1eae5e740123c8ca52d031761bf6f00b0f91c32e18c3e67489bc0da177d8726",
+    "research_backend/pailie5/ga_cs_optimizer_v3715.py": "1f87bed117368952ef57e4df7883d810ff32711cd57bfd63e53b0805ea3b0709",
+    "research_backend/benchmark_ga_cs_v3715.py": "b7b24aa1eaeabd7cfbc5bd26d22cf9445749e864a7ee823b0d60027d9f061818",
+    "research_backend/tests/test_ga_cs_optimizer_v3715.py": "be06c055d7607dd12f8a4e9a04fd44f1a204b17750272ebc38d67f763e012beb",
+    "research_backend/tests/test_ga_cs_benchmark_v3715.py": "3d963a6b1b5a22f59525b72942db191b03acbc0cc867ac5a25c4a3b1790fbed2",
+    "docs/v3715/DESIGN.md": "53b73e69a2fc6dba17330d008a679d61243c201e02343dd5ac1f353aaf459544",
+    "docs/v3715/REPORT.md": "d153d2a9949fc48edcfb1c85b58cd5b8e31a9ae5b20e943aa3c2fb405121d417",
+    "docs/v3715/benchmark_verified.json": "7af70c9d1481772b0529b61d2134f54744e966ff73c4d6a8313bd2b7ecdaf53d",
+    "docs/v3715/robustness_study.py": "f42b16e8d51eb0fbcbfb1f0fcfa1f6f0f85484e28a9c90e90808af38c92abbaf",
+    "docs/v3715/robustness_results.json": "c71b79604530f406151e8ea69cec3ca2e99ba01e70b4dca58adeb5d64b9eb129",
+    "docs/v3715/verify_robustness.py": "2ec59961af99fb63474ec1c2bf067f7415c90169227c2049a13ebac39733bcf0",
+    "docs/v3715/robustness_oracle_verification.json": "fb9e6c1298ad29d04f88e625eec4bd932d96940e44c73a3633c654aeb1f980d8",
+    "docs/v3715/green_all_new.log": "d84ab40e9e60ef260fd878f536cbbfe4ec17e3e94e49d3438ec5f2b19a5a11a5",
+    "docs/v3715/backend_full_final.log": "fb4241392d58e335fa4bd0dac349c9f847bea6f46cdb745e88f2e5d3589e8d68",
+    "docs/v3715/integration_full.log": "50b1eafda2d009e4e0199dee21742f77aeab1ec49bab62c3a84efbb6a2503616",
+    "docs/v3715/red_test.log": "afe203df2f27b2455b610611f3cdae32a68f61dd23e719d4246d552286c27724",
+    "docs/v3715/red_benchmark_test.log": "82bf2cc5615b7c4deffadeef8d5306358331501e470841af71c5bf27d0887658",
+    "docs/v3715/red_oracle_test.log": "2a6d277efeab9186d030855970b5bdb52f3ba587b4fc09c9fcfc90eb78a47d27"
+  },
+  "base_content_unmodified": true,
+  "research": {
+    "optimizers": [
+      "random",
+      "greedy",
+      "anneal",
+      "ga",
+      "cs",
+      "ga_cs"
+    ],
+    "seed_count_initial": 8,
+    "seed_count_robustness": 12,
+    "evaluation_budget_per_method": 300,
+    "main_experiments": 96,
+    "robustness_experiments": 216,
+    "full_pl5_rule_count": 20,
+    "main_exact_oracle_differences": 0,
+    "robustness_exact_oracle_differences": 0,
+    "best_possible_with_20_rules": 28672,
+    "100_ticket_cap_proven_infeasible": true,
+    "production_enabled": false,
+    "verified_real_lottery_history_used": false
+  },
+  "test_suite": {
+    "backend_test_pass_count": 851,
+    "backend_exit": 0,
+    "integration_pass_count": 29,
+    "integration_exit": 0,
+    "full_regression_pass_count": 880,
+    "new_test_count": 14,
+    "original_tdd_red_cases": true
+  },
+  "limits": [
+    "research preview, not Windows tested",
+    "not independently run from GitHub thin branch",
+    "no out-of-sample verified lottery win advantage"
+  ]
+}

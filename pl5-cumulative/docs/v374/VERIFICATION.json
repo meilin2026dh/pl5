@@ -1,0 +1,124 @@
+{
+  "release": "3.7.4",
+  "purpose": "bounded autonomous research: self-selected synthetic mathematical experiments",
+  "cycles": 8,
+  "per_cycle_policies": 4,
+  "budget_each": 500,
+  "total_search_and_screening_evaluation_budget": 16000,
+  "issue_count": 4,
+  "issues": [
+    {
+      "cycle_number": 4,
+      "issue": "random_data_spurious_fit"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "generalization_gap"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "random_data_spurious_fit"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "adaptive_search_not_better_than_grammar_on_this_task"
+    }
+  ],
+  "stats": {
+    "exploratory_only": {
+      "full": {
+        "trials": 6,
+        "holdout_cells": 240,
+        "correct": 102,
+        "accuracy": 0.425
+      },
+      "no_warm": {
+        "trials": 6,
+        "holdout_cells": 240,
+        "correct": 83,
+        "accuracy": 0.3458333333333333
+      },
+      "selective": {
+        "trials": 6,
+        "holdout_cells": 240,
+        "correct": 102,
+        "accuracy": 0.425
+      },
+      "grammar_only": {
+        "trials": 6,
+        "holdout_cells": 240,
+        "correct": 85,
+        "accuracy": 0.3541666666666667
+      }
+    },
+    "negative_control": {
+      "full": {
+        "trials": 2,
+        "holdout_cells": 80,
+        "correct": 4,
+        "accuracy": 0.05
+      },
+      "no_warm": {
+        "trials": 2,
+        "holdout_cells": 80,
+        "correct": 10,
+        "accuracy": 0.125
+      },
+      "selective": {
+        "trials": 2,
+        "holdout_cells": 80,
+        "correct": 4,
+        "accuracy": 0.05
+      },
+      "grammar_only": {
+        "trials": 2,
+        "holdout_cells": 80,
+        "correct": 5,
+        "accuracy": 0.0625
+      }
+    }
+  },
+  "reproducibility": {
+    "cycles_compared": 8,
+    "same_evidence": true,
+    "differences": [],
+    "primary_cycle_count": 8,
+    "issue_count": 4,
+    "all_production_disabled": true,
+    "counts_as_new_evidence": false
+  },
+  "tests": {
+    "full_python_backend": {
+      "passed": 651,
+      "failed": 0,
+      "log": "docs/v374/full_debug.log",
+      "note": "full pytest exit, 90.07s"
+    },
+    "historical_integration": {
+      "passed": 29,
+      "failed": 0,
+      "log": "docs/v374/integration.log",
+      "junit": "docs/v374/pytest_integration.xml"
+    },
+    "autonomous_specific": {
+      "passed": 8,
+      "failed": 0,
+      "included_in_backend_total": true
+    }
+  },
+  "previous_versions_preserved": true,
+  "no_external_calls": true,
+  "no_money_movement": true,
+  "no_remote_scheduler_created": true,
+  "no_windows_scheduler_installed": true,
+  "actual_background_service_running": false,
+  "production_filter_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "source_type": "synthetic_math_tasks_only",
+  "methodological_caveats": [
+    "Task selection is adaptive and exploratory; repeated case family seeds do not establish confirmatory significance.",
+    "Ablation policies are not compared by CPU time, only charged candidate calls.",
+    "Source formula curation and historical warm-bank acquisition costs are outside per-task budgets.",
+    "No real lottery, market series or future-draw filter evaluation."
+  ]
+}

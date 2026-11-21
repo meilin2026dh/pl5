@@ -1,0 +1,12 @@
+{
+  "protocol.json": {
+    "primary_sha256": "13bc088eebf23ab3f6eac6447e541d57c46b311bf92fc1a93356635993a086f4",
+    "replay_sha256": "13bc088eebf23ab3f6eac6447e541d57c46b311bf92fc1a93356635993a086f4",
+    "byte_identical": true
+  },
+  "results.json": {
+    "primary_sha256": "b7c7a097f3533bbc65e12fc8f60dbc7666ede930679d20b39d310fd5f370ac6a",
+    "replay_sha256": "b7c7a097f3533bbc65e12fc8f60dbc7666ede930679d20b39d310fd5f370ac6a",
+    "byte_identical": true
+  }
+}

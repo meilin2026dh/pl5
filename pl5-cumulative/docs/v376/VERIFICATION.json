@@ -1,0 +1,44 @@
+{
+  "release": "3.7.6",
+  "source_release": "3.7.5",
+  "cumulative_file_count": 2367,
+  "original_archive_files": 2304,
+  "original_files_unchanged": 2301,
+  "original_files_modified": [
+    "research_backend/pailie5/__init__.py",
+    "research_backend/pyproject.toml",
+    "research_backend/tests/test_scientific_questions_v375.py"
+  ],
+  "research_backend_tests": {
+    "passed": 683,
+    "failed": 0,
+    "seconds": 90.05,
+    "command": "cd research_backend && python -m pytest -q",
+    "log": "docs/v376/release_backend.log"
+  },
+  "integration_tests": {
+    "passed": 29,
+    "failed": 0,
+    "command": "python -m pytest -q integration_tests",
+    "log": "docs/v376/release_integration.log"
+  },
+  "test_total": 712,
+  "historical_research_cycles": 12,
+  "new_method_studies": 8,
+  "candidate_expression_evaluations": 8500,
+  "negative_control_studies": 2,
+  "frozen_files_replayed_identically": 48,
+  "replay_state_equal": true,
+  "method_library_exhaustion_safely_paused": true,
+  "new_scientific_question_ids": [
+    "Q-method_family_nonimprovement",
+    "Q-new_primitive_needed"
+  ],
+  "study_conclusions": "UNRESOLVED",
+  "real_lottery_data": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "background_running": false,
+  "github_synced": false,
+  "windows_deployed": false,
+  "react_full_build_executed": false
+}

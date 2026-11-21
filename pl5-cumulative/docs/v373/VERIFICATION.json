@@ -1,0 +1,57 @@
+{
+  "research_release": "3.7.3",
+  "historical_package_base": "3.7.2",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.0.2"
+  },
+  "suites": {
+    "backend": {
+      "tests": 643,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 83.923
+    },
+    "integration": {
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.389
+    }
+  },
+  "total_tests": 672,
+  "benchmark_audit": {
+    "completed_unique_trials": 480,
+    "independent_scalar_recomputations": 480,
+    "charged_evaluations": 1200000,
+    "all_budgets_exact": true,
+    "all_code_fingerprints_match_frozen_protocol": true,
+    "protocol_sha256": "c453154719afda1d4a6ac9c661d8924b81a10f498bdd5dc4e2f06730774e1a42",
+    "replicated_trials": 12,
+    "replicated_identical_excluding_timing": true,
+    "replications_count_as_new_evidence": false,
+    "existing_files_unchanged": 775,
+    "existing_files_changed": [],
+    "summary_recomputed_from_frozen_operators": true,
+    "sign_flip_independently_recomputed": true
+  },
+  "not_executed": [
+    "full React build",
+    "Windows deployment",
+    "GitHub upload",
+    "real lottery/market predictive or filtering advantage test"
+  ],
+  "review": "self-review plus independent scalar recomputation; no separate reviewer agent",
+  "fresh_directory_focus_tests": {
+    "tests": 107,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 10.896,
+    "counts_as_additional_unique_tests": false
+  }
+}

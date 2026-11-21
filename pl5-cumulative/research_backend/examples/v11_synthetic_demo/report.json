@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "mode": "explore",
+    "requested": 1,
+    "active": 1,
+    "unapproved_blocked": 0,
+    "kept": 67506,
+    "removed": 32494,
+    "fair_random_coverage": 0.67506,
+    "protected": [],
+    "statistical_status": "uncalibrated_research_preferences",
+    "notes": "压缩率不是预测概率优势；禁用某一刀可恢复其独有排除号码；顺序仅改变每步边际量，不改变最终交集。",
+    "k": 100,
+    "selected": 100,
+    "restored_for_quota": 0,
+    "selection_policy": "hard_kept_first",
+    "fair_top_k_coverage": 0.001,
+    "fair_10_draw_at_least_one": 0.009955119790251765,
+    "preference_weight_top_k": 0.001258496826882064,
+    "preference_weight_is_predictive_probability": false,
+    "state_sha256": "ba3a32fbc0157b7077e07981c71f3826a088a571e15c64202561327cb7aca3e0"
+  },
+  "demo_data": true,
+  "source_sha256": "f7812094b6a4c7f6a8b10676c1b6ab95e3a234efdede9ff2786319a2fefc6ff6",
+  "rule_trace": [
+    {
+      "step": 1,
+      "key": "basic:0:sum",
+      "label": "基础规则：sum BasicConstraint(indicator='sum', minimum=None, maximum=25, allowed=None, denied=None)",
+      "before": 100000,
+      "after": 67506,
+      "newly_removed": 32494,
+      "already_removed": 0,
+      "raw_removed": 32494,
+      "fair_coverage_after": 0.67506,
+      "unique_recoverable": 32494
+    }
+  ],
+  "counterfactual": [
+    {
+      "key": "basic:0:sum",
+      "label": "基础规则：sum BasicConstraint(indicator='sum', minimum=None, maximum=25, allowed=None, denied=None)",
+      "raw_removed": 32494,
+      "recoverable_if_disabled": 32494,
+      "overlap_with_other_knives": 0,
+      "new_exclusions_in_order": 32494
+    }
+  ],
+  "warnings": [
+    "当前是伪随机生成的演示数据，不是真实开奖记录；所有结果仅用于验证软件流程。"
+  ],
+  "exploratory_backtest": {
+    "periods": 3,
+    "k": 100,
+    "hits": 0,
+    "observed_hit_rate": 0.0,
+    "fair_expected_hits": 0.003,
+    "fair_hit_rate": 0.001,
+    "fair_10_draw_at_least_one": 0.009955119790251765,
+    "exploratory_only": true,
+    "note": "逐期训练数据截至t-1；仍是可重复调参的探索性回测，非独立前瞻验证。",
+    "details": [
+      {
+        "draw_index": 997,
+        "actual": "26702",
+        "rank": 67468,
+        "top_k_hit": false,
+        "hard_kept": true,
+        "hard_keep_size": 67506,
+        "rescued_for_quota": 0,
+        "rules": 2
+      },
+      {
+        "draw_index": 998,
+        "actual": "54282",
+        "rank": 14220,
+        "top_k_hit": false,
+        "hard_kept": true,
+        "hard_keep_size": 67506,
+        "rescued_for_quota": 0,
+        "rules": 1
+      },
+      {
+        "draw_index": 999,
+        "actual": "39106",
+        "rank": 18577,
+        "top_k_hit": false,
+        "hard_kept": true,
+        "hard_keep_size": 55316,
+        "rescued_for_quota": 0,
+        "rules": 2
+      }
+    ]
+  }
+}

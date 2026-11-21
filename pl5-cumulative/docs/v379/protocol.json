@@ -1,0 +1,129 @@
+{
+  "schema": "pl5-v379-preregistered-1",
+  "cases": [
+    "rank_a2b",
+    "rank_ab2",
+    "rank_parityb",
+    "rank_bucketb",
+    "split_sum",
+    "split_difference",
+    "legacy_coupled_product",
+    "legacy_threshold",
+    "iid_random",
+    "two_interactions",
+    "unmodeled_abs"
+  ],
+  "seeds": [
+    9201,
+    9202,
+    9203,
+    9204,
+    9205,
+    9206,
+    9207,
+    9208,
+    9209,
+    9210,
+    9211,
+    9212
+  ],
+  "train_count": 70,
+  "holdout_count": 30,
+  "truth_seed_formula": "seed*37 + case-index*311",
+  "split_seed_formula": "seed*37 + case-index*311 + 1",
+  "candidate_basis": [
+    "a*b",
+    "a²*b",
+    "a*b²",
+    "a²*b²",
+    "parity(a)*b",
+    "bucket(a)*b",
+    "a³*b",
+    "a*b³"
+  ],
+  "candidate_boundaries": [
+    [
+      "a<b",
+      0
+    ],
+    [
+      "sum<",
+      5
+    ],
+    [
+      "sum<",
+      6
+    ],
+    [
+      "sum<",
+      7
+    ],
+    [
+      "sum<",
+      8
+    ],
+    [
+      "sum<",
+      9
+    ],
+    [
+      "sum<",
+      10
+    ],
+    [
+      "sum<",
+      11
+    ],
+    [
+      "sum<",
+      12
+    ],
+    [
+      "sum<",
+      13
+    ],
+    [
+      "sum<",
+      14
+    ],
+    [
+      "difference<",
+      -3
+    ],
+    [
+      "difference<",
+      -2
+    ],
+    [
+      "difference<",
+      -1
+    ],
+    [
+      "difference<",
+      0
+    ],
+    [
+      "difference<",
+      1
+    ],
+    [
+      "difference<",
+      2
+    ],
+    [
+      "difference<",
+      3
+    ]
+  ],
+  "selection": "training-cells only; freeze before holdout evaluation",
+  "uncertainty": "abstain on missing identification or disagreeing model completions",
+  "random_controls": [
+    "iid_random",
+    "two_interactions",
+    "unmodeled_abs"
+  ],
+  "compare": "v378 prior fit; algorithmic costs NOT equal",
+  "scope": "predefined synthetic structures; no out-of-distribution advantage claim",
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED"
+}

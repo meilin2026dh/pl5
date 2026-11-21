@@ -1,0 +1,88 @@
+{
+  "proposed": 3,
+  "algorithms": [
+    {
+      "fingerprint": "789130431e62be07d3b33ad5",
+      "new": true,
+      "specification": {
+        "formula": {
+          "kind": "op",
+          "op": "mod",
+          "args": [
+            {
+              "kind": "op",
+              "op": "max",
+              "args": [
+                {
+                  "kind": "metric",
+                  "name": "odd_count"
+                },
+                {
+                  "kind": "metric",
+                  "name": "tail_sum"
+                }
+              ]
+            },
+            {
+              "kind": "const",
+              "value": 7
+            }
+          ]
+        },
+        "pattern": "strict_up",
+        "window": 4,
+        "origin": "demo-local",
+        "method_note": "自动文法组合产生的待证伪迁移假设，来源只提供研究启发；未复现原论文的科学结论"
+      }
+    },
+    {
+      "fingerprint": "1710c7d8ad557e7fb6707fd6",
+      "new": true,
+      "specification": {
+        "formula": {
+          "kind": "op",
+          "op": "max",
+          "args": [
+            {
+              "kind": "metric",
+              "name": "odd_count"
+            },
+            {
+              "kind": "metric",
+              "name": "tail_sum"
+            }
+          ]
+        },
+        "pattern": "strict_down",
+        "window": 3,
+        "origin": "demo-local",
+        "method_note": "自动文法组合产生的待证伪迁移假设，来源只提供研究启发；未复现原论文的科学结论"
+      }
+    },
+    {
+      "fingerprint": "759f691401b48c571d21685a",
+      "new": true,
+      "specification": {
+        "formula": {
+          "kind": "op",
+          "op": "add",
+          "args": [
+            {
+              "kind": "metric",
+              "name": "head_sum"
+            },
+            {
+              "kind": "metric",
+              "name": "tail_sum"
+            }
+          ]
+        },
+        "pattern": "period2",
+        "window": 6,
+        "origin": "demo-local",
+        "method_note": "自动文法组合产生的待证伪迁移假设，来源只提供研究启发；未复现原论文的科学结论"
+      }
+    }
+  ],
+  "paid_model_used": false
+}

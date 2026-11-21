@@ -1,0 +1,1 @@
+{"output": "/mnt/data/pl5_v374_auto/runs/autonomous_v374", "completed_cycles": 6, "issues": 1, "next_hypothesis": "Candidate structure may transfer, but only to a fresh task; do not reuse this test split.", "production_enabled": false, "status": "BOUNDED_RUN_COMPLETE", "continuous_background_run": false}
