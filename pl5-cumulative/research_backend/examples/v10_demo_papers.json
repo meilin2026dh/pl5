@@ -1,0 +1,12 @@
+[
+  {
+    "key":"demo:paper-sequential","source":"arxiv","title":"Sequential multiple testing and e-values on random sequences",
+    "abstract":"Synthetic sample abstract for software testing only. Research on sequential multiple testing and online statistics allows hypotheses to be checked over time without assuming a predictive advantage in a fair random lottery. No real paper is represented by this demonstration.",
+    "url":"https://example.org/demo-only","date":"2026-01-01","topic":"sequential multiple testing","authors":"Synthetic Fixture"
+  },
+  {
+    "key":"demo:paper-distribution","source":"openalex","title":"Distribution shift detection in discrete probability models",
+    "abstract":"Synthetic sample abstract intended only for verifying the PL5 pipeline. It concerns distribution shift detection and probability calibration with carefully separated development and future tests. This example has no real publication identity.",
+    "url":"https://example.org/demo-only-2","date":"2026-01-02","topic":"distribution shift detection","authors":"Synthetic Fixture"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "topics": [
+    "sequential multiple testing",
+    "online conformal prediction",
+    "distribution shift detection",
+    "minimum description length",
+    "randomness testing",
+    "combinatorial ranking",
+    "probabilistic graphical models",
+    "automated scientific discovery"
+  ],
+  "notes": "仅使用公开学术元数据和开源仓库元数据；不下载执行第三方项目。可根据需要修改检索主题。"
+}

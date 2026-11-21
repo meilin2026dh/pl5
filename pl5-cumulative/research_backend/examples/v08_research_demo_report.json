@@ -1,0 +1,77 @@
+{
+  "ingest": {
+    "key": "demo-v08",
+    "sha256": "4825214a6fc1972ae8ea139229fa4680569e5903ef85b1cb6cd3ac52b19079e3",
+    "new": true,
+    "original_file_sha256": "4825214a6fc1972ae8ea139229fa4680569e5903ef85b1cb6cd3ac52b19079e3"
+  },
+  "initial_proposals": {
+    "added": [
+      {
+        "code_id": "e391672185c8a2e3b80b3271367daf788cdf6ec062a53fe9545aec4895a79e46",
+        "new": true,
+        "state": "draft",
+        "static": {
+          "source_sha256": "e391672185c8a2e3b80b3271367daf788cdf6ec062a53fe9545aec4895a79e46",
+          "ast_nodes": 136,
+          "function": "score_batch",
+          "warning": "静态检查不能证明安全；执行仍需独立容器"
+        }
+      },
+      {
+        "code_id": "edc0cf2985c2d816751f717f5ba41c6d2afb67f171012b1390681cd9da064931",
+        "new": true,
+        "state": "draft",
+        "static": {
+          "source_sha256": "edc0cf2985c2d816751f717f5ba41c6d2afb67f171012b1390681cd9da064931",
+          "ast_nodes": 201,
+          "function": "score_batch",
+          "warning": "静态检查不能证明安全；执行仍需独立容器"
+        }
+      }
+    ],
+    "warning": "离线模板是论文启发的研究迁移，不是论文原算法复现"
+  },
+  "automatic_followup": {
+    "documents": [
+      {
+        "document_key": "demo-v08",
+        "proposals": [
+          {
+            "code_id": "e391672185c8a2e3b80b3271367daf788cdf6ec062a53fe9545aec4895a79e46",
+            "new": false,
+            "state": "draft",
+            "static": {
+              "source_sha256": "e391672185c8a2e3b80b3271367daf788cdf6ec062a53fe9545aec4895a79e46",
+              "ast_nodes": 136,
+              "function": "score_batch",
+              "warning": "静态检查不能证明安全；执行仍需独立容器"
+            }
+          },
+          {
+            "code_id": "edc0cf2985c2d816751f717f5ba41c6d2afb67f171012b1390681cd9da064931",
+            "new": false,
+            "state": "draft",
+            "static": {
+              "source_sha256": "edc0cf2985c2d816751f717f5ba41c6d2afb67f171012b1390681cd9da064931",
+              "ast_nodes": 201,
+              "function": "score_batch",
+              "warning": "静态检查不能证明安全；执行仍需独立容器"
+            }
+          }
+        ]
+      }
+    ],
+    "paid": false,
+    "code_executed": false,
+    "auto_activated": false
+  },
+  "saved_count": 2,
+  "runtime_status": {
+    "docker_ready": false,
+    "registered": 2,
+    "code_execution_policy": "Docker only; explicit flag; no automatic production release"
+  },
+  "executed_untrusted_code": false,
+  "data_origin": "示例文献（非真实彩票开奖数据）"
+}

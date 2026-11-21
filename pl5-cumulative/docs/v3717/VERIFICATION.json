@@ -1,0 +1,49 @@
+{
+  "release": "V3.7.17",
+  "research_preview": true,
+  "baseline": "V3.7.16 cumulative ZIP",
+  "targeted_tests": 12,
+  "backend_tests": 871,
+  "integration_tests": 29,
+  "backend_exit": 0,
+  "integration_exit": 0,
+  "benchmark": {
+    "seeds": [
+      3717,
+      3718
+    ],
+    "repeats_per_seed": 10,
+    "three_workflows": [
+      "rolling_rank",
+      "rolling_sculpt",
+      "contextual_pattern"
+    ],
+    "all_outputs_identical": true,
+    "speed_ratios": {
+      "3717": {
+        "rolling_rank": 3.67145,
+        "rolling_sculpt": 1.8583,
+        "contextual_pattern": 4.41014
+      },
+      "3718": {
+        "rolling_rank": 4.04444,
+        "rolling_sculpt": 2.01074,
+        "contextual_pattern": 4.71819
+      }
+    }
+  },
+  "data_source": {
+    "synthetic": true,
+    "authenticated": false,
+    "file": "research_backend/data/synthetic_demo.csv",
+    "sha256": "f7812094b6a4c7f6a8b10676c1b6ab95e3a234efdede9ff2786319a2fefc6ff6"
+  },
+  "default_legacy_behavior": true,
+  "new_params": [
+    "rolling_rank_backtest.target_only",
+    "rolling_sculpt_backtest.target_only",
+    "filter_next.optimize_context"
+  ],
+  "windows_installation_tested": false,
+  "github_sync_status": "not_synced_in_full_to_github"
+}

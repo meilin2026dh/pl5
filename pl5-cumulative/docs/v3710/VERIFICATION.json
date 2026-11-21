@@ -1,0 +1,61 @@
+{
+  "baseline_archive": "PL5_V379_Full.zip",
+  "baseline_files": 2423,
+  "baseline_sha256": "1e803ccc79b3bf2e66769bea053d2b6feb31193f1062900c0b9ae6a2260cd651",
+  "deployed_to_windows": false,
+  "no_frontend_build_validation": true,
+  "no_real_world_lottery_advantage_established": true,
+  "no_windows_validation": true,
+  "production_enabled": false,
+  "protocol_sha256": "4e73c293c8ed099c5f075de3778e1b08655e3d92eab5aa4b56c3595de2908d72",
+  "replay_byte_identical": true,
+  "results_sha256": "a931b5fc1463b46f59af58a71a53b81f7742fddbd5572953b2cea848fb3c6635",
+  "runtime": {
+    "numpy": "2.3.5",
+    "pytest": "9.0.2",
+    "python": "3.13.5"
+  },
+  "stress": {
+    "corrupted_abstentions": 20,
+    "iid_random_abstentions": 20,
+    "no_real_lottery_claim": true,
+    "production_enabled": false,
+    "runs": 40
+  },
+  "study": {
+    "compute_matched_comparison": false,
+    "drift_heldout_errors": 217,
+    "drift_identified_on_training": 8,
+    "drift_trials": 8,
+    "negative_abstained": 32,
+    "negative_controls": 32,
+    "open_ended_mathematics_invented": false,
+    "positive_exact_holdout": 30,
+    "positive_generated": 30,
+    "positive_identified": 30,
+    "positives": 32,
+    "real_lottery_advantage_established": false,
+    "trials": 72
+  },
+  "synced_to_github": false,
+  "tests": {
+    "backend": {
+      "command": "cd research_backend && python -m pytest -q",
+      "elapsed_seconds": 112.47,
+      "failed": 0,
+      "passed": 775
+    },
+    "focused": {
+      "included_in_backend_total": true,
+      "passed": 16
+    },
+    "integration": {
+      "command": "cd integration_tests && python -m pytest -q",
+      "elapsed_seconds": 4.34,
+      "failed": 0,
+      "passed": 29
+    },
+    "total_independent_tests": 804
+  },
+  "version": "PL5 research V3.7.10"
+}

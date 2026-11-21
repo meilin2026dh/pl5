@@ -1,0 +1,30 @@
+{
+  "final_full_suite": {
+    "pid": 3322,
+    "command": [
+      "timeout",
+      "240",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "--durations=15",
+      "--junitxml=../docs/v372/evidence/final_full_suite.xml"
+    ],
+    "log": "/mnt/data/pl5_v372_work/docs/v372/evidence/17_final_full_suite.txt"
+  },
+  "integration_suite": {
+    "pid": 3323,
+    "command": [
+      "timeout",
+      "180",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "integration_tests",
+      "--junitxml=docs/v372/evidence/integration_suite.xml"
+    ],
+    "log": "/mnt/data/pl5_v372_work/docs/v372/evidence/18_integration_suite.txt"
+  }
+}

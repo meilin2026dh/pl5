@@ -1,0 +1,61 @@
+{
+  "background_autonomous_scheduler_started": false,
+  "base_archive": "PL5_V3710_Full.zip",
+  "base_archive_sha256": "7f0e8a38237acde6a2576e6a757b8709565d44bf13ea83e65baf1c1485a7f682",
+  "compute_matched_full_pipeline": false,
+  "created_at_utc": "2026-11-03",
+  "deployed_to_D_pl5": false,
+  "full_backend": {
+    "command": "cd research_backend && python -m pytest -q",
+    "failed": 0,
+    "log_file": "docs/v3711/backend_test.log",
+    "passed": 789
+  },
+  "integration": {
+    "command": "cd integration_tests && python -m pytest -q",
+    "failed": 0,
+    "log_file": "docs/v3711/integration_test.log",
+    "passed": 29
+  },
+  "new_feature_tests_included": 14,
+  "no_real_lottery_predictive_advantage_established": true,
+  "primary_study": {
+    "compute_matched_full_pipeline": false,
+    "drift_cases": 6,
+    "drift_flagged": 6,
+    "drift_heldout_errors": 162,
+    "negative_abstained": 6,
+    "negative_controls": 6,
+    "noise_cases": 6,
+    "noisy_suspected": 6,
+    "open_ended_mathematics_invented": false,
+    "positive_baseline_identified": 0,
+    "positive_transfer_exact_holdout": 18,
+    "positive_transfer_identified": 18,
+    "production_enabled": false,
+    "real_lottery_advantage_established": false,
+    "source_training_cost_included_in_budget": false,
+    "structured_tasks": 18,
+    "trials": 36
+  },
+  "production_enabled": false,
+  "react_build_validated": false,
+  "research_preview_only": true,
+  "same_protocol_replay_byte_identical": true,
+  "supplemental_stress": {
+    "drift_flagged": 12,
+    "drift_tested": 12,
+    "iid_random_abstained": 24,
+    "iid_random_tested": 24,
+    "noise_located": 12,
+    "noise_tested": 12,
+    "positive_exact": 18,
+    "positive_tested": 18,
+    "real_lottery_advantage_established": false,
+    "total": 66
+  },
+  "synced_to_github": false,
+  "total_unique_automated_tests": 818,
+  "version": "PL5 research V3.7.11",
+  "windows_312_validated": false
+}

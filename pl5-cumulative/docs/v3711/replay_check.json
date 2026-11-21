@@ -1,0 +1,8 @@
+{
+  "exact_replay_is_not_new_independent_evidence": true,
+  "new_target_seed_truth_is_independent_of_sources": true,
+  "protocol_byte_identical": true,
+  "protocol_sha256": "939870e333c00f7d47a9f44a0951fba215453dd4de64d53dee0cd65b2034eda9",
+  "results_byte_identical": true,
+  "results_sha256": "85e3de9e8e7d7cbc039fcc0a01aed17d719b122d999bdaaa2ba0a8ac03383cf8"
+}

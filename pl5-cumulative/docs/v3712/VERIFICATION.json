@@ -1,0 +1,23 @@
+{
+  "research_version": "3.7.12",
+  "base_file_count": 2460,
+  "backend_tests_passed": 807,
+  "integration_tests_passed": 29,
+  "total_automatic_tests_passed": 836,
+  "new_tests_included_in_backend": 18,
+  "synthetic_target_trials": 36,
+  "positive_template_exact": 18,
+  "negative_transfer_cases": 6,
+  "random_and_out_of_grammar_abstentions": 12,
+  "null_control_schedules": 512,
+  "null_control_false_alarms": 1,
+  "drift_detected_after_observing_labels": true,
+  "protocol_and_results_replay_byte_identical": true,
+  "source_feature_tables_examined": 1104,
+  "target_feature_slots_each_arm": 576,
+  "full_pipeline_compute_matched": false,
+  "production_enabled": false,
+  "real_lottery_advantage_established": false,
+  "windows_tested": false,
+  "github_synced": false
+}

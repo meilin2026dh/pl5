@@ -1,0 +1,41 @@
+{
+  "budget_comparison": "not compute matched against V3.7.9",
+  "cases": [
+    "xor_shift",
+    "abs_scaled",
+    "gcd_shift",
+    "min_bucket",
+    "iid_random",
+    "two_component",
+    "outside_language",
+    "train_noise",
+    "concept_drift"
+  ],
+  "controls": [
+    "iid_random",
+    "outside_language",
+    "train_noise",
+    "two_component"
+  ],
+  "drift_intervention": "heldout operator changed after training",
+  "grammar": "generated compositions of 8 unary and 6 binary operations",
+  "hold_cells": 30,
+  "max_features": 400,
+  "max_fits": 256,
+  "model_selection": "training labels only, no holdout tuning",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "preregistered_noise": "one train label altered by +1 mod10",
+  "production_enabled": false,
+  "schema": "pl5-v3710-study-protocol-1",
+  "seeds": [
+    8811,
+    8812,
+    8813,
+    8814,
+    8815,
+    8816,
+    8817,
+    8818
+  ],
+  "train_cells": 70
+}

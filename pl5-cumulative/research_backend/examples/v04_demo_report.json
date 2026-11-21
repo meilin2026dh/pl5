@@ -1,0 +1,955 @@
+{
+  "metadata": {
+    "history_length": 1000,
+    "spaces": [
+      "pl5",
+      "pick23_6",
+      "pick41_4",
+      "ternary11"
+    ],
+    "indicators": [
+      "sum",
+      "span",
+      "odd_count",
+      "pick23_6__sum",
+      "pick23_6__span",
+      "pick23_6__odd_count",
+      "pick41_4__sum",
+      "pick41_4__span",
+      "pick41_4__odd_count",
+      "ternary11__three_count",
+      "ternary11__one_count",
+      "ternary11__switch_count"
+    ],
+    "detected_rules": 3,
+    "accepted_rules": 3,
+    "config_sha256": "2372756ee62acb937c0f6323ed9b06fffb161d13825eb7ab07ae01dba4f7e7a4",
+    "model_weights_sum": 1.0,
+    "fair_each_number_probability": 1e-05,
+    "note": "排序是未校准的用户偏好；公平独立开奖下真实中奖概率均为1/100000。"
+  },
+  "competition": {
+    "total_union_removed": 75283,
+    "total_union_coverage": 0.75283,
+    "per_space": {
+      "pick23_6": {
+        "rules": 1,
+        "union_excluded": 38398,
+        "union_coverage": 0.38398
+      },
+      "pick41_4": {
+        "rules": 2,
+        "union_excluded": 64494,
+        "union_coverage": 0.64494
+      }
+    },
+    "space_overlap": [
+      {
+        "space_a": "pick23_6",
+        "space_b": "pick41_4",
+        "intersection": 27609,
+        "union": 75283,
+        "jaccard": 0.366736182139394,
+        "phi_correlation": 0.12222443321173841,
+        "independent_expected_intersection": 24764.40612
+      }
+    ],
+    "top_rule_overlaps": [
+      {
+        "rule_a": "eadabb4a4f535312",
+        "rule_b": "227a63dde9cf2c40",
+        "space_a": "pick23_6",
+        "space_b": "pick41_4",
+        "intersection": 21583,
+        "jaccard": 0.34300108066874324
+      },
+      {
+        "rule_a": "279b2e52d0891413",
+        "rule_b": "227a63dde9cf2c40",
+        "space_a": "pick41_4",
+        "space_b": "pick41_4",
+        "intersection": 14617,
+        "jaccard": 0.226641237944615
+      },
+      {
+        "rule_a": "eadabb4a4f535312",
+        "rule_b": "279b2e52d0891413",
+        "space_a": "pick23_6",
+        "space_b": "pick41_4",
+        "intersection": 9591,
+        "jaccard": 0.1551715769548124
+      }
+    ],
+    "pairwise_total": 3
+  },
+  "warnings": [
+    "当前是伪随机生成的演示数据，不是真实开奖记录；所有结果仅用于验证软件流程。"
+  ],
+  "is_demo": true,
+  "rolling_competition": {
+    "periods": 8,
+    "warmup": 40,
+    "start_index": 992,
+    "per_space": [
+      {
+        "space": "pl5",
+        "observed_excluded": 1,
+        "expected_excluded": 1.45374,
+        "active_periods": 5,
+        "periods": 8,
+        "observed_exclusion_rate": 0.125,
+        "random_expected_exclusion_rate": 0.1817175
+      },
+      {
+        "space": "pick23_6",
+        "observed_excluded": 3,
+        "expected_excluded": 1.66485,
+        "active_periods": 6,
+        "periods": 8,
+        "observed_exclusion_rate": 0.375,
+        "random_expected_exclusion_rate": 0.20810625
+      },
+      {
+        "space": "pick41_4",
+        "observed_excluded": 0,
+        "expected_excluded": 0.6343300000000001,
+        "active_periods": 5,
+        "periods": 8,
+        "observed_exclusion_rate": 0.0,
+        "random_expected_exclusion_rate": 0.07929125000000001
+      },
+      {
+        "space": "ternary11",
+        "observed_excluded": 0,
+        "expected_excluded": 0.64358,
+        "active_periods": 4,
+        "periods": 8,
+        "observed_exclusion_rate": 0.0,
+        "random_expected_exclusion_rate": 0.0804475
+      }
+    ],
+    "per_rule": [
+      {
+        "space": "pick23_6",
+        "indicator": "pick23_6__odd_count",
+        "transform": "raw",
+        "pattern": "arithmetic",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 1,
+        "expected_excluded_if_triggered": 0.08608,
+        "observed_excluded_if_applied": 1,
+        "expected_excluded_if_applied": 0.08608,
+        "observed_exclusion_rate_if_triggered": 1.0,
+        "random_expected_exclusion_rate_if_triggered": 0.08608
+      },
+      {
+        "space": "pick23_6",
+        "indicator": "pick23_6__odd_count",
+        "transform": "raw",
+        "pattern": "constant",
+        "window": 3,
+        "triggered_periods": 3,
+        "applied_periods": 3,
+        "observed_excluded_if_triggered": 2,
+        "expected_excluded_if_triggered": 1.07916,
+        "observed_excluded_if_applied": 2,
+        "expected_excluded_if_applied": 1.07916,
+        "observed_exclusion_rate_if_triggered": 0.6666666666666666,
+        "random_expected_exclusion_rate_if_triggered": 0.35972
+      },
+      {
+        "space": "pick23_6",
+        "indicator": "pick23_6__odd_count",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 2,
+        "applied_periods": 2,
+        "observed_excluded_if_triggered": 1,
+        "expected_excluded_if_triggered": 0.10436,
+        "observed_excluded_if_applied": 1,
+        "expected_excluded_if_applied": 0.10436,
+        "observed_exclusion_rate_if_triggered": 0.5,
+        "random_expected_exclusion_rate_if_triggered": 0.05218
+      },
+      {
+        "space": "pick23_6",
+        "indicator": "pick23_6__span",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.05839,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.05839,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.05839
+      },
+      {
+        "space": "pick23_6",
+        "indicator": "pick23_6__sum",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 2,
+        "applied_periods": 2,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.49277,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.49277,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.246385
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__odd_count",
+        "transform": "raw",
+        "pattern": "constant",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.3939,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.3939,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.3939
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__span",
+        "transform": "raw",
+        "pattern": "arithmetic",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.04245,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.04245,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.04245
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__span",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.028,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.028,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.028
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__span",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 3,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 2,
+        "expected_excluded_if_triggered": 1.5537100000000001,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.09401,
+        "observed_exclusion_rate_if_triggered": 0.6666666666666666,
+        "random_expected_exclusion_rate_if_triggered": 0.5179033333333334
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__sum",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.01278,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.01278,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.01278
+      },
+      {
+        "space": "pick41_4",
+        "indicator": "pick41_4__sum",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 2,
+        "applied_periods": 2,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.14113,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.14113,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.070565
+      },
+      {
+        "space": "pl5",
+        "indicator": "odd_count",
+        "transform": "raw",
+        "pattern": "constant",
+        "window": 3,
+        "triggered_periods": 2,
+        "applied_periods": 2,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.46875,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.46875,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.234375
+      },
+      {
+        "space": "pl5",
+        "indicator": "span",
+        "transform": "raw",
+        "pattern": "arithmetic",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.0001,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.0001,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.0001
+      },
+      {
+        "space": "pl5",
+        "indicator": "span",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.0172,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.0172,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.0172
+      },
+      {
+        "space": "pl5",
+        "indicator": "sum",
+        "transform": "raw",
+        "pattern": "arithmetic",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.05875,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.05875,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.05875
+      },
+      {
+        "space": "pl5",
+        "indicator": "sum",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 3,
+        "applied_periods": 3,
+        "observed_excluded_if_triggered": 1,
+        "expected_excluded_if_triggered": 1.10499,
+        "observed_excluded_if_applied": 1,
+        "expected_excluded_if_applied": 1.10499,
+        "observed_exclusion_rate_if_triggered": 0.3333333333333333,
+        "random_expected_exclusion_rate_if_triggered": 0.36833
+      },
+      {
+        "space": "ternary11",
+        "indicator": "ternary11__one_count",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.2333,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.2333,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.2333
+      },
+      {
+        "space": "ternary11",
+        "indicator": "ternary11__one_count",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.12241,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.12241,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.12241
+      },
+      {
+        "space": "ternary11",
+        "indicator": "ternary11__switch_count",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 2,
+        "applied_periods": 2,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.1524,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.1524,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.0762
+      },
+      {
+        "space": "ternary11",
+        "indicator": "ternary11__switch_count",
+        "transform": "raw",
+        "pattern": "strict_up",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.10464,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.10464,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.10464
+      },
+      {
+        "space": "ternary11",
+        "indicator": "ternary11__three_count",
+        "transform": "raw",
+        "pattern": "strict_down",
+        "window": 3,
+        "triggered_periods": 1,
+        "applied_periods": 1,
+        "observed_excluded_if_triggered": 0,
+        "expected_excluded_if_triggered": 0.07489,
+        "observed_excluded_if_applied": 0,
+        "expected_excluded_if_applied": 0.07489,
+        "observed_exclusion_rate_if_triggered": 0.0,
+        "random_expected_exclusion_rate_if_triggered": 0.07489
+      }
+    ],
+    "details": [
+      {
+        "index": 992,
+        "actual": "43953",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.0,
+        "pick23_6_excluded": true,
+        "pick23_6_expected_exclusion": 0.48981,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.51824,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.16751
+      },
+      {
+        "index": 993,
+        "actual": "45252",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.38125,
+        "pick23_6_excluded": true,
+        "pick23_6_expected_exclusion": 0.35972,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.0,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0762
+      },
+      {
+        "index": 994,
+        "actual": "71084",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.0172,
+        "pick23_6_excluded": false,
+        "pick23_6_expected_exclusion": 0.35972,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.0,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0
+      },
+      {
+        "index": 995,
+        "actual": "19840",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.0,
+        "pick23_6_excluded": false,
+        "pick23_6_expected_exclusion": 0.0,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.03286,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0
+      },
+      {
+        "index": 996,
+        "actual": "87624",
+        "pl5_excluded": true,
+        "pl5_expected_exclusion": 0.6753,
+        "pick23_6_excluded": false,
+        "pick23_6_expected_exclusion": 0.0,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.028,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.32367
+      },
+      {
+        "index": 997,
+        "actual": "26702",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.22374,
+        "pick23_6_excluded": false,
+        "pick23_6_expected_exclusion": 0.35124,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.01278,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0
+      },
+      {
+        "index": 998,
+        "actual": "54282",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.0,
+        "pick23_6_excluded": true,
+        "pick23_6_expected_exclusion": 0.09522,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.0,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0762
+      },
+      {
+        "index": 999,
+        "actual": "39106",
+        "pl5_excluded": false,
+        "pl5_expected_exclusion": 0.15625,
+        "pick23_6_excluded": false,
+        "pick23_6_expected_exclusion": 0.00914,
+        "pick41_4_excluded": false,
+        "pick41_4_expected_exclusion": 0.04245,
+        "ternary11_excluded": false,
+        "ternary11_expected_exclusion": 0.0
+      }
+    ],
+    "fair_baseline": "逐期剔除集合大小 / 100000；仅在规则事先固定且开奖独立均匀条件下成立",
+    "note": "每期只使用其之前开奖构造规则。多算法尝试和重复回测导致选择偏差；本结果不是正式独立封存验证。"
+  },
+  "mapping_robustness": {
+    "space": "pick23_6",
+    "metrics": [
+      "sum",
+      "span"
+    ],
+    "model_type": "noncalibrated_heuristic",
+    "config_sha256": "433f72c0d22794efd889ccf11841101837237ffdace025716bdb47d1e252b4f9",
+    "variant_seed": "pl5-v04-fixed-baseline",
+    "top_k": 1000,
+    "history_length": 1000,
+    "test_start_index": 992,
+    "fair_expected_per_period": 0.01,
+    "canonical": {
+      "variant": "canonical",
+      "role": "candidate",
+      "multiplier": 37,
+      "offset": 541,
+      "periods": 8,
+      "top_k_hits": 0,
+      "observed_hit_rate": 0.0,
+      "fair_expected_hits": 0.08,
+      "average_log_loss": 11.512925464970227,
+      "logloss_improvement_vs_fair": 1.7763568394002505e-15,
+      "total_active_patterns": 0,
+      "current_active_patterns": 0,
+      "current_flagged_coverage": 0.0
+    },
+    "variants": [
+      {
+        "variant": "canonical",
+        "role": "candidate",
+        "multiplier": 37,
+        "offset": 541,
+        "periods": 8,
+        "top_k_hits": 0,
+        "observed_hit_rate": 0.0,
+        "fair_expected_hits": 0.08,
+        "average_log_loss": 11.512925464970227,
+        "logloss_improvement_vs_fair": 1.7763568394002505e-15,
+        "total_active_patterns": 0,
+        "current_active_patterns": 0,
+        "current_flagged_coverage": 0.0
+      },
+      {
+        "variant": "placebo_01",
+        "role": "placebo",
+        "multiplier": 27200,
+        "offset": 87814,
+        "periods": 8,
+        "top_k_hits": 0,
+        "observed_hit_rate": 0.0,
+        "fair_expected_hits": 0.08,
+        "average_log_loss": 11.512925464970227,
+        "logloss_improvement_vs_fair": 1.7763568394002505e-15,
+        "total_active_patterns": 0,
+        "current_active_patterns": 0,
+        "current_flagged_coverage": 0.0
+      },
+      {
+        "variant": "placebo_02",
+        "role": "placebo",
+        "multiplier": 57719,
+        "offset": 83422,
+        "periods": 8,
+        "top_k_hits": 0,
+        "observed_hit_rate": 0.0,
+        "fair_expected_hits": 0.08,
+        "average_log_loss": 11.512925464970227,
+        "logloss_improvement_vs_fair": 1.7763568394002505e-15,
+        "total_active_patterns": 0,
+        "current_active_patterns": 0,
+        "current_flagged_coverage": 0.0
+      },
+      {
+        "variant": "placebo_03",
+        "role": "placebo",
+        "multiplier": 90679,
+        "offset": 8392,
+        "periods": 8,
+        "top_k_hits": 0,
+        "observed_hit_rate": 0.0,
+        "fair_expected_hits": 0.08,
+        "average_log_loss": 11.512925464970227,
+        "logloss_improvement_vs_fair": 1.7763568394002505e-15,
+        "total_active_patterns": 0,
+        "current_active_patterns": 0,
+        "current_flagged_coverage": 0.0
+      }
+    ],
+    "current_set_overlap": [
+      {
+        "variant": "placebo_01",
+        "jaccard_with_canonical": 1.0,
+        "overlap_count": 0,
+        "canonical_exclusions": 0,
+        "placebo_exclusions": 0
+      },
+      {
+        "variant": "placebo_02",
+        "jaccard_with_canonical": 1.0,
+        "overlap_count": 0,
+        "canonical_exclusions": 0,
+        "placebo_exclusions": 0
+      },
+      {
+        "variant": "placebo_03",
+        "jaccard_with_canonical": 1.0,
+        "overlap_count": 0,
+        "canonical_exclusions": 0,
+        "placebo_exclusions": 0
+      }
+    ],
+    "placebos_not_worse_logloss": 3,
+    "note": "所有对照使用同一过去信息和同一期样本。结果仅为探索性，不是独立封存验证；相似度低表示结论依赖映射选择，不能挑表现最好的映射作为有效预测。公平独立开奖下10万号码真实概率均相等。",
+    "details": [
+      {
+        "variant": "canonical",
+        "index": 992,
+        "actual": "43953",
+        "rank": 43954,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 993,
+        "actual": "45252",
+        "rank": 45253,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 994,
+        "actual": "71084",
+        "rank": 71085,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 995,
+        "actual": "19840",
+        "rank": 19841,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 996,
+        "actual": "87624",
+        "rank": 87625,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 997,
+        "actual": "26702",
+        "rank": 26703,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 998,
+        "actual": "54282",
+        "rank": 54283,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "canonical",
+        "index": 999,
+        "actual": "39106",
+        "rank": 39107,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 992,
+        "actual": "43953",
+        "rank": 43954,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 993,
+        "actual": "45252",
+        "rank": 45253,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 994,
+        "actual": "71084",
+        "rank": 71085,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 995,
+        "actual": "19840",
+        "rank": 19841,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 996,
+        "actual": "87624",
+        "rank": 87625,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 997,
+        "actual": "26702",
+        "rank": 26703,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 998,
+        "actual": "54282",
+        "rank": 54283,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_01",
+        "index": 999,
+        "actual": "39106",
+        "rank": 39107,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 992,
+        "actual": "43953",
+        "rank": 43954,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 993,
+        "actual": "45252",
+        "rank": 45253,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 994,
+        "actual": "71084",
+        "rank": 71085,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 995,
+        "actual": "19840",
+        "rank": 19841,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 996,
+        "actual": "87624",
+        "rank": 87625,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 997,
+        "actual": "26702",
+        "rank": 26703,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 998,
+        "actual": "54282",
+        "rank": 54283,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_02",
+        "index": 999,
+        "actual": "39106",
+        "rank": 39107,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 992,
+        "actual": "43953",
+        "rank": 43954,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 993,
+        "actual": "45252",
+        "rank": 45253,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 994,
+        "actual": "71084",
+        "rank": 71085,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 995,
+        "actual": "19840",
+        "rank": 19841,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 996,
+        "actual": "87624",
+        "rank": 87625,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 997,
+        "actual": "26702",
+        "rank": 26703,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 998,
+        "actual": "54282",
+        "rank": 54283,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      },
+      {
+        "variant": "placebo_03",
+        "index": 999,
+        "actual": "39106",
+        "rank": 39107,
+        "top_k_hit": false,
+        "model_weight": 1e-05,
+        "active_patterns": 0
+      }
+    ]
+  }
+}

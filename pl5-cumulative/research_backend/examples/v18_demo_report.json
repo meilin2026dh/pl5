@@ -1,0 +1,43 @@
+{
+  "target": "pl5.metric.sum.anti_repeat_3",
+  "execution_plan": [
+    "pl5.metric.sum",
+    "pl5.metric.sum.pattern_repeat_3",
+    "pl5.metric.sum.anti_repeat_3"
+  ],
+  "excluded": 5,
+  "kept": 99995,
+  "mask_sha256": "c0a07efa56419902917933c3521b5e2dc9a3d6346de24e9562bb0fa04f656281",
+  "fair_random_coverage": 0.99995,
+  "steps": [
+    {
+      "id": "pl5.metric.sum",
+      "op": "metric",
+      "series_tail": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pl5.metric.sum.pattern_repeat_3",
+      "op": "pattern",
+      "active": true,
+      "reason": "repeat",
+      "predicted": 1,
+      "observed": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pl5.metric.sum.anti_repeat_3",
+      "op": "anti_filter",
+      "excluded": 5
+    }
+  ],
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "qualification": "历史模式反延续是待检验假设，不能将随机模式罕见性直接解释为下一期概率更小",
+  "receipt_id": "c3d244c71d9284b054283c5d2e7a13cf1d8063d6afb5144cf63bc811137a49df"
+}

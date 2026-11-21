@@ -1,0 +1,43 @@
+{
+  "schema": "pl5-v378-preregistered-1",
+  "seeds": [
+    9201,
+    9202,
+    9203,
+    9204,
+    9205,
+    9206,
+    9207,
+    9208,
+    9209,
+    9210,
+    9211,
+    9212,
+    9213,
+    9214,
+    9215,
+    9216,
+    9217,
+    9218,
+    9219,
+    9220
+  ],
+  "cases": [
+    "latent_quadratic",
+    "latent_cubic",
+    "latent_mixed",
+    "coupled_product",
+    "coupled_threshold",
+    "iid_random",
+    "piecewise_absolute",
+    "rank_one_quadratic"
+  ],
+  "train_pairs": 70,
+  "test_pairs": 30,
+  "truth_seed": "s*17+7",
+  "split_seed": "s*17+8",
+  "selection": "train-only, no holdout model switch",
+  "family_policy": "additive-first, then rank-one bilinear, then threshold piecewise; abstain on ambiguity",
+  "scope": "fixed synthetic classes; no model advantage claim for real lottery",
+  "production_enabled": false
+}

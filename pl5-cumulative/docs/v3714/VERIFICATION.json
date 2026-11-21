@@ -1,0 +1,41 @@
+{
+  "version": "V3.7.14 research preview",
+  "source_base": "PL5_V3712_Full.zip",
+  "source_overlay": "PL5_V3713_GITHUB_SOURCE_MANIFEST.md 15 source files",
+  "performance": {
+    "queries": 400,
+    "mismatches": 0,
+    "warm_median_speedup": 8.7011,
+    "legacy_numpy_median_seconds": 0.0018550045,
+    "bitmap_warm_median_seconds": 0.0002131925,
+    "cold_compile_seconds": 0.003948056,
+    "cache_logical_bytes": 250000
+  },
+  "tests": {
+    "first_backend_run": "836 passed, 1 historical V3.1 CLI timeout",
+    "isolated_v31_rerun": "1 passed in 4.65 seconds",
+    "second_backend_run": "837 passed in 188.76 seconds",
+    "integration_run": "29 passed in 6.14 seconds",
+    "confirmed_backend_tests": 837,
+    "confirmed_integration_tests": 29,
+    "all_verified": 866
+  },
+  "safety": {
+    "no_predictive_advantage_claimed": true,
+    "no_bloom_false_positives_or_negatives": true,
+    "exact_boolean_intersection": true,
+    "explicit_invalidation_for_external_changes": true
+  },
+  "not_verified": [
+    "Windows Python 3.12 real hardware",
+    "front-end React full build",
+    "real lottery predictive performance",
+    "GitHub entire repository parity"
+  ],
+  "evidence": [
+    "docs/v3714/benchmark.json",
+    "docs/v3714/TEST_RUN_1.log",
+    "docs/v3714/TEST_RUN_2.log",
+    "docs/v3714/INTEGRATION.log"
+  ]
+}

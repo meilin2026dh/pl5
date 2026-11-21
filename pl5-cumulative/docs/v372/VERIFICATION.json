@@ -1,0 +1,46 @@
+{
+  "release": "3.7.2",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytest": "9.0.2"
+  },
+  "suites": {
+    "research_backend": {
+      "command": "cd research_backend && python -m pytest -q",
+      "tests": 602,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 85.786,
+      "junit": "evidence/final_full_suite.xml"
+    },
+    "integration": {
+      "command": "python -m pytest -q integration_tests",
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.032,
+      "junit": "evidence/integration_suite.xml"
+    }
+  },
+  "total_tests": 631,
+  "not_executed": [
+    "full React production build",
+    "Windows host deployment",
+    "GitHub synchronization",
+    "real lottery advantage experiment"
+  ],
+  "synthetic_trials": 18,
+  "deterministic_replay": {
+    "trials_compared": 18,
+    "identical_excluding_elapsed_seconds": true,
+    "counts_as_new_evidence": false,
+    "first_protocol_sha256": "02edd6d0eb827f1370b8f598f4a7c06bc2e65a3546a02ae671507a5f4ac70a0a",
+    "second_protocol_sha256": "f59a048bd11ad2908a5363502d197851e8c14e5edbbfdea602dacc493a646886",
+    "same_code_fingerprints": true
+  }
+}

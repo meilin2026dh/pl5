@@ -1,0 +1,3 @@
+SYNTHETIC EDUCATIONAL METHOD NOTE — NOT A REAL PAPER.
+
+A probability model uses historical position-frequency counts with symmetric add-one smoothing. The method compares a candidate's five positional digits with an empirical discrete distribution inferred only from earlier observations. The training sequence must precede evaluation in time. A separate implementation can use a different internal representation for the same probability calculation. An out-of-sample comparison must include a uniform random baseline, and exploratory outcomes do not prove future advantage.

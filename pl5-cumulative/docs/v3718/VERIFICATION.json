@@ -1,0 +1,77 @@
+{
+  "python_backend": {
+    "full_cumulative": 877,
+    "reconstructed_git_core": 877,
+    "exit": 0
+  },
+  "historical_integration": {
+    "full_cumulative": 29,
+    "reconstructed_git_core": 29,
+    "exit": 0
+  },
+  "git_source_files": 597,
+  "git_exact_original_path": 596,
+  "git_readme_relocated_sha_match": true,
+  "historical_base_files": 2580,
+  "changed_historical": {
+    "research_backend/pailie5/probability_ranker.py": {
+      "old_sha256": "924b64890669a07d3cfc790b2a4e2aad5fedf887cb1ee4f5da0c18356c3529a5",
+      "new_sha256": "e8e7859266627533d098f64a0fa62c67121fbef26054530921c1b479f7f44413"
+    }
+  },
+  "added_before_reporting": [
+    "docs/superpowers/plans/2026-11-04-pl5-v3718.md",
+    "docs/v3718/DESIGN.md",
+    "research_backend/tests/test_shared_rank_core_v3718.py"
+  ],
+  "synthetic_benchmarks": {
+    "3718": {
+      "workflows": {
+        "rolling_rank": {
+          "v3717_target_only_median_ms": 46.45115,
+          "v3718_target_only_median_ms": 42.7053,
+          "old_divided_by_new": 1.0877,
+          "same_result": true
+        },
+        "rolling_sculpt": {
+          "v3717_target_only_median_ms": 119.84452,
+          "v3718_target_only_median_ms": 108.76011,
+          "old_divided_by_new": 1.1019,
+          "same_result": true
+        },
+        "contextual_pattern": {
+          "v3717_target_only_median_ms": 481.31863,
+          "v3718_target_only_median_ms": 513.64493,
+          "old_divided_by_new": 0.9371,
+          "same_result": true
+        }
+      },
+      "repeats": 4
+    },
+    "3719": {
+      "workflows": {
+        "rolling_rank": {
+          "v3717_target_only_median_ms": 42.51659,
+          "v3718_target_only_median_ms": 43.87541,
+          "old_divided_by_new": 0.969,
+          "same_result": true
+        },
+        "rolling_sculpt": {
+          "v3717_target_only_median_ms": 111.55347,
+          "v3718_target_only_median_ms": 116.53463,
+          "old_divided_by_new": 0.9573,
+          "same_result": true
+        },
+        "contextual_pattern": {
+          "v3717_target_only_median_ms": 479.47821,
+          "v3718_target_only_median_ms": 492.3916,
+          "old_divided_by_new": 0.9738,
+          "same_result": true
+        }
+      },
+      "repeats": 4
+    }
+  },
+  "windows_tested": false,
+  "github_fresh_git_clone_tested": false
+}
