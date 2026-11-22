@@ -89,7 +89,6 @@ jobs:
 
       - name: Fresh-machine V3.7.28 signed internal role rehearsal
         id: replay_signed
-        if: runner.os == 'Linux'
         continue-on-error: true
         working-directory: pl5-cumulative/research_backend
         run: python ../../ci/fresh_env_replay.py --mode signed --output ../../ci-results/replay-signed.json
@@ -127,4 +126,4 @@ jobs:
           test "$BACKEND_STATUS" = success
           test "$INTEGRATION_STATUS" = success
           test "$CORE_STATUS" = success
-          if test "$RUNNER_OS" = Linux; then test "$SIGNED_STATUS" = success; fi
+          test "$SIGNED_STATUS" = success
