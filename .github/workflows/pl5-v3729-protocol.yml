@@ -7,6 +7,7 @@ on:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/research_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/research_equibudget_v3729.py"
+      - "pl5-cumulative/research_backend/benchmark_equibudget_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_equibudget_v3729.py"
@@ -73,3 +74,26 @@ jobs:
       - name: Internal developer-authored challenge (not external blind)
         working-directory: pl5-cumulative/research_backend
         run: python -m pytest -q tests/test_equibudget_v3729.py
+
+  eight-family-internal-benchmark:
+    name: Eight synthetic task families / Linux equal-total-budget
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frozen solver and audit dependencies
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pip install -e ".[audit]"
+      - name: Run 8 developer-authored task families (not an external blind study)
+        working-directory: pl5-cumulative/research_backend
+        run: python benchmark_equibudget_v3729.py --out ../../ci-results/v3729-internal-eight-equal-budget.json
+      - name: Upload public synthetic-only study summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: pl5-v3729-internal-eight-equal-budget-${{ github.run_id }}
+          path: ci-results/v3729-internal-eight-equal-budget.json
+          if-no-files-found: error
+          retention-days: 30
