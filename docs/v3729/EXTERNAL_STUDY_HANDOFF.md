@@ -34,13 +34,24 @@
 
 1. 预注册：preregister --source-commit [40位冻结Git提交] --environment-sha256 [64位完整环境锁摘要] --out preregistration.json
 2. 公共面板完整性：check-public --plan preregistration.json --manifest public-manifest.json --folder public --out panel-intake.json
-3. 独立评分人在持出答案结算后出具两份 JSON（见下），然后运行 summarize --plan preregistration.json --manifest public-manifest.json --private-metadata private-metadata.json --ledger score-ledger.json --out unverified-summary.json。汇总器要求 ledger 同时保存 preregistration_sha256 和 public_manifest_sha256，且私有分类 ID 必须与公开任务逐项一致。
+3. 独立评分人在持出答案结算后出具 score-ledger.json 和 private-metadata.json（见下）。先使用 research_blind_ledger_v3729.py sign --plan preregistration.json --manifest public-manifest.json --ledger score-ledger.json --grader-private [评分方私钥] --grader-public [已登记的评分方公钥] --out signed-grade-ledger.json。这一步由评分方在独立受控环境操作，私钥绝不上传 GitHub。
+4. 审计端使用 research_blind_ledger_v3729.py verify --plan preregistration.json --manifest public-manifest.json --ledger score-ledger.json --grader-public [核验过指纹的评分方公钥] --attestation signed-grade-ledger.json --out ledger-signature-check.json；签名证明该公钥签过这些字节，不证明其身份独立。
+5. 最后运行 research_blind_protocol_v3729.py summarize --plan preregistration.json --manifest public-manifest.json --private-metadata private-metadata.json --ledger score-ledger.json --signed-ledger signed-grade-ledger.json --grader-public [核验过的评分方公钥] --out unverified-summary.json。命令行**强制验签后才能形成汇总**；账本还必须包含 preregistration_sha256 和 public_manifest_sha256，私有分类 ID 与公开任务逐项一致。
 
 其中 score-ledger.json 必须包含 schema=pl5-v3729-score-ledger-1、solver_source_commit 及 results 数组。每条记录包含 task_id、arm、status、holdout_errors、holdout_cells、budget_ms、receipt_verified。receipt_verified=True 只是**独立审计完成后写入的结果字段**；本脚本不会自己验证那个字段代表的三方签名链或硬件时钟真实性。
 
 private-metadata.json 的 schema=pl5-v3729-private-strata-1，categories 为 task_id -> structured / negative_control / out_of_grammar 的映射。此文件只能在求解冻结后由评分方提供，不应让求解端接触。
 
-本模块输出始终标注 external_blind_verified=false、trusted_timestamp_verified=false、lottery_predictive_advantage=NOT_ESTABLISHED；无论统计显著与否均不自动升级认证等级。
+模块输出始终标注 external_blind_verified=false、trusted_timestamp_verified=false、lottery_predictive_advantage=NOT_ESTABLISHED；汇总报告新增 grade_ledger_signature_verified=true 只证明账本签名本身有效，不证明真实第三方或单题底层工人回执逐一外审。无论统计显著与否均不自动升级认证等级。
+
+### 等总预算三角色执行适配器
+
+新增 research_equibudget_v3729.py，不改 V3.7.25/26 求解算法：
+- **出题方**：issue --public [公开题] --backend [冻结源码目录] --issuer-private [私钥] --issuer-public [公钥] --out [出题收据目录]。分别签发 10000ms 的单模型挑战与每臂 5000ms 的组合挑战；
+- **求解方**：freeze --public [公开题] --backend [冻结源码目录] --attestations [出题收据目录] --issuer-public [出题公钥] --solver-private [求解私钥] --solver-public [求解公钥] --out [隔离求解目录]。分别完成 10 秒单臂对照和两臂各 5 秒的组合求解，两个结果都冻结完毕，才允许交付评分；
+- **评分方**：grade --public [公开题] --private [私有题] --backend [冻结源码目录] --attestations [出题收据目录] --issuer-public [出题公钥] --solver-public [求解公钥] --grader-private [评分私钥] --grader-public [评分公钥] --out [已有隔离求解目录]。先核验两个冻结结果，再打开私有标签；输出三个同为 10000ms 总预算的成绩和单独的时间测量记录。
+
+**适配器结果仍为内部/身份未核验**。即便单题三签名过程通过，也不能把本地时钟冒充可信硬件测量，不能用一台研发设备扮演三角色冒充独立盲测。
 
 ## 五、当前阶段通过与未通过的边界
 
@@ -48,6 +59,6 @@ private-metadata.json 的 schema=pl5-v3729-private-strata-1，categories 为 tas
 - 100份公开挑战的逐字节 SHA256 和字段校验，防止私有标签出现在公开 JSON；禁止重复任务、重复坐标、输入范围越界、目录符号链接逃逸。
 - 全部题目计入分母，缺失按失败处理；负对照不少于25道；同预算结果核验。
 - 预注册文件不能覆盖，冻结 commit 与环境摘要必须完整；统计提供 exact McNemar 和描述性区间。
-- 仅针对内部合成题面运行 Windows/Linux Python 3.12 CI。
+- 针对内部合成公开面板和 Ed25519 签名账本运行 Windows/Linux Python 3.12 CI；新增独立单题等预算三角色试验适配器与内部回归测试。
 
-仍未实现或未取得：第三方出题者的真实独立身份和私有密钥，可信外部时序，独立硬件与容器镜像签名，100道任务真实求解，成绩提交的签名记录自动核验，跨题族稳健显著性，以及彩票未来开奖前的长期前向检验。这些缺失不能用模拟结果弥补。
+仍未实现或未取得：第三方出题者的真实独立身份核验与私有答案独立托管，可信外部时序与硬件运行证明，100 道未知任务的真实求解和底层每题证据逐一第三方审计，跨题族稳健显著性，以及彩票未来开奖前的长期前向检验。这些缺失不能用模拟结果弥补。
