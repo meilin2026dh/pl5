@@ -7,10 +7,12 @@ on:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/research_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/research_equibudget_v3729.py"
+      - "pl5-cumulative/research_backend/research_panel_evidence_v3729.py"
       - "pl5-cumulative/research_backend/benchmark_equibudget_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_equibudget_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_panel_evidence_v3729.py"
       - "docs/v3729/**"
       - ".github/workflows/pl5-v3729-protocol.yml"
   pull_request:
@@ -19,6 +21,7 @@ on:
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_equibudget_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_panel_evidence_v3729.py"
       - ".github/workflows/pl5-v3729-protocol.yml"
   workflow_dispatch:
 
@@ -73,7 +76,7 @@ jobs:
         run: python -m pip install -e ".[audit]" "pytest>=8,<10"
       - name: Internal developer-authored challenge (not external blind)
         working-directory: pl5-cumulative/research_backend
-        run: python -m pytest -q tests/test_equibudget_v3729.py
+        run: python -m pytest -q tests/test_equibudget_v3729.py tests/test_panel_evidence_v3729.py
 
   eight-family-internal-benchmark:
     name: Eight synthetic task families / Linux equal-total-budget
