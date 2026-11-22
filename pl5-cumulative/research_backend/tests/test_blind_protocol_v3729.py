@@ -17,7 +17,8 @@ PUBLIC_MANIFEST = {"schema": SCHEMA + ":public-manifest",
 
 def plan(tmp_path):
     path = tmp_path / "prereg.json"
-    preregister(COMMIT, "a" * 64, path)
+    if not path.exists():
+        preregister(COMMIT, "a" * 64, path)
     return read(path)
 
 
