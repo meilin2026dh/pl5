@@ -62,3 +62,53 @@ private-metadata.json 的 schema=pl5-v3729-private-strata-1，categories 为 tas
 - 针对内部合成公开面板和 Ed25519 签名账本运行 Windows/Linux Python 3.12 CI；新增独立单题等预算三角色试验适配器与内部回归测试。
 
 仍未实现或未取得：第三方出题者的真实独立身份核验与私有答案独立托管，可信外部时序与硬件运行证明，100 道未知任务的真实求解和底层每题证据逐一第三方审计，跨题族稳健显著性，以及彩票未来开奖前的长期前向检验。这些缺失不能用模拟结果弥补。
+
+
+## 六、整批任务证据审计（V3.7.29 新增）
+
+`research_panel_evidence_v3729.py` 是评分端使用的**逐题签名收据核验与结果账本组装器**，不是一个能自动伪造外部出题人的生成器。正式试验仍需要独立第三方按本说明提供题目、隔离答案、验收公钥身份和时序。
+
+目录结构（`task_id` 必须与原始公开 manifest 完全一致）：
+
+```text
+PUBLIC/
+  <task_id>.json                        # 每题 V3.7.25 公开挑战，无私有答案
+EVIDENCE/
+  <task_id>/
+    issuer_receipts/
+      issuer_10s.json                    # 10秒单模型协议签名
+      issuer_5s.json                     # 组合两臂各5秒协议签名
+    solver/
+      standalone_10s/
+        protocol.json
+        solver_manifest.json
+        solver_signed_receipt.json
+        grader_signed_receipt.json
+        score.json
+        v3725_ring/fit.json,freeze.json,worker_receipt.json
+        v3726_gate/fit.json,freeze.json,worker_receipt.json
+      portfolio_5s_each/
+        ...（同样的证据文件）
+```
+
+每道题由 `research_equibudget_v3729.py` 的 issue / freeze / grade 三阶段，在不同权限域依次执行。每题两套完整签名结算记录必须都存在，且通过 V3.7.28 的 issuer→solver→grader 收据核验才能进入成绩表；**任何不完整、变更或来源不明的证据都应整批报错**。
+
+独立审计侧运行（路径以实际工作空间为准）：
+
+```bash
+python research_panel_evidence_v3729.py \
+  --plan preregistration.json \
+  --manifest public-manifest.json \
+  --public-dir PUBLIC \
+  --evidence-dir EVIDENCE \
+  --backend ./ \
+  --issuer-public issuer.pub \
+  --solver-public solver.pub \
+  --grader-public grader.pub \
+  --out-ledger score-ledger.json \
+  --out-audit signed-receipt-coverage.json
+```
+
+如果 100 道题中有整题**完全未提交**，在签名覆盖报告中列为 `missing_task_ids`，对应的三方法统计时均计 0；不得将它们删出分母。若某题目录已存在却缺少/篡改收据，则拒绝生成有效账本，不得将损坏证据伪装成“自然未提交”。未登记题目目录也拒绝。须在独立第三方核对密钥持有人、设备时钟和私有答案真实来源后，再对组装后的账本进行 grader 签名和最终 summarize。
+
+注意：上述工具能验证**所有已提交任务的逐题密码学签名完整性**，但仍无法凭代码确认签署者是否真是独立机构、持出答案从何而来，以及子进程时钟是否受硬件信任。报告中的独立身份和外部盲测标志始终为 false。内部 CI 的 100 个样例公开题仅验证“1 题完整、99 题缺失”这种失败口径，不是完成 100 道未知数学题。
