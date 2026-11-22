@@ -168,6 +168,7 @@ def check_public_panel(plan, manifest, folder):
     if not isinstance(rows, list) or len(rows) != N:
         raise ValueError("panel must contain exactly 100 task commitments")
     expected = {}
+    commitments = set()
     root = Path(folder).resolve()
     for row in rows:
         if not isinstance(row, dict) or set(row) != {"task_id", "public_sha256"}:
@@ -193,6 +194,11 @@ def check_public_panel(plan, manifest, folder):
             raise ValueError("public challenge integrity check failed")
         if not isinstance(task["holdout_commitment"], str) or not HEX64.fullmatch(task["holdout_commitment"]):
             raise ValueError("missing holdout commitment")
+        # Fresh independent per-task salts should make duplicate SHA256
+        # commitments essentially impossible; reject suspect repeated tasks.
+        if task["holdout_commitment"] in commitments:
+            raise ValueError("duplicate holdout commitment across public tasks")
+        commitments.add(task["holdout_commitment"])
         if _observations(task["train"], 48) & _observations(task["validation"], 16):
             raise ValueError("train/validation overlap")
     return {"schema": SCHEMA + ":panel-intake", "tasks_validated": N,
