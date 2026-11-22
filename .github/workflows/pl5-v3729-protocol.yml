@@ -6,8 +6,10 @@ on:
     paths:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/research_blind_ledger_v3729.py"
+      - "pl5-cumulative/research_backend/research_equibudget_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_equibudget_v3729.py"
       - "docs/v3729/**"
       - ".github/workflows/pl5-v3729-protocol.yml"
   pull_request:
@@ -15,6 +17,7 @@ on:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_equibudget_v3729.py"
       - ".github/workflows/pl5-v3729-protocol.yml"
   workflow_dispatch:
 
@@ -35,7 +38,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install test runner only (protocol has no runtime dependencies)
+      - name: Install protocol test dependencies
         run: python -m pip install "pytest>=8,<10" "cryptography>=43,<48"
       - name: Compile protocol and tests
         run: python -m compileall -q pl5-cumulative/research_backend/research_blind_protocol_v3729.py pl5-cumulative/research_backend/research_blind_ledger_v3729.py pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py
@@ -50,3 +53,23 @@ jobs:
           test ! -e docs/v3729/solver.key
           test ! -e docs/v3729/grader.key
           echo "Protocol smoke only; third-party independence NOT verified"
+
+  equal-budget-internal-pilot:
+    name: Equal-budget signed internal pilot / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frozen-model runtime and crypto
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pip install -e ".[audit]" "pytest>=8,<10"
+      - name: Internal developer-authored challenge (not external blind)
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pytest -q tests/test_equibudget_v3729.py
