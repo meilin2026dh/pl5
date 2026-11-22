@@ -35,7 +35,7 @@ def panel(tmp_path):
             "schema": "pl5-v3725-ring-grammar-1:challenge",
             "task_id": task_id,
             "train": rows[:48], "validation": rows[48:],
-            "holdout_commitment": "b" * 64,
+            "holdout_commitment": digest(["INTERNAL_SYNTHETIC_NONCE", task_id]),
             "source_description_self_reported": "INTERNAL_SYNTHETIC_UNIT_TEST",
             "issuer_identity_externally_verified": False,
             "evaluation_grade": "UNVERIFIED_ISSUER_UNTIL_EXTERNAL_AUDIT",
@@ -231,3 +231,18 @@ def test_protocol_precommitment_rejects_changed_science(tmp_path, name, new_valu
     p[name] = new_value
     with pytest.raises(ValueError, match="protocol constraints changed"):
         plan_checked(p)
+
+
+def test_duplicate_holdout_commitment_rejected(tmp_path):
+    p = plan(tmp_path)
+    root, manifest = panel(tmp_path)
+    first = read(root / "internal_000.json")
+    path = root / "internal_001.json"
+    duplicate = read(path)
+    duplicate["holdout_commitment"] = first["holdout_commitment"]
+    duplicate["protocol_sha256"] = digest(
+        {k: v for k, v in duplicate.items() if k != "protocol_sha256"})
+    path.write_text(json.dumps(duplicate), encoding="utf-8")
+    manifest["tasks"][1]["public_sha256"] = file_sha(path)
+    with pytest.raises(ValueError, match="duplicate holdout commitment"):
+        check_public_panel(p, manifest, root)
