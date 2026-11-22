@@ -10,6 +10,9 @@ from research_blind_protocol_v3729 import (
 )
 
 COMMIT = "c0e38040ec5f389d6444e64b90e7adc42adfca62"
+PUBLIC_MANIFEST = {"schema": SCHEMA + ":public-manifest",
+                   "tasks": [{"task_id": f"internal_{i:03d}",
+                              "public_sha256": "b" * 64} for i in range(N)]}
 
 
 def plan(tmp_path):
@@ -62,7 +65,9 @@ def scores():
                 "budget_ms": BUDGETS[arm],
                 "receipt_verified": True,
             })
-    ledger = {"schema": RESULT_SCHEMA, "solver_source_commit": COMMIT, "results": rows}
+    ledger = {"schema": RESULT_SCHEMA, "solver_source_commit": COMMIT,
+              "preregistration_sha256": None,
+              "public_manifest_sha256": digest(PUBLIC_MANIFEST), "results": rows}
     return metadata, ledger
 
 
@@ -117,7 +122,7 @@ def test_private_leakage_rejected_even_with_matching_file_hash(tmp_path):
 
 def test_summary_paired_mcnemar_and_full_denominator(tmp_path):
     meta, ledger = scores()
-    result = summarize(plan(tmp_path), meta, ledger)
+    result = summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
     assert result["tasks"] == 100
     assert result["negative_controls"] == 25
     assert result["methods"]["frozen_portfolio"]["exact_success"] == 20
@@ -132,7 +137,7 @@ def test_missing_rows_retained_as_failures(tmp_path):
     meta, ledger = scores()
     ledger["results"] = [x for x in ledger["results"]
                          if not (x["arm"] == "frozen_portfolio" and x["task_id"] == "internal_025")]
-    result = summarize(plan(tmp_path), meta, ledger)
+    result = summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
     assert result["methods"]["frozen_portfolio"]["missing_submissions"] == 1
     assert result["methods"]["frozen_portfolio"]["exact_success"] == 19
 
@@ -141,42 +146,42 @@ def test_unequal_budget_rejected(tmp_path):
     meta, ledger = scores()
     ledger["results"][0]["budget_ms"] = 5000
     with pytest.raises(ValueError, match="unequal"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_unverified_receipt_rejected(tmp_path):
     meta, ledger = scores()
     ledger["results"][0]["receipt_verified"] = False
     with pytest.raises(ValueError, match="unverified"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_changed_commit_rejected(tmp_path):
     meta, ledger = scores()
     ledger["solver_source_commit"] = "d" * 40
     with pytest.raises(ValueError, match="solver"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_insufficient_negative_controls_rejected(tmp_path):
     meta, ledger = scores()
     meta["categories"]["internal_024"] = "structured"
     with pytest.raises(ValueError, match="negative"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_duplicate_score_rejected(tmp_path):
     meta, ledger = scores()
     ledger["results"].append(dict(ledger["results"][0]))
     with pytest.raises(ValueError, match="duplicate"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_failures_do_not_carry_hidden_labels(tmp_path):
     meta, ledger = scores()
     ledger["results"][0]["holdout_errors"] = 20
     with pytest.raises(ValueError, match="cannot include scored"):
-        summarize(plan(tmp_path), meta, ledger)
+        summarize(plan(tmp_path), meta, {**ledger, "preregistration_sha256": digest(plan(tmp_path))}, PUBLIC_MANIFEST)
 
 
 def test_invalid_public_duplicate_coordinate_rejected(tmp_path):
@@ -190,3 +195,20 @@ def test_invalid_public_duplicate_coordinate_rejected(tmp_path):
     manifest["tasks"][0]["public_sha256"] = file_sha(path)
     with pytest.raises(ValueError, match="overlap"):
         check_public_panel(p, manifest, root)
+
+
+def test_manifest_binding_rejects_different_task_set(tmp_path):
+    meta, ledger = scores()
+    wrong = {**PUBLIC_MANIFEST, "tasks": list(PUBLIC_MANIFEST["tasks"])}
+    wrong["tasks"][0] = {"task_id": "another_task", "public_sha256": "b"*64}
+    ledger["preregistration_sha256"] = digest(plan(tmp_path))
+    ledger["public_manifest_sha256"] = digest(wrong)
+    with pytest.raises(ValueError, match="exactly match"):
+        summarize(plan(tmp_path), meta, ledger, wrong)
+
+
+def test_prereg_hash_mismatch_fails_closed(tmp_path):
+    meta, ledger = scores()
+    ledger["preregistration_sha256"] = "c"*64
+    with pytest.raises(ValueError, match="preregistration"):
+        summarize(plan(tmp_path), meta, ledger, PUBLIC_MANIFEST)
