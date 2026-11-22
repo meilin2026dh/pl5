@@ -1,0 +1,49 @@
+name: PL5 V3.7.29 preregistered blind-study protocol tests
+on:
+  push:
+    branches:
+      - research/v3729-independent-blind-prep
+    paths:
+      - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
+      - "docs/v3729/**"
+      - ".github/workflows/pl5-v3729-protocol.yml"
+  pull_request:
+    paths:
+      - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
+      - ".github/workflows/pl5-v3729-protocol.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  panel-protocol-unit:
+    name: Protocol smoke / ${{ matrix.os }} / Python 3.12
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test runner only (protocol has no runtime dependencies)
+        run: python -m pip install "pytest>=8,<10"
+      - name: Compile protocol and tests
+        run: python -m compileall -q pl5-cumulative/research_backend/research_blind_protocol_v3729.py pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py
+      - name: 100-task synthetic panel intake and adversarial protocol tests
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pytest -q tests/test_blind_protocol_v3729.py
+      - name: Verify no private challenge or private signing key accidentally entered this study
+        shell: bash
+        run: |
+          test ! -e docs/v3729/private_challenge.json
+          test ! -e docs/v3729/issuer.key
+          test ! -e docs/v3729/solver.key
+          test ! -e docs/v3729/grader.key
+          echo "Protocol smoke only; third-party independence NOT verified"
