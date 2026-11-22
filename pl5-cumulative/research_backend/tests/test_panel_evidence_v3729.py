@@ -46,6 +46,9 @@ def setup_panel(tmp_path):
     for task_id in task_ids:
         entry = dict(template)
         entry["task_id"] = task_id
+        if task_id != real_id:
+            entry["holdout_commitment"] = digest(
+                ["INTERNAL_FAKE_PUBLIC_ONLY_HOLDOUT", task_id])
         entry["protocol_sha256"] = digest({
             k: v for k, v in entry.items() if k != "protocol_sha256"})
         filename = public_root / (task_id + ".json")
