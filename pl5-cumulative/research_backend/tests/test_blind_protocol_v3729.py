@@ -27,14 +27,14 @@ def panel(tmp_path):
         task_id = f"internal_{i:03d}"
         rows = [[k // 10, k % 10, (k + i) % 10] for k in range(64)]
         doc = {
-            "schema": "pl5-v3725-open-grammar-1:challenge",
+            "schema": "pl5-v3725-ring-grammar-1:challenge",
             "task_id": task_id,
             "train": rows[:48], "validation": rows[48:],
             "holdout_commitment": "b" * 64,
             "source_description_self_reported": "INTERNAL_SYNTHETIC_UNIT_TEST",
             "issuer_identity_externally_verified": False,
             "evaluation_grade": "UNVERIFIED_ISSUER_UNTIL_EXTERNAL_AUDIT",
-            "version": "pl5-v3725-open-grammar-1",
+            "version": "pl5-v3725-ring-grammar-1",
         }
         doc["protocol_sha256"] = digest(doc)
         path = root / (task_id + ".json")
