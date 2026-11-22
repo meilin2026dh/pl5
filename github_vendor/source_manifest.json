@@ -1,0 +1,13 @@
+{
+  "version": "1.3",
+  "source_repo": "meilin2026dh/pl5",
+  "reviewed_commit": "9eb9ec5ad542877680755bccf27345298ef7b99f",
+  "source_files_exact_git_blob_sha": {
+    "server/provider.ts": "43f2c05896d728f97fdcc64a7b64988e3785b88c",
+    "src/domain/backtest.ts": "a71ecd6166d867e46e3f36d29cce758ba4e6a79b",
+    "src/domain/math.ts": "5d3725d839d29375d3ab785849998bba87891717",
+    "src/lib/candidates.ts": "58e63cbda68c9317519cbb8f339f2d78653a2c78"
+  },
+  "includes_full_original_github_repo": false,
+  "runtime_frontend_clone_required_if_no_existing_frontend": true
+}

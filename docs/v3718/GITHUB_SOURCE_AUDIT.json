@@ -1,0 +1,21 @@
+{
+  "version": "3.7.18",
+  "branch": "research/v3718-shared-score-source-baseline",
+  "core_source_expected": 597,
+  "exact_path_blob_sha_match": 596,
+  "reconciled_alias": {
+    "expected_path": "README.md",
+    "actual_path": "docs/v3718/README_CUMULATIVE_SOURCE.md",
+    "expected_git_blob_sha": "37ff7e38c30ca9225cfd445bdc643fd8477f0ae4",
+    "actual_git_blob_sha": "37ff7e38c30ca9225cfd445bdc643fd8477f0ae4"
+  },
+  "core_code_and_dependencies_integrated": true,
+  "verified_with_github_tree_sha": true,
+  "independently_reconstructed_from_manifest": true,
+  "python_backend_passed": 877,
+  "legacy_integration_passed": 29,
+  "full_historical_archive_mirrored_to_github": false,
+  "git_clone_performed": false,
+  "windows_tested": false,
+  "main_branch_untouched": true
+}

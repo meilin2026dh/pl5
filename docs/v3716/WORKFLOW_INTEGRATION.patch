@@ -1,0 +1,95 @@
+--- a/research_backend/pailie5/basic_filters.py
++++ b/research_backend/pailie5/basic_filters.py
+@@ -27,6 +27,8 @@
+     return UNIVERSE[mask].copy()
+ 
+ 
+-def combine_basic_and_pattern(basic: list[BasicConstraint], pattern_kept: np.ndarray) -> np.ndarray:
++def combine_basic_and_pattern(basic: list[BasicConstraint], pattern_kept: np.ndarray, *,
++                              basic_catalog=None) -> np.ndarray:
+     """取交集；不把交集数量的降低错误地报告为预测能力提升。"""
+-    return np.intersect1d(apply_basic_filters(basic), pattern_kept, assume_unique=True)
++    kept = apply_basic_filters(basic) if basic_catalog is None else basic_catalog.select(basic)
++    return np.intersect1d(kept, pattern_kept, assume_unique=True)
+--- a/research_backend/pailie5/probability_ranker.py
++++ b/research_backend/pailie5/probability_ranker.py
+@@ -68,6 +68,7 @@
+     strength: float = 1.0,
+     selected_rule_keys: Iterable[str] | None = None,
+     basic_constraints: list[BasicConstraint] | None = None,
++    basic_catalog=None,
+ ) -> RankOutput:
+     """每期只依赖已有历史，对完整100000候选给出可解释的相对评分。
+ 
+@@ -123,7 +124,8 @@
+     order = np.lexsort((UNIVERSE, penalty))  # 惩罚少的在前，同分按号码从小到大展示
+ 
+     if basic_constraints:
+-        valid_ids = apply_basic_filters(basic_constraints)
++        valid_ids = (apply_basic_filters(basic_constraints) if basic_catalog is None
++                     else basic_catalog.select(basic_constraints))
+         basic_ok = np.zeros(100_000, dtype=bool)
+         basic_ok[valid_ids] = True
+     else:
+@@ -155,6 +157,8 @@
+     history: list[str], config: Configuration | None = None, *,
+     warmup: int = 30, max_periods: int = 25, top_k: int = 1000,
+     strength: float = 1.0,
++    basic_constraints: list[BasicConstraint] | None = None,
++    basic_catalog=None,
+ ) -> dict:
+     """逐期前向样本外评估；此处仅为探索性回测，不是封存外推验证。"""
+     cfg = config or Configuration()
+@@ -169,7 +173,9 @@
+     rows = []
+     total_logloss = 0.0
+     for t in range(start, len(history)):
+-        ranking = rank_all_numbers(history[:t], cfg, strength=strength)
++        ranking = rank_all_numbers(history[:t], cfg, strength=strength,
++                                   basic_constraints=basic_constraints,
++                                   basic_catalog=basic_catalog)
+         actual = history[t]
+         # number 的5位字符串匹配，留存前导零。
+         row = ranking.table.loc[ranking.table['number'].eq(actual)].iloc[0]
+--- a/research_backend/pailie5/sculpting.py
++++ b/research_backend/pailie5/sculpting.py
+@@ -334,7 +334,8 @@
+ 
+ def knives_from_history(history: list[str], config: Configuration,
+                         basic: Sequence[BasicConstraint] = (), *,
+-                        max_knives: int = 120) -> tuple[list[Knife], set[str]]:
++                        max_knives: int = 120,
++                        basic_catalog=None) -> tuple[list[Knife], set[str]]:
+     """Generate new next-draw knives from the PAST ONLY, including mapped indicators.
+ 
+     Discovered rules may be included even when previous hard-filter guard skipped
+@@ -357,7 +358,8 @@
+                              source='pattern:'+rule.status))
+         if rule.status=='applied': defaults.add(key)
+     for i,constraint in enumerate(basic):
+-        allowed=apply_basic_filters([constraint])
++        allowed=(apply_basic_filters([constraint]) if basic_catalog is None
++                 else basic_catalog.select([constraint]))
+         ban=np.ones(N,dtype=bool);ban[allowed]=False
+         key=f'basic:{i}:{constraint.indicator}'
+         knives.append(Knife(key,f'基础规则：{constraint.indicator} {constraint}',ban,
+@@ -368,7 +370,8 @@
+ 
+ def rolling_sculpt_backtest(history: list[str], config: Configuration, *,
+                             k: int = 100, warmup: int = 80, max_periods: int = 20,
+-                            strength: float = 1.0, basic: Sequence[BasicConstraint] = ()) -> dict:
++                            strength: float = 1.0, basic: Sequence[BasicConstraint] = (),
++                            basic_catalog=None) -> dict:
+     """Exploratory walk-forward evaluation, generates rules only from history[:t].
+ 
+     Do not tune on this report and then claim it is an untouched validation set.
+@@ -380,7 +383,8 @@
+     if start >= len(history): raise ValueError('历史不足')
+     rows = []
+     for t in range(start,len(history)):
+-        knives, defaults = knives_from_history(history[:t],config,basic)
++        knives, defaults = knives_from_history(history[:t],config,basic,
++                                                basic_catalog=basic_catalog)
+         session = SculptSession(knives,enabled=defaults,seed=20261101)
+         ranked, meta = session.rank(k=k,strength=strength)
+         target = history[t]

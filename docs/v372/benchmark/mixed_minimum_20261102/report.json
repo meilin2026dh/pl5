@@ -1,0 +1,1583 @@
+{
+  "case": "mixed_minimum",
+  "seed": 20261102,
+  "data_type": "synthetic_operation_table",
+  "search": {
+    "operator": {
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "expression": [
+        "binary",
+        "min",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ]
+      ],
+      "description": "min((a+b),(a*b)) mod 10",
+      "operator_id": "c120052f5abe0f293acd759f43a728cd5cfbf10450deecb543b3595b20d761c4",
+      "source_data_sha256": "782c837b8ab5999dd67aa507cd23259f71b371f5ca679625349c976c97acb219",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "production_enabled": false,
+      "predictive_advantage": "NOT_ESTABLISHED"
+    },
+    "training_errors": 0,
+    "training_count": 70,
+    "evaluated_expressions": 6365,
+    "distinct_integer_behaviors": 3238,
+    "proposals": 14951,
+    "config": {
+      "seed": 20261102,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    },
+    "trace": [
+      {
+        "stage": "bootstrap",
+        "generation": 0,
+        "best_expression": [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        "training_errors": 28,
+        "nodes": 3,
+        "origin": "primitive_basis",
+        "parents": [],
+        "evaluated_expressions": 338,
+        "proposals": 671
+      },
+      {
+        "stage": "grammar_composition",
+        "generation": 0,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 3740,
+        "proposals": 7271
+      },
+      {
+        "stage": "evolution",
+        "generation": 1,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 3862,
+        "proposals": 7527
+      },
+      {
+        "stage": "evolution",
+        "generation": 2,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 3993,
+        "proposals": 7783
+      },
+      {
+        "stage": "evolution",
+        "generation": 3,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4102,
+        "proposals": 8039
+      },
+      {
+        "stage": "evolution",
+        "generation": 4,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4218,
+        "proposals": 8295
+      },
+      {
+        "stage": "evolution",
+        "generation": 5,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4325,
+        "proposals": 8551
+      },
+      {
+        "stage": "evolution",
+        "generation": 6,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4449,
+        "proposals": 8807
+      },
+      {
+        "stage": "evolution",
+        "generation": 7,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4562,
+        "proposals": 9063
+      },
+      {
+        "stage": "evolution",
+        "generation": 8,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4657,
+        "proposals": 9319
+      },
+      {
+        "stage": "evolution",
+        "generation": 9,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4751,
+        "proposals": 9575
+      },
+      {
+        "stage": "evolution",
+        "generation": 10,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4842,
+        "proposals": 9831
+      },
+      {
+        "stage": "evolution",
+        "generation": 11,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 4940,
+        "proposals": 10087
+      },
+      {
+        "stage": "evolution",
+        "generation": 12,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5021,
+        "proposals": 10343
+      },
+      {
+        "stage": "evolution",
+        "generation": 13,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5103,
+        "proposals": 10599
+      },
+      {
+        "stage": "evolution",
+        "generation": 14,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5192,
+        "proposals": 10855
+      },
+      {
+        "stage": "evolution",
+        "generation": 15,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5276,
+        "proposals": 11111
+      },
+      {
+        "stage": "evolution",
+        "generation": 16,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5360,
+        "proposals": 11367
+      },
+      {
+        "stage": "evolution",
+        "generation": 17,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5441,
+        "proposals": 11623
+      },
+      {
+        "stage": "evolution",
+        "generation": 18,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5539,
+        "proposals": 11879
+      },
+      {
+        "stage": "evolution",
+        "generation": 19,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5612,
+        "proposals": 12135
+      },
+      {
+        "stage": "evolution",
+        "generation": 20,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5681,
+        "proposals": 12391
+      },
+      {
+        "stage": "evolution",
+        "generation": 21,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5760,
+        "proposals": 12647
+      },
+      {
+        "stage": "evolution",
+        "generation": 22,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5840,
+        "proposals": 12903
+      },
+      {
+        "stage": "evolution",
+        "generation": 23,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5913,
+        "proposals": 13159
+      },
+      {
+        "stage": "evolution",
+        "generation": 24,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 5980,
+        "proposals": 13415
+      },
+      {
+        "stage": "evolution",
+        "generation": 25,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6044,
+        "proposals": 13671
+      },
+      {
+        "stage": "evolution",
+        "generation": 26,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6105,
+        "proposals": 13927
+      },
+      {
+        "stage": "evolution",
+        "generation": 27,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6174,
+        "proposals": 14183
+      },
+      {
+        "stage": "evolution",
+        "generation": 28,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6245,
+        "proposals": 14439
+      },
+      {
+        "stage": "evolution",
+        "generation": 29,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6305,
+        "proposals": 14695
+      },
+      {
+        "stage": "evolution",
+        "generation": 30,
+        "best_expression": [
+          "binary",
+          "min",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "parents": [
+          "8476f6a1e144c92e320ef40d418b43e5ac6ba0bcca4e4cf151688c29d638ecb1",
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99"
+        ],
+        "evaluated_expressions": 6365,
+        "proposals": 14951
+      }
+    ],
+    "stop_reason": "generation_limit",
+    "selection_used": "training_cells_only",
+    "complexity": "node-count penalty; not proof of a minimum description"
+  },
+  "holdout": {
+    "operator_id": "c120052f5abe0f293acd759f43a728cd5cfbf10450deecb543b3595b20d761c4",
+    "data_sha256": "2e4cd09a76959c759e29e1470b6bec9a36a59c03a3a633aebe4094150fafc96f",
+    "errors": 0,
+    "count": 30,
+    "accuracy": 1.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "c120052f5abe0f293acd759f43a728cd5cfbf10450deecb543b3595b20d761c4",
+    "candidate_table_sha256": "b1733a689527fdb1a51d68b02042f7a852967247f092683934322dd9a2b1561f",
+    "target_table_sha256": "b1733a689527fdb1a51d68b02042f7a852967247f092683934322dd9a2b1561f",
+    "exact_on_all_100_pairs": true,
+    "whole_table_errors": 0,
+    "first_mismatch": null,
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": true,
+      "commutativity_counterexample": null,
+      "associative": false,
+      "associativity_counterexample": [
+        2,
+        2,
+        8
+      ],
+      "identities": [
+        1
+      ],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 7,
+    "depth": 3,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 75,
+      "formula_plus_exceptions_bits": 82,
+      "preferred": "formula",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_without_refit": {
+    "operator_id": "c120052f5abe0f293acd759f43a728cd5cfbf10450deecb543b3595b20d761c4",
+    "data_sha256": "2c56906b50e2d222fbd968bb75101f856cfd3751a8dfa2c71ef55f5aea616a33",
+    "errors": 30,
+    "count": 30,
+    "accuracy": 0.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_meaning": "same unseen inputs, every true output shifted by +1 mod10; intentionally different operation",
+  "fit_seconds": 0.6137703960000636,
+  "limitations": [
+    "70/30 input-pair holdout, not future lottery draws",
+    "grammar primitives and bounds are supplied by humans",
+    "no model changes after holdout results"
+  ],
+  "fixed_v37_baseline": {
+    "expression": "affine(1,1,0)",
+    "candidates": 1020,
+    "training_errors": 28,
+    "holdout_errors": 7,
+    "holdout_count": 30,
+    "exact_on_all_100_pairs": false,
+    "compute_matched": false
+  }
+}

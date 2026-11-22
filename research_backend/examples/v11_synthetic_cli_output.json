@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "mode": "explore",
+    "requested": 1,
+    "active": 1,
+    "unapproved_blocked": 0,
+    "kept": 67506,
+    "removed": 32494,
+    "fair_random_coverage": 0.67506,
+    "protected": [],
+    "statistical_status": "uncalibrated_research_preferences",
+    "notes": "压缩率不是预测概率优势；禁用某一刀可恢复其独有排除号码；顺序仅改变每步边际量，不改变最终交集。",
+    "k": 100,
+    "selected": 100,
+    "restored_for_quota": 0,
+    "selection_policy": "hard_kept_first",
+    "fair_top_k_coverage": 0.001,
+    "fair_10_draw_at_least_one": 0.009955119790251765,
+    "preference_weight_top_k": 0.001258496826882064,
+    "preference_weight_is_predictive_probability": false,
+    "state_sha256": "ba3a32fbc0157b7077e07981c71f3826a088a571e15c64202561327cb7aca3e0"
+  },
+  "demo_data": true,
+  "files": [
+    "examples/v11_synthetic_demo/top_k.csv",
+    "examples/v11_synthetic_demo/all_100000.csv",
+    "examples/v11_synthetic_demo/report.json"
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "version": "v32-learned-category-hypotheses-1",
+  "action": "demo",
+  "dataset_source": "合成数学运算表（不包含彩票官方历史）",
+  "entries": [
+    {
+      "version": "v32-learned-category-hypotheses-1",
+      "source_id": "two_state_piecewise",
+      "source_sha256": "e660368b983960139280242c7e733b9650a66a06c9619f7bbc08a9301d3c7641",
+      "status": "compressed_new_family",
+      "raw_bits": 200,
+      "old_best_bits": 200,
+      "hypotheses_tested": 1,
+      "trials": [
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "difference",
+          "observed_row_states": 2,
+          "bits": 75
+        },
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "sum",
+          "observed_row_states": 10,
+          "bits": 265
+        },
+        {
+          "hypothesis": "affine_and_residual_projections",
+          "projections_examined": 81,
+          "exact_or_sparse_proposals": 0,
+          "maximum_repair_exceptions": 5
+        }
+      ],
+      "rejected_summary": {
+        "not_better_or_duplicate": 0,
+        "examples": []
+      },
+      "next_research_task": null,
+      "prediction_advantage": "not_established",
+      "name": "two_state_piecewise",
+      "abilities": [
+        {
+          "card": {
+            "id": "pl5.v32.3a7028cb58399ac1984310be",
+            "uacp_version": "v1",
+            "version": "v32-learned-category-hypotheses-1",
+            "kind": "learned_category_hypothesis",
+            "family": "piecewise_orbit",
+            "description": "自动归纳的有限域数学结构；不代表独立数学公理发明",
+            "input_schema": "digit(0..9) x digit(0..9)",
+            "output_schema": "category(0..2)",
+            "payload": {
+              "orientation": "difference",
+              "row_classes": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ],
+              "orbits": [
+                [
+                  0,
+                  2,
+                  1,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  2,
+                  0,
+                  2,
+                  1,
+                  1,
+                  0,
+                  2,
+                  1
+                ]
+              ]
+            },
+            "source_id": "two_state_piecewise",
+            "source_table_sha256": "e660368b983960139280242c7e733b9650a66a06c9619f7bbc08a9301d3c7641",
+            "description_bits_proxy": 75,
+            "v31_best_bits_proxy": 200,
+            "raw_bits_proxy": 200,
+            "proof": {
+              "checked_pairs": 100,
+              "scalar_numpy_agree": true,
+              "table_sha256": "e660368b983960139280242c7e733b9650a66a06c9619f7bbc08a9301d3c7641",
+              "status": "exact_mathematical_reconstruction"
+            },
+            "status": "research_only",
+            "predictive_advantage": "unverified",
+            "limitations": "MDL仅为固定代理；表等价不产生彩票开奖的预测信息；禁止自动启用"
+          },
+          "registered": true
+        }
+      ]
+    },
+    {
+      "version": "v32-learned-category-hypotheses-1",
+      "source_id": "affine_modular",
+      "source_sha256": "77ad98fcf15ff19c7baeb3ea2ad28a6c7b76787a607ec962077baeaad5dfea32",
+      "status": "compressed_new_family",
+      "raw_bits": 200,
+      "old_best_bits": 194,
+      "hypotheses_tested": 4,
+      "trials": [
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "difference",
+          "observed_row_states": 10,
+          "bits": 265
+        },
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "sum",
+          "observed_row_states": 10,
+          "bits": 265
+        },
+        {
+          "hypothesis": "affine_and_residual_projections",
+          "projections_examined": 81,
+          "exact_or_sparse_proposals": 4,
+          "maximum_repair_exceptions": 5
+        }
+      ],
+      "rejected_summary": {
+        "not_better_or_duplicate": 3,
+        "examples": [
+          {
+            "family": "affine_orbit",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 52
+          },
+          {
+            "family": "affine_orbit",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 52
+          },
+          {
+            "family": "affine_orbit",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 52
+          }
+        ]
+      },
+      "next_research_task": null,
+      "prediction_advantage": "not_established",
+      "name": "affine_modular",
+      "abilities": [
+        {
+          "card": {
+            "id": "pl5.v32.0b69bef17c3994d0542938b1",
+            "uacp_version": "v1",
+            "version": "v32-learned-category-hypotheses-1",
+            "kind": "learned_category_hypothesis",
+            "family": "affine_orbit",
+            "description": "自动归纳的有限域数学结构；不代表独立数学公理发明",
+            "input_schema": "digit(0..9) x digit(0..9)",
+            "output_schema": "category(0..2)",
+            "payload": {
+              "u": 3,
+              "v": 6,
+              "orbit": [
+                0,
+                0,
+                0,
+                2,
+                1,
+                2,
+                1,
+                2,
+                1,
+                2
+              ]
+            },
+            "source_id": "affine_modular",
+            "source_table_sha256": "77ad98fcf15ff19c7baeb3ea2ad28a6c7b76787a607ec962077baeaad5dfea32",
+            "description_bits_proxy": 52,
+            "v31_best_bits_proxy": 194,
+            "raw_bits_proxy": 200,
+            "proof": {
+              "checked_pairs": 100,
+              "scalar_numpy_agree": true,
+              "table_sha256": "77ad98fcf15ff19c7baeb3ea2ad28a6c7b76787a607ec962077baeaad5dfea32",
+              "status": "exact_mathematical_reconstruction"
+            },
+            "status": "research_only",
+            "predictive_advantage": "unverified",
+            "limitations": "MDL仅为固定代理；表等价不产生彩票开奖的预测信息；禁止自动启用"
+          },
+          "registered": true
+        }
+      ]
+    },
+    {
+      "version": "v32-learned-category-hypotheses-1",
+      "source_id": "sparse_exception",
+      "source_sha256": "27682ae909ca5ce70e521747ca9618ff72ca2a7e10e990f3bdeed8c264c3fe70",
+      "status": "compressed_new_family",
+      "raw_bits": 200,
+      "old_best_bits": 200,
+      "hypotheses_tested": 5,
+      "trials": [
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "difference",
+          "observed_row_states": 3,
+          "bits": 105
+        },
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "sum",
+          "observed_row_states": 6,
+          "bits": 175
+        },
+        {
+          "hypothesis": "affine_and_residual_projections",
+          "projections_examined": 81,
+          "exact_or_sparse_proposals": 4,
+          "maximum_repair_exceptions": 5
+        }
+      ],
+      "rejected_summary": {
+        "not_better_or_duplicate": 3,
+        "examples": [
+          {
+            "family": "sparse_orbit_exceptions",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 70
+          },
+          {
+            "family": "sparse_orbit_exceptions",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 70
+          },
+          {
+            "family": "sparse_orbit_exceptions",
+            "reason": "同类较长/等价描述被去重",
+            "bits": 70
+          }
+        ]
+      },
+      "next_research_task": null,
+      "prediction_advantage": "not_established",
+      "name": "sparse_exception",
+      "abilities": [
+        {
+          "card": {
+            "id": "pl5.v32.c6816f53dabd8628ee9e89b9",
+            "uacp_version": "v1",
+            "version": "v32-learned-category-hypotheses-1",
+            "kind": "learned_category_hypothesis",
+            "family": "sparse_orbit_exceptions",
+            "description": "自动归纳的有限域数学结构；不代表独立数学公理发明",
+            "input_schema": "digit(0..9) x digit(0..9)",
+            "output_schema": "category(0..2)",
+            "payload": {
+              "u": 3,
+              "v": 7,
+              "orbit": [
+                0,
+                0,
+                0,
+                2,
+                1,
+                2,
+                1,
+                2,
+                1,
+                2
+              ],
+              "exceptions": [
+                [
+                  1,
+                  4,
+                  1
+                ],
+                [
+                  6,
+                  2,
+                  2
+                ]
+              ]
+            },
+            "source_id": "sparse_exception",
+            "source_table_sha256": "27682ae909ca5ce70e521747ca9618ff72ca2a7e10e990f3bdeed8c264c3fe70",
+            "description_bits_proxy": 70,
+            "v31_best_bits_proxy": 200,
+            "raw_bits_proxy": 200,
+            "proof": {
+              "checked_pairs": 100,
+              "scalar_numpy_agree": true,
+              "table_sha256": "27682ae909ca5ce70e521747ca9618ff72ca2a7e10e990f3bdeed8c264c3fe70",
+              "status": "exact_mathematical_reconstruction"
+            },
+            "status": "research_only",
+            "predictive_advantage": "unverified",
+            "limitations": "MDL仅为固定代理；表等价不产生彩票开奖的预测信息；禁止自动启用"
+          },
+          "registered": true
+        },
+        {
+          "card": {
+            "id": "pl5.v32.24eca4f83825a22ac2b2b480",
+            "uacp_version": "v1",
+            "version": "v32-learned-category-hypotheses-1",
+            "kind": "learned_category_hypothesis",
+            "family": "piecewise_orbit",
+            "description": "自动归纳的有限域数学结构；不代表独立数学公理发明",
+            "input_schema": "digit(0..9) x digit(0..9)",
+            "output_schema": "category(0..2)",
+            "payload": {
+              "orientation": "difference",
+              "row_classes": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0
+              ],
+              "orbits": [
+                [
+                  0,
+                  2,
+                  1,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  1,
+                  2,
+                  0,
+                  2,
+                  1,
+                  1,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  2,
+                  1,
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            },
+            "source_id": "sparse_exception",
+            "source_table_sha256": "27682ae909ca5ce70e521747ca9618ff72ca2a7e10e990f3bdeed8c264c3fe70",
+            "description_bits_proxy": 105,
+            "v31_best_bits_proxy": 200,
+            "raw_bits_proxy": 200,
+            "proof": {
+              "checked_pairs": 100,
+              "scalar_numpy_agree": true,
+              "table_sha256": "27682ae909ca5ce70e521747ca9618ff72ca2a7e10e990f3bdeed8c264c3fe70",
+              "status": "exact_mathematical_reconstruction"
+            },
+            "status": "research_only",
+            "predictive_advantage": "unverified",
+            "limitations": "MDL仅为固定代理；表等价不产生彩票开奖的预测信息；禁止自动启用"
+          },
+          "registered": true
+        }
+      ]
+    },
+    {
+      "version": "v32-learned-category-hypotheses-1",
+      "source_id": "unstructured_random",
+      "source_sha256": "e1b4a9e0019c723286286b1de0605d4064beefccb10ace0e64fb51405ab9fd32",
+      "status": "no_verified_new_family",
+      "raw_bits": 200,
+      "old_best_bits": 200,
+      "hypotheses_tested": 0,
+      "trials": [
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "difference",
+          "observed_row_states": 10,
+          "bits": 265
+        },
+        {
+          "hypothesis": "piecewise_orbit",
+          "direction": "sum",
+          "observed_row_states": 10,
+          "bits": 265
+        },
+        {
+          "hypothesis": "affine_and_residual_projections",
+          "projections_examined": 81,
+          "exact_or_sparse_proposals": 0,
+          "maximum_repair_exceptions": 5
+        }
+      ],
+      "rejected_summary": {
+        "not_better_or_duplicate": 0,
+        "examples": []
+      },
+      "next_research_task": "当前候选类别未改善表示：研究新的分组不变量、变换族或对照；不得放宽全表等价门槛",
+      "prediction_advantage": "not_established",
+      "name": "unstructured_random",
+      "abilities": []
+    }
+  ],
+  "registry": "/tmp/pl5v32-demo-registry.sqlite",
+  "created_abilities": 4,
+  "status": "research_only",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "esse_research_mask": {
+    "operator_id": "pl5.v32.3a7028cb58399ac1984310be",
+    "positions": [
+      0,
+      4
+    ],
+    "allowed_symbols": [
+      0
+    ],
+    "total": 100000,
+    "retained": 30000,
+    "removed": 70000,
+    "mask_sha256": "7f06044fcd591b94314f46619bb4dd4b4d7ece0609f267faccd347127f606c06",
+    "status": "research_only_not_auto_activated",
+    "probability_under_uniform": 0.3
+  },
+  "aan_composition": {
+    "output_sha256": "1a1f45658909aef5c07190f8382902323afc1363ddb09266e6f6f6aeb1749e3c",
+    "number_count": 100000,
+    "used_operator_ids": [
+      "pl5.v32.3a7028cb58399ac1984310be"
+    ],
+    "program": {
+      "apply": "pl5.v32.3a7028cb58399ac1984310be",
+      "args": [
+        {
+          "digit": 0
+        },
+        {
+          "digit": 4
+        }
+      ]
+    },
+    "status": "research_only_not_auto_activated"
+  }
+}

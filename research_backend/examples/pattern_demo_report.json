@@ -1,0 +1,866 @@
+{
+  "source": "data/synthetic_demo.csv",
+  "warnings": [],
+  "latest_period": "001000",
+  "samples": 1000,
+  "rules": [
+    {
+      "indicator": "sum",
+      "transform": "mod3",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        2,
+        0,
+        1
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 33334,
+      "raw_removed_rate": 0.33334,
+      "removed_after_previous": 33334,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "sum/mod3：升降交替"
+    },
+    {
+      "indicator": "same_positions_prev",
+      "transform": "mod2",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 33616,
+      "raw_removed_rate": 0.33616,
+      "removed_after_previous": 22411,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "same_positions_prev/mod2：升降交替"
+    },
+    {
+      "indicator": "same_positions_prev",
+      "transform": "mod3",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "banned_values": [
+        1,
+        2
+      ],
+      "raw_removed": 40141,
+      "raw_removed_rate": 0.40141,
+      "removed_after_previous": 4889,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "same_positions_prev/mod3：升降交替"
+    },
+    {
+      "indicator": "same_positions_prev",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "banned_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "raw_removed": 40951,
+      "raw_removed_rate": 0.40951,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "与前面规则完全重叠",
+      "label": "same_positions_prev/raw：升降交替"
+    },
+    {
+      "indicator": "span",
+      "transform": "mod2",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        0,
+        1
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 47530,
+      "raw_removed_rate": 0.4753,
+      "removed_after_previous": 18782,
+      "status": "applied",
+      "reason": "按用户设定的启发式规则剔除；不代表概率下降",
+      "label": "span/mod2：升降交替"
+    },
+    {
+      "indicator": "digit_5",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "digit_5/mod2：连续同值"
+    },
+    {
+      "indicator": "odd_count",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        1,
+        1
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "odd_count/mod2：连续同值"
+    },
+    {
+      "indicator": "sum",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        1,
+        1,
+        1
+      ],
+      "banned_values": [
+        1
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "sum/mod2：连续同值"
+    },
+    {
+      "indicator": "sum_delta_prev",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 50000,
+      "raw_removed_rate": 0.5,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "触及最少保留数/总剔除比例保护",
+      "label": "sum_delta_prev/mod2：连续同值"
+    },
+    {
+      "indicator": "adjacent_equal",
+      "transform": "raw",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 65610,
+      "raw_removed_rate": 0.6561,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "adjacent_equal/raw：连续同值"
+    },
+    {
+      "indicator": "adjacent_equal",
+      "transform": "mod3",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 65970,
+      "raw_removed_rate": 0.6597,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "adjacent_equal/mod3：连续同值"
+    },
+    {
+      "indicator": "sum",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        17,
+        21,
+        19
+      ],
+      "banned_values": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "raw_removed": 67506,
+      "raw_removed_rate": 0.67506,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "sum/raw：升降交替"
+    },
+    {
+      "indicator": "adjacent_equal",
+      "transform": "mod2",
+      "pattern": "constant",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "banned_values": [
+        0
+      ],
+      "raw_removed": 70480,
+      "raw_removed_rate": 0.7048,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "adjacent_equal/mod2：连续同值"
+    },
+    {
+      "indicator": "sum_delta_prev",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        -10,
+        4,
+        -2
+      ],
+      "banned_values": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "raw_removed": 77626,
+      "raw_removed_rate": 0.77626,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "sum_delta_prev/raw：升降交替"
+    },
+    {
+      "indicator": "span",
+      "transform": "raw",
+      "pattern": "zigzag",
+      "window": 3,
+      "mode": "continuation",
+      "observed": [
+        7,
+        6,
+        9
+      ],
+      "banned_values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "raw_removed": 85330,
+      "raw_removed_rate": 0.8533,
+      "removed_after_previous": 0,
+      "status": "skipped",
+      "reason": "单规则剔除比例超上限",
+      "label": "span/raw：升降交替"
+    }
+  ],
+  "pattern_summary": {
+    "kept": 20584,
+    "removed": 79416,
+    "removed_rate": 0.79416,
+    "fair_random_coverage": 0.20584,
+    "triggered": 34,
+    "accepted_rules": 4,
+    "excluded_rules": 11
+  },
+  "basic_count": 0,
+  "final_kept": 20584,
+  "final_fair_random_coverage": 0.20584,
+  "recent_metrics": [
+    {
+      "number": "58477",
+      "sum": 31,
+      "span": 4,
+      "odd_count": 3,
+      "unique_count": 4,
+      "adjacent_equal": 1,
+      "digit_5": 7,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 10
+    },
+    {
+      "number": "30188",
+      "sum": 20,
+      "span": 8,
+      "odd_count": 2,
+      "unique_count": 4,
+      "adjacent_equal": 1,
+      "digit_5": 8,
+      "same_positions_prev": 0,
+      "sum_delta_prev": -11
+    },
+    {
+      "number": "34234",
+      "sum": 16,
+      "span": 2,
+      "odd_count": 2,
+      "unique_count": 3,
+      "adjacent_equal": 0,
+      "digit_5": 4,
+      "same_positions_prev": 1,
+      "sum_delta_prev": -4
+    },
+    {
+      "number": "05395",
+      "sum": 22,
+      "span": 9,
+      "odd_count": 4,
+      "unique_count": 4,
+      "adjacent_equal": 0,
+      "digit_5": 5,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 6
+    },
+    {
+      "number": "43953",
+      "sum": 24,
+      "span": 6,
+      "odd_count": 4,
+      "unique_count": 4,
+      "adjacent_equal": 0,
+      "digit_5": 3,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 2
+    },
+    {
+      "number": "45252",
+      "sum": 18,
+      "span": 3,
+      "odd_count": 2,
+      "unique_count": 3,
+      "adjacent_equal": 0,
+      "digit_5": 2,
+      "same_positions_prev": 2,
+      "sum_delta_prev": -6
+    },
+    {
+      "number": "71084",
+      "sum": 20,
+      "span": 8,
+      "odd_count": 2,
+      "unique_count": 5,
+      "adjacent_equal": 0,
+      "digit_5": 4,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 2
+    },
+    {
+      "number": "19840",
+      "sum": 22,
+      "span": 9,
+      "odd_count": 2,
+      "unique_count": 5,
+      "adjacent_equal": 0,
+      "digit_5": 0,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 2
+    },
+    {
+      "number": "87624",
+      "sum": 27,
+      "span": 6,
+      "odd_count": 1,
+      "unique_count": 5,
+      "adjacent_equal": 0,
+      "digit_5": 4,
+      "same_positions_prev": 0,
+      "sum_delta_prev": 5
+    },
+    {
+      "number": "26702",
+      "sum": 17,
+      "span": 7,
+      "odd_count": 1,
+      "unique_count": 4,
+      "adjacent_equal": 0,
+      "digit_5": 2,
+      "same_positions_prev": 0,
+      "sum_delta_prev": -10
+    },
+    {
+      "number": "54282",
+      "sum": 21,
+      "span": 6,
+      "odd_count": 1,
+      "unique_count": 4,
+      "adjacent_equal": 0,
+      "digit_5": 2,
+      "same_positions_prev": 1,
+      "sum_delta_prev": 4
+    },
+    {
+      "number": "39106",
+      "sum": 19,
+      "span": 9,
+      "odd_count": 3,
+      "unique_count": 5,
+      "adjacent_equal": 0,
+      "digit_5": 6,
+      "same_positions_prev": 0,
+      "sum_delta_prev": -2
+    }
+  ],
+  "research_only": "独立公平开奖时，任意保留K注的精确命中概率均为K/100000。",
+  "backtest_pattern_only": {
+    "periods": 40,
+    "observed_keep": 6,
+    "observed_keep_rate": 0.15,
+    "random_expected_keep": 9.657070000000001,
+    "random_expected_rate": 0.24142675000000002,
+    "standardized_difference_z": -1.355954469782025,
+    "note": "z仅用于描述与条件随机基线的差异；未做多重检验校正或独立封存验证，不得据此证明预测优势。",
+    "details": [
+      {
+        "index": 960,
+        "actual": "29335",
+        "kept": false,
+        "keep_rate": 0.20632,
+        "rule_count": 5,
+        "removed_rate": 0.79368
+      },
+      {
+        "index": 961,
+        "actual": "06809",
+        "kept": true,
+        "keep_rate": 0.225,
+        "rule_count": 6,
+        "removed_rate": 0.775
+      },
+      {
+        "index": 962,
+        "actual": "34820",
+        "kept": true,
+        "keep_rate": 0.23935,
+        "rule_count": 8,
+        "removed_rate": 0.76065
+      },
+      {
+        "index": 963,
+        "actual": "53442",
+        "kept": false,
+        "keep_rate": 0.28304,
+        "rule_count": 4,
+        "removed_rate": 0.71696
+      },
+      {
+        "index": 964,
+        "actual": "34861",
+        "kept": false,
+        "keep_rate": 0.21336,
+        "rule_count": 8,
+        "removed_rate": 0.78664
+      },
+      {
+        "index": 965,
+        "actual": "07420",
+        "kept": false,
+        "keep_rate": 0.23051,
+        "rule_count": 5,
+        "removed_rate": 0.76949
+      },
+      {
+        "index": 966,
+        "actual": "44380",
+        "kept": false,
+        "keep_rate": 0.20196,
+        "rule_count": 7,
+        "removed_rate": 0.79804
+      },
+      {
+        "index": 967,
+        "actual": "44542",
+        "kept": false,
+        "keep_rate": 0.22542,
+        "rule_count": 3,
+        "removed_rate": 0.77458
+      },
+      {
+        "index": 968,
+        "actual": "56744",
+        "kept": false,
+        "keep_rate": 0.30297,
+        "rule_count": 6,
+        "removed_rate": 0.69703
+      },
+      {
+        "index": 969,
+        "actual": "56016",
+        "kept": false,
+        "keep_rate": 0.22798,
+        "rule_count": 8,
+        "removed_rate": 0.77202
+      },
+      {
+        "index": 970,
+        "actual": "68358",
+        "kept": false,
+        "keep_rate": 0.28982,
+        "rule_count": 6,
+        "removed_rate": 0.71018
+      },
+      {
+        "index": 971,
+        "actual": "45889",
+        "kept": false,
+        "keep_rate": 0.24644,
+        "rule_count": 6,
+        "removed_rate": 0.75356
+      },
+      {
+        "index": 972,
+        "actual": "48532",
+        "kept": false,
+        "keep_rate": 0.211,
+        "rule_count": 6,
+        "removed_rate": 0.789
+      },
+      {
+        "index": 973,
+        "actual": "40386",
+        "kept": true,
+        "keep_rate": 0.20587,
+        "rule_count": 7,
+        "removed_rate": 0.79413
+      },
+      {
+        "index": 974,
+        "actual": "01751",
+        "kept": false,
+        "keep_rate": 0.24204,
+        "rule_count": 7,
+        "removed_rate": 0.75796
+      },
+      {
+        "index": 975,
+        "actual": "87383",
+        "kept": false,
+        "keep_rate": 0.29488,
+        "rule_count": 4,
+        "removed_rate": 0.70512
+      },
+      {
+        "index": 976,
+        "actual": "12334",
+        "kept": false,
+        "keep_rate": 0.27678,
+        "rule_count": 6,
+        "removed_rate": 0.72322
+      },
+      {
+        "index": 977,
+        "actual": "27421",
+        "kept": true,
+        "keep_rate": 0.3024,
+        "rule_count": 6,
+        "removed_rate": 0.6976
+      },
+      {
+        "index": 978,
+        "actual": "93225",
+        "kept": false,
+        "keep_rate": 0.27815,
+        "rule_count": 6,
+        "removed_rate": 0.72185
+      },
+      {
+        "index": 979,
+        "actual": "09059",
+        "kept": false,
+        "keep_rate": 0.30844,
+        "rule_count": 3,
+        "removed_rate": 0.69156
+      },
+      {
+        "index": 980,
+        "actual": "43074",
+        "kept": false,
+        "keep_rate": 0.22337,
+        "rule_count": 10,
+        "removed_rate": 0.77663
+      },
+      {
+        "index": 981,
+        "actual": "65558",
+        "kept": false,
+        "keep_rate": 0.2046,
+        "rule_count": 7,
+        "removed_rate": 0.7954
+      },
+      {
+        "index": 982,
+        "actual": "76189",
+        "kept": false,
+        "keep_rate": 0.20347,
+        "rule_count": 8,
+        "removed_rate": 0.79653
+      },
+      {
+        "index": 983,
+        "actual": "22439",
+        "kept": false,
+        "keep_rate": 0.20405,
+        "rule_count": 7,
+        "removed_rate": 0.79595
+      },
+      {
+        "index": 984,
+        "actual": "82862",
+        "kept": false,
+        "keep_rate": 0.21203,
+        "rule_count": 7,
+        "removed_rate": 0.78797
+      },
+      {
+        "index": 985,
+        "actual": "37560",
+        "kept": false,
+        "keep_rate": 0.24846,
+        "rule_count": 8,
+        "removed_rate": 0.75154
+      },
+      {
+        "index": 986,
+        "actual": "39373",
+        "kept": false,
+        "keep_rate": 0.20306,
+        "rule_count": 6,
+        "removed_rate": 0.79694
+      },
+      {
+        "index": 987,
+        "actual": "70644",
+        "kept": false,
+        "keep_rate": 0.21999,
+        "rule_count": 7,
+        "removed_rate": 0.78001
+      },
+      {
+        "index": 988,
+        "actual": "58477",
+        "kept": false,
+        "keep_rate": 0.2382,
+        "rule_count": 6,
+        "removed_rate": 0.7618
+      },
+      {
+        "index": 989,
+        "actual": "30188",
+        "kept": false,
+        "keep_rate": 0.26667,
+        "rule_count": 3,
+        "removed_rate": 0.73333
+      },
+      {
+        "index": 990,
+        "actual": "34234",
+        "kept": true,
+        "keep_rate": 0.2431,
+        "rule_count": 6,
+        "removed_rate": 0.7569
+      },
+      {
+        "index": 991,
+        "actual": "05395",
+        "kept": false,
+        "keep_rate": 0.21092,
+        "rule_count": 5,
+        "removed_rate": 0.78908
+      },
+      {
+        "index": 992,
+        "actual": "43953",
+        "kept": true,
+        "keep_rate": 0.26458,
+        "rule_count": 6,
+        "removed_rate": 0.73542
+      },
+      {
+        "index": 993,
+        "actual": "45252",
+        "kept": false,
+        "keep_rate": 0.29492,
+        "rule_count": 3,
+        "removed_rate": 0.70508
+      },
+      {
+        "index": 994,
+        "actual": "71084",
+        "kept": false,
+        "keep_rate": 0.3264,
+        "rule_count": 6,
+        "removed_rate": 0.6736
+      },
+      {
+        "index": 995,
+        "actual": "19840",
+        "kept": false,
+        "keep_rate": 0.20471,
+        "rule_count": 4,
+        "removed_rate": 0.79529
+      },
+      {
+        "index": 996,
+        "actual": "87624",
+        "kept": false,
+        "keep_rate": 0.21205,
+        "rule_count": 5,
+        "removed_rate": 0.78795
+      },
+      {
+        "index": 997,
+        "actual": "26702",
+        "kept": false,
+        "keep_rate": 0.20678,
+        "rule_count": 5,
+        "removed_rate": 0.79322
+      },
+      {
+        "index": 998,
+        "actual": "54282",
+        "kept": false,
+        "keep_rate": 0.2364,
+        "rule_count": 3,
+        "removed_rate": 0.7636
+      },
+      {
+        "index": 999,
+        "actual": "39106",
+        "kept": false,
+        "keep_rate": 0.22158,
+        "rule_count": 4,
+        "removed_rate": 0.77842
+      }
+    ]
+  }
+}

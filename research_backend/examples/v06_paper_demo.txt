@@ -1,0 +1,7 @@
+Research demonstration document: sequential distribution monitoring in discrete streams.
+This is a synthetic, original testing note written to exercise the V0.6 laboratory,
+not a published paper. An experimental analyst may compare sum, span, parity count,
+and their derived mathematical transforms over sliding windows. It is important to
+avoid data leakage, reproduce the derived indicator independently, and falsify any
+claim against a fair random baseline using fresh draws. These exploratory features
+are not known to improve predictions in an independent fair lottery.

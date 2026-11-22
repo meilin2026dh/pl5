@@ -1,0 +1,29 @@
+[project]
+name = "pailie5-agent-mvp"
+version = "3.7.6"
+description = "排列五算法能力网络、自主基础算子与算子类别自发现、类别假设自主生成、可学习算子元模型、统一参数注册、迁移修补与数学证伪科研系统"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.1,<3",
+  "scipy>=1.11,<2",
+  "streamlit>=1.37,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+# Do not autodiscover data/, pages/, config/ as Python packages.
+# Only these directories contain importable Python packages with __init__.py.
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pailie5*", "autoresearch*"]
+exclude = ["tests*", "pages*", "data*", "config*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[project.optional-dependencies]
+agent = ["langgraph>=1.0,<2", "langgraph-checkpoint-sqlite>=2,<4"]
+llm = ["openai>=2,<4"]
+fulltext = ["pymupdf>=1.24,<2"]
