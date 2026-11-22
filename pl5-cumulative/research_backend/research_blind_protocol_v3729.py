@@ -331,6 +331,8 @@ def main():
     p.add_argument("--private-metadata", type=Path, required=True)
     p.add_argument("--ledger", type=Path, required=True)
     p.add_argument("--manifest", type=Path, required=True)
+    p.add_argument("--signed-ledger", type=Path, required=True)
+    p.add_argument("--grader-public", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
     if args.action == "preregister":
@@ -339,8 +341,18 @@ def main():
         result = check_public_panel(read(args.plan), read(args.manifest), args.folder)
         write_new(args.out, result)
     else:
-        result = summarize(read(args.plan), read(args.private_metadata),
-                           read(args.ledger), read(args.manifest))
+        # A self-reported receipt_verified=true flag is not sufficient:
+        # require Ed25519 ledger integrity before CLI reporting.
+        from research_blind_ledger_v3729 import verify_grade_ledger
+        plan = read(args.plan)
+        ledger = read(args.ledger)
+        manifest = read(args.manifest)
+        verified = verify_grade_ledger(
+            plan, manifest, ledger, read(args.signed_ledger), args.grader_public)
+        result = summarize(plan, read(args.private_metadata), ledger, manifest)
+        result["grade_ledger_signature_verified"] = verified["grade_ledger_signature_verified"]
+        result["grader_public_fingerprint_sha256"] = verified["grader_public_fingerprint_sha256"]
+        result["individual_worker_receipts_verified"] = False
         write_new(args.out, result)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
