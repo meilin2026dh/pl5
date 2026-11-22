@@ -1,0 +1,129 @@
+name: PL5 V3.7.28 clean-machine Python acceptance
+on:
+  push:
+    branches: [audit/cleanroom-v3728-20261122]
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-cleanroom-acceptance.yml"
+      - "ci/fresh_env_replay.py"
+      - "pl5-cumulative/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: "utf-8"
+  PYTHONHASHSEED: "0"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  cleanroom-python:
+    name: Fresh VM / ${{ matrix.os }} / Python 3.12
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Clone clean repository including full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Python 3.12 on fresh VM
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pl5-cumulative/research_backend/pyproject.toml
+
+      - name: Record clean environment and commit
+        shell: bash
+        run: |
+          mkdir -p ci-results
+          git rev-parse HEAD > ci-results/commit.txt
+          git status --short > ci-results/status_before.txt
+          python --version 2>&1 | tee ci-results/python.txt
+          python -m pip --version 2>&1 | tee ci-results/pip.txt
+
+      - name: Install all declared Python feature groups into fresh environment
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pip install -e ".[audit,agent,llm,fulltext]" "pytest>=8,<10"
+
+      - name: Verify dependency resolution and archive installed versions
+        shell: bash
+        run: |
+          python -m pip check
+          python -m pip freeze > ci-results/pip-freeze.txt
+          python -c "import pailie5, autoresearch, numpy, pandas, scipy, cryptography, pytest; print('all essential imports PASS')"
+
+      - name: Compile every preserved PL5 Python source
+        id: compilation
+        continue-on-error: true
+        run: python -m compileall -q pl5-cumulative
+
+      - name: Collect all research Python tests (must be nonempty)
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pytest --collect-only -q tests
+
+      - name: Full research backend Python test suite
+        id: backend
+        continue-on-error: true
+        working-directory: pl5-cumulative/research_backend
+        run: python -m pytest -q tests --junitxml=../../ci-results/backend.xml
+
+      - name: Full legacy/cross-version Python integration test suite
+        id: integration
+        continue-on-error: true
+        working-directory: pl5-cumulative
+        run: python -m pytest -q integration_tests --junitxml=../ci-results/integration.xml
+
+      - name: Fresh-machine history replay (V3.7.15, 16, 17) and SHA256 archive audit
+        id: replay_core
+        continue-on-error: true
+        working-directory: pl5-cumulative/research_backend
+        run: python ../../ci/fresh_env_replay.py --mode core --output ../../ci-results/replay-core.json
+
+      - name: Fresh-machine V3.7.28 signed internal role rehearsal
+        id: replay_signed
+        continue-on-error: true
+        working-directory: pl5-cumulative/research_backend
+        run: python ../../ci/fresh_env_replay.py --mode signed --output ../../ci-results/replay-signed.json
+
+      - name: Preserve post-run tracked-file state
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p ci-results
+          git status --short > ci-results/status_after.txt
+          git diff --exit-code > ci-results/tracked_diff.txt
+
+      - name: Upload auditable test and replay evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pl5-cleanroom-${{ matrix.os }}-py312-${{ github.run_id }}
+          path: ci-results/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Enforce acceptance gate, never silently ignore failures
+        if: always()
+        shell: bash
+        env:
+          COMPILE_STATUS: ${{ steps.compilation.outcome }}
+          BACKEND_STATUS: ${{ steps.backend.outcome }}
+          INTEGRATION_STATUS: ${{ steps.integration.outcome }}
+          CORE_STATUS: ${{ steps.replay_core.outcome }}
+          SIGNED_STATUS: ${{ steps.replay_signed.outcome }}
+          RUNNER_OS: ${{ runner.os }}
+        run: |
+          echo "compilation=$COMPILE_STATUS backend=$BACKEND_STATUS integration=$INTEGRATION_STATUS core=$CORE_STATUS signed=$SIGNED_STATUS"
+          test "$COMPILE_STATUS" = success
+          test "$BACKEND_STATUS" = success
+          test "$INTEGRATION_STATUS" = success
+          test "$CORE_STATUS" = success
+          test "$SIGNED_STATUS" = success

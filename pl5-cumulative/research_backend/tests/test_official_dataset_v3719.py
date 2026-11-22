@@ -1,6 +1,7 @@
 """Phase III source audit and timing-evidence adversarial tests."""
 from __future__ import annotations
 import json
+from hashlib import sha256
 from pathlib import Path
 
 import numpy as np
@@ -130,3 +131,19 @@ def test_timestamp_verify_does_not_accept_nonreply(tmp_path):
     ca=tmp_path/'faked.pem';ca.write_text('NOT A CERTIFICATE')
     with pytest.raises(ValueError,match='FAILED'):
         verify_response(file,reply,ca)
+
+
+def test_restored_official_csv_bytes_match_original_upload_manifest():
+    expected = {
+        'jiangsu_transcribed.csv': (625, '6962260131f6f78072bb4b0ec95514ff8ec764e1d3a2048a275e06a24644b00e'),
+        'gansu_transcribed.csv': (253, 'ca0c2ef7ff02dedc8d467a0ae1c829683339f7831911b520694cb6af7df9da26'),
+    }
+    for name, (size, hexdigest) in expected.items():
+        original = (FIXTURES / name).read_bytes()
+        assert len(original) == size
+        assert sha256(original).hexdigest() == hexdigest
+    provenance = json.loads((FIXTURES / 'PROVENANCE.json').read_text('utf-8'))
+    assert provenance['restoration']['csvs_match_original_manifest'] is True
+    assert provenance['original_provenance']['byte_exact_recovered'] is False
+    assert provenance['source_html_bytes_saved'] is False
+    assert provenance['site_identity_cryptographically_authenticated'] is False

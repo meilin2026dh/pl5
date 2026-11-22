@@ -1,0 +1,10 @@
+# PL5 preserved research is a byte-for-byte archive.
+# Do not alter committed CRLF/LF when Git checks out files on Windows.
+# Historical SHA256 manifests, synthetic datasets, and signed source inventory
+# require identical bytes on all supported operating systems.
+pl5-cumulative/** -text
+archive/v3728/** -text
+
+# CI authoring files intentionally use stable LF.
+ci/** text eol=lf
+.github/workflows/pl5-cleanroom-acceptance.yml text eol=lf
