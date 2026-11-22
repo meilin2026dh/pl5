@@ -54,9 +54,19 @@ def inventory() -> dict:
     files = subprocess.run(["git", "-c", "core.quotePath=false", "ls-files", "--", "pl5-cumulative/"],
                            cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8").stdout.splitlines()
     count = len(files)
-    if len(rows) != 5451 or len(seen) != 5451 or count != 6361:
+    if len(rows) != 5451 or len(seen) != 5451 or count != 6364:
         failures.append({"issue": "file count mismatch", "manifest": len(rows),
                          "unique": len(seen), "tracked_cumulative": count})
+    # These 3 source records are new tracked files. The two CSVs were recovered
+    # byte-for-byte from preexisting manifest SHA256; the provenance JSON is
+    # explicitly identified as reconstructed rather than a byte-identical original.
+    for filename, digest, size in (
+        ('jiangsu_transcribed.csv', '6962260131f6f78072bb4b0ec95514ff8ec764e1d3a2048a275e06a24644b00e', 625),
+        ('gansu_transcribed.csv', 'ca0c2ef7ff02dedc8d467a0ae1c829683339f7831911b520694cb6af7df9da26', 253),
+    ):
+        f = CUM / 'data' / 'official_transcriptions_v3719' / filename
+        if not f.is_file() or f.stat().st_size != size or sha256(f) != digest:
+            failures.append({'path': str(f), 'issue': 'restored official source SHA256 mismatch'})
     if failures:
         raise AssertionError(json.dumps(failures[:15], ensure_ascii=False))
     return {"manifest_files_verified": len(rows), "tracked_cumulative_files": count,

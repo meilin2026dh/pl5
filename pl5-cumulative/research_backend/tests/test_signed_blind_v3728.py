@@ -1,5 +1,7 @@
 """V3.7.28 tests: signatures, code hashes, frozen evidence, replay guards."""
 import json
+import os
+import subprocess
 import shutil
 from pathlib import Path
 
@@ -12,6 +14,37 @@ from research_signed_blind_v3728 import (keygen, issue, verify_issue, freeze,
     code_inventory, _sign, ISSUER, SOLVER, _sha, _bytes)
 
 BACKEND = Path(__file__).resolve().parents[1]
+
+
+def _assert_private_acl_on_windows(path: Path) -> None:
+    """Read the actual NTFS ACL, not os.stat().st_mode's Windows emulation."""
+    quoted = "'" + str(path).replace("'", "''") + "'"
+    script = """
+$ErrorActionPreference = 'Stop'
+$acl = Get-Acl -LiteralPath PATH_LITERAL
+$me = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
+$allowed = @($me, 'S-1-5-18', 'S-1-5-32-544')
+if (-not $acl.AreAccessRulesProtected) { throw 'Private key inherited an ACL' }
+$rules = @($acl.Access)
+if ($rules.Count -eq 0) { throw 'Private key missing allow entries' }
+$ownerFull = $false
+foreach ($rule in $rules) {
+    $rid = $rule.IdentityReference.Translate([System.Security.Principal.SecurityIdentifier]).Value
+    if (($rid -notin $allowed) -or $rule.IsInherited -or
+        $rule.AccessControlType -ne [System.Security.AccessControl.AccessControlType]::Allow) {
+        throw ('Disallowed private key ACE: ' + $rid)
+    }
+    if ($rid -eq $me -and (($rule.FileSystemRights -band
+        [System.Security.AccessControl.FileSystemRights]::FullControl) -eq
+        [System.Security.AccessControl.FileSystemRights]::FullControl)) {
+        $ownerFull = $true
+    }
+}
+if (-not $ownerFull) { throw 'Current owner lacks explicit FullControl ACE' }
+""".replace('PATH_LITERAL', quoted)
+    check = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive',
+                            '-Command', script], capture_output=True, text=True)
+    assert check.returncode == 0, check.stdout + check.stderr
 
 
 def _keys(root):
@@ -41,7 +74,10 @@ def test_generate_keys_are_distinct_and_private(tmp_path):
     keys=_keys(tmp_path)
     assert len({_fingerprint(v[1]) for v in keys.values()})==4
     with pytest.raises(FileExistsError):keygen(*keys['issuer'])
-    assert (keys['issuer'][0].stat().st_mode & 0o777)==0o600
+    if os.name == 'nt':
+        _assert_private_acl_on_windows(keys['issuer'][0])
+    else:
+        assert (keys['issuer'][0].stat().st_mode & 0o777) == 0o600
     assert b'PRIVATE KEY' in keys['issuer'][0].read_bytes()
     assert b'PRIVATE KEY' not in keys['issuer'][1].read_bytes()
 
@@ -140,3 +176,16 @@ def test_receipt_canonicalization_is_repeatable(tmp_path):
     f=tmp_path/'sig.json';f.write_text(json.dumps(_sign(p,keys['issuer'][0],ISSUER)))
     assert _verify(f,keys['issuer'][1],ISSUER)==p
     with pytest.raises(ValueError):_verify(f,keys['issuer'][1],SOLVER)
+
+
+@pytest.mark.skipif(os.name != 'nt', reason='NTFS-specific fail-closed test')
+def test_private_acl_failure_does_not_leave_a_secret(tmp_path, monkeypatch):
+    import research_signed_blind_v3728 as signed
+    def reject(_path):
+        raise PermissionError('ACL cannot be enforced')
+    monkeypatch.setattr(signed, '_restrict_windows_private_acl', reject)
+    private = tmp_path / 'no-secret.key'
+    public = tmp_path / 'no-secret.pub'
+    with pytest.raises(PermissionError, match='ACL cannot be enforced'):
+        signed.keygen(private, public)
+    assert not private.exists() and not public.exists()

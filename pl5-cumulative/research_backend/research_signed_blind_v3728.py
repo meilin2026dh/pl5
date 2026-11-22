@@ -60,17 +60,72 @@ def _read(path: str | Path) -> dict:
     return doc
 
 
+def _restrict_windows_private_acl(path: Path) -> None:
+    """Set an explicit, non-inheriting NTFS DACL before any secret bytes exist.
+
+    Only the running account, LOCAL SYSTEM and local Administrators may read the
+    key. Fail closed on non-NTFS volumes or when Windows cannot enforce this ACL.
+    """
+    import csv
+    import io
+    import re
+    import subprocess
+    import ctypes
+    from ctypes import wintypes
+
+    result = subprocess.run(
+        ['whoami.exe', '/user', '/fo', 'csv', '/nh'],
+        check=True, capture_output=True, text=True,
+    )
+    rows = list(csv.reader(io.StringIO(result.stdout.strip())))
+    if len(rows) != 1 or len(rows[0]) != 2:
+        raise PermissionError('cannot identify Windows account SID')
+    sid = rows[0][1].strip()
+    if not re.fullmatch(r'S-1-\\d+(?:-\\d+)+', sid):
+        raise PermissionError('invalid Windows account SID')
+
+    # D:P prevents inherited ACEs. No Everyone/Users/Authenticated Users ACE.
+    sddl = f'D:P(A;;FA;;;{sid})(A;;FA;;;SY)(A;;FA;;;BA)'
+    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    convert = advapi.ConvertStringSecurityDescriptorToSecurityDescriptorW
+    convert.argtypes = [wintypes.LPCWSTR, wintypes.DWORD,
+                        ctypes.POINTER(ctypes.c_void_p), ctypes.c_void_p]
+    convert.restype = wintypes.BOOL
+    set_acl = advapi.SetFileSecurityW
+    set_acl.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, ctypes.c_void_p]
+    set_acl.restype = wintypes.BOOL
+    kernel.LocalFree.argtypes = [ctypes.c_void_p]
+    kernel.LocalFree.restype = ctypes.c_void_p
+    descriptor = ctypes.c_void_p()
+    if not convert(sddl, 1, ctypes.byref(descriptor), None):
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        # DACL_SECURITY_INFORMATION | PROTECTED_DACL_SECURITY_INFORMATION
+        if not set_acl(str(path), 0x00000004 | 0x80000000, descriptor):
+            raise ctypes.WinError(ctypes.get_last_error())
+    finally:
+        kernel.LocalFree(descriptor)
+
+
 def _create(path: str | Path, data: bytes, mode: int = 0o644) -> None:
     path = Path(path)
     if not path.parent.is_dir():
         raise FileNotFoundError(f'output parent directory missing: {path.parent}')
     fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, mode)
     try:
+        # On Windows, POSIX mode 0600 is not a security guarantee. Harden the
+        # just-created EMPTY file before any private-key material is written.
+        if os.name == 'nt' and mode == 0o600:
+            _restrict_windows_private_acl(path)
         with os.fdopen(fd, 'wb') as f:
+            fd = -1
             f.write(data)
             f.flush()
             os.fsync(f.fileno())
     except BaseException:
+        if fd >= 0:
+            os.close(fd)
         path.unlink(missing_ok=True)
         raise
 

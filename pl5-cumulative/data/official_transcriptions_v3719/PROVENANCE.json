@@ -1,0 +1,45 @@
+{
+  "schema": "pl5-v3719-source-provenance-restored-20261122",
+  "source_html_bytes_saved": false,
+  "site_identity_cryptographically_authenticated": false,
+  "sources": {
+    "primary": {
+      "publisher": "Jiangsu Sports Lottery",
+      "source_url": "https://www.js-lottery.com/Chart/p5Number",
+      "supplementary_official_notice": "https://www.js-lottery.com/cms/post-147865",
+      "file": "jiangsu_transcribed.csv",
+      "row_count": 51,
+      "first_issue": "26244",
+      "last_issue": "26294",
+      "sha256": "6962260131f6f78072bb4b0ec95514ff8ec764e1d3a2048a275e06a24644b00e"
+    },
+    "witness": {
+      "publisher": "Gansu Sports Lottery",
+      "source_url": "https://www.gstc.org.cn/wanfa/pl5_history",
+      "file": "gansu_transcribed.csv",
+      "row_count": 20,
+      "first_issue": "26275",
+      "last_issue": "26294",
+      "sha256": "ca0c2ef7ff02dedc8d467a0ae1c829683339f7831911b520694cb6af7df9da26"
+    }
+  },
+  "restoration": {
+    "restored_at_utc_date": "2026-11-22",
+    "method": "Re-transcribed public historical results, then checked both CSV byte hashes against the pre-existing V3.7.28 upload inventory.",
+    "csvs_match_original_manifest": true,
+    "cross_source_overlap_issues": 20,
+    "auxiliary_public_reference": "https://www.9011.com.cn/lottery/pl5/trend?omit=1&period=1500&view=history"
+  },
+  "original_provenance": {
+    "size_bytes": 1280,
+    "sha256": "77f10d6aa4e87cc0e507abbba523772e082b00bdba64b89893523c94f8807198",
+    "byte_exact_recovered": false,
+    "note": "Original PROVENANCE.json bytes were not available. This is a newly created, explicitly labeled replacement."
+  },
+  "evidence_grade": "CROSSCHECKED_TRANSCRIPT_NOT_ARCHIVED_SOURCE",
+  "limitations": [
+    "No original source HTML bytes, signed source response or trusted archival timestamp were recovered.",
+    "Training records 26244-26274 were not all independently crosschecked with a second official publisher.",
+    "Historical retrospective inputs do not establish predictive success."
+  ]
+}
