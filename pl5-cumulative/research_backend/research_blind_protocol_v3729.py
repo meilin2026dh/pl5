@@ -196,11 +196,11 @@ def _mcnemar(a, b):
     return min(1.0, 2 * tail / (2**discordant))
 
 
-def summarize(plan, private_meta, ledger):
+def summarize(plan, private_meta, ledger, public_manifest):
     """Compute descriptive paired results; neither input proves independence.
 
-    A valid scored receipt and custody audit must be verified separately.
-    Missing task/arm rows are retained in denominator as failures.
+    An external auditor must first check receipt signatures and evidence custody.
+    The panel/task identity must be anchored by the original public manifest.
     """
     plan_checked(plan)
     if (private_meta.get("schema") != META_SCHEMA or
@@ -208,9 +208,26 @@ def summarize(plan, private_meta, ledger):
         raise ValueError("invalid score/metadata schema")
     if ledger.get("solver_source_commit") != plan["solver_source_commit"]:
         raise ValueError("score ledger does not match preregistered solver")
+    if ledger.get("preregistration_sha256") != digest(plan):
+        raise ValueError("ledger preregistration commitment mismatch")
+    if (public_manifest.get("schema") != SCHEMA + ":public-manifest" or
+        not isinstance(public_manifest.get("tasks"), list) or
+        len(public_manifest["tasks"]) != N):
+        raise ValueError("invalid task manifest")
+    if ledger.get("public_manifest_sha256") != digest(public_manifest):
+        raise ValueError("ledger public task commitment mismatch")
+    manifest_ids = [r.get("task_id") for r in public_manifest["tasks"]
+                    if isinstance(r, dict) and set(r) == {"task_id", "public_sha256"}
+                    and isinstance(r.get("task_id"), str)
+                    and TASK_ID.fullmatch(r["task_id"])
+                    and isinstance(r.get("public_sha256"), str)
+                    and HEX64.fullmatch(r["public_sha256"])]
+    if len(manifest_ids) != N or len(set(manifest_ids)) != N:
+        raise ValueError("invalid or duplicate public task commitments")
     category = private_meta.get("categories")
-    if not isinstance(category, dict) or len(category) != N:
-        raise ValueError("exactly 100 independent task strata required")
+    if (not isinstance(category, dict) or len(category) != N or
+        set(category) != set(manifest_ids)):
+        raise ValueError("private strata must exactly match 100 public task IDs")
     if any(not isinstance(k, str) or not TASK_ID.fullmatch(k) or v not in CATEGORIES
            for k, v in category.items()):
         raise ValueError("invalid stratification")
@@ -278,6 +295,7 @@ def summarize(plan, private_meta, ledger):
         "schema": SCHEMA + ":unverified-aggregated-report",
         "preregistration_sha256": digest(plan),
         "metadata_sha256": digest(private_meta),
+        "public_manifest_sha256": digest(public_manifest),
         "score_ledger_sha256": digest(ledger),
         "tasks": N,
         "negative_controls": negative,
@@ -312,6 +330,7 @@ def main():
     p.add_argument("--plan", type=Path, required=True)
     p.add_argument("--private-metadata", type=Path, required=True)
     p.add_argument("--ledger", type=Path, required=True)
+    p.add_argument("--manifest", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
     if args.action == "preregister":
@@ -320,7 +339,8 @@ def main():
         result = check_public_panel(read(args.plan), read(args.manifest), args.folder)
         write_new(args.out, result)
     else:
-        result = summarize(read(args.plan), read(args.private_metadata), read(args.ledger))
+        result = summarize(read(args.plan), read(args.private_metadata),
+                           read(args.ledger), read(args.manifest))
         write_new(args.out, result)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
