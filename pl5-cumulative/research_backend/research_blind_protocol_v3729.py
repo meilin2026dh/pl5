@@ -15,6 +15,7 @@ import re
 from pathlib import Path
 
 SCHEMA = "pl5-v3729-blind-panel-1"
+PUBLIC_VERSION = "pl5-v3725-ring-grammar-1"
 RESULT_SCHEMA = "pl5-v3729-score-ledger-1"
 META_SCHEMA = "pl5-v3729-private-strata-1"
 ARMS = ("v3725_ring", "v3726_gate", "frozen_portfolio")
@@ -154,14 +155,16 @@ def check_public_panel(plan, manifest, folder):
             raise ValueError("invalid/duplicate task commitment")
         expected[task_id] = sha
         path = root / (task_id + ".json")
-        if path.parent != root or not path.is_file() or file_sha(path) != sha:
+        if path.resolve().parent != root or not path.is_file() or file_sha(path) != sha:
             raise ValueError("missing/modified public challenge")
         task = read(path)
         keys = {"schema", "task_id", "train", "validation",
                 "holdout_commitment", "source_description_self_reported",
                 "issuer_identity_externally_verified", "evaluation_grade",
                 "version", "protocol_sha256"}
-        if set(task) != keys or task["task_id"] != task_id:
+        if (set(task) != keys or task["task_id"] != task_id or
+            task["schema"] != PUBLIC_VERSION + ":challenge" or
+            task["version"] != PUBLIC_VERSION):
             raise ValueError("invalid public challenge; private label leakage")
         if digest({k: v for k, v in task.items() if k != "protocol_sha256"}) != task["protocol_sha256"]:
             raise ValueError("public challenge integrity check failed")
