@@ -100,15 +100,38 @@ def preregister(source_commit, environment_sha256, out):
 
 
 def plan_checked(plan):
-    if plan.get("schema") != SCHEMA or plan.get("min_tasks") != N:
+    """Reject *all* changes to the protocol's prespecified scientific choices."""
+    if not isinstance(plan, dict) or plan.get("schema") != SCHEMA:
         raise ValueError("wrong or modified experiment protocol")
-    if (plan.get("arms") != list(ARMS) or
-        plan.get("min_negative_controls") != MIN_NEGATIVE or
-        plan.get("expected_partition") !=
-        {"train": 48, "validation": 16, "holdout": HOLDOUT_CELLS} or
-        plan.get("max_total_wall_ms_per_arm_per_task") != BUDGETS or
-        plan.get("third_party_blind_study_completed") is not False or
-        plan.get("lottery_predictive_advantage") != "NOT_ESTABLISHED"):
+    expected = {
+        "min_tasks": N,
+        "min_negative_controls": MIN_NEGATIVE,
+        "expected_partition": {"train": 48, "validation": 16, "holdout": HOLDOUT_CELLS},
+        "arms": list(ARMS),
+        "max_total_wall_ms_per_arm_per_task": BUDGETS,
+        "portfolio_budget_rule": "two model subprocesses, each <= 5000ms; max 10000ms combined",
+        "single_arm_budget_rule": "each standalone model must be separately run at <= 10000ms",
+        "primary_endpoint": "exact holdout completion over all preregistered tasks",
+        "non_successes": ["ABSTAIN", "FAILED", "TIMED_OUT", "any_holdout_error",
+                          "missing_submission"],
+        "pairwise_test": "two-sided exact McNemar, preselected comparison "
+                         "frozen_portfolio vs v3726_gate",
+        "confidence_interval": "Wilson 95 percent, descriptive, not cluster robust",
+        "strata": sorted(CATEGORIES),
+        "issuer_independence_verified": False,
+        "trusted_external_timestamp_verified": False,
+        "third_party_blind_study_completed": False,
+        "lottery_predictive_advantage": "NOT_ESTABLISHED",
+        "disclaimer": "Protocol only; third-party signatures, time provenance, "
+                      "private label custody and independently audited hardware "
+                      "must be established outside this repository",
+    }
+    allowed_keys = set(expected) | {
+        "schema", "solver_source_commit", "environment_lock_sha256"}
+    if set(plan) != allowed_keys or any(
+        type(plan.get(k)) is not type(v) or plan[k] != v
+        for k, v in expected.items()
+    ):
         raise ValueError("protocol constraints changed")
     if not HEX40.fullmatch(str(plan.get("solver_source_commit", ""))):
         raise ValueError("invalid frozen source commit")
