@@ -81,7 +81,7 @@ def _restrict_windows_private_acl(path: Path) -> None:
     if len(rows) != 1 or len(rows[0]) != 2:
         raise PermissionError('cannot identify Windows account SID')
     sid = rows[0][1].strip()
-    if not re.fullmatch(r'S-1-\\d+(?:-\\d+)+', sid):
+    if not re.fullmatch(r'S-1-\d+(?:-\d+)+', sid):
         raise PermissionError('invalid Windows account SID')
 
     # D:P prevents inherited ACEs. No Everyone/Users/Authenticated Users ACE.
