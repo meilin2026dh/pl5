@@ -1,0 +1,122 @@
+{
+  "equal_candidate_budget": false,
+  "equal_total_compute": false,
+  "external_blind": false,
+  "families": {
+    "corrupt_training": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "errors": 0
+      }
+    },
+    "cubic_interaction": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 4,
+        "errors": 0
+      }
+    },
+    "diagonal_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "errors": 0
+      }
+    },
+    "linear_control": {
+      "v3724_expanded": {
+        "accepted": 4,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 4,
+        "errors": 0
+      }
+    },
+    "opaque_exponential": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "errors": 0
+      }
+    },
+    "parity_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 4,
+        "errors": 0
+      }
+    },
+    "piecewise_lt": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 4,
+        "errors": 0
+      }
+    },
+    "power_sums": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 4,
+        "errors": 0
+      }
+    },
+    "random_null": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "errors": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "errors": 0
+      }
+    }
+  },
+  "logical_results_sha256": "7327e61056496d14184c196a5bd7080135851b5296aab9fe193254b0a1885dc6",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "methods": {
+    "v3724_expanded": {
+      "abstained": 32,
+      "accepted": 4,
+      "accepted_test_cells": 144,
+      "accepted_test_errors": 0,
+      "candidate_evaluations": 79200,
+      "tasks": 36,
+      "total_fit_wall_ms": 324.96
+    },
+    "v3725_ring": {
+      "abstained": 16,
+      "accepted": 20,
+      "accepted_test_cells": 720,
+      "accepted_test_errors": 0,
+      "candidate_evaluations": 144,
+      "tasks": 36,
+      "total_fit_wall_ms": 392.95
+    }
+  },
+  "protocol_sha256": "3ec4a886e9c36d7888ac893c9590961d488e479a90d39c9cd0905192a9db5ef3",
+  "schema": "pl5-v3725-ring-grammar-1:summary",
+  "source_discovery_cost_included": false
+}

@@ -1,0 +1,26 @@
+{
+  "version": "representation-cycle-v25",
+  "seed": 20269021,
+  "generated": 12,
+  "engineering_candidate_this_cycle": 10,
+  "newly_registered": 10,
+  "novel_ids": [
+    "pl5.representation.85b828142c25f8b5",
+    "pl5.representation.1364e15eda0aaae3",
+    "pl5.representation.4eb599517aa914b7",
+    "pl5.representation.1df5ed67d611cfdc",
+    "pl5.representation.bc4d88ca0cdd2f75",
+    "pl5.representation.2b3c4bae8185d0cd",
+    "pl5.representation.def47452ef7f4f97",
+    "pl5.representation.95e95ae9843bf390",
+    "pl5.representation.663a583b322c0e12",
+    "pl5.representation.a9e5bf54ee7147da"
+  ],
+  "already_known_partitions": [],
+  "reviewed_duplicate_or_relabelled": 2,
+  "prediction_advantage": "unverified",
+  "active_for_filtering": false,
+  "information": "仅研究能力资产。正式过滤需要独立验证与人工审批。",
+  "registered_total": 20,
+  "total_cycles": 2
+}

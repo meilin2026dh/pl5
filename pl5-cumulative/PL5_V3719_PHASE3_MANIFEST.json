@@ -1,0 +1,65 @@
+{
+  "schema": "pl5-v3719-phase3-release-manifest-1",
+  "source_archive_name": "PL5_V3719_Phase2_Research_Full.zip",
+  "source_archive_sha256": "a23eb7a21ea3a45f4640a59e9bfc6c196a0e37587e4d6d578d13110ecf789cb6",
+  "base_file_count": 2617,
+  "base_unchanged_sha256_count": 2613,
+  "base_changed_files": {
+    "README.md": {
+      "old_sha256": "53a60b6b1623bb2b29cb13a2f03f823e6292897f02d4fd3bdf7a9082fa62622a",
+      "new_sha256": "44dcd0e61992f0372c6b5c67fdb31345a84aa48136082d92bc8a298547259ff1"
+    },
+    "research_backend/pailie5/__init__.py": {
+      "old_sha256": "c09b1317f1827ab01849e19cd3c1494e18abb7f3b56dc20fcb007e59af10a845",
+      "new_sha256": "970a745fd32ca575fe2c8641b0094e180287c9ba0ed164a7eb3673bd1680875b"
+    },
+    "research_backend/tests/test_scientific_methods_v376.py": {
+      "old_sha256": "de04ed55c4cbdebba92065e2d2ec447db26eb18d649c37dd5509dec8ed771e88",
+      "new_sha256": "44896acd2983a46580870963dc7d510276e674826cc55ad2e6398c0a8ab07d42"
+    },
+    "README_V3719.md": {
+      "old_sha256": "40ea9b9169852502ac43c5dc1e3c06525552fc7c9688072b461bcfdc6281a5f3",
+      "new_sha256": "d3a7aa41ebeed9eafa37ade1bae7b9bdfd5738b9bc500b258d34e568e8453ac6"
+    }
+  },
+  "new_file_count_excluding_this_manifest": 20,
+  "new_file_names": [
+    "data/official_transcriptions_v3719/PROVENANCE.json",
+    "data/official_transcriptions_v3719/gansu_transcribed.csv",
+    "data/official_transcriptions_v3719/jiangsu_transcribed.csv",
+    "docs/v3719/PHASE3_GUIDE.md",
+    "docs/v3719/PHASE3_REPORT.md",
+    "research_backend/pailie5/official_dataset_v3719.py",
+    "research_backend/pailie5/timestamp_evidence_v3719.py",
+    "research_backend/research_official_v3719.py",
+    "research_backend/tests/test_official_dataset_v3719.py",
+    "runs/v3719/phase3/26295_registration.json",
+    "runs/v3719/phase3/26295_seal.json",
+    "runs/v3719/phase3/26295_seal.tsq",
+    "runs/v3719/phase3/all_tests_exit.txt",
+    "runs/v3719/phase3/all_tests_log.txt",
+    "runs/v3719/phase3/full_regression_final.txt",
+    "runs/v3719/phase3/full_regression_final_exit.txt",
+    "runs/v3719/phase3/github_commitment_receipt.json",
+    "runs/v3719/phase3/quality_audit.json",
+    "runs/v3719/phase3/real_retrospective_11.json",
+    "runs/v3719/phase3/version_fix_tests.txt"
+  ],
+  "data_provenance": "MANUALLY_TRANSCRIBED_2_PROVINCIAL_PUBLIC_PAGES_20_MATCHING_31_UNCHECKED",
+  "historical_test_count": 11,
+  "historical_models_hit_count": {
+    "random": 0,
+    "positional": 0,
+    "pairwise": 0,
+    "ensemble": 0,
+    "heuristic_rank": 0
+  },
+  "git_public_commitment": "https://github.com/meilin2026dh/pl5/pull/4",
+  "git_pr_created_at_utc": "2026-11-04T23:18:41Z",
+  "cryptographic_tsa_verified": false,
+  "real_target_settled": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "full_suite_exit_code": 0,
+  "environment": "Linux Python 3.13; Windows 3.12 not executed",
+  "full_file_count": 2638
+}

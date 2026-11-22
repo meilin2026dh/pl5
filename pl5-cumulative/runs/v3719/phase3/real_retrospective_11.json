@@ -1,0 +1,756 @@
+{
+  "conclusion": "These are historical post-publication experiments; do not interpret any observed hit as a pre-draw success.",
+  "evaluation_issues_all_crosschecked": true,
+  "evaluation_unverified_issues": [],
+  "evidence_level": "RETROSPECTIVE_CROSSCHECKED_RESULTS_NOT_BLIND",
+  "experiment": {
+    "baseline_per_draw": 0.001,
+    "dataset_rows": 51,
+    "dataset_sha256": "6300021a07260315bfa0a84e7781cd93d10448236b5b0002409bb4b5d932e171",
+    "evidence_level": "RETROSPECTIVE_WALK_FORWARD_ONLY",
+    "first_test_issue": "26284",
+    "input_type": "unverified_historical_csv",
+    "last_test_issue": "26294",
+    "models": [
+      {
+        "bonferroni_family_p": null,
+        "fair_expected_hits": 0.011,
+        "fair_hit_probability": 0.001,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "method": "random",
+        "one_sided_binomial_p": 1.0,
+        "passes_predeclared_alpha": false,
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "test_periods": 11,
+        "top_k": 100,
+        "wilson_95_interval": [
+          0.0,
+          0.258832967
+        ]
+      },
+      {
+        "bonferroni_family_p": 1.0,
+        "fair_expected_hits": 0.011,
+        "fair_hit_probability": 0.001,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "method": "positional",
+        "one_sided_binomial_p": 1.0,
+        "passes_predeclared_alpha": false,
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "test_periods": 11,
+        "top_k": 100,
+        "wilson_95_interval": [
+          0.0,
+          0.258832967
+        ]
+      },
+      {
+        "bonferroni_family_p": 1.0,
+        "fair_expected_hits": 0.011,
+        "fair_hit_probability": 0.001,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "method": "pairwise",
+        "one_sided_binomial_p": 1.0,
+        "passes_predeclared_alpha": false,
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "test_periods": 11,
+        "top_k": 100,
+        "wilson_95_interval": [
+          0.0,
+          0.258832967
+        ]
+      },
+      {
+        "bonferroni_family_p": 1.0,
+        "fair_expected_hits": 0.011,
+        "fair_hit_probability": 0.001,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "method": "ensemble",
+        "one_sided_binomial_p": 1.0,
+        "passes_predeclared_alpha": false,
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "test_periods": 11,
+        "top_k": 100,
+        "wilson_95_interval": [
+          0.0,
+          0.258832967
+        ]
+      },
+      {
+        "bonferroni_family_p": 1.0,
+        "fair_expected_hits": 0.011,
+        "fair_hit_probability": 0.001,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "method": "heuristic_rank",
+        "one_sided_binomial_p": 1.0,
+        "passes_predeclared_alpha": false,
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "test_periods": 11,
+        "top_k": 100,
+        "wilson_95_interval": [
+          0.0,
+          0.258832967
+        ]
+      }
+    ],
+    "predictions": [
+      {
+        "actual": "67726",
+        "candidate_count": 100,
+        "candidate_sha256": "bb1dcf5f3f3d425f723bd84d2a438987d0e8be6740f6a5721b4c6232e5f05ffd",
+        "history_count": 40,
+        "history_sha256": "4d18958c0b5d7c62a2160b92ecaeda0ecc6b8c06fe251ba240b355c086c6ca98",
+        "hit": false,
+        "issue": "26284",
+        "method": "random"
+      },
+      {
+        "actual": "67726",
+        "candidate_count": 100,
+        "candidate_sha256": "e1773c85ef8cf48859fcb1a7f03bbbdd6b21e4133718001a5d1b2af779ca9468",
+        "history_count": 40,
+        "history_sha256": "4d18958c0b5d7c62a2160b92ecaeda0ecc6b8c06fe251ba240b355c086c6ca98",
+        "hit": false,
+        "issue": "26284",
+        "method": "positional"
+      },
+      {
+        "actual": "67726",
+        "candidate_count": 100,
+        "candidate_sha256": "0a91a70f2f6c4c68c42916ea0bb2913656ca3395ae979d5eb887fa34e64505aa",
+        "history_count": 40,
+        "history_sha256": "4d18958c0b5d7c62a2160b92ecaeda0ecc6b8c06fe251ba240b355c086c6ca98",
+        "hit": false,
+        "issue": "26284",
+        "method": "pairwise"
+      },
+      {
+        "actual": "67726",
+        "candidate_count": 100,
+        "candidate_sha256": "6fb32f209590183f67ecc90cfd2ca4c572d773b084bf7c047d8a72bea989de29",
+        "history_count": 40,
+        "history_sha256": "4d18958c0b5d7c62a2160b92ecaeda0ecc6b8c06fe251ba240b355c086c6ca98",
+        "hit": false,
+        "issue": "26284",
+        "method": "ensemble"
+      },
+      {
+        "actual": "67726",
+        "candidate_count": 100,
+        "candidate_sha256": "2338a1da96b5775e90f51548e90b0a1b369382f148420f27b6b3a11761980983",
+        "history_count": 40,
+        "history_sha256": "4d18958c0b5d7c62a2160b92ecaeda0ecc6b8c06fe251ba240b355c086c6ca98",
+        "hit": false,
+        "issue": "26284",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "61300",
+        "candidate_count": 100,
+        "candidate_sha256": "1107fcc99f13135734751d410ea03da99f1b5562ec5bc1331ae8b38f33ce2223",
+        "history_count": 41,
+        "history_sha256": "e5c297602d156655f6fc9b8145e1086fe703e4fbf1fb6b73f6812a77dbae2ae6",
+        "hit": false,
+        "issue": "26285",
+        "method": "random"
+      },
+      {
+        "actual": "61300",
+        "candidate_count": 100,
+        "candidate_sha256": "1ffff2cc9d95b38c0b26b87e13a649c7c2d0ab7aeaae6bd10f03a37ddd4403df",
+        "history_count": 41,
+        "history_sha256": "e5c297602d156655f6fc9b8145e1086fe703e4fbf1fb6b73f6812a77dbae2ae6",
+        "hit": false,
+        "issue": "26285",
+        "method": "positional"
+      },
+      {
+        "actual": "61300",
+        "candidate_count": 100,
+        "candidate_sha256": "dc3560b321b9e4ac073ba31143be0ac94a2dbc70bbfc8a9fe40fca2b60cb8ebd",
+        "history_count": 41,
+        "history_sha256": "e5c297602d156655f6fc9b8145e1086fe703e4fbf1fb6b73f6812a77dbae2ae6",
+        "hit": false,
+        "issue": "26285",
+        "method": "pairwise"
+      },
+      {
+        "actual": "61300",
+        "candidate_count": 100,
+        "candidate_sha256": "519133fb1e86c3ebc424d501e6631bba7b2a0c0f54737ddcc2f2b7d8c2d2da2f",
+        "history_count": 41,
+        "history_sha256": "e5c297602d156655f6fc9b8145e1086fe703e4fbf1fb6b73f6812a77dbae2ae6",
+        "hit": false,
+        "issue": "26285",
+        "method": "ensemble"
+      },
+      {
+        "actual": "61300",
+        "candidate_count": 100,
+        "candidate_sha256": "99cdff470bed81682a7214598b0b3eb17d8b74c679d96558d4720828711011ba",
+        "history_count": 41,
+        "history_sha256": "e5c297602d156655f6fc9b8145e1086fe703e4fbf1fb6b73f6812a77dbae2ae6",
+        "hit": false,
+        "issue": "26285",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "21819",
+        "candidate_count": 100,
+        "candidate_sha256": "bee82128cd3ba173df68db7c751df4ce3b140b3c6840fc139af32a723211b5c9",
+        "history_count": 42,
+        "history_sha256": "c05f76e4aca745130b11ef87ded4eefda34a409b669c024ae9bf93dab5986168",
+        "hit": false,
+        "issue": "26286",
+        "method": "random"
+      },
+      {
+        "actual": "21819",
+        "candidate_count": 100,
+        "candidate_sha256": "d43d58f9dea84cfae514041470da8801917676006ebb8f3e236b2c27bc3c4020",
+        "history_count": 42,
+        "history_sha256": "c05f76e4aca745130b11ef87ded4eefda34a409b669c024ae9bf93dab5986168",
+        "hit": false,
+        "issue": "26286",
+        "method": "positional"
+      },
+      {
+        "actual": "21819",
+        "candidate_count": 100,
+        "candidate_sha256": "a9d1c249693f8009e33dd91f9611a453bc3fa827c144a93de9529d43aff36f76",
+        "history_count": 42,
+        "history_sha256": "c05f76e4aca745130b11ef87ded4eefda34a409b669c024ae9bf93dab5986168",
+        "hit": false,
+        "issue": "26286",
+        "method": "pairwise"
+      },
+      {
+        "actual": "21819",
+        "candidate_count": 100,
+        "candidate_sha256": "554f3af5711131467dec78395b4fe5fa75934cf34576dca419982c6fa18a11f7",
+        "history_count": 42,
+        "history_sha256": "c05f76e4aca745130b11ef87ded4eefda34a409b669c024ae9bf93dab5986168",
+        "hit": false,
+        "issue": "26286",
+        "method": "ensemble"
+      },
+      {
+        "actual": "21819",
+        "candidate_count": 100,
+        "candidate_sha256": "3c5d3eb6e4d94e50cd075015b284486efbfc549a7b18c6e7f285cac8234941e6",
+        "history_count": 42,
+        "history_sha256": "c05f76e4aca745130b11ef87ded4eefda34a409b669c024ae9bf93dab5986168",
+        "hit": false,
+        "issue": "26286",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "15448",
+        "candidate_count": 100,
+        "candidate_sha256": "95223a01421dc1857d14691af42aa958b7f0e9152327aa29feb2788ff270a35f",
+        "history_count": 43,
+        "history_sha256": "ae8252cde24a8a5f552d2ece742b2d04a981e30d73d141bdf4872133915098b1",
+        "hit": false,
+        "issue": "26287",
+        "method": "random"
+      },
+      {
+        "actual": "15448",
+        "candidate_count": 100,
+        "candidate_sha256": "03814d05d18ae6150fa9e5165041fcbfad4c378a2b58de5a008f91a949e5fe2c",
+        "history_count": 43,
+        "history_sha256": "ae8252cde24a8a5f552d2ece742b2d04a981e30d73d141bdf4872133915098b1",
+        "hit": false,
+        "issue": "26287",
+        "method": "positional"
+      },
+      {
+        "actual": "15448",
+        "candidate_count": 100,
+        "candidate_sha256": "f4c9f4f68846d3307c5a95f4ecc9a2c145bed06b43482e0a85301b1f4b800feb",
+        "history_count": 43,
+        "history_sha256": "ae8252cde24a8a5f552d2ece742b2d04a981e30d73d141bdf4872133915098b1",
+        "hit": false,
+        "issue": "26287",
+        "method": "pairwise"
+      },
+      {
+        "actual": "15448",
+        "candidate_count": 100,
+        "candidate_sha256": "b92446c9ca4411db23772b37c11a9e5b4e93637867a6ac49b0f980f039a95afe",
+        "history_count": 43,
+        "history_sha256": "ae8252cde24a8a5f552d2ece742b2d04a981e30d73d141bdf4872133915098b1",
+        "hit": false,
+        "issue": "26287",
+        "method": "ensemble"
+      },
+      {
+        "actual": "15448",
+        "candidate_count": 100,
+        "candidate_sha256": "725cedfc683d47d66fb05e599066f48357e8cfac3b2ab7542ff4d0159faf4cd6",
+        "history_count": 43,
+        "history_sha256": "ae8252cde24a8a5f552d2ece742b2d04a981e30d73d141bdf4872133915098b1",
+        "hit": false,
+        "issue": "26287",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "41572",
+        "candidate_count": 100,
+        "candidate_sha256": "c8d0d5c5f7d837220ef3b9d117caca08827d528caf964bad7b42037a9c6105a0",
+        "history_count": 44,
+        "history_sha256": "616fefd203abf43fc47d2fafda0b1c5257b7a069b50f79d90bb2dd96fd9c8000",
+        "hit": false,
+        "issue": "26288",
+        "method": "random"
+      },
+      {
+        "actual": "41572",
+        "candidate_count": 100,
+        "candidate_sha256": "e3cc7e7e093c936b2a35c6d0eb583b64ce3439174a6ce075342212ff3b6cea60",
+        "history_count": 44,
+        "history_sha256": "616fefd203abf43fc47d2fafda0b1c5257b7a069b50f79d90bb2dd96fd9c8000",
+        "hit": false,
+        "issue": "26288",
+        "method": "positional"
+      },
+      {
+        "actual": "41572",
+        "candidate_count": 100,
+        "candidate_sha256": "d52bb85957db40797683746dd70fe053a4c9ee68897052a8d7db5c4296d9d685",
+        "history_count": 44,
+        "history_sha256": "616fefd203abf43fc47d2fafda0b1c5257b7a069b50f79d90bb2dd96fd9c8000",
+        "hit": false,
+        "issue": "26288",
+        "method": "pairwise"
+      },
+      {
+        "actual": "41572",
+        "candidate_count": 100,
+        "candidate_sha256": "a91ea15c17b14f03c732a906eb9fdb7b97431f10643b7260884a37a91ae3ebd4",
+        "history_count": 44,
+        "history_sha256": "616fefd203abf43fc47d2fafda0b1c5257b7a069b50f79d90bb2dd96fd9c8000",
+        "hit": false,
+        "issue": "26288",
+        "method": "ensemble"
+      },
+      {
+        "actual": "41572",
+        "candidate_count": 100,
+        "candidate_sha256": "a871a6307ceed4405acc949314e58b4265dc11a0248126ccd12706a1b07ceb3b",
+        "history_count": 44,
+        "history_sha256": "616fefd203abf43fc47d2fafda0b1c5257b7a069b50f79d90bb2dd96fd9c8000",
+        "hit": false,
+        "issue": "26288",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "29959",
+        "candidate_count": 100,
+        "candidate_sha256": "956014a92198875e7c8cc1d72dc6f0b6eb37c5449aab1d59905c117b271a4cb4",
+        "history_count": 45,
+        "history_sha256": "9c4879cc4ecb5d38b0c0520b93733cb63e2347d503dc6026d2d58bf8dcca3654",
+        "hit": false,
+        "issue": "26289",
+        "method": "random"
+      },
+      {
+        "actual": "29959",
+        "candidate_count": 100,
+        "candidate_sha256": "72d60ee3be930227d78ff35d6dfc4c327d3c1a93e8ee0700071905bc49b7ad17",
+        "history_count": 45,
+        "history_sha256": "9c4879cc4ecb5d38b0c0520b93733cb63e2347d503dc6026d2d58bf8dcca3654",
+        "hit": false,
+        "issue": "26289",
+        "method": "positional"
+      },
+      {
+        "actual": "29959",
+        "candidate_count": 100,
+        "candidate_sha256": "454a6d2a3253c8b22fa529a677707976a728f5dfb53edd438dd341cea093dd8a",
+        "history_count": 45,
+        "history_sha256": "9c4879cc4ecb5d38b0c0520b93733cb63e2347d503dc6026d2d58bf8dcca3654",
+        "hit": false,
+        "issue": "26289",
+        "method": "pairwise"
+      },
+      {
+        "actual": "29959",
+        "candidate_count": 100,
+        "candidate_sha256": "e3198bbda667f2335d904864a118d0579113ad5f52b989de1f37a8f9a2fbb4d9",
+        "history_count": 45,
+        "history_sha256": "9c4879cc4ecb5d38b0c0520b93733cb63e2347d503dc6026d2d58bf8dcca3654",
+        "hit": false,
+        "issue": "26289",
+        "method": "ensemble"
+      },
+      {
+        "actual": "29959",
+        "candidate_count": 100,
+        "candidate_sha256": "36ae1747bf7be34ef1dfa8281767c7d907b10c5756bece2e1e903f6a91657cbb",
+        "history_count": 45,
+        "history_sha256": "9c4879cc4ecb5d38b0c0520b93733cb63e2347d503dc6026d2d58bf8dcca3654",
+        "hit": false,
+        "issue": "26289",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "03936",
+        "candidate_count": 100,
+        "candidate_sha256": "76943ed31c32949294fe10d4e827374a5643da085e4d2939fb7b38cd99998abd",
+        "history_count": 46,
+        "history_sha256": "6ad36841a308bcb992761bf9283a098298432827fba61119976ffc3111dc60c4",
+        "hit": false,
+        "issue": "26290",
+        "method": "random"
+      },
+      {
+        "actual": "03936",
+        "candidate_count": 100,
+        "candidate_sha256": "d6442d4efc40ead62d8af432301e2228c60ee609eef4ec5a707ea9657972c517",
+        "history_count": 46,
+        "history_sha256": "6ad36841a308bcb992761bf9283a098298432827fba61119976ffc3111dc60c4",
+        "hit": false,
+        "issue": "26290",
+        "method": "positional"
+      },
+      {
+        "actual": "03936",
+        "candidate_count": 100,
+        "candidate_sha256": "8329f037fa912d2d3a4e2863ea493ca4fc7ccd0a495fe4db75cdf4e43cd21bd2",
+        "history_count": 46,
+        "history_sha256": "6ad36841a308bcb992761bf9283a098298432827fba61119976ffc3111dc60c4",
+        "hit": false,
+        "issue": "26290",
+        "method": "pairwise"
+      },
+      {
+        "actual": "03936",
+        "candidate_count": 100,
+        "candidate_sha256": "1dc5fea3ed83c00746590f67296bab0896537a14b2ffeca4e5e6e03c45574969",
+        "history_count": 46,
+        "history_sha256": "6ad36841a308bcb992761bf9283a098298432827fba61119976ffc3111dc60c4",
+        "hit": false,
+        "issue": "26290",
+        "method": "ensemble"
+      },
+      {
+        "actual": "03936",
+        "candidate_count": 100,
+        "candidate_sha256": "bfbafa30f5d675b7e435cae2ffe126cdfc86f4f073f23206064e79ae6228997c",
+        "history_count": 46,
+        "history_sha256": "6ad36841a308bcb992761bf9283a098298432827fba61119976ffc3111dc60c4",
+        "hit": false,
+        "issue": "26290",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "27624",
+        "candidate_count": 100,
+        "candidate_sha256": "0a7bd4a9f1b2ab559ba503fd943e9f6b6ab19887cfc568b384125c0d9d913bc7",
+        "history_count": 47,
+        "history_sha256": "8aeb037539c8425c551c8e144f8c6672a26e3486da8452f73bbd3d8ac027d75e",
+        "hit": false,
+        "issue": "26291",
+        "method": "random"
+      },
+      {
+        "actual": "27624",
+        "candidate_count": 100,
+        "candidate_sha256": "f9b33839bebb78927da07b668c272e383cf5e5060455eaca8edf9a60e3954681",
+        "history_count": 47,
+        "history_sha256": "8aeb037539c8425c551c8e144f8c6672a26e3486da8452f73bbd3d8ac027d75e",
+        "hit": false,
+        "issue": "26291",
+        "method": "positional"
+      },
+      {
+        "actual": "27624",
+        "candidate_count": 100,
+        "candidate_sha256": "2ab60290d9bef2007baf937fe79f41e0df121ccb2252443c00a64a224ff746f6",
+        "history_count": 47,
+        "history_sha256": "8aeb037539c8425c551c8e144f8c6672a26e3486da8452f73bbd3d8ac027d75e",
+        "hit": false,
+        "issue": "26291",
+        "method": "pairwise"
+      },
+      {
+        "actual": "27624",
+        "candidate_count": 100,
+        "candidate_sha256": "aaea929b48e40a9c7c95f6a99d25af6499725352ab8e6fb496ac6100c5c60224",
+        "history_count": 47,
+        "history_sha256": "8aeb037539c8425c551c8e144f8c6672a26e3486da8452f73bbd3d8ac027d75e",
+        "hit": false,
+        "issue": "26291",
+        "method": "ensemble"
+      },
+      {
+        "actual": "27624",
+        "candidate_count": 100,
+        "candidate_sha256": "af12b1b6e64fcd6571eefda43f6daec30896d13b15b2a7765e89a2538ba4d343",
+        "history_count": 47,
+        "history_sha256": "8aeb037539c8425c551c8e144f8c6672a26e3486da8452f73bbd3d8ac027d75e",
+        "hit": false,
+        "issue": "26291",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "44610",
+        "candidate_count": 100,
+        "candidate_sha256": "bbc12b9fc4737600466c2a9d622068b08b2c0b830722611e88ae9934f5944c6e",
+        "history_count": 48,
+        "history_sha256": "faf5479fc669d550e61c68e73e29436f98155ac9599ff6974375808bc442d04b",
+        "hit": false,
+        "issue": "26292",
+        "method": "random"
+      },
+      {
+        "actual": "44610",
+        "candidate_count": 100,
+        "candidate_sha256": "888059d459cfa19490715e3da6fbdb0a9d6b43c8c70a977749d79522fcd1e3bd",
+        "history_count": 48,
+        "history_sha256": "faf5479fc669d550e61c68e73e29436f98155ac9599ff6974375808bc442d04b",
+        "hit": false,
+        "issue": "26292",
+        "method": "positional"
+      },
+      {
+        "actual": "44610",
+        "candidate_count": 100,
+        "candidate_sha256": "97f5a31a897b005d92e1fe0be266ef73200adedb39a6967954ef2c80a081d797",
+        "history_count": 48,
+        "history_sha256": "faf5479fc669d550e61c68e73e29436f98155ac9599ff6974375808bc442d04b",
+        "hit": false,
+        "issue": "26292",
+        "method": "pairwise"
+      },
+      {
+        "actual": "44610",
+        "candidate_count": 100,
+        "candidate_sha256": "8091561f546393ab2ed650bd45ae277669229eea06eb494a9f2ee39b4bc9b50b",
+        "history_count": 48,
+        "history_sha256": "faf5479fc669d550e61c68e73e29436f98155ac9599ff6974375808bc442d04b",
+        "hit": false,
+        "issue": "26292",
+        "method": "ensemble"
+      },
+      {
+        "actual": "44610",
+        "candidate_count": 100,
+        "candidate_sha256": "0109307b57cddda52089d517d37773f85d6bcaeb8e2de22d75200543b30cef26",
+        "history_count": 48,
+        "history_sha256": "faf5479fc669d550e61c68e73e29436f98155ac9599ff6974375808bc442d04b",
+        "hit": false,
+        "issue": "26292",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "81146",
+        "candidate_count": 100,
+        "candidate_sha256": "97b3161a782ef2162901323e9c3f6f8f4481221a65ae76d76e6f2e79c35d54a3",
+        "history_count": 49,
+        "history_sha256": "18a653b9c4d9025fe8176488e5c7feab62b111f589edab67fef0716e00e6a6df",
+        "hit": false,
+        "issue": "26293",
+        "method": "random"
+      },
+      {
+        "actual": "81146",
+        "candidate_count": 100,
+        "candidate_sha256": "ffd58eb12c1b927708752c62906ba84146439030dce3dd5ddcb38af6de26cdb7",
+        "history_count": 49,
+        "history_sha256": "18a653b9c4d9025fe8176488e5c7feab62b111f589edab67fef0716e00e6a6df",
+        "hit": false,
+        "issue": "26293",
+        "method": "positional"
+      },
+      {
+        "actual": "81146",
+        "candidate_count": 100,
+        "candidate_sha256": "e92f46b0a54b40b02afc31df7bb710cc0aa04deeb9d0476d3ba225f2e30fc47a",
+        "history_count": 49,
+        "history_sha256": "18a653b9c4d9025fe8176488e5c7feab62b111f589edab67fef0716e00e6a6df",
+        "hit": false,
+        "issue": "26293",
+        "method": "pairwise"
+      },
+      {
+        "actual": "81146",
+        "candidate_count": 100,
+        "candidate_sha256": "eb28fd41a753edda3cb06b49091c97becca3f190d2881ee67febbdf7dd91aeaa",
+        "history_count": 49,
+        "history_sha256": "18a653b9c4d9025fe8176488e5c7feab62b111f589edab67fef0716e00e6a6df",
+        "hit": false,
+        "issue": "26293",
+        "method": "ensemble"
+      },
+      {
+        "actual": "81146",
+        "candidate_count": 100,
+        "candidate_sha256": "f639235642521fce2fc4945738d1c277644da458fd7d98729117a9325f916b49",
+        "history_count": 49,
+        "history_sha256": "18a653b9c4d9025fe8176488e5c7feab62b111f589edab67fef0716e00e6a6df",
+        "hit": false,
+        "issue": "26293",
+        "method": "heuristic_rank"
+      },
+      {
+        "actual": "32938",
+        "candidate_count": 100,
+        "candidate_sha256": "18618407206d2c8ff2071f02398905c4615b1a156b77fcbbb0fc57c5489c9847",
+        "history_count": 50,
+        "history_sha256": "21dfaffd0b9ac61be8610bfd3c3a678ab43eb06d9fbb3b1918e22ab7c963aa40",
+        "hit": false,
+        "issue": "26294",
+        "method": "random"
+      },
+      {
+        "actual": "32938",
+        "candidate_count": 100,
+        "candidate_sha256": "e2e61f80d4c91bbc1261e2c5ac4a8c41f0b0057ce3df68b5b6e938365d5270a4",
+        "history_count": 50,
+        "history_sha256": "21dfaffd0b9ac61be8610bfd3c3a678ab43eb06d9fbb3b1918e22ab7c963aa40",
+        "hit": false,
+        "issue": "26294",
+        "method": "positional"
+      },
+      {
+        "actual": "32938",
+        "candidate_count": 100,
+        "candidate_sha256": "6c95cc7f2a137c4b9d616b9af9c84c11b856022f4d17b1f69c8a47c76c6ddac8",
+        "history_count": 50,
+        "history_sha256": "21dfaffd0b9ac61be8610bfd3c3a678ab43eb06d9fbb3b1918e22ab7c963aa40",
+        "hit": false,
+        "issue": "26294",
+        "method": "pairwise"
+      },
+      {
+        "actual": "32938",
+        "candidate_count": 100,
+        "candidate_sha256": "2e60080780776378dd1083a5fb2ed457bfdd117b3d1c4f7b2f0cdc6661f790fe",
+        "history_count": 50,
+        "history_sha256": "21dfaffd0b9ac61be8610bfd3c3a678ab43eb06d9fbb3b1918e22ab7c963aa40",
+        "hit": false,
+        "issue": "26294",
+        "method": "ensemble"
+      },
+      {
+        "actual": "32938",
+        "candidate_count": 100,
+        "candidate_sha256": "7394bc6dcdaf5e384af25152947de7093ee99fc74eff87888c769da1d1318d3e",
+        "history_count": 50,
+        "history_sha256": "21dfaffd0b9ac61be8610bfd3c3a678ab43eb06d9fbb3b1918e22ab7c963aa40",
+        "hit": false,
+        "issue": "26294",
+        "method": "heuristic_rank"
+      }
+    ],
+    "predictive_advantage": "NOT_ESTABLISHED",
+    "production_enabled": false,
+    "prospective_precommitment_verified": false,
+    "protocol": {
+      "alpha": 0.01,
+      "methods": [
+        "random",
+        "positional",
+        "pairwise",
+        "ensemble",
+        "heuristic_rank"
+      ],
+      "seed": 3719,
+      "test_size": 11,
+      "top_k": 100,
+      "warmup": 40
+    },
+    "protocol_sha256": "3bc6c45c0e3582db746314a2f8b27bf7d33b0246706040154b306cdb9a29ef13",
+    "schema": "pl5-v3719-research-validation-1",
+    "test_count": 11,
+    "warnings": [
+      "This is a retrospective simulation, not externally sealed prospective forecasting.",
+      "The input CSV and issue chronology were not independently authenticated.",
+      "P-values assume independent fair draws; repeated holdout selection or parameter tuning invalidates nominal significance.",
+      "Bonferroni adjusts the within-run model family only, not repeated experiments across versions.",
+      "Engineering benchmarks, finite algebra and NCA tasks cannot be pooled with lottery hit rates."
+    ]
+  },
+  "external_timestamp_verified": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "schema": "pl5-v3719-phase3-retrospective-experiment-1",
+  "source_quality": {
+    "crosschecked_dataset_sha256": "1ff0a422b5bf72b20968e839374033fb61414f0c15c1a026329ec2c3e0b41e7c",
+    "draw_sequence_consecutive": true,
+    "evidence_grade": "CROSSCHECKED_TRANSCRIPT_NOT_ARCHIVED_SOURCE",
+    "overlap_verified_count": 20,
+    "overlap_verified_issues": [
+      "26275",
+      "26276",
+      "26277",
+      "26278",
+      "26279",
+      "26280",
+      "26281",
+      "26282",
+      "26283",
+      "26284",
+      "26285",
+      "26286",
+      "26287",
+      "26288",
+      "26289",
+      "26290",
+      "26291",
+      "26292",
+      "26293",
+      "26294"
+    ],
+    "primary_count": 51,
+    "primary_not_crosschecked_count": 31,
+    "primary_not_crosschecked_issues": [
+      "26244",
+      "26245",
+      "26246",
+      "26247",
+      "26248",
+      "26249",
+      "26250",
+      "26251",
+      "26252",
+      "26253",
+      "26254",
+      "26255",
+      "26256",
+      "26257",
+      "26258",
+      "26259",
+      "26260",
+      "26261",
+      "26262",
+      "26263",
+      "26264",
+      "26265",
+      "26266",
+      "26267",
+      "26268",
+      "26269",
+      "26270",
+      "26271",
+      "26272",
+      "26273",
+      "26274"
+    ],
+    "primary_sha256": "6962260131f6f78072bb4b0ec95514ff8ec764e1d3a2048a275e06a24644b00e",
+    "primary_url": "https://www.js-lottery.com/Chart/p5Number",
+    "raw_page_html_preserved": false,
+    "schema": "pl5-v3719-phase3-data-quality-1",
+    "source_identity_independently_authenticated": false,
+    "warning": "Two independently hosted pages agreed, but site authenticity, raw page bytes and historical edit times are not cryptographically proved.",
+    "witness_count": 20,
+    "witness_sha256": "ca0c2ef7ff02dedc8d467a0ae1c829683339f7831911b520694cb6af7df9da26",
+    "witness_url": "https://www.gstc.org.cn/wanfa/pl5_history"
+  }
+}

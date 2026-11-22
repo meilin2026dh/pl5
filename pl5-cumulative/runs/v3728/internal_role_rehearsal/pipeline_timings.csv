@@ -1,0 +1,5 @@
+task_family,challenge_prepare_wall_ms,issuer_sign_wall_ms,solver_freeze_wall_ms,grader_settle_wall_ms,auditor_verify_wall_ms,measured_local_pipeline_wall_ms,external_issuer_verified
+equal_gate,1.763,5.766,2825.007,7.752,4.324,2844.612,False
+cubic_polynomial,1.381,4.713,2674.025,8.378,4.307,2692.803,False
+independent_random,1.445,4.886,2586.071,7.729,4.32,2604.451,False
+opaque_power,2.295,4.609,2446.787,9.527,4.693,2467.911,False

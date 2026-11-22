@@ -1,0 +1,86 @@
+{
+  "distinct_survivors": 1,
+  "fit_sha256": "7e666b09fec6b62ae380fd200979fbdfc4a8692d1c4d951383d0bbe6fca93705",
+  "integrity_sha256": "688f48cc12eaa0594cad3135de9c0b649a060300513391d3c3fc6a19e5a0e09b",
+  "reason": null,
+  "schema": "pl5-v3724-compositional-grammar-1:freeze",
+  "selected": {
+    "spec": {
+      "grammar": "binary_composition",
+      "left": "xor_mod10",
+      "operation": "add",
+      "right": "absdiff_mod10",
+      "shift": 3
+    },
+    "table_sha256": "607203a805be5b2d8e1ca8d192a7dbd1a4d3761a588b049a88ca3b2d08c5085b"
+  },
+  "status": "FROZEN",
+  "test_labels_seen": false,
+  "validation_pairs": [
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ]
+  ],
+  "validation_sha256": "917a32b763da6d52625b6d494c10a80fa14aafc387ab85ccc013eccdbd322a00"
+}

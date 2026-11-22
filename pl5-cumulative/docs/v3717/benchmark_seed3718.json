@@ -1,0 +1,143 @@
+{
+  "schema": "pl5-v3717-end-to-end-1",
+  "synthetic_history": true,
+  "authenticated_lottery_data": false,
+  "history_sha256": "f7812094b6a4c7f6a8b10676c1b6ab95e3a234efdede9ff2786319a2fefc6ff6",
+  "history_periods": 1000,
+  "domain": 100000,
+  "seed": 3718,
+  "repeats": 10,
+  "workflows": {
+    "rolling_rank": {
+      "exact_same_result": true,
+      "legacy_digest": "3f7336db1dcd873ffa20cd7612e0e30c2107571cac173cd89f6dc53005d5b1a3",
+      "fast_digest": "3f7336db1dcd873ffa20cd7612e0e30c2107571cac173cd89f6dc53005d5b1a3",
+      "periods": 5,
+      "timing_ms": {
+        "legacy_runs": [
+          257.87424,
+          252.27075,
+          270.28843,
+          267.58587,
+          253.02708,
+          249.76889,
+          287.71495,
+          291.25194,
+          311.84072,
+          297.97251
+        ],
+        "fast_runs": [
+          65.82347,
+          60.30123,
+          66.1526,
+          61.95508,
+          66.83854,
+          88.7509,
+          57.87473,
+          78.61808,
+          92.06505,
+          112.94096
+        ],
+        "legacy_median": 268.93715,
+        "fast_median": 66.49557,
+        "legacy_p95": 305.60003,
+        "fast_p95": 103.5468
+      },
+      "speed_ratio": 4.04444
+    },
+    "rolling_sculpt": {
+      "exact_same_result": true,
+      "legacy_digest": "b367794d5c70654ac757417312812faaaa62f1ec38c1c7ee851a5ef11c170543",
+      "fast_digest": "b367794d5c70654ac757417312812faaaa62f1ec38c1c7ee851a5ef11c170543",
+      "periods": 5,
+      "timing_ms": {
+        "legacy_runs": [
+          412.59427,
+          371.01245,
+          339.79528,
+          362.93043,
+          326.31981,
+          371.21834,
+          325.41942,
+          356.06469,
+          323.15559,
+          356.36082
+        ],
+        "fast_runs": [
+          166.71808,
+          174.71553,
+          172.80931,
+          169.79262,
+          179.59533,
+          193.50989,
+          183.71696,
+          193.50865,
+          162.04229,
+          196.64591
+        ],
+        "legacy_median": 356.21276,
+        "fast_median": 177.15543,
+        "legacy_p95": 393.9751,
+        "fast_p95": 195.2347
+      },
+      "speed_ratio": 2.01074
+    },
+    "contextual_pattern": {
+      "exact_same_result": true,
+      "legacy_digest": "4742789a68cae6b51d1881a5ea70b529ab66f3e4a82ee99f28b482a16d6aeb22",
+      "fast_digest": "4742789a68cae6b51d1881a5ea70b529ab66f3e4a82ee99f28b482a16d6aeb22",
+      "periods": 3,
+      "timing_ms": {
+        "legacy_runs": [
+          3738.74628,
+          3733.8459,
+          3772.72361,
+          3929.05219,
+          4782.01542,
+          4301.24474,
+          3810.71471,
+          4121.43489,
+          3719.43781,
+          3763.04804
+        ],
+        "fast_runs": [
+          818.06233,
+          780.76376,
+          764.57634,
+          1085.66926,
+          936.74792,
+          753.54004,
+          789.89931,
+          817.37873,
+          787.47298,
+          864.21512
+        ],
+        "legacy_median": 3791.71916,
+        "fast_median": 803.63902,
+        "legacy_p95": 4565.66861,
+        "fast_p95": 1018.65466
+      },
+      "speed_ratio": 4.71819
+    }
+  },
+  "workflow_mismatches": 0,
+  "aggregate": {
+    "sum_legacy_median_ms": 4416.86907,
+    "sum_fast_median_ms": 1047.29002,
+    "weighted_ratio": 4.21743
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "clock": "perf_counter_ns"
+  },
+  "limits": [
+    "Input is synthetic_demo.csv and must never be presented as authenticated draw history.",
+    "Comparison computes complete 100000-candidate rankings, not only the actual outcome.",
+    "Warm process measurements exclude data-file loading and package startup.",
+    "Relative speed depends on hardware, number of patterns, data and runtime.",
+    "Legacy is default. Optimized target-only paths are opt-in.",
+    "Neither code path demonstrates predictive lottery advantage."
+  ]
+}

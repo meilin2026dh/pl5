@@ -1,0 +1,30 @@
+{
+  "arms": {
+    "frozen_portfolio": {
+      "budget_ms_total": 6000,
+      "holdout_cells": 0,
+      "holdout_errors": null,
+      "selected_source": null,
+      "status": "ABSTAIN"
+    },
+    "v3725_ring": {
+      "holdout_cells": 0,
+      "holdout_errors": null,
+      "status": "ABSTAIN"
+    },
+    "v3726_gate": {
+      "holdout_cells": 0,
+      "holdout_errors": null,
+      "status": "ABSTAIN"
+    }
+  },
+  "external_blind_verified": false,
+  "external_issuer_verified": false,
+  "holdout_commitment_verified": true,
+  "integrity_sha256": "bf387a932f6c8461e75ea15bc003458d32cb1badad0b5a84af1ff9b604b5c609",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "public_sha256": "9f17542cfd19a8015cf7614e600162afe3a928611def0e85156a9620a4e05f92",
+  "schema": "pl5-v3727-hard-wall-budget-1:grade_manifest",
+  "solver_manifest_sha256": "23f469c028dcc0ae586593e01c5baef4d1e3b3f64e4a836dfc79f08d4398c8ed",
+  "task_id": "int_06_372701"
+}

@@ -1,0 +1,651 @@
+{
+  "trial_id": "shifted_bilinear_37302_no_warm_start",
+  "case": "shifted_bilinear",
+  "task_group": "related_motif",
+  "seed": 37302,
+  "arm": "no_warm_start",
+  "training_correct": 60,
+  "training_n": 60,
+  "holdout_correct": 40,
+  "holdout_n": 40,
+  "exact_reconstruction": true,
+  "nodes": 7,
+  "evaluations": 2500,
+  "proposals": 3953,
+  "budget_matched": true,
+  "winning_origin": "mutation",
+  "fit_seconds": 0.20429725099995721,
+  "operator_path": "trials/shifted_bilinear_37302_no_warm_start/operator.json",
+  "fit": {
+    "budget_matched": true,
+    "budget_unit": "distinct_normalized_AST_interpreter_calls_including_arithmetic_failures",
+    "config": {
+      "batch_size": 32,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "evaluation_budget": 2500,
+      "max_depth": 6,
+      "max_nodes": 11,
+      "pool_size": 32,
+      "proposal_factor": 100,
+      "seed": 37302
+    },
+    "distinct_integer_behaviors": 1489,
+    "evaluation_counts": {
+      "bootstrap": 337,
+      "crossover": 330,
+      "grammar_composition": 412,
+      "guided": 436,
+      "mutation": 483,
+      "random_grammar": 501,
+      "safe_baseline": 1
+    },
+    "evaluations": 2500,
+    "first_exact_evaluation": 897,
+    "mechanisms": {
+      "complexity": true,
+      "crossover": true,
+      "guided": true,
+      "mutation": true,
+      "warm_start": false
+    },
+    "operator": {
+      "description": "((a+(a*b))+3) mod 10",
+      "expression": [
+        "binary",
+        "add",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        [
+          "const",
+          3
+        ]
+      ],
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "operator_id": "c9f019a6c9476438c6c3f8087bb9b9a3daf511041bf9f136d49740d5ef4ce001",
+      "predictive_advantage": "NOT_ESTABLISHED",
+      "production_enabled": false,
+      "source_data_sha256": "c9ef90027034bb0721788fa873d37d42413ce2cbe4926c7cfc0301754cb0925d",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          8
+        ]
+      ]
+    },
+    "proposal_counts": {
+      "bootstrap": 670,
+      "crossover": 700,
+      "grammar_composition": 480,
+      "guided": 701,
+      "mutation": 701,
+      "random_grammar": 700,
+      "safe_baseline": 1
+    },
+    "proposals": 3953,
+    "rejected_counts": {
+      "bounds_or_shape": 236,
+      "duplicate_AST": 1217
+    },
+    "replacement_policy": "disabled_slots_use_target_independent_random_grammar",
+    "selection_used": "training_cells_only",
+    "trace": [
+      {
+        "errors": 38,
+        "evaluations": 750,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 3,
+        "origin": "bootstrap",
+        "proposals": 1151,
+        "stage": "bootstrap"
+      },
+      {
+        "errors": 0,
+        "evaluations": 1006,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 1544,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 1262,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 1927,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 1518,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 2341,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 1774,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 2767,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 2030,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 3181,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 2286,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 3587,
+        "stage": "search"
+      },
+      {
+        "errors": 0,
+        "evaluations": 2500,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "mul",
+              [
+                "a"
+              ],
+              [
+                "b"
+              ]
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "nodes": 7,
+        "origin": "mutation",
+        "proposals": 3953,
+        "stage": "final"
+      }
+    ],
+    "training_count": 60,
+    "training_errors": 0,
+    "wall_time_matched": false,
+    "winning_nodes": 7,
+    "winning_origin": "mutation"
+  },
+  "holdout": {
+    "operator_id": "c9f019a6c9476438c6c3f8087bb9b9a3daf511041bf9f136d49740d5ef4ce001",
+    "data_sha256": "ed8f830f13f6dd9990d50c803ccfd93b1264c33d3595d4601012391598940038",
+    "errors": 0,
+    "count": 40,
+    "accuracy": 1.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "c9f019a6c9476438c6c3f8087bb9b9a3daf511041bf9f136d49740d5ef4ce001",
+    "candidate_table_sha256": "0f7b48efc07d3de0794a06af33f9a70c7f75d0271826a29b9938eca66c82e7cc",
+    "target_table_sha256": "0f7b48efc07d3de0794a06af33f9a70c7f75d0271826a29b9938eca66c82e7cc",
+    "exact_on_all_100_pairs": true,
+    "whole_table_errors": 0,
+    "first_mismatch": null,
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": false,
+      "commutativity_counterexample": [
+        0,
+        1
+      ],
+      "associative": false,
+      "associativity_counterexample": [
+        0,
+        0,
+        0
+      ],
+      "identities": [],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 7,
+    "depth": 4,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 75,
+      "formula_plus_exceptions_bits": 82,
+      "preferred": "formula",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "production_enabled": false
+}

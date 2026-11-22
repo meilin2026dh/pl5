@@ -1,0 +1,203 @@
+{
+  "release": "3.7.6",
+  "source_release": "3.7.5",
+  "scientific_mode": "adaptive_synthetic_exploration",
+  "original_cumulative_files": 2304,
+  "original_files_unchanged": 2301,
+  "modified_original_files": [
+    "research_backend/pailie5/__init__.py",
+    "research_backend/pyproject.toml",
+    "research_backend/tests/test_scientific_questions_v375.py"
+  ],
+  "missing_original_files": [],
+  "historical_v375_cycles": 12,
+  "new_v376_method_studies": 8,
+  "new_method_classes": [
+    "more_training",
+    "richer_grammar",
+    "more_search",
+    "balanced_sampling",
+    "cross_family_replication"
+  ],
+  "negative_controls": 2,
+  "total_candidate_evaluations": 8500,
+  "paired_studies": [
+    {
+      "study": 1,
+      "method": "more_training",
+      "case": "xor_mixed",
+      "control": false,
+      "baseline_correct": 8,
+      "challenge_correct": 7,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": -5.0,
+      "plan_sha256": "16e0b127e3270e568f572cf7ad91a2655f74c090b81a6f5375ba7077612e2852",
+      "training_fingerprints": [
+        "a3825984a30ce7b9b1b7dec3611f453a2a726a6ecf3f9a1a07404880c14e4472",
+        "7f6a953cd0887736154263af7addc49933a13a5b7dc93e22aaa76df7d107b065"
+      ],
+      "common_holdout_fingerprint": "03f46b0a428c32b3859592237e7655b1f4b11bdadcac1f5606a2a23593ff1ae9",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 2,
+      "method": "richer_grammar",
+      "case": "xor_mixed",
+      "control": false,
+      "baseline_correct": 6,
+      "challenge_correct": 6,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": 0.0,
+      "plan_sha256": "81ef79c4dd41713b2304cd2686bee59d44567e82734fa9482186bd0866a747fb",
+      "training_fingerprints": [
+        "5bae5af6acf79a14df1525fb551e1636628cb9f96b1a1cae35d47c6100ccdd66",
+        "5bae5af6acf79a14df1525fb551e1636628cb9f96b1a1cae35d47c6100ccdd66"
+      ],
+      "common_holdout_fingerprint": "fc285b2e8b6d1105dd7e88b4ad5e7f0d5b3aeb82b9b72817a99aec316cc45979",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 3,
+      "method": "more_search",
+      "case": "xor_mixed",
+      "control": false,
+      "baseline_correct": 10,
+      "challenge_correct": 10,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 1000,
+      "delta_percentage_points": 0.0,
+      "plan_sha256": "5d23c6078f44f1ddc96f41a62d3a63677cf98a0e69c81c08d332c3371f0c720f",
+      "training_fingerprints": [
+        "d87676bd30f68bb284222120f64a5b66226b8bb5809cfebb66e64737ab038e96",
+        "d87676bd30f68bb284222120f64a5b66226b8bb5809cfebb66e64737ab038e96"
+      ],
+      "common_holdout_fingerprint": "b0cc4ccc58dc51ee01d4bb47a411a17567163bd52db09f6e2bdffe74efbaac4c",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 4,
+      "method": "more_training",
+      "case": "iid_a",
+      "control": true,
+      "baseline_correct": 2,
+      "challenge_correct": 0,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": -10.0,
+      "plan_sha256": "5b3ebec6e0958052eafe9ea503ae90d78993f3b759590a36ec94a0cd24b86013",
+      "training_fingerprints": [
+        "306af26308e1fe3bc3abe96e5bb1c37f5b82d11c61ffb4c999cb1b2d613973d8",
+        "c44c52adf299d2926fd1e37a6b746e56aa9787b3c68f7cca688a8e12bd91658b"
+      ],
+      "common_holdout_fingerprint": "805101ccf876eb2bd826262b6fff5c7e8f666ef4977848dd7852dce2fcf4bc90",
+      "issues": []
+    },
+    {
+      "study": 5,
+      "method": "balanced_sampling",
+      "case": "xor_mixed",
+      "control": false,
+      "baseline_correct": 8,
+      "challenge_correct": 8,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": 0.0,
+      "plan_sha256": "2b524873f523e1ac1de4d7fd97015a19db767be76ffa4cb24069f0978cf344bf",
+      "training_fingerprints": [
+        "b682c0bbae979f87502ea7b3277df8ef1cdb5064f600bf0a939b81a331fbaa54",
+        "631d24024ff1e60eb7a59b625bd52a69a61209d3275340215021e35f9d8d119c"
+      ],
+      "common_holdout_fingerprint": "0883071c67e79330bc6bc9a815336a8c2d219619242537af75abe570eb94cbd8",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 6,
+      "method": "cross_family_replication",
+      "case": "gcd_offsets",
+      "control": false,
+      "baseline_correct": 9,
+      "challenge_correct": 9,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": 0.0,
+      "plan_sha256": "c872e6005a9b414217afe2ad286d2aca35888a3b67476bb43de4c2a91880547c",
+      "training_fingerprints": [
+        "712d1349aecd957f34f2839ad5474bb710f2612eb33b4588ca297cc62aa154b6",
+        "712d1349aecd957f34f2839ad5474bb710f2612eb33b4588ca297cc62aa154b6"
+      ],
+      "common_holdout_fingerprint": "060d07cf738dd1011d2ae58df38074511061699f48c334b81dbd525a9c955088",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 7,
+      "method": "cross_family_replication",
+      "case": "asymmetric_cubic",
+      "control": false,
+      "baseline_correct": 9,
+      "challenge_correct": 7,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": -10.0,
+      "plan_sha256": "31b12218653d35b4fe23185c15adf410d643a1388052238a3f2c64584247b17c",
+      "training_fingerprints": [
+        "9a9e4c1511f5cc2353f18e7b4211defe5b5c2ba66c7d663a26352649d98868f9",
+        "9a9e4c1511f5cc2353f18e7b4211defe5b5c2ba66c7d663a26352649d98868f9"
+      ],
+      "common_holdout_fingerprint": "418b95af30b362b00d84c88e9d1b90ea2842115a5f3ea0650a13d185b89aec15",
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ]
+    },
+    {
+      "study": 8,
+      "method": "more_training",
+      "case": "iid_b",
+      "control": true,
+      "baseline_correct": 2,
+      "challenge_correct": 2,
+      "heldout_count": 20,
+      "baseline_evaluations": 500,
+      "challenge_evaluations": 500,
+      "delta_percentage_points": 0.0,
+      "plan_sha256": "62828e51946484ac73f49db47d3c2c7eadbc19d44fdbbf47a25f9e14edab909f",
+      "training_fingerprints": [
+        "a43ad51d4693d90188194dd9872f463a4e30ba828e10d1f142e31226924ee478",
+        "368b8d2fde76b7b0d946e31f0beb3b2a023ef79619e59509f2ddd12236ef36cd"
+      ],
+      "common_holdout_fingerprint": "d523057bc9e4bd5cbc13d99cb421420b14394d2f6df066beb3d2716848fd3bfa",
+      "issues": []
+    }
+  ],
+  "next_problem_status": "NEEDS_NEW_PRIMITIVE_RESEARCH",
+  "emergent_question_ids": [
+    "Q-method_family_nonimprovement",
+    "Q-new_primitive_needed"
+  ],
+  "real_lottery_experiment": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "background_running": false,
+  "full_backend_test_status": "PENDING",
+  "integration_test_status": "PENDING",
+  "user_windows_deployed": false,
+  "github_synced": false
+}

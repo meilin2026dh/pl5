@@ -1,0 +1,39 @@
+{
+  "budgets_ms": [
+    800,
+    3000
+  ],
+  "external_blind": false,
+  "families": [
+    "equal_gate",
+    "difference_mod3",
+    "sum_threshold",
+    "cubic_polynomial",
+    "parity_gate",
+    "linear_control",
+    "independent_random",
+    "opaque_power"
+  ],
+  "hard_budget_scope": "subprocess startup+imports+model fit+freeze+evidence on wall-clock",
+  "hardware_constant_per_run": true,
+  "independent_external_validation": "NOT_PERFORMED",
+  "internal_developer_authored": true,
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "model_arms": [
+    "v3725_ring",
+    "v3726_gate"
+  ],
+  "model_selection_uses_holdout": false,
+  "portfolio_total_budget_multiplier": 2,
+  "schema": "pl5-v3727-hard-wall-budget-1:internal_benchmark",
+  "seeds": [
+    372701,
+    372702
+  ],
+  "task_partitions": {
+    "holdout": 36,
+    "train": 48,
+    "validation": 16
+  },
+  "time_not_counted": "source discovery, prior research, issuer preparation, grading, reporting"
+}

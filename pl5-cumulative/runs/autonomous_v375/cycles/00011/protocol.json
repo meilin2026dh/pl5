@@ -1,0 +1,25 @@
+{
+  "schema": "pl5-v374-predeclared-cycle-1",
+  "cycle_number": 11,
+  "case": "xor_mixed",
+  "seed": 48500,
+  "budget": 500,
+  "question": "Does adaptive expression search generalize on a new synthetic structure?",
+  "hypothesis": "Candidate structure may transfer, but only to a fresh task; do not reuse this test split.",
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "policies": [
+    "full",
+    "no_warm",
+    "selective",
+    "grammar_only"
+  ],
+  "test_labels_hidden_from_fit": true,
+  "adaptive_task_selection": true,
+  "confirmatory_pvalue_permitted": false,
+  "research_only": true,
+  "production_enabled": false,
+  "scientific_question_id": "Q-generalization_gap",
+  "scientific_hypothesis_id": "H-generalization_gap-overfit",
+  "scientific_plan_sha256": "8de7a71bf9a7ead49f82f3432ebe431f4ce29d8799adafa2fe5fd093ef6129bd"
+}

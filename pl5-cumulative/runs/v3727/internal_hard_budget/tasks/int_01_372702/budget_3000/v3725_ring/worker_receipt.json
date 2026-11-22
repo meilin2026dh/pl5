@@ -1,0 +1,13 @@
+{
+  "arm": "v3725_ring",
+  "candidate_evaluations": 4,
+  "evidence_grade": "INTERNAL_OR_UNVERIFIED_ISSUER",
+  "fit_sha256": "52a81ba1a946042e8d01a34351681839ffe9e8c5402fc30e74560a409bddda3c",
+  "freeze_sha256": "1a7c7107d9eb29325f06c10b531366724b7028602298761c0d91c2be5745ea30",
+  "holdout_labels_seen": false,
+  "integrity_sha256": "b0f864d3698182cf82285098d914c90c3cfcd1ff993269d03143325e1c82c8de",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "public_sha256": "142db35fe35c6b2bb6928fede581a2cdbc4e68643c15f2b7f68229a8b698e14d",
+  "schema": "pl5-v3727-hard-wall-budget-1:worker_receipt",
+  "status": "ABSTAIN"
+}

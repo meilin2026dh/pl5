@@ -1,0 +1,68 @@
+{
+  "algorithm_sha256": {
+    "engine.py": "84eb2ec209cf31fb743cbe9629747ebb5b9d0f4f69bbde9f1a1416cd10510e91",
+    "probability_ranker.py": "e8e7859266627533d098f64a0fa62c67121fbef26054530921c1b479f7f44413",
+    "prospective_validation_v3719.py": "4f5babe9b22e6e713d0055ed498073b6143a35c189c1e9a984847c5e6cdafcb1",
+    "research_validation_v3719.py": "8539e5d0d88f71bb63f8710caf2ae4c05b57d7dcb50034f2ae2b888894ee17fe"
+  },
+  "created_at_utc_local_clock": "2026-11-04T23:17:30+00:00",
+  "crosscheck": {
+    "matched_count": 20,
+    "matched_issues": [
+      "26275",
+      "26276",
+      "26277",
+      "26278",
+      "26279",
+      "26280",
+      "26281",
+      "26282",
+      "26283",
+      "26284",
+      "26285",
+      "26286",
+      "26287",
+      "26288",
+      "26289",
+      "26290",
+      "26291",
+      "26292",
+      "26293",
+      "26294"
+    ],
+    "primary_count": 51,
+    "primary_raw_sha256": "6962260131f6f78072bb4b0ec95514ff8ec764e1d3a2048a275e06a24644b00e",
+    "source_authentication": "NOT_INDEPENDENTLY_AUTHENTICATED",
+    "unchecked_primary_count": 31,
+    "warning": "Both sources may share upstream data; matching rows do not establish independent provenance.",
+    "witness_raw_sha256": "ca0c2ef7ff02dedc8d467a0ae1c829683339f7831911b520694cb6af7df9da26"
+  },
+  "document_sha256": "0c745cc2afcc1222415e585aecff9c6d65fc44429efe315c2c5902d7e560d7a7",
+  "history_count": 51,
+  "history_sha256": "6300021a07260315bfa0a84e7781cd93d10448236b5b0002409bb4b5d932e171",
+  "kind": "registration",
+  "last_known_issue": "26294",
+  "production_enabled": false,
+  "prospective_precommitment_verified": false,
+  "protocol": {
+    "alpha": 0.01,
+    "methods": [
+      "random",
+      "positional",
+      "pairwise",
+      "ensemble",
+      "heuristic_rank"
+    ],
+    "seed": 3719,
+    "test_size": 11,
+    "top_k": 100,
+    "warmup": 40
+  },
+  "schema": "pl5-v3719-phase2-local-seal-v1",
+  "source_descriptions": {
+    "primary": "https://www.js-lottery.com/Chart/p5Number",
+    "witness": "https://www.gstc.org.cn/wanfa/pl5_history"
+  },
+  "study_id": "v3719-phase3-26295-research",
+  "target_issue": "26295"
+}

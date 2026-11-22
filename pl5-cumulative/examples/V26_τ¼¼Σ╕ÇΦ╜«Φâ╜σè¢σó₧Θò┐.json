@@ -1,0 +1,11 @@
+{
+  "version": "hdse-v26",
+  "cycle": 1,
+  "seed": 20365831,
+  "attempted": 12,
+  "new_capabilities": 12,
+  "registered_total": 12,
+  "status": "research_capabilities_only",
+  "automatic_predictive_promotion": false,
+  "capacity_note": "当前3个有界模型家族共有44种非伪参数配置；增量终会饱和。"
+}

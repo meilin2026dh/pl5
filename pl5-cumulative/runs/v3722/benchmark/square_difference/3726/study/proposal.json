@@ -1,0 +1,353 @@
+{
+  "candidate_limit": 24,
+  "candidates": [
+    {
+      "coverage_complete": true,
+      "domain_size": 10,
+      "observed_feature_inputs": 10,
+      "spec": {
+        "candidate_id": "8d0f8f5e5006b734ffaff0c9fefb17ba371df797f9d9ec9ef51b7f4335980b38",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "feature": "difference_mod10",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          5,
+          8,
+          3,
+          0,
+          9,
+          0,
+          3,
+          8,
+          5,
+          4
+        ],
+        "training_sha256": "28aca398c3f17a8c0dc31f49188a5c0fb119c470cdd37ff361c243eba622b8ac"
+      },
+      "table_sha256": "25a56a7a7819c8c4277fcbf037c07729d9de46bb8a4049a8cef83b78d88de13a",
+      "training_errors": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "a",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "b",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "sum_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "difference_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "product_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "xor_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "absdiff_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "min",
+      "observed_inputs": 9
+    },
+    {
+      "conflicting_inputs": 9,
+      "domain_size": 10,
+      "feature": "max",
+      "observed_inputs": 9
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "gcd",
+      "observed_inputs": 9
+    },
+    {
+      "conflicting_inputs": 13,
+      "domain_size": 19,
+      "feature": "sum_raw",
+      "observed_inputs": 16
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 19,
+      "feature": "difference_raw",
+      "observed_inputs": 19
+    },
+    {
+      "conflicting_inputs": 12,
+      "domain_size": 37,
+      "feature": "product_raw",
+      "observed_inputs": 27
+    }
+  ],
+  "evaluated_features": 13,
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "71ad8496d4294938df21ed1b48edc87340decdd82fbb492ba3b1464e920bfb79",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:proposal",
+  "test_labels_used": false,
+  "train_labels_only": true,
+  "training_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "training_sha256": "28aca398c3f17a8c0dc31f49188a5c0fb119c470cdd37ff361c243eba622b8ac"
+}

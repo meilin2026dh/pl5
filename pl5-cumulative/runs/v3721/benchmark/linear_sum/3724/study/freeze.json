@@ -1,0 +1,363 @@
+{
+  "abstention_reason": null,
+  "best_candidate": {
+    "name": "legacy_composition",
+    "nodes": 9,
+    "operator_id": "71075cbba351ad29309d10991287d9a90e9fc2dabb971ecf0e492ea2f3b40a88",
+    "path": "operators/legacy_composition.json",
+    "table_sha256": "2556e2e55624269f51483064f71dbe7286357347eaca96dc200e3fdc3c42aec2",
+    "validation_errors": 0
+  },
+  "integrity_sha256": "b0d65531258a581988554acc899ce060012d5e64369b8ceb19df6058dc0a8ca4",
+  "lottery_prediction_test": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "9e4bb1c2d0a5cd3ebc6b54ddc335c6338f8b9379330cecd0cf7e500dae64a97b",
+  "schema": "pl5-v3721-counterexample-meta-1:freeze",
+  "selected": {
+    "name": "legacy_composition",
+    "nodes": 9,
+    "operator_id": "71075cbba351ad29309d10991287d9a90e9fc2dabb971ecf0e492ea2f3b40a88",
+    "path": "operators/legacy_composition.json",
+    "table_sha256": "2556e2e55624269f51483064f71dbe7286357347eaca96dc200e3fdc3c42aec2",
+    "validation_errors": 0
+  },
+  "status": "FROZEN",
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "0799b88301a4dad0388cd9b240269bcaba1ea168b4e6daef8622785cae74353e",
+  "validation_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      8
+    ]
+  ],
+  "validation_results": [
+    {
+      "name": "legacy_composition",
+      "nodes": 9,
+      "operator_id": "71075cbba351ad29309d10991287d9a90e9fc2dabb971ecf0e492ea2f3b40a88",
+      "path": "operators/legacy_composition.json",
+      "table_sha256": "2556e2e55624269f51483064f71dbe7286357347eaca96dc200e3fdc3c42aec2",
+      "validation_errors": 0
+    }
+  ],
+  "validation_sha256": "f84efdb01139b6448cac8b176784689a9519e0b027a9c85ba2c2b73a19c49275"
+}

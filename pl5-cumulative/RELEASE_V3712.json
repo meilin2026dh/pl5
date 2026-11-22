@@ -1,0 +1,11 @@
+{
+  "research_release": "3.7.12",
+  "base_archive": "PL5_V3711_Full.zip",
+  "base_preservation": "all 2460 prior files must match SHA256 byte-for-byte",
+  "research_scope": "synthetic bounded unary-template transfer, negative transfer, source acquisition ledger, four-window FWER controls",
+  "application_version_changed": false,
+  "long_running_agent_started": false,
+  "synced_to_github": false,
+  "windows_installed": false,
+  "real_lottery_advantage_established": false
+}

@@ -1,0 +1,261 @@
+{
+  "arms": {
+    "full": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 0.5,
+      "training_accuracy": 0.5666666666666667,
+      "exact_reconstructions": 0,
+      "mean_nodes": 7.0,
+      "mean_fit_seconds": 0.17416407299998582,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3923.0,
+      "iid_control": {
+        "correct": 4,
+        "cells": 40,
+        "accuracy": 0.1,
+        "exact_reconstructions": 0,
+        "p_two_sided": 1.0,
+        "exact_95pct_interval": [
+          0.02792541529421937,
+          0.2366373998759482
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "grammar_only": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 0.225,
+      "training_accuracy": 0.3,
+      "exact_reconstructions": 0,
+      "mean_nodes": 3.0,
+      "mean_fit_seconds": 0.14444091650000246,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3587.0,
+      "iid_control": {
+        "correct": 5,
+        "cells": 40,
+        "accuracy": 0.125,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.5937904278052024,
+        "exact_95pct_interval": [
+          0.04185962613861672,
+          0.26803291736182305
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_complexity": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 1.0,
+      "training_accuracy": 1.0,
+      "exact_reconstructions": 1,
+      "mean_nodes": 7.0,
+      "mean_fit_seconds": 0.16921599549999655,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3905.0,
+      "iid_control": {
+        "correct": 6,
+        "cells": 40,
+        "accuracy": 0.15,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.28674636472731707,
+        "exact_95pct_interval": [
+          0.057102258154525874,
+          0.29835266683957645
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_crossover": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 0.5,
+      "training_accuracy": 0.5666666666666667,
+      "exact_reconstructions": 0,
+      "mean_nodes": 7.0,
+      "mean_fit_seconds": 0.18796205550000877,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3612.0,
+      "iid_control": {
+        "correct": 5,
+        "cells": 40,
+        "accuracy": 0.125,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.5937904278052024,
+        "exact_95pct_interval": [
+          0.04185962613861672,
+          0.26803291736182305
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_mutation": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 1.0,
+      "training_accuracy": 1.0,
+      "exact_reconstructions": 1,
+      "mean_nodes": 7.0,
+      "mean_fit_seconds": 0.1646774150000283,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3886.0,
+      "iid_control": {
+        "correct": 6,
+        "cells": 40,
+        "accuracy": 0.15,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.28674636472731707,
+        "exact_95pct_interval": [
+          0.057102258154525874,
+          0.29835266683957645
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_warm_start": {
+      "trials": 2,
+      "structured_trials": 1,
+      "iid_trials": 1,
+      "holdout_accuracy": 1.0,
+      "training_accuracy": 1.0,
+      "exact_reconstructions": 1,
+      "mean_nodes": 7.0,
+      "mean_fit_seconds": 0.16215513849999752,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3875.5,
+      "iid_control": {
+        "correct": 4,
+        "cells": 40,
+        "accuracy": 0.1,
+        "exact_reconstructions": 0,
+        "p_two_sided": 1.0,
+        "exact_95pct_interval": [
+          0.02792541529421937,
+          0.2366373998759482
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    }
+  },
+  "task_means": {
+    "shifted_bilinear": {
+      "full": {
+        "accuracy": 0.5,
+        "exact": 0,
+        "trials": 1,
+        "mean_nodes": 7.0
+      },
+      "no_mutation": {
+        "accuracy": 1.0,
+        "exact": 1,
+        "trials": 1,
+        "mean_nodes": 7.0
+      },
+      "no_crossover": {
+        "accuracy": 0.5,
+        "exact": 0,
+        "trials": 1,
+        "mean_nodes": 7.0
+      },
+      "no_complexity": {
+        "accuracy": 1.0,
+        "exact": 1,
+        "trials": 1,
+        "mean_nodes": 7.0
+      },
+      "no_warm_start": {
+        "accuracy": 1.0,
+        "exact": 1,
+        "trials": 1,
+        "mean_nodes": 7.0
+      },
+      "grammar_only": {
+        "accuracy": 0.225,
+        "exact": 0,
+        "trials": 1,
+        "mean_nodes": 3.0
+      }
+    }
+  },
+  "prespecified_contrasts": {
+    "no_mutation": {
+      "task_count": 1,
+      "tasks": [
+        "shifted_bilinear"
+      ],
+      "full_minus_ablation_by_task": [
+        -0.5
+      ],
+      "mean_difference": -0.5,
+      "p_two_sided_sign_flip": 1.0,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    },
+    "no_crossover": {
+      "task_count": 1,
+      "tasks": [
+        "shifted_bilinear"
+      ],
+      "full_minus_ablation_by_task": [
+        0.0
+      ],
+      "mean_difference": 0.0,
+      "p_two_sided_sign_flip": 1.0,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    },
+    "no_complexity": {
+      "task_count": 1,
+      "tasks": [
+        "shifted_bilinear"
+      ],
+      "full_minus_ablation_by_task": [
+        -0.5
+      ],
+      "mean_difference": -0.5,
+      "p_two_sided_sign_flip": 1.0,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    },
+    "no_warm_start": {
+      "task_count": 1,
+      "tasks": [
+        "shifted_bilinear"
+      ],
+      "full_minus_ablation_by_task": [
+        -0.5
+      ],
+      "mean_difference": -0.5,
+      "p_two_sided_sign_flip": 1.0,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    }
+  },
+  "all_budgets_matched": true,
+  "interpretation": "developmental synthetic benchmark, not a random sample of all mathematical tasks; no lottery evidence",
+  "production_enabled": false
+}

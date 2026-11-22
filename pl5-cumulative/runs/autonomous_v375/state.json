@@ -1,0 +1,155 @@
+{
+  "schema": "pl5-v374-autonomy-1",
+  "base_seed": 37401,
+  "evaluation_budget": 500,
+  "control_every": 4,
+  "completed_cycles": 12,
+  "history": [
+    {
+      "cycle_number": 1,
+      "case": "shifted_bilinear",
+      "seed": 38410,
+      "weakness": 0.775,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 2,
+      "case": "shifted_bilinear",
+      "seed": 39419,
+      "weakness": 0.6,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 3,
+      "case": "gcd_offsets",
+      "seed": 40428,
+      "weakness": 0.4,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 4,
+      "case": "iid_a",
+      "seed": 41437,
+      "weakness": 0.925,
+      "issues": [
+        "random_data_spurious_fit"
+      ],
+      "transfer_candidate": false,
+      "status": "negative_control"
+    },
+    {
+      "cycle_number": 5,
+      "case": "xor_mixed",
+      "seed": 42446,
+      "weakness": 0.55,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 6,
+      "case": "xor_mixed",
+      "seed": 43455,
+      "weakness": 0.55,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 7,
+      "case": "difference_squares",
+      "seed": 44464,
+      "weakness": 0.575,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 8,
+      "case": "iid_b",
+      "seed": 45473,
+      "weakness": 0.975,
+      "issues": [
+        "generalization_gap",
+        "random_data_spurious_fit",
+        "adaptive_search_not_better_than_grammar_on_this_task"
+      ],
+      "transfer_candidate": false,
+      "status": "negative_control"
+    },
+    {
+      "cycle_number": 9,
+      "case": "difference_squares",
+      "seed": 46482,
+      "weakness": 0.6,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 10,
+      "case": "difference_squares",
+      "seed": 47491,
+      "weakness": 0.625,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 11,
+      "case": "xor_mixed",
+      "seed": 48500,
+      "weakness": 0.6,
+      "issues": [],
+      "transfer_candidate": false,
+      "status": "exploratory_only"
+    },
+    {
+      "cycle_number": 12,
+      "case": "iid_a",
+      "seed": 49509,
+      "weakness": 0.85,
+      "issues": [
+        "random_data_spurious_fit"
+      ],
+      "transfer_candidate": false,
+      "status": "negative_control"
+    }
+  ],
+  "issues": [
+    {
+      "cycle_number": 4,
+      "issue": "random_data_spurious_fit"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "generalization_gap"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "random_data_spurious_fit"
+    },
+    {
+      "cycle_number": 8,
+      "issue": "adaptive_search_not_better_than_grammar_on_this_task"
+    },
+    {
+      "cycle_number": 12,
+      "issue": "random_data_spurious_fit"
+    }
+  ],
+  "next_hypothesis": "No confirmed reusable structure; new seed needed.",
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "study_type": "adaptive_synthetic_exploration_not_confirmatory",
+  "focus_case": "iid_a",
+  "focus_question_id": "Q-periodic_null_control",
+  "focus_hypothesis_id": "H-periodic_null_calibration",
+  "focus_plan_sha256": "0c900a1484587484db9d59387a88a3307b641ceed81b888287b812393a4ca532"
+}

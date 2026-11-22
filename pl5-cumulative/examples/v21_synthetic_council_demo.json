@@ -1,0 +1,52 @@
+{
+  "is_synthetic_training_demo": true,
+  "blueprint": {
+    "blueprint_id": "54c142748cd3c7f64534526deff678f3f1945ffaf53ee9a1ea0f0a4211f69ff3",
+    "created": true,
+    "document_key": "synthetic-doc",
+    "citation_verified": true,
+    "paper_method_reproduced": false,
+    "mode": "manual",
+    "evidence_status": "research_unverified"
+  },
+  "auto_plan": {
+    "created": [
+      {
+        "project_id": "8c261479d96e39955eb1c156ec149e6e7612b6d52f4b71e80d0aafbf1f21975a",
+        "source_blueprint": "54c142748cd3c7f64534526deff678f3f1945ffaf53ee9a1ea0f0a4211f69ff3",
+        "next_stage": "engineer_primary"
+      }
+    ],
+    "count": 1,
+    "paid_model_calls": 0,
+    "untrusted_code_executed": false,
+    "automatic_approval": false
+  },
+  "status": {
+    "version": "2.1.0",
+    "projects": [
+      {
+        "project_id": "8c261479d96e39955eb1c156ec149e6e7612b6d52f4b71e80d0aafbf1f21975a",
+        "goal": "独立评估研究方法并明确可复现能力缺口：待复核的方法线索：Synthetic methods demonstration only",
+        "completed": [
+          "literature",
+          "hypothesis",
+          "ability_gap"
+        ],
+        "next_stage": "engineer_primary",
+        "state": "in_progress",
+        "event_count": 3,
+        "last_event_sha": "0a001080ad443776b36288ad9ab445beaf9206684b346acef99700c111c53ff8",
+        "experimental_only": true,
+        "algorithm_auto_promotion": false,
+        "prediction_advantage": "NOT_ESTABLISHED"
+      }
+    ],
+    "total": 1,
+    "automatic_execution": false,
+    "auto_publish": false,
+    "research_only": true
+  },
+  "docker_executed": false,
+  "paid_llm_called": false
+}

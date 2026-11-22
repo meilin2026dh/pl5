@@ -1,0 +1,11 @@
+{
+  "schema": "pl5-v3710-release-1",
+  "version": "3.7.10-research",
+  "base_archive": "PL5_V379_Full.zip",
+  "base_sha256": "1e803ccc79b3bf2e66769bea053d2b6feb31193f1062900c0b9ae6a2260cd651",
+  "base_files_preserved": 2423,
+  "status": "research_preview",
+  "production_enabled": false,
+  "no_lottery_advantage_established": true,
+  "platform_version_unchanged": "3.7.6"
+}

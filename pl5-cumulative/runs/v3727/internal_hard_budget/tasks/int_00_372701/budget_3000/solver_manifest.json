@@ -1,0 +1,29 @@
+{
+  "all_models_frozen_before_holdout_grading": true,
+  "arms": {
+    "v3725_ring": {
+      "allowed_budget_ms": 3000,
+      "candidate_evaluations": 4,
+      "frozen_status": "ABSTAIN",
+      "receipt_sha256": "9cfb54fd7b8c36d616acdfa3cdeb08554e4c7d2ea68473aefacad19d8aed6228",
+      "status": "COMPLETED",
+      "wall_ms": 1279.147
+    },
+    "v3726_gate": {
+      "allowed_budget_ms": 3000,
+      "candidate_evaluations": 26,
+      "frozen_status": "FROZEN",
+      "receipt_sha256": "d20c43f7e6cc780aac8c7d3309dd86bd142d660d085c69e5a6447918883a2825",
+      "status": "COMPLETED",
+      "wall_ms": 1241.69
+    }
+  },
+  "independent_external_blind_verified": false,
+  "integrity_sha256": "185527b59f285c7b2e91c5278a9b767f0cc17ca9fbb1a1dc51949213a84e1281",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "private_labels_received_by_solver": false,
+  "protocol_sha256": "117bc3625a3db8b6e8979a50928973a9e690bcb1577f6833dd2774b2dd4b8fe0",
+  "public_sha256": "979d3d7fdb2b4a534ef7616905edb26a77c1f393dd92dad7dabee42380a845b7",
+  "schema": "pl5-v3727-hard-wall-budget-1:run_manifest",
+  "task_id": "int_00_372701"
+}

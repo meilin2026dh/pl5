@@ -1,0 +1,1519 @@
+{
+  "protocol": {
+    "cases": [
+      "swapped_xor",
+      "swapped_abs",
+      "lifted_gcd",
+      "canonical_early",
+      "outside_grammar",
+      "iid_random"
+    ],
+    "family_alpha": 0.01,
+    "full_pipeline_compute_matched": false,
+    "holdout_selection": "no holdout used before freeze; all variants fixed in protocol",
+    "iid_noise_rate": 0.02,
+    "knowledge_source": "certified source independent train and holdout",
+    "new_template_rule": "source specs, swapped unaries, lifted-left unary, then canonical order",
+    "null_schedules": 512,
+    "null_seed": 371201,
+    "predictive_advantage": "NOT_ESTABLISHED",
+    "prespecified_windows": 4,
+    "production_enabled": false,
+    "schema": "pl5-v3712-protocol-1",
+    "scientific_scope": "synthetic digit function tables; near-class unary-template transfer only",
+    "seeds": [
+      9811,
+      9812,
+      9813,
+      9814,
+      9815,
+      9816
+    ],
+    "source_cases": [
+      "xor_shift",
+      "abs_scaled",
+      "gcd_shift"
+    ],
+    "source_cost_included_in_ledger": true,
+    "source_seed_first": 9311,
+    "source_seed_stride": 131,
+    "target_candidate_feature_slots_each_arm": 16,
+    "target_holdout_cells": 30,
+    "target_seed_case_offset": 127,
+    "target_seeds_times": 43,
+    "target_train_cells": 70,
+    "window_length": 20
+  },
+  "protocol_sha256": "106d49e71dbb3ec7870d71a65ca1e137d7918c93c52c406c3c631981f5ea0fad",
+  "schema": "pl5-v3712-study-results-1",
+  "shift_controls": {
+    "drift_is_observed_not_predicted": true,
+    "empirical_null_fpr": 0.001953125,
+    "false_alarms": 1,
+    "first_shift_window": 3,
+    "fixed_family_alpha": 0.01,
+    "min_errors_to_trigger_per_window": 4,
+    "null_assumptions": "independent iid label errors at fixed 2% rate; 4 nonadaptive looks",
+    "null_schedules": 512,
+    "per_window_alpha": 0.0025,
+    "prespecified_windows_per_schedule": 4,
+    "production_enabled": false,
+    "schema": "pl5-v3712-shift-null-evaluation-1",
+    "shift_alarm": true,
+    "theoretical_familywise_iid_null_rate": 0.002396558758798961
+  },
+  "source_bank": {
+    "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+    "production_enabled": false,
+    "real_lottery_advantage_established": false,
+    "schema": "pl5-v3711-frozen-bank-1",
+    "source_certification": "independent source holdout, zero errors",
+    "source_holdout_sha256": [
+      "f567cf34a9c6d031ca8eeae73cc0d262082a02e6324273ea482185e1872e08e4",
+      "4240de1905fa6b13775ce3c2f3bbdf3d05cf41cb6183dc733147eeb449d60839",
+      "f57a4ea44276b10058af7fa2545258c4b0f34c1779d5402bec86fde97bbeae58"
+    ],
+    "source_operator_ids": [
+      "3bdb08ed536d93baced8c850c5c9b947e25ab6190338d18dbd222d603bfa971c",
+      "68b0a9f568ce62c00b9d1e4aa9e2b65dde504bc8e4c5e553c10e351b6e63823a",
+      "acd0053fe7028b42185ccc29e0440c5e7d60a79f2855a94cecb77a632aa424c0"
+    ],
+    "source_training_sha256": [
+      "3e848b8343ce2f232a4822d3c0e57a73954c7226c85b442c4f3d962b83f6b994",
+      "0d0b6420d1204d68778fc2f9565d10f6c27be8b646a09d4ea10084e5dcff262c",
+      "c7b05c5305cf17b1fca801a7fe050b727bd2de0aa6c9d0360dd3fdbdbabbe944"
+    ],
+    "specs": [
+      [
+        "inc",
+        "xor",
+        "square"
+      ],
+      [
+        "twice_inc",
+        "absdiff",
+        "inc"
+      ],
+      [
+        "inc",
+        "gcd",
+        "inc"
+      ]
+    ]
+  },
+  "source_cost_ledger": {
+    "includes_legacy_source_fit_cost": false,
+    "includes_source_holdout_evaluation_cost": false,
+    "includes_target_additive_solver_cost": false,
+    "pipeline_compute_matched": false,
+    "schema": "pl5-v3712-source-acquisition-ledger-1",
+    "source_bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+    "source_coefficient_proposals": 9936,
+    "source_count": 3,
+    "source_feature_tables_examined": 1104,
+    "source_tasks": [
+      {
+        "coefficient_proposals": 3312,
+        "distinct_features_checked": 368,
+        "holdout_sha256": "f567cf34a9c6d031ca8eeae73cc0d262082a02e6324273ea482185e1872e08e4",
+        "source_status": "identified",
+        "train_sha256": "3e848b8343ce2f232a4822d3c0e57a73954c7226c85b442c4f3d962b83f6b994"
+      },
+      {
+        "coefficient_proposals": 3312,
+        "distinct_features_checked": 368,
+        "holdout_sha256": "4240de1905fa6b13775ce3c2f3bbdf3d05cf41cb6183dc733147eeb449d60839",
+        "source_status": "identified",
+        "train_sha256": "0d0b6420d1204d68778fc2f9565d10f6c27be8b646a09d4ea10084e5dcff262c"
+      },
+      {
+        "coefficient_proposals": 3312,
+        "distinct_features_checked": 368,
+        "holdout_sha256": "f57a4ea44276b10058af7fa2545258c4b0f34c1779d5402bec86fde97bbeae58",
+        "source_status": "identified",
+        "train_sha256": "c7b05c5305cf17b1fca801a7fe050b727bd2de0aa6c9d0360dd3fdbdbabbe944"
+      }
+    ]
+  },
+  "summary": {
+    "amortized_source_feature_tables_per_target": 30.666666666666668,
+    "canonical_early_control_trials": 6,
+    "canonical_early_exact": 6,
+    "canonical_early_negative_transfer": 6,
+    "full_pipeline_compute_matched": false,
+    "guided_plus_source_feature_table_lower_bound": 1680,
+    "iid_random_abstained": 6,
+    "out_of_grammar_abstained": 6,
+    "production_enabled": false,
+    "real_lottery_advantage_established": false,
+    "related_canonical_exact": 0,
+    "related_exact_transfer": 18,
+    "related_unary_target_trials": 18,
+    "schema": "pl5-v3712-summary-1",
+    "source_coefficient_proposals": 9936,
+    "source_cost_included_in_ledger": true,
+    "source_feature_tables_examined": 1104,
+    "target_feature_slots_each_arm": 16,
+    "target_trials": 36,
+    "total_target_slots_canonical": 576,
+    "total_target_slots_guided": 576
+  },
+  "trials": [
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "6d179dbf2acfd820d6a7f8437d18bb5937cfeea36aa4d0fd31254da56214c79f",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "93832f1afc5f567c46c1f7eb47ea24edc40fdbb831e923e780e3528d433529fd",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "ad2188449fcc5e2305b3cbc715d778f825fb032c65050aa5fb14262b5e544cee",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 421873,
+      "target_truth_sha256": "11ecee357c611a59c9d0ee2e4f408ca67cc59aac18872bf000b335d6dfffcb9a",
+      "train_sha256": "fd247785b4d52e16fb91cf6cef096fb8bbe593cf413b92794ac3f10cbb8af622"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "fa1cb2258538cd87291f70cdab6ad3f6250cc0814b93de1927d3536e36fff415",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "a0b46e924839a4b1947bfe24a336fea2b73040837931e7d08d46e48984df3f3c",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "124436fbba42b0e945b93aaa79c8bea553e734fdea9c28b0fe4e96838d06199d",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 421916,
+      "target_truth_sha256": "f3697a2e8ae90b5984247c1d8bcc72bf602caf6c1e2c6c0617c59f2fe8d9ba36",
+      "train_sha256": "73f880d7943519f2dce144459c83ec1ff88464ef082f2dd33ab4f386de3986d3"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "bd14a442a06a91f85ce9f833062e3765fa832c89386861f49fa904b23a376864",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "604dabbce7b6fbb4f99ab5475cd8a14e53fba65e247b7e54c94630c43bdb206b",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "04a5caa033fa13b954f7276d8e5f90c3ba1f2e8b8df71e504650400c6aa8cd2f",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 421959,
+      "target_truth_sha256": "398ea462d9e7d0719f97f9d2258231a22192cf4d6a04e2db3fb8a680cc61e4c5",
+      "train_sha256": "78d9b85f44407a8699a49ebe5953541dcb047c2febdbe0cee576367943b01f9d"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "d71b1699e8d5ca777d84362766435f0dbc05a80f3e5c93212196eca8982bc2f6",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "b33d01ae4b4f3665dbf7048cba229ef8de3b29094678db243c8080e21816aadc",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "a76ce09a06892bd0138e15a0096c57dc5c759d740f50bc80f2fb64b325f36a80",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422002,
+      "target_truth_sha256": "d8318c7f8d1661a5db53bcf5eed21de24d633122cc8c182e7dde7c16777221d4",
+      "train_sha256": "0c0827ba6aa5639e44d4ef8059d57f1997e433b1f26f550591ecb5c8c2ff44d2"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "fd2ff5a6a9f6b19b1f5912c8839d448bbaaee775cf4f125a83b7544c8e142472",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "4210a745eb64e320e1aef23f04556d6aa6a2108bdbb62c66c999d64aa2d637d0",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "3d80c28b3e7ae8fa4706bd15551cec36140b7f6672702b2025e0dab3be44eba3",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422045,
+      "target_truth_sha256": "04709a78ef28d3d5043c1353406c8f5960b826d378a5308c043179c68c01e86b",
+      "train_sha256": "5b5f8237bac29498c8c307e8ff9fe9e9d4d7837a6ef3e43c5bb878724c2ba068"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "aa0a8a590c16b028baab5929e25853fb297192e7c5becc3fa94b0d392c7977f9",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_xor",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "2ef4e0d8c50e4d14ec31b4d8a86f2b39a24a5c62270f63900f46952b81eb678e",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "3af6ba62362e2c7a63ae51fa4f4feb5d5eb5b56836743b4c001e4d16aa425df4",
+        "spec": [
+          "square",
+          "xor",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422088,
+      "target_truth_sha256": "5af177110f8e117a7b55a869d4d596a1db39341be9c9192e450df30d26dd4a31",
+      "train_sha256": "9a2a415bc2ce409c5377fbcc81966ef09c0b17ffc2a43117cda8e057f153ecac"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "6b23596e6a3216105f7f28f9a2a98f23495c0eddb3ad8deed2ada2bfcbb0895d",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "a05874eaf2787e4e01754fe1266a0fa5486f54645ba746cca79467bff404d0d7",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "1fc13e7944d1246bdba04c1dde56c465c2e682bc16aadbed24e279230621c9b0",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422000,
+      "target_truth_sha256": "d3f788442633e67360d1eedf393b577d7529514869bd76b2146b30b85f506a7c",
+      "train_sha256": "3dbe62cc5c9123aa09d942b20ac076db3235ee985aea198c1c69f0c63cf31b8d"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "30db38d390c43cc565ae6500f9b73835e04a220ea2c39556d277e9d7640c57c2",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "2ca77fb04cbdaa7d44192abc7662efbc9d99c3fa29b87ca49cef325436bcb185",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "1b07f5d15af2e5591dc1dc338de31978654a742a40dce2ca1cc1691d8441fd22",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422043,
+      "target_truth_sha256": "7dfc073c33e4237aca4a390a858b784d17a26cf8713591e9f25805b491ec6c4e",
+      "train_sha256": "946214da6ca3c95a33e81c9c88ce8c3891f18afb5491676883a76ffaf526e3d2"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "8868c63235ca12fd0e5718fc88177449c5dbf1ea8b58ca310bfa73de65d27559",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "075071091652d1f3998065ba257689b86c8011c25874758833297973dff7190e",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "b08d576972bb39fb93fa4a83b1d8b94d0d62704b926c0ac372e8f52f745da3f0",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422086,
+      "target_truth_sha256": "c4a8b0040ab4b0cab142f8276fc4c2f22ba1b7504cf3632cc34ce2b86f1d7067",
+      "train_sha256": "62e1a1eea01e60266bf0c57b7b69ea29f7e4a805006fa9bd73e067b231d3cc17"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "6a91259fa3a277e4ea543413201fe5453a6d47129d5dbed90952d3303df7858b",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "9fad62e27a2403d6e3b7d15e3656a416f8d48ece0eb406999d4bd7304e9ac940",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "8506ad1711046c1758b18bedcd2486414f2c3b8882157b47ffbc1835a7c3343e",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422129,
+      "target_truth_sha256": "cac9ea81c6ca7116b65deb4c73ddd374d3da8b177b4c101d633f20f3f19a8abf",
+      "train_sha256": "134c6befee06662a49f01e58b84606257564940bc6d9c3d5a3198c8eaa92d38b"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "5e32268ef72b8a90d3e65245154c171c5b83f36af682483890c60598ac3d7c29",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "aec4d15c0abe9e816f1e65d76b72354995fef4bc55468e802bf6fc2d05455af0",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "7f271fcfc021ac3d63015fc1ecff9b0580e24b4cc67feba439cfe104ff3171ad",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422172,
+      "target_truth_sha256": "cf47c6e5bfc9e551d81b1de2aa6f70bee6f5f7067417cec45a75c85d1c1b23b5",
+      "train_sha256": "4e8b7f403dd3ccc973713259317aad1fb032c78dfbee280785ffbd6b17fa4467"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "95f879d502c99de2103e5a43ffdcf86f18fa3e474af2e30883bd5fc2c4935ef2",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "swapped_abs",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "7367bb47ec38f8f9791cfd88fb9f96172d382a3d3135f3d900f35cc46ecdb27d",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "0e2919b66334d111052d6f477b9ebff181a034fac2a79ba5ef651b2ab884750b",
+        "spec": [
+          "inc",
+          "absdiff",
+          "twice_inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422215,
+      "target_truth_sha256": "2f7d6449bf2196fb8712c8d8f1aa15fec9eaaa648926db918bd99d0061100cf3",
+      "train_sha256": "83891060f7b935993c7b1bae6f1d08ca35f6458c44f1181d1262fad21d417090"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "d187a8b80f0172dba0d1408645db2b8f7d9110a349a640d624f3b3f4ce43ada9",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "891c4705fa9a99b1601e76a9c591743dff0e55d7e229cd58f97ae1ba91c0d453",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "9ee7fc6eccb878558b3db5c0c6646943bd1debc94f41a3b9011bc0402484dfaa",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422127,
+      "target_truth_sha256": "6da323feaea1be9df5a48974dfa1cff01dac19619dfcc2a2eb9c7f57b094d89d",
+      "train_sha256": "2872a74a40641c396b043dabdf220b2521ecaa333a600d2c0f83340aea8f25eb"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "1c1a7d3f3e10800f41621a87cb8b7e726e2629e589ed156780cbb040bd10ffc3",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "73dd7d0eb313d581e9cd60c824a3c9e09d42f07e7e01edc9dc912909d5368577",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "ed82cd98641f0f51b29949d20fc9a1c27a33d5b0785de9d38584c6d8a743c1fd",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422170,
+      "target_truth_sha256": "ffc05ef9b62c2f4bca1fd6235b1102b578b43d199d5f3de09acd95c62aae4e1f",
+      "train_sha256": "376d5c2761088f4d5b4b53dd97e9999f54133d1948aaeacd3d4beee2e45e0709"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "0d058917d7414a074f4a3abe4880beeb0fb535daf6b3b8e4286dd6910028215c",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "89852af8b7263aafdad16188a46cab919c828c5ae6b259e76e151b984588381c",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "9aa0e09cee7a330b384865bc0f23cf68ab72269cf316b1e1774528cb26986769",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422213,
+      "target_truth_sha256": "3ffe32d53e69242683a5760b37cc2bbb4498adeea8014b62d4575def94fa56f1",
+      "train_sha256": "748702a5e1f0e271bfccc8b8498beb0f6012647fb12ce4d02ded3decf0cc9da3"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "2a27090910bc27886c557f62c4476280e8b4948e213a7733538046653c3836bd",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "a15e86dcc5aa630bd702040619a63ae7852a436e88d840457e6a95277693a160",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "65dfea25c356527cb6f7213f5fa7d32d6ece7efca4dab70ecd2aedd0088872eb",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422256,
+      "target_truth_sha256": "67b9ab962adead4f3e67a64462f3d21799940f7277b5a2487755e533d4882cc6",
+      "train_sha256": "109076041f296b572b65aaebc705327664227ed9fe9e272326297ac98626d710"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "1677407fe6b73738407fa933ca2dd2a7320075af297ddd4981a6ff0ab582ecf1",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "070ce7f5a037ad6133de5e6fb644bc59e9d54bab8d87153b489b114c7d9f9173",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "afaafbc009370d3dbc394edfda75730b9b95be72a627e38babffdbc8d8069e94",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422299,
+      "target_truth_sha256": "733b13677e5c4d1e8005a912a1a6f0ae934db255fa1bf3c666ec879fead0aa8f",
+      "train_sha256": "fa70501d8968cbc4df986b8bfe2d2c29e87ae1cc3323437fefb45e6ce6481eca"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "33f9573e7fd2c35369c79f094a3de57c9c30758d36d179b4257cf9b4ac65c47b",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "lifted_gcd",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "2a330fd80a8475d1529e5ce4ccdf4b41c7a348053bd43cd82e487dea33a6e23c",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "24d667f3f6cc1b32a7ff087e743b5215e3e9e3bc1971a3a3c0a25a3b41216f55",
+        "spec": [
+          "square",
+          "gcd",
+          "inc"
+        ],
+        "status": "provisional_identified"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422342,
+      "target_truth_sha256": "b58a9fcded4472c570928516e05f691cf35791eb75fc7bff7447e78561102f0f",
+      "train_sha256": "10aa4a31e60ed79a74fd151dbfe9bab0c5e53bc61790f024d243ffc0c759005d"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "79c435764da3b52b77e5cfb466aa5ce587f24786b8629ce69f9428467505ae2c",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "0ec8886e35a070721d239acd8a628a7e11660651a6134be5a8564a83ed24c6e2",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "1022b964a832b085773f4c73331a4003effe5c0ce52cc8685e48dfe501709e5f",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422254,
+      "target_truth_sha256": "f1b9371f7814770bdd898a30fb6e1454c261dcf50f5a7344196be4b8868188c3",
+      "train_sha256": "c580e530d7ea7470c43773e701f77de622c1eb786e8c0328c5856ef74e90cb90"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "b1e9d8dc373906d793cca9201ee5b3ee4d6074b6f3c7a030f5dcd077a9e5b4c0",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "b441d75cf0299c7d2a2ed7b5d69db8eb2b86d027b65a1539e622262f57407848",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "776c560e2920a32cce3ac97c11f104201202f571ff2c82f10862d517fb5f9072",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422297,
+      "target_truth_sha256": "b4b93b1da70ff4eaab05a6df036ce73ba2f91411e24aff5d87a35bfe6851f9cd",
+      "train_sha256": "e751a921b540200a803b787e7d530f58f7f3adb8741082fded7ca307459a3af0"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "ada45fb95bc702e6606223b24c6b3c6e08f80904404fcf438ff8792b860bdb2e",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "2c41c9bbebf7547057752d18760743fa5bf25e44b5adedc4140adf0cfa20beb9",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "702fecb08f76416af33c64cf315e65612af24db29c9490b2f6ef813f2b34b66f",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422340,
+      "target_truth_sha256": "49a628bd29bd6ee7cff76bc5cdaf9a43556e753e7753d7464251eede32c1f003",
+      "train_sha256": "1161eb48fc50b8fa1bef612d3e3384114306e5632305fc6cd3058ebe813410fe"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "e9a89905ee0f8f7cb5c1ee723ecc0f96bb2740fdfdf2ac7571d641ffdcf63f17",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "c1f1baa5f323bd6c093c855a3c79ec975fadf61e03a429d3b4b1a32e7d1f97b4",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "3ac477b870b894551dbc5832b925d13b0f1fb9b25e346b7f146d54acaeba355e",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422383,
+      "target_truth_sha256": "04eaa6cff3bed7c867f6340a7d7904992fcdbea88687ae5acc74367e29f8d43d",
+      "train_sha256": "047c839ec2e440b819f6a25747eb6d9190bd77b0454f0ab4053412d1ee1bb064"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "7fe3280ffbb6b0a1823401a81d2dee07d0bfc9e2c59a9cea8b0cf6029a31dcb3",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "337cb266cc8e16ffef854aaf49fa9b5a4b994bbcedd1af36d1d8183aa9ef536a",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "b3842fceb429ec233d7a57013f5d914c2cd986388cb7bfcc6f4205fb48ddf97d",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422426,
+      "target_truth_sha256": "9ae2c6a7800c8bda5c0a8abca51d5dfa922c8e748085b76e7acd1a7369257d62",
+      "train_sha256": "eec58a28f294630f9363ae1ad07fd3328f7c41197e7b89e816a6b9096142063c"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": 1.0,
+        "heldout_count": 30,
+        "heldout_errors": 0,
+        "operator_id": "f73cbcde745fa9f8a907382fe953f5764f17999e2c9535e0bfe9910b0bcd57d1",
+        "spec": [
+          "square",
+          "mul",
+          "bucket3"
+        ],
+        "status": "provisional_identified"
+      },
+      "case": "canonical_early",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "a306ea913913a004705a6f3c8c05843b52c6e2aaaef703f8bdf33c3bb97e133c",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "cd770c51969c84113bf2ffc7d939a4c18d2e86cfe386a36dbf280d5410b016ff",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422469,
+      "target_truth_sha256": "8ba73d354a235ed87e773eb96fe0b1fc606e670e6bfe1d80bdd47edc2754c5c5",
+      "train_sha256": "de255adc581d923f49f1e7c12499a45e9623c4e8d4a4a9a79dc7ca74e35bb402"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "a95232e242534ccc121f1c25d8a661390e11955453d100af29af939ab6722e2c",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "8071bda27b1273786df705a63459b2c91e951b41f8b889308ad75638fbe3f2fa",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "45d2e346fe0bdf9969c06fd3ee1f081d2a3a97984ed97c521d3b64a37526bfe0",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422381,
+      "target_truth_sha256": "a03da7c77d60f2aeafc44de8603fcf6b6501320dbee14a75b91bdb37e6511f51",
+      "train_sha256": "9ed272fc81dce07894b04c304e1c5b925bff3bb391b15ea64aed7f5e33fdbf46"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "9f62abde3393192c47705f766102576b69e24b6b676c9c596fe0b57e56cd99aa",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "000a24074b8e9cb6874748d9cec0461530964bab30ac1120d07458a5bcf6cf43",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "dce30f06694962a2d2a56bd7889d96b8107e4660bc850f708d28829050595a3c",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422424,
+      "target_truth_sha256": "ef6b0508a2d786a13788fa1a98753b45e7a2104d3d0a94474eef9f6f780fdbcd",
+      "train_sha256": "12b455f9910705aa7579718fc53affd601ec9c7274bfc138b74bc141e0223590"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "5cf61a70d1c00f697776ff5c2632f0ffac07a19759ef8a6c4c6401b4748bc4bd",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "75fadf841d8fcb974072562aee77421900871cedc5002122eab064b641e540e7",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "bfc9e59155e5f28c42e9acd5972614d287309f8e45022f98753c211c01889a05",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422467,
+      "target_truth_sha256": "1d1e5a62f3bd4d2c77b4102719e6ca951ac7062f37698434d0fdf37bb86d1e5c",
+      "train_sha256": "1affd904ada858fec60b8566c3dfeb6438c2e1f9d10e910111ba248fe77cd957"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "5d9c65f7c35287685252bf70bc6cd457a49b8f7ecb3be11a8c9ad964da536457",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "e7e4951a8f1995f2f37e9bd6029ec92c931040faad35b8564567e6060512935d",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "3b4cfb822050fb01899019822d8f360ba6ce90bbf70c8cccdfc8ade4ff9008b3",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422510,
+      "target_truth_sha256": "95e091aa64acbf769d68368ca55e0360608b6ab1fe4aef00ad83e430942b0da0",
+      "train_sha256": "d2769c7c7049ffeecc819f597ff90e0a5009dcff04e9229d45b4cca0405e3183"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "4b5d92ff9c66d5b036b5426b73737831bf3ba9c96903a9fce85bd13b7c8ae88b",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "10a292f8fb65c06b9d787bad910be5c605d75f899feea23d1dd8a4ef9dc195f6",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "92c1f2feb9e7e620d4b5e5977a08ed3d25fbb06525a4f96343e6404938519133",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422553,
+      "target_truth_sha256": "514ab72a981a794671e183628924b21f36db58823271727b7fae5f02581a6d85",
+      "train_sha256": "5b2a69dc1484d80f2f1f374fe0b7d914d3d16e7bd428e10eaca151a10f24a42d"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "f1187d82effdec44738b1ce436e25b02b41123ff7c0a5f5a0aec5a7995922151",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "outside_grammar",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "301042c1f1861937e2026a25dce291274cdee23eb676e977300d412d1df0cf0c",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "f5e7e59983f9e666cd90c9788465b07d7f943a2fcf80cf94be740badae8937ad",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422596,
+      "target_truth_sha256": "ff8bb3d9e5dd38e798d588b3da1b68da9ef38d1842905706b17d705cd319a977",
+      "train_sha256": "e8b26b79c287a0bdd5012916a4f55cda6b88d9ecac80de4817080f5449e8e5cb"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "139bf111ea18ec27f3bbb22814744e6fa025aa6de717ab3d26cf7fae315c28bd",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "57a8571cc9929bc5f54920500db79b6bdac8f80cbfc9c89ce66d50de6a6ef75d",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9811,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "20968abc82f7d0f6c804435dd117681cbe13907118fe0bd58235944335f7f99d",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422508,
+      "target_truth_sha256": "16a73fcce04d40740135b7c8c1f90ca8a230707f6e0b1f683719e7d861c9e398",
+      "train_sha256": "a01b974dd86656fc9a30826825c4cbb388a46be1e540cf1ce895de0b0bb8bcfd"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "4cfb78eac7a15c20bcee711c7c46b11536802b53c1eb26d427063d6e8a00c47d",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "2191741f072a120b55090cfec585e777e5956b5b64f4678f976550317cea285d",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9812,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "2f9356ada903173e8317997bf5e56473417764a4cd4e4e684c47faa40a6bdb19",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422551,
+      "target_truth_sha256": "da45a209acfc71c40995fddcd27bd233cf945622032569fbd4b19cdc53df93be",
+      "train_sha256": "e7f3cf173341828bdd9401ef19a0501eee5bb045c4d35210a051a060df6488e8"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "e4a890086bea2b44f3955ec09fa61decb0a71771f02f70eca46e49d0e89b2b08",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "a1e5528608f72b13fda79d2cf1bc02fbae238c79f2ae0f6ecc6d19606e19a984",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9813,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "8f82c87e6c1e4ef97122165f789ef29b001a678ae8d3d8f096f853854bc818b7",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422594,
+      "target_truth_sha256": "e794c77487fd642ba06d4acf0eeb9d5de7947f21707d5029ef479206a3d76448",
+      "train_sha256": "568571f2b33507ed3943fef3e55fb3a7108c08517f750757b08fa455399e2873"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "72d8bd046af8aee2aca17d0309a6ba5ec1affbb689098055402a1acac21a5b4d",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "af4b347379c277cfa1763bf28867f585ca2a43c824f141f3959c6765530690d4",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9814,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "178998a52a85b567d591f6f9b3d4ce98d873a756d4f89d66138b2a2d65c7b8cc",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422637,
+      "target_truth_sha256": "fd1e36a34719af7e28e20184e663e4bf8e02809745f5a3a1c509690dfc9a46a2",
+      "train_sha256": "2f99cb239fae2e6dc4e7ddd7f8f5c5a92bae4982b97d8255eb056ea844c0dd0d"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "725ca81ae4fd8f9af4e265ca722421c36b57aeb30cdd868352c3a02e89d132e8",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "e8ea810e4a3ce455652ce7fc64518e172eb9550c75e30a902ad197efeb4d816f",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9815,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "436f81d3a7d38d1ac38262cde389ed31e545f1c6d6e9cab0b9bfcc66c8e99b21",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422680,
+      "target_truth_sha256": "16fbae7bf009bf1bd52e7231b3d24b7ba01ca3d988c84b604c34a141125ab673",
+      "train_sha256": "7b99b024e4eaa1519cb8530b5f03b749159f8e8936acda86c5c4035c9ad01a2c"
+    },
+    {
+      "bank_id": "b2474009904fc592d626b396ce6a47de69e4a2cf4aa7e1add2a2bfd4c06509d1",
+      "canonical": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "ce8611b8a6b5032489352e4a9218589ddcb63917d8832b72ddf90830181e7fdd",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "case": "iid_random",
+      "fit_used_target_holdout_labels": false,
+      "frozen_before_holdout": true,
+      "full_pipeline_compute_matched": false,
+      "heldout_sha256": "6ea65f4c324dc38c4d8d2e5cc04c2a2e167a29aced5ae894efd9b2cb6c592e6e",
+      "production_enabled": false,
+      "real_lottery_advantage_established": false,
+      "schema": "pl5-v3712-matched-target-feature-slots-1",
+      "seed": 9816,
+      "source_bank_training_cost_excluded_from_target_comparison": true,
+      "source_informed": {
+        "feature_slots": 16,
+        "heldout_accuracy": null,
+        "heldout_count": 30,
+        "heldout_errors": null,
+        "operator_id": "aa2124efbef1e7ebc3e06b12038ddec40578823224772c8f54b0375b837c3adf",
+        "spec": null,
+        "status": "no_fit"
+      },
+      "target_feature_slots_each": 16,
+      "target_seed": 422723,
+      "target_truth_sha256": "e26ec2a6e79cb9ca6292d237ba68a6c21903157e8ece5d4ffc6018a46141d532",
+      "train_sha256": "a40e34b8aa352bcada634d5bbe93ba89d0e87f3398a2e893bff384c79e39640d"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_context_feature_reuse_produces_identical_full_rule_audit _________
+
+    def test_context_feature_reuse_produces_identical_full_rule_audit():
+        from pailie5.pattern_rules import filter_next
+        import numpy as np
+        history=hist(130)
+        cfg=Configuration(
+            indicators=('same_positions_prev','digit_overlap_prev','sum_delta_prev',
+                        'span_delta_prev','lastdigit_delta_prev','same_parity_positions_prev',
+                        'digit_5','sum'),
+            transforms=('raw','mod2','mod3','mod5','mod10'),
+            patterns=('constant','strict_up','strict_down','arithmetic','period2','zigzag'),
+            windows=(3,4,5),lookback=12,max_rules=80,mode='recurrence')
+        before=filter_next(history,cfg)
+>       after=filter_next(history,cfg,optimize_context=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: filter_next() got an unexpected keyword argument 'optimize_context'
+
+tests/test_target_only_v3717.py:85: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_target_only_v3717.py::test_context_feature_reuse_produces_identical_full_rule_audit - TypeError: filter_next() got an unexpected keyword argument 'optimize_context'
+1 failed in 2.49s

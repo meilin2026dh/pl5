@@ -1,0 +1,649 @@
+{
+  "trial_id": "xor_mixed_37307_grammar_only",
+  "case": "xor_mixed",
+  "task_group": "other_composition",
+  "seed": 37307,
+  "arm": "grammar_only",
+  "training_correct": 30,
+  "training_n": 60,
+  "holdout_correct": 18,
+  "holdout_n": 40,
+  "exact_reconstruction": false,
+  "nodes": 7,
+  "evaluations": 2500,
+  "proposals": 3477,
+  "budget_matched": true,
+  "winning_origin": "grammar_composition",
+  "fit_seconds": 0.18837254699997175,
+  "operator_path": "trials/xor_mixed_37307_grammar_only/operator.json",
+  "fit": {
+    "budget_matched": true,
+    "budget_unit": "distinct_normalized_AST_interpreter_calls_including_arithmetic_failures",
+    "config": {
+      "batch_size": 32,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "evaluation_budget": 2500,
+      "max_depth": 6,
+      "max_nodes": 11,
+      "pool_size": 32,
+      "proposal_factor": 100,
+      "seed": 37307
+    },
+    "distinct_integer_behaviors": 1051,
+    "evaluation_counts": {
+      "bootstrap": 337,
+      "grammar_composition": 412,
+      "random_grammar": 1750,
+      "safe_baseline": 1
+    },
+    "evaluations": 2500,
+    "first_exact_evaluation": null,
+    "mechanisms": {
+      "complexity": true,
+      "crossover": false,
+      "guided": false,
+      "mutation": false,
+      "warm_start": false
+    },
+    "operator": {
+      "description": "((a+b)+(a*b)) mod 10",
+      "expression": [
+        "binary",
+        "add",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ]
+      ],
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "operator_id": "212af8c084d5eb7eef0117582a8a81f83b692900662d4e26078d7dd21d4457a0",
+      "predictive_advantage": "NOT_ESTABLISHED",
+      "production_enabled": false,
+      "source_data_sha256": "e513e9bc9fc8873e761c05291edf05adaec780adcebec3a94c1857db9292bad6",
+      "source_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    "proposal_counts": {
+      "bootstrap": 670,
+      "grammar_composition": 487,
+      "random_grammar": 2319,
+      "safe_baseline": 1
+    },
+    "proposals": 3477,
+    "rejected_counts": {
+      "duplicate_AST": 977
+    },
+    "replacement_policy": "disabled_slots_use_target_independent_random_grammar",
+    "selection_used": "training_cells_only",
+    "trace": [
+      {
+        "errors": 30,
+        "evaluations": 750,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 1158,
+        "stage": "bootstrap"
+      },
+      {
+        "errors": 30,
+        "evaluations": 1006,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 1509,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 1262,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 1838,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 1518,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 2172,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 1774,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 2498,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 2030,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 2849,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 2286,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 3192,
+        "stage": "search"
+      },
+      {
+        "errors": 30,
+        "evaluations": 2500,
+        "expression": [
+          "binary",
+          "add",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "grammar_composition",
+        "proposals": 3477,
+        "stage": "final"
+      }
+    ],
+    "training_count": 60,
+    "training_errors": 30,
+    "wall_time_matched": false,
+    "winning_nodes": 7,
+    "winning_origin": "grammar_composition"
+  },
+  "holdout": {
+    "operator_id": "212af8c084d5eb7eef0117582a8a81f83b692900662d4e26078d7dd21d4457a0",
+    "data_sha256": "c5f04a5080c458bab37f6e5d95784280a8f47c8e51942a5f4ff9dcaffd41e0bc",
+    "errors": 22,
+    "count": 40,
+    "accuracy": 0.44999999999999996,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "212af8c084d5eb7eef0117582a8a81f83b692900662d4e26078d7dd21d4457a0",
+    "candidate_table_sha256": "047cd9c1b7224f592e8118d71699170a914c150da7fb859ac181fa3773b9f352",
+    "target_table_sha256": "066200d8710a423d12624653c81e33210d4499d7214d3a2a27b33cf272828b79",
+    "exact_on_all_100_pairs": false,
+    "whole_table_errors": 52,
+    "first_mismatch": {
+      "a": 1,
+      "b": 2,
+      "predicted": 5,
+      "target": 1
+    },
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": true,
+      "commutativity_counterexample": null,
+      "associative": true,
+      "associativity_counterexample": null,
+      "identities": [
+        0
+      ],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 7,
+    "depth": 3,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 75,
+      "formula_plus_exceptions_bits": 654,
+      "preferred": "raw_table",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "production_enabled": false
+}

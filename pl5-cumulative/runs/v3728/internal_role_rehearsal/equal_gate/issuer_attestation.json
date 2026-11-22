@@ -1,0 +1,27 @@
+{
+  "payload": {
+    "allowed_budget_ms_per_model": 5000,
+    "arms": [
+      "v3725_ring",
+      "v3726_gate"
+    ],
+    "challenge_public_file_sha256": "7e124981b16f9eabd0c6fb448e3ed7efb269681e5d1cefd7bafad8796a857dc5",
+    "challenge_public_object_sha256": "90ab834eea8e6306b68434a70be08385f8d97cd9acb52b3aa76afe5f85a0ad96",
+    "claimed_external_independence": false,
+    "declared_utc_untrusted": "2026-11-21T08:30:24.416210+00:00",
+    "holdout_commitment": "92bac53e981979538d516222357b30eae4448848e1fddc650c8c17c5594c571c",
+    "issuer_public_key_fingerprint_sha256": "b613a925a6fcbee0266720d514b61f7614c6f0a1cb012bbb80c98979a3c01e08",
+    "lottery_predictive_advantage": "NOT_ESTABLISHED",
+    "model_source_file_count": 119,
+    "model_source_tree_sha256": "4674217d5cacd4e4ea07febf660d9d304d704c61d40fe714b2d99675e0e753d6",
+    "portfolio_max_budget_multiplier": 2,
+    "protocol": "pl5-v3728-signed-blind-handoff-1",
+    "report_all_tasks_denominator": true,
+    "score_rule": "exact holdout cells; failures/timeouts/abstentions retain denominator",
+    "task_id": "int_00_372701",
+    "trusted_timestamp_verified": false
+  },
+  "schema": "pl5-v3728-signed-blind-handoff-1:issuer",
+  "signature_alg": "Ed25519",
+  "signature_b64": "x8IcnaaCPSFiLYbhY5/uCg3uUl5k72AZBnX1CFUSNhmNfc+9NuV4x+39QoxIFzRXvzXaeUQOatF5Bxk5QGLsCA=="
+}

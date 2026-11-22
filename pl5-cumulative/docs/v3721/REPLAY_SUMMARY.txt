@@ -1,0 +1,47 @@
+{
+  "square_sum": {
+    "studies": 5,
+    "frozen": 5,
+    "abstentions": 0,
+    "legacy_training_errors_total": 159,
+    "legacy_test_errors_total": 68,
+    "meta_test_errors_if_frozen": 0,
+    "holdout_cells_scored": 100
+  },
+  "quadratic_difference": {
+    "studies": 5,
+    "frozen": 5,
+    "abstentions": 0,
+    "legacy_training_errors_total": 163,
+    "legacy_test_errors_total": 71,
+    "meta_test_errors_if_frozen": 0,
+    "holdout_cells_scored": 100
+  },
+  "linear_sum": {
+    "studies": 5,
+    "frozen": 5,
+    "abstentions": 0,
+    "legacy_training_errors_total": 0,
+    "legacy_test_errors_total": 0,
+    "meta_test_errors_if_frozen": 0,
+    "holdout_cells_scored": 100
+  },
+  "cubic_sum": {
+    "studies": 5,
+    "frozen": 0,
+    "abstentions": 5,
+    "legacy_training_errors_total": 116,
+    "legacy_test_errors_total": 38,
+    "meta_test_errors_if_frozen": 0,
+    "holdout_cells_scored": 0
+  },
+  "iid_null": {
+    "studies": 5,
+    "frozen": 0,
+    "abstentions": 5,
+    "legacy_training_errors_total": 220,
+    "legacy_test_errors_total": 94,
+    "meta_test_errors_if_frozen": 0,
+    "holdout_cells_scored": 0
+  }
+}

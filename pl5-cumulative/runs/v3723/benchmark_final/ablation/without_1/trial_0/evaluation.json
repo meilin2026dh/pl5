@@ -1,0 +1,13 @@
+{
+  "errors": null,
+  "evidence_grade": "INTERNAL_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "freeze_sha256": "0c668fd1df7a9057b0713f142d274fb4f486f280463061db033f768d48664433",
+  "holdout_commitment_matched": false,
+  "holdout_count": 56,
+  "holdout_sha256": "f57639e6cd618c3b6d94e5c374669b373dacc85a8a041643cefa4f5b073ca9c1",
+  "integrity_sha256": "9b59d4425f33e4dbd438ca3a1307f3777a688b90d0592fd9344e2fadd221f13e",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "schema": "pl5-v3723-cross-task-program-1:evaluation",
+  "status": "ABSTAIN",
+  "unknown": null
+}

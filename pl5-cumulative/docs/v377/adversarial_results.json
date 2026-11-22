@@ -1,0 +1,28 @@
+{
+  "iid_random_tables": 200,
+  "iid_accepted": 0,
+  "iid_statuses": {
+    "rejected_inconsistent": 200
+  },
+  "single_corrupted_training_label_count": 15,
+  "corrupted_statuses": {
+    "rejected_inconsistent": 15
+  },
+  "spanning_tree": {
+    "training_edges": 19,
+    "status": "identified",
+    "holdout": {
+      "operator_id": "0090f7f81090b501d3768fdccc844f6b59fffcbc730f12ed572ec9be42dfc7e5",
+      "data_sha256": "3b65e0c18e3123ae66e2c86853c812b972cf7e03d356a252d301eeef693d255b",
+      "errors": 0,
+      "count": 81,
+      "accuracy": 1.0,
+      "coverage": 1.0,
+      "overlapping_pairs": 0,
+      "refitted": false,
+      "production_enabled": false,
+      "predictive_advantage": "NOT_ESTABLISHED"
+    }
+  },
+  "scope": "synthetic adversarial tests, post hoc supplemental, not evidence of lottery predictability"
+}

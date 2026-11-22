@@ -1,0 +1,99 @@
+{
+  "distinct_surviving_tables": 1,
+  "fit_sha256": "6d3d81b2d77d4b154b2fedd6521946b626e9155b46a449429b6b526e7836d116",
+  "holdout_used": false,
+  "integrity_sha256": "bdc2da6b235164565f1e68dc518bb6e2373f124ee85241780681e556ab0b1c0f",
+  "reason": null,
+  "schema": "pl5-v3723-cross-task-program-1:freeze",
+  "selected": {
+    "scale": 9,
+    "shift": 4,
+    "table_sha256": "59ce8718415b394b96a35b2dc4f505dc6cb80a73c1d0639ed3d67afea059a877",
+    "template_index": 1
+  },
+  "status": "FROZEN",
+  "surviving_parameterizations": 4,
+  "validation_pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "validation_sha256": "e50a6f1cdc5a02a1c523f63a43ee4c50227dcc106cef8a9b48f5a12f06c1c5e3"
+}

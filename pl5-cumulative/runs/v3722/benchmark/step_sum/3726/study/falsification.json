@@ -1,0 +1,332 @@
+{
+  "challenge_pairs": [
+    [
+      0,
+      7
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "challenge_sha256": "48ae7b4886b634c5d2fe28295a529f4e5a665767083044a9cdbd1a6b32e10de7",
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "021eb45f3c27cce34c310f5bd5236e888a95a8a8e3d5a63e748ea119a142ba17",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "ac36f5bf53cf364d224c7839dd1c0ae0e41332dc4403db7beaa2567f28b8346b",
+  "results": [
+    {
+      "candidate_id": "7ee42c972bc460c4ff5da84ed821f482551fe8c8f14011ee7dfe2575b1b4fe41",
+      "challenge_errors": 0,
+      "challenge_unknown": 0,
+      "counterexamples": [],
+      "feature": "sum_mod10",
+      "passes": true
+    },
+    {
+      "candidate_id": "d1ef12a88324d054531aba5a84a553110e5730f1727214c6359fe916094d7152",
+      "challenge_errors": 0,
+      "challenge_unknown": 3,
+      "counterexamples": [
+        {
+          "a": 8,
+          "b": 9,
+          "expected": 7,
+          "reason": "unobserved_feature_value"
+        },
+        {
+          "a": 9,
+          "b": 8,
+          "expected": 7,
+          "reason": "unobserved_feature_value"
+        },
+        {
+          "a": 9,
+          "b": 9,
+          "expected": 7,
+          "reason": "unobserved_feature_value"
+        }
+      ],
+      "feature": "sum_raw",
+      "passes": false
+    }
+  ],
+  "retrain_after_counterexample": false,
+  "schema": "pl5-v3722-grammar-extension-1:challenge",
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      6
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+........................................................................ [ 11%]
+........................................................................ [ 23%]
+........................................................................ [ 35%]
+........................................................................ [ 47%]
+........................................................................ [ 59%]
+........................................................................ [ 71%]
+........................................................................ [ 83%]
+........................................................................ [ 95%]
+.........................                                                [100%]
+============================= slowest 15 durations =============================
+7.16s call     tests/test_v152_cli.py::test_cli_seal_settle_report_with_official_format_fixture
+3.11s call     tests/test_v372_cli.py::test_cli_fits_and_evaluates_without_refitting
+3.10s call     tests/test_ability_lab_v19.py::test_goal_and_immutable_cycle
+3.09s call     tests/test_category_hypotheses_v32.py::test_cli_demo_and_table_mode
+2.79s call     tests/test_primitive_categories_v31.py::test_cli_table_file_and_synthetic_demo
+2.50s call     tests/test_bcse_v27.py::test_no_holdout_tuning_or_leakage
+2.49s call     tests/test_bcse_v27.py::test_null_replays_are_explicitly_synthetic
+2.40s call     tests/test_bcse_v27.py::test_random_control_precommitted_and_deterministic
+2.14s call     tests/test_nine_spaces_v24.py::test_rolling_is_frozen_past_no_future
+2.13s call     tests/test_value_center_v16.py::test_cli_readonly_report
+2.01s call     tests/test_autolift_v28.py::test_biased_training_is_explorable_without_claim
+1.99s call     tests/test_http_spaces_v25.py::test_spaces_v25_loopback
+1.83s call     tests/test_v372_cli.py::test_demo_has_explicit_synthetic_labels_and_real_files
+1.74s call     tests/test_bcse_v27.py::test_full_100k_diagnostics_and_mismatch_guard
+1.56s call     tests/test_primitive_categories_v31.py::test_cli_historical_research_uses_training_only
+601 passed in 85.14s (0:01:25)

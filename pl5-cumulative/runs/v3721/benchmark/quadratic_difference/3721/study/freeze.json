@@ -1,0 +1,459 @@
+{
+  "abstention_reason": null,
+  "best_candidate": {
+    "name": "meta_00",
+    "nodes": 11,
+    "operator_id": "a8ff1520dc6ba88c939696901d6db2d27ce90838a8b9012c691e758c7a0fd63a",
+    "path": "operators/meta_00.json",
+    "table_sha256": "253a5ce7a02597cb77823afd620c115cc2800ce8539dbe4953c3cbbd7482f389",
+    "validation_errors": 0
+  },
+  "integrity_sha256": "f239982519f4fd5b76ba7bde6902196f2c3e11bab56388462add18dc6545be70",
+  "lottery_prediction_test": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "35b76dbe5ccc96398c7ced61f2f4b98c2559dd1f9efd2133f16f47a00a238aaf",
+  "schema": "pl5-v3721-counterexample-meta-1:freeze",
+  "selected": {
+    "name": "meta_00",
+    "nodes": 11,
+    "operator_id": "a8ff1520dc6ba88c939696901d6db2d27ce90838a8b9012c691e758c7a0fd63a",
+    "path": "operators/meta_00.json",
+    "table_sha256": "253a5ce7a02597cb77823afd620c115cc2800ce8539dbe4953c3cbbd7482f389",
+    "validation_errors": 0
+  },
+  "status": "FROZEN",
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "training_sha256": "b89af3c0030b3e24d8164306027932dc77c0309c6c6b4e2775f188ad06bed88a",
+  "validation_pairs": [
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "validation_results": [
+    {
+      "name": "meta_00",
+      "nodes": 11,
+      "operator_id": "a8ff1520dc6ba88c939696901d6db2d27ce90838a8b9012c691e758c7a0fd63a",
+      "path": "operators/meta_00.json",
+      "table_sha256": "253a5ce7a02597cb77823afd620c115cc2800ce8539dbe4953c3cbbd7482f389",
+      "validation_errors": 0
+    },
+    {
+      "name": "meta_01",
+      "nodes": 11,
+      "operator_id": "2afe4c9b08fa20f8478f29f92d7d82e61c62cd41a425e64c147a1194282395b4",
+      "path": "operators/meta_01.json",
+      "table_sha256": "c500272d85f4b7d484de79d9c1008ae030c6233a2a0023edc019a1dd1cc2cf80",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_08",
+      "nodes": 11,
+      "operator_id": "c41e491eec1d34552c08defc51cd07fccf60fd1a80972e81ab2009a4745f6df8",
+      "path": "operators/meta_08.json",
+      "table_sha256": "04557dbffb83f11588256c402b71d5b0aa3e93c4bceda2257a55b0453a1b1456",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_04",
+      "nodes": 13,
+      "operator_id": "66f3a7e404a52e4dc2f1c8326aef9b8ee88511791b1e49a3e2559b18d0bd6a1f",
+      "path": "operators/meta_04.json",
+      "table_sha256": "277d48cbd87b99667a901fdac3142a0b7d8533d401f281253fc93a28466caff9",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_10",
+      "nodes": 13,
+      "operator_id": "a0384c9f237b9b01ab3e99c97c963856f377851a1f9d8ce3c8ae6c49b283d1c0",
+      "path": "operators/meta_10.json",
+      "table_sha256": "0ba9c409ff2104464ac1d784d92552cb950f4eb70afa58634c0a637f82dd84b8",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_02",
+      "nodes": 11,
+      "operator_id": "94c01b5159eb2a5027a58a82fde7de08f855181fd9340c9cbfcaafa941f805dd",
+      "path": "operators/meta_02.json",
+      "table_sha256": "9f4665ce11a7b0d5db8d7d9ab88f21cd700bdd1a3aee24b92ee820cd6611d580",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_07",
+      "nodes": 11,
+      "operator_id": "c02d5a32a6f30fdec72d92d3ef67110716e061e645426714fb7a293a052f0113",
+      "path": "operators/meta_07.json",
+      "table_sha256": "8226aab07635216abe8f5f1b125ad80725ef97eb2335c9ea5f9d60944624cd2e",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_11",
+      "nodes": 13,
+      "operator_id": "3c7c6679a544e602824d47e7365bf572ddf79b71404109138c200568c41d78ad",
+      "path": "operators/meta_11.json",
+      "table_sha256": "e7e0a4e94cd540eccea5bc1e41383f2e5f376e6a7a54fa855d08f77d5c8c30dd",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_06",
+      "nodes": 13,
+      "operator_id": "58295aaa702841ffb64fb2a09ea1dfd4d2b03f1f0e24c5a10eca44be8a61a888",
+      "path": "operators/meta_06.json",
+      "table_sha256": "34c3cdc4956e625f953cf8ee4a659389224dad6fcdb141cd8f14fe5ca1a6bc97",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_09",
+      "nodes": 13,
+      "operator_id": "8f784c0a3210b8578c4a67c7871bd8633891a2f27086a173a64188ffc474e38d",
+      "path": "operators/meta_09.json",
+      "table_sha256": "ac8c1fb9897e3e3235bd0b8d1ec41c53d9dcfbbdef1347a636b0663cb25c85e7",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_05",
+      "nodes": 13,
+      "operator_id": "9329afec1059836babe3be9038882f2aee1229e88d23f63f1f91f75fa606bc2d",
+      "path": "operators/meta_05.json",
+      "table_sha256": "413145d2106e44f398da602d38ab26b48cc4fd9704c90b2870aba128dbbfb920",
+      "validation_errors": 13
+    },
+    {
+      "name": "meta_03",
+      "nodes": 13,
+      "operator_id": "e2bb6f6fa50ad6ef65db2ce80efda2099acae97f70e3224e0da4bd7c70213b4d",
+      "path": "operators/meta_03.json",
+      "table_sha256": "e446643a4505308f7848563e2e4039dbcc7fa10a8248cadccdf92c8eaccf56ea",
+      "validation_errors": 13
+    },
+    {
+      "name": "legacy_composition",
+      "nodes": 11,
+      "operator_id": "32c0ba2b0f56c4d0019fc56a8f2e22189b107ecb7c2b0f127071bde3794bed57",
+      "path": "operators/legacy_composition.json",
+      "table_sha256": "3e2afd43bd763d3261d080976fa9b8b572961462f1a815b6835afabd304153bd",
+      "validation_errors": 17
+    }
+  ],
+  "validation_sha256": "b224ddf0cf57ff592cea9aa1048674a9ae3b8db0701b948d5156fe87501f5800"
+}

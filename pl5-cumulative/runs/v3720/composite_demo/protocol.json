@@ -1,0 +1,12 @@
+{
+  "case": "composite_absproduct",
+  "grid_sha256": "2f07f5df3660a1d9ccdb4116c3c4ec2eafa69df23fc2075dd492eea6e1e9a424",
+  "holdout_n": 20,
+  "integrity_sha256": "a61be7184cf64c98673ce831c01895fa5fd874ea83990deb16c1f51303a61a82",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "protocol": "locally generated synthetic split; not external blind trial",
+  "schema": "pl5-v3720-three-gate-math-research-1:demo",
+  "seed": 3720,
+  "train_n": 60,
+  "validation_n": 20
+}

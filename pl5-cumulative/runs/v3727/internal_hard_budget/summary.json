@@ -1,0 +1,76 @@
+{
+  "developer_authored": true,
+  "external_blind": false,
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "models": {
+    "3000": {
+      "frozen_portfolio": {
+        "accepted": 12,
+        "exact_success": 12,
+        "holdout_cells_accepted": 432,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      },
+      "v3725_ring": {
+        "accepted": 6,
+        "exact_success": 6,
+        "holdout_cells_accepted": 216,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      },
+      "v3726_gate": {
+        "accepted": 10,
+        "exact_success": 10,
+        "holdout_cells_accepted": 360,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      }
+    },
+    "800": {
+      "frozen_portfolio": {
+        "accepted": 0,
+        "exact_success": 0,
+        "holdout_cells_accepted": 0,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0,
+        "holdout_cells_accepted": 0,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 16
+      },
+      "v3726_gate": {
+        "accepted": 0,
+        "exact_success": 0,
+        "holdout_cells_accepted": 0,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 16,
+        "worker_failure": 0,
+        "worker_timeout": 16
+      }
+    }
+  },
+  "protocol_sha256": "189b41cba6c35079f3157606b31fe5cf6014a6b31783a3eac1d0acc0783b072c",
+  "results_sha256_without_wall_time": "ebe186e33be7c86ae600024a53596e8e0325fba58a93fcae7fd2b2601b3c8b54",
+  "runs": 16,
+  "schema": "pl5-v3727-hard-wall-budget-1:internal_benchmark_summary",
+  "unscored_timeouts_recorded": true
+}

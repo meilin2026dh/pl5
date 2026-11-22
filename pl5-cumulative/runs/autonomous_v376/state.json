@@ -1,0 +1,203 @@
+{
+  "schema": "pl5-v376-method-state-1",
+  "historical_registry_sha256": "51cf0cddc35af45ecb9c08f91dbffa3332c9ab296f502082d7d630f4dc2af47b",
+  "historical_completed_cycles": 12,
+  "base_seed": 37601,
+  "budget": 500,
+  "control_every": 4,
+  "completed_studies": 8,
+  "history": [
+    {
+      "study_number": 1,
+      "plan_sha256": "16e0b127e3270e568f572cf7ad91a2655f74c090b81a6f5375ba7077612e2852",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "xor_mixed",
+      "method": "more_training",
+      "mandatory_null_control": false,
+      "holdout_delta": -0.05,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00001/result.json"
+    },
+    {
+      "study_number": 2,
+      "plan_sha256": "81ef79c4dd41713b2304cd2686bee59d44567e82734fa9482186bd0866a747fb",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "xor_mixed",
+      "method": "richer_grammar",
+      "mandatory_null_control": false,
+      "holdout_delta": 0.0,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00002/result.json"
+    },
+    {
+      "study_number": 3,
+      "plan_sha256": "5d23c6078f44f1ddc96f41a62d3a63677cf98a0e69c81c08d332c3371f0c720f",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "xor_mixed",
+      "method": "more_search",
+      "mandatory_null_control": false,
+      "holdout_delta": 0.0,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00003/result.json"
+    },
+    {
+      "study_number": 4,
+      "plan_sha256": "5b3ebec6e0958052eafe9ea503ae90d78993f3b759590a36ec94a0cd24b86013",
+      "question_id": "Q-periodic_null_control",
+      "case": "iid_a",
+      "method": "more_training",
+      "mandatory_null_control": true,
+      "holdout_delta": -0.1,
+      "issues": [],
+      "result_path": "studies/00004/result.json"
+    },
+    {
+      "study_number": 5,
+      "plan_sha256": "2b524873f523e1ac1de4d7fd97015a19db767be76ffa4cb24069f0978cf344bf",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "xor_mixed",
+      "method": "balanced_sampling",
+      "mandatory_null_control": false,
+      "holdout_delta": 0.0,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00005/result.json"
+    },
+    {
+      "study_number": 6,
+      "plan_sha256": "c872e6005a9b414217afe2ad286d2aca35888a3b67476bb43de4c2a91880547c",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "gcd_offsets",
+      "method": "cross_family_replication",
+      "mandatory_null_control": false,
+      "holdout_delta": 0.0,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00006/result.json"
+    },
+    {
+      "study_number": 7,
+      "plan_sha256": "31b12218653d35b4fe23185c15adf410d643a1388052238a3f2c64584247b17c",
+      "question_id": "Q-weak_structured_generalization",
+      "case": "asymmetric_cubic",
+      "method": "cross_family_replication",
+      "mandatory_null_control": false,
+      "holdout_delta": -0.1,
+      "issues": [
+        "method_did_not_improve_on_this_task"
+      ],
+      "result_path": "studies/00007/result.json"
+    },
+    {
+      "study_number": 8,
+      "plan_sha256": "62828e51946484ac73f49db47d3c2c7eadbc19d44fdbbf47a25f9e14edab909f",
+      "question_id": "Q-periodic_null_control",
+      "case": "iid_b",
+      "method": "more_training",
+      "mandatory_null_control": true,
+      "holdout_delta": 0.0,
+      "issues": [],
+      "result_path": "studies/00008/result.json"
+    }
+  ],
+  "production_enabled": false,
+  "scientific_conclusion": "UNRESOLVED",
+  "emergent_questions": [
+    {
+      "id": "Q-method_family_nonimprovement",
+      "scientific_question": "Why do independent changes to sample size, expression capacity, and search budget fail to improve held-out results?",
+      "evidence": [
+        {
+          "study_number": 1,
+          "method": "more_training",
+          "holdout_delta": -0.05
+        },
+        {
+          "study_number": 2,
+          "method": "richer_grammar",
+          "holdout_delta": 0.0
+        },
+        {
+          "study_number": 3,
+          "method": "more_search",
+          "holdout_delta": 0.0
+        }
+      ],
+      "hypotheses": [
+        {
+          "id": "H-coordinate_sampling",
+          "description": "Input-coordinate choice, rather than quantity, limits identifiability.",
+          "test": "Compare balanced vs original coordinate sampling with equal label budget."
+        },
+        {
+          "id": "H-inductive_bias",
+          "description": "The fixed primitive grammar or search proposal distribution misses necessary structure.",
+          "test": "Replicate on an unrelated target family before attempting new primitives."
+        }
+      ],
+      "status": "investigating",
+      "scientific_conclusion": "UNRESOLVED",
+      "confirmatory_pvalue_permitted": false
+    },
+    {
+      "id": "Q-new_primitive_needed",
+      "scientific_question": "Does the current mathematical primitive set or proposal distribution prevent reliable generalization?",
+      "evidence": [
+        {
+          "study_number": 1,
+          "method": "more_training",
+          "holdout_delta": -0.05
+        },
+        {
+          "study_number": 2,
+          "method": "richer_grammar",
+          "holdout_delta": 0.0
+        },
+        {
+          "study_number": 3,
+          "method": "more_search",
+          "holdout_delta": 0.0
+        },
+        {
+          "study_number": 5,
+          "method": "balanced_sampling",
+          "holdout_delta": 0.0
+        },
+        {
+          "study_number": 6,
+          "method": "cross_family_replication",
+          "holdout_delta": 0.0
+        },
+        {
+          "study_number": 7,
+          "method": "cross_family_replication",
+          "holdout_delta": -0.1
+        }
+      ],
+      "hypotheses": [
+        {
+          "id": "H-missing_primitive",
+          "description": "The current bounded primitive vocabulary cannot express the required structure compactly.",
+          "test": "Predeclare a new safe mathematical primitive and benchmark it on a new task family."
+        },
+        {
+          "id": "H-search_proposal_bias",
+          "description": "The search distribution does not reach existing representable expressions efficiently.",
+          "test": "Test alternative proposal mechanisms at equal budget with untouched targets."
+        }
+      ],
+      "status": "needs_new_method",
+      "scientific_conclusion": "UNRESOLVED",
+      "confirmatory_pvalue_permitted": false,
+      "stop_reason": "bounded_method_library_exhausted; no unsupported automatic code generation"
+    }
+  ]
+}

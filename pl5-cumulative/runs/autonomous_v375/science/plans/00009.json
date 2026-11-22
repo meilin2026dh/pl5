@@ -1,0 +1,22 @@
+{
+  "schema": "pl5-v375-locked-question-plan-1",
+  "cycle_number": 9,
+  "seed": 46482,
+  "budget": 500,
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "proposed_before_cycle_result": true,
+  "prospective_experiment": true,
+  "study_type": "adaptive_synthetic_exploration_not_confirmatory",
+  "question_id": "Q-weak_structured_generalization",
+  "hypothesis_id": "H-weak_structured_generalization-structural_capacity",
+  "case": "difference_squares",
+  "experiment_rationale": "Replicate the problematic structured task under a fresh seed and compare full with grammar-only.",
+  "falsification_criterion": "A larger grammar with the same train/test split fails to improve on a fresh task.",
+  "followup_attempt": 1,
+  "confirmatory_pvalue_permitted": false,
+  "scientific_conclusion": "UNRESOLVED",
+  "production_enabled": false,
+  "mandatory_null_control": false,
+  "sha256": "f58647fefb0f74a480dd2e4bcbe39e1a4258a4bf45d4f0f77fac788f014272f4"
+}

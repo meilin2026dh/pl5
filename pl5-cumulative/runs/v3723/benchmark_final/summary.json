@@ -1,0 +1,73 @@
+{
+  "abstained_count": 24,
+  "accepted_count": 24,
+  "bank_programs": 4,
+  "errors_on_accepts": 0,
+  "external_blind": false,
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "per_family": {
+    "iid_random_null": {
+      "abstained": 6,
+      "accepted": 0,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 0
+    },
+    "novel_interaction_negative": {
+      "abstained": 6,
+      "accepted": 0,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 0
+    },
+    "one_corrupted_training_label": {
+      "abstained": 6,
+      "accepted": 0,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 0
+    },
+    "transferred_cubic_sum": {
+      "abstained": 0,
+      "accepted": 6,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 336
+    },
+    "transferred_parity_difference": {
+      "abstained": 0,
+      "accepted": 6,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 336
+    },
+    "transferred_square_difference": {
+      "abstained": 0,
+      "accepted": 6,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 336
+    },
+    "transferred_step_sum": {
+      "abstained": 0,
+      "accepted": 6,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 336
+    },
+    "unseen_threshold_negative": {
+      "abstained": 6,
+      "accepted": 0,
+      "errors": 0,
+      "runs": 6,
+      "tested_cells": 0
+    }
+  },
+  "results_sha256": "c8fa18073fcb48f1dc6357cfc262b8b7c4f658ef34117923efa2d646c6fe5935",
+  "same_or_related_developer_task_families": true,
+  "schema": "pl5-v3723-development-benchmark-1",
+  "source_count": 4,
+  "source_discovery_cost_not_compute_matched": true,
+  "synthetic_task_count": 48,
+  "tested_cells_on_accepts": 1344
+}

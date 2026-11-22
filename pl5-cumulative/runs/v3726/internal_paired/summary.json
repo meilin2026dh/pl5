@@ -1,0 +1,210 @@
+{
+  "arms": {
+    "v3724_expanded": {
+      "abstained": 45,
+      "accepted": 5,
+      "accepted_heldout_cells": 180,
+      "accepted_heldout_errors": 0,
+      "cpu_fit_freeze_median_ms": 8.571,
+      "cpu_fit_freeze_total_ms": 448.19,
+      "exact_success_all_tasks": 5,
+      "null_false_acceptances": 0,
+      "success_by_cpu_cutoff_ms": {
+        "100": 5,
+        "1000": 5,
+        "25": 5,
+        "250": 5,
+        "50": 5,
+        "500": 5
+      },
+      "tasks": 50
+    },
+    "v3725_ring": {
+      "abstained": 30,
+      "accepted": 20,
+      "accepted_heldout_cells": 720,
+      "accepted_heldout_errors": 0,
+      "cpu_fit_freeze_median_ms": 9.785,
+      "cpu_fit_freeze_total_ms": 508.28,
+      "exact_success_all_tasks": 20,
+      "null_false_acceptances": 0,
+      "success_by_cpu_cutoff_ms": {
+        "100": 20,
+        "1000": 20,
+        "25": 20,
+        "250": 20,
+        "50": 20,
+        "500": 20
+      },
+      "tasks": 50
+    },
+    "v3726_gate": {
+      "abstained": 20,
+      "accepted": 30,
+      "accepted_heldout_cells": 1080,
+      "accepted_heldout_errors": 0,
+      "cpu_fit_freeze_median_ms": 42.046,
+      "cpu_fit_freeze_total_ms": 2148.71,
+      "exact_success_all_tasks": 30,
+      "null_false_acceptances": 0,
+      "success_by_cpu_cutoff_ms": {
+        "100": 30,
+        "1000": 30,
+        "25": 0,
+        "250": 30,
+        "50": 28,
+        "500": 30
+      },
+      "tasks": 50
+    }
+  },
+  "external_blind_verified": false,
+  "families": {
+    "cubic_control": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 5,
+        "exact_success": 5
+      },
+      "v3726_gate": {
+        "accepted": 0,
+        "exact_success": 0
+      }
+    },
+    "diagonal_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "less_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 5,
+        "exact_success": 5
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "linear_control": {
+      "v3724_expanded": {
+        "accepted": 5,
+        "exact_success": 5
+      },
+      "v3725_ring": {
+        "accepted": 5,
+        "exact_success": 5
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "mod3_difference_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "opaque_power": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 0,
+        "exact_success": 0
+      }
+    },
+    "parity_control": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 5,
+        "exact_success": 5
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "random_null": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 0,
+        "exact_success": 0
+      }
+    },
+    "sum_threshold_gate": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 5,
+        "exact_success": 5
+      }
+    },
+    "training_corruption": {
+      "v3724_expanded": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3725_ring": {
+        "accepted": 0,
+        "exact_success": 0
+      },
+      "v3726_gate": {
+        "accepted": 0,
+        "exact_success": 0
+      }
+    }
+  },
+  "independent_issuer": false,
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "protocol_sha256": "06c20e7420102dc9444b41d58af650ad6636fc42eb792d04100993d5ddb211d7",
+  "results_sha256_excluding_timing": "aef379946ac472d26dcb1a2a0a33907705c5231a4939a2b0f72c667666213bcf",
+  "schema": "pl5-v3726-gate-grammar-1:summary",
+  "source_discovery_cost_included": false
+}

@@ -1,0 +1,12 @@
+{
+  "research_release": "3.7.3",
+  "base_archive": "PL5_V3.7.2_integrated_research.zip",
+  "base_archive_sha256": "55b27b109e5542414f2f63e274760524690245e24330164ebc0803d03d4887fa",
+  "base_package_metadata_version": "3.7.2",
+  "source_preservation": "all 775 baseline files unchanged",
+  "entrypoint": "research_backend/research_v373.py",
+  "trials": 480,
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "scope": "additive cumulative research release, not a pip software-version bump"
+}

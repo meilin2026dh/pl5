@@ -1,0 +1,73 @@
+{
+  "schema": "pl5-value-center-v16",
+  "state": "ready",
+  "integrity_verified": true,
+  "used_settled_prefix": 1,
+  "total_sealed": 1,
+  "latest_settled_issue": "26291",
+  "pending_after_prefix": 0,
+  "minimum_periods": 100,
+  "alpha_for_diagnostic_bound": 0.01,
+  "knife_count": 2,
+  "knives": [
+    {
+      "id": "a",
+      "periods": 1,
+      "last_evaluated_issue": "26291",
+      "observed_wrong_cuts": 0,
+      "expected_fair_wrong_cuts": 0.0015,
+      "first_cut_actual": 0,
+      "unique_wrong_cuts": 0,
+      "expected_fair_unique_wrong_cuts": 0.0015,
+      "latest_removed": 150,
+      "latest_overlap": 0,
+      "latest_geometric_novelty": 1.0,
+      "average_removed_fraction": 0.0015,
+      "deviation_bound_count": 1.730818,
+      "evidence_category": "insufficient_evidence",
+      "proposed_research_weight": 1.0,
+      "ready_for_manual_review": false,
+      "approved_for_prediction": false,
+      "research_priority": "collect_more_prospective_data"
+    },
+    {
+      "id": "b",
+      "periods": 1,
+      "last_evaluated_issue": "26291",
+      "observed_wrong_cuts": 1,
+      "expected_fair_wrong_cuts": 0.001,
+      "first_cut_actual": 1,
+      "unique_wrong_cuts": 1,
+      "expected_fair_unique_wrong_cuts": 0.001,
+      "latest_removed": 100,
+      "latest_overlap": 0,
+      "latest_geometric_novelty": 1.0,
+      "average_removed_fraction": 0.001,
+      "deviation_bound_count": 1.730818,
+      "evidence_category": "insufficient_evidence",
+      "proposed_research_weight": 1.0,
+      "ready_for_manual_review": false,
+      "approved_for_prediction": false,
+      "research_priority": "collect_more_prospective_data"
+    }
+  ],
+  "research_queue": [
+    {
+      "id": "a",
+      "priority": "collect_more_prospective_data",
+      "current_weight": 1.0
+    },
+    {
+      "id": "b",
+      "priority": "collect_more_prospective_data",
+      "current_weight": 1.0
+    }
+  ],
+  "automatic_activation": false,
+  "real_win_probabilities": false,
+  "research_only": true,
+  "weights_apply_to_past_records": false,
+  "safe_next_steps": "供下一期的人工研究评审，不自动写入雕塑引擎",
+  "limitations": "固定截点的Hoeffding并合偏差界仅作诊断；反复查看、选刀、改规则或重复测试不具有相同错误率保证。历史样本小，常见中性权重1.0；公平开奖下保留K注命中概率仍为K/100000。",
+  "report_sha256": "4d69af11c4ad010f741175d88c180cbc3934f01dd27b592221019575bef1bdd8"
+}

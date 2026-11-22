@@ -1,0 +1,17 @@
+{
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_ONLY",
+  "freeze_sha256": "5b2a372f9734190d835b25a35bda754aa9993f28ac3ae31f31b50dfbb3e43899",
+  "holdout_accuracy": 1.0,
+  "holdout_count": 20,
+  "holdout_errors": 0,
+  "holdout_sha256": "bc69dc4697068d8ff8875e6dbb315637fe841cb9d41472ba6c997631a8b92e31",
+  "integrity_sha256": "62e354fdd79ee7f335f54ed700d32d46300cf0817847d87d8696d14eef79cbcb",
+  "lottery_prediction_test": false,
+  "no_holdout_scoring": false,
+  "operator_id": "68d41c5e5022cfe11eb79983defee24daa84903628a36b5a1a731e42e87c5173",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3721-counterexample-meta-1:evaluation",
+  "selection_changed_after_holdout": false,
+  "status": "EVALUATED"
+}

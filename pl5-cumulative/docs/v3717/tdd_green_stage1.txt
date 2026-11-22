@@ -1,0 +1,55 @@
+.....FFFF                                                                [100%]
+=================================== FAILURES ===================================
+________________ test_sculpt_target_only_exact_report[100-1.0] _________________
+
+k = 100, strength = 1.0
+
+    @pytest.mark.parametrize('k,strength',[(100,1.0),(333,0.0)])
+    def test_sculpt_target_only_exact_report(k,strength):
+        h=hist(72)
+        kwargs=dict(config=config(),warmup=40,max_periods=3,k=k,strength=strength,
+                    basic=[BasicConstraint('span',minimum=1,maximum=8)])
+        old=rolling_sculpt_backtest(h,**kwargs)
+>       new=rolling_sculpt_backtest(h,**kwargs,target_only=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+
+tests/test_target_only_v3717.py:57: TypeError
+________________ test_sculpt_target_only_exact_report[333-0.0] _________________
+
+k = 333, strength = 0.0
+
+    @pytest.mark.parametrize('k,strength',[(100,1.0),(333,0.0)])
+    def test_sculpt_target_only_exact_report(k,strength):
+        h=hist(72)
+        kwargs=dict(config=config(),warmup=40,max_periods=3,k=k,strength=strength,
+                    basic=[BasicConstraint('span',minimum=1,maximum=8)])
+        old=rolling_sculpt_backtest(h,**kwargs)
+>       new=rolling_sculpt_backtest(h,**kwargs,target_only=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+
+tests/test_target_only_v3717.py:57: TypeError
+______________ test_sculpt_target_only_future_draw_leakage_guard _______________
+
+    def test_sculpt_target_only_future_draw_leakage_guard():
+        h=hist(70)
+>       before=rolling_sculpt_backtest(h,config(),warmup=40,max_periods=3,k=100,target_only=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+
+tests/test_target_only_v3717.py:63: TypeError
+_______________ test_sculpt_target_only_invalid_or_empty_inputs ________________
+
+    def test_sculpt_target_only_invalid_or_empty_inputs():
+        with pytest.raises(ValueError):
+>           rolling_sculpt_backtest(['00001']*3,config(),max_periods=1,target_only=True)
+E           TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+
+tests/test_target_only_v3717.py:70: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_target_only_v3717.py::test_sculpt_target_only_exact_report[100-1.0] - TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+FAILED tests/test_target_only_v3717.py::test_sculpt_target_only_exact_report[333-0.0] - TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+FAILED tests/test_target_only_v3717.py::test_sculpt_target_only_future_draw_leakage_guard - TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+FAILED tests/test_target_only_v3717.py::test_sculpt_target_only_invalid_or_empty_inputs - TypeError: rolling_sculpt_backtest() got an unexpected keyword argument 'target_only'
+4 failed, 5 passed in 6.02s

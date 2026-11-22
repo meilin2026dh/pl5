@@ -1,0 +1,6 @@
+[
+  {"name":"sum_last4_repeat","family":"sum_span","metric":"sum","window":4,"pattern":"repeat"},
+  {"name":"sum_last3_arithmetic","family":"sum_span","metric":"sum","window":3,"pattern":"arithmetic"},
+  {"name":"mod3_zero_last4_alternate","family":"mod3","metric":"zero_count","window":4,"pattern":"alternating"},
+  {"name":"pick23_gap_last6_cycle","family":"combination","metric":"pick23_max_gap","window":6,"pattern":"periodic","period":3}
+]

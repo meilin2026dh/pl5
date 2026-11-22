@@ -1,0 +1,13 @@
+{
+  "release": "3.7.2",
+  "status": "research_release",
+  "input_base": "V3.7 cumulative + V3.7.1 patch",
+  "local_code_commit": "8aa7f5a28591f4e400f7e1f5f483d968469d1e05",
+  "backend_tests_passed": 602,
+  "integration_tests_passed": 29,
+  "synthetic_trials": 18,
+  "github_synced": false,
+  "windows_deployed": false,
+  "full_frontend_build_verified": false,
+  "predictive_advantage": "NOT_ESTABLISHED"
+}

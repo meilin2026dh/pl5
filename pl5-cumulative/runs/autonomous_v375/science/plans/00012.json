@@ -1,0 +1,22 @@
+{
+  "schema": "pl5-v375-locked-question-plan-1",
+  "cycle_number": 12,
+  "seed": 49509,
+  "budget": 500,
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "proposed_before_cycle_result": true,
+  "prospective_experiment": true,
+  "study_type": "adaptive_synthetic_exploration_not_confirmatory",
+  "question_id": "Q-periodic_null_control",
+  "hypothesis_id": "H-periodic_null_calibration",
+  "case": "iid_a",
+  "experiment_rationale": "Periodic independent random negative control; cannot be displaced by priorities.",
+  "falsification_criterion": "A truly independent random target repeatedly shows a verified out-of-sample advantage after multiplicity correction.",
+  "followup_attempt": 0,
+  "confirmatory_pvalue_permitted": false,
+  "scientific_conclusion": "UNRESOLVED",
+  "production_enabled": false,
+  "mandatory_null_control": true,
+  "sha256": "0c900a1484587484db9d59387a88a3307b641ceed81b888287b812393a4ca532"
+}

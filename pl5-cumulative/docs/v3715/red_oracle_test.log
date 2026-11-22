@@ -1,0 +1,27 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_independent_oracle_detects_same_size_but_wrong_ticket_membership _____
+
+    def test_independent_oracle_detects_same_size_but_wrong_ticket_membership():
+        """A sample-count-only oracle would silently miss this wrong bitmap."""
+        import pytest
+        from pailie5.basic_filters import BasicConstraint
+        from pailie5.high_throughput_v3714 import ExactFilterEngine
+        from pailie5.ga_cs_optimizer_v3715 import SearchProblem
+        from benchmark_ga_cs_v3715 import _trial
+        rule = BasicConstraint('digit_1',minimum=5)
+        engine = ExactFilterEngine()
+        engine.add_basic('r',rule)
+        correct = engine._compile('r')
+        wrong = correct ^ 1 ^ (1 << 90000)
+        assert correct.bit_count() == wrong.bit_count()
+        p=SearchProblem(masks=(wrong,),rule_names=('r',),universe_size=100000,
+                        target=50000,min_survivors=49000,max_survivors=51000,min_active=1)
+>       with pytest.raises(AssertionError,match='membership'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'AssertionError'>
+
+tests/test_ga_cs_benchmark_v3715.py:50: Failed
+=========================== short test summary info ============================
+FAILED tests/test_ga_cs_benchmark_v3715.py::test_independent_oracle_detects_same_size_but_wrong_ticket_membership - Failed: DID NOT RAISE <class 'AssertionError'>
+1 failed in 1.13s

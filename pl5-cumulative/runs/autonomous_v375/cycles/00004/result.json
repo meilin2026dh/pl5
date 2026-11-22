@@ -1,0 +1,122 @@
+{
+  "schema": "pl5-v374-cycle-result-1",
+  "cycle_number": 4,
+  "case": "iid_a",
+  "seed": 41437,
+  "arms": [
+    {
+      "arm": "full",
+      "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+      "training_errors": 46,
+      "training_count": 60,
+      "training_evaluations": 500,
+      "selector_evaluations": 0,
+      "budget_matched": true,
+      "selection_used": "training_cells_only",
+      "candidate_origin": "bootstrap",
+      "frozen_before_holdout": true,
+      "holdout": {
+        "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+        "data_sha256": "8384660744c5629fe403422b79b115c4b6e8ea52f8116d920ad0d51cfdd85065",
+        "errors": 37,
+        "count": 40,
+        "accuracy": 0.07499999999999996,
+        "overlapping_pairs": 0,
+        "refitted": false,
+        "production_enabled": false,
+        "predictive_advantage": "NOT_ESTABLISHED"
+      },
+      "whole_table_errors": 83,
+      "exact_table": false,
+      "nodes": 3
+    },
+    {
+      "arm": "no_warm",
+      "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+      "training_errors": 46,
+      "training_count": 60,
+      "training_evaluations": 500,
+      "selector_evaluations": 0,
+      "budget_matched": true,
+      "selection_used": "training_cells_only",
+      "candidate_origin": "bootstrap",
+      "frozen_before_holdout": true,
+      "holdout": {
+        "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+        "data_sha256": "8384660744c5629fe403422b79b115c4b6e8ea52f8116d920ad0d51cfdd85065",
+        "errors": 37,
+        "count": 40,
+        "accuracy": 0.07499999999999996,
+        "overlapping_pairs": 0,
+        "refitted": false,
+        "production_enabled": false,
+        "predictive_advantage": "NOT_ESTABLISHED"
+      },
+      "whole_table_errors": 83,
+      "exact_table": false,
+      "nodes": 3
+    },
+    {
+      "arm": "selective",
+      "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+      "training_errors": 46,
+      "training_count": 60,
+      "training_evaluations": 491,
+      "selector_evaluations": 9,
+      "budget_matched": true,
+      "selection_used": "training_cells_only",
+      "candidate_origin": "bootstrap",
+      "frozen_before_holdout": true,
+      "holdout": {
+        "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+        "data_sha256": "8384660744c5629fe403422b79b115c4b6e8ea52f8116d920ad0d51cfdd85065",
+        "errors": 37,
+        "count": 40,
+        "accuracy": 0.07499999999999996,
+        "overlapping_pairs": 0,
+        "refitted": false,
+        "production_enabled": false,
+        "predictive_advantage": "NOT_ESTABLISHED"
+      },
+      "whole_table_errors": 83,
+      "exact_table": false,
+      "nodes": 3
+    },
+    {
+      "arm": "grammar_only",
+      "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+      "training_errors": 46,
+      "training_count": 60,
+      "training_evaluations": 500,
+      "selector_evaluations": 0,
+      "budget_matched": true,
+      "selection_used": "training_cells_only",
+      "candidate_origin": "bootstrap",
+      "frozen_before_holdout": true,
+      "holdout": {
+        "operator_id": "737abfdeea89dddc4956cdc9497a99ad89698cd4a3a43974c6b9e8d459eb169d",
+        "data_sha256": "8384660744c5629fe403422b79b115c4b6e8ea52f8116d920ad0d51cfdd85065",
+        "errors": 37,
+        "count": 40,
+        "accuracy": 0.07499999999999996,
+        "overlapping_pairs": 0,
+        "refitted": false,
+        "production_enabled": false,
+        "predictive_advantage": "NOT_ESTABLISHED"
+      },
+      "whole_table_errors": 83,
+      "exact_table": false,
+      "nodes": 3
+    }
+  ],
+  "issues": [
+    "random_data_spurious_fit"
+  ],
+  "diagnosis": "No confirmed reusable structure; new seed needed.",
+  "weakness": 0.925,
+  "transfer_candidate": false,
+  "status": "negative_control",
+  "next_hypothesis": "No confirmed reusable structure; new seed needed.",
+  "production_enabled": false,
+  "predictive_advantage": "NOT_ESTABLISHED"
+}

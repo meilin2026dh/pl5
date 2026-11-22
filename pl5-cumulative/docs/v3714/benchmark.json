@@ -1,0 +1,146 @@
+{
+  "schema": "PL5-V3.7.14-exact-bitset-benchmark-1",
+  "benchmark_version": "3.7.14",
+  "domain": 100000,
+  "n_static_rules": 20,
+  "seed": 3714,
+  "repeat_count": 20,
+  "queries_per_repeat": 20,
+  "tested_queries": 400,
+  "mismatch_count": 0,
+  "latency_seconds": {
+    "numpy_indicator_table_warm": true,
+    "bitmap_cold_compile": 0.003948056,
+    "legacy_numpy_median": 0.0018550045,
+    "legacy_numpy_p95": 0.0038614568999999987,
+    "bitmap_warm_median": 0.0002131925,
+    "bitmap_warm_p95": 0.0004589842499999998,
+    "bitmap_single_rule_replacement": 0.000622477,
+    "warm_speedup_median": 8.7011
+  },
+  "memory_bytes": {
+    "logical_bitmap_storage": 250000,
+    "python_integer_allocations": 265432
+  },
+  "compiled_rules": 20,
+  "build_count": 21,
+  "query_results_first_repeat": [
+    {
+      "rules": 4,
+      "remaining": 79104
+    },
+    {
+      "rules": 4,
+      "remaining": 75845
+    },
+    {
+      "rules": 4,
+      "remaining": 72891
+    },
+    {
+      "rules": 4,
+      "remaining": 84173
+    },
+    {
+      "rules": 4,
+      "remaining": 73000
+    },
+    {
+      "rules": 8,
+      "remaining": 61249
+    },
+    {
+      "rules": 8,
+      "remaining": 60186
+    },
+    {
+      "rules": 8,
+      "remaining": 56389
+    },
+    {
+      "rules": 8,
+      "remaining": 66868
+    },
+    {
+      "rules": 8,
+      "remaining": 64328
+    },
+    {
+      "rules": 12,
+      "remaining": 40471
+    },
+    {
+      "rules": 12,
+      "remaining": 43982
+    },
+    {
+      "rules": 12,
+      "remaining": 39360
+    },
+    {
+      "rules": 12,
+      "remaining": 38272
+    },
+    {
+      "rules": 12,
+      "remaining": 40726
+    },
+    {
+      "rules": 20,
+      "remaining": 28672
+    },
+    {
+      "rules": 20,
+      "remaining": 28672
+    },
+    {
+      "rules": 20,
+      "remaining": 28672
+    },
+    {
+      "rules": 20,
+      "remaining": 28672
+    },
+    {
+      "rules": 20,
+      "remaining": 28672
+    }
+  ],
+  "query_hashes_first_repeat": [
+    "6041856531c49e1af9b16a777f8d3c9045b7cc46963501a9eb235bab8f014bd3",
+    "facd4ec531cbdaf48c94e95edb0334ec8f8da66565a307a56bcd487d7d3062fb",
+    "360b20abac8e76d0beb4adfcf9bc471dd3d83a65792abf0dc19d307942cf03a3",
+    "4d8946521ec46d0e65645e05dbbcc0b159a444276f7399522f1aeea3503acf12",
+    "066c3fc7bf6da8105cf9735b1d12246556d487bc413a6d4965844021be65b27e",
+    "4bacb9a0578f605764fdf092b9c2cae234fea4264e33738ac567290789220385",
+    "cd1936a349ead171828bc3aaefe9b12f0639f779d34b0d31c41a5eafca245916",
+    "6094deae99e018fb4ca70344ff13ec174a6d7d762b9bf2b87c21f27bfc35c64b",
+    "9a943cfd32b8fddabc46a42b9470609ecfc121c7f5a48ba8bb289bb07e6abee5",
+    "38a81b523ae43a47db5314dd03101aa19d6f112b74c0fdb1a65a04b4f067d4a2",
+    "32a93a3cfca39d34cc07965f58fec158a52ba5d9a67c83254ed79e3625533097",
+    "db92e6a514866918b10ee2d4f61aa0b3e17513bd0ca8071f1bc7ff852277f0de",
+    "655289ab5cac5f86b7aadf7a05890db958058fd41505512917a224ec8dd799f4",
+    "97976669f0a97041b5b237b12bbca817fc9a30fff5fc80e63ee344a59c99e01f",
+    "3667ee435d707663860934f94b9e9e2437667a4cb53dde439dec3aa160a9b6d9",
+    "dda7aa283674853df32d9ec90cc5c1d852b5dcab841affd57dae156a2d97c964",
+    "dda7aa283674853df32d9ec90cc5c1d852b5dcab841affd57dae156a2d97c964",
+    "dda7aa283674853df32d9ec90cc5c1d852b5dcab841affd57dae156a2d97c964",
+    "dda7aa283674853df32d9ec90cc5c1d852b5dcab841affd57dae156a2d97c964",
+    "dda7aa283674853df32d9ec90cc5c1d852b5dcab841affd57dae156a2d97c964"
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "processor": "",
+    "cpu_count": 5,
+    "clock": "perf_counter_ns"
+  },
+  "limits": [
+    "cold compilation includes a 100000-element mask for every static rule",
+    "warm querying reuses cached rules whereas the legacy oracle recomputes them",
+    "only 20 predefined static rules; deferred expensive calls measured by unit test, not this benchmark",
+    "performance varies by hardware, rule selectivity, and query reuse",
+    "this filter engine does not confer any lottery predictive advantage"
+  ]
+}

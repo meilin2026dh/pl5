@@ -1,0 +1,734 @@
+{
+  "trial_id": "iid_a_37306_no_complexity",
+  "case": "iid_a",
+  "task_group": "iid_control",
+  "seed": 37306,
+  "arm": "no_complexity",
+  "training_correct": 19,
+  "training_n": 60,
+  "holdout_correct": 4,
+  "holdout_n": 40,
+  "exact_reconstruction": false,
+  "nodes": 11,
+  "evaluations": 2500,
+  "proposals": 3977,
+  "budget_matched": true,
+  "winning_origin": "mutation",
+  "fit_seconds": 0.1877542510000012,
+  "operator_path": "trials/iid_a_37306_no_complexity/operator.json",
+  "fit": {
+    "budget_matched": true,
+    "budget_unit": "distinct_normalized_AST_interpreter_calls_including_arithmetic_failures",
+    "config": {
+      "batch_size": 32,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "evaluation_budget": 2500,
+      "max_depth": 6,
+      "max_nodes": 11,
+      "pool_size": 32,
+      "proposal_factor": 100,
+      "seed": 37306
+    },
+    "distinct_integer_behaviors": 1381,
+    "evaluation_counts": {
+      "bootstrap": 337,
+      "crossover": 409,
+      "grammar_composition": 408,
+      "guided": 275,
+      "mutation": 561,
+      "random_grammar": 505,
+      "safe_baseline": 1,
+      "warm_start": 4
+    },
+    "evaluations": 2500,
+    "first_exact_evaluation": null,
+    "mechanisms": {
+      "complexity": false,
+      "crossover": true,
+      "guided": true,
+      "mutation": true,
+      "warm_start": true
+    },
+    "operator": {
+      "description": "(gcd(equal(a,1),gcd(b,9))*less(a,5)) mod 10",
+      "expression": [
+        "binary",
+        "mul",
+        [
+          "binary",
+          "gcd",
+          [
+            "binary",
+            "equal",
+            [
+              "a"
+            ],
+            [
+              "const",
+              1
+            ]
+          ],
+          [
+            "binary",
+            "gcd",
+            [
+              "b"
+            ],
+            [
+              "const",
+              9
+            ]
+          ]
+        ],
+        [
+          "binary",
+          "less",
+          [
+            "a"
+          ],
+          [
+            "const",
+            5
+          ]
+        ]
+      ],
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "operator_id": "aba865f1650459fad8290c29f68e960aec375ac9402c0c7977ad08e2debcbac7",
+      "predictive_advantage": "NOT_ESTABLISHED",
+      "production_enabled": false,
+      "source_data_sha256": "71334741b0f8da51014483f55be67f8d957a63f9a283db5b0cfa6397d16daf06",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    "proposal_counts": {
+      "bootstrap": 670,
+      "crossover": 707,
+      "grammar_composition": 472,
+      "guided": 708,
+      "mutation": 708,
+      "random_grammar": 707,
+      "safe_baseline": 1,
+      "warm_start": 4
+    },
+    "proposals": 3977,
+    "rejected_counts": {
+      "bounds_or_shape": 418,
+      "duplicate_AST": 1059
+    },
+    "replacement_policy": "disabled_slots_use_target_independent_random_grammar",
+    "selection_used": "training_cells_only",
+    "trace": [
+      {
+        "errors": 43,
+        "evaluations": 750,
+        "expression": [
+          "binary",
+          "less",
+          [
+            "a"
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 3,
+        "origin": "bootstrap",
+        "proposals": 1147,
+        "stage": "bootstrap"
+      },
+      {
+        "errors": 43,
+        "evaluations": 1006,
+        "expression": [
+          "binary",
+          "gcd",
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ],
+          [
+            "binary",
+            "min",
+            [
+              "a"
+            ],
+            [
+              "binary",
+              "equal",
+              [
+                "const",
+                0
+              ],
+              [
+                "const",
+                1
+              ]
+            ]
+          ]
+        ],
+        "nodes": 9,
+        "origin": "mutation",
+        "proposals": 1488,
+        "stage": "search"
+      },
+      {
+        "errors": 42,
+        "evaluations": 1262,
+        "expression": [
+          "binary",
+          "gcd",
+          [
+            "binary",
+            "absdiff",
+            [
+              "a"
+            ],
+            [
+              "const",
+              2
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 1854,
+        "stage": "search"
+      },
+      {
+        "errors": 42,
+        "evaluations": 1518,
+        "expression": [
+          "binary",
+          "gcd",
+          [
+            "binary",
+            "absdiff",
+            [
+              "a"
+            ],
+            [
+              "const",
+              2
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 2232,
+        "stage": "search"
+      },
+      {
+        "errors": 42,
+        "evaluations": 1774,
+        "expression": [
+          "binary",
+          "gcd",
+          [
+            "binary",
+            "absdiff",
+            [
+              "a"
+            ],
+            [
+              "const",
+              2
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 2651,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2030,
+        "expression": [
+          "binary",
+          "mul",
+          [
+            "binary",
+            "gcd",
+            [
+              "binary",
+              "equal",
+              [
+                "a"
+              ],
+              [
+                "const",
+                1
+              ]
+            ],
+            [
+              "binary",
+              "gcd",
+              [
+                "b"
+              ],
+              [
+                "const",
+                9
+              ]
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 11,
+        "origin": "mutation",
+        "proposals": 3111,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2286,
+        "expression": [
+          "binary",
+          "mul",
+          [
+            "binary",
+            "gcd",
+            [
+              "binary",
+              "equal",
+              [
+                "a"
+              ],
+              [
+                "const",
+                1
+              ]
+            ],
+            [
+              "binary",
+              "gcd",
+              [
+                "b"
+              ],
+              [
+                "const",
+                9
+              ]
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 11,
+        "origin": "mutation",
+        "proposals": 3581,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2500,
+        "expression": [
+          "binary",
+          "mul",
+          [
+            "binary",
+            "gcd",
+            [
+              "binary",
+              "equal",
+              [
+                "a"
+              ],
+              [
+                "const",
+                1
+              ]
+            ],
+            [
+              "binary",
+              "gcd",
+              [
+                "b"
+              ],
+              [
+                "const",
+                9
+              ]
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "a"
+            ],
+            [
+              "const",
+              5
+            ]
+          ]
+        ],
+        "nodes": 11,
+        "origin": "mutation",
+        "proposals": 3977,
+        "stage": "final"
+      }
+    ],
+    "training_count": 60,
+    "training_errors": 41,
+    "wall_time_matched": false,
+    "winning_nodes": 11,
+    "winning_origin": "mutation"
+  },
+  "holdout": {
+    "operator_id": "aba865f1650459fad8290c29f68e960aec375ac9402c0c7977ad08e2debcbac7",
+    "data_sha256": "278f1be4397bbcc9b5c597c86f28d75470e6bc5d271c25a4430e7b498bfba38f",
+    "errors": 36,
+    "count": 40,
+    "accuracy": 0.09999999999999998,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "aba865f1650459fad8290c29f68e960aec375ac9402c0c7977ad08e2debcbac7",
+    "candidate_table_sha256": "ae1c226a8ada812dd894b9806817862858efed0600e339ce34f975842fe107dc",
+    "target_table_sha256": "f402ed3cfe0914a097bd33a8231d3ff5497272b6ae19834e0b5c14c90488fb10",
+    "exact_on_all_100_pairs": false,
+    "whole_table_errors": 77,
+    "first_mismatch": {
+      "a": 0,
+      "b": 0,
+      "predicted": 9,
+      "target": 4
+    },
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": false,
+      "commutativity_counterexample": [
+        0,
+        2
+      ],
+      "associative": false,
+      "associativity_counterexample": [
+        0,
+        0,
+        0
+      ],
+      "identities": [],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 11,
+    "depth": 4,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 95,
+      "formula_plus_exceptions_bits": 949,
+      "preferred": "raw_table",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "production_enabled": false
+}

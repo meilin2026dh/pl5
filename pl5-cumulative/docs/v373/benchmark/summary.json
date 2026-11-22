@@ -1,0 +1,583 @@
+{
+  "arms": {
+    "full": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.6,
+      "training_accuracy": 0.64296875,
+      "exact_reconstructions": 12,
+      "mean_nodes": 8.09375,
+      "mean_fit_seconds": 0.23362839936250096,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3914.3625,
+      "iid_control": {
+        "correct": 56,
+        "cells": 640,
+        "accuracy": 0.0875,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.32283660622546817,
+        "exact_95pct_interval": [
+          0.06677234191477137,
+          0.11212251092869698
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "grammar_only": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.420703125,
+      "training_accuracy": 0.48411458333333335,
+      "exact_reconstructions": 3,
+      "mean_nodes": 5.6875,
+      "mean_fit_seconds": 0.19593274772499783,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3539.75,
+      "iid_control": {
+        "correct": 61,
+        "cells": 640,
+        "accuracy": 0.0953125,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.7419673804669913,
+        "exact_95pct_interval": [
+          0.07369154494066124,
+          0.1207483270530887
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_complexity": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.55546875,
+      "training_accuracy": 0.621875,
+      "exact_reconstructions": 11,
+      "mean_nodes": 9.96875,
+      "mean_fit_seconds": 0.23433976246250196,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 4051.9875,
+      "iid_control": {
+        "correct": 68,
+        "cells": 640,
+        "accuracy": 0.10625,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.5979000597845522,
+        "exact_95pct_interval": [
+          0.083455987313146,
+          0.1327485003055943
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_crossover": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.53203125,
+      "training_accuracy": 0.5893229166666667,
+      "exact_reconstructions": 8,
+      "mean_nodes": 7.375,
+      "mean_fit_seconds": 0.21202142417499842,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3606.75,
+      "iid_control": {
+        "correct": 55,
+        "cells": 640,
+        "accuracy": 0.0859375,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.26239987362600536,
+        "exact_95pct_interval": [
+          0.06539460294460436,
+          0.11039138095759408
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_mutation": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.580859375,
+      "training_accuracy": 0.6247395833333333,
+      "exact_reconstructions": 11,
+      "mean_nodes": 7.875,
+      "mean_fit_seconds": 0.21245410410000218,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3872.15,
+      "iid_control": {
+        "correct": 57,
+        "cells": 640,
+        "accuracy": 0.0890625,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.3916506637405695,
+        "exact_95pct_interval": [
+          0.06815217916822393,
+          0.11385159013506069
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    },
+    "no_warm_start": {
+      "trials": 80,
+      "structured_trials": 64,
+      "iid_trials": 16,
+      "holdout_accuracy": 0.62734375,
+      "training_accuracy": 0.6721354166666667,
+      "exact_reconstructions": 16,
+      "mean_nodes": 8.09375,
+      "mean_fit_seconds": 0.23503464341250008,
+      "all_budgets_matched": true,
+      "min_evaluations": 2500,
+      "max_evaluations": 2500,
+      "mean_proposals": 3923.1125,
+      "iid_control": {
+        "correct": 57,
+        "cells": 640,
+        "accuracy": 0.0890625,
+        "exact_reconstructions": 0,
+        "p_two_sided": 0.3916506637405695,
+        "exact_95pct_interval": [
+          0.06815217916822393,
+          0.11385159013506069
+        ],
+        "holm_p_across_arms": 1.0
+      }
+    }
+  },
+  "task_means": {
+    "shifted_bilinear": {
+      "full": {
+        "accuracy": 0.49375,
+        "exact": 2,
+        "trials": 8,
+        "mean_nodes": 8.0
+      },
+      "no_mutation": {
+        "accuracy": 0.7,
+        "exact": 3,
+        "trials": 8,
+        "mean_nodes": 8.75
+      },
+      "no_crossover": {
+        "accuracy": 0.22499999999999998,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "no_complexity": {
+        "accuracy": 0.359375,
+        "exact": 1,
+        "trials": 8,
+        "mean_nodes": 10.25
+      },
+      "no_warm_start": {
+        "accuracy": 0.7093750000000001,
+        "exact": 5,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "grammar_only": {
+        "accuracy": 0.225,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.0
+      }
+    },
+    "shifted_square": {
+      "full": {
+        "accuracy": 0.328125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.75
+      },
+      "no_mutation": {
+        "accuracy": 0.321875,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.25
+      },
+      "no_crossover": {
+        "accuracy": 0.246875,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.0
+      },
+      "no_complexity": {
+        "accuracy": 0.25937499999999997,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 10.5
+      },
+      "no_warm_start": {
+        "accuracy": 0.328125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.75
+      },
+      "grammar_only": {
+        "accuracy": 0.290625,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 5.25
+      }
+    },
+    "shifted_minimum": {
+      "full": {
+        "accuracy": 0.734375,
+        "exact": 1,
+        "trials": 8,
+        "mean_nodes": 8.0
+      },
+      "no_mutation": {
+        "accuracy": 0.65,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.25
+      },
+      "no_crossover": {
+        "accuracy": 0.6375,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.0
+      },
+      "no_complexity": {
+        "accuracy": 0.7093750000000001,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 10.75
+      },
+      "no_warm_start": {
+        "accuracy": 0.734375,
+        "exact": 1,
+        "trials": 8,
+        "mean_nodes": 8.25
+      },
+      "grammar_only": {
+        "accuracy": 0.41562499999999997,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 5.25
+      }
+    },
+    "abs_product_plus_b": {
+      "full": {
+        "accuracy": 0.428125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.5
+      },
+      "no_mutation": {
+        "accuracy": 0.41875,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 9.0
+      },
+      "no_crossover": {
+        "accuracy": 0.540625,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.75
+      },
+      "no_complexity": {
+        "accuracy": 0.371875,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 10.0
+      },
+      "no_warm_start": {
+        "accuracy": 0.428125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.5
+      },
+      "grammar_only": {
+        "accuracy": 0.284375,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 4.25
+      }
+    },
+    "asymmetric_cubic": {
+      "full": {
+        "accuracy": 0.696875,
+        "exact": 2,
+        "trials": 8,
+        "mean_nodes": 9.25
+      },
+      "no_mutation": {
+        "accuracy": 0.546875,
+        "exact": 1,
+        "trials": 8,
+        "mean_nodes": 7.75
+      },
+      "no_crossover": {
+        "accuracy": 0.5187499999999999,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.25
+      },
+      "no_complexity": {
+        "accuracy": 0.678125,
+        "exact": 3,
+        "trials": 8,
+        "mean_nodes": 10.0
+      },
+      "no_warm_start": {
+        "accuracy": 0.696875,
+        "exact": 2,
+        "trials": 8,
+        "mean_nodes": 9.25
+      },
+      "grammar_only": {
+        "accuracy": 0.38125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.0
+      }
+    },
+    "gcd_offsets": {
+      "full": {
+        "accuracy": 0.7250000000000001,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.5
+      },
+      "no_mutation": {
+        "accuracy": 0.63125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.0
+      },
+      "no_crossover": {
+        "accuracy": 0.59375,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "no_complexity": {
+        "accuracy": 0.653125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 10.25
+      },
+      "no_warm_start": {
+        "accuracy": 0.7250000000000001,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.5
+      },
+      "grammar_only": {
+        "accuracy": 0.628125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 5.75
+      }
+    },
+    "xor_mixed": {
+      "full": {
+        "accuracy": 0.440625,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.25
+      },
+      "no_mutation": {
+        "accuracy": 0.42500000000000004,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 9.5
+      },
+      "no_crossover": {
+        "accuracy": 0.525,
+        "exact": 1,
+        "trials": 8,
+        "mean_nodes": 8.0
+      },
+      "no_complexity": {
+        "accuracy": 0.43125,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 10.0
+      },
+      "no_warm_start": {
+        "accuracy": 0.396875,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 8.5
+      },
+      "grammar_only": {
+        "accuracy": 0.40625,
+        "exact": 0,
+        "trials": 8,
+        "mean_nodes": 6.0
+      }
+    },
+    "difference_squares": {
+      "full": {
+        "accuracy": 0.953125,
+        "exact": 7,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "no_mutation": {
+        "accuracy": 0.953125,
+        "exact": 7,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "no_crossover": {
+        "accuracy": 0.96875,
+        "exact": 7,
+        "trials": 8,
+        "mean_nodes": 7.0
+      },
+      "no_complexity": {
+        "accuracy": 0.98125,
+        "exact": 7,
+        "trials": 8,
+        "mean_nodes": 8.0
+      },
+      "no_warm_start": {
+        "accuracy": 1.0,
+        "exact": 8,
+        "trials": 8,
+        "mean_nodes": 7.5
+      },
+      "grammar_only": {
+        "accuracy": 0.734375,
+        "exact": 3,
+        "trials": 8,
+        "mean_nodes": 7.0
+      }
+    }
+  },
+  "prespecified_contrasts": {
+    "no_mutation": {
+      "task_count": 8,
+      "tasks": [
+        "abs_product_plus_b",
+        "asymmetric_cubic",
+        "difference_squares",
+        "gcd_offsets",
+        "shifted_bilinear",
+        "shifted_minimum",
+        "shifted_square",
+        "xor_mixed"
+      ],
+      "full_minus_ablation_by_task": [
+        0.009374999999999967,
+        0.15000000000000002,
+        0.0,
+        0.09375000000000011,
+        -0.20624999999999993,
+        0.08437499999999998,
+        0.006249999999999978,
+        0.015624999999999944
+      ],
+      "mean_difference": 0.01914062500000001,
+      "p_two_sided_sign_flip": 0.625,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    },
+    "no_crossover": {
+      "task_count": 8,
+      "tasks": [
+        "abs_product_plus_b",
+        "asymmetric_cubic",
+        "difference_squares",
+        "gcd_offsets",
+        "shifted_bilinear",
+        "shifted_minimum",
+        "shifted_square",
+        "xor_mixed"
+      ],
+      "full_minus_ablation_by_task": [
+        -0.11250000000000004,
+        0.1781250000000001,
+        -0.015625,
+        0.1312500000000001,
+        0.26875000000000004,
+        0.09687500000000004,
+        0.08124999999999999,
+        -0.08437500000000003
+      ],
+      "mean_difference": 0.06796875000000002,
+      "p_two_sided_sign_flip": 0.203125,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 0.609375
+    },
+    "no_complexity": {
+      "task_count": 8,
+      "tasks": [
+        "abs_product_plus_b",
+        "asymmetric_cubic",
+        "difference_squares",
+        "gcd_offsets",
+        "shifted_bilinear",
+        "shifted_minimum",
+        "shifted_square",
+        "xor_mixed"
+      ],
+      "full_minus_ablation_by_task": [
+        0.05624999999999997,
+        0.018750000000000044,
+        -0.028124999999999956,
+        0.07187500000000013,
+        0.13437500000000002,
+        0.02499999999999991,
+        0.06875000000000003,
+        0.009374999999999967
+      ],
+      "mean_difference": 0.044531250000000015,
+      "p_two_sided_sign_flip": 0.046875,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 0.1875
+    },
+    "no_warm_start": {
+      "task_count": 8,
+      "tasks": [
+        "abs_product_plus_b",
+        "asymmetric_cubic",
+        "difference_squares",
+        "gcd_offsets",
+        "shifted_bilinear",
+        "shifted_minimum",
+        "shifted_square",
+        "xor_mixed"
+      ],
+      "full_minus_ablation_by_task": [
+        0.0,
+        0.0,
+        -0.046875,
+        0.0,
+        -0.21562500000000007,
+        0.0,
+        0.0,
+        0.04375000000000001
+      ],
+      "mean_difference": -0.027343750000000007,
+      "p_two_sided_sign_flip": 0.5,
+      "assumption": "task-level sign symmetry/exchangeability under null; conditional developmental diagnostic",
+      "unit": "one task mean over seeds, never one input cell or repeated split",
+      "holm_p": 1.0
+    }
+  },
+  "all_budgets_matched": true,
+  "interpretation": "developmental synthetic benchmark, not a random sample of all mathematical tasks; no lottery evidence",
+  "production_enabled": false
+}

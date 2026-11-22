@@ -1,0 +1,44 @@
+{
+  "developer_authored": true,
+  "external_blind": false,
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "models": {
+    "3000": {
+      "frozen_portfolio": {
+        "accepted": 2,
+        "exact_success": 2,
+        "holdout_cells_accepted": 72,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 4,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      },
+      "v3725_ring": {
+        "accepted": 1,
+        "exact_success": 1,
+        "holdout_cells_accepted": 36,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 4,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      },
+      "v3726_gate": {
+        "accepted": 1,
+        "exact_success": 1,
+        "holdout_cells_accepted": 36,
+        "holdout_errors_accepted": 0,
+        "null_false_accepted": 0,
+        "total_tasks": 4,
+        "worker_failure": 0,
+        "worker_timeout": 0
+      }
+    }
+  },
+  "protocol_sha256": "6ea2e77ff49a3d61c57cb6e02cd65eb21a83750da152ba13a9418ee1a88a57a6",
+  "results_sha256_without_wall_time": "b0650cb0555d1bbb913a64d5fe1b9c6df01f6b18c2c008fe23d4efd169383655",
+  "runs": 4,
+  "schema": "pl5-v3727-hard-wall-budget-1:internal_benchmark_summary",
+  "unscored_timeouts_recorded": true
+}

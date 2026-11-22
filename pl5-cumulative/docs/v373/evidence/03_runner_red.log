@@ -1,0 +1,404 @@
+FFFFFFFFFFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_________________________ test_benchmark_module_exists _________________________
+
+    def test_benchmark_module_exists():
+>       assert importlib.util.find_spec('pailie5.ablation_benchmark_v373') is not None
+E       AssertionError: assert None is not None
+E        +  where None = <function find_spec at 0x7fe2a6bc3b00>('pailie5.ablation_benchmark_v373')
+E        +    where <function find_spec at 0x7fe2a6bc3b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_ablation_benchmark_v373.py:13: AssertionError
+________________________ test_statistics_module_exists _________________________
+
+    def test_statistics_module_exists():
+>       assert importlib.util.find_spec('pailie5.ablation_statistics_v373') is not None
+E       AssertionError: assert None is not None
+E        +  where None = <function find_spec at 0x7fe2a6bc3b00>('pailie5.ablation_statistics_v373')
+E        +    where <function find_spec at 0x7fe2a6bc3b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_ablation_benchmark_v373.py:16: AssertionError
+____________________ test_exact_signflip_reference_examples ____________________
+
+    def test_exact_signflip_reference_examples():
+>       assert s().exact_sign_flip([1,1,1,1]) == pytest.approx(0.125)
+               ^^^
+
+tests/test_ablation_benchmark_v373.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+________________ test_holm_preserves_names_and_controls_family _________________
+
+    def test_holm_preserves_names_and_controls_family():
+>       assert s().holm_adjust({'c':.04,'a':.01,'b':.03}) == pytest.approx({'a':.03,'b':.06,'c':.06})
+               ^^^
+
+tests/test_ablation_benchmark_v373.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_____________________ test_invalid_signflip_input[values0] _____________________
+
+values = []
+
+    @pytest.mark.parametrize('values',[[],[float('nan')],[float('inf')]])
+    def test_invalid_signflip_input(values):
+>       with pytest.raises(ValueError): s().exact_sign_flip(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_____________________ test_invalid_signflip_input[values1] _____________________
+
+values = [nan]
+
+    @pytest.mark.parametrize('values',[[],[float('nan')],[float('inf')]])
+    def test_invalid_signflip_input(values):
+>       with pytest.raises(ValueError): s().exact_sign_flip(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_____________________ test_invalid_signflip_input[values2] _____________________
+
+values = [inf]
+
+    @pytest.mark.parametrize('values',[[],[float('nan')],[float('inf')]])
+    def test_invalid_signflip_input(values):
+>       with pytest.raises(ValueError): s().exact_sign_flip(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______________________ test_invalid_holm_input[values0] _______________________
+
+values = {'x': -1}
+
+    @pytest.mark.parametrize('values',[{'x':-1},{'x':1.1},{'x':float('nan')}])
+    def test_invalid_holm_input(values):
+>       with pytest.raises(ValueError): s().holm_adjust(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______________________ test_invalid_holm_input[values1] _______________________
+
+values = {'x': 1.1}
+
+    @pytest.mark.parametrize('values',[{'x':-1},{'x':1.1},{'x':float('nan')}])
+    def test_invalid_holm_input(values):
+>       with pytest.raises(ValueError): s().holm_adjust(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______________________ test_invalid_holm_input[values2] _______________________
+
+values = {'x': nan}
+
+    @pytest.mark.parametrize('values',[{'x':-1},{'x':1.1},{'x':float('nan')}])
+    def test_invalid_holm_input(values):
+>       with pytest.raises(ValueError): s().holm_adjust(values)
+                                        ^^^
+
+tests/test_ablation_benchmark_v373.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:10: in s
+    def s(): return importlib.import_module('pailie5.ablation_statistics_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_statistics_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_______________ test_eight_structures_two_controls_and_six_arms ________________
+
+    def test_eight_structures_two_controls_and_six_arms():
+>       assert len(b().CASES)==10 and len(b().ARMS)==6
+                   ^^^
+
+tests/test_ablation_benchmark_v373.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:9: in b
+    def b(): return importlib.import_module('pailie5.ablation_benchmark_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_benchmark_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_________ test_warm_sources_are_frozen_and_no_target_is_an_exact_copy __________
+
+    def test_warm_sources_are_frozen_and_no_target_is_an_exact_copy():
+>       bank,metadata=b().load_warm_bank()
+                      ^^^
+
+tests/test_ablation_benchmark_v373.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:9: in b
+    def b(): return importlib.import_module('pailie5.ablation_benchmark_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_benchmark_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_____ test_synthetic_reference_tables_match_independent_scalar_interpreter _____
+
+    def test_synthetic_reference_tables_match_independent_scalar_interpreter():
+        from pailie5.symbolic_operators_v30 import eval_expr_scalar
+>       for case,task in b().CASES.items():
+                         ^^^
+
+tests/test_ablation_benchmark_v373.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:9: in b
+    def b(): return importlib.import_module('pailie5.ablation_benchmark_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_benchmark_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+______________ test_smoke_run_protocol_frozen_and_budget_matched _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_smoke_run_protocol_frozen0')
+
+    def test_smoke_run_protocol_frozen_and_budget_matched(tmp_path):
+        dest=tmp_path/'run'
+>       result=b().run_suite(dest,seeds=(123,),cases=('shifted_bilinear','iid_a'),arms=('full','no_mutation'),budget=80)
+               ^^^
+
+tests/test_ablation_benchmark_v373.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ablation_benchmark_v373.py:9: in b
+    def b(): return importlib.import_module('pailie5.ablation_benchmark_v373')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'pailie5.ablation_benchmark_v373'
+import_ = <function _gcd_import at 0x7fe2a6f704a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+_________________________ test_cli_help_and_bad_budget _________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_cli_help_and_bad_budget0')
+
+    def test_cli_help_and_bad_budget(tmp_path):
+        root=Path(__file__).resolve().parents[1]
+        help_=subprocess.run([sys.executable,str(root/'research_v373.py'),'--help'],capture_output=True,text=True)
+>       assert help_.returncode==0 and 'budget' in help_.stdout
+E       assert (2 == 0)
+E        +  where 2 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/pl5_v373_work/research_backend/research_v373.py', '--help'...n: can't open file '/mnt/data/pl5_v373_work/research_backend/research_v373.py': [Errno 2] No such file or directory\n").returncode
+
+tests/test_ablation_benchmark_v373.py:77: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ablation_benchmark_v373.py::test_benchmark_module_exists - AssertionError: assert None is not None
+ +  where None = <function find_spec at 0x7fe2a6bc3b00>('pailie5.ablation_benchmark_v373')
+ +    where <function find_spec at 0x7fe2a6bc3b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_ablation_benchmark_v373.py::test_statistics_module_exists - AssertionError: assert None is not None
+ +  where None = <function find_spec at 0x7fe2a6bc3b00>('pailie5.ablation_statistics_v373')
+ +    where <function find_spec at 0x7fe2a6bc3b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_ablation_benchmark_v373.py::test_exact_signflip_reference_examples - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_holm_preserves_names_and_controls_family - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_signflip_input[values0] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_signflip_input[values1] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_signflip_input[values2] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_holm_input[values0] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_holm_input[values1] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_invalid_holm_input[values2] - ModuleNotFoundError: No module named 'pailie5.ablation_statistics_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_eight_structures_two_controls_and_six_arms - ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_warm_sources_are_frozen_and_no_target_is_an_exact_copy - ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_synthetic_reference_tables_match_independent_scalar_interpreter - ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_smoke_run_protocol_frozen_and_budget_matched - ModuleNotFoundError: No module named 'pailie5.ablation_benchmark_v373'
+FAILED tests/test_ablation_benchmark_v373.py::test_cli_help_and_bad_budget - assert (2 == 0)
+ +  where 2 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/pl5_v373_work/research_backend/research_v373.py', '--help'...n: can't open file '/mnt/data/pl5_v373_work/research_backend/research_v373.py': [Errno 2] No such file or directory\n").returncode
+15 failed in 1.68s

@@ -1,0 +1,12 @@
+{
+  "commitment_verified": false,
+  "evidence_grade": "INTERNAL_DEVELOPER_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "freeze_sha256": "fa5e0ce66aca02a582939eed6a4a82d0b219e636d14e5cf0194e7b085b8fa23c",
+  "holdout_sha256": "6a7f107cb7cc6a70001debcd375fe26520dca90ad447358b07161993f961d2c8",
+  "integrity_sha256": "da7f34f71194502f9927a03079606ce20d4820e18db14b66244141ede794dc9a",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "schema": "pl5-v3726-gate-grammar-1:evaluation",
+  "status": "ABSTAIN",
+  "test_count": 36,
+  "test_errors": null
+}

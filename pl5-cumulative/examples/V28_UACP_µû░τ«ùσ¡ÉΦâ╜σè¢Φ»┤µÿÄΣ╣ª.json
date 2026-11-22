@@ -1,0 +1,553 @@
+{
+  "status": "research_only",
+  "cards": [
+    {
+      "id": "pl5.lift.e275df0e1aed1823",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "digit",
+          "pos": 0
+        },
+        "second": {
+          "op": "digit",
+          "pos": 1
+        },
+        "mod_first": 10,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[100]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.b7018ede4542b0dd",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "digit",
+          "pos": 1
+        },
+        "second": {
+          "op": "digit",
+          "pos": 2
+        },
+        "mod_first": 10,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[100]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.4e87c78475330f8f",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "sub",
+          "left": {
+            "op": "digit",
+            "pos": 0
+          },
+          "right": {
+            "op": "lag",
+            "pos": 0,
+            "back": 1
+          }
+        },
+        "second": {
+          "op": "digit",
+          "pos": 4
+        },
+        "mod_first": 10,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[100]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.d3a26cef82722a45",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "sum"
+        },
+        "second": {
+          "op": "step",
+          "pos": 0
+        },
+        "mod_first": 9,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[90]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.9609e3a5a831c679",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "sub",
+          "left": {
+            "op": "lag",
+            "pos": 1,
+            "back": 2
+          },
+          "right": {
+            "op": "lag",
+            "pos": 4,
+            "back": 1
+          }
+        },
+        "second": {
+          "op": "xor",
+          "left": {
+            "op": "digit",
+            "pos": 0
+          },
+          "right": {
+            "op": "sum"
+          }
+        },
+        "mod_first": 7,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[70]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.7c46a0683a380d39",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "mul",
+          "left": {
+            "op": "digit",
+            "pos": 2
+          },
+          "right": {
+            "op": "digit",
+            "pos": 3
+          }
+        },
+        "second": {
+          "op": "sub",
+          "left": {
+            "op": "digit",
+            "pos": 0
+          },
+          "right": {
+            "op": "digit",
+            "pos": 4
+          }
+        },
+        "mod_first": 6,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[60]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.f764bb5d86b4df65",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "absdiff",
+          "left": {
+            "op": "digit",
+            "pos": 2
+          },
+          "right": {
+            "op": "lag",
+            "pos": 4,
+            "back": 1
+          }
+        },
+        "second": {
+          "op": "xor",
+          "left": {
+            "op": "digit",
+            "pos": 4
+          },
+          "right": {
+            "op": "digit",
+            "pos": 3
+          }
+        },
+        "mod_first": 3,
+        "mod_second": 11
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[33]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.c4a7dd9d438ca5d3",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "xor",
+          "left": {
+            "op": "digit",
+            "pos": 1
+          },
+          "right": {
+            "op": "digit",
+            "pos": 2
+          }
+        },
+        "second": {
+          "op": "sub",
+          "left": {
+            "op": "step",
+            "pos": 1
+          },
+          "right": {
+            "op": "lag",
+            "pos": 3,
+            "back": 3
+          }
+        },
+        "mod_first": 11,
+        "mod_second": 4
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[44]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.032e8992854d1b15",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "xor",
+          "left": {
+            "op": "step",
+            "pos": 2
+          },
+          "right": {
+            "op": "digit",
+            "pos": 0
+          }
+        },
+        "second": {
+          "op": "xor",
+          "left": {
+            "op": "add",
+            "left": {
+              "op": "digit",
+              "pos": 0
+            },
+            "right": {
+              "op": "digit",
+              "pos": 4
+            }
+          },
+          "right": {
+            "op": "digit",
+            "pos": 0
+          }
+        },
+        "mod_first": 8,
+        "mod_second": 10
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[80]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.7a2e05801be61d2b",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "absdiff",
+          "left": {
+            "op": "digit",
+            "pos": 4
+          },
+          "right": {
+            "op": "lag",
+            "pos": 0,
+            "back": 3
+          }
+        },
+        "second": {
+          "op": "xor",
+          "left": {
+            "op": "xor",
+            "left": {
+              "op": "lag",
+              "pos": 0,
+              "back": 1
+            },
+            "right": {
+              "op": "digit",
+              "pos": 3
+            }
+          },
+          "right": {
+            "op": "digit",
+            "pos": 1
+          }
+        },
+        "mod_first": 8,
+        "mod_second": 6
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[48]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.89365c0e8cba264b",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "add",
+          "left": {
+            "op": "step",
+            "pos": 0
+          },
+          "right": {
+            "op": "sum"
+          }
+        },
+        "second": {
+          "op": "absdiff",
+          "left": {
+            "op": "xor",
+            "left": {
+              "op": "step",
+              "pos": 2
+            },
+            "right": {
+              "op": "lag",
+              "pos": 0,
+              "back": 1
+            }
+          },
+          "right": {
+            "op": "digit",
+            "pos": 4
+          }
+        },
+        "mod_first": 5,
+        "mod_second": 7
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[35]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    },
+    {
+      "id": "pl5.lift.b367f2ab191ad5f4",
+      "version": "2.8.0",
+      "kind": "composed_sparse_high_dimensional_lift",
+      "algorithm": {
+        "first": {
+          "op": "mul",
+          "left": {
+            "op": "xor",
+            "left": {
+              "op": "digit",
+              "pos": 0
+            },
+            "right": {
+              "op": "digit",
+              "pos": 1
+            }
+          },
+          "right": {
+            "op": "digit",
+            "pos": 2
+          }
+        },
+        "second": {
+          "op": "xor",
+          "left": {
+            "op": "digit",
+            "pos": 0
+          },
+          "right": {
+            "op": "digit",
+            "pos": 3
+          }
+        },
+        "mod_first": 9,
+        "mod_second": 11
+      },
+      "input": [
+        "five_digit_candidate",
+        "published_history_prefix"
+      ],
+      "outputs": [
+        "one_hot[99]",
+        "sparse_soft_constraint_mask[100000]"
+      ],
+      "dependencies": [
+        "pl5.canonical_universe",
+        "pl5.bcse_v27",
+        "pl5.esse"
+      ],
+      "execution": "safe_declarative_AST_no_python_eval",
+      "status": "research_only",
+      "prediction_advantage": "unverified"
+    }
+  ]
+}

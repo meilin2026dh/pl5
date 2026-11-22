@@ -1,0 +1,407 @@
+{
+  "integrity_sha256": "4a10b266bc1049551152602ec544680e5fcdb593545bdc5509ecc5d0a5642fc5",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_integrity_sha256": "de8a044564256b4a0d9a38761c82b8af12064a90a10143448c8b65aa9aeef3ec",
+  "schema": "pl5-v3720-three-gate-math-research-1:freeze",
+  "selected": {
+    "name": "repaired",
+    "nodes": 7,
+    "operator_id": "0d551e9c7f5e9dcb07ca26751d3fcdc7baf37c984b375ba10796a3562ba8f83c",
+    "source_path": "operators/repaired.json",
+    "validation_errors": 0
+  },
+  "selection_used": "validation_only_after_training_frozen",
+  "test_labels_used": false,
+  "train_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "cd3e6b8e4d0d5fd014d3a8302c4dbc440854a55e9a7638982f172d8b3578a2f0",
+  "validation_pairs": [
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      9
+    ]
+  ],
+  "validation_results": [
+    {
+      "name": "repaired",
+      "nodes": 7,
+      "operator_id": "0d551e9c7f5e9dcb07ca26751d3fcdc7baf37c984b375ba10796a3562ba8f83c",
+      "source_path": "operators/repaired.json",
+      "validation_errors": 0
+    },
+    {
+      "name": "invention_02",
+      "nodes": 7,
+      "operator_id": "64b044ca2bdc151649c480caf239dc9678ffd4a0aa269f31033ae9a087841a7c",
+      "source_path": "operators/invention_02.json",
+      "validation_errors": 5
+    },
+    {
+      "name": "invention_01",
+      "nodes": 9,
+      "operator_id": "85afbf0d83e03645b2f4f67ef27b6d6d7e0977d0ad6da28d861f1ba883d6b948",
+      "source_path": "operators/invention_01.json",
+      "validation_errors": 11
+    },
+    {
+      "name": "invention_07",
+      "nodes": 13,
+      "operator_id": "02e50cf76233fd0bae260cd1744d4cbe34749ff8e48ff047ded87e081a905736",
+      "source_path": "operators/invention_07.json",
+      "validation_errors": 11
+    },
+    {
+      "name": "invention_03",
+      "nodes": 7,
+      "operator_id": "91452778ddbed1ed8eefd27c61e5e02b6f7c67f56da8ad9e162c16642bbee21d",
+      "source_path": "operators/invention_03.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "baseline",
+      "nodes": 7,
+      "operator_id": "f70d57fd23fb98633894abb905706ede05b238a5179bd171b78bbf14fdc865f4",
+      "source_path": "operators/baseline.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "invention_05",
+      "nodes": 9,
+      "operator_id": "3a0f0d48436043ad149f407229d5ad1e206f217c6c7871cd9472c7ae5307223d",
+      "source_path": "operators/invention_05.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "invention_04",
+      "nodes": 9,
+      "operator_id": "b79cc8266103a83fbc5ba5cc030f706f247ab13a50e6876e1d79c5bdfb566e47",
+      "source_path": "operators/invention_04.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "invention_06",
+      "nodes": 9,
+      "operator_id": "e4f5f08384bd08fdc38bba02a9565e16644d19954bede4c2f3777f66985c60ce",
+      "source_path": "operators/invention_06.json",
+      "validation_errors": 12
+    }
+  ],
+  "validation_sha256": "96b4a7b43ad27c7e285921c6280828881dca0c6b7ae37d33921a743b38109ef3"
+}
