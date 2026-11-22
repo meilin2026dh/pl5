@@ -54,9 +54,22 @@ def inventory() -> dict:
     files = subprocess.run(["git", "-c", "core.quotePath=false", "ls-files", "--", "pl5-cumulative/"],
                            cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8").stdout.splitlines()
     count = len(files)
-    if len(rows) != 5451 or len(seen) != 5451 or count != 6364:
-        failures.append({"issue": "file count mismatch", "manifest": len(rows),
-                         "unique": len(seen), "tracked_cumulative": count})
+    # The V3.7.28 accepted main snapshot has 6,364 cumulative paths
+    # (6,361 prior archive + 3 restored V3.7.19 records). Preserve that
+    # original snapshot while allowing new tracked research files.
+    accepted_main = "c0e38040ec5f389d6444e64b90e7adc42adfca62"
+    original_paths = subprocess.run(
+        ["git", "-c", "core.quotePath=false", "ls-tree", "-r", "--name-only",
+         accepted_main, "--", "pl5-cumulative/"],
+        cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8"
+    ).stdout.splitlines()
+    removed = sorted(set(original_paths) - set(files))
+    if len(rows) != 5451 or len(seen) != 5451 or len(original_paths) != 6364:
+        failures.append({"issue": "frozen archival baseline mismatch",
+                         "manifest": len(rows), "unique": len(seen),
+                         "accepted_main_cumulative": len(original_paths)})
+    if removed:
+        failures.append({"issue": "accepted baseline files removed", "paths": removed[:15]})
     # These 3 source records are new tracked files. The two CSVs were recovered
     # byte-for-byte from preexisting manifest SHA256; the provenance JSON is
     # explicitly identified as reconstructed rather than a byte-identical original.
@@ -69,7 +82,10 @@ def inventory() -> dict:
             failures.append({'path': str(f), 'issue': 'restored official source SHA256 mismatch'})
     if failures:
         raise AssertionError(json.dumps(failures[:15], ensure_ascii=False))
-    return {"manifest_files_verified": len(rows), "tracked_cumulative_files": count,
+    return {"manifest_files_verified": len(rows),
+            "accepted_main_cumulative_files": len(original_paths),
+            "tracked_cumulative_files": count,
+            "new_cumulative_files": count - len(original_paths),
             "sha256_verified": True, "held_back_private_files_included": False}
 
 
