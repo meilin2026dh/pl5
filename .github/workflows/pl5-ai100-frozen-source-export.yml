@@ -1,0 +1,48 @@
+name: PL5 approved AI100 frozen solver source export (code only)
+on:
+  push:
+    branches: [research/v3729-independent-blind-prep]
+    paths:
+      - ".github/workflows/pl5-ai100-frozen-source-export.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export-frozen-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout immutable approved PL5 source commit
+        uses: actions/checkout@v4
+        with:
+          ref: c0e38040ec5f389d6444e64b90e7adc42adfca62
+          persist-credentials: false
+      - name: Archive only public solver source, never private labels or keys
+        run: |
+          mkdir -p source-bundle
+          python - <<'PY'
+          import pathlib,tarfile,json,hashlib
+          root=pathlib.Path('pl5-cumulative/research_backend')
+          dest=pathlib.Path('source-bundle/frozen_solver_source.tar.gz')
+          with tarfile.open(dest,'w:gz') as tar:
+              for p in sorted(root.rglob('*')):
+                  if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts and p.suffix not in ('.key','.pem','.p12','.pfx'):
+                      if 'runs' in p.parts or 'runtime' in p.parts: continue
+                      tar.add(p,arcname=str(p))
+          sha=hashlib.sha256(dest.read_bytes()).hexdigest()
+          pathlib.Path('source-bundle/MANIFEST.json').write_text(json.dumps({
+              "source_commit":"c0e38040ec5f389d6444e64b90e7adc42adfca62",
+              "tar_sha256":sha,
+              "user_private_challenges_included":False,
+              "purpose":"Local frozen solver execution of approved AI-authored 100 public tasks",
+              "not_a_blind_experiment":True
+          },indent=2)+'\n')
+          print(sha)
+          PY
+      - name: Upload source bundle (public code only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pl5-frozen-v3728-solver-source-${{ github.run_id }}
+          path: source-bundle/
+          retention-days: 5
+          if-no-files-found: error
