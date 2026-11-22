@@ -34,7 +34,7 @@
 
 1. 预注册：preregister --source-commit [40位冻结Git提交] --environment-sha256 [64位完整环境锁摘要] --out preregistration.json
 2. 公共面板完整性：check-public --plan preregistration.json --manifest public-manifest.json --folder public --out panel-intake.json
-3. 独立评分人在持出答案结算后出具两份 JSON（见下），然后运行 summarize --plan preregistration.json --private-metadata private-metadata.json --ledger score-ledger.json --out unverified-summary.json。
+3. 独立评分人在持出答案结算后出具两份 JSON（见下），然后运行 summarize --plan preregistration.json --manifest public-manifest.json --private-metadata private-metadata.json --ledger score-ledger.json --out unverified-summary.json。汇总器要求 ledger 同时保存 preregistration_sha256 和 public_manifest_sha256，且私有分类 ID 必须与公开任务逐项一致。
 
 其中 score-ledger.json 必须包含 schema=pl5-v3729-score-ledger-1、solver_source_commit 及 results 数组。每条记录包含 task_id、arm、status、holdout_errors、holdout_cells、budget_ms、receipt_verified。receipt_verified=True 只是**独立审计完成后写入的结果字段**；本脚本不会自己验证那个字段代表的三方签名链或硬件时钟真实性。
 
