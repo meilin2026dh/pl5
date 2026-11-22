@@ -17,34 +17,67 @@ BACKEND = Path(__file__).resolve().parents[1]
 
 
 def _assert_private_acl_on_windows(path: Path) -> None:
-    """Read the actual NTFS ACL, not os.stat().st_mode's Windows emulation."""
-    quoted = "'" + str(path).replace("'", "''") + "'"
-    script = """
-$ErrorActionPreference = 'Stop'
-$acl = Get-Acl -LiteralPath PATH_LITERAL
-$me = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
-$allowed = @($me, 'S-1-5-18', 'S-1-5-32-544')
-if (-not $acl.AreAccessRulesProtected) { throw 'Private key inherited an ACL' }
-$rules = @($acl.Access)
-if ($rules.Count -eq 0) { throw 'Private key missing allow entries' }
-$ownerFull = $false
-foreach ($rule in $rules) {
-    $rid = $rule.IdentityReference.Translate([System.Security.Principal.SecurityIdentifier]).Value
-    if (($rid -notin $allowed) -or $rule.IsInherited -or
-        $rule.AccessControlType -ne [System.Security.AccessControl.AccessControlType]::Allow) {
-        throw ('Disallowed private key ACE: ' + $rid)
-    }
-    if ($rid -eq $me -and (($rule.FileSystemRights -band
-        [System.Security.AccessControl.FileSystemRights]::FullControl) -eq
-        [System.Security.AccessControl.FileSystemRights]::FullControl)) {
-        $ownerFull = $true
-    }
-}
-if (-not $ownerFull) { throw 'Current owner lacks explicit FullControl ACE' }
-""".replace('PATH_LITERAL', quoted)
-    check = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive',
-                            '-Command', script], capture_output=True, text=True)
-    assert check.returncode == 0, check.stdout + check.stderr
+    """Read the actual NTFS DACL using Windows APIs (no PowerShell dependency)."""
+    import ctypes
+    import re
+    from ctypes import wintypes
+
+    current = subprocess.run(['whoami.exe', '/user', '/fo', 'csv', '/nh'],
+                             capture_output=True, text=True, check=True)
+    sids = re.findall(r'S-1-\d+(?:-\d+)+', current.stdout)
+    assert len(sids) == 1, current.stdout
+    my_sid = sids[0]
+
+    advapi = ctypes.WinDLL('advapi32', use_last_error=True)
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    get_acl = advapi.GetNamedSecurityInfoW
+    get_acl.argtypes = [
+        wintypes.LPCWSTR, ctypes.c_int, wintypes.DWORD,
+        ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_void_p)]
+    get_acl.restype = wintypes.DWORD
+    stringify = advapi.ConvertSecurityDescriptorToStringSecurityDescriptorW
+    stringify.argtypes = [
+        ctypes.c_void_p, wintypes.DWORD, wintypes.DWORD,
+        ctypes.POINTER(ctypes.c_wchar_p), ctypes.c_void_p]
+    stringify.restype = wintypes.BOOL
+    kernel.LocalFree.argtypes = [ctypes.c_void_p]
+    kernel.LocalFree.restype = ctypes.c_void_p
+
+    descriptor = ctypes.c_void_p()
+    # SE_FILE_OBJECT=1, DACL_SECURITY_INFORMATION=4
+    error = get_acl(str(path), 1, 4, None, None, None, None,
+                    ctypes.byref(descriptor))
+    assert error == 0, f'GetNamedSecurityInfoW failed with {error}'
+    try:
+        sddl_pointer = ctypes.c_wchar_p()
+        if not stringify(descriptor, 1, 4, ctypes.byref(sddl_pointer), None):
+            raise ctypes.WinError(ctypes.get_last_error())
+        try:
+            sddl = sddl_pointer.value or ''
+        finally:
+            kernel.LocalFree(ctypes.cast(sddl_pointer, ctypes.c_void_p))
+    finally:
+        kernel.LocalFree(descriptor)
+
+    # D:P = protected DACL with no inherited ACEs.
+    assert sddl.startswith('D:P'), f'DACL must be protected: {sddl}'
+    aces = re.findall(r'\(([^()]*)\)', sddl)
+    assert len(aces) == 3, f'unexpected allow/deny entry count: {sddl}'
+    allowed = {my_sid, 'SY', 'BA', 'S-1-5-18', 'S-1-5-32-544'}
+    observed = set()
+    for ace in aces:
+        parts = ace.split(';')
+        assert len(parts) == 6 and parts[0] == 'A', f'unsafe ACE: {ace}'
+        assert parts[1] == '', f'ACE contains inheritance flags: {ace}'
+        rights = parts[2]
+        assert rights == 'FA' or (
+            rights.lower().startswith('0x') and
+            (int(rights, 16) & 0x1F01FF) == 0x1F01FF
+        ), f'private key ACE is not FullControl: {ace}'
+        assert parts[5] in allowed, f'unexpected principal: {ace}'
+        observed.add(parts[5])
+    assert my_sid in observed, f'current Windows user missing: {sddl}'
 
 
 def _keys(root):
