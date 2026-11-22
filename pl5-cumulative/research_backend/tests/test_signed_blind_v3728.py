@@ -75,9 +75,17 @@ def _assert_private_acl_on_windows(path: Path) -> None:
             rights.lower().startswith('0x') and
             (int(rights, 16) & 0x1F01FF) == 0x1F01FF
         ), f'private key ACE is not FullControl: {ace}'
-        assert parts[5] in allowed, f'unexpected principal: {ace}'
+        # Windows canonical SDDL shortens the current local Administrator
+        # (RID 500) to LA. Accept that alias *only* for the same RID-500 SID;
+        # it must never permit an additional account to read the private key.
+        if parts[5] == 'LA':
+            assert my_sid.endswith('-500'), f'LA is not the invoking account: {ace}'
+        else:
+            assert parts[5] in allowed, f'unexpected principal: {ace}'
         observed.add(parts[5])
-    assert my_sid in observed, f'current Windows user missing: {sddl}'
+    assert (my_sid in observed or
+            (my_sid.endswith('-500') and 'LA' in observed)), (
+                f'current Windows user missing: {sddl}')
 
 
 def _keys(root):
