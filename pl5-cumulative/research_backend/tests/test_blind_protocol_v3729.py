@@ -1,12 +1,13 @@
 """V3.7.29 protocol safeguards; these are INTERNAL synthetic smoke tests only."""
 import json
+import copy
 from pathlib import Path
 
 import pytest
 
 from research_blind_protocol_v3729 import (
     N, ARMS, BUDGETS, SCHEMA, META_SCHEMA, RESULT_SCHEMA,
-    check_public_panel, digest, file_sha, preregister, read, summarize, write_new,
+    check_public_panel, digest, file_sha, preregister, plan_checked, read, summarize, write_new,
 )
 
 COMMIT = "c0e38040ec5f389d6444e64b90e7adc42adfca62"
@@ -213,3 +214,20 @@ def test_prereg_hash_mismatch_fails_closed(tmp_path):
     ledger["preregistration_sha256"] = "c"*64
     with pytest.raises(ValueError, match="preregistration"):
         summarize(plan(tmp_path), meta, ledger, PUBLIC_MANIFEST)
+
+
+@pytest.mark.parametrize("name,new_value", [
+    ("primary_endpoint", "any cell correct"),
+    ("pairwise_test", "one-sided z-test"),
+    ("confidence_interval", "none"),
+    ("portfolio_budget_rule", "two subprocesses each 10000ms"),
+    ("non_successes", ["FAILED"]),
+    ("trusted_external_timestamp_verified", True),
+    ("issuer_independence_verified", 0),
+    ("min_negative_controls", 24),
+])
+def test_protocol_precommitment_rejects_changed_science(tmp_path, name, new_value):
+    p = copy.deepcopy(plan(tmp_path))
+    p[name] = new_value
+    with pytest.raises(ValueError, match="protocol constraints changed"):
+        plan_checked(p)
