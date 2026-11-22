@@ -1,0 +1,452 @@
+{
+  "abstention_reason": "validation_error_exceeds_threshold",
+  "best_candidate": {
+    "name": "meta_03",
+    "nodes": 11,
+    "operator_id": "39155f98d42f0cc937c4691b352a079c172dc1769e1fd38bfcc5a2c850c10f72",
+    "path": "operators/meta_03.json",
+    "table_sha256": "65737a353be90ac992098142c30ef48519bed71b87dd0a84111c89a498e4e701",
+    "validation_errors": 6
+  },
+  "integrity_sha256": "bd7fbba8464c60800c7ca5fae0c685417274e4b1dc36e8b8d147b4f1e698dc36",
+  "lottery_prediction_test": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "9f0eadf4ca22c7aaa9aecc932610e680985e12a7bb016b1f1ad8395653688164",
+  "schema": "pl5-v3721-counterexample-meta-1:freeze",
+  "selected": null,
+  "status": "ABSTAIN",
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "0d9abc5de89137148840deac01316c6285cd3e7f1968d46a14ebbd8f6a10d9c5",
+  "validation_pairs": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "validation_results": [
+    {
+      "name": "meta_03",
+      "nodes": 11,
+      "operator_id": "39155f98d42f0cc937c4691b352a079c172dc1769e1fd38bfcc5a2c850c10f72",
+      "path": "operators/meta_03.json",
+      "table_sha256": "65737a353be90ac992098142c30ef48519bed71b87dd0a84111c89a498e4e701",
+      "validation_errors": 6
+    },
+    {
+      "name": "meta_01",
+      "nodes": 13,
+      "operator_id": "f38df0e4e510e301e1b3fb2f52bae7909887593eabac3588332a8c7805bc0964",
+      "path": "operators/meta_01.json",
+      "table_sha256": "ac485410f52e3bf548fe8a3b448d4439653f57e6669c03a49072db53909c9718",
+      "validation_errors": 6
+    },
+    {
+      "name": "legacy_composition",
+      "nodes": 5,
+      "operator_id": "cca83278623538b29a6f0646e1644f22456b9482b80c1d4772d4b0d70286078a",
+      "path": "operators/legacy_composition.json",
+      "table_sha256": "f9165a181039b279ce0b7c684e42ab9f4db5c0632c13009716db6574963f61c0",
+      "validation_errors": 9
+    },
+    {
+      "name": "meta_02",
+      "nodes": 13,
+      "operator_id": "08eb3ced06be7c2f9d7028d77e06ae3c8237487b668025bf17a00ab42c4b3d54",
+      "path": "operators/meta_02.json",
+      "table_sha256": "2482db2422a60e6fd464a855826cdb9674b21cceedf2f66a1e5102bc0d13b52f",
+      "validation_errors": 9
+    },
+    {
+      "name": "meta_05",
+      "nodes": 11,
+      "operator_id": "95a63eb803d5932508dc172164b5da8d0deb930d0efc39834eb5da54e56d3f45",
+      "path": "operators/meta_05.json",
+      "table_sha256": "d317110b100692f3650c3528e71b43214565562587651571cc60a0f578ede69d",
+      "validation_errors": 11
+    },
+    {
+      "name": "meta_11",
+      "nodes": 13,
+      "operator_id": "271d38d9a780ffeef3a2fa2ca32c99884bec47cf8c6c8e4d4a610b7e8373e482",
+      "path": "operators/meta_11.json",
+      "table_sha256": "68d9a644ee638c9a6426423cb221b64bf42da2f1db38673e7e51be9d86cda0e1",
+      "validation_errors": 11
+    },
+    {
+      "name": "meta_08",
+      "nodes": 13,
+      "operator_id": "3976099f37d51ed268c91ff34339ada634a9ec39460d7e6ee47e85b6c3127812",
+      "path": "operators/meta_08.json",
+      "table_sha256": "8743431d5a2a479b5c6ad76662827dedeeae9f5573ee9d1c412285f0e2c30887",
+      "validation_errors": 11
+    },
+    {
+      "name": "meta_00",
+      "nodes": 13,
+      "operator_id": "b970c43ef249a428e7ac3a7b8d75d51c4abb8cded41d67d0e689a03d9f9162fa",
+      "path": "operators/meta_00.json",
+      "table_sha256": "13cd0bdf06e8c2608eab6d32d86230cb2b70af834294368f358de82a18f525b4",
+      "validation_errors": 11
+    },
+    {
+      "name": "meta_09",
+      "nodes": 9,
+      "operator_id": "ed3292723d8449a81aa1b0fc3bfe8459972dba61b0036328371965caca7cfddd",
+      "path": "operators/meta_09.json",
+      "table_sha256": "c7510848d2658ba3a464ec4d4c2ec6e4ed16390492eaf0093fd16bd0ce22a8f9",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_10",
+      "nodes": 13,
+      "operator_id": "6156ad93c66f695b1ea6fb5f48de22747da269972bd063284838d1b4735af280",
+      "path": "operators/meta_10.json",
+      "table_sha256": "7b94679d2ce6c3ace5a26aeb21f5503aa3867116fb423ac52936f72782162a01",
+      "validation_errors": 12
+    },
+    {
+      "name": "meta_04",
+      "nodes": 9,
+      "operator_id": "68d41c5e5022cfe11eb79983defee24daa84903628a36b5a1a731e42e87c5173",
+      "path": "operators/meta_04.json",
+      "table_sha256": "05f4fb81ce1f30ae1c19ddb9c05d99aeb1914afb9b4dc71b253e8f0991b660d8",
+      "validation_errors": 14
+    },
+    {
+      "name": "meta_07",
+      "nodes": 11,
+      "operator_id": "c5abcdc3c3fee18085d5735aed3086850a18f966cad4963221a0c3d815b1f29f",
+      "path": "operators/meta_07.json",
+      "table_sha256": "baa750d7facab5c14b8fcae69f9370d1107a2dd77c74b35b7934ff9528d7fbd7",
+      "validation_errors": 14
+    },
+    {
+      "name": "meta_06",
+      "nodes": 13,
+      "operator_id": "b588ef82d9cb58400ea2e7bcfda29b183c5235113a295452fff11fd85a148ffc",
+      "path": "operators/meta_06.json",
+      "table_sha256": "d3576a2ff88baefe889af8b1a3600e2e1609c4c0339197b8af8db2b36c038a39",
+      "validation_errors": 14
+    }
+  ],
+  "validation_sha256": "0540f2a60cdfa6fd032b3917385ea843682b6f4956cf375a31b28fdff9c6d957"
+}

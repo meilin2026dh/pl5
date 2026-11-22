@@ -1,0 +1,25 @@
+........................................................................ [ 13%]
+........................................................................ [ 26%]
+........................................................................ [ 40%]
+........................................................................ [ 53%]
+........................................................................ [ 66%]
+........................................................................ [ 80%]
+........................................................................ [ 93%]
+....................................                                     [100%]
+============================= slowest 15 durations =============================
+6.83s call     tests/test_v152_cli.py::test_cli_seal_settle_report_with_official_format_fixture
+3.76s call     tests/test_category_hypotheses_v32.py::test_cli_demo_and_table_mode
+2.88s call     tests/test_primitive_categories_v31.py::test_cli_table_file_and_synthetic_demo
+2.62s call     tests/test_bcse_v27.py::test_random_control_precommitted_and_deterministic
+2.59s call     tests/test_bcse_v27.py::test_null_replays_are_explicitly_synthetic
+2.56s call     tests/test_ability_lab_v19.py::test_goal_and_immutable_cycle
+2.50s call     tests/test_bcse_v27.py::test_no_holdout_tuning_or_leakage
+2.32s call     tests/test_nine_spaces_v24.py::test_rolling_is_frozen_past_no_future
+2.04s call     tests/test_http_spaces_v25.py::test_spaces_v25_loopback
+1.96s call     tests/test_autolift_v28.py::test_biased_training_is_explorable_without_claim
+1.91s call     tests/test_bcse_v27.py::test_full_100k_diagnostics_and_mismatch_guard
+1.77s call     tests/test_primitive_v29.py::test_cli_discovers_and_aan_registers
+1.70s call     tests/test_primitive_categories_v31.py::test_cli_historical_research_uses_training_only
+1.54s call     tests/test_symbolic_v30.py::test_cli_formula_demo
+1.51s call     tests/test_http_bcse_v27.py::test_v27_http_contract
+540 passed in 79.60s (0:01:19)

@@ -1,0 +1,476 @@
+{
+  "candidate_evaluations": 26,
+  "cpu_ns_fit": 38040769,
+  "evidence_grade": "INTERNAL_DEVELOPER_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "exact_fit_tables": [
+    {
+      "spec": {
+        "coefficients": [
+          7,
+          5,
+          5,
+          6,
+          5,
+          5,
+          1,
+          4
+        ],
+        "features": [
+          "constant",
+          "a",
+          "b",
+          "xor_mod10",
+          "gate_a",
+          "gate_b",
+          "gate_product_mod10",
+          "gate_xor_mod10"
+        ],
+        "predicate": {
+          "kind": "less"
+        },
+        "syntax": "induced_gate_mod10"
+      },
+      "table_sha256": "2e1e1d90c348604e232136726d200dfa600b578e0c4240e795bd3bf4ac469408"
+    }
+  ],
+  "holdout_commitment": "ff8c7d4874ec6ca6866a9d9dfed1cbb770bad8ea52bfd314bc0ec2edea7b3ed1",
+  "integrity_sha256": "b1547a809914a5b5ad38c2659c1bcf2c4538ada3291846650801566247fddd96",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "protocol_sha256": "3672c861bfa7da048bff232129f1f2e0063a45f122e972419a9975e37f6f9f28",
+  "schema": "pl5-v3726-gate-grammar-1:fit",
+  "trace": [
+    {
+      "basis_columns": 6,
+      "exact_train_fit": false,
+      "predicate": null
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "equal"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": true,
+      "nonzero_terms": 8,
+      "predicate": {
+        "kind": "less"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "greater"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 5
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 8
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 10
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 12
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 15
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 2,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 2,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 3,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 3,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 4,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 0,
+        "source": "sum"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 1,
+        "source": "sum"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 2,
+        "source": "sum"
+      }
+    }
+  ],
+  "train_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "training_only": true,
+  "training_sha256": "f66986b0b23c5880a483aecc1f2b6636c313a4b6112a9adb4ab1abe117908a7a"
+}

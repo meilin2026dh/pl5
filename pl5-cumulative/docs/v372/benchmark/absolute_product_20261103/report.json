@@ -1,0 +1,1383 @@
+{
+  "case": "absolute_product",
+  "seed": 20261103,
+  "data_type": "synthetic_operation_table",
+  "search": {
+    "operator": {
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "expression": [
+        "binary",
+        "absdiff",
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "const",
+          3
+        ]
+      ],
+      "description": "absdiff((a*b),3) mod 10",
+      "operator_id": "908461adc18c013452bf328deea3e23bdcd038286f6b4e5a35bdcad8e39f3167",
+      "source_data_sha256": "ac13357b714cb18e5299398f732d01bcc08da2d5d80252b77f6a164d93ee5b77",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "production_enabled": false,
+      "predictive_advantage": "NOT_ESTABLISHED"
+    },
+    "training_errors": 0,
+    "training_count": 70,
+    "evaluated_expressions": 7125,
+    "distinct_integer_behaviors": 3833,
+    "proposals": 14951,
+    "config": {
+      "seed": 20261103,
+      "max_evaluations": 12000,
+      "generations": 30,
+      "population": 64,
+      "beam_width": 24,
+      "max_nodes": 11,
+      "max_depth": 6,
+      "complexity_penalty": 0.01
+    },
+    "trace": [
+      {
+        "stage": "bootstrap",
+        "generation": 0,
+        "best_expression": [
+          "const",
+          3
+        ],
+        "training_errors": 47,
+        "nodes": 1,
+        "origin": "atom",
+        "parents": [],
+        "evaluated_expressions": 338,
+        "proposals": 671
+      },
+      {
+        "stage": "grammar_composition",
+        "generation": 0,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 3740,
+        "proposals": 7271
+      },
+      {
+        "stage": "evolution",
+        "generation": 1,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 3871,
+        "proposals": 7527
+      },
+      {
+        "stage": "evolution",
+        "generation": 2,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4012,
+        "proposals": 7783
+      },
+      {
+        "stage": "evolution",
+        "generation": 3,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4154,
+        "proposals": 8039
+      },
+      {
+        "stage": "evolution",
+        "generation": 4,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4293,
+        "proposals": 8295
+      },
+      {
+        "stage": "evolution",
+        "generation": 5,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4435,
+        "proposals": 8551
+      },
+      {
+        "stage": "evolution",
+        "generation": 6,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4571,
+        "proposals": 8807
+      },
+      {
+        "stage": "evolution",
+        "generation": 7,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4705,
+        "proposals": 9063
+      },
+      {
+        "stage": "evolution",
+        "generation": 8,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4830,
+        "proposals": 9319
+      },
+      {
+        "stage": "evolution",
+        "generation": 9,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 4965,
+        "proposals": 9575
+      },
+      {
+        "stage": "evolution",
+        "generation": 10,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5104,
+        "proposals": 9831
+      },
+      {
+        "stage": "evolution",
+        "generation": 11,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5224,
+        "proposals": 10087
+      },
+      {
+        "stage": "evolution",
+        "generation": 12,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5342,
+        "proposals": 10343
+      },
+      {
+        "stage": "evolution",
+        "generation": 13,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5456,
+        "proposals": 10599
+      },
+      {
+        "stage": "evolution",
+        "generation": 14,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5571,
+        "proposals": 10855
+      },
+      {
+        "stage": "evolution",
+        "generation": 15,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5676,
+        "proposals": 11111
+      },
+      {
+        "stage": "evolution",
+        "generation": 16,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5792,
+        "proposals": 11367
+      },
+      {
+        "stage": "evolution",
+        "generation": 17,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 5901,
+        "proposals": 11623
+      },
+      {
+        "stage": "evolution",
+        "generation": 18,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6020,
+        "proposals": 11879
+      },
+      {
+        "stage": "evolution",
+        "generation": 19,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6119,
+        "proposals": 12135
+      },
+      {
+        "stage": "evolution",
+        "generation": 20,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6221,
+        "proposals": 12391
+      },
+      {
+        "stage": "evolution",
+        "generation": 21,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6308,
+        "proposals": 12647
+      },
+      {
+        "stage": "evolution",
+        "generation": 22,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6391,
+        "proposals": 12903
+      },
+      {
+        "stage": "evolution",
+        "generation": 23,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6484,
+        "proposals": 13159
+      },
+      {
+        "stage": "evolution",
+        "generation": 24,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6577,
+        "proposals": 13415
+      },
+      {
+        "stage": "evolution",
+        "generation": 25,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6658,
+        "proposals": 13671
+      },
+      {
+        "stage": "evolution",
+        "generation": 26,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6757,
+        "proposals": 13927
+      },
+      {
+        "stage": "evolution",
+        "generation": 27,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6864,
+        "proposals": 14183
+      },
+      {
+        "stage": "evolution",
+        "generation": 28,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 6946,
+        "proposals": 14439
+      },
+      {
+        "stage": "evolution",
+        "generation": 29,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 7043,
+        "proposals": 14695
+      },
+      {
+        "stage": "evolution",
+        "generation": 30,
+        "best_expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            3
+          ]
+        ],
+        "training_errors": 0,
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "parents": [
+          "d7bebac280ce79bc57f861096533f434077f9bb63c7b49129588914147108e99",
+          "ffdef8b85d591ff3449da707b0a089054ae013fd536657ae699605adee07b74b"
+        ],
+        "evaluated_expressions": 7125,
+        "proposals": 14951
+      }
+    ],
+    "stop_reason": "generation_limit",
+    "selection_used": "training_cells_only",
+    "complexity": "node-count penalty; not proof of a minimum description"
+  },
+  "holdout": {
+    "operator_id": "908461adc18c013452bf328deea3e23bdcd038286f6b4e5a35bdcad8e39f3167",
+    "data_sha256": "3cacd40768e51647954f3f45da153f497a8b46e9ceea3fa4b7429a151cc26006",
+    "errors": 0,
+    "count": 30,
+    "accuracy": 1.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "908461adc18c013452bf328deea3e23bdcd038286f6b4e5a35bdcad8e39f3167",
+    "candidate_table_sha256": "293d79bdbf93c3b0651dcea199593da2b66cdd53a17767f93f945e6907399d3c",
+    "target_table_sha256": "293d79bdbf93c3b0651dcea199593da2b66cdd53a17767f93f945e6907399d3c",
+    "exact_on_all_100_pairs": true,
+    "whole_table_errors": 0,
+    "first_mismatch": null,
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": true,
+      "commutativity_counterexample": null,
+      "associative": false,
+      "associativity_counterexample": [
+        0,
+        0,
+        1
+      ],
+      "identities": [],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 5,
+    "depth": 3,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 65,
+      "formula_plus_exceptions_bits": 72,
+      "preferred": "formula",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_without_refit": {
+    "operator_id": "908461adc18c013452bf328deea3e23bdcd038286f6b4e5a35bdcad8e39f3167",
+    "data_sha256": "2adbf929d2491fc61ed8f4f999c74e9e478539eca0b3c7cc0920078825802337",
+    "errors": 30,
+    "count": 30,
+    "accuracy": 0.0,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "changed_law_meaning": "same unseen inputs, every true output shifted by +1 mod10; intentionally different operation",
+  "fit_seconds": 0.8097011149999389,
+  "limitations": [
+    "70/30 input-pair holdout, not future lottery draws",
+    "grammar primitives and bounds are supplied by humans",
+    "no model changes after holdout results"
+  ],
+  "fixed_v37_baseline": {
+    "expression": "affine(8,9,5)",
+    "candidates": 1020,
+    "training_errors": 46,
+    "holdout_errors": 25,
+    "holdout_count": 30,
+    "exact_on_all_100_pairs": false,
+    "compute_matched": false
+  }
+}

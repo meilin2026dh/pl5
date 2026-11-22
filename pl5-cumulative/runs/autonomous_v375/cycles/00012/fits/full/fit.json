@@ -1,0 +1,11 @@
+{
+  "arm": "full",
+  "operator_id": "42aeac3598a3fc36ada5dc03046f3ec5e745130d3eb57f2bbcc870752bf6d23c",
+  "training_errors": 47,
+  "training_count": 60,
+  "training_evaluations": 500,
+  "selector_evaluations": 0,
+  "budget_matched": true,
+  "selection_used": "training_cells_only",
+  "candidate_origin": "bootstrap"
+}

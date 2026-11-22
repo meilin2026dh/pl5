@@ -1,0 +1,13 @@
+{
+  "arm": "v3726_gate",
+  "candidate_evaluations": 26,
+  "evidence_grade": "INTERNAL_OR_UNVERIFIED_ISSUER",
+  "fit_sha256": "53afddaa49d43a38d8e969eafcd8fc9ee8e7d15c7b58fb118ff9b0322f026342",
+  "freeze_sha256": "54782a7542421029121500fbbb3034092f5e628c4bd642a1970a4dc276c1e53f",
+  "holdout_labels_seen": false,
+  "integrity_sha256": "a3c9320cd1a1653a78ff4e0919f288542afb1a614e9555fa5efe915f56f5a8b8",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "public_sha256": "53300f4debddaf5bf8a987928c4d319f87b6a57a9808747adc80e6c8107889bf",
+  "schema": "pl5-v3727-hard-wall-budget-1:worker_receipt",
+  "status": "ABSTAIN"
+}

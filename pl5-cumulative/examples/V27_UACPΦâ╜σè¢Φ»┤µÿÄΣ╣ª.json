@@ -1,0 +1,139 @@
+{
+  "version": "bcse-v27",
+  "capabilities": [
+    {
+      "id": "step_large",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "step_large",
+      "parameters": {
+        "threshold": 7
+      },
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "route_zero_absent",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "route_zero_absent",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "parity_extreme",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "parity_extreme",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "sum_tail_repeat",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "sum_tail_repeat",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "sum_arithmetic",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "sum_arithmetic",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "position_repeat",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "position_repeat",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    }
+  ]
+}

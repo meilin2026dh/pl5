@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________________________ test_v372_cli_exists _____________________________
+
+    def test_v372_cli_exists():
+>       assert (ROOT / 'research_v372.py').is_file()
+E       AssertionError: assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/pl5_v372_work/research_backend') / 'research_v372.py').is_file
+
+tests/test_v372_cli.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_v372_cli.py::test_v372_cli_exists - AssertionError: assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/pl5_v372_work/research_backend') / 'research_v372.py').is_file
+1 failed in 0.06s

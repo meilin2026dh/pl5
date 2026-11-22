@@ -1,0 +1,49 @@
+{
+  "arms": [
+    "v3724_expanded",
+    "v3725_ring",
+    "v3726_gate"
+  ],
+  "comparison_policy": "report all untruncated fits; within each CPU cutoff success only if fit+freeze CPU <= budget and exact holdout score; unbudgeted acceptance shown separately",
+  "cpu_time_budgets_ms": [
+    25,
+    50,
+    100,
+    250,
+    500,
+    1000
+  ],
+  "cpu_time_comparable_metric": "process_time_ns for fit+freeze; excludes task generation, evidence serialization after freeze, source discovery, energy and external setup",
+  "developer_authored": true,
+  "execution_order": "rotate arm order by seed to reduce fixed warm-cache ordering",
+  "external_blind_verified": false,
+  "families": [
+    "diagonal_gate",
+    "mod3_difference_gate",
+    "sum_threshold_gate",
+    "less_gate",
+    "linear_control",
+    "cubic_control",
+    "parity_control",
+    "random_null",
+    "training_corruption",
+    "opaque_power"
+  ],
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "same_machine_paired": true,
+  "schema": "pl5-v3726-gate-grammar-1:internal_paired_cpu_protocol",
+  "seeds": [
+    372603,
+    372604,
+    372605,
+    372606,
+    372607
+  ],
+  "source_discovery_cost_included": false,
+  "splits": {
+    "holdout": 36,
+    "train": 48,
+    "validation": 16
+  },
+  "total_search_cost_equalized": false
+}

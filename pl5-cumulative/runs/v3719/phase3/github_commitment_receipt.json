@@ -1,0 +1,27 @@
+{
+  "schema": "pl5-v3719-external-commitment-receipt-v1",
+  "repository": "https://github.com/meilin2026dh/pl5",
+  "published_branch": "research/v3719-26295-public-commitment",
+  "commit_sha": "c4edaabb874a225db065f7fb346a5c10c9ab0c43",
+  "commit_url": "https://github.com/meilin2026dh/pl5/commit/c4edaabb874a225db065f7fb346a5c10c9ab0c43",
+  "draft_pr": "https://github.com/meilin2026dh/pl5/pull/4",
+  "pr_created_at_server_utc": "2026-11-04T23:18:41Z",
+  "pr_created_at_china_time": "2026-11-05T07:18:41+08:00",
+  "official_regular_draw_time_china": "21:25",
+  "official_schedule_source": "https://m.lottery.gov.cn/xxgk/tzggz/20221220/10027143.html",
+  "local_seal_creation_time_utc": "2026-11-04T23:17:33+00:00",
+  "seal_document_sha256": "ee65f6bff6a76faaa40019647f7fd42dbe3b38f3fef655d430127cb4c76835e4",
+  "seal_file_sha256": "58ea4865e6410da6c2e32a04ae17155a287c37b651bb967c7453ca35e7ea67cb",
+  "registration_document_sha256": "0c745cc2afcc1222415e585aecff9c6d65fc44429efe315c2c5902d7e560d7a7",
+  "receipt_type": "PUBLIC_GITHUB_PR_CREATION_RECORD_NOT_RFC3161",
+  "server_timestamp_from_github_connector": true,
+  "rfc3161_certificate_verified": false,
+  "source_website_content_authenticated": false,
+  "draw_result_available_at_commit_time": "UNVERIFIED_EXCEPT_SITE_LISTED_LATEST_26294_WHEN_CHECKED",
+  "pre_draw_rfc3161_proven": false,
+  "prediction_advantage": "NOT_ESTABLISHED",
+  "notes": [
+    "External published SHA binds to full local sealed packet in this release. The seal itself was not uploaded to Github.",
+    "Verify PR creation time and unchanged digest externally; this record does not replace trusted RFC3161 proof or source provenance."
+  ]
+}

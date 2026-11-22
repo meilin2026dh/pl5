@@ -1,0 +1,68 @@
+{
+  "external_blind": false,
+  "integrity_sha256": "eff3dea159d6c74f937fe7f6fdaa880344507dbc277cf1ffc315c2191c8a47c8",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "origin": "V3722 source-certified lookup compression",
+  "schema": "pl5-v3723-cross-task-program-1:bank",
+  "source_count": 4,
+  "source_full_holdout_evaluated": true,
+  "source_training_sha256": [
+    "08de7bb35b87965e02895c7250117e0995c46401b6c05f3b8c11d52c630c90f6",
+    "0f74096697bfe1842260730113208b5a6ca828731689089550577c9edf057a7f",
+    "1d65fec15852040242f6777a81b21feb02b02db5be65dce300b73d2107146703",
+    "bae718bb4187716dcac851705a6dd5978e60a8df2c3301510ca131408c7fc65f"
+  ],
+  "templates": [
+    {
+      "feature": "sum_mod10",
+      "finite_domain_only": true,
+      "finite_table_sha256": "49498aad13fff92c827a6b2e8f6cf49e5af5038999276dfd1e031aacf14e34c6",
+      "kind": "poly3",
+      "lookup_proxy_bits": 45,
+      "mdl_proxy_bits": 21,
+      "params": [
+        3,
+        0,
+        0,
+        1
+      ],
+      "schema": "pl5-v3723-cross-task-program-1:program",
+      "source_candidate_id": "b19a679f0b68eb942a657c7705f4dc6944ce83105fc3c823eae0c588c087560b",
+      "source_evaluation_sha256": "7326d244b80129b41fcecd7f8e75608e9b03329e9ce004e12f37dc1ceece16a1",
+      "source_training_sha256": "08de7bb35b87965e02895c7250117e0995c46401b6c05f3b8c11d52c630c90f6"
+    },
+    {
+      "feature": "difference_mod10",
+      "finite_domain_only": true,
+      "finite_table_sha256": "253a5ce7a02597cb77823afd620c115cc2800ce8539dbe4953c3cbbd7482f389",
+      "kind": "poly2",
+      "lookup_proxy_bits": 45,
+      "mdl_proxy_bits": 17,
+      "params": [
+        5,
+        2,
+        1
+      ],
+      "schema": "pl5-v3723-cross-task-program-1:program",
+      "source_candidate_id": "ebf86c45147ff910e58d7f9f9f9e6eeffc312e2c7ec12b3789a28effa8a42a2c",
+      "source_evaluation_sha256": "26aafa2f06bed79a7c976542f766c644a96c386f6e82820dac21a252be3d577d",
+      "source_training_sha256": "0f74096697bfe1842260730113208b5a6ca828731689089550577c9edf057a7f"
+    },
+    {
+      "feature": "absdiff_mod10",
+      "finite_domain_only": true,
+      "finite_table_sha256": "b5de0cad5155b9a63b304a7703089843d560c44604df8ca45db9eb53a4c96a05",
+      "kind": "parity",
+      "lookup_proxy_bits": 45,
+      "mdl_proxy_bits": 13,
+      "params": [
+        1,
+        8
+      ],
+      "schema": "pl5-v3723-cross-task-program-1:program",
+      "source_candidate_id": "fb09ba2724b6375da140610b18890d94b4bbf75a1d6b2a9938c2cfc11eb86888",
+      "source_evaluation_sha256": "6930e587cc02b686ce344de0fd91c1e1bd1844fe2fefd610ea6eece57756e30b",
+      "source_training_sha256": "bae718bb4187716dcac851705a6dd5978e60a8df2c3301510ca131408c7fc65f"
+    }
+  ]
+}

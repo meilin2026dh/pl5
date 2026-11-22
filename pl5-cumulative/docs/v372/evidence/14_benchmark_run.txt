@@ -1,0 +1,19 @@
+addition seed=20261102: train 70/70, holdout 30/30, exact=True
+addition seed=20261103: train 70/70, holdout 30/30, exact=True
+addition seed=20261104: train 70/70, holdout 30/30, exact=True
+bilinear seed=20261102: train 70/70, holdout 30/30, exact=True
+bilinear seed=20261103: train 70/70, holdout 30/30, exact=True
+bilinear seed=20261104: train 70/70, holdout 30/30, exact=True
+absolute_product seed=20261102: train 70/70, holdout 30/30, exact=True
+absolute_product seed=20261103: train 70/70, holdout 30/30, exact=True
+absolute_product seed=20261104: train 70/70, holdout 30/30, exact=True
+squared_sum seed=20261102: train 70/70, holdout 30/30, exact=True
+squared_sum seed=20261103: train 70/70, holdout 30/30, exact=True
+squared_sum seed=20261104: train 70/70, holdout 30/30, exact=True
+mixed_minimum seed=20261102: train 70/70, holdout 30/30, exact=True
+mixed_minimum seed=20261103: train 70/70, holdout 30/30, exact=True
+mixed_minimum seed=20261104: train 70/70, holdout 30/30, exact=True
+iid_random seed=20261102: train 19/70, holdout 4/30, exact=False
+iid_random seed=20261103: train 19/70, holdout 2/30, exact=False
+iid_random seed=20261104: train 18/70, holdout 2/30, exact=False
+{"output": "../docs/v372/benchmark", "trials": 18, "protocol_sha256": "02edd6d0eb827f1370b8f598f4a7c06bc2e65a3546a02ae671507a5f4ac70a0a"}

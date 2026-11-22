@@ -1,0 +1,39 @@
+{
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "8a5f4acea4884c462d1faaa2c18aa2ca9475d9fabf12b6cd4b6ae4dde4e0707b",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "9bfc66e38cfadd96d9b07784b79530c8b514f976e85f9f9d901503cd7f3162c2",
+  "schema": "pl5-v3722-grammar-extension-1:operator",
+  "selected_on": "training+challenge+validation_without_test_labels",
+  "spec": {
+    "candidate_id": "cbabd1db8433293edb612cd26b8e483231632acc241e774c844fcc0f3aa31558",
+    "domain": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "feature": "absdiff_mod10",
+    "kind": "learned_unary_table_v1",
+    "mapping": [
+      1,
+      8,
+      1,
+      8,
+      1,
+      8,
+      1,
+      8,
+      1,
+      8
+    ],
+    "training_sha256": "ada7a1e8522c297bf2686f7e37f29263298cda990030767e69ac1bb952571386"
+  }
+}

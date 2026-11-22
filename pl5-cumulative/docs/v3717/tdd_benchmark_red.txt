@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+__________ ERROR collecting tests/test_research_performance_v3717.py ___________
+ImportError while importing test module '/mnt/data/PL5_V3717_work/research_backend/tests/test_research_performance_v3717.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_research_performance_v3717.py:2: in <module>
+    from benchmark_research_performance_v3717 import run_benchmark
+E   ModuleNotFoundError: No module named 'benchmark_research_performance_v3717'
+=========================== short test summary info ============================
+ERROR tests/test_research_performance_v3717.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.14s

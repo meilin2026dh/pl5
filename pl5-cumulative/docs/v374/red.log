@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+________________ ERROR collecting tests/test_autonomous_v374.py ________________
+ImportError while importing test module '/mnt/data/pl5_v374_auto/research_backend/tests/test_autonomous_v374.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_autonomous_v374.py:8: in <module>
+    from pailie5.autonomous_v374 import select_warm_starts, run_cycles, choose_next_task
+E   ModuleNotFoundError: No module named 'pailie5.autonomous_v374'
+=========================== short test summary info ============================
+ERROR tests/test_autonomous_v374.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.84s

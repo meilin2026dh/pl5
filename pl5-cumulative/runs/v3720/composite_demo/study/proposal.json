@@ -1,0 +1,1058 @@
+{
+  "baseline": {
+    "evaluations": 600,
+    "training_errors": 35
+  },
+  "budget_per_search": 600,
+  "candidates": [
+    {
+      "depth": 4,
+      "name": "baseline",
+      "nodes": 7,
+      "operator_id": "f70d57fd23fb98633894abb905706ede05b238a5179bd171b78bbf14fdc865f4",
+      "path": "operators/baseline.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 2,
+          "predicted": 4
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 2
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 4
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 5,
+          "predicted": 3
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "expected": 3,
+          "predicted": 7
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 1
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 3
+        },
+        {
+          "a": 4,
+          "b": 0,
+          "expected": 4,
+          "predicted": 6
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 7,
+          "predicted": 3
+        }
+      ],
+      "training_errors": 35
+    },
+    {
+      "depth": 3,
+      "name": "repaired",
+      "nodes": 7,
+      "operator_id": "0d551e9c7f5e9dcb07ca26751d3fcdc7baf37c984b375ba10796a3562ba8f83c",
+      "path": "operators/repaired.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [],
+      "training_errors": 0
+    },
+    {
+      "depth": 4,
+      "name": "invention_01",
+      "nodes": 9,
+      "operator_id": "85afbf0d83e03645b2f4f67ef27b6d6d7e0977d0ad6da28d861f1ba883d6b948",
+      "path": "operators/invention_01.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 2,
+          "expected": 3,
+          "predicted": 9
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 3,
+          "predicted": 9
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 3
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "expected": 3,
+          "predicted": 9
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 6
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 3
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 4
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 3
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 3
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 3
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 3
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "expected": 6,
+          "predicted": 2
+        }
+      ],
+      "training_errors": 25
+    },
+    {
+      "depth": 3,
+      "name": "invention_02",
+      "nodes": 7,
+      "operator_id": "64b044ca2bdc151649c480caf239dc9678ffd4a0aa269f31033ae9a087841a7c",
+      "path": "operators/invention_02.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 2,
+          "expected": 3,
+          "predicted": 5
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 7
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "expected": 3,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 5,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "expected": 3,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 1
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 5
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 4,
+          "b": 2,
+          "expected": 0,
+          "predicted": 4
+        },
+        {
+          "a": 4,
+          "b": 3,
+          "expected": 3,
+          "predicted": 9
+        },
+        {
+          "a": 4,
+          "b": 8,
+          "expected": 6,
+          "predicted": 4
+        },
+        {
+          "a": 4,
+          "b": 9,
+          "expected": 1,
+          "predicted": 9
+        }
+      ],
+      "training_errors": 29
+    },
+    {
+      "depth": 3,
+      "name": "invention_03",
+      "nodes": 7,
+      "operator_id": "91452778ddbed1ed8eefd27c61e5e02b6f7c67f56da8ad9e162c16642bbee21d",
+      "path": "operators/invention_03.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 3,
+          "predicted": 8
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 9
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 7,
+          "predicted": 0
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 6
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 4
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 5,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 6
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 2
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 5
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "expected": 1,
+          "predicted": 9
+        },
+        {
+          "a": 4,
+          "b": 9,
+          "expected": 1,
+          "predicted": 7
+        }
+      ],
+      "training_errors": 31
+    },
+    {
+      "depth": 4,
+      "name": "invention_04",
+      "nodes": 9,
+      "operator_id": "b79cc8266103a83fbc5ba5cc030f706f247ab13a50e6876e1d79c5bdfb566e47",
+      "path": "operators/invention_04.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 2,
+          "expected": 3,
+          "predicted": 0
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 3,
+          "predicted": 5
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 6
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "expected": 3,
+          "predicted": 0
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 8
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 2
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "expected": 3,
+          "predicted": 8
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 1
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 2
+        }
+      ],
+      "training_errors": 32
+    },
+    {
+      "depth": 4,
+      "name": "invention_05",
+      "nodes": 9,
+      "operator_id": "3a0f0d48436043ad149f407229d5ad1e206f217c6c7871cd9472c7ae5307223d",
+      "path": "operators/invention_05.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 2,
+          "expected": 3,
+          "predicted": 6
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 3,
+          "predicted": 1
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 4
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "expected": 3,
+          "predicted": 6
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 0
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 0
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "expected": 3,
+          "predicted": 8
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 6
+        }
+      ],
+      "training_errors": 32
+    },
+    {
+      "depth": 4,
+      "name": "invention_06",
+      "nodes": 9,
+      "operator_id": "e4f5f08384bd08fdc38bba02a9565e16644d19954bede4c2f3777f66985c60ce",
+      "path": "operators/invention_06.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 1,
+          "b": 2,
+          "expected": 3,
+          "predicted": 5
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 3,
+          "predicted": 8
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "expected": 5,
+          "predicted": 1
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 7,
+          "predicted": 0
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "expected": 3,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 8
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 5
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 2
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 0
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 9,
+          "predicted": 7
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "expected": 6,
+          "predicted": 0
+        }
+      ],
+      "training_errors": 33
+    },
+    {
+      "depth": 5,
+      "name": "invention_07",
+      "nodes": 13,
+      "operator_id": "02e50cf76233fd0bae260cd1744d4cbe34749ff8e48ff047ded87e081a905736",
+      "path": "operators/invention_07.json",
+      "research_only": true,
+      "source": "training_only",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 0,
+          "expected": 0,
+          "predicted": 2
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "expected": 2,
+          "predicted": 8
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 3,
+          "predicted": 1
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 6,
+          "predicted": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "expected": 1,
+          "predicted": 5
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 2,
+          "predicted": 8
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 4,
+          "predicted": 8
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 6,
+          "predicted": 2
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "expected": 7,
+          "predicted": 9
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7,
+          "predicted": 3
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "expected": 5,
+          "predicted": 3
+        }
+      ],
+      "training_errors": 33
+    }
+  ],
+  "generated": {
+    "distinct_behaviours": 6762,
+    "labels_used": "training_only",
+    "proposal_count": 11550,
+    "records": [
+      {
+        "learned_coefficients": [
+          1,
+          1,
+          0
+        ],
+        "nodes": 7,
+        "source_features": [
+          "product",
+          "absdiff"
+        ],
+        "training_errors": 0
+      },
+      {
+        "learned_coefficients": [
+          1,
+          3,
+          0
+        ],
+        "nodes": 9,
+        "source_features": [
+          "sum",
+          "product"
+        ],
+        "training_errors": 25
+      },
+      {
+        "learned_coefficients": [
+          1,
+          1,
+          0
+        ],
+        "nodes": 7,
+        "source_features": [
+          "product",
+          "xor"
+        ],
+        "training_errors": 29
+      },
+      {
+        "learned_coefficients": [
+          1,
+          1,
+          0
+        ],
+        "nodes": 7,
+        "source_features": [
+          "product",
+          "gcd"
+        ],
+        "training_errors": 31
+      },
+      {
+        "learned_coefficients": [
+          1,
+          9,
+          0
+        ],
+        "nodes": 9,
+        "source_features": [
+          "absdiff",
+          "min"
+        ],
+        "training_errors": 32
+      },
+      {
+        "learned_coefficients": [
+          2,
+          1,
+          0
+        ],
+        "nodes": 9,
+        "source_features": [
+          "product",
+          "max"
+        ],
+        "training_errors": 32
+      },
+      {
+        "learned_coefficients": [
+          1,
+          2,
+          0
+        ],
+        "nodes": 9,
+        "source_features": [
+          "xor",
+          "min"
+        ],
+        "training_errors": 33
+      },
+      {
+        "learned_coefficients": [
+          9,
+          3,
+          2
+        ],
+        "nodes": 13,
+        "source_features": [
+          "product",
+          "absdiff"
+        ],
+        "training_errors": 33
+      }
+    ],
+    "valid_ast_count": 11550
+  },
+  "holdout_read": false,
+  "integrity_sha256": "de8a044564256b4a0d9a38761c82b8af12064a90a10143448c8b65aa9aeef3ec",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "repair": {
+    "evaluations": 600,
+    "training_errors": 0
+  },
+  "schema": "pl5-v3720-three-gate-math-research-1:proposal",
+  "seed": 3720,
+  "selection_used": "training_only",
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "cd3e6b8e4d0d5fd014d3a8302c4dbc440854a55e9a7638982f172d8b3578a2f0"
+}

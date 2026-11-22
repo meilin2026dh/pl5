@@ -1,0 +1,61 @@
+{
+  "base_archive": "PL5_V3719_Research_Validation_Full.zip",
+  "base_archive_sha256": "05b792f21392bb5058220f96f6a21051e5a0087cc817b3b7a330c96dd8eb9063",
+  "base_file_count": 2601,
+  "changed_existing_paths": [
+    "README.md",
+    "README_V3719.md"
+  ],
+  "created_utc": "2026-11-04T23:09:41+00:00",
+  "evidence": "LOCAL_HASH_ONLY_NO_INDEPENDENT_TIMESTAMP",
+  "included_file_count": 2617,
+  "new_file_count": 16,
+  "new_paths": [
+    "research_backend/pailie5/prospective_validation_v3719.py",
+    "research_backend/research_prospective_v3719.py",
+    "research_backend/tests/test_prospective_validation_v3719.py",
+    "docs/v3719/PHASE2_GUIDE.md",
+    "docs/v3719/PHASE2_REPORT.md",
+    "docs/v3719/PHASE2_REAL_SOURCE_SPOTCHECK.json",
+    "runs/v3719/phase2_demo/primary.csv",
+    "runs/v3719/phase2_demo/witness.csv",
+    "runs/v3719/phase2_demo/registration.json",
+    "runs/v3719/phase2_demo/seal.json",
+    "runs/v3719/phase2_demo/settlement.json",
+    "runs/v3719/real_spotcheck/jiangsu_manual.csv",
+    "runs/v3719/real_spotcheck/gansu_manual.csv",
+    "runs/v3719/real_spotcheck/crosscheck.json",
+    "runs/v3719_phase2_targeted_pytest.txt"
+  ],
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "preserved_unchanged_file_count": 2599,
+  "real_data": "ONE_MANUALLY_TRANSCRIBED_OFFICIAL_SOURCE_CROSSCHECK_ISSUE_26294",
+  "schema": "pl5-v3719-phase2-release-manifest-v1",
+  "sha256_by_new_or_changed_path": {
+    "README.md": "53a60b6b1623bb2b29cb13a2f03f823e6292897f02d4fd3bdf7a9082fa62622a",
+    "README_V3719.md": "40ea9b9169852502ac43c5dc1e3c06525552fc7c9688072b461bcfdc6281a5f3",
+    "docs/v3719/PHASE2_GUIDE.md": "874fb872f7639237ffa4429c011ef707aa3a511e688c6c08136bb8cc1b284ef1",
+    "docs/v3719/PHASE2_REAL_SOURCE_SPOTCHECK.json": "9cd49866a805b11f80bd1b625198243c1ec474d9243401e30d7d61b7a49b2a4c",
+    "docs/v3719/PHASE2_REPORT.md": "37c3a320beb0d829ec94787663c5468c63b959fe5d208e047f8273af003aeafe",
+    "research_backend/pailie5/prospective_validation_v3719.py": "4f5babe9b22e6e713d0055ed498073b6143a35c189c1e9a984847c5e6cdafcb1",
+    "research_backend/research_prospective_v3719.py": "c8458bd511570df569ba97dd29563df9a5aa0d0f54a526491652347aa5a9386e",
+    "research_backend/tests/test_prospective_validation_v3719.py": "3b1b5d58c3733ea239d0928482f74436df47c778d2fafead67c73f522ccb4a0e",
+    "runs/v3719/phase2_demo/primary.csv": "f3b58900ef364a16f31d8ac46aca46433e1d92c9d0010e5fe19bfb78bc0e4b32",
+    "runs/v3719/phase2_demo/registration.json": "b9da4bc5bf214d0306bb122136dba32c14d16b117960164f524d745d0a3173fc",
+    "runs/v3719/phase2_demo/seal.json": "9071347a7dc6cb25fa0180bc5f05551fc98db1ab4304ebc1d96ccae6afa16485",
+    "runs/v3719/phase2_demo/settlement.json": "f2721d1fd436e24c9d087fc726d39d7e65fef46d7b0997810fce751f584c83e8",
+    "runs/v3719/phase2_demo/witness.csv": "ab5f7f95c91b5a19e33637fa7a96d7aaed057077bf5e7cb7945023846d3214d5",
+    "runs/v3719/real_spotcheck/crosscheck.json": "6db1f1b7fbbe5c0cb14716aef675371e911245ffdae7237c7a9e3f7a35b9bead",
+    "runs/v3719/real_spotcheck/gansu_manual.csv": "bbd9b22ad027b47c4a75ea87787e0632e94389d30ad3090a7d039fe748ea50ac",
+    "runs/v3719/real_spotcheck/jiangsu_manual.csv": "a0eb553a820fdf15d32784f03036dc7dc01bd523b73a6908c6a3b64c5b1df173",
+    "runs/v3719_phase2_targeted_pytest.txt": "256ddf1ebbac6707c60d098aa233a0b7f1556e9f75b3102555b9f6ad32bedf56"
+  },
+  "testing": {
+    "full_backend_suite": "not completed",
+    "new_phase2_tests": 20,
+    "status": "passed",
+    "targeted_plus_prior_plus_integration": 73,
+    "windows": "not tested"
+  },
+  "verification": "Original ZIP entries are verified byte-for-byte unchanged except explicitly named README files; all files follow the same original root structure."
+}

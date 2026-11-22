@@ -1,0 +1,11 @@
+{
+  "arm": "no_warm",
+  "operator_id": "e6251b8392ded3e1b0ef7a7f719883d084508f6a1bcb86cc2f9d125c2d65802b",
+  "training_errors": 26,
+  "training_count": 60,
+  "training_evaluations": 500,
+  "selector_evaluations": 0,
+  "budget_matched": true,
+  "selection_used": "training_cells_only",
+  "candidate_origin": "mutation"
+}

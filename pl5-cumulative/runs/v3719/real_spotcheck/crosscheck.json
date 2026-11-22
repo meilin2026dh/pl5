@@ -1,0 +1,12 @@
+{
+  "matched_count": 1,
+  "matched_issues": [
+    "26294"
+  ],
+  "primary_count": 1,
+  "primary_raw_sha256": "a0eb553a820fdf15d32784f03036dc7dc01bd523b73a6908c6a3b64c5b1df173",
+  "source_authentication": "NOT_INDEPENDENTLY_AUTHENTICATED",
+  "unchecked_primary_count": 0,
+  "warning": "Both sources may share upstream data; matching rows do not establish independent provenance.",
+  "witness_raw_sha256": "bbd9b22ad027b47c4a75ea87787e0632e94389d30ad3090a7d039fe748ea50ac"
+}

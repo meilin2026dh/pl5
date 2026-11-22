@@ -1,0 +1,23 @@
+{
+  "arms": {
+    "v3725_ring": {
+      "candidate_evaluations": 4,
+      "fit_sha256": "c6d6e08c8c0a5b5f5f0a0719e6969cd60eee48f30fa244a494640d9f6bad561a",
+      "freeze_sha256": "2864174429eb4cc64dd02c8ce9156f2875fac3908e963d6d8bcf64f08874b426",
+      "status": "ABSTAIN"
+    },
+    "v3726_gate": {
+      "candidate_evaluations": 26,
+      "fit_sha256": "810ce625274111736d5b6a1ca8c4c672b03c5df5402dc115910ee23813bd34d4",
+      "freeze_sha256": "b7ca3690a87a5888f81b7828ae5472c033e6a17b4dd4ea39a224c34d470f3cf0",
+      "status": "FROZEN"
+    }
+  },
+  "integrity_sha256": "11a51c1817e78bfc160ebd493c99f9f6df0a6d7ad2388d9bbc67c4e654fea1e4",
+  "issuer_external_identity_verified": false,
+  "issuer_public_sha256": "eeab7fc9cc057133ccbc9be7f52ce67d2ec8b4e0aef41a113dc073131285e591",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "private_answers_seen": false,
+  "schema": "pl5-v3726-gate-grammar-1:solver_manifest",
+  "task_id": "v3726_local_demo"
+}

@@ -1,0 +1,37 @@
+{
+  "arms": [
+    "v3724_expanded",
+    "v3725_ring"
+  ],
+  "dev_seeds_excluded": [
+    372501,
+    372502
+  ],
+  "families": [
+    "cubic_interaction",
+    "piecewise_lt",
+    "parity_gate",
+    "power_sums",
+    "linear_control",
+    "random_null",
+    "opaque_exponential",
+    "diagonal_gate",
+    "corrupt_training"
+  ],
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "partitions": {
+    "holdout": 36,
+    "train": 48,
+    "validation": 16
+  },
+  "research_caveat": "developer authored, cannot claim genuine external blind",
+  "schema": "pl5-v3725-ring-grammar-1:internal_protocol",
+  "seeds": [
+    372503,
+    372504,
+    372505,
+    372506
+  ],
+  "source_discovery_costs_equalized": false,
+  "total_compute_budget_equalized": false
+}

@@ -1,0 +1,18 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________________ test_v372_ast_module_exists __________________________
+
+    def test_v372_ast_module_exists():
+>       assert importlib.util.find_spec('pailie5.structure_ast_v372') is not None
+E       AssertionError: assert None is not None
+E        +  where None = <function find_spec at 0x7f744cbdfb00>('pailie5.structure_ast_v372')
+E        +    where <function find_spec at 0x7f744cbdfb00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_structure_ast_v372.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_structure_ast_v372.py::test_v372_ast_module_exists - AssertionError: assert None is not None
+ +  where None = <function find_spec at 0x7f744cbdfb00>('pailie5.structure_ast_v372')
+ +    where <function find_spec at 0x7f744cbdfb00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+1 failed in 1.01s

@@ -1,0 +1,58 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 25%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+........................................................................ [ 51%]
+........................................................................ [ 60%]
+.............................................F.......................... [ 68%]
+........................................................................ [ 77%]
+........................................................................ [ 86%]
+........................................................................ [ 94%]
+.............................................                            [100%]
+=================================== FAILURES ===================================
+____________________ test_cli_table_file_and_synthetic_demo ____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0')
+
+    def test_cli_table_file_and_synthetic_demo(tmp_path):
+        import subprocess, sys
+        root=__import__('pathlib').Path(__file__).resolve().parents[1]
+        t = quotient_table().tolist()
+        infile=tmp_path/'table.json'; infile.write_text(json.dumps(t))
+        report=tmp_path/'r.json'; db=tmp_path/'a.sqlite'
+>       cp=subprocess.run([sys.executable,'research_v31.py','table','--table-json',str(infile),
+                           '--report',str(report),'--registry',str(db)],cwd=root,capture_output=True,text=True,timeout=30)
+
+tests/test_primitive_categories_v31.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/subprocess.py:556: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/subprocess.py:1222: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/subprocess.py:2129: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/opt/pyvenv/bin/python', 'research_v31.py', '...>
+endtime = 1320.429425841, orig_timeout = 30, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/opt/pyvenv/bin/python', 'research_v31.py', 'table', '--table-json', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/table.json', '--report', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/r.json', '--registry', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/a.sqlite']' timed out after 30 seconds
+
+/usr/lib/python3.13/subprocess.py:1269: TimeoutExpired
+=========================== short test summary info ============================
+FAILED tests/test_primitive_categories_v31.py::test_cli_table_file_and_synthetic_demo - subprocess.TimeoutExpired: Command '['/opt/pyvenv/bin/python', 'research_v31.py', 'table', '--table-json', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/table.json', '--report', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/r.json', '--registry', '/tmp/pytest-of-root/pytest-0/test_cli_table_file_and_synthe0/a.sqlite']' timed out after 30 seconds
+1 failed, 836 passed in 259.43s (0:04:19)

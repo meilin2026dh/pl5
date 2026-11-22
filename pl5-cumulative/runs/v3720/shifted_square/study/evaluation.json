@@ -1,0 +1,107 @@
+{
+  "evidence_grade": "EXPLORATORY_SYNTHETIC_ONLY",
+  "freeze_integrity_sha256": "963e9f3369cbac0accd9607c450b3b8404f479755d86ce01cb8a924bedea9320",
+  "holdout_accuracy": 0.25,
+  "holdout_count": 20,
+  "holdout_counterexamples": [
+    {
+      "a": 0,
+      "b": 1,
+      "observed": 4,
+      "predicted": 6
+    },
+    {
+      "a": 0,
+      "b": 4,
+      "observed": 9,
+      "predicted": 5
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "observed": 9,
+      "predicted": 5
+    },
+    {
+      "a": 1,
+      "b": 5,
+      "observed": 9,
+      "predicted": 1
+    },
+    {
+      "a": 1,
+      "b": 6,
+      "observed": 2,
+      "predicted": 4
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "observed": 2,
+      "predicted": 4
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "observed": 9,
+      "predicted": 1
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "observed": 4,
+      "predicted": 0
+    },
+    {
+      "a": 5,
+      "b": 1,
+      "observed": 9,
+      "predicted": 1
+    },
+    {
+      "a": 5,
+      "b": 2,
+      "observed": 2,
+      "predicted": 4
+    },
+    {
+      "a": 5,
+      "b": 9,
+      "observed": 9,
+      "predicted": 5
+    },
+    {
+      "a": 6,
+      "b": 0,
+      "observed": 9,
+      "predicted": 1
+    },
+    {
+      "a": 8,
+      "b": 4,
+      "observed": 7,
+      "predicted": 9
+    },
+    {
+      "a": 8,
+      "b": 6,
+      "observed": 9,
+      "predicted": 5
+    },
+    {
+      "a": 9,
+      "b": 0,
+      "observed": 4,
+      "predicted": 0
+    }
+  ],
+  "holdout_errors": 15,
+  "holdout_sha256": "9959434c695d1dfee8baddbbf148e872c018e4d087ac217a881089fc96250a75",
+  "integrity_sha256": "569ebf755d2b8ee45ec76f6398a19ce657324c567e43f9dc50d7c33d2c50ee75",
+  "lottery_prediction_test": false,
+  "operator_id": "552a456520edf1b1a9010c7292acc5dc2259070e94c2f4008750098afae28d8b",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3720-three-gate-math-research-1:evaluation",
+  "selection_changed_after_holdout": false
+}

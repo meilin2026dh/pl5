@@ -1,0 +1,12 @@
+{
+  "case": "shifted_square",
+  "grid_sha256": "05f4fb81ce1f30ae1c19ddb9c05d99aeb1914afb9b4dc71b253e8f0991b660d8",
+  "holdout_n": 20,
+  "integrity_sha256": "12dd34d7e34ba91df992e307ba57664e2629f64747bdb661c311d91ab373235a",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "protocol": "locally generated synthetic split; not external blind trial",
+  "schema": "pl5-v3720-three-gate-math-research-1:demo",
+  "seed": 3720,
+  "train_n": 60,
+  "validation_n": 20
+}

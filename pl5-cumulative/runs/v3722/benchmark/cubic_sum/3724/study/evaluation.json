@@ -1,0 +1,15 @@
+{
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "holdout_accuracy": 1.0,
+  "holdout_count": 20,
+  "holdout_errors": 0,
+  "holdout_sha256": "0c4c62f674858bd911fabf5581fc7895356c5f82338352cf1aaf3d0d7452e44e",
+  "holdout_unknown": 0,
+  "integrity_sha256": "f3244ee9f96cafd06288bf64bf2f4b1b515ef61c2c71a4cda772a7b5c3628703",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "no_retraining_or_reselection_after_holdout": true,
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:evaluation",
+  "selection_sha256": "8cba77a739c406ca9520bf55dc6dd4e09fb748c1c0282c0fd77c5fa771aac788",
+  "status": "EVALUATED"
+}

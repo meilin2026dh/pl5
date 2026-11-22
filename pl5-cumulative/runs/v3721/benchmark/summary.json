@@ -1,0 +1,74 @@
+{
+  "cases": [
+    "square_sum",
+    "quadratic_difference",
+    "linear_sum",
+    "cubic_sum",
+    "iid_null"
+  ],
+  "comparison": "legacy_composition_only; NOT compute-matched or full V3.7.20 search",
+  "counts": {
+    "holdout": 20,
+    "train": 60,
+    "validation": 20
+  },
+  "external_blind": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "protocol": "Developer-defined synthetic families and fixed seeds; no claim of independent task discovery.",
+  "schema": "pl5-v3721-counterexample-meta-1:development-benchmark",
+  "seeds": [
+    3721,
+    3722,
+    3723,
+    3724,
+    3725
+  ],
+  "summary": {
+    "cubic_sum": {
+      "abstentions": 5,
+      "frozen": 0,
+      "holdout_cells_scored": 0,
+      "legacy_test_errors_total": 38,
+      "legacy_training_errors_total": 116,
+      "meta_test_errors_if_frozen": 0,
+      "studies": 5
+    },
+    "iid_null": {
+      "abstentions": 5,
+      "frozen": 0,
+      "holdout_cells_scored": 0,
+      "legacy_test_errors_total": 94,
+      "legacy_training_errors_total": 220,
+      "meta_test_errors_if_frozen": 0,
+      "studies": 5
+    },
+    "linear_sum": {
+      "abstentions": 0,
+      "frozen": 5,
+      "holdout_cells_scored": 100,
+      "legacy_test_errors_total": 0,
+      "legacy_training_errors_total": 0,
+      "meta_test_errors_if_frozen": 0,
+      "studies": 5
+    },
+    "quadratic_difference": {
+      "abstentions": 0,
+      "frozen": 5,
+      "holdout_cells_scored": 100,
+      "legacy_test_errors_total": 71,
+      "legacy_training_errors_total": 163,
+      "meta_test_errors_if_frozen": 0,
+      "studies": 5
+    },
+    "square_sum": {
+      "abstentions": 0,
+      "frozen": 5,
+      "holdout_cells_scored": 100,
+      "legacy_test_errors_total": 68,
+      "legacy_training_errors_total": 159,
+      "meta_test_errors_if_frozen": 0,
+      "studies": 5
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "budget_ms_per_arm": 5000,
+  "developer_knows_all_answers": true,
+  "environment": {
+    "machine": "x86_64",
+    "platform": "Linux",
+    "python": "3.13.5"
+  },
+  "external_blind_verified": false,
+  "families": [
+    "equal_gate",
+    "cubic_polynomial",
+    "independent_random",
+    "opaque_power"
+  ],
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "measured_pipeline_wall_ms_total": 10609.777,
+  "methods": {
+    "frozen_portfolio": {
+      "accepted_exact": 2,
+      "accepted_with_errors": 0,
+      "holdout_cells_accepted": 72,
+      "rejected_or_timeout": 2,
+      "total_tasks": 4
+    },
+    "v3725_ring": {
+      "accepted_exact": 1,
+      "accepted_with_errors": 0,
+      "holdout_cells_accepted": 36,
+      "rejected_or_timeout": 3,
+      "total_tasks": 4
+    },
+    "v3726_gate": {
+      "accepted_exact": 1,
+      "accepted_with_errors": 0,
+      "holdout_cells_accepted": 36,
+      "rejected_or_timeout": 3,
+      "total_tasks": 4
+    }
+  },
+  "private_keys_not_bundled": true,
+  "public_keys_bundled": true,
+  "raw_records_digest_sha256": "67e65369f28acf6b99151a3e6d3db7e74da37d85b9970d3438aca22928c344b3",
+  "schema": "pl5-v3728-internal-role-handoff-pilot-1",
+  "seed": 372701,
+  "signer_identity_externally_verified": false,
+  "source_code_independent_of_labels": false,
+  "total_mathematical_tasks": 4,
+  "total_method_rows": 12,
+  "trusted_timestamp_verified": false,
+  "unmeasured_costs": [
+    "developer research",
+    "source algorithm search and design",
+    "environment provisioning",
+    "third-party recruitment and oversight",
+    "energy",
+    "trusted timestamp service"
+  ]
+}

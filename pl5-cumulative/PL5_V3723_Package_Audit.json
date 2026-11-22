@@ -1,0 +1,18 @@
+{
+  "all_base_paths_preserved": true,
+  "base_archive_file": "PL5_V3722_Research_Full.zip",
+  "base_archive_sha256": "6500dedcb77c10ff3d8936864cbae69f960173b32d90de22fbb2153e80612b4e",
+  "base_file_count": 3468,
+  "history_claim": "cumulative relative to V3.7.22, not verified independent snapshots for every version",
+  "inherited_modified": [
+    "README.md",
+    "research_backend/pailie5/__init__.py",
+    "research_backend/pyproject.toml"
+  ],
+  "inherited_paths": 3468,
+  "inherited_unchanged": 3465,
+  "new_files_excluding_manifest_and_audit": 419,
+  "removed": [],
+  "schema": "pl5-v3723-preservation-audit-1",
+  "source_26295_seal_files_preserved": true
+}

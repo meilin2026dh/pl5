@@ -1,0 +1,13 @@
+family,seed,task_id,budget_ms_per_model,arm,wall_ms,worker_status,score_status,accepted,held_errors,held_cells,exact_success,task_category,external_blind
+equal_gate,372701,int_00_372701,3000,v3725_ring,1681.989,COMPLETED,ABSTAIN,0,,0,0,structured,False
+equal_gate,372701,int_00_372701,3000,v3726_gate,1451.005,COMPLETED,EVALUATED,1,0,36,1,structured,False
+equal_gate,372701,int_00_372701,3000,frozen_portfolio,,PORTFOLIO_DERIVED,EVALUATED,1,0,36,1,structured,False
+cubic_polynomial,372701,int_03_372701,3000,v3725_ring,1323.512,COMPLETED,EVALUATED,1,0,36,1,structured,False
+cubic_polynomial,372701,int_03_372701,3000,v3726_gate,1232.827,COMPLETED,ABSTAIN,0,,0,0,structured,False
+cubic_polynomial,372701,int_03_372701,3000,frozen_portfolio,,PORTFOLIO_DERIVED,EVALUATED,1,0,36,1,structured,False
+independent_random,372701,int_06_372701,3000,v3725_ring,1314.785,COMPLETED,ABSTAIN,0,,0,0,unstructured_control,False
+independent_random,372701,int_06_372701,3000,v3726_gate,1407.783,COMPLETED,ABSTAIN,0,,0,0,unstructured_control,False
+independent_random,372701,int_06_372701,3000,frozen_portfolio,,PORTFOLIO_DERIVED,ABSTAIN,0,,0,0,unstructured_control,False
+opaque_power,372701,int_07_372701,3000,v3725_ring,1208.027,COMPLETED,ABSTAIN,0,,0,0,unstructured_control,False
+opaque_power,372701,int_07_372701,3000,v3726_gate,1455.004,COMPLETED,ABSTAIN,0,,0,0,unstructured_control,False
+opaque_power,372701,int_07_372701,3000,frozen_portfolio,,PORTFOLIO_DERIVED,ABSTAIN,0,,0,0,unstructured_control,False

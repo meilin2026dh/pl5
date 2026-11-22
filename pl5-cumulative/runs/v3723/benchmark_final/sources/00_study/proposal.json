@@ -1,0 +1,408 @@
+{
+  "candidate_limit": 24,
+  "candidates": [
+    {
+      "coverage_complete": true,
+      "domain_size": 10,
+      "observed_feature_inputs": 10,
+      "spec": {
+        "candidate_id": "b19a679f0b68eb942a657c7705f4dc6944ce83105fc3c823eae0c588c087560b",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "feature": "sum_mod10",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9,
+          6,
+          5,
+          2
+        ],
+        "training_sha256": "08de7bb35b87965e02895c7250117e0995c46401b6c05f3b8c11d52c630c90f6"
+      },
+      "table_sha256": "162cc4b91561e34ab94729a819bec71782b4fa5957d33f0450ae48307c8c3c08",
+      "training_errors": 0
+    },
+    {
+      "coverage_complete": false,
+      "domain_size": 19,
+      "observed_feature_inputs": 17,
+      "spec": {
+        "candidate_id": "bbf2959183297aac5af7ff28a5aaff0e3b01373f8e6d5bdd6256c6322d04c6f4",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "feature": "sum_raw",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9,
+          6,
+          5,
+          2,
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9,
+          null,
+          null
+        ],
+        "training_sha256": "08de7bb35b87965e02895c7250117e0995c46401b6c05f3b8c11d52c630c90f6"
+      },
+      "table_sha256": "2de251779a71edec4e171df053f8b01c4dfe69a2c6a9688626d6b0cc90b5e543",
+      "training_errors": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "a",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "b",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "sum_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "difference_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "product_mod10",
+      "observed_inputs": 9
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "xor_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "absdiff_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "min",
+      "observed_inputs": 9
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "max",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 4,
+      "domain_size": 10,
+      "feature": "gcd",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 19,
+      "feature": "sum_raw",
+      "observed_inputs": 17
+    },
+    {
+      "conflicting_inputs": 12,
+      "domain_size": 19,
+      "feature": "difference_raw",
+      "observed_inputs": 19
+    },
+    {
+      "conflicting_inputs": 5,
+      "domain_size": 37,
+      "feature": "product_raw",
+      "observed_inputs": 30
+    }
+  ],
+  "evaluated_features": 13,
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "2865f74006075c4a121e99204f637264e4e4879ee291755ed43405c0018e1edd",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:proposal",
+  "test_labels_used": false,
+  "train_labels_only": true,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "training_sha256": "08de7bb35b87965e02895c7250117e0995c46401b6c05f3b8c11d52c630c90f6"
+}

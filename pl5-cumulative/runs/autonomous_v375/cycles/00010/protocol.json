@@ -1,0 +1,25 @@
+{
+  "schema": "pl5-v374-predeclared-cycle-1",
+  "cycle_number": 10,
+  "case": "difference_squares",
+  "seed": 47491,
+  "budget": 500,
+  "question": "Does adaptive expression search generalize on a new synthetic structure?",
+  "hypothesis": "Candidate structure may transfer, but only to a fresh task; do not reuse this test split.",
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "policies": [
+    "full",
+    "no_warm",
+    "selective",
+    "grammar_only"
+  ],
+  "test_labels_hidden_from_fit": true,
+  "adaptive_task_selection": true,
+  "confirmatory_pvalue_permitted": false,
+  "research_only": true,
+  "production_enabled": false,
+  "scientific_question_id": "Q-weak_structured_generalization",
+  "scientific_hypothesis_id": "H-weak_structured_generalization-search_instability",
+  "scientific_plan_sha256": "c09d528b5bcb2b7f7125c76363d47f39c2d50b065e6dec6d53ca1bfd397a3ff0"
+}

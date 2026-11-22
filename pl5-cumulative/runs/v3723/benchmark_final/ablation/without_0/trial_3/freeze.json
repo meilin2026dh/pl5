@@ -1,0 +1,94 @@
+{
+  "distinct_surviving_tables": 0,
+  "fit_sha256": "2840626bd384ff4d41bc869e2bbda8e553944e2e0019dfa7849c828511777e06",
+  "holdout_used": false,
+  "integrity_sha256": "fb398ba7cd95146e7a8b5d655ed5ce1d1e4474d45b196b306f5a6e6656715d72",
+  "reason": "no_survivors",
+  "schema": "pl5-v3723-cross-task-program-1:freeze",
+  "selected": null,
+  "status": "ABSTAIN",
+  "surviving_parameterizations": 0,
+  "validation_pairs": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "validation_sha256": "bcca110103a8a8ca725ebc4fdb0c9a37a82606029add93189920fed1b80f31cf"
+}

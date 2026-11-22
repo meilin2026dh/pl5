@@ -1,0 +1,31 @@
+{
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "external_blind": false,
+  "family": "step_sum",
+  "integrity_sha256": "51aa9a98ec9a3988e8b006c74b4816a0ccfeafbd455e45d9f818be3129adb07b",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "partitions": {
+    "challenge": {
+      "count": 15,
+      "data_sha256": "eec9251c16d726f0f88605de98fd2b274c60e92b65b6f57a91be5493ccf0b6c0"
+    },
+    "holdout": {
+      "count": 20,
+      "data_sha256": "894e34ed7815f5d9970f271e2207755b29f13c25c6ffbae4e867df6a61dce64a"
+    },
+    "training": {
+      "count": 55,
+      "data_sha256": "d5699a9a89c8890f03513bb68c16eff446c4392ddf39f5dc2bae2aa1c9099733"
+    },
+    "validation": {
+      "count": 10,
+      "data_sha256": "6211fbe8ba3ed05eb9cf03d1d16614958ba683122c90787b157a5dfe7ea57b74"
+    }
+  },
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:task",
+  "seed": 3724,
+  "table_sha256": "59ce8718415b394b96a35b2dc4f505dc6cb80a73c1d0639ed3d67afea059a877",
+  "task_factory_is_developer_authored": true,
+  "train_validation_test_disjoint": true
+}

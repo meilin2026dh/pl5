@@ -1,0 +1,3342 @@
+{
+  "version": "pl5-v30-bounded-symbolic-regression",
+  "status": "research_only",
+  "history_sha256": "f4adb614fc599ac5a0564824079d52206c145df0d52e08efe683d3a94862189a",
+  "split": {
+    "primitive_training_periods": 190,
+    "reserved_development_periods": 60,
+    "reserved_unseen_periods": 50
+  },
+  "grammar": "v30-symbolic-integer-grammar-1",
+  "generated": 8,
+  "items": [
+    {
+      "operator_id": "pl5.primitive.f2835c1f1f0771cde44b",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.f2835c1f1f0771cde44b",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "spectral_bilinear",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,2}; learned 100-cell truth table",
+        "positions": [
+          0,
+          1
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_2",
+        "table": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          2,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          2,
+          0,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "table_sha256": "bdfd64191cfe3c1548d1e66d916461e834d23beccc2ac698d24927d91cf83ba6",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 3,
+          "partition_entropy_bits": 1.58481870497303,
+          "horizontal_transitions": 38,
+          "vertical_transitions": 60,
+          "partition_stability_train_halves": 0.5832
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "max((5 xor a),2)",
+        "expression_ast": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "xor",
+            [
+              "const",
+              5
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "const",
+            2
+          ]
+        ],
+        "class_mapping": [
+          2,
+          0,
+          1
+        ],
+        "table_sha256": "bdfd64191cfe3c1548d1e66d916461e834d23beccc2ac698d24927d91cf83ba6",
+        "train_pair_errors": 25,
+        "unseen_pair_errors": 16,
+        "whole_table_errors": 41,
+        "raw_table_bits": 200,
+        "formula_bits": 60,
+        "residual_patch_bits": 369,
+        "compressed_bits": 429,
+        "compression_ratio": 2.145,
+        "patches": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            20,
+            2
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            2
+          ],
+          [
+            27,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            36,
+            0
+          ],
+          [
+            37,
+            0
+          ],
+          [
+            39,
+            0
+          ],
+          [
+            60,
+            0
+          ],
+          [
+            65,
+            1
+          ],
+          [
+            66,
+            0
+          ],
+          [
+            67,
+            0
+          ],
+          [
+            69,
+            0
+          ],
+          [
+            70,
+            2
+          ],
+          [
+            71,
+            0
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            73,
+            0
+          ],
+          [
+            74,
+            0
+          ],
+          [
+            75,
+            0
+          ],
+          [
+            76,
+            2
+          ],
+          [
+            77,
+            2
+          ],
+          [
+            78,
+            0
+          ],
+          [
+            79,
+            2
+          ],
+          [
+            80,
+            2
+          ],
+          [
+            85,
+            1
+          ],
+          [
+            86,
+            2
+          ],
+          [
+            87,
+            2
+          ],
+          [
+            89,
+            2
+          ],
+          [
+            90,
+            0
+          ],
+          [
+            95,
+            1
+          ],
+          [
+            96,
+            0
+          ],
+          [
+            97,
+            1
+          ],
+          [
+            99,
+            1
+          ]
+        ],
+        "search_candidates": 992,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          3,
+          3,
+          2
+        ],
+        "class_histogram": [
+          34,
+          33,
+          33
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.e9989b9b065c520e5226",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.e9989b9b065c520e5226",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "spectral_bilinear",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,3}; learned 100-cell truth table",
+        "positions": [
+          0,
+          1
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_3",
+        "table": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          3,
+          0,
+          3,
+          3,
+          0,
+          1,
+          0,
+          1,
+          1,
+          3,
+          3,
+          0,
+          3,
+          0,
+          3,
+          3,
+          3,
+          2,
+          2,
+          0,
+          0,
+          3,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2,
+          0,
+          3,
+          2,
+          3,
+          2,
+          2,
+          0,
+          1,
+          3,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          3,
+          0,
+          3,
+          3,
+          0,
+          0,
+          0,
+          1,
+          1,
+          3,
+          3,
+          0,
+          3,
+          0,
+          3,
+          2,
+          2,
+          2,
+          2,
+          0,
+          1,
+          3,
+          1
+        ],
+        "table_sha256": "0f74e666efc85386d7e5583b806fbdf1f26a2f78c3a122d87bf3bf45e66540bf",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 4,
+          "partition_entropy_bits": 2.0,
+          "horizontal_transitions": 53,
+          "vertical_transitions": 63,
+          "partition_stability_train_halves": 0.6516
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "abs(3-abs(5-a))",
+        "expression_ast": [
+          "binary",
+          "absdiff",
+          [
+            "const",
+            3
+          ],
+          [
+            "binary",
+            "absdiff",
+            [
+              "const",
+              5
+            ],
+            [
+              "a"
+            ]
+          ]
+        ],
+        "class_mapping": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "table_sha256": "0f74e666efc85386d7e5583b806fbdf1f26a2f78c3a122d87bf3bf45e66540bf",
+        "train_pair_errors": 40,
+        "unseen_pair_errors": 18,
+        "whole_table_errors": 58,
+        "raw_table_bits": 200,
+        "formula_bits": 62,
+        "residual_patch_bits": 522,
+        "compressed_bits": 584,
+        "compression_ratio": 2.92,
+        "patches": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            20,
+            3
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            3
+          ],
+          [
+            27,
+            3
+          ],
+          [
+            29,
+            3
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            34,
+            2
+          ],
+          [
+            35,
+            2
+          ],
+          [
+            36,
+            0
+          ],
+          [
+            37,
+            0
+          ],
+          [
+            39,
+            0
+          ],
+          [
+            41,
+            1
+          ],
+          [
+            42,
+            1
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            48,
+            1
+          ],
+          [
+            50,
+            2
+          ],
+          [
+            56,
+            2
+          ],
+          [
+            57,
+            2
+          ],
+          [
+            59,
+            2
+          ],
+          [
+            60,
+            0
+          ],
+          [
+            61,
+            3
+          ],
+          [
+            63,
+            3
+          ],
+          [
+            66,
+            0
+          ],
+          [
+            67,
+            1
+          ],
+          [
+            68,
+            3
+          ],
+          [
+            69,
+            1
+          ],
+          [
+            71,
+            0
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            73,
+            0
+          ],
+          [
+            74,
+            0
+          ],
+          [
+            75,
+            1
+          ],
+          [
+            78,
+            0
+          ],
+          [
+            80,
+            3
+          ],
+          [
+            84,
+            1
+          ],
+          [
+            85,
+            1
+          ],
+          [
+            86,
+            3
+          ],
+          [
+            87,
+            3
+          ],
+          [
+            89,
+            3
+          ],
+          [
+            90,
+            0
+          ],
+          [
+            92,
+            2
+          ],
+          [
+            93,
+            2
+          ],
+          [
+            94,
+            2
+          ],
+          [
+            95,
+            2
+          ],
+          [
+            96,
+            0
+          ],
+          [
+            97,
+            1
+          ],
+          [
+            99,
+            1
+          ]
+        ],
+        "search_candidates": 653,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          4,
+          5,
+          3,
+          2
+        ],
+        "class_histogram": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.aca6099fa99181d90db0",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.aca6099fa99181d90db0",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "local_diffusion",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,2}; learned 100-cell truth table",
+        "positions": [
+          0,
+          1
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_2",
+        "table": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          0,
+          2,
+          2,
+          2,
+          1,
+          0,
+          0,
+          1,
+          2,
+          1,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0,
+          2,
+          2,
+          2,
+          0,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          2,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "table_sha256": "2c42cc56639057a0f5fb2c375f3b7e4feac8aabe63c4a52c59ce34dce595bd3a",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 3,
+          "partition_entropy_bits": 1.58481870497303,
+          "horizontal_transitions": 54,
+          "vertical_transitions": 50,
+          "partition_stability_train_halves": 0.6432
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "max((9 xor b),9)",
+        "expression_ast": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "xor",
+            [
+              "const",
+              9
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            9
+          ]
+        ],
+        "class_mapping": [
+          2,
+          0,
+          1
+        ],
+        "table_sha256": "2c42cc56639057a0f5fb2c375f3b7e4feac8aabe63c4a52c59ce34dce595bd3a",
+        "train_pair_errors": 30,
+        "unseen_pair_errors": 20,
+        "whole_table_errors": 50,
+        "raw_table_bits": 200,
+        "formula_bits": 60,
+        "residual_patch_bits": 450,
+        "compressed_bits": 510,
+        "compression_ratio": 2.55,
+        "patches": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            32,
+            0
+          ],
+          [
+            35,
+            0
+          ],
+          [
+            36,
+            0
+          ],
+          [
+            37,
+            0
+          ],
+          [
+            39,
+            1
+          ],
+          [
+            40,
+            1
+          ],
+          [
+            45,
+            0
+          ],
+          [
+            46,
+            0
+          ],
+          [
+            47,
+            0
+          ],
+          [
+            48,
+            1
+          ],
+          [
+            50,
+            1
+          ],
+          [
+            54,
+            2
+          ],
+          [
+            57,
+            0
+          ],
+          [
+            58,
+            1
+          ],
+          [
+            59,
+            0
+          ],
+          [
+            60,
+            1
+          ],
+          [
+            62,
+            2
+          ],
+          [
+            63,
+            2
+          ],
+          [
+            64,
+            1
+          ],
+          [
+            65,
+            1
+          ],
+          [
+            69,
+            0
+          ],
+          [
+            71,
+            1
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            75,
+            1
+          ],
+          [
+            77,
+            2
+          ],
+          [
+            78,
+            0
+          ],
+          [
+            79,
+            1
+          ],
+          [
+            81,
+            0
+          ],
+          [
+            82,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            88,
+            0
+          ],
+          [
+            93,
+            1
+          ],
+          [
+            94,
+            1
+          ],
+          [
+            95,
+            1
+          ],
+          [
+            96,
+            1
+          ],
+          [
+            98,
+            1
+          ]
+        ],
+        "search_candidates": 930,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          5,
+          6,
+          6
+        ],
+        "class_histogram": [
+          34,
+          33,
+          33
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.84dff3c589e860484c1d",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.84dff3c589e860484c1d",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "local_diffusion",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,3}; learned 100-cell truth table",
+        "positions": [
+          0,
+          1
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_3",
+        "table": [
+          3,
+          1,
+          0,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          3,
+          3,
+          1,
+          0,
+          1,
+          1,
+          2,
+          3,
+          1,
+          0,
+          3,
+          3,
+          2,
+          2,
+          0,
+          1,
+          2,
+          3,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          3,
+          2,
+          2,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          3,
+          1,
+          0,
+          3,
+          3,
+          3,
+          0,
+          2,
+          0,
+          2,
+          3,
+          3,
+          2,
+          2,
+          2,
+          3,
+          1,
+          3,
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3,
+          0,
+          1,
+          3,
+          1,
+          0,
+          0,
+          1,
+          0,
+          3,
+          2,
+          1,
+          3,
+          2,
+          3,
+          2,
+          1,
+          2,
+          1,
+          1,
+          2,
+          1,
+          3
+        ],
+        "table_sha256": "9075d3df556c42eb9e4f9f74be5a9b80f6bb3a81af0cbb5da477759c9ea18fd3",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 4,
+          "partition_entropy_bits": 2.0,
+          "horizontal_transitions": 69,
+          "vertical_transitions": 51,
+          "partition_stability_train_halves": 0.6824
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "abs(3-b)",
+        "expression_ast": [
+          "binary",
+          "absdiff",
+          [
+            "const",
+            3
+          ],
+          [
+            "b"
+          ]
+        ],
+        "class_mapping": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "table_sha256": "9075d3df556c42eb9e4f9f74be5a9b80f6bb3a81af0cbb5da477759c9ea18fd3",
+        "train_pair_errors": 38,
+        "unseen_pair_errors": 21,
+        "whole_table_errors": 59,
+        "raw_table_bits": 200,
+        "formula_bits": 46,
+        "residual_patch_bits": 531,
+        "compressed_bits": 577,
+        "compression_ratio": 2.885,
+        "patches": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            12,
+            0
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            19,
+            3
+          ],
+          [
+            22,
+            2
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            34,
+            0
+          ],
+          [
+            35,
+            1
+          ],
+          [
+            36,
+            0
+          ],
+          [
+            38,
+            3
+          ],
+          [
+            40,
+            2
+          ],
+          [
+            41,
+            3
+          ],
+          [
+            44,
+            0
+          ],
+          [
+            45,
+            0
+          ],
+          [
+            46,
+            0
+          ],
+          [
+            50,
+            2
+          ],
+          [
+            51,
+            3
+          ],
+          [
+            54,
+            3
+          ],
+          [
+            55,
+            3
+          ],
+          [
+            58,
+            2
+          ],
+          [
+            59,
+            0
+          ],
+          [
+            60,
+            2
+          ],
+          [
+            61,
+            3
+          ],
+          [
+            62,
+            3
+          ],
+          [
+            63,
+            2
+          ],
+          [
+            64,
+            2
+          ],
+          [
+            67,
+            1
+          ],
+          [
+            68,
+            3
+          ],
+          [
+            69,
+            0
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            74,
+            0
+          ],
+          [
+            77,
+            3
+          ],
+          [
+            78,
+            0
+          ],
+          [
+            79,
+            1
+          ],
+          [
+            81,
+            1
+          ],
+          [
+            82,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            87,
+            2
+          ],
+          [
+            89,
+            3
+          ],
+          [
+            90,
+            2
+          ],
+          [
+            91,
+            3
+          ],
+          [
+            92,
+            2
+          ],
+          [
+            93,
+            1
+          ],
+          [
+            94,
+            2
+          ],
+          [
+            95,
+            1
+          ],
+          [
+            96,
+            1
+          ],
+          [
+            97,
+            2
+          ],
+          [
+            99,
+            3
+          ]
+        ],
+        "search_candidates": 773,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          6,
+          7,
+          7,
+          5
+        ],
+        "class_histogram": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.0484037231385c809a50",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.0484037231385c809a50",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "spectral_bilinear",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,2}; learned 100-cell truth table",
+        "positions": [
+          0,
+          2
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_2",
+        "table": [
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          2,
+          0,
+          2,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        "table_sha256": "f1cba326f50bb669ee4608d740b9a2abd408c74704ff4c3e2a33865bfe813048",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 3,
+          "partition_entropy_bits": 1.58481870497303,
+          "horizontal_transitions": 53,
+          "vertical_transitions": 43,
+          "partition_stability_train_halves": 0.5632
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "((1-b) xor 2)",
+        "expression_ast": [
+          "binary",
+          "xor",
+          [
+            "binary",
+            "sub",
+            [
+              "const",
+              1
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            2
+          ]
+        ],
+        "class_mapping": [
+          0,
+          2,
+          1
+        ],
+        "table_sha256": "f1cba326f50bb669ee4608d740b9a2abd408c74704ff4c3e2a33865bfe813048",
+        "train_pair_errors": 26,
+        "unseen_pair_errors": 15,
+        "whole_table_errors": 41,
+        "raw_table_bits": 200,
+        "formula_bits": 60,
+        "residual_patch_bits": 369,
+        "compressed_bits": 429,
+        "compression_ratio": 2.145,
+        "patches": [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            20,
+            2
+          ],
+          [
+            22,
+            2
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            24,
+            0
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            27,
+            0
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            33,
+            0
+          ],
+          [
+            34,
+            2
+          ],
+          [
+            43,
+            0
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            50,
+            1
+          ],
+          [
+            52,
+            1
+          ],
+          [
+            55,
+            1
+          ],
+          [
+            57,
+            1
+          ],
+          [
+            63,
+            0
+          ],
+          [
+            64,
+            2
+          ],
+          [
+            73,
+            0
+          ],
+          [
+            80,
+            2
+          ],
+          [
+            82,
+            2
+          ],
+          [
+            83,
+            2
+          ],
+          [
+            84,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            87,
+            0
+          ],
+          [
+            88,
+            0
+          ],
+          [
+            89,
+            2
+          ],
+          [
+            90,
+            2
+          ],
+          [
+            92,
+            2
+          ],
+          [
+            93,
+            2
+          ],
+          [
+            94,
+            0
+          ],
+          [
+            95,
+            0
+          ],
+          [
+            97,
+            0
+          ],
+          [
+            98,
+            0
+          ],
+          [
+            99,
+            2
+          ]
+        ],
+        "search_candidates": 870,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          2,
+          2,
+          3
+        ],
+        "class_histogram": [
+          34,
+          33,
+          33
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.edee029bd8eb19190fb0",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.edee029bd8eb19190fb0",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "spectral_bilinear",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,3}; learned 100-cell truth table",
+        "positions": [
+          0,
+          2
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_3",
+        "table": [
+          0,
+          2,
+          0,
+          0,
+          3,
+          3,
+          1,
+          3,
+          3,
+          0,
+          1,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          3,
+          1,
+          3,
+          3,
+          1,
+          0,
+          2,
+          0,
+          0,
+          3,
+          0,
+          2,
+          0,
+          0,
+          2,
+          3,
+          1,
+          3,
+          3,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          3,
+          1,
+          3,
+          3,
+          0,
+          1,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          0,
+          0,
+          2,
+          3,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2,
+          3,
+          0,
+          3,
+          1,
+          3,
+          3,
+          1,
+          0,
+          2,
+          0,
+          0,
+          3,
+          3,
+          1,
+          3,
+          3,
+          1,
+          0,
+          2,
+          0,
+          0,
+          3
+        ],
+        "table_sha256": "6bb37ff0d7b859ec710b5272306696dd760a5f4c9fab4041d5cdfbd6b4c68373",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 4,
+          "partition_entropy_bits": 2.0,
+          "horizontal_transitions": 68,
+          "vertical_transitions": 53,
+          "partition_stability_train_halves": 0.6348
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "min(5,abs(3-b))",
+        "expression_ast": [
+          "binary",
+          "min",
+          [
+            "const",
+            5
+          ],
+          [
+            "binary",
+            "absdiff",
+            [
+              "const",
+              3
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "class_mapping": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "table_sha256": "6bb37ff0d7b859ec710b5272306696dd760a5f4c9fab4041d5cdfbd6b4c68373",
+        "train_pair_errors": 38,
+        "unseen_pair_errors": 23,
+        "whole_table_errors": 61,
+        "raw_table_bits": 200,
+        "formula_bits": 62,
+        "residual_patch_bits": 549,
+        "compressed_bits": 611,
+        "compression_ratio": 3.055,
+        "patches": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            18,
+            2
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            20,
+            3
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            22,
+            3
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            26,
+            2
+          ],
+          [
+            27,
+            0
+          ],
+          [
+            29,
+            3
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            33,
+            0
+          ],
+          [
+            34,
+            2
+          ],
+          [
+            35,
+            3
+          ],
+          [
+            38,
+            3
+          ],
+          [
+            40,
+            0
+          ],
+          [
+            43,
+            0
+          ],
+          [
+            44,
+            2
+          ],
+          [
+            45,
+            3
+          ],
+          [
+            48,
+            3
+          ],
+          [
+            52,
+            1
+          ],
+          [
+            53,
+            1
+          ],
+          [
+            54,
+            2
+          ],
+          [
+            57,
+            2
+          ],
+          [
+            58,
+            2
+          ],
+          [
+            59,
+            1
+          ],
+          [
+            63,
+            0
+          ],
+          [
+            64,
+            2
+          ],
+          [
+            65,
+            3
+          ],
+          [
+            67,
+            2
+          ],
+          [
+            68,
+            3
+          ],
+          [
+            72,
+            1
+          ],
+          [
+            73,
+            1
+          ],
+          [
+            74,
+            2
+          ],
+          [
+            77,
+            2
+          ],
+          [
+            78,
+            3
+          ],
+          [
+            80,
+            3
+          ],
+          [
+            81,
+            1
+          ],
+          [
+            82,
+            3
+          ],
+          [
+            84,
+            1
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            86,
+            2
+          ],
+          [
+            87,
+            0
+          ],
+          [
+            89,
+            3
+          ],
+          [
+            90,
+            3
+          ],
+          [
+            91,
+            1
+          ],
+          [
+            92,
+            3
+          ],
+          [
+            94,
+            1
+          ],
+          [
+            95,
+            0
+          ],
+          [
+            96,
+            2
+          ],
+          [
+            97,
+            0
+          ],
+          [
+            99,
+            3
+          ]
+        ],
+        "search_candidates": 788,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          3,
+          3,
+          4,
+          3
+        ],
+        "class_histogram": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.6a81a75888bc3b034440",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.6a81a75888bc3b034440",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "local_diffusion",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,2}; learned 100-cell truth table",
+        "positions": [
+          0,
+          2
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_2",
+        "table": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          0,
+          2,
+          2,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          0,
+          2,
+          0,
+          1,
+          2,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          1,
+          2,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "table_sha256": "c2e3222faa79e64da2f9fa93054e20020f7a6957193d35bc4272dd1c610a8b90",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 3,
+          "partition_entropy_bits": 1.58481870497303,
+          "horizontal_transitions": 49,
+          "vertical_transitions": 58,
+          "partition_stability_train_halves": 0.6444
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "abs((3 xor a)-5)",
+        "expression_ast": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "xor",
+            [
+              "const",
+              3
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "class_mapping": [
+          2,
+          1,
+          0
+        ],
+        "table_sha256": "c2e3222faa79e64da2f9fa93054e20020f7a6957193d35bc4272dd1c610a8b90",
+        "train_pair_errors": 31,
+        "unseen_pair_errors": 21,
+        "whole_table_errors": 52,
+        "raw_table_bits": 200,
+        "formula_bits": 60,
+        "residual_patch_bits": 468,
+        "compressed_bits": 528,
+        "compression_ratio": 2.64,
+        "patches": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            15,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            26,
+            2
+          ],
+          [
+            27,
+            0
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            31,
+            2
+          ],
+          [
+            38,
+            1
+          ],
+          [
+            41,
+            2
+          ],
+          [
+            42,
+            1
+          ],
+          [
+            47,
+            2
+          ],
+          [
+            48,
+            2
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            52,
+            2
+          ],
+          [
+            53,
+            2
+          ],
+          [
+            57,
+            0
+          ],
+          [
+            58,
+            2
+          ],
+          [
+            59,
+            0
+          ],
+          [
+            60,
+            0
+          ],
+          [
+            61,
+            0
+          ],
+          [
+            69,
+            0
+          ],
+          [
+            70,
+            2
+          ],
+          [
+            76,
+            0
+          ],
+          [
+            78,
+            2
+          ],
+          [
+            81,
+            0
+          ],
+          [
+            82,
+            1
+          ],
+          [
+            83,
+            1
+          ],
+          [
+            84,
+            0
+          ],
+          [
+            85,
+            0
+          ],
+          [
+            86,
+            0
+          ],
+          [
+            87,
+            1
+          ],
+          [
+            90,
+            2
+          ],
+          [
+            91,
+            1
+          ],
+          [
+            92,
+            2
+          ],
+          [
+            93,
+            2
+          ],
+          [
+            94,
+            1
+          ],
+          [
+            95,
+            1
+          ],
+          [
+            99,
+            2
+          ]
+        ],
+        "search_candidates": 1025,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          6,
+          5,
+          6
+        ],
+        "class_histogram": [
+          34,
+          33,
+          33
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    },
+    {
+      "operator_id": "pl5.primitive.7eca2542733b3aa8f910",
+      "uacp": {
+        "uacp_version": "v1",
+        "id": "pl5.primitive.7eca2542733b3aa8f910",
+        "version": "2.9.0",
+        "kind": "learned_finite_binary_operation",
+        "family": "local_diffusion",
+        "meaning": "f:{0,...,9}×{0,...,9}→{0,...,3}; learned 100-cell truth table",
+        "positions": [
+          0,
+          2
+        ],
+        "inputs": [
+          "integer_digit_0_to_9",
+          "integer_digit_0_to_9"
+        ],
+        "output": "categorical_digit_0_to_3",
+        "table": [
+          0,
+          0,
+          2,
+          1,
+          3,
+          3,
+          1,
+          3,
+          3,
+          0,
+          3,
+          2,
+          2,
+          0,
+          1,
+          2,
+          2,
+          1,
+          3,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          1,
+          3,
+          3,
+          1,
+          2,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          3,
+          0,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          2,
+          3,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          1,
+          0,
+          1,
+          0,
+          3
+        ],
+        "table_sha256": "f4fc83a8147c7f074b92f3ab0ffd9d894415eb0567a1783a15f832658e46ba8e",
+        "train_fingerprint": "77cf87472b540669934932747cd1037997d07241a4fd314f5ad7b2c1470c8e3c",
+        "properties": {
+          "symmetric": false,
+          "occupied_output_classes": 4,
+          "partition_entropy_bits": 2.0,
+          "horizontal_transitions": 59,
+          "vertical_transitions": 66,
+          "partition_stability_train_halves": 0.6764
+        },
+        "dependencies": [
+          "training_only_pair_counts",
+          "numpy_svd_or_diffusion"
+        ],
+        "execution": "frozen_safe_lookup_no_eval",
+        "status": "research_only",
+        "escalation": "requires independent prospective evidence and human approval",
+        "predictive_advantage": "unverified"
+      },
+      "symbolic": {
+        "status": "raw_table_preferred",
+        "formula": "abs((a*b)-9)",
+        "expression_ast": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            9
+          ]
+        ],
+        "class_mapping": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "table_sha256": "f4fc83a8147c7f074b92f3ab0ffd9d894415eb0567a1783a15f832658e46ba8e",
+        "train_pair_errors": 40,
+        "unseen_pair_errors": 23,
+        "whole_table_errors": 63,
+        "raw_table_bits": 200,
+        "formula_bits": 62,
+        "residual_patch_bits": 567,
+        "compressed_bits": 629,
+        "compression_ratio": 3.145,
+        "patches": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            9,
+            0
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            14,
+            1
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            20,
+            2
+          ],
+          [
+            21,
+            1
+          ],
+          [
+            22,
+            1
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            26,
+            3
+          ],
+          [
+            27,
+            1
+          ],
+          [
+            28,
+            2
+          ],
+          [
+            30,
+            1
+          ],
+          [
+            31,
+            2
+          ],
+          [
+            33,
+            0
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            37,
+            0
+          ],
+          [
+            38,
+            2
+          ],
+          [
+            39,
+            0
+          ],
+          [
+            40,
+            0
+          ],
+          [
+            41,
+            2
+          ],
+          [
+            42,
+            1
+          ],
+          [
+            47,
+            2
+          ],
+          [
+            48,
+            2
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            51,
+            1
+          ],
+          [
+            53,
+            3
+          ],
+          [
+            54,
+            1
+          ],
+          [
+            56,
+            1
+          ],
+          [
+            58,
+            3
+          ],
+          [
+            59,
+            0
+          ],
+          [
+            60,
+            0
+          ],
+          [
+            62,
+            3
+          ],
+          [
+            64,
+            2
+          ],
+          [
+            66,
+            3
+          ],
+          [
+            68,
+            3
+          ],
+          [
+            69,
+            0
+          ],
+          [
+            71,
+            2
+          ],
+          [
+            72,
+            2
+          ],
+          [
+            73,
+            1
+          ],
+          [
+            74,
+            1
+          ],
+          [
+            76,
+            1
+          ],
+          [
+            77,
+            1
+          ],
+          [
+            78,
+            3
+          ],
+          [
+            79,
+            2
+          ],
+          [
+            81,
+            1
+          ],
+          [
+            82,
+            2
+          ],
+          [
+            83,
+            2
+          ],
+          [
+            87,
+            2
+          ],
+          [
+            88,
+            2
+          ],
+          [
+            89,
+            3
+          ],
+          [
+            93,
+            3
+          ],
+          [
+            94,
+            2
+          ],
+          [
+            95,
+            1
+          ],
+          [
+            96,
+            0
+          ],
+          [
+            99,
+            3
+          ]
+        ],
+        "search_candidates": 726,
+        "input_pairs_train": 70,
+        "input_pairs_unseen": 30,
+        "limits": "符号近似不等于真值表可替换；原始100格查表保留为唯一执行语义",
+        "predictive_advantage": "NOT_ESTABLISHED",
+        "grammar_version": "v30-symbolic-integer-grammar-1"
+      },
+      "equivalence_confirmed": false,
+      "table_structure": {
+        "symmetric": false,
+        "simultaneous_shift_invariant": false,
+        "class_95pct_energy_ranks": [
+          5,
+          5,
+          6,
+          5
+        ],
+        "class_histogram": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "meaning": "按符号分别计算指示矩阵的SVD，95%能量秩只是结构复杂度，不是预测信息"
+      },
+      "research_only": true
+    }
+  ],
+  "v29_rejections": [],
+  "exact_symbolic_count": 0,
+  "no_false_promotion": true,
+  "limitations": [
+    "不能从任意100格随机表提炼简短公式，可能正确拒绝压缩",
+    "公式对输入数字对的等价性不代表对未来开奖号码可预测",
+    "保留期未参与本次符号搜索；本模块不消耗它们来声称中奖优势"
+  ],
+  "source": "合成独立均匀数据"
+}

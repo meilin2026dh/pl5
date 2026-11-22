@@ -1,0 +1,66 @@
+{
+  "schema": "pl5-v3719-release-manifest-1",
+  "baseline_archive": "PL5_V3718_CI_Fix_Full.zip",
+  "baseline_zip_sha256": "3f150a72bcce8d66de3a1b2620f0e181b62f818936662d0e2e189718e1782d08",
+  "baseline_file_count": 2592,
+  "baseline_exact_preserved_count": 2590,
+  "changed_baseline_paths": [
+    "README.md",
+    "research_backend/pyproject.toml"
+  ],
+  "new_paths": [
+    "README_V3719.md",
+    "research_backend/pailie5/research_validation_v3719.py",
+    "research_backend/research_v3719.py",
+    "research_backend/tests/test_research_validation_v3719.py",
+    "docs/v3719/REPORT.md",
+    "runs/v3719/synthetic_audit.json",
+    "runs/v3719_integration_pytest.txt",
+    "runs/v3719_targeted_pytest.txt"
+  ],
+  "file_sha256_changed_and_new": {
+    "README.md": {
+      "sha256": "5043ae06246d93947b8cc7918de4f2eb4919ada4de2a43ef9d08e420b999fbcd",
+      "size": 747
+    },
+    "research_backend/pyproject.toml": {
+      "sha256": "b14b387392e739a4bc2269f0928c0701b752120f26f4bec827edade2eb19c178",
+      "size": 919
+    },
+    "README_V3719.md": {
+      "sha256": "440b87d842dd88bbbe5f0a64a14f2093e84b2ffc36ed9420dbf861620a24bea4",
+      "size": 3182
+    },
+    "research_backend/pailie5/research_validation_v3719.py": {
+      "sha256": "8539e5d0d88f71bb63f8710caf2ae4c05b57d7dcb50034f2ae2b888894ee17fe",
+      "size": 12560
+    },
+    "research_backend/research_v3719.py": {
+      "sha256": "1f37e902fcb5729fa470f90ce6d1929f6901c03afbdd9a0b22899199485ed71f",
+      "size": 2634
+    },
+    "research_backend/tests/test_research_validation_v3719.py": {
+      "sha256": "6739d5c6576e1f769c478fad463eae50dd4f094e3c350bca06ef93873043b70e",
+      "size": 5135
+    },
+    "docs/v3719/REPORT.md": {
+      "sha256": "b1aa0fbc62c65cdf6b1bf983906fafd2d0b37e8158d5c439f783975a9f05503c",
+      "size": 2973
+    },
+    "runs/v3719/synthetic_audit.json": {
+      "sha256": "59ba60af7f82dea241f084b1559117ff73d343c38209bfbf84d93cc13128be71",
+      "size": 21970
+    },
+    "runs/v3719_integration_pytest.txt": {
+      "sha256": "e2bf38e9dfa16a4def616a6859bcf79d1616bbad321c290a019e0708fb7bda81",
+      "size": 99
+    },
+    "runs/v3719_targeted_pytest.txt": {
+      "sha256": "a212a454e279bea3404c89813708619245969bc553a3233d54bcac6862013bb2",
+      "size": 99
+    }
+  },
+  "full_archive_file_count": 2601,
+  "research_status": "RETROSPECTIVE_ONLY_NOT_PREDICTIVE",
+  "no_windows_local_deployment_claim": true
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "pl5-v374-predeclared-cycle-1",
+  "cycle_number": 4,
+  "case": "iid_a",
+  "seed": 41437,
+  "budget": 500,
+  "question": "Does the agent incorrectly fit a random independent table?",
+  "hypothesis": "Candidate structure may transfer, but only to a fresh task; do not reuse this test split.",
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "policies": [
+    "full",
+    "no_warm",
+    "selective",
+    "grammar_only"
+  ],
+  "test_labels_hidden_from_fit": true,
+  "adaptive_task_selection": true,
+  "confirmatory_pvalue_permitted": false,
+  "research_only": true,
+  "production_enabled": false
+}

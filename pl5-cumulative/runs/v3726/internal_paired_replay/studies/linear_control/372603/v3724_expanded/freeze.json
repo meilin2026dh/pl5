@@ -1,0 +1,85 @@
+{
+  "distinct_survivors": 1,
+  "fit_sha256": "b42e8e2fa74d4683216c73b17c9ea1a9b3a2f4e379b8b96984734b9a0b97c47e",
+  "integrity_sha256": "5eca4e94c208986f4b785b778e5b8f18a47dcfbea13a7dc3363552f4778924de",
+  "reason": null,
+  "schema": "pl5-v3724-compositional-grammar-1:freeze",
+  "selected": {
+    "spec": {
+      "feature": "sum_mod10",
+      "grammar": "unary_affine",
+      "scale": 1,
+      "shift": 3
+    },
+    "table_sha256": "f9165a181039b279ce0b7c684e42ab9f4db5c0632c13009716db6574963f61c0"
+  },
+  "status": "FROZEN",
+  "test_labels_seen": false,
+  "validation_pairs": [
+    [
+      0,
+      4
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "validation_sha256": "47cbbbc5a55747d2f9a107458d3364139f90f21c73252cb07971526a0dfa75db"
+}

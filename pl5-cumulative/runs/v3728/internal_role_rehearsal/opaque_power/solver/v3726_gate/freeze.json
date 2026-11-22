@@ -1,0 +1,77 @@
+{
+  "fit_sha256": "dce5c34c95d1e1655a5d880936dcfdfc741245c72780bdfe733a263c0cf2f9da",
+  "holdout_seen": false,
+  "integrity_sha256": "f56fc9bcd9655ff4e9effe792cf7addfb94de1f6b3571369122e13869f5ce79e",
+  "reason": "no_candidate",
+  "schema": "pl5-v3726-gate-grammar-1:freeze",
+  "selected": null,
+  "status": "ABSTAIN",
+  "survivors": 0,
+  "validation_pairs": [
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "validation_sha256": "ac7213323c9b5ad2ec8ad59497bc23b344c4991f8f0209a4f30dce776aaee7ca"
+}

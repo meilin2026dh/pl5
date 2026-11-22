@@ -1,0 +1,57 @@
+{
+  "abstention_allowed": true,
+  "arms": [
+    "baseline",
+    "expanded"
+  ],
+  "binary_operations": [
+    "add",
+    "sub",
+    "mul",
+    "xor"
+  ],
+  "cases": [
+    "product_plus_a",
+    "xor_plus_b",
+    "gcd_plus_absdiff",
+    "xor_plus_absdiff",
+    "unary_control",
+    "random_null",
+    "cubic_interaction_negative",
+    "piecewise_negative"
+  ],
+  "evaluation_grade": "INTERNAL_SYNTHETIC",
+  "evaluations_per_arm": 2200,
+  "feature_order": [
+    "a",
+    "b",
+    "product_mod10",
+    "xor_mod10",
+    "gcd",
+    "absdiff_mod10",
+    "min",
+    "max",
+    "sum_mod10",
+    "difference_mod10"
+  ],
+  "holdout_selection_prohibited": true,
+  "hypothesis": "two-feature extension improves coverage over unary polynomial grammar at equal table evaluations",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "null_baselines_expected_to_abstain": true,
+  "schema": "pl5-v3724-compositional-grammar-1:protocol",
+  "seeds": [
+    372401,
+    372402,
+    372403,
+    372404,
+    372405,
+    372406
+  ],
+  "source_discovery_and_runtime_not_matched": true,
+  "splits": {
+    "holdout": 36,
+    "train": 48,
+    "validation": 16
+  },
+  "training_selected": true
+}

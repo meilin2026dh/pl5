@@ -1,0 +1,16 @@
+{
+  "evidence_grade": "EXPLORATORY_SYNTHETIC_ONLY",
+  "freeze_integrity_sha256": "4a10b266bc1049551152602ec544680e5fcdb593545bdc5509ecc5d0a5642fc5",
+  "holdout_accuracy": 1.0,
+  "holdout_count": 20,
+  "holdout_counterexamples": [],
+  "holdout_errors": 0,
+  "holdout_sha256": "a484591e7e329c0a4fec790bec559865263cfd6e4f25a136966e2c99ea24faf2",
+  "integrity_sha256": "67a3c39d4e34c3a4a0bf6628bf23b0cd9ee563b17cfd309117c76ac034bb0267",
+  "lottery_prediction_test": false,
+  "operator_id": "0d551e9c7f5e9dcb07ca26751d3fcdc7baf37c984b375ba10796a3562ba8f83c",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3720-three-gate-math-research-1:evaluation",
+  "selection_changed_after_holdout": false
+}

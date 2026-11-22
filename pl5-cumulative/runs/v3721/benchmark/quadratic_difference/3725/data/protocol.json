@@ -1,0 +1,13 @@
+{
+  "case": "quadratic_difference",
+  "external_blind": false,
+  "integrity_sha256": "db0bab4a3dd94b340a392bf6ff538597aa51c4df6996d568e4c9a1500c026456",
+  "lottery_prediction_test": false,
+  "partition": "60/20/20, coordinate-disjoint",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3721-counterexample-meta-1:synthetic",
+  "seed": 3725,
+  "source": "synthetic, constructed in same codebase as the learner",
+  "truth_sha256": "253a5ce7a02597cb77823afd620c115cc2800ce8539dbe4953c3cbbd7482f389"
+}

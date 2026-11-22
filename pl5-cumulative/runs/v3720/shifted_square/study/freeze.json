@@ -1,0 +1,407 @@
+{
+  "integrity_sha256": "963e9f3369cbac0accd9607c450b3b8404f479755d86ce01cb8a924bedea9320",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_integrity_sha256": "69a79e0fadf23c360954edf247597408edc04266ac6e960c9b4366a38ca5585f",
+  "schema": "pl5-v3720-three-gate-math-research-1:freeze",
+  "selected": {
+    "name": "invention_01",
+    "nodes": 7,
+    "operator_id": "552a456520edf1b1a9010c7292acc5dc2259070e94c2f4008750098afae28d8b",
+    "source_path": "operators/invention_01.json",
+    "validation_errors": 12
+  },
+  "selection_used": "validation_only_after_training_frozen",
+  "test_labels_used": false,
+  "train_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "f726da4f9a3de578817c7b45753bbb29612208803bc2965dc2abffd56d5d5845",
+  "validation_pairs": [
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      9
+    ]
+  ],
+  "validation_results": [
+    {
+      "name": "invention_01",
+      "nodes": 7,
+      "operator_id": "552a456520edf1b1a9010c7292acc5dc2259070e94c2f4008750098afae28d8b",
+      "source_path": "operators/invention_01.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "invention_02",
+      "nodes": 13,
+      "operator_id": "4dd3462bea3261ad3d464e71785e8f7fa432a60428f60003a81b5d3f07cd6f1c",
+      "source_path": "operators/invention_02.json",
+      "validation_errors": 12
+    },
+    {
+      "name": "invention_03",
+      "nodes": 7,
+      "operator_id": "35f9810093bcd84a7e434d2a7047a52ed664b32bf9675b00ab31dac84ed7a6b6",
+      "source_path": "operators/invention_03.json",
+      "validation_errors": 13
+    },
+    {
+      "name": "invention_07",
+      "nodes": 7,
+      "operator_id": "740ccc820279dc21e4a024896f89c7d7dbfd0ad2b191705aa53c8ec6e862f46f",
+      "source_path": "operators/invention_07.json",
+      "validation_errors": 13
+    },
+    {
+      "name": "invention_06",
+      "nodes": 13,
+      "operator_id": "5d38e5192a3752b54e9fdba643998ea55eb52d2983298defc02156f5c48f034d",
+      "source_path": "operators/invention_06.json",
+      "validation_errors": 13
+    },
+    {
+      "name": "invention_04",
+      "nodes": 11,
+      "operator_id": "8e79b1c8232d7e6204422a6fe8ba9d8c8fbfa7841bc2e4a720fa4701b39380fe",
+      "source_path": "operators/invention_04.json",
+      "validation_errors": 14
+    },
+    {
+      "name": "repaired",
+      "nodes": 5,
+      "operator_id": "cca83278623538b29a6f0646e1644f22456b9482b80c1d4772d4b0d70286078a",
+      "source_path": "operators/repaired.json",
+      "validation_errors": 15
+    },
+    {
+      "name": "baseline",
+      "nodes": 9,
+      "operator_id": "1e3b6475bfa774f3e915d1189ca3da1a5a41583a2697c7e14c792e16fbd84cd4",
+      "source_path": "operators/baseline.json",
+      "validation_errors": 15
+    },
+    {
+      "name": "invention_05",
+      "nodes": 11,
+      "operator_id": "09828a15b59e397bc795b9ac5b4236fff3024d0cf26ae21c7c286a8409a23142",
+      "source_path": "operators/invention_05.json",
+      "validation_errors": 16
+    }
+  ],
+  "validation_sha256": "9ca3f7e477f07b323f9e282a081510d554b11924782544f87e749dd694e34d87"
+}

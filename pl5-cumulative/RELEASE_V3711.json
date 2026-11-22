@@ -1,0 +1,10 @@
+{
+  "application_pyproject_version_unchanged": "3.7.6",
+  "base_archive": "PL5_V3710_Full.zip",
+  "base_archive_sha256": "7f0e8a38237acde6a2576e6a757b8709565d44bf13ea83e65baf1c1485a7f682",
+  "production_enabled": false,
+  "release": "PL5 V3.7.11 research preview",
+  "research_module": "cross-task structure transfer + training noise diagnosis + observed labeled drift",
+  "source_release_required_for_patch": "PL5_V3710_Full.zip",
+  "validation": "789 backend + 29 integration tests passed"
+}

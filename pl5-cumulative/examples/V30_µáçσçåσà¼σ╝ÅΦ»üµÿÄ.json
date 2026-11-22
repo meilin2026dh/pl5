@@ -1,0 +1,40 @@
+{
+  "version": "v30",
+  "synthetic_known_operator": "(a+b)%3",
+  "symbolic": {
+    "status": "exact_symbolic",
+    "formula": "(a+b) (mod 3)",
+    "expression_ast": [
+      "binary",
+      "add",
+      [
+        "a"
+      ],
+      [
+        "b"
+      ]
+    ],
+    "class_mapping": [
+      0,
+      1,
+      2
+    ],
+    "table_sha256": "96c3583e7d3b4ee21f761afcaf2a6bdfbeb0621b25c4904bd886619a61a53d21",
+    "train_pair_errors": 0,
+    "unseen_pair_errors": 0,
+    "whole_table_errors": 0,
+    "raw_table_bits": 200,
+    "formula_bits": 44,
+    "residual_patch_bits": 0,
+    "compressed_bits": 44,
+    "compression_ratio": 0.22,
+    "patches": [],
+    "search_candidates": 927,
+    "input_pairs_train": 70,
+    "input_pairs_unseen": 30,
+    "limits": "公式是有限域描述证书；即使100格全等，也不包含对未来开奖的预测证据",
+    "predictive_advantage": "NOT_ESTABLISHED",
+    "grammar_version": "v30-symbolic-integer-grammar-1"
+  },
+  "certified": true
+}

@@ -1,0 +1,258 @@
+{
+  "candidate_evaluations": 4,
+  "evidence_grade": "INTERNAL_SYNTHETIC_EXTERNAL_CHALLENGE_INTERFACE_ONLY",
+  "exact_fit_tables": [
+    {
+      "spec": {
+        "coefficients": [
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
+        "features": [
+          "constant",
+          "a",
+          "b",
+          "a_cubed",
+          "b_cubed"
+        ],
+        "stage": "polynomial_degree3",
+        "syntax": "mod10_sparse_basis"
+      },
+      "table_sha256": "55ae9fff88c01e58a8b492dec00f74de25972704a453061597c4abbd00ac8332"
+    }
+  ],
+  "fit_wall_ns": 9673354,
+  "holdout_commitment": "a54db21362647762163881ea9ef082330204c5b6bfe16ac99fc1da2a5fe2c246",
+  "integrity_sha256": "05eb1b2204be8356aa30a1d94dc0f3b847947d26df297ff8f4be6105adb8d569",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "protocol_sha256": "3ec4a886e9c36d7888ac893c9590961d488e479a90d39c9cd0905192a9db5ef3",
+  "schema": "pl5-v3725-ring-grammar-1:fit",
+  "stage_trace": [
+    {
+      "attempted": true,
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "stage": "original_primitives"
+    },
+    {
+      "attempted": true,
+      "basis_columns": 19,
+      "exact_train_fit": true,
+      "stage": "polynomial_degree3",
+      "terms": 5
+    },
+    {
+      "attempted": true,
+      "basis_columns": 24,
+      "exact_train_fit": true,
+      "stage": "piecewise_gate",
+      "terms": 5
+    },
+    {
+      "attempted": true,
+      "basis_columns": 29,
+      "exact_train_fit": true,
+      "stage": "parity_gate",
+      "terms": 5
+    }
+  ],
+  "train_pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "training_only": true,
+  "training_sha256": "6f7be7cf07244b982ac2b1d0f1611174ba3193279da7eae0afa692f7329644fd"
+}

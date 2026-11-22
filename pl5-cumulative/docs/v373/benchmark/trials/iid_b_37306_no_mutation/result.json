@@ -1,0 +1,671 @@
+{
+  "trial_id": "iid_b_37306_no_mutation",
+  "case": "iid_b",
+  "task_group": "iid_control",
+  "seed": 37306,
+  "arm": "no_mutation",
+  "training_correct": 16,
+  "training_n": 60,
+  "holdout_correct": 3,
+  "holdout_n": 40,
+  "exact_reconstruction": false,
+  "nodes": 7,
+  "evaluations": 2500,
+  "proposals": 3843,
+  "budget_matched": true,
+  "winning_origin": "crossover",
+  "fit_seconds": 0.16937029399997527,
+  "operator_path": "trials/iid_b_37306_no_mutation/operator.json",
+  "fit": {
+    "budget_matched": true,
+    "budget_unit": "distinct_normalized_AST_interpreter_calls_including_arithmetic_failures",
+    "config": {
+      "batch_size": 32,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "evaluation_budget": 2500,
+      "max_depth": 6,
+      "max_nodes": 11,
+      "pool_size": 32,
+      "proposal_factor": 100,
+      "seed": 37306
+    },
+    "distinct_integer_behaviors": 1247,
+    "evaluation_counts": {
+      "bootstrap": 337,
+      "crossover": 359,
+      "grammar_composition": 408,
+      "guided": 421,
+      "random_grammar": 970,
+      "safe_baseline": 1,
+      "warm_start": 4
+    },
+    "evaluations": 2500,
+    "first_exact_evaluation": null,
+    "mechanisms": {
+      "complexity": true,
+      "crossover": true,
+      "guided": true,
+      "mutation": false,
+      "warm_start": true
+    },
+    "operator": {
+      "description": "absdiff((a+a),less(0,b)) mod 10",
+      "expression": [
+        "binary",
+        "absdiff",
+        [
+          "binary",
+          "add",
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        [
+          "binary",
+          "less",
+          [
+            "const",
+            0
+          ],
+          [
+            "b"
+          ]
+        ]
+      ],
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "operator_id": "0dd669ba5c69da50f859c4b232afbbcb4f5ea04eff34dbcd0d7e67a31900051a",
+      "predictive_advantage": "NOT_ESTABLISHED",
+      "production_enabled": false,
+      "source_data_sha256": "6f6642460fa3cfcb3a63e6d1add348b434c4a455740c41f242bf8ad88bb99696",
+      "source_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ]
+      ]
+    },
+    "proposal_counts": {
+      "bootstrap": 670,
+      "crossover": 674,
+      "grammar_composition": 472,
+      "guided": 674,
+      "random_grammar": 1348,
+      "safe_baseline": 1,
+      "warm_start": 4
+    },
+    "proposals": 3843,
+    "rejected_counts": {
+      "bounds_or_shape": 231,
+      "duplicate_AST": 1112
+    },
+    "replacement_policy": "disabled_slots_use_target_independent_random_grammar",
+    "selection_used": "training_cells_only",
+    "trace": [
+      {
+        "errors": 46,
+        "evaluations": 750,
+        "expression": [
+          "binary",
+          "xor",
+          [
+            "a"
+          ],
+          [
+            "const",
+            1
+          ]
+        ],
+        "nodes": 3,
+        "origin": "bootstrap",
+        "proposals": 1147,
+        "stage": "bootstrap"
+      },
+      {
+        "errors": 45,
+        "evaluations": 1006,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              1
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 1505,
+        "stage": "search"
+      },
+      {
+        "errors": 45,
+        "evaluations": 1262,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              1
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 1895,
+        "stage": "search"
+      },
+      {
+        "errors": 45,
+        "evaluations": 1518,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              1
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 2272,
+        "stage": "search"
+      },
+      {
+        "errors": 44,
+        "evaluations": 1774,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "binary",
+              "absdiff",
+              [
+                "binary",
+                "less",
+                [
+                  "a"
+                ],
+                [
+                  "const",
+                  3
+                ]
+              ],
+              [
+                "const",
+                0
+              ]
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 11,
+        "origin": "crossover",
+        "proposals": 2663,
+        "stage": "search"
+      },
+      {
+        "errors": 44,
+        "evaluations": 2030,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              0
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 3061,
+        "stage": "search"
+      },
+      {
+        "errors": 44,
+        "evaluations": 2286,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              0
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 3475,
+        "stage": "search"
+      },
+      {
+        "errors": 44,
+        "evaluations": 2500,
+        "expression": [
+          "binary",
+          "absdiff",
+          [
+            "binary",
+            "add",
+            [
+              "a"
+            ],
+            [
+              "a"
+            ]
+          ],
+          [
+            "binary",
+            "less",
+            [
+              "const",
+              0
+            ],
+            [
+              "b"
+            ]
+          ]
+        ],
+        "nodes": 7,
+        "origin": "crossover",
+        "proposals": 3843,
+        "stage": "final"
+      }
+    ],
+    "training_count": 60,
+    "training_errors": 44,
+    "wall_time_matched": false,
+    "winning_nodes": 7,
+    "winning_origin": "crossover"
+  },
+  "holdout": {
+    "operator_id": "0dd669ba5c69da50f859c4b232afbbcb4f5ea04eff34dbcd0d7e67a31900051a",
+    "data_sha256": "4097353c2beb71e939b56d44c7738dd6716949c2810b2b43bf6322b62357c027",
+    "errors": 37,
+    "count": 40,
+    "accuracy": 0.07499999999999996,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "0dd669ba5c69da50f859c4b232afbbcb4f5ea04eff34dbcd0d7e67a31900051a",
+    "candidate_table_sha256": "47d493f9b48449d1f52a30631523d803c726ebe10405945a4a051e5ee8d6e802",
+    "target_table_sha256": "c3f20ead43a8837dc5f3bd71f1be8a3b753b1fddc766c38333c9c9b205f3fe8e",
+    "exact_on_all_100_pairs": false,
+    "whole_table_errors": 81,
+    "first_mismatch": {
+      "a": 0,
+      "b": 0,
+      "predicted": 0,
+      "target": 6
+    },
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": false,
+      "commutativity_counterexample": [
+        0,
+        1
+      ],
+      "associative": false,
+      "associativity_counterexample": [
+        0,
+        1,
+        0
+      ],
+      "identities": [],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 7,
+    "depth": 3,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 75,
+      "formula_plus_exceptions_bits": 973,
+      "preferred": "raw_table",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "production_enabled": false
+}

@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_tiny_budget_keeps_safe_baseline_even_with_overflowing_warm_start _____
+
+    def test_tiny_budget_keeps_safe_baseline_even_with_overflowing_warm_start():
+        _, train, _ = example()
+        square = ('binary', 'mul', ('const', 9), ('const', 9))
+        fourth = ('binary', 'mul', square, square)
+        eighth = ('binary', 'mul', fourth, fourth)  # 15 nodes; exceeds legacy integer bound.
+>       result = m().fit(train, m().SearchConfig(max_evaluations=1, max_nodes=15, max_depth=8),
+                         warm_starts=(eighth,))
+
+tests/test_structure_search_v372.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pailie5/structure_search_v372.py:212: in fit
+    snapshot("bootstrap", 0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+stage = 'bootstrap', generation = 0
+
+    def snapshot(stage, generation):
+>       best = ranked()[0]
+               ^^^^^^^^^^^
+E       IndexError: list index out of range
+
+pailie5/structure_search_v372.py:197: IndexError
+=========================== short test summary info ============================
+FAILED tests/test_structure_search_v372.py::test_tiny_budget_keeps_safe_baseline_even_with_overflowing_warm_start - IndexError: list index out of range
+1 failed in 0.66s

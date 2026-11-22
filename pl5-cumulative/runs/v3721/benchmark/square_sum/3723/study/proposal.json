@@ -1,0 +1,2077 @@
+{
+  "baseline_training_errors": 34,
+  "candidates": [
+    {
+      "learned_meta": null,
+      "legacy_error_repairs": 0,
+      "legacy_repair_witnesses": [],
+      "name": "legacy_composition",
+      "operator_id": "de7c09c7c08e9424c064b951cbcf2587b21f6969519dc901b145411fb67e0fec",
+      "origin": "legacy-composition",
+      "path": "operators/legacy_composition.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9,
+          "got": 1
+        }
+      ],
+      "training_errors": 34
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          1,
+          0,
+          3
+        ],
+        "depth": 4,
+        "feature": "sum",
+        "nodes": 9,
+        "second_difference_mod10": 2,
+        "training_errors": 0,
+        "unary_lookup_mod10": [
+          3,
+          4,
+          7,
+          2,
+          9,
+          8,
+          9,
+          2,
+          7,
+          4
+        ]
+      },
+      "legacy_error_repairs": 34,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3
+        }
+      ],
+      "name": "meta_00",
+      "operator_id": "68d41c5e5022cfe11eb79983defee24daa84903628a36b5a1a731e42e87c5173",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_00.json",
+      "training_counterexamples": [],
+      "training_errors": 0
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          1,
+          5,
+          3
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 2,
+        "training_errors": 27,
+        "unary_lookup_mod10": [
+          3,
+          9,
+          7,
+          7,
+          9,
+          3,
+          9,
+          7,
+          7,
+          9
+        ]
+      },
+      "legacy_error_repairs": 19,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7
+        }
+      ],
+      "name": "meta_01",
+      "operator_id": "f3d1d465119471a276608d9ae3dfaf7471b8f470f0c7d14e2cdb1a77cfbfd77b",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_01.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 3
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 9
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 9
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "expected": 2,
+          "got": 7
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 4,
+          "got": 9
+        }
+      ],
+      "training_errors": 27
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          2,
+          3,
+          3
+        ],
+        "depth": 6,
+        "feature": "sum",
+        "nodes": 13,
+        "second_difference_mod10": 4,
+        "training_errors": 34,
+        "unary_lookup_mod10": [
+          3,
+          8,
+          7,
+          0,
+          7,
+          8,
+          3,
+          2,
+          5,
+          2
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 8
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "expected": 3
+        },
+        {
+          "a": 6,
+          "b": 9,
+          "expected": 8
+        },
+        {
+          "a": 7,
+          "b": 3,
+          "expected": 3
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "expected": 8
+        }
+      ],
+      "name": "meta_02",
+      "operator_id": "08eb3ced06be7c2f9d7028d77e06ae3c8237487b668025bf17a00ab42c4b3d54",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_02.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 0
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "expected": 9,
+          "got": 7
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 5
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 2
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "expected": 9,
+          "got": 7
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 9,
+          "got": 7
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 2
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 8
+        }
+      ],
+      "training_errors": 34
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          2,
+          9,
+          1
+        ],
+        "depth": 6,
+        "feature": "sum",
+        "nodes": 13,
+        "second_difference_mod10": 4,
+        "training_errors": 34,
+        "unary_lookup_mod10": [
+          1,
+          2,
+          7,
+          6,
+          9,
+          6,
+          7,
+          2,
+          1,
+          4
+        ]
+      },
+      "legacy_error_repairs": 0,
+      "legacy_repair_witnesses": [],
+      "name": "meta_03",
+      "operator_id": "5b40b417492647b990d0c9139899b7c069aa6bd7eb7f8cadd08acd9d4f4651e4",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_03.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 7
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 7
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 2
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9,
+          "got": 7
+        }
+      ],
+      "training_errors": 34
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          5,
+          2,
+          3
+        ],
+        "depth": 6,
+        "feature": "sum",
+        "nodes": 13,
+        "second_difference_mod10": 0,
+        "training_errors": 34,
+        "unary_lookup_mod10": [
+          3,
+          0,
+          7,
+          4,
+          1,
+          8,
+          5,
+          2,
+          9,
+          6
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 8
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "expected": 3
+        },
+        {
+          "a": 6,
+          "b": 9,
+          "expected": 8
+        },
+        {
+          "a": 7,
+          "b": 3,
+          "expected": 3
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "expected": 8
+        }
+      ],
+      "name": "meta_04",
+      "operator_id": "fd49eee3e07da8e6f1022f0b8a641202e71dae17dc19f979f3198adf22821261",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_04.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 0
+        }
+      ],
+      "training_errors": 34
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          3,
+          0,
+          1
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 6,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          1,
+          4,
+          3,
+          8,
+          9,
+          6,
+          9,
+          8,
+          3,
+          4
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 4
+        },
+        {
+          "a": 4,
+          "b": 2,
+          "expected": 9
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "expected": 4
+        },
+        {
+          "a": 5,
+          "b": 1,
+          "expected": 9
+        }
+      ],
+      "name": "meta_05",
+      "operator_id": "7e5e2ac38dcf4b867c7e46482312cf8105081602d1bd22e38bf1f55c12d50de4",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_05.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 3
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          3,
+          0,
+          5
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 6,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          5,
+          8,
+          7,
+          2,
+          3,
+          0,
+          3,
+          2,
+          7,
+          8
+        ]
+      },
+      "legacy_error_repairs": 10,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7
+        },
+        {
+          "a": 5,
+          "b": 3,
+          "expected": 7
+        },
+        {
+          "a": 7,
+          "b": 1,
+          "expected": 7
+        }
+      ],
+      "name": "meta_06",
+      "operator_id": "b978bc6024ae2d6889391259d8a2fe2b4e9523c890ac2519bcf443e415636726",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_06.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 4,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 8
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 9,
+          "got": 3
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 8
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 8
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9,
+          "got": 3
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          5,
+          0,
+          9
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 0,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          9,
+          4,
+          9,
+          4,
+          9,
+          4,
+          9,
+          4,
+          9,
+          4
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 4
+        },
+        {
+          "a": 4,
+          "b": 2,
+          "expected": 9
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "expected": 4
+        },
+        {
+          "a": 5,
+          "b": 1,
+          "expected": 9
+        }
+      ],
+      "name": "meta_07",
+      "operator_id": "a82597814be25f832d508ffef10cbef37f834522d47aab29d38b12f2ff0882f7",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_07.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 4
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 9
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          9,
+          0,
+          1
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 8,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          1,
+          0,
+          7,
+          2,
+          5,
+          6,
+          5,
+          2,
+          7,
+          0
+        ]
+      },
+      "legacy_error_repairs": 10,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7
+        },
+        {
+          "a": 5,
+          "b": 3,
+          "expected": 7
+        },
+        {
+          "a": 7,
+          "b": 1,
+          "expected": 7
+        }
+      ],
+      "name": "meta_08",
+      "operator_id": "6b20704cea3f083e21cde71cd054b5d74d9baf6778390447bfca02fbc0f1b9b3",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_08.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 4,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 0
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 9,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 0
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 0
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9,
+          "got": 5
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          9,
+          0,
+          5
+        ],
+        "depth": 5,
+        "feature": "sum",
+        "nodes": 11,
+        "second_difference_mod10": 8,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          5,
+          4,
+          1,
+          6,
+          9,
+          0,
+          9,
+          6,
+          1,
+          4
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "expected": 4
+        },
+        {
+          "a": 4,
+          "b": 2,
+          "expected": 9
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "expected": 4
+        },
+        {
+          "a": 5,
+          "b": 1,
+          "expected": 9
+        }
+      ],
+      "name": "meta_09",
+      "operator_id": "95a63eb803d5932508dc172164b5da8d0deb930d0efc39834eb5da54e56d3f45",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_09.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 0
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 5
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 7,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "expected": 2,
+          "got": 6
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 1
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          2,
+          1,
+          3
+        ],
+        "depth": 6,
+        "feature": "sum",
+        "nodes": 13,
+        "second_difference_mod10": 4,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          3,
+          6,
+          3,
+          4,
+          9,
+          8,
+          1,
+          8,
+          9,
+          4
+        ]
+      },
+      "legacy_error_repairs": 12,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3
+        },
+        {
+          "a": 4,
+          "b": 1,
+          "expected": 8
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "expected": 3
+        },
+        {
+          "a": 6,
+          "b": 9,
+          "expected": 8
+        },
+        {
+          "a": 7,
+          "b": 3,
+          "expected": 3
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "expected": 8
+        }
+      ],
+      "name": "meta_10",
+      "operator_id": "2aa61987d325f7254deffed6dbe97224989aeaf8e0206af60058e7980f5e94ab",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_10.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 0,
+          "b": 7,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "expected": 7,
+          "got": 3
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "expected": 2,
+          "got": 8
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 6
+        }
+      ],
+      "training_errors": 36
+    },
+    {
+      "learned_meta": {
+        "coefficients": [
+          2,
+          5,
+          9
+        ],
+        "depth": 6,
+        "feature": "sum",
+        "nodes": 13,
+        "second_difference_mod10": 4,
+        "training_errors": 36,
+        "unary_lookup_mod10": [
+          9,
+          6,
+          7,
+          2,
+          1,
+          4,
+          1,
+          2,
+          7,
+          6
+        ]
+      },
+      "legacy_error_repairs": 10,
+      "legacy_repair_witnesses": [
+        {
+          "a": 0,
+          "b": 3,
+          "expected": 2
+        },
+        {
+          "a": 0,
+          "b": 8,
+          "expected": 7
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "expected": 7
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "expected": 7
+        },
+        {
+          "a": 3,
+          "b": 0,
+          "expected": 2
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "expected": 7
+        },
+        {
+          "a": 5,
+          "b": 3,
+          "expected": 7
+        },
+        {
+          "a": 7,
+          "b": 1,
+          "expected": 7
+        }
+      ],
+      "name": "meta_11",
+      "operator_id": "b6d54e759bb87460eded34dd42c69f1df285020a6bff4f06a81dfb5614b0dd39",
+      "origin": "meta-polynomial",
+      "path": "operators/meta_11.json",
+      "training_counterexamples": [
+        {
+          "a": 0,
+          "b": 4,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 0,
+          "b": 5,
+          "expected": 8,
+          "got": 4
+        },
+        {
+          "a": 0,
+          "b": 6,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "expected": 8,
+          "got": 4
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "expected": 3,
+          "got": 9
+        },
+        {
+          "a": 2,
+          "b": 2,
+          "expected": 9,
+          "got": 1
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "expected": 4,
+          "got": 6
+        },
+        {
+          "a": 3,
+          "b": 3,
+          "expected": 9,
+          "got": 1
+        }
+      ],
+      "training_errors": 36
+    }
+  ],
+  "distinct_meta_behaviours": 180,
+  "fibre_diagnostics": [
+    {
+      "conflicting_input_values": 10,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "a"
+    },
+    {
+      "conflicting_input_values": 10,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "b"
+    },
+    {
+      "conflicting_input_values": 0,
+      "distinct_input_values": 10,
+      "eligible": true,
+      "feature": "sum"
+    },
+    {
+      "conflicting_input_values": 8,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "product"
+    },
+    {
+      "conflicting_input_values": 9,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "absdiff"
+    },
+    {
+      "conflicting_input_values": 8,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "xor"
+    },
+    {
+      "conflicting_input_values": 8,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "min"
+    },
+    {
+      "conflicting_input_values": 8,
+      "distinct_input_values": 9,
+      "eligible": false,
+      "feature": "max"
+    },
+    {
+      "conflicting_input_values": 6,
+      "distinct_input_values": 9,
+      "eligible": false,
+      "feature": "gcd"
+    },
+    {
+      "conflicting_input_values": 6,
+      "distinct_input_values": 6,
+      "eligible": false,
+      "feature": "a_squared"
+    },
+    {
+      "conflicting_input_values": 6,
+      "distinct_input_values": 6,
+      "eligible": false,
+      "feature": "b_squared"
+    },
+    {
+      "conflicting_input_values": 10,
+      "distinct_input_values": 10,
+      "eligible": false,
+      "feature": "difference"
+    }
+  ],
+  "holdout_read": false,
+  "hypothesis_count": 180,
+  "integrity_sha256": "8febe67eeb538a65580e6d82289d482400361a02759abb857ef5b02e47c6a553",
+  "lottery_prediction_test": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3721-counterexample-meta-1:proposal",
+  "training_only": true,
+  "training_pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "eb2af9679c14b50dc77354afa38c9bcb5b65df185dd97535d2d773e35a89bbc3"
+}

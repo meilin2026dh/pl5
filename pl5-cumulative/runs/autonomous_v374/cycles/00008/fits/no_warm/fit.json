@@ -1,0 +1,11 @@
+{
+  "arm": "no_warm",
+  "operator_id": "20c9f6019f8ecbc69b9f11539e870ceb798931071c0b7ca84f4f15086c07ac17",
+  "training_errors": 49,
+  "training_count": 60,
+  "training_evaluations": 500,
+  "selector_evaluations": 0,
+  "budget_matched": true,
+  "selection_used": "training_cells_only",
+  "candidate_origin": "crossover"
+}

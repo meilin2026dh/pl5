@@ -1,0 +1,1111 @@
+{
+  "version": "bcse-v27",
+  "status": "research_only",
+  "mode": "uniform_fallback",
+  "predictive_advantage": "UNVERIFIED",
+  "posterior_interpretation": "指定离散算法模型和固定先验条件下的后验；不是物理开奖概率的保证",
+  "history_sha256": "51f9a0ef6fd27bff59ba6ab67b3dc9c004ca5ffc0094b38faf89b1d94047050d",
+  "constraints": [
+    {
+      "id": "step_large",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "step_large",
+      "parameters": {
+        "threshold": 7
+      },
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "route_zero_absent",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "route_zero_absent",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "parity_extreme",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "parity_extreme",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "sum_tail_repeat",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "sum_tail_repeat",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "sum_arithmetic",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "sum_arithmetic",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    },
+    {
+      "id": "position_repeat",
+      "version": "2.7.0",
+      "kind": "boolean_soft_constraint",
+      "type": "position_repeat",
+      "parameters": {},
+      "inputs": [
+        "five_digit_universe",
+        "history_prefix_before_target"
+      ],
+      "outputs": [
+        "violation_mask[100000]",
+        "violation_reason"
+      ],
+      "assumptions": [
+        "historical information only",
+        "the violation is deterministic"
+      ],
+      "predictive_advantage": "unverified",
+      "permission": "research_only",
+      "description": "统计约束的数学定义和统计可信性是两件不同的事情"
+    }
+  ],
+  "redundant_constraints": [],
+  "prior_model_weights": {
+    "uniform": 0.7500000000000002,
+    "dirichlet": 0.05000000000000002,
+    "uniform:single:step_large:-0.8": 0.004166666666666668,
+    "uniform:single:step_large:+0.6": 0.004166666666666668,
+    "uniform:single:step_large:+1.4": 0.004166666666666668,
+    "uniform:single:route_zero_absent:-0.8": 0.004166666666666668,
+    "uniform:single:route_zero_absent:+0.6": 0.004166666666666668,
+    "uniform:single:route_zero_absent:+1.4": 0.004166666666666668,
+    "uniform:single:parity_extreme:-0.8": 0.004166666666666668,
+    "uniform:single:parity_extreme:+0.6": 0.004166666666666668,
+    "uniform:single:parity_extreme:+1.4": 0.004166666666666668,
+    "uniform:single:sum_tail_repeat:-0.8": 0.004166666666666668,
+    "uniform:single:sum_tail_repeat:+0.6": 0.004166666666666668,
+    "uniform:single:sum_tail_repeat:+1.4": 0.004166666666666668,
+    "uniform:single:sum_arithmetic:-0.8": 0.004166666666666668,
+    "uniform:single:sum_arithmetic:+0.6": 0.004166666666666668,
+    "uniform:single:sum_arithmetic:+1.4": 0.004166666666666668,
+    "uniform:single:position_repeat:-0.8": 0.004166666666666668,
+    "uniform:single:position_repeat:+0.6": 0.004166666666666668,
+    "uniform:single:position_repeat:+1.4": 0.004166666666666668,
+    "dirichlet:single:step_large:-0.8": 0.004166666666666668,
+    "dirichlet:single:step_large:+0.6": 0.004166666666666668,
+    "dirichlet:single:step_large:+1.4": 0.004166666666666668,
+    "dirichlet:single:route_zero_absent:-0.8": 0.004166666666666668,
+    "dirichlet:single:route_zero_absent:+0.6": 0.004166666666666668,
+    "dirichlet:single:route_zero_absent:+1.4": 0.004166666666666668,
+    "dirichlet:single:parity_extreme:-0.8": 0.004166666666666668,
+    "dirichlet:single:parity_extreme:+0.6": 0.004166666666666668,
+    "dirichlet:single:parity_extreme:+1.4": 0.004166666666666668,
+    "dirichlet:single:sum_tail_repeat:-0.8": 0.004166666666666668,
+    "dirichlet:single:sum_tail_repeat:+0.6": 0.004166666666666668,
+    "dirichlet:single:sum_tail_repeat:+1.4": 0.004166666666666668,
+    "dirichlet:single:sum_arithmetic:-0.8": 0.004166666666666668,
+    "dirichlet:single:sum_arithmetic:+0.6": 0.004166666666666668,
+    "dirichlet:single:sum_arithmetic:+1.4": 0.004166666666666668,
+    "dirichlet:single:position_repeat:-0.8": 0.004166666666666668,
+    "dirichlet:single:position_repeat:+0.6": 0.004166666666666668,
+    "dirichlet:single:position_repeat:+1.4": 0.004166666666666668,
+    "pair:step_large+route_zero_absent": 0.003333333333333335,
+    "pair:step_large+parity_extreme": 0.003333333333333335,
+    "pair:step_large+sum_tail_repeat": 0.003333333333333335,
+    "pair:step_large+sum_arithmetic": 0.003333333333333335,
+    "pair:step_large+position_repeat": 0.003333333333333335,
+    "pair:route_zero_absent+parity_extreme": 0.003333333333333335,
+    "pair:route_zero_absent+sum_tail_repeat": 0.003333333333333335,
+    "pair:route_zero_absent+sum_arithmetic": 0.003333333333333335,
+    "pair:route_zero_absent+position_repeat": 0.003333333333333335,
+    "pair:parity_extreme+sum_tail_repeat": 0.003333333333333335,
+    "pair:parity_extreme+sum_arithmetic": 0.003333333333333335,
+    "pair:parity_extreme+position_repeat": 0.003333333333333335,
+    "pair:sum_tail_repeat+sum_arithmetic": 0.003333333333333335,
+    "pair:sum_tail_repeat+position_repeat": 0.003333333333333335,
+    "pair:sum_arithmetic+position_repeat": 0.003333333333333335
+  },
+  "posterior_model_weights_training": {
+    "uniform": 0.9175281224708273,
+    "dirichlet": 3.079053494818017e-09,
+    "uniform:single:step_large:-0.8": 3.0020451664104948e-05,
+    "uniform:single:step_large:+0.6": 0.0004144661465184555,
+    "uniform:single:step_large:+1.4": 2.2655235104524543e-08,
+    "uniform:single:route_zero_absent:-0.8": 0.0016686283827843937,
+    "uniform:single:route_zero_absent:+0.6": 0.0014193210632035365,
+    "uniform:single:route_zero_absent:+1.4": 5.800820668759085e-05,
+    "uniform:single:parity_extreme:-0.8": 0.0010319332856934045,
+    "uniform:single:parity_extreme:+0.6": 0.0029683891800890224,
+    "uniform:single:parity_extreme:+1.4": 0.0004333680072538494,
+    "uniform:single:sum_tail_repeat:-0.8": 0.005097378458171616,
+    "uniform:single:sum_tail_repeat:+0.6": 0.005097378458171616,
+    "uniform:single:sum_tail_repeat:+1.4": 0.005097378458171616,
+    "uniform:single:sum_arithmetic:-0.8": 0.004768315973035638,
+    "uniform:single:sum_arithmetic:+0.6": 0.005230260639810164,
+    "uniform:single:sum_arithmetic:+1.4": 0.005323211028014981,
+    "uniform:single:position_repeat:-0.8": 0.0032100941386297922,
+    "uniform:single:position_repeat:+0.6": 0.006131257752680943,
+    "uniform:single:position_repeat:+1.4": 0.006972991990289336,
+    "dirichlet:single:step_large:-0.8": 1.051563457688717e-12,
+    "dirichlet:single:step_large:+0.6": 2.636719988945247e-11,
+    "dirichlet:single:step_large:+1.4": 1.7929176203066996e-15,
+    "dirichlet:single:route_zero_absent:-0.8": 2.2319561015617376e-11,
+    "dirichlet:single:route_zero_absent:+0.6": 1.2531950461628521e-10,
+    "dirichlet:single:route_zero_absent:+1.4": 7.662359409334981e-12,
+    "dirichlet:single:parity_extreme:-0.8": 4.778388841441787e-11,
+    "dirichlet:single:parity_extreme:+0.6": 1.54600837470518e-10,
+    "dirichlet:single:parity_extreme:+1.4": 2.3118359606232625e-11,
+    "dirichlet:single:sum_tail_repeat:-0.8": 2.565877912348198e-10,
+    "dirichlet:single:sum_tail_repeat:+0.6": 2.565877912348198e-10,
+    "dirichlet:single:sum_tail_repeat:+1.4": 2.565877912348198e-10,
+    "dirichlet:single:sum_arithmetic:-0.8": 2.406608309082615e-10,
+    "dirichlet:single:sum_arithmetic:+0.6": 2.6299554703950404e-10,
+    "dirichlet:single:sum_arithmetic:+1.4": 2.6746960970489456e-10,
+    "dirichlet:single:position_repeat:-0.8": 1.5785101688531396e-10,
+    "dirichlet:single:position_repeat:+0.6": 3.119401101614673e-10,
+    "dirichlet:single:position_repeat:+1.4": 3.575923552150616e-10,
+    "pair:step_large+route_zero_absent": 0.0001165216634706585,
+    "pair:step_large+parity_extreme": 0.00021594527874712428,
+    "pair:step_large+sum_tail_repeat": 0.00033157291721478825,
+    "pair:step_large+sum_arithmetic": 0.00033989640853938625,
+    "pair:step_large+position_repeat": 0.0004008936673871649,
+    "pair:route_zero_absent+parity_extreme": 0.0006612178902023284,
+    "pair:route_zero_absent+sum_tail_repeat": 0.0011354568505627818,
+    "pair:route_zero_absent+sum_arithmetic": 0.0011648975658030897,
+    "pair:route_zero_absent+position_repeat": 0.0013634169524685915,
+    "pair:parity_extreme+sum_tail_repeat": 0.0023747113440711187,
+    "pair:parity_extreme+sum_arithmetic": 0.002436464854701307,
+    "pair:parity_extreme+position_repeat": 0.0028563638070417,
+    "pair:sum_tail_repeat+sum_arithmetic": 0.004184208511847956,
+    "pair:sum_tail_repeat+position_repeat": 0.004905006202144549,
+    "pair:sum_arithmetic+position_repeat": 0.005032873483422575
+  },
+  "gate": {
+    "passed": false,
+    "reason": "未满足开发验证门槛，回退均匀分布",
+    "posterior_uniform_mass": 0.9175281224708273,
+    "minimum_mean_log_gain": 0.01
+  },
+  "splits": {
+    "warmup": 60,
+    "evidence_training": 65,
+    "validation": 35,
+    "holdout": 30,
+    "training_end_exclusive_index": 125,
+    "holdout_start_index": 160
+  },
+  "validation": {
+    "periods": 35,
+    "mean_log_gain": 8.990958676464394e-05,
+    "mean_log_loss": 11.512835555383464,
+    "mean_gain_se": 0.0002186902443284388,
+    "gain_95pct_normal_approx": [
+      -0.00033872329211909614,
+      0.000518542465648384
+    ],
+    "first_half_gain": 0.00021785375637151105,
+    "second_half_gain": -3.0926573419619454e-05,
+    "positive_periods": 23
+  },
+  "holdout": {
+    "periods": 30,
+    "mean_log_gain": 0.0,
+    "mean_log_loss": 11.512925464970229,
+    "mean_gain_se": 0.0,
+    "gain_95pct_normal_approx": [
+      0.0,
+      0.0
+    ],
+    "first_half_gain": 0.0,
+    "second_half_gain": 0.0,
+    "positive_periods": 0
+  },
+  "posterior_progress": [
+    {
+      "seen": 85,
+      "null_mass": 0.8750835973519928
+    },
+    {
+      "seen": 110,
+      "null_mass": 0.8990361512065299
+    }
+  ],
+  "next_draw_rule_flags": [
+    {
+      "id": "step_large",
+      "count": 37052,
+      "fraction": 0.37052
+    },
+    {
+      "id": "route_zero_absent",
+      "count": 7776,
+      "fraction": 0.07776
+    },
+    {
+      "id": "parity_extreme",
+      "count": 6250,
+      "fraction": 0.0625
+    },
+    {
+      "id": "sum_tail_repeat",
+      "count": 0,
+      "fraction": 0.0
+    },
+    {
+      "id": "sum_arithmetic",
+      "count": 0,
+      "fraction": 0.0
+    },
+    {
+      "id": "position_repeat",
+      "count": 0,
+      "fraction": 0.0
+    }
+  ],
+  "signature_groups": [
+    {
+      "signature": 0,
+      "size": 52510,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 1,
+      "size": 33950,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 2,
+      "size": 5820,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 3,
+      "size": 1470,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 4,
+      "size": 4132,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 5,
+      "size": 1632,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "signature": 6,
+      "size": 486,
+      "posterior_penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "candidate_details": [
+    {
+      "number": "90253",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "20499",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "17874",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "route_zero_absent"
+      ]
+    },
+    {
+      "number": "43109",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "02584",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "08294",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "40982",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "29762",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "27110",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "77246",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "36258",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "08786",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "87473",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "58123",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "01397",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "99266",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "72480",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "37177",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "parity_extreme"
+      ]
+    },
+    {
+      "number": "35772",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "21205",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "74885",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "route_zero_absent"
+      ]
+    },
+    {
+      "number": "15191",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large",
+        "parity_extreme"
+      ]
+    },
+    {
+      "number": "09935",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "30521",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "46587",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "44631",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": []
+    },
+    {
+      "number": "21704",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "71629",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    },
+    {
+      "number": "31531",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "parity_extreme"
+      ]
+    },
+    {
+      "number": "25890",
+      "model_probability_mean": 1.0000000000000003e-05,
+      "model_probability_95pct_credible_interval": [
+        9.99999999999548e-06,
+        9.99999999999548e-06
+      ],
+      "penalty_mean": 0.0,
+      "penalty_95pct_credible_interval": [
+        0.0,
+        0.0
+      ],
+      "posterior_mass_models_below_uniform": 1.0,
+      "violated_rules": [
+        "step_large"
+      ]
+    }
+  ],
+  "experimental_top_k": [
+    "90253",
+    "20499",
+    "17874",
+    "43109",
+    "02584",
+    "08294",
+    "40982",
+    "29762",
+    "27110",
+    "77246",
+    "36258",
+    "08786",
+    "87473",
+    "58123",
+    "01397",
+    "99266",
+    "72480",
+    "37177",
+    "35772",
+    "21205",
+    "74885",
+    "15191",
+    "09935",
+    "30521",
+    "46587",
+    "44631",
+    "21704",
+    "71629",
+    "31531",
+    "25890",
+    "68893",
+    "32994",
+    "98255",
+    "89135",
+    "46854",
+    "49908",
+    "19199",
+    "52288",
+    "69618",
+    "73993",
+    "26281",
+    "09127",
+    "52760",
+    "64838",
+    "75864",
+    "23933",
+    "92338",
+    "44895",
+    "11742",
+    "13977",
+    "32499",
+    "26821",
+    "15589",
+    "47660",
+    "46621",
+    "00858",
+    "12253",
+    "42077",
+    "79062",
+    "81871",
+    "45264",
+    "67894",
+    "73998",
+    "91459",
+    "77686",
+    "16718",
+    "37521",
+    "37960",
+    "29076",
+    "59216",
+    "24059",
+    "94532",
+    "18631",
+    "75466",
+    "44179",
+    "10708",
+    "25033",
+    "83177",
+    "88067",
+    "36952",
+    "29913",
+    "01110",
+    "00849",
+    "15876",
+    "12467",
+    "99666",
+    "94231",
+    "50306",
+    "64141",
+    "23638",
+    "08122",
+    "98301",
+    "87358",
+    "80055",
+    "92909",
+    "71141",
+    "21109",
+    "24439",
+    "62862",
+    "67789"
+  ],
+  "equal_budget_random_control": [
+    "69598",
+    "43052",
+    "76977",
+    "03572",
+    "62208",
+    "12612",
+    "27529",
+    "38997",
+    "77784",
+    "35681",
+    "25301",
+    "00618",
+    "30708",
+    "25215",
+    "82283",
+    "26138",
+    "11387",
+    "54316",
+    "12004",
+    "32236",
+    "43188",
+    "82813",
+    "04837",
+    "98076",
+    "70322",
+    "86296",
+    "61712",
+    "95152",
+    "73599",
+    "32069",
+    "38655",
+    "75223",
+    "97108",
+    "06711",
+    "14882",
+    "93213",
+    "39541",
+    "75739",
+    "84066",
+    "77952",
+    "48871",
+    "14800",
+    "34902",
+    "41968",
+    "68892",
+    "53422",
+    "45542",
+    "02824",
+    "41680",
+    "55648",
+    "98456",
+    "61226",
+    "16157",
+    "52598",
+    "51051",
+    "50247",
+    "11523",
+    "25799",
+    "02763",
+    "89721",
+    "57835",
+    "06220",
+    "38044",
+    "14917",
+    "84422",
+    "28759",
+    "90741",
+    "33596",
+    "14180",
+    "99247",
+    "75799",
+    "86031",
+    "14038",
+    "29422",
+    "51944",
+    "25958",
+    "09262",
+    "59163",
+    "37298",
+    "69489",
+    "39605",
+    "86503",
+    "22563",
+    "39435",
+    "60649",
+    "99510",
+    "67354",
+    "72551",
+    "30645",
+    "83238",
+    "59947",
+    "57885",
+    "33071",
+    "07088",
+    "03775",
+    "65466",
+    "81141",
+    "80521",
+    "02846",
+    "53582"
+  ],
+  "budget": 100,
+  "fair_hit_probability": 0.001,
+  "posterior_model_mass_top_k": 0.001,
+  "baseline_log_loss": 11.512925464970229,
+  "dirichlet_alpha": 30.0,
+  "ranking_tie_seed": 20261102,
+  "prediction_warning": "公平独立开奖下固定或历史自适应的K注集合仍只有K/100000命中概率。模型违例不等于实际抽奖概率下降。",
+  "independence_warning": "模型家族之间共享数据，不能将规则似然当独立概率相乘；本版对联合违反型精确归一化。",
+  "test_reuse_warning": "历史最终留出已经被查看；更改模型或阈值后须用新未来期验证。",
+  "iid_null_simulations": [
+    {
+      "activated": false,
+      "holdout_gain": 0.0
+    }
+  ],
+  "source": "IID synthetic demo; NOT official history"
+}

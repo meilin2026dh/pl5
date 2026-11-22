@@ -1,0 +1,65 @@
+{
+  "evaluation_is_not_external_blind": true,
+  "matched_compute_budget_with_prior_version": false,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "schema": "pl5-v3722-developer-benchmark-1",
+  "seed_list": [
+    3722,
+    3723,
+    3724,
+    3725,
+    3726
+  ],
+  "study": "V3.7.22",
+  "tasks": {
+    "cubic_product": {
+      "abstained": 1,
+      "evaluated": 4,
+      "tested_cells": 80,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "cubic_sum": {
+      "abstained": 0,
+      "evaluated": 5,
+      "tested_cells": 100,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "parity_difference": {
+      "abstained": 0,
+      "evaluated": 5,
+      "tested_cells": 100,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "random_null": {
+      "abstained": 5,
+      "evaluated": 0,
+      "tested_cells": 0,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "square_difference": {
+      "abstained": 0,
+      "evaluated": 5,
+      "tested_cells": 100,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "step_sum": {
+      "abstained": 0,
+      "evaluated": 5,
+      "tested_cells": 100,
+      "tested_errors": 0,
+      "trials": 5
+    },
+    "unstructured_interaction": {
+      "abstained": 5,
+      "evaluated": 0,
+      "tested_cells": 0,
+      "tested_errors": 0,
+      "trials": 5
+    }
+  }
+}

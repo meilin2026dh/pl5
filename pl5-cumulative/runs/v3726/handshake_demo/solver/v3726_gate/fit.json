@@ -1,0 +1,501 @@
+{
+  "candidate_evaluations": 26,
+  "cpu_ns_fit": 39520198,
+  "evidence_grade": "INTERNAL_DEVELOPER_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "exact_fit_tables": [
+    {
+      "spec": {
+        "coefficients": [
+          3,
+          5,
+          5,
+          6,
+          5,
+          6
+        ],
+        "features": [
+          "constant",
+          "a",
+          "b",
+          "xor_mod10",
+          "gate_a",
+          "gate_product_mod10"
+        ],
+        "predicate": {
+          "kind": "equal"
+        },
+        "syntax": "induced_gate_mod10"
+      },
+      "table_sha256": "e362d27fe9774cadd3c55acd12b6961a3018aa3c7c1a06f3a18d6f9373ac76e9"
+    },
+    {
+      "spec": {
+        "coefficients": [
+          3,
+          5,
+          5,
+          6,
+          1,
+          2
+        ],
+        "features": [
+          "constant",
+          "a",
+          "b",
+          "xor_mod10",
+          "gate_product_mod10",
+          "gate_xor_mod10"
+        ],
+        "predicate": {
+          "kind": "congruence",
+          "modulus": 5,
+          "remainder": 0,
+          "source": "difference"
+        },
+        "syntax": "induced_gate_mod10"
+      },
+      "table_sha256": "843674defc870dc895f122c50a2673762ba6d2c285cf4f54b562a811acf1d026"
+    }
+  ],
+  "holdout_commitment": null,
+  "integrity_sha256": "810ce625274111736d5b6a1ca8c4c672b03c5df5402dc115910ee23813bd34d4",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "protocol_sha256": "3a748423220461a0f5a6104b095559f1b18f3a8cc2a6d853b5803bc798db59aa",
+  "schema": "pl5-v3726-gate-grammar-1:fit",
+  "trace": [
+    {
+      "basis_columns": 6,
+      "exact_train_fit": false,
+      "predicate": null
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": true,
+      "nonzero_terms": 6,
+      "predicate": {
+        "kind": "equal"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "less"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "greater"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 5
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 8
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 10
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 12
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "sum_ge",
+        "threshold": 15
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 2,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 2,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 4,
+        "remainder": 3,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": true,
+      "nonzero_terms": 6,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 0,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 1,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 2,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 3,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 5,
+        "remainder": 4,
+        "source": "difference"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 0,
+        "source": "sum"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 1,
+        "source": "sum"
+      }
+    },
+    {
+      "basis_columns": 11,
+      "exact_train_fit": false,
+      "predicate": {
+        "kind": "congruence",
+        "modulus": 3,
+        "remainder": 2,
+        "source": "sum"
+      }
+    }
+  ],
+  "train_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      5
+    ]
+  ],
+  "training_only": true,
+  "training_sha256": "d17267c72282cf83a9a66cab3e2dbab6419e352deb3ea40031859c0df8054c43"
+}

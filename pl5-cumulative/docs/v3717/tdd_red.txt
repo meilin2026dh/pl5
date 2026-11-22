@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_______________ ERROR collecting tests/test_target_only_v3717.py _______________
+ImportError while importing test module '/mnt/data/PL5_V3717_work/research_backend/tests/test_target_only_v3717.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_target_only_v3717.py:6: in <module>
+    from pailie5.probability_ranker import rolling_rank_backtest, rank_target_snapshot_v3717
+E   ImportError: cannot import name 'rank_target_snapshot_v3717' from 'pailie5.probability_ranker' (/mnt/data/PL5_V3717_work/research_backend/pailie5/probability_ranker.py)
+=========================== short test summary info ============================
+ERROR tests/test_target_only_v3717.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 1.17s

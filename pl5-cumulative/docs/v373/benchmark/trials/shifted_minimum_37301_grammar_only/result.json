@@ -1,0 +1,597 @@
+{
+  "trial_id": "shifted_minimum_37301_grammar_only",
+  "case": "shifted_minimum",
+  "task_group": "related_motif",
+  "seed": 37301,
+  "arm": "grammar_only",
+  "training_correct": 19,
+  "training_n": 60,
+  "holdout_correct": 10,
+  "holdout_n": 40,
+  "exact_reconstruction": false,
+  "nodes": 5,
+  "evaluations": 2500,
+  "proposals": 3587,
+  "budget_matched": true,
+  "winning_origin": "random_grammar",
+  "fit_seconds": 0.20594163399999843,
+  "operator_path": "trials/shifted_minimum_37301_grammar_only/operator.json",
+  "fit": {
+    "budget_matched": true,
+    "budget_unit": "distinct_normalized_AST_interpreter_calls_including_arithmetic_failures",
+    "config": {
+      "batch_size": 32,
+      "bootstrap_fraction": 0.3,
+      "complexity_weight": 0.05,
+      "evaluation_budget": 2500,
+      "max_depth": 6,
+      "max_nodes": 11,
+      "pool_size": 32,
+      "proposal_factor": 100,
+      "seed": 37301
+    },
+    "distinct_integer_behaviors": 994,
+    "evaluation_counts": {
+      "bootstrap": 337,
+      "grammar_composition": 412,
+      "random_grammar": 1750,
+      "safe_baseline": 1
+    },
+    "evaluations": 2500,
+    "first_exact_evaluation": null,
+    "mechanisms": {
+      "complexity": true,
+      "crossover": false,
+      "guided": false,
+      "mutation": false,
+      "warm_start": false
+    },
+    "operator": {
+      "description": "max((a*b),5) mod 10",
+      "expression": [
+        "binary",
+        "max",
+        [
+          "binary",
+          "mul",
+          [
+            "a"
+          ],
+          [
+            "b"
+          ]
+        ],
+        [
+          "const",
+          5
+        ]
+      ],
+      "grammar": "pl5-v372-v30-integer-ast-final-mod10-1",
+      "operator_id": "e45495cde6a15984476ecbc07944cd09c179f781b06d0d48e1453511dd21b2c6",
+      "predictive_advantage": "NOT_ESTABLISHED",
+      "production_enabled": false,
+      "source_data_sha256": "4d91cebf887d9b8d89484e1f118b5842c4ca053788c9379b625e40b7c95ee425",
+      "source_pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    "proposal_counts": {
+      "bootstrap": 670,
+      "grammar_composition": 490,
+      "random_grammar": 2426,
+      "safe_baseline": 1
+    },
+    "proposals": 3587,
+    "rejected_counts": {
+      "duplicate_AST": 1087
+    },
+    "replacement_policy": "disabled_slots_use_target_independent_random_grammar",
+    "selection_used": "training_cells_only",
+    "trace": [
+      {
+        "errors": 43,
+        "evaluations": 750,
+        "expression": [
+          "binary",
+          "sub",
+          [
+            "binary",
+            "xor",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "proposals": 1161,
+        "stage": "bootstrap"
+      },
+      {
+        "errors": 43,
+        "evaluations": 1006,
+        "expression": [
+          "binary",
+          "sub",
+          [
+            "binary",
+            "xor",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "proposals": 1511,
+        "stage": "search"
+      },
+      {
+        "errors": 43,
+        "evaluations": 1262,
+        "expression": [
+          "binary",
+          "sub",
+          [
+            "binary",
+            "xor",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "grammar_composition",
+        "proposals": 1860,
+        "stage": "search"
+      },
+      {
+        "errors": 42,
+        "evaluations": 1518,
+        "expression": [
+          "binary",
+          "xor",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "random_grammar",
+        "proposals": 2217,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 1774,
+        "expression": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "random_grammar",
+        "proposals": 2572,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2030,
+        "expression": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "random_grammar",
+        "proposals": 2928,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2286,
+        "expression": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "random_grammar",
+        "proposals": 3288,
+        "stage": "search"
+      },
+      {
+        "errors": 41,
+        "evaluations": 2500,
+        "expression": [
+          "binary",
+          "max",
+          [
+            "binary",
+            "mul",
+            [
+              "a"
+            ],
+            [
+              "b"
+            ]
+          ],
+          [
+            "const",
+            5
+          ]
+        ],
+        "nodes": 5,
+        "origin": "random_grammar",
+        "proposals": 3587,
+        "stage": "final"
+      }
+    ],
+    "training_count": 60,
+    "training_errors": 41,
+    "wall_time_matched": false,
+    "winning_nodes": 5,
+    "winning_origin": "random_grammar"
+  },
+  "holdout": {
+    "operator_id": "e45495cde6a15984476ecbc07944cd09c179f781b06d0d48e1453511dd21b2c6",
+    "data_sha256": "3fc48ce656e48a41c97ff3c1a323e944a4a3b93b19a844e301417d4c51a40178",
+    "errors": 30,
+    "count": 40,
+    "accuracy": 0.25,
+    "overlapping_pairs": 0,
+    "refitted": false,
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "certificate": {
+    "operator_id": "e45495cde6a15984476ecbc07944cd09c179f781b06d0d48e1453511dd21b2c6",
+    "candidate_table_sha256": "8677d8013b2290658e11bd3e5c8d914434dd7390dcf776676d966e1ae3f84c57",
+    "target_table_sha256": "dcbc92e418a1397b4cf7cd7f6eec9c7cb14acd9794875abac108964c78d2d4a3",
+    "exact_on_all_100_pairs": false,
+    "whole_table_errors": 71,
+    "first_mismatch": {
+      "a": 1,
+      "b": 1,
+      "predicted": 5,
+      "target": 6
+    },
+    "independent_scalar_check": true,
+    "properties": {
+      "commutative": true,
+      "commutativity_counterexample": null,
+      "associative": false,
+      "associativity_counterexample": [
+        0,
+        0,
+        2
+      ],
+      "identities": [],
+      "all_rows_permutations": false,
+      "all_columns_permutations": false,
+      "scope": "candidate operation on exactly the digit domain 0..9"
+    },
+    "nodes": 5,
+    "depth": 3,
+    "coding_diagnostic": {
+      "raw_table_bits": 400,
+      "formula_bits": 65,
+      "formula_plus_exceptions_bits": 853,
+      "preferred": "raw_table",
+      "model": "shared 18-token codebook; 40-bit header; 7-bit exception count; 11 bits per exception",
+      "is_minimum_description_proof": false
+    },
+    "production_enabled": false,
+    "predictive_advantage": "NOT_ESTABLISHED"
+  },
+  "production_enabled": false
+}

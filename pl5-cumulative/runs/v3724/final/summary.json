@@ -1,0 +1,108 @@
+{
+  "baseline": {
+    "abstained": 42,
+    "accepted": 6,
+    "accepted_test_cells": 216,
+    "accepted_test_errors": 0,
+    "measured_fit_wall_ms": 583.0,
+    "tasks": 48,
+    "total_candidate_evaluations": 105600
+  },
+  "cubic_interaction_negative": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 0,
+      "test_errors": 0
+    }
+  },
+  "expanded": {
+    "abstained": 18,
+    "accepted": 30,
+    "accepted_test_cells": 1080,
+    "accepted_test_errors": 0,
+    "measured_fit_wall_ms": 390.5,
+    "tasks": 48,
+    "total_candidate_evaluations": 105600
+  },
+  "external_blind": false,
+  "gcd_plus_absdiff": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 6,
+      "test_errors": 0
+    }
+  },
+  "logical_results_sha256": "b42632077f01117f163d8c339483b8a09937b59f3d5d784fb148e1996034a8ac",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "piecewise_negative": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 0,
+      "test_errors": 0
+    }
+  },
+  "product_plus_a": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 6,
+      "test_errors": 0
+    }
+  },
+  "protocol_sha256": "e78eb42bf3d05876c4b44ed7bee8f5a0846f95710c07f66cf7d920ee8caa3fbd",
+  "random_null": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 0,
+      "test_errors": 0
+    }
+  },
+  "results_sha256": "822a465909692c825438273bc5ead512bc1c5081f5cc9e285b82aa1ea6675ef3",
+  "schema": "pl5-v3724-compositional-grammar-1:summary",
+  "source_discovery_cost_not_included": true,
+  "unary_control": {
+    "baseline": {
+      "accepts": 6,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 6,
+      "test_errors": 0
+    }
+  },
+  "whole_program_runtime_equalized": false,
+  "xor_plus_absdiff": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 6,
+      "test_errors": 0
+    }
+  },
+  "xor_plus_b": {
+    "baseline": {
+      "accepts": 0,
+      "test_errors": 0
+    },
+    "expanded": {
+      "accepts": 6,
+      "test_errors": 0
+    }
+  }
+}

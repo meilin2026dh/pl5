@@ -1,0 +1,223 @@
+{
+  "schema": "pl5-v3716-end-to-end-1",
+  "data_source": {
+    "kind": "bundled_synthetic_demo",
+    "name": "synthetic_demo.csv",
+    "sha256": "f7812094b6a4c7f6a8b10676c1b6ab95e3a234efdede9ff2786319a2fefc6ff6",
+    "periods": 1000,
+    "authentic_draw_data": false
+  },
+  "configuration": {
+    "pattern_indicators": [
+      "sum",
+      "span",
+      "odd_count",
+      "digit_5",
+      "same_positions_prev"
+    ],
+    "windows": [
+      3,
+      4
+    ],
+    "transforms": [
+      "raw"
+    ],
+    "pattern_types": [
+      "constant",
+      "strict_up",
+      "period2"
+    ]
+  },
+  "domain": 100000,
+  "rules": 20,
+  "seed": 3717,
+  "repeats": 15,
+  "workflows": {
+    "pattern_intersection": {
+      "equivalence": {
+        "exact": true,
+        "units": 12,
+        "observed_items": 395736
+      },
+      "digest_sha256": "3bd71226bb913cf37f130ca7b537d3e1d1de115f165ab7e3053ad193ae80d4e3",
+      "latency_ms": {
+        "cold_bitmap": 45.34132,
+        "oracle_warmup_not_in_medians": 51.55691,
+        "legacy_runs": [
+          46.75899,
+          52.05257,
+          50.90081,
+          50.58795,
+          50.55785,
+          54.15817,
+          60.34146,
+          47.5394,
+          52.13226,
+          48.40327,
+          50.07495,
+          49.43108,
+          49.22147,
+          55.14146,
+          48.67041
+        ],
+        "warm_bitmap_runs": [
+          36.10183,
+          34.91856,
+          37.38321,
+          37.55918,
+          49.68144,
+          43.61093,
+          41.92789,
+          37.71048,
+          36.09432,
+          41.88509,
+          38.37627,
+          36.38765,
+          37.62634,
+          35.002,
+          38.08226
+        ],
+        "legacy_median": 50.55785,
+        "warm_bitmap_median": 37.62634
+      },
+      "warm_speed_ratio": 1.34368,
+      "catalog_stats": {
+        "registered_rules": 20,
+        "cached_rules": 18,
+        "cached_bytes": 225000,
+        "cached_python_bytes": 240316,
+        "compilations": 18,
+        "deferred_evaluations": 0
+      }
+    },
+    "rolling_rank": {
+      "equivalence": {
+        "exact": true,
+        "units": 3,
+        "observed_items": 0
+      },
+      "digest_sha256": "8f500205eab1cafb789bcdc0d17d48dcb0925fe947ea2a6986e34bd95810deba",
+      "latency_ms": {
+        "cold_bitmap": 148.07861,
+        "oracle_warmup_not_in_medians": 150.21082,
+        "legacy_runs": [
+          145.2792,
+          138.56939,
+          138.7899,
+          141.90048,
+          144.04605,
+          137.82548,
+          142.03163,
+          144.55118,
+          138.07783,
+          139.31936,
+          144.41883,
+          137.34931,
+          136.17891,
+          169.86801,
+          188.84654
+        ],
+        "warm_bitmap_runs": [
+          131.90119,
+          131.41597,
+          132.97275,
+          140.16453,
+          134.97928,
+          126.22813,
+          142.77201,
+          136.95793,
+          123.65016,
+          140.60192,
+          145.19926,
+          142.80282,
+          128.67395,
+          132.26125,
+          167.41442
+        ],
+        "legacy_median": 141.90048,
+        "warm_bitmap_median": 134.97928
+      },
+      "warm_speed_ratio": 1.05128,
+      "catalog_stats": {
+        "registered_rules": 20,
+        "cached_rules": 20,
+        "cached_bytes": 250000,
+        "cached_python_bytes": 265432,
+        "compilations": 20,
+        "deferred_evaluations": 0
+      }
+    },
+    "rolling_sculpt": {
+      "equivalence": {
+        "exact": true,
+        "units": 3,
+        "observed_items": 0
+      },
+      "digest_sha256": "4e54554b2a77519d3819eaba064f0ca9786b798f8a5a776fb7ec2b523c439c26",
+      "latency_ms": {
+        "cold_bitmap": 265.94466,
+        "oracle_warmup_not_in_medians": 281.13263,
+        "legacy_runs": [
+          279.2514,
+          293.67325,
+          292.07858,
+          277.88863,
+          253.19825,
+          289.84609,
+          276.85001,
+          291.45972,
+          251.71103,
+          268.01957,
+          267.7251,
+          287.40922,
+          264.7602,
+          287.75938,
+          275.62971
+        ],
+        "warm_bitmap_runs": [
+          277.33143,
+          264.94909,
+          256.33895,
+          272.51721,
+          256.83906,
+          269.63359,
+          271.74711,
+          282.83281,
+          299.29486,
+          278.16292,
+          253.30364,
+          302.74894,
+          264.86248,
+          264.88623,
+          328.02673
+        ],
+        "legacy_median": 277.88863,
+        "warm_bitmap_median": 271.74711
+      },
+      "warm_speed_ratio": 1.0226,
+      "catalog_stats": {
+        "registered_rules": 20,
+        "cached_rules": 20,
+        "cached_bytes": 250000,
+        "cached_python_bytes": 265432,
+        "compilations": 20,
+        "deferred_evaluations": 0
+      }
+    }
+  },
+  "aggregate": {
+    "sum_legacy_medians_ms": 470.34696,
+    "sum_warm_bitmap_medians_ms": 444.35273,
+    "weighted_warm_ratio": 1.0585
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "limits": [
+    "This is an end-to-end execution comparison for actual PL5 research routines, not real authenticated draw history.",
+    "Legacy defaults remain unchanged; only opt-in calls use cached exact bitmaps.",
+    "Cache warmup and memory cost are reported; history-dependent patterns are recomputed at each period.",
+    "The work may be dominated by pattern detection and full-universe ranking, obscuring bitmap microbenchmark gains.",
+    "These rankings and compressed sets are not calibrated lottery-win predictions."
+  ]
+}

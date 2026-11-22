@@ -1,0 +1,45 @@
+{
+  "cases": [
+    "swapped_xor",
+    "swapped_abs",
+    "lifted_gcd",
+    "canonical_early",
+    "outside_grammar",
+    "iid_random"
+  ],
+  "family_alpha": 0.01,
+  "full_pipeline_compute_matched": false,
+  "holdout_selection": "no holdout used before freeze; all variants fixed in protocol",
+  "iid_noise_rate": 0.02,
+  "knowledge_source": "certified source independent train and holdout",
+  "new_template_rule": "source specs, swapped unaries, lifted-left unary, then canonical order",
+  "null_schedules": 512,
+  "null_seed": 371201,
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "prespecified_windows": 4,
+  "production_enabled": false,
+  "schema": "pl5-v3712-protocol-1",
+  "scientific_scope": "synthetic digit function tables; near-class unary-template transfer only",
+  "seeds": [
+    9811,
+    9812,
+    9813,
+    9814,
+    9815,
+    9816
+  ],
+  "source_cases": [
+    "xor_shift",
+    "abs_scaled",
+    "gcd_shift"
+  ],
+  "source_cost_included_in_ledger": true,
+  "source_seed_first": 9311,
+  "source_seed_stride": 131,
+  "target_candidate_feature_slots_each_arm": 16,
+  "target_holdout_cells": 30,
+  "target_seed_case_offset": 127,
+  "target_seeds_times": 43,
+  "target_train_cells": 70,
+  "window_length": 20
+}

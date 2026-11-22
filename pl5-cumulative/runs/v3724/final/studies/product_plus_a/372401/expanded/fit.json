@@ -1,0 +1,223 @@
+{
+  "arm": "expanded",
+  "base_stage_errors": 32,
+  "best_training_errors": 0,
+  "candidate_budget": 2200,
+  "candidate_evaluations": 2200,
+  "evidence_grade": "INTERNAL_DEVELOPER_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "exact_fit_programs": [
+    {
+      "spec": {
+        "grammar": "binary_composition",
+        "left": "a",
+        "operation": "add",
+        "right": "product_mod10",
+        "shift": 1
+      },
+      "table_sha256": "73c3fc0e8e4b01de577068c3746ed5a6907e169f47b51184d642d562a6f44fc3"
+    }
+  ],
+  "external_blind": false,
+  "grammar_expansion_triggered": true,
+  "holdout_commitment": "b76d6406d32fbed3432b3c6c805d84d17bce984cc334ffae1a8439906db428f4",
+  "integrity_sha256": "5565e511f1d4859c6575551443103c1403f12b2a11e0ee76e691c3534f23bfe8",
+  "protocol_sha256": "e78eb42bf3d05876c4b44ed7bee8f5a0846f95710c07f66cf7d920ee8caa3fbd",
+  "schema": "pl5-v3724-compositional-grammar-1:fit",
+  "train_pairs": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "training_only": true,
+  "training_sha256": "6c7e8f9fed043f7b8f747881e7b4c21a60e7cb0eaffb684e3d158cb4bcb969e5",
+  "wall_ns_fit": 7416976
+}

@@ -1,0 +1,19 @@
+{
+  "version": "3.7.5",
+  "parent_release": "3.7.4",
+  "original_files": 2160,
+  "unchanged_original_files": 2156,
+  "modified_old_files": {
+    "research_backend/pailie5/__init__.py": "b4bc8c6dfe69d557f232fc4cb95f04dd9d913058b41a111b0c4f572f7d605633",
+    "research_backend/pailie5/autonomous_v374.py": "a2fb84ca523d293f53a1d774740a90cffeca966c8d6a75998d0ebb5653c1d50f",
+    "research_backend/pyproject.toml": "57eb161bdf884487b24471d372ec19837851f9ed6de0c8e105cdc640cb793388",
+    "research_backend/tests/test_release_v372.py": "94698b31b9b1af0f5b957f23fe234c7fcdf4560ee9c697b52b8d8875507613b4"
+  },
+  "new_files": 142,
+  "packaged_files_excluding_manifest": 2302,
+  "historical_evidence_preserved": true,
+  "windows_deployment": false,
+  "github_synced": false,
+  "background_daemon": false,
+  "research_only": true
+}

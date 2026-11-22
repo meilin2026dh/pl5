@@ -1,0 +1,39 @@
+......FF                                                                 [100%]
+=================================== FAILURES ===================================
+_________ test_concurrent_run_is_refused_without_corrupting_workspace __________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-9/test_concurrent_run_is_refused0')
+
+    def test_concurrent_run_is_refused_without_corrupting_workspace(tmp_path):
+        output = tmp_path/'autonomy'
+        output.mkdir()
+        (output/'.run.lock').write_text('another worker', encoding='utf8')
+>       with pytest.raises(RuntimeError, match='already running'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'RuntimeError'>
+
+tests/test_autonomous_v374.py:79: Failed
+___________________________ test_cli_runs_real_cycle ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-9/test_cli_runs_real_cycle0')
+
+    def test_cli_runs_real_cycle(tmp_path):
+        import subprocess, sys
+        cli = Path(__file__).resolve().parents[1]/'research_autonomous_v374.py'
+        p = subprocess.run([sys.executable,str(cli), '--output',str(tmp_path/'runs'),
+                            '--cycles','1','--budget','100','--seed','204'],
+                           text=True,capture_output=True,timeout=50)
+>       assert p.returncode == 0, p.stderr
+E       AssertionError: /opt/pyvenv/bin/python: can't open file '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py': [Errno 2] No such file or directory
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py...en file '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py': [Errno 2] No such file or directory\n").returncode
+
+tests/test_autonomous_v374.py:90: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_autonomous_v374.py::test_concurrent_run_is_refused_without_corrupting_workspace - Failed: DID NOT RAISE <class 'RuntimeError'>
+FAILED tests/test_autonomous_v374.py::test_cli_runs_real_cycle - AssertionError: /opt/pyvenv/bin/python: can't open file '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py': [Errno 2] No such file or directory
+  
+assert 2 == 0
+ +  where 2 = CompletedProcess(args=['/opt/pyvenv/bin/python', '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py...en file '/mnt/data/pl5_v374_auto/research_backend/research_autonomous_v374.py': [Errno 2] No such file or directory\n").returncode
+2 failed, 6 passed in 1.77s

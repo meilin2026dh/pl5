@@ -1,0 +1,101 @@
+{
+  "fit_sha256": "93f8886be376c81ca0081be24e9ba776584dfe9455471540bde2f7ce4b554a1a",
+  "holdout_seen": false,
+  "integrity_sha256": "5ab9faa9b94ecc534b835b2ee22fe7f6473175c9118115e86af0c949a347ac6a",
+  "reason": null,
+  "schema": "pl5-v3726-gate-grammar-1:freeze",
+  "selected": {
+    "spec": {
+      "coefficients": [
+        4,
+        5,
+        5,
+        6,
+        5,
+        6
+      ],
+      "features": [
+        "constant",
+        "a",
+        "b",
+        "xor_mod10",
+        "gate_a",
+        "gate_product_mod10"
+      ],
+      "predicate": {
+        "kind": "equal"
+      },
+      "syntax": "induced_gate_mod10"
+    },
+    "table_sha256": "b5c816fa8979ffd1d342a0c879f1fde58ef04fb51cecda4df07d0cc951d6916b"
+  },
+  "status": "FROZEN",
+  "survivors": 1,
+  "validation_pairs": [
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      9
+    ]
+  ],
+  "validation_sha256": "4e36add8034b3e6b2c72a35aedd40f380c52ec3cf4ed4e91c95b920459c78a25"
+}

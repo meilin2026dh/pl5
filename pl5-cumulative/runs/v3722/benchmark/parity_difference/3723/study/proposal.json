@@ -1,0 +1,408 @@
+{
+  "candidate_limit": 24,
+  "candidates": [
+    {
+      "coverage_complete": true,
+      "domain_size": 10,
+      "observed_feature_inputs": 10,
+      "spec": {
+        "candidate_id": "b63aa188d2ac0ff79042fbce845592552d0bcb251c963574a086580b0f4f18a0",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "feature": "absdiff_mod10",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8
+        ],
+        "training_sha256": "4a0dd7bc8dc2c0ac73423f88f2c2892c7d2729ee4e3d7a8981499efa2d8360b3"
+      },
+      "table_sha256": "ca9a625b60feb22a37bfabe4712c940fba6ebdd6b3f4a19551b61c4125057307",
+      "training_errors": 0
+    },
+    {
+      "coverage_complete": false,
+      "domain_size": 19,
+      "observed_feature_inputs": 17,
+      "spec": {
+        "candidate_id": "2497c2edda4776eb20f1a065482172a5d14a4c5e42923b9ccb86f2eb25e5d0b6",
+        "domain": [
+          -9,
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "feature": "difference_raw",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          null,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          8,
+          1,
+          null,
+          1,
+          8
+        ],
+        "training_sha256": "4a0dd7bc8dc2c0ac73423f88f2c2892c7d2729ee4e3d7a8981499efa2d8360b3"
+      },
+      "table_sha256": "8bf57529fa1c02797f70b819a0ec1b2e7a89136e93a748d643ff6175f5f7a7bf",
+      "training_errors": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "a",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "b",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "sum_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "difference_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 5,
+      "domain_size": 10,
+      "feature": "product_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "xor_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "absdiff_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "min",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "max",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 5,
+      "domain_size": 10,
+      "feature": "gcd",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 19,
+      "feature": "sum_raw",
+      "observed_inputs": 19
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 19,
+      "feature": "difference_raw",
+      "observed_inputs": 17
+    },
+    {
+      "conflicting_inputs": 4,
+      "domain_size": 37,
+      "feature": "product_raw",
+      "observed_inputs": 30
+    }
+  ],
+  "evaluated_features": 13,
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "35d6eda401221905bc200f75c5bb27b292f8b7524192e8a47d79c32efd51695c",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:proposal",
+  "test_labels_used": false,
+  "train_labels_only": true,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "4a0dd7bc8dc2c0ac73423f88f2c2892c7d2729ee4e3d7a8981499efa2d8360b3"
+}

@@ -1,0 +1,120 @@
+{
+  "bank_sha256": "fe558b9254a107b9004b85fdac0af5e07019bb317a6daeb50ca84ee58411d4e8",
+  "candidate_budget": 4,
+  "candidates": [
+    {
+      "scale": 3,
+      "shift": 3,
+      "table_sha256": "d745cb24f7ab82ea750f23a3e98bd0c9185692470a538351b2ca43951c941c9a",
+      "template_index": 2
+    }
+  ],
+  "external_blind": false,
+  "integrity_sha256": "9757877ff2a756799163142bec71addd2a0a39c9949f7a7ca7da0c88354de144",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "parameterizations_examined": 160,
+  "precommitted_holdout_digest": "2df3d999a25fb665a1c516b427336b8ad3f62b5b68d6c2e0f92bf2fc741f6c16",
+  "schema": "pl5-v3723-cross-task-program-1:fit",
+  "source_cost_excluded": true,
+  "templates_examined": 4,
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "223680cb7f8d5d5ca378e1e46d34667b95aafad44bf2014e3cb492ec0b6c056b"
+}

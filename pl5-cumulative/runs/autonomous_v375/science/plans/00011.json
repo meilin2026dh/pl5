@@ -1,0 +1,22 @@
+{
+  "schema": "pl5-v375-locked-question-plan-1",
+  "cycle_number": 11,
+  "seed": 48500,
+  "budget": 500,
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "proposed_before_cycle_result": true,
+  "prospective_experiment": true,
+  "study_type": "adaptive_synthetic_exploration_not_confirmatory",
+  "question_id": "Q-generalization_gap",
+  "hypothesis_id": "H-generalization_gap-overfit",
+  "case": "xor_mixed",
+  "experiment_rationale": "Repeat with a fresh split and fixed candidate budget.",
+  "falsification_criterion": "Independent held-out tests consistently match training accuracy.",
+  "followup_attempt": 1,
+  "confirmatory_pvalue_permitted": false,
+  "scientific_conclusion": "UNRESOLVED",
+  "production_enabled": false,
+  "mandatory_null_control": false,
+  "sha256": "8de7a71bf9a7ead49f82f3432ebe431f4ce29d8799adafa2fe5fd093ef6129bd"
+}

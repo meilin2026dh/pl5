@@ -1,0 +1,13 @@
+1: shifted_bilinear_37301_full: train=34/60 held=20/40 exact=False evals=2500
+2: shifted_bilinear_37301_no_mutation: train=60/60 held=40/40 exact=True evals=2500
+3: shifted_bilinear_37301_no_crossover: train=34/60 held=20/40 exact=False evals=2500
+4: shifted_bilinear_37301_no_complexity: train=60/60 held=40/40 exact=True evals=2500
+5: shifted_bilinear_37301_no_warm_start: train=60/60 held=40/40 exact=True evals=2500
+6: shifted_bilinear_37301_grammar_only: train=18/60 held=9/40 exact=False evals=2500
+7: iid_a_37301_full: train=15/60 held=4/40 exact=False evals=2500
+8: iid_a_37301_no_mutation: train=17/60 held=6/40 exact=False evals=2500
+9: iid_a_37301_no_crossover: train=15/60 held=5/40 exact=False evals=2500
+10: iid_a_37301_no_complexity: train=16/60 held=6/40 exact=False evals=2500
+11: iid_a_37301_no_warm_start: train=15/60 held=4/40 exact=False evals=2500
+12: iid_a_37301_grammar_only: train=14/60 held=5/40 exact=False evals=2500
+{"output": "../docs/v373/repeat_subset", "trials": 12, "protocol_sha256": "422215d400a89a51abee1149dd955ae891a3a86743c9d177f3efe9b0a515b1dd", "all_budgets_matched": true}

@@ -1,0 +1,15 @@
+{
+  "combined_training_count": 70,
+  "combined_training_sha256": "7f65c2dd9897cbd7908dca9f3bc93b519fb1caeceaabc4319e28a9b645be57c8",
+  "consumed_challenge_is_now_training": true,
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "holdout_labels_used": false,
+  "integrity_sha256": "bd6173be80829a55c3cbd04c69f3edd79d0cddb95cea031d20e9e848760665f2",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "parent_falsification_sha256": "ae7eb204c6eb350d60d9603657e8232eadb42cbc753562316f8a2bcf6a004fca",
+  "parent_proposal_sha256": "0ce7722cf291cb226d91ebce2f48a86e45ea5f804f51dda01cd4466a442edd28",
+  "production_enabled": false,
+  "require_new_independent_challenge_and_validation": true,
+  "schema": "pl5-v3722-grammar-extension-1:revision",
+  "status": "PROPOSED_NOT_VALIDATED"
+}

@@ -1,0 +1,332 @@
+{
+  "challenge_pairs": [
+    [
+      0,
+      9
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      4
+    ]
+  ],
+  "challenge_sha256": "0f2d5363ae34b0fa287dbb397e9928514d7e6a3c20c602c291ae3c201123a6c5",
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "ddeec7a7a2d6cf8c86647630f7da8d2760936bc0bd55ab272cf4c6bb67023575",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "proposal_sha256": "39f738d67d66b8454f66453aac0b6f636cb41270cfbc918ba67f893002fdf194",
+  "results": [
+    {
+      "candidate_id": "a6842378a25a95dec6f080f2830055ba9d06db59603c58f4a26ffbb02831b49b",
+      "challenge_errors": 0,
+      "challenge_unknown": 0,
+      "counterexamples": [],
+      "feature": "difference_mod10",
+      "passes": true
+    },
+    {
+      "candidate_id": "f8604693fa1d25e7b7aeeb4e4f36acdc24c436afcab3a50d91ab44684541cef9",
+      "challenge_errors": 0,
+      "challenge_unknown": 3,
+      "counterexamples": [
+        {
+          "a": 0,
+          "b": 9,
+          "expected": 8,
+          "reason": "unobserved_feature_value"
+        },
+        {
+          "a": 7,
+          "b": 0,
+          "expected": 8,
+          "reason": "unobserved_feature_value"
+        },
+        {
+          "a": 9,
+          "b": 2,
+          "expected": 8,
+          "reason": "unobserved_feature_value"
+        }
+      ],
+      "feature": "difference_raw",
+      "passes": false
+    }
+  ],
+  "retrain_after_counterexample": false,
+  "schema": "pl5-v3722-grammar-extension-1:challenge",
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      5
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  {"name":"step_ge7","family":"steps","metric":"abs_ge7_count","op":"ge","value":1},
+  {"name":"all_012_same","family":"mod3","metric":"all_same","op":"eq","value":1},
+  {"name":"zero_road_absent","family":"mod3","metric":"zero_count","op":"eq","value":0},
+  {"name":"all_odd_even","family":"attributes","metric":"odd_count","op":"in","value":[0,5]},
+  {"name":"low_span_tail","family":"sum_span","metric":"tail_span_key","op":"in","value":[0,1,2,50,51,52]}
+]

@@ -1,0 +1,197 @@
+{
+  "version": "v31",
+  "dataset_source": "合成运算表（不包含彩票开奖数据）",
+  "generated": 2,
+  "items": [
+    {
+      "fixture": "quotient_synthetic",
+      "ability": {
+        "uacp_version": "v1",
+        "id": "pl5.category.b6e662a402d06df46ef12b4f",
+        "version": "v31-operator-category-1",
+        "kind": "learned_finite_operator_category",
+        "family": "row_column_quotient",
+        "inputs": [
+          "digit_0_to_9",
+          "digit_0_to_9"
+        ],
+        "output": "category_0_to_2",
+        "payload": {
+          "row_labels": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "column_labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0
+          ],
+          "core": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              2,
+              0
+            ]
+          ]
+        },
+        "source_id": "quotient_synthetic",
+        "source_table_sha256": "372b5f3afb101514e25f9b505ced42a144c62e586b3b6dfec2c23cbd61a48b1a",
+        "representation_bits_proxy": 66,
+        "raw_bits_proxy": 200,
+        "compression_ratio_proxy": 0.33,
+        "basis_size": 6,
+        "proof": {
+          "checked_pairs": 100,
+          "independent_scalar_check": true,
+          "table_sha256": "372b5f3afb101514e25f9b505ced42a144c62e586b3b6dfec2c23cbd61a48b1a",
+          "status": "passed"
+        },
+        "execution": "frozen_primitive_safe_no_eval",
+        "status": "research_only",
+        "prediction_advantage": "not_established",
+        "limits": "全表等价证明不等于对未来开奖号码的预测优势；MDL是固定编码代理"
+      },
+      "inserted": true
+    },
+    {
+      "fixture": "cyclic_synthetic",
+      "ability": {
+        "uacp_version": "v1",
+        "id": "pl5.category.45dd71881ca98b3e1a8798f6",
+        "version": "v31-operator-category-1",
+        "kind": "learned_finite_operator_category",
+        "family": "cyclic_difference",
+        "inputs": [
+          "digit_0_to_9",
+          "digit_0_to_9"
+        ],
+        "output": "category_0_to_2",
+        "payload": {
+          "orbit": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            2,
+            2,
+            1,
+            0,
+            2
+          ]
+        },
+        "source_id": "cyclic_synthetic",
+        "source_table_sha256": "9b32ed26241289f3d95cd2a181f827fee56a68f74c6d6a61d4d421b1df37289e",
+        "representation_bits_proxy": 44,
+        "raw_bits_proxy": 200,
+        "compression_ratio_proxy": 0.22,
+        "basis_size": 10,
+        "proof": {
+          "checked_pairs": 100,
+          "independent_scalar_check": true,
+          "table_sha256": "9b32ed26241289f3d95cd2a181f827fee56a68f74c6d6a61d4d421b1df37289e",
+          "status": "passed"
+        },
+        "execution": "frozen_primitive_safe_no_eval",
+        "status": "research_only",
+        "prediction_advantage": "not_established",
+        "limits": "全表等价证明不等于对未来开奖号码的预测优势；MDL是固定编码代理"
+      },
+      "inserted": true
+    },
+    {
+      "fixture": "unstructured_random_control",
+      "gap": {
+        "source_id": "unstructured_random_control",
+        "table_sha256": "e1b4a9e0019c723286286b1de0605d4064beefccb10ace0e64fb51405ab9fd32",
+        "status": "language_gap_open",
+        "raw_bits": 200,
+        "invented_count": 0,
+        "best_description_bits": 200,
+        "invented_families": [],
+        "rejections": [
+          {
+            "family": "row_column_quotient",
+            "reason": "压缩收益不足",
+            "bits": 304
+          },
+          {
+            "family": "all",
+            "reason": "未发现能全域重建且节约编码长度的算子类别；保留原表"
+          }
+        ],
+        "next_hypothesis": "提出受约束新类别假设（分段轨道/递归状态/有限自动机），需逐项全表核验和MDL审计",
+        "prediction_advantage": "not_established"
+      },
+      "rejections": [
+        {
+          "family": "row_column_quotient",
+          "reason": "压缩收益不足",
+          "bits": 304
+        },
+        {
+          "family": "all",
+          "reason": "未发现能全域重建且节约编码长度的算子类别；保留原表"
+        }
+      ]
+    }
+  ],
+  "registry": "/mnt/data/pl5_v31_work/examples/v31_demo.sqlite",
+  "scientific_state": "research_only",
+  "predictive_advantage": "NOT_ESTABLISHED",
+  "esse_experiment": {
+    "operator_id": "pl5.category.b6e662a402d06df46ef12b4f",
+    "positions": [
+      0,
+      4
+    ],
+    "allowed_symbols": [
+      0
+    ],
+    "total": 100000,
+    "retained": 35000,
+    "removed": 65000,
+    "mask_sha256": "b2e68b4146e5696a588e59506d63f35081b3f0ffd54bd539ac53b86bc4e298a9",
+    "status": "research_only_not_auto_activated",
+    "probability_under_uniform": 0.35
+  },
+  "aan_composition": {
+    "output_sha256": "6c8fb13d9abfb4af28747d1a8cb9e8748e38d94c17cb827b44bdc3105714e4d4",
+    "number_count": 100000,
+    "used_operator_ids": [
+      "pl5.category.b6e662a402d06df46ef12b4f"
+    ],
+    "program": {
+      "apply": "pl5.category.b6e662a402d06df46ef12b4f",
+      "args": [
+        {
+          "digit": 0
+        },
+        {
+          "digit": 4
+        }
+      ]
+    },
+    "status": "research_only_not_auto_activated"
+  }
+}

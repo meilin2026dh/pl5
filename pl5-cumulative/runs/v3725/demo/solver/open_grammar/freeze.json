@@ -1,0 +1,97 @@
+{
+  "distinct_survivors": 1,
+  "fit_sha256": "d1e3ee1f2c41ef65b650bed78fe1155cb970a716ab2a6fbb8732169b9a315517",
+  "integrity_sha256": "8713f4166861eda011972a7d48222a5b528d601200dd6c395203cd009c5b5c3b",
+  "reason": null,
+  "schema": "pl5-v3725-ring-grammar-1:freeze",
+  "selected": {
+    "spec": {
+      "coefficients": [
+        3,
+        5,
+        5,
+        6,
+        6
+      ],
+      "features": [
+        "constant",
+        "b",
+        "product_mod10",
+        "b_squared",
+        "a_squared_b"
+      ],
+      "stage": "polynomial_degree3",
+      "syntax": "mod10_sparse_basis"
+    },
+    "table_sha256": "cf3b3b08404e62c6bd686f92928c96bd78d05134dc68e0987e19d130fcae3464"
+  },
+  "status": "FROZEN",
+  "test_labels_seen": false,
+  "validation_pairs": [
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      9,
+      4
+    ],
+    [
+      9,
+      5
+    ]
+  ],
+  "validation_sha256": "0dda7d16b7e58f64e3527fe7811d969ba684431923900a4eba41fc66b6389519"
+}

@@ -1,0 +1,1590 @@
+{
+  "version": "representation-v25",
+  "experiment_id": "55ea3571c2b72cc9b966395c2cd4b897cbf6bf5f8c7a13985d462a5f5cc3a052",
+  "status": "research_only",
+  "splits": {
+    "development_train": 86,
+    "development_validation": 44,
+    "historical_holdout": 30,
+    "selection_policy": "only development validation"
+  },
+  "candidate_audit": {
+    "version": "representation-v25",
+    "baseline_feature_count": 10,
+    "reviewed": [
+      {
+        "id": "pl5.representation.77d8efd3447cebbd",
+        "spec": {
+          "operator": "combination_mod",
+          "positions": [
+            1,
+            4,
+            2,
+            0
+          ],
+          "weights": [
+            4,
+            4,
+            2,
+            8
+          ],
+          "modulus": 9,
+          "offset": 20
+        },
+        "capability": {
+          "id": "pl5.representation.77d8efd3447cebbd",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "combination_mod",
+            "positions": [
+              1,
+              4,
+              2,
+              0
+            ],
+            "weights": [
+              4,
+              4,
+              2,
+              8
+            ],
+            "modulus": 9,
+            "offset": 20
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 9,
+        "entropy_bits": 3.16990603,
+        "largest_bucket": 11219,
+        "smallest_bucket": 11029,
+        "nearest_baseline": "steps.abs_sum",
+        "baseline_explains_fraction": 0.000686,
+        "conditional_entropy_bits": 3.167732,
+        "partition_sha256": "77f881f625f818032e1386a11c317fd80f34632d3d900fa4e327aabc4774cc96",
+        "value_sha256": "527c1dee41e0419264721916f6943a844036750226f4f43844906c7bd6a4d707"
+      },
+      {
+        "id": "pl5.representation.5c8f31b52f840c11",
+        "spec": {
+          "operator": "affine_relabel",
+          "positions": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ],
+          "weights": [
+            3,
+            1,
+            3,
+            8,
+            4
+          ],
+          "modulus": 17,
+          "offset": 83
+        },
+        "capability": {
+          "id": "pl5.representation.5c8f31b52f840c11",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "affine_relabel",
+            "positions": [
+              0,
+              2,
+              4,
+              1,
+              3
+            ],
+            "weights": [
+              3,
+              1,
+              3,
+              8,
+              4
+            ],
+            "modulus": 17,
+            "offset": 83
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "invertible_relabel_only",
+        "equivalent_to": null,
+        "bucket_count": 100000,
+        "entropy_bits": 16.60964047,
+        "largest_bucket": 1,
+        "smallest_bucket": 1,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.354004,
+        "conditional_entropy_bits": 10.729762,
+        "partition_sha256": "20ff50e632cc575386b15d7fcd9c3842ef435388ed29ae8c30617158ee907dc5",
+        "value_sha256": "fc8159d56a25ca82e4ca6e3737dea87732382c42f0dfced50e8973c5fc12a821"
+      },
+      {
+        "id": "pl5.representation.22ddb5660a9ed27d",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "weights": [
+            5,
+            9,
+            1,
+            6
+          ],
+          "modulus": 13,
+          "offset": 76
+        },
+        "capability": {
+          "id": "pl5.representation.22ddb5660a9ed27d",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "weights": [
+              5,
+              9,
+              1,
+              6
+            ],
+            "modulus": 13,
+            "offset": 76
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 13,
+        "entropy_bits": 3.70043931,
+        "largest_bucket": 7700,
+        "smallest_bucket": 7680,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.002374,
+        "conditional_entropy_bits": 3.691655,
+        "partition_sha256": "0ea3dc72d7a47ae1726553bef02db874b17b6f90619058893a655d86daeaa92f",
+        "value_sha256": "7ed5bc1c5fc3545f551148317fe3c9e91968587a61b9c6060d65b145ad03ed9f"
+      },
+      {
+        "id": "pl5.representation.9b6f1daa42fa6772",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            0,
+            3,
+            1,
+            4,
+            2
+          ],
+          "weights": [
+            9,
+            3,
+            6,
+            6,
+            8
+          ],
+          "modulus": 17,
+          "offset": 57
+        },
+        "capability": {
+          "id": "pl5.representation.9b6f1daa42fa6772",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              0,
+              3,
+              1,
+              4,
+              2
+            ],
+            "weights": [
+              9,
+              3,
+              6,
+              6,
+              8
+            ],
+            "modulus": 17,
+            "offset": 57
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 17,
+        "entropy_bits": 4.08746279,
+        "largest_bucket": 5884,
+        "smallest_bucket": 5880,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.003151,
+        "conditional_entropy_bits": 4.074581,
+        "partition_sha256": "6109cc0e2a6f6d0cb2f6c05b1cd35311546daa9bba15b60228ac4e100565422a",
+        "value_sha256": "a9581e427fab6c2deea4ed33495608d541d99bda2a3af5930feb33f08dc866fa"
+      },
+      {
+        "id": "pl5.representation.cca07e1c77d85632",
+        "spec": {
+          "operator": "cross_term_mod",
+          "positions": [
+            4,
+            0,
+            3
+          ],
+          "weights": [
+            2,
+            7,
+            3
+          ],
+          "modulus": 4,
+          "offset": 14
+        },
+        "capability": {
+          "id": "pl5.representation.cca07e1c77d85632",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "cross_term_mod",
+            "positions": [
+              4,
+              0,
+              3
+            ],
+            "weights": [
+              2,
+              7,
+              3
+            ],
+            "modulus": 4,
+            "offset": 14
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 4,
+        "entropy_bits": 1.99645961,
+        "largest_bucket": 26800,
+        "smallest_bucket": 23200,
+        "nearest_baseline": "attributes.odd_count",
+        "baseline_explains_fraction": 0.074822,
+        "conditional_entropy_bits": 1.847081,
+        "partition_sha256": "a4f5c5d0a05f39fb8eb78942f18292dab557a7afd0e6480642ee85e03b6f3538",
+        "value_sha256": "158dc134ed05fa30a004690f365dbb8c41255d792e0aa2000e58bb6fb6ba860e"
+      },
+      {
+        "id": "pl5.representation.08d6654a17f64018",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            3,
+            4
+          ],
+          "weights": [
+            2,
+            4
+          ],
+          "modulus": 3,
+          "offset": 61
+        },
+        "capability": {
+          "id": "pl5.representation.08d6654a17f64018",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              3,
+              4
+            ],
+            "weights": [
+              2,
+              4
+            ],
+            "modulus": 3,
+            "offset": 61
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 3,
+        "entropy_bits": 1.5848187,
+        "largest_bucket": 34000,
+        "smallest_bucket": 33000,
+        "nearest_baseline": "sum_span.span",
+        "baseline_explains_fraction": 0.005491,
+        "conditional_entropy_bits": 1.576116,
+        "partition_sha256": "ba9a4babb2b30d7d391960ffbbc529269e71cc73665462ec9ee6bd161af64b80",
+        "value_sha256": "ab24ed01283c7961234f8a007012b8d9c84966280ee981109f01829ca04176cf"
+      },
+      {
+        "id": "pl5.representation.4f9fec578e3adccd",
+        "spec": {
+          "operator": "combination_mod",
+          "positions": [
+            1,
+            4
+          ],
+          "weights": [
+            1,
+            9
+          ],
+          "modulus": 5,
+          "offset": 43
+        },
+        "capability": {
+          "id": "pl5.representation.4f9fec578e3adccd",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "combination_mod",
+            "positions": [
+              1,
+              4
+            ],
+            "weights": [
+              1,
+              9
+            ],
+            "modulus": 5,
+            "offset": 43
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 5,
+        "entropy_bits": 2.32183183,
+        "largest_bucket": 20269,
+        "smallest_bucket": 19686,
+        "nearest_baseline": "steps.abs_sum",
+        "baseline_explains_fraction": 0.000466,
+        "conditional_entropy_bits": 2.320751,
+        "partition_sha256": "8bd0ce0f1fbf0ddf4c363987e552104f191a68ff9aaebab1ca26b195b9417ffc",
+        "value_sha256": "07cd94299e53c7b7c6e2aeb587cc1c21fd1f0f4976dd00983ffff4e3419225fe"
+      },
+      {
+        "id": "pl5.representation.cc4fdafad57e23d7",
+        "spec": {
+          "operator": "affine_relabel",
+          "positions": [
+            1,
+            4,
+            2,
+            0,
+            3
+          ],
+          "weights": [
+            1,
+            6,
+            4,
+            2,
+            9
+          ],
+          "modulus": 13,
+          "offset": 96
+        },
+        "capability": {
+          "id": "pl5.representation.cc4fdafad57e23d7",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "affine_relabel",
+            "positions": [
+              1,
+              4,
+              2,
+              0,
+              3
+            ],
+            "weights": [
+              1,
+              6,
+              4,
+              2,
+              9
+            ],
+            "modulus": 13,
+            "offset": 96
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "invertible_relabel_only",
+        "equivalent_to": null,
+        "bucket_count": 100000,
+        "entropy_bits": 16.60964047,
+        "largest_bucket": 1,
+        "smallest_bucket": 1,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.354004,
+        "conditional_entropy_bits": 10.729762,
+        "partition_sha256": "20ff50e632cc575386b15d7fcd9c3842ef435388ed29ae8c30617158ee907dc5",
+        "value_sha256": "360e21e77a3922aa070548224e8919c23bcc164786aa1c11a5dd2da89f7e1d1e"
+      },
+      {
+        "id": "pl5.representation.f85f7b44cd32bee9",
+        "spec": {
+          "operator": "combination_mod",
+          "positions": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ],
+          "weights": [
+            4,
+            9,
+            3,
+            5,
+            9
+          ],
+          "modulus": 4,
+          "offset": 10
+        },
+        "capability": {
+          "id": "pl5.representation.f85f7b44cd32bee9",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "combination_mod",
+            "positions": [
+              2,
+              3,
+              1,
+              4,
+              0
+            ],
+            "weights": [
+              4,
+              9,
+              3,
+              5,
+              9
+            ],
+            "modulus": 4,
+            "offset": 10
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 4,
+        "entropy_bits": 1.99977071,
+        "largest_bucket": 25468,
+        "smallest_bucket": 24528,
+        "nearest_baseline": "steps.abs_sum",
+        "baseline_explains_fraction": 0.000385,
+        "conditional_entropy_bits": 1.999001,
+        "partition_sha256": "301e2c4ff917c0d5d390c79846a2536dc33cd503d82e4ca91692bd9f63c4e650",
+        "value_sha256": "202776d18f829fb16eee3e9b574fdd9455cdcbb68248bfeb694be3cffcb00eba"
+      },
+      {
+        "id": "pl5.representation.50603d0955c4d530",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            3,
+            2
+          ],
+          "weights": [
+            4,
+            4
+          ],
+          "modulus": 17,
+          "offset": 11
+        },
+        "capability": {
+          "id": "pl5.representation.50603d0955c4d530",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              3,
+              2
+            ],
+            "weights": [
+              4,
+              4
+            ],
+            "modulus": 17,
+            "offset": 11
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 17,
+        "entropy_bits": 3.97546338,
+        "largest_bucket": 10000,
+        "smallest_bucket": 3000,
+        "nearest_baseline": "attributes.odd_count",
+        "baseline_explains_fraction": 0.02436,
+        "conditional_entropy_bits": 3.878623,
+        "partition_sha256": "edd4ad45ebe8325686b6e07ad3fb7abc2bed1a7fafb60d1762621362eca7b214",
+        "value_sha256": "3e06e8b5deae2d3ca3e651fc70a9cae12052fd93b414a543d4af1de14cfbae83"
+      },
+      {
+        "id": "pl5.representation.90c9a404092f29a4",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            1,
+            2,
+            4
+          ],
+          "weights": [
+            2,
+            2,
+            3
+          ],
+          "modulus": 7,
+          "offset": 59
+        },
+        "capability": {
+          "id": "pl5.representation.90c9a404092f29a4",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              1,
+              2,
+              4
+            ],
+            "weights": [
+              2,
+              2,
+              3
+            ],
+            "modulus": 7,
+            "offset": 59
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 7,
+        "entropy_bits": 2.8073405,
+        "largest_bucket": 14400,
+        "smallest_bucket": 14200,
+        "nearest_baseline": "sum_span.span",
+        "baseline_explains_fraction": 0.0019,
+        "conditional_entropy_bits": 2.802007,
+        "partition_sha256": "f683ad8964440b9b457ebb9ca29433ae810674a40df5c2b1e904675c7b8dc8ff",
+        "value_sha256": "054c0f3f90d6b979dc55cbbae84885feea9b4de64921e63a7cf71d86ae537986"
+      },
+      {
+        "id": "pl5.representation.a3abc3ea2652b2e5",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "weights": [
+            4,
+            7,
+            7,
+            8
+          ],
+          "modulus": 9,
+          "offset": 29
+        },
+        "capability": {
+          "id": "pl5.representation.a3abc3ea2652b2e5",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              0,
+              1,
+              3,
+              4
+            ],
+            "weights": [
+              4,
+              7,
+              7,
+              8
+            ],
+            "modulus": 9,
+            "offset": 29
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 9,
+        "entropy_bits": 3.16992494,
+        "largest_bucket": 11120,
+        "smallest_bucket": 11110,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.001614,
+        "conditional_entropy_bits": 3.164808,
+        "partition_sha256": "5f51a10534da248d9e796059e8bec0c0928a2e3651c8598902f13880454bed30",
+        "value_sha256": "e70f4db94732387fb926052c44edead8d9c5892469fb716af91a57c63efa49c6"
+      },
+      {
+        "id": "pl5.representation.44c2ad0e1c851128",
+        "spec": {
+          "operator": "signed_difference",
+          "positions": [
+            0,
+            3
+          ],
+          "weights": [
+            3,
+            9
+          ],
+          "modulus": 17,
+          "offset": 57
+        },
+        "capability": {
+          "id": "pl5.representation.44c2ad0e1c851128",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "signed_difference",
+            "positions": [
+              0,
+              3
+            ],
+            "weights": [
+              3,
+              9
+            ],
+            "modulus": 17,
+            "offset": 57
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 19,
+        "entropy_bits": 4.03056113,
+        "largest_bucket": 10000,
+        "smallest_bucket": 1000,
+        "nearest_baseline": "sum_span.span",
+        "baseline_explains_fraction": 0.070208,
+        "conditional_entropy_bits": 3.747585,
+        "partition_sha256": "4542260279b530b80c2455144a3789c86c9815061b27febc4520794d922ac149",
+        "value_sha256": "5d40bac446aaafa6603f70bc8403d059edb5cebe346c8bfe3e3d578cf433c312"
+      },
+      {
+        "id": "pl5.representation.0b0199784f8aa97d",
+        "spec": {
+          "operator": "weighted_mod",
+          "positions": [
+            3,
+            4,
+            0,
+            2,
+            1
+          ],
+          "weights": [
+            3,
+            1,
+            1,
+            9,
+            8
+          ],
+          "modulus": 9,
+          "offset": 92
+        },
+        "capability": {
+          "id": "pl5.representation.0b0199784f8aa97d",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "weighted_mod",
+            "positions": [
+              3,
+              4,
+              0,
+              2,
+              1
+            ],
+            "weights": [
+              3,
+              1,
+              1,
+              9,
+              8
+            ],
+            "modulus": 9,
+            "offset": 92
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 9,
+        "entropy_bits": 3.16992352,
+        "largest_bucket": 11140,
+        "smallest_bucket": 11100,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.002104,
+        "conditional_entropy_bits": 3.163254,
+        "partition_sha256": "7fc87cbb4b9c84ffeaa2e058dddb0855ec650df3cbbe8075ebac730cb17d0244",
+        "value_sha256": "3aaf46b2ae930164f335e8dfcc7c4ce90e1227cdd82730eb62b8e77ac4ab9ca0"
+      },
+      {
+        "id": "pl5.representation.92b0e98744191d7e",
+        "spec": {
+          "operator": "combination_mod",
+          "positions": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "weights": [
+            3,
+            5,
+            1,
+            7
+          ],
+          "modulus": 7,
+          "offset": 22
+        },
+        "capability": {
+          "id": "pl5.representation.92b0e98744191d7e",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "combination_mod",
+            "positions": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "weights": [
+              3,
+              5,
+              1,
+              7
+            ],
+            "modulus": 7,
+            "offset": 22
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 7,
+        "entropy_bits": 2.80716267,
+        "largest_bucket": 14702,
+        "smallest_bucket": 13927,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.001717,
+        "conditional_entropy_bits": 2.802344,
+        "partition_sha256": "67e0c4f84378aec6fe5052e39c3027162c5b120f55663c93a309fe2e37eddc19",
+        "value_sha256": "727a9b9533f90f010c6317dabbf8deae65fac226afae0fc9b3a36c807fe32d16"
+      },
+      {
+        "id": "pl5.representation.042fc96c9a603dd7",
+        "spec": {
+          "operator": "combination_mod",
+          "positions": [
+            0,
+            2,
+            1
+          ],
+          "weights": [
+            7,
+            2,
+            9
+          ],
+          "modulus": 5,
+          "offset": 13
+        },
+        "capability": {
+          "id": "pl5.representation.042fc96c9a603dd7",
+          "version": "2.5.0",
+          "kind": "discrete_representation",
+          "spec": {
+            "operator": "combination_mod",
+            "positions": [
+              0,
+              2,
+              1
+            ],
+            "weights": [
+              7,
+              2,
+              9
+            ],
+            "modulus": 5,
+            "offset": 13
+          },
+          "inputs": [
+            "canonical_five_digits"
+          ],
+          "outputs": [
+            "feature_values[100000]",
+            "candidate_rule_mask[100000]",
+            "audit"
+          ],
+          "depends_on": [
+            "pl5.canonical_universe"
+          ],
+          "deterministic": true,
+          "code_execution": "bounded_numpy_operations_only",
+          "registration": "research_candidate",
+          "predictive_advantage": "unverified",
+          "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+        },
+        "status": "engineering_candidate",
+        "equivalent_to": null,
+        "bucket_count": 5,
+        "entropy_bits": 2.32187155,
+        "largest_bucket": 20291,
+        "smallest_bucket": 19733,
+        "nearest_baseline": "combination.pick23_sum",
+        "baseline_explains_fraction": 0.000811,
+        "conditional_entropy_bits": 2.319987,
+        "partition_sha256": "1d37142f7373527d22fbba9cb14d93314a98e2526ba6cab17acaf1df1e751658",
+        "value_sha256": "8764a68b0e2a07e356bf74bfdd31d57a5b262b18cb88521ede8f8e5f3ff61cc9"
+      }
+    ],
+    "accepted": 14,
+    "rejected": 2,
+    "warning": "新特征/新分桶不代表新开奖信息，且不自动进入正式过滤。"
+  },
+  "development_leaderboard": [
+    {
+      "id": "pl5.representation.cca07e1c77d85632",
+      "periods": 44,
+      "avg_log_gain_nats": 0.02665099532218136,
+      "cumulative_log_gain_nats": 1.17264379417598,
+      "min_model_probability": 8.606765425261895e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.48627446964805
+    },
+    {
+      "id": "pl5.representation.77d8efd3447cebbd",
+      "periods": 44,
+      "avg_log_gain_nats": 0.0006352978795250922,
+      "cumulative_log_gain_nats": 0.027953106699104058,
+      "min_model_probability": 7.793112982012472e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.512290167090704
+    },
+    {
+      "id": "pl5.representation.a3abc3ea2652b2e5",
+      "periods": 44,
+      "avg_log_gain_nats": -4.880942699319463e-05,
+      "cumulative_log_gain_nats": -0.0021476147877005636,
+      "min_model_probability": 8.279860244088924e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.512974274397221
+    },
+    {
+      "id": "pl5.representation.22ddb5660a9ed27d",
+      "periods": 44,
+      "avg_log_gain_nats": -0.00010434058144234656,
+      "cumulative_log_gain_nats": -0.004590985583463249,
+      "min_model_probability": 7.473747500594264e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.51302980555167
+    },
+    {
+      "id": "pl5.representation.92b0e98744191d7e",
+      "periods": 44,
+      "avg_log_gain_nats": -0.003487026273287638,
+      "cumulative_log_gain_nats": -0.15342915602465607,
+      "min_model_probability": 8.07860649731974e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.516412491243516
+    },
+    {
+      "id": "pl5.representation.f85f7b44cd32bee9",
+      "periods": 44,
+      "avg_log_gain_nats": -0.005420830518703155,
+      "cumulative_log_gain_nats": -0.23851654282293883,
+      "min_model_probability": 9.321802074784842e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.518346295488932
+    },
+    {
+      "id": "pl5.representation.0b0199784f8aa97d",
+      "periods": 44,
+      "avg_log_gain_nats": -0.012223849587994561,
+      "cumulative_log_gain_nats": -0.5378493818717607,
+      "min_model_probability": 8.76683134747651e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.525149314558222
+    },
+    {
+      "id": "pl5.representation.90c9a404092f29a4",
+      "periods": 44,
+      "avg_log_gain_nats": -0.014263809509940321,
+      "cumulative_log_gain_nats": -0.6276076184373741,
+      "min_model_probability": 8.008120911346717e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.527189274480168
+    },
+    {
+      "id": "pl5.representation.08d6654a17f64018",
+      "periods": 44,
+      "avg_log_gain_nats": -0.016515982178706253,
+      "cumulative_log_gain_nats": -0.7267032158630751,
+      "min_model_probability": 9.171410499683744e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.529441447148935
+    },
+    {
+      "id": "pl5.representation.44c2ad0e1c851128",
+      "periods": 44,
+      "avg_log_gain_nats": -0.019109911153853503,
+      "cumulative_log_gain_nats": -0.8408360907695541,
+      "min_model_probability": 5.376344086021505e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.532035376124082
+    },
+    {
+      "id": "pl5.representation.042fc96c9a603dd7",
+      "periods": 44,
+      "avg_log_gain_nats": -0.026861252582558514,
+      "cumulative_log_gain_nats": -1.1818951136325746,
+      "min_model_probability": 8.068419638583473e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.539786717552788
+    },
+    {
+      "id": "pl5.representation.4f9fec578e3adccd",
+      "periods": 44,
+      "avg_log_gain_nats": -0.028821374048471727,
+      "cumulative_log_gain_nats": -1.268140458132756,
+      "min_model_probability": 7.0149737983109e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.541746839018701
+    },
+    {
+      "id": "pl5.representation.50603d0955c4d530",
+      "periods": 44,
+      "avg_log_gain_nats": -0.04450930089395928,
+      "cumulative_log_gain_nats": -1.9584092393342085,
+      "min_model_probability": 7.526881720430108e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.557434765864185
+    },
+    {
+      "id": "pl5.representation.9b6f1daa42fa6772",
+      "periods": 44,
+      "avg_log_gain_nats": -0.05379407080963606,
+      "cumulative_log_gain_nats": -2.3669391156239867,
+      "min_model_probability": 6.290066738302523e-06,
+      "null_avg_log_loss_nats": 11.512925464970229,
+      "model_avg_log_loss_nats": 11.566719535779866
+    }
+  ],
+  "selected_capability": {
+    "id": "pl5.representation.cca07e1c77d85632",
+    "version": "2.5.0",
+    "kind": "discrete_representation",
+    "spec": {
+      "operator": "cross_term_mod",
+      "positions": [
+        4,
+        0,
+        3
+      ],
+      "weights": [
+        2,
+        7,
+        3
+      ],
+      "modulus": 4,
+      "offset": 14
+    },
+    "inputs": [
+      "canonical_five_digits"
+    ],
+    "outputs": [
+      "feature_values[100000]",
+      "candidate_rule_mask[100000]",
+      "audit"
+    ],
+    "depends_on": [
+      "pl5.canonical_universe"
+    ],
+    "deterministic": true,
+    "code_execution": "bounded_numpy_operations_only",
+    "registration": "research_candidate",
+    "predictive_advantage": "unverified",
+    "notes": "整数编码/特征变换，不会因改变表示空间而产生未来预测信息"
+  },
+  "historical_holdout": {
+    "periods": 30,
+    "avg_log_gain_nats": -0.007917203440252677,
+    "cumulative_log_gain_nats": -0.23751610320758032,
+    "min_model_probability": 8.095952023988007e-06,
+    "null_avg_log_loss_nats": 11.512925464970229,
+    "model_avg_log_loss_nats": 11.520842668410483
+  },
+  "baseline_probability_per_ticket": 1e-05,
+  "temporal_experiment": {
+    "bucket_value": 3,
+    "excluded_count": 26800,
+    "fair_mass": 0.268,
+    "rule": "exclude_if_equal_recent_three",
+    "automatic_enable": false
+  },
+  "next_draw_exploratory_top100": [
+    "00000",
+    "00001",
+    "00002",
+    "00003",
+    "00004",
+    "00005",
+    "00006",
+    "00007",
+    "00008",
+    "00009",
+    "00040",
+    "00041",
+    "00042",
+    "00043",
+    "00044",
+    "00045",
+    "00046",
+    "00047",
+    "00048",
+    "00049",
+    "00080",
+    "00081",
+    "00082",
+    "00083",
+    "00084",
+    "00085",
+    "00086",
+    "00087",
+    "00088",
+    "00089",
+    "00100",
+    "00101",
+    "00102",
+    "00103",
+    "00104",
+    "00105",
+    "00106",
+    "00107",
+    "00108",
+    "00109",
+    "00140",
+    "00141",
+    "00142",
+    "00143",
+    "00144",
+    "00145",
+    "00146",
+    "00147",
+    "00148",
+    "00149",
+    "00180",
+    "00181",
+    "00182",
+    "00183",
+    "00184",
+    "00185",
+    "00186",
+    "00187",
+    "00188",
+    "00189",
+    "00200",
+    "00201",
+    "00202",
+    "00203",
+    "00204",
+    "00205",
+    "00206",
+    "00207",
+    "00208",
+    "00209",
+    "00240",
+    "00241",
+    "00242",
+    "00243",
+    "00244",
+    "00245",
+    "00246",
+    "00247",
+    "00248",
+    "00249",
+    "00280",
+    "00281",
+    "00282",
+    "00283",
+    "00284",
+    "00285",
+    "00286",
+    "00287",
+    "00288",
+    "00289",
+    "00300",
+    "00301",
+    "00302",
+    "00303",
+    "00304",
+    "00305",
+    "00306",
+    "00307",
+    "00308",
+    "00309"
+  ],
+  "next_draw_random_control_100": [
+    "68409",
+    "78914",
+    "31087",
+    "96641",
+    "33110",
+    "00351",
+    "47213",
+    "18466",
+    "47546",
+    "53397",
+    "61279",
+    "02145",
+    "16193",
+    "75330",
+    "93607",
+    "46888",
+    "85156",
+    "93568",
+    "06814",
+    "13970",
+    "49359",
+    "42581",
+    "29078",
+    "08223",
+    "92316",
+    "02339",
+    "31108",
+    "74770",
+    "22196",
+    "02382",
+    "87289",
+    "19020",
+    "26884",
+    "75267",
+    "23009",
+    "41725",
+    "93895",
+    "78083",
+    "46208",
+    "33027",
+    "46252",
+    "72188",
+    "13399",
+    "12185",
+    "45641",
+    "93544",
+    "83288",
+    "62709",
+    "63295",
+    "63847",
+    "48525",
+    "57185",
+    "36226",
+    "35610",
+    "49330",
+    "10544",
+    "23820",
+    "82837",
+    "27037",
+    "68800",
+    "89642",
+    "30016",
+    "13199",
+    "13388",
+    "99107",
+    "51454",
+    "74607",
+    "33330",
+    "19729",
+    "32548",
+    "74885",
+    "12573",
+    "82069",
+    "05412",
+    "51408",
+    "33747",
+    "92408",
+    "73223",
+    "44186",
+    "53198",
+    "50724",
+    "28956",
+    "08523",
+    "51640",
+    "44988",
+    "23619",
+    "05247",
+    "63172",
+    "33814",
+    "64011",
+    "59439",
+    "35225",
+    "20517",
+    "73355",
+    "16780",
+    "84781",
+    "75957",
+    "48870",
+    "57277",
+    "38761"
+  ],
+  "next_draw_model_probabilities": [
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05,
+    1.1336790550273696e-05
+  ],
+  "next_draw_fair_coverage": 0.001,
+  "recommendation": "No auto-promotion; future pre-registered forward trials needed.",
+  "warning": "历史留出不能证明未来预测优势；重复试验/重复查看导致测试污染。\n不存在不损失信息的升维过滤捷径，所有变换均由原五位数字确定。",
+  "source": "synthetic_demo"
+}

@@ -1,0 +1,69 @@
+........................................................................ [  7%]
+........................................................................ [ 14%]
+........................................................................ [ 22%]
+........................................................................ [ 29%]
+........................................................................ [ 37%]
+........................................................................ [ 44%]
+........................................................................ [ 52%]
+........................................................................ [ 59%]
+.................................................................F...... [ 67%]
+....................................................F.............F..... [ 74%]
+........................................................................ [ 82%]
+........................................................................ [ 89%]
+........................................................................ [ 97%]
+...........................                                              [100%]
+=================================== FAILURES ===================================
+________________ test_package_metadata_matches_research_release ________________
+
+    def test_package_metadata_matches_research_release():
+        metadata = tomllib.loads((Path(__file__).resolve().parents[1] / 'pyproject.toml').read_text())
+>       assert metadata['project']['version'] == pailie5.__version__
+E       AssertionError: assert '3.7.19' == '3.7.6'
+E         
+E         - 3.7.6
+E         + 3.7.19
+
+research_backend/tests/test_release_v372.py:8: AssertionError
+______________ test_v376_package_version_matches_python_and_docs _______________
+
+    def test_v376_package_version_matches_python_and_docs():
+        import tomllib
+        import pailie5
+        package=Path(__file__).resolve().parents[1]
+        metadata=tomllib.loads((package/'pyproject.toml').read_text(encoding='utf8'))
+>       assert metadata['project']['version']==pailie5.__version__=='3.7.6'
+E       AssertionError: assert '3.7.19' == '3.7.6'
+E         
+E         - 3.7.6
+E         + 3.7.19
+
+research_backend/tests/test_scientific_methods_v376.py:285: AssertionError
+_______________ test_v375_current_package_metadata_is_consistent _______________
+
+    def test_v375_current_package_metadata_is_consistent():
+        import tomllib
+        import pailie5
+        package=Path(__file__).resolve().parents[1]
+        metadata=tomllib.loads((package/'pyproject.toml').read_text())
+        # V3.7.5 compatibility remains required when cumulative releases advance.
+>       assert metadata['project']['version']==pailie5.__version__
+E       AssertionError: assert '3.7.19' == '3.7.6'
+E         
+E         - 3.7.6
+E         + 3.7.19
+
+research_backend/tests/test_scientific_questions_v375.py:174: AssertionError
+=========================== short test summary info ============================
+FAILED research_backend/tests/test_release_v372.py::test_package_metadata_matches_research_release - AssertionError: assert '3.7.19' == '3.7.6'
+  
+  - 3.7.6
+  + 3.7.19
+FAILED research_backend/tests/test_scientific_methods_v376.py::test_v376_package_version_matches_python_and_docs - AssertionError: assert '3.7.19' == '3.7.6'
+  
+  - 3.7.6
+  + 3.7.19
+FAILED research_backend/tests/test_scientific_questions_v375.py::test_v375_current_package_metadata_is_consistent - AssertionError: assert '3.7.19' == '3.7.6'
+  
+  - 3.7.6
+  + 3.7.19
+3 failed, 960 passed in 157.38s (0:02:37)

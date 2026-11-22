@@ -1,0 +1,19 @@
+{
+  "arms": [
+    "v3725_ring",
+    "v3726_gate"
+  ],
+  "budget_excludes": "challenge issuer generation, benchmark development, offline discovery, grader",
+  "budget_ms_per_arm": 5000,
+  "budget_scope": "worker process startup+imports+fit+freeze+evidence serialization",
+  "clock": "time.perf_counter_ns; subprocess.run(timeout=budget_s)",
+  "ensemble_budget_multiplier": 2,
+  "independent_external_issuer_verified": false,
+  "integrity_not_authenticity": true,
+  "integrity_sha256": "7eb7c1c8918683ae7264450d24ed8277d8c80773adcef59616e2d3f26b863810",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "public_sha256": "6c22662d1831bb7c80c655d0eb8d2ad20e659e1d35417f0df97970d015a51fef",
+  "schema": "pl5-v3727-hard-wall-budget-1:protocol",
+  "task_id": "int_07_372701",
+  "timeout_policy": "kill worker, mark TIMED_OUT, never grade partial evidence"
+}

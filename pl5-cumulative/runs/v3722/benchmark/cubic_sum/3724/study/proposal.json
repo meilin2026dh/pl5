@@ -1,0 +1,408 @@
+{
+  "candidate_limit": 24,
+  "candidates": [
+    {
+      "coverage_complete": true,
+      "domain_size": 10,
+      "observed_feature_inputs": 10,
+      "spec": {
+        "candidate_id": "c707f093176ba5cf257c73ebff065c036eec0b5fcc41df8e21b28b881a3ba7c9",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "feature": "sum_mod10",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9,
+          6,
+          5,
+          2
+        ],
+        "training_sha256": "26200891c25ebfd0507b9a88e3d817a027190f3e414c4b151f36c4e98da9cd40"
+      },
+      "table_sha256": "162cc4b91561e34ab94729a819bec71782b4fa5957d33f0450ae48307c8c3c08",
+      "training_errors": 0
+    },
+    {
+      "coverage_complete": false,
+      "domain_size": 19,
+      "observed_feature_inputs": 18,
+      "spec": {
+        "candidate_id": "fdb5847112eb3af1d70f4e6fc2e126d125fe92e4a8784b2a9c627e6f29c53899",
+        "domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "feature": "sum_raw",
+        "kind": "learned_unary_table_v1",
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          7,
+          8,
+          9,
+          6,
+          5,
+          2,
+          3,
+          4,
+          1,
+          0,
+          7,
+          null,
+          9,
+          6,
+          5
+        ],
+        "training_sha256": "26200891c25ebfd0507b9a88e3d817a027190f3e414c4b151f36c4e98da9cd40"
+      },
+      "table_sha256": "35e939768640105f6eb99d2773ba3f7e93bc61e9f92a182dab54d2478b05d0a8",
+      "training_errors": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "a",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 9,
+      "domain_size": 10,
+      "feature": "b",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 10,
+      "feature": "sum_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "difference_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 10,
+      "domain_size": 10,
+      "feature": "product_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "xor_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 9,
+      "domain_size": 10,
+      "feature": "absdiff_mod10",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 10,
+      "feature": "min",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 8,
+      "domain_size": 10,
+      "feature": "max",
+      "observed_inputs": 10
+    },
+    {
+      "conflicting_inputs": 5,
+      "domain_size": 10,
+      "feature": "gcd",
+      "observed_inputs": 8
+    },
+    {
+      "conflicting_inputs": 0,
+      "domain_size": 19,
+      "feature": "sum_raw",
+      "observed_inputs": 18
+    },
+    {
+      "conflicting_inputs": 14,
+      "domain_size": 19,
+      "feature": "difference_raw",
+      "observed_inputs": 17
+    },
+    {
+      "conflicting_inputs": 7,
+      "domain_size": 37,
+      "feature": "product_raw",
+      "observed_inputs": 29
+    }
+  ],
+  "evaluated_features": 13,
+  "evidence_grade": "DEVELOPMENT_SYNTHETIC_NOT_EXTERNAL_BLIND",
+  "integrity_sha256": "7ae3b7670a2cfa070a96111cc8b33df69c2d756831f61bfafcb7ed493c890762",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "production_enabled": false,
+  "schema": "pl5-v3722-grammar-extension-1:proposal",
+  "test_labels_used": false,
+  "train_labels_only": true,
+  "training_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      4
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "26200891c25ebfd0507b9a88e3d817a027190f3e414c4b151f36c4e98da9cd40"
+}

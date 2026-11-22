@@ -1,0 +1,35 @@
+{
+  "payload": {
+    "declared_utc_untrusted": "2026-11-21T08:30:35.013986+00:00",
+    "external_independence_verified": false,
+    "grader_public_key_fingerprint_sha256": "d1cff157d91cf57a967292798bcc5f8ab079a084ffaaadd18cb5fb5f85fb0b47",
+    "lottery_predictive_advantage": "NOT_ESTABLISHED",
+    "protocol": "pl5-v3728-signed-blind-handoff-1",
+    "score_file_sha256": "e49e6bf23eeff32241b245fc8a68978ff69642dba25c7b6f923e219d57dc09d7",
+    "solver_signed_receipt_file_sha256": "c5592a35d82192a15db9fa20103fcac717467949ac49b05034090e902748b0c2",
+    "task_id": "int_07_372701",
+    "task_scores": {
+      "frozen_portfolio": {
+        "budget_ms_total": 10000,
+        "holdout_cells": 0,
+        "holdout_errors": null,
+        "selected_source": null,
+        "status": "ABSTAIN"
+      },
+      "v3725_ring": {
+        "holdout_cells": 0,
+        "holdout_errors": null,
+        "status": "ABSTAIN"
+      },
+      "v3726_gate": {
+        "holdout_cells": 0,
+        "holdout_errors": null,
+        "status": "ABSTAIN"
+      }
+    },
+    "trusted_timestamp_verified": false
+  },
+  "schema": "pl5-v3728-signed-blind-handoff-1:grader",
+  "signature_alg": "Ed25519",
+  "signature_b64": "lOrJXV9QXmSfltzWUG9sfadqPy0QPs2StoTicbxGtCy6/P/ifCk6+C7Gv7bdvWZZp0jBj8EKt5s3D1v0vXxOAA=="
+}

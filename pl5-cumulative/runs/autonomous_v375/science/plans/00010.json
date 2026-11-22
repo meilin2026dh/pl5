@@ -1,0 +1,22 @@
+{
+  "schema": "pl5-v375-locked-question-plan-1",
+  "cycle_number": 10,
+  "seed": 47491,
+  "budget": 500,
+  "train_cells": 60,
+  "holdout_cells": 40,
+  "proposed_before_cycle_result": true,
+  "prospective_experiment": true,
+  "study_type": "adaptive_synthetic_exploration_not_confirmatory",
+  "question_id": "Q-weak_structured_generalization",
+  "hypothesis_id": "H-weak_structured_generalization-search_instability",
+  "case": "difference_squares",
+  "experiment_rationale": "Replicate under a new split/seed and compare full search to grammar-only.",
+  "falsification_criterion": "Repeated independent equal-budget searches show no improvement or variability.",
+  "followup_attempt": 2,
+  "confirmatory_pvalue_permitted": false,
+  "scientific_conclusion": "UNRESOLVED",
+  "production_enabled": false,
+  "mandatory_null_control": false,
+  "sha256": "c09d528b5bcb2b7f7125c76363d47f39c2d50b065e6dec6d53ca1bfd397a3ff0"
+}

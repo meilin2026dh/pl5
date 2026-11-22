@@ -1,0 +1,138 @@
+{
+  "bank_sha256": "fe558b9254a107b9004b85fdac0af5e07019bb317a6daeb50ca84ee58411d4e8",
+  "candidate_budget": 4,
+  "candidates": [
+    {
+      "scale": 1,
+      "shift": 7,
+      "table_sha256": "7ad987f253d45ea92d0f23915e8c6127a8711f25b2c724ada5d2a1d9fb57e428",
+      "template_index": 1
+    },
+    {
+      "scale": 3,
+      "shift": 3,
+      "table_sha256": "7ad987f253d45ea92d0f23915e8c6127a8711f25b2c724ada5d2a1d9fb57e428",
+      "template_index": 1
+    },
+    {
+      "scale": 7,
+      "shift": 5,
+      "table_sha256": "7ad987f253d45ea92d0f23915e8c6127a8711f25b2c724ada5d2a1d9fb57e428",
+      "template_index": 1
+    },
+    {
+      "scale": 9,
+      "shift": 1,
+      "table_sha256": "7ad987f253d45ea92d0f23915e8c6127a8711f25b2c724ada5d2a1d9fb57e428",
+      "template_index": 1
+    }
+  ],
+  "external_blind": false,
+  "integrity_sha256": "0aff61e046f9c6e84534e486a316cf313c8c7978a3bc2ae6afd0bdaa262bc77a",
+  "lottery_predictive_advantage": "NOT_ESTABLISHED",
+  "parameterizations_examined": 160,
+  "precommitted_holdout_digest": "842c7eb5d7d833127fff11d8b1664a1da2b26617f0e3f0009ea6f2c51320da76",
+  "schema": "pl5-v3723-cross-task-program-1:fit",
+  "source_cost_excluded": true,
+  "templates_examined": 4,
+  "test_labels_used": false,
+  "training_pairs": [
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "training_sha256": "0ebe4227a2eaafb59d9671c31b1dffb48c79a706fe5dc835eb4ab84f623aecca"
+}
