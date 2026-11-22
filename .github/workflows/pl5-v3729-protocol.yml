@@ -5,13 +5,16 @@ on:
       - research/v3729-independent-blind-prep
     paths:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
+      - "pl5-cumulative/research_backend/research_blind_ledger_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
       - "docs/v3729/**"
       - ".github/workflows/pl5-v3729-protocol.yml"
   pull_request:
     paths:
       - "pl5-cumulative/research_backend/research_blind_protocol_v3729.py"
       - "pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py"
+      - "pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py"
       - ".github/workflows/pl5-v3729-protocol.yml"
   workflow_dispatch:
 
@@ -33,12 +36,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install test runner only (protocol has no runtime dependencies)
-        run: python -m pip install "pytest>=8,<10"
+        run: python -m pip install "pytest>=8,<10" "cryptography>=43,<48"
       - name: Compile protocol and tests
-        run: python -m compileall -q pl5-cumulative/research_backend/research_blind_protocol_v3729.py pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py
+        run: python -m compileall -q pl5-cumulative/research_backend/research_blind_protocol_v3729.py pl5-cumulative/research_backend/research_blind_ledger_v3729.py pl5-cumulative/research_backend/tests/test_blind_protocol_v3729.py pl5-cumulative/research_backend/tests/test_blind_ledger_v3729.py
       - name: 100-task synthetic panel intake and adversarial protocol tests
         working-directory: pl5-cumulative/research_backend
-        run: python -m pytest -q tests/test_blind_protocol_v3729.py
+        run: python -m pytest -q tests/test_blind_protocol_v3729.py tests/test_blind_ledger_v3729.py
       - name: Verify no private challenge or private signing key accidentally entered this study
         shell: bash
         run: |
