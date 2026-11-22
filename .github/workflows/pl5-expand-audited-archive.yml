@@ -1,0 +1,107 @@
+name: Expand audited PL5 V3.7.28 research archive
+on:
+  push:
+    branches:
+      - archive/v3728-expanded-files
+    paths:
+      - .github/workflows/pl5-expand-audited-archive.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pl5-v3728-expand-once
+  cancel-in-progress: false
+
+jobs:
+  expand-verified-archive:
+    if: github.ref == 'refs/heads/archive/v3728-expanded-files'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout exact working branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Verify 5451 files, check for secrets, restore exact paths
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv
+          import hashlib
+          import re
+          import unicodedata
+          import zipfile
+          from pathlib import Path, PurePosixPath
+
+          archive_root = Path("archive/v3728")
+          csv_path = archive_root / "PL5_V3728_Public_Upload_Selected.csv"
+          parts = sorted((archive_root / "parts").glob("pl5_v3728_missing_safe_*.zip"))
+          assert len(parts) == 35, f"expected 35 ZIP parts, got {len(parts)}"
+          with csv_path.open(encoding="utf-8-sig", newline="") as handle:
+              rows = list(csv.DictReader(handle))
+          expected = {row["path"]: (row["sha256"].lower(), int(row["size_bytes"])) for row in rows}
+          assert len(rows) == len(expected) == 5451, "missing or duplicate manifest paths"
+
+          suspicious = [
+              re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY-----"),
+              re.compile(rb"\bgh[pousr]_[A-Za-z0-9_]{20,}\b"),
+              re.compile(rb"\bgithub_pat_[A-Za-z0-9_]{20,}\b"),
+              re.compile(rb"\bAKIA[0-9A-Z]{16}\b"),
+              re.compile(rb"\bsk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{28,}\b"),
+          ]
+          windows_reserved = {"CON", "PRN", "AUX", "NUL"} | {"COM" + str(i) for i in range(1, 10)} | {"LPT" + str(i) for i in range(1, 10)}
+          seen = set()
+          casefolded = set()
+          staged = []
+          total_bytes = 0
+          destination_root = Path("pl5-cumulative")
+          for archive_path in parts:
+              with zipfile.ZipFile(archive_path) as archive:
+                  assert archive.testzip() is None, f"corrupt archive {archive_path}"
+                  for member in archive.infolist():
+                      if member.is_dir():
+                          continue
+                      name = member.filename
+                      assert name in expected and name not in seen, f"unexpected or duplicate member {name}"
+                      pure = PurePosixPath(name)
+                      assert not pure.is_absolute() and ".." not in pure.parts and "\\" not in name, f"unsafe member path {name}"
+                      assert not any(component.rstrip(" .") != component or component.upper().split(".")[0] in windows_reserved or any(c in component for c in '<>:"|?*') for component in pure.parts), f"Windows-invalid path {name}"
+                      key = unicodedata.normalize("NFC", name).casefold()
+                      assert key not in casefolded, f"case-insensitive path collision {name}"
+                      casefolded.add(key)
+                      assert not any(x in name.casefold() for x in ("/private/", "developer_known.json", ".env", "/.ssh/")), f"possibly private file {name}"
+                      data = archive.read(member)
+                      required_sha, required_size = expected[name]
+                      assert len(data) == required_size and hashlib.sha256(data).hexdigest() == required_sha, f"SHA/size mismatch {name}"
+                      assert not any(pattern.search(data) for pattern in suspicious), f"suspected secret in {name}"
+                      target = destination_root.joinpath(*pure.parts)
+                      assert not target.exists(), f"file would overwrite existing content: {target}"
+                      staged.append((target, data))
+                      seen.add(name)
+                      total_bytes += len(data)
+          assert seen == set(expected), f"missing {len(set(expected) - seen)} files from source archives"
+          for target, data in staged:
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+          for target, data in staged:
+              assert hashlib.sha256(target.read_bytes()).digest() == hashlib.sha256(data).digest(), f"disk verification failed: {target}"
+          print(f"EXTRACTION_OK: {len(staged)} unique historical files, {total_bytes} bytes, 35 ZIP parts, all SHA256 verified; private holdback excluded")
+          PY
+      - name: Add files and verify Git staging count
+        shell: bash
+        run: |
+          git add -f -- pl5-cumulative/
+          count=$(git -c core.quotePath=false diff --cached --name-only | wc -l)
+          echo "staged new or updated files: $count"
+          test "$count" -eq 5451
+          git -c core.quotePath=false diff --cached --name-status | grep -Ev '^A[[:space:]]' && exit 1 || true
+      - name: Commit only to research archive branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "archive: expand and verify 5451 independent V3.7.28 research files"
+          git push origin HEAD:archive/v3728-expanded-files
