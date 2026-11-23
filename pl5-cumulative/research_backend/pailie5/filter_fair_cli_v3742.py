@@ -30,7 +30,7 @@ def _save_new(path: Path, payload: dict) -> None:
 
 def _read_training(path: Path) -> tuple[list[tuple[str, str]], str]:
     raw = path.read_bytes()
-    reader = csv.DictReader(raw.decode("utf8-sig").splitlines())
+    reader = csv.DictReader(raw.decode("utf-8-sig").splitlines())
     if reader.fieldnames != ["period", "number"]:
         raise ValueError("training CSV needs period,number only")
     rows = [(r["period"], r["number"]) for r in reader]
@@ -99,7 +99,7 @@ def freeze_training_csv(path: Path, *, evaluation_issue: str) -> dict:
 
 def evaluate_record_file(frozen: dict, observation_path: Path) -> dict:
     raw = observation_path.read_bytes()
-    table = list(csv.DictReader(raw.decode("utf8-sig").splitlines()))
+    table = list(csv.DictReader(raw.decode("utf-8-sig").splitlines()))
     if len(table) != 1 or set(table[0]) != {"period", "number"}:
         raise ValueError("observation must contain one period,number row")
     return evaluate_panel(
