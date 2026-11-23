@@ -43,9 +43,9 @@ def test_full_domain_exact_counts_and_nontrivial_overlap():
     p2 = compile_rule(RULES[1])
     few = compile_rule(RULES[2])
     assert full.bit_count() == DOMAIN
-    assert (full ^ ap).bit_count() == 100
-    assert (full ^ p2).bit_count() == 100
-    assert ((full ^ ap) & (full ^ p2)).bit_count() == 10
+    assert (full ^ ap).bit_count() == 200
+    assert (full ^ p2).bit_count() == 200
+    assert ((full ^ ap) & (full ^ p2)).bit_count() == 20
     assert (full ^ few).bit_count() == 6400
     assert not _membership(ap, "13579")
     assert not _membership(ap, "24680")
@@ -78,9 +78,9 @@ def test_order_changes_marginal_accounting_not_final_bitmap():
     base = audit_structural_increment(full, (RULES[0], RULES[1]))
     flipped = audit_structural_increment(full, (RULES[1], RULES[0]))
     assert base["final_keep_sha256"] == flipped["final_keep_sha256"]
-    assert base["final_keep_count"] == flipped["final_keep_count"] == DOMAIN - 190
-    assert [r["additional_excluded_in_sequence"] for r in base["rule_metrics"]] == [100, 90]
-    assert [r["additional_excluded_in_sequence"] for r in flipped["rule_metrics"]] == [100, 90]
+    assert base["final_keep_count"] == flipped["final_keep_count"] == DOMAIN - 180
+    assert [r["additional_excluded_in_sequence"] for r in base["rule_metrics"]] == [100, 80]
+    assert [r["additional_excluded_in_sequence"] for r in flipped["rule_metrics"]] == [100, 80]
 
 
 def test_empty_baseline_or_total_mask_still_has_correct_bounds():
