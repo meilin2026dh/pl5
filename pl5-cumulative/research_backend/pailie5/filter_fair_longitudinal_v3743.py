@@ -293,3 +293,28 @@ def summary_view(report: dict) -> dict:
             "A small count of retained synthetic observations cannot establish comparative superiority.",
         ],
     }
+
+
+def main() -> None:
+    """Single bounded internal demo run with complete immutable JSON evidence."""
+    import argparse
+    parser = argparse.ArgumentParser(description="PL5 frozen K=100 longitudinal engineering audit")
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--windows", type=int, default=WINDOWS)
+    args = parser.parse_args()
+    if args.output.exists():
+        raise FileExistsError("will not overwrite existing evidence")
+    report = run_longitudinal(windows=args.windows)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    encoded = json.dumps(report, ensure_ascii=False, sort_keys=True,
+                         indent=2, allow_nan=False) + "\n"
+    args.output.write_text(encoded, encoding="utf8")
+    print(json.dumps({
+        "output": str(args.output),
+        "file_sha256": sha256(encoded.encode("utf8")).hexdigest(),
+        **summary_view(report),
+    }, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()
