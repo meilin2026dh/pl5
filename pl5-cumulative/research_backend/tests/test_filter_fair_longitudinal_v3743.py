@@ -69,7 +69,7 @@ def test_future_only_changes_cannot_change_earlier_frozen_snapshot():
     frozen = freeze_one(past, "000042", index=41)
     a = freeze_one(list(past), "000042", index=41)
     assert frozen == a
-    assert "61520" not in str(frozen)  # unrelated reserved synthetic record
+    assert "observed_id" not in frozen["payload"]  # freeze API never accepts an observed value
     assert frozen["payload"]["last_training_issue"] == "000041"
     with pytest.raises(ValueError):
         freeze_one(past + [("000042", "61520")], "000042", index=42)
