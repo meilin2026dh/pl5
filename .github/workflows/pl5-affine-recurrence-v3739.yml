@@ -1,0 +1,33 @@
+name: PL5 V3.7.39 modular recurrence filter audit
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-affine-recurrence-v3739.yml"
+      - "pl5-cumulative/research_backend/pailie5/affine_recurrence_filters_v3739.py"
+      - "pl5-cumulative/research_backend/tests/test_affine_recurrence_filters_v3739.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-modular-filters:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: pl5-cumulative/research_backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install minimal scientific tests
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pytest>=8,<10"
+      - name: Prove modular recurrence counts and independent structural oracles
+        run: python -m pytest -q tests/test_affine_recurrence_filters_v3739.py tests/test_digit_structure_v3737.py tests/test_constraint_portfolio_v3731.py tests/test_filter_interactions_v3734.py
