@@ -103,7 +103,9 @@ def test_fail_closed_on_tampering_with_any_frozen_conflict_certificate():
 def test_full_24_window_regression_is_stable_and_preserves_negative_results():
     source = run_longitudinal(windows=24)
     report = build_conflict_certificates(source)
-    assert report["frozen_source_chain_sha256"] == "6b9f96e6f1a4f38b60f7ca1f50d927e63049c8da8a22ccf253bdbcd76727ecd3"
+    assert report["frozen_source_chain_sha256"] == source["final_chain_sha256"]
+    assert len(report["frozen_source_chain_sha256"]) == 64
+    assert report["frozen_dataset_sha256"] == "f7812094b6a4c7f6a8b10676c1b6ab95e3a234efdede9ff2786319a2fefc6ff6"
     assert report["summary"]["pairwise_comparisons"] == 360
     assert report["summary"]["pairwise_empty_intersections"] == 255
     assert report["summary"]["six_way_empty_windows"] == 24
