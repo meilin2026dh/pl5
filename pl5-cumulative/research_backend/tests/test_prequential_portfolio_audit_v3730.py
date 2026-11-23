@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import pytest
+from scipy.stats import binomtest
 
 from pailie5.prequential_portfolio_audit_v3730 import evaluate_prequential_portfolio
 
@@ -101,3 +102,48 @@ def test_fail_closed_on_bad_or_incomplete_ledger(mutation):
 def test_bad_window_settings_rejected(kwargs):
     with pytest.raises(ValueError):
         evaluate_prequential_portfolio(fixture(), **kwargs)
+
+
+def test_exact_null_calibration_and_paired_complete_contingency():
+    result = evaluate_prequential_portfolio(fixture(), calibration_periods=2, lookback=2)
+    decisions = result["decisions"]
+    n = len(decisions)
+    assert n == 5
+    portfolio_only = sum(x["hit"] and not x["random_hit"] for x in decisions)
+    random_only = sum(x["random_hit"] and not x["hit"] for x in decisions)
+    both = sum(x["hit"] and x["random_hit"] for x in decisions)
+    neither = sum(not x["hit"] and not x["random_hit"] for x in decisions)
+    assert portfolio_only + random_only + both + neither == n
+    assert result["paired_portfolio_only_hits"] == portfolio_only
+    assert result["paired_random_only_hits"] == random_only
+    assert result["paired_both_hit"] == both
+    assert result["paired_neither_hit"] == neither
+    assert result["one_sided_exact_binomial_p_unadjusted"] == pytest.approx(
+        binomtest(result["selected_hits"], n, p=0.001, alternative="greater").pvalue
+    )
+    discordant = portfolio_only + random_only
+    assert result["one_sided_exact_discordance_p_unadjusted"] == pytest.approx(
+        binomtest(portfolio_only, discordant, p=0.5, alternative="greater").pvalue
+        if discordant else 1.0
+    )
+    assert result["formal_significance_claim"] is False
+    assert result["predictive_advantage"] == "NOT_ESTABLISHED"
+
+
+def test_all_tied_or_identical_arms_have_no_paired_signal():
+    report = fixture()
+    for row in report["predictions"]:
+        row["hit"] = False
+    out = evaluate_prequential_portfolio(report, calibration_periods=2)
+    assert out["paired_portfolio_only_hits"] == 0
+    assert out["paired_random_only_hits"] == 0
+    assert out["one_sided_exact_discordance_p_unadjusted"] == 1.0
+    assert out["one_sided_exact_binomial_p_unadjusted"] == 1.0
+
+
+@pytest.mark.parametrize("invalid", ["", "0" * 63, "x" * 64, None])
+def test_missing_or_forged_history_digest_fails_closed(invalid):
+    report = fixture()
+    report["predictions"][0]["history_sha256"] = invalid
+    with pytest.raises(ValueError):
+        evaluate_prequential_portfolio(report)
