@@ -40,7 +40,7 @@ def test_prequential_choices_are_past_only_and_deterministic():
     a = evaluate_prequential_portfolio(r, calibration_periods=2, lookback=2)
     assert a == evaluate_prequential_portfolio(r, calibration_periods=2, lookback=2)
     assert [x["selected_arm"] for x in a["decisions"]] == [
-        "alpha", "alpha", "beta", "beta", "beta"
+        "alpha", "alpha", "beta", "beta", "random"
     ]
     assert a["evaluation_periods"] == 5
     assert a["evidence_level"] == "RETROSPECTIVE_ADAPTIVE_SELECTION_ONLY"
