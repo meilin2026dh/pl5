@@ -105,7 +105,7 @@ def test_bad_priority_rejected(order):
         prune_inclusion_minimal(p, priority=order)
 
 
-def test_more_than_sixty_rules_refused():
-    p = make_problem((7,) * 61, n=3)
+def test_more_than_sixty_rules_refused_by_shared_search_problem_contract():
+    # SearchProblem itself rejects >60 rules before our bounded pruner is called.
     with pytest.raises(ValueError, match="60"):
-        prune_inclusion_minimal(p)
+        make_problem((7,) * 61, n=3)
