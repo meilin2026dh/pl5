@@ -65,7 +65,7 @@ CATALOG = {word: group for group, names in CATEGORIES.items()
            for word in names.split()}
 DIRECTLY_MEASURABLE = {
     "basic_filters", "pattern_rules", "space_mapping", "digit_structure_v3737",
-    "affine_recurrence_filters_v3739", "multispace", "engine"
+    "affine_recurrence_filters_v3739",
 }
 REQUIRES_HISTORY = {"pattern_rules", "multispace", "engine", "probability_ranker",
                     "nca_v36", "backtest", "research_validation_v3719"}
