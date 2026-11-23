@@ -275,6 +275,53 @@ def verify_longitudinal(report: object) -> None:
         raise ValueError("missing method from aggregate")
 
 
+
+def structural_overlap_diagnostics(report: dict) -> dict:
+    """Exact member overlap between methods and adjacent windows at K=100.
+
+    These metrics remain useful even when no synthetic evaluation record
+    belongs to any K=100 subset; no outcome values enter the calculation.
+    """
+    verify_longitudinal(report)
+    views = []
+    for record in report["records"]:
+        views.append({
+            arm["method"]: set(arm["candidate_ids"])
+            for arm in record["panel"]["payload"]["methods"]
+        })
+    unions = [len(set().union(*snapshot.values())) for snapshot in views]
+    pairs = []
+    for i, left in enumerate(METHODS):
+        for right in METHODS[i + 1:]:
+            total = sum(len(snapshot[left] & snapshot[right]) for snapshot in views)
+            pairs.append({
+                "left": left, "right": right,
+                "total_common_ids_across_windows": total,
+                "mean_common_ids_numerator": total,
+                "mean_common_ids_denominator": len(views),
+                "identical_mask_windows": sum(snapshot[left] == snapshot[right]
+                                              for snapshot in views),
+            })
+    changes = []
+    for name in METHODS:
+        common = sum(len(a[name] & b[name]) for a, b in zip(views, views[1:]))
+        changes.append({
+            "method": name,
+            "adjacent_window_pairs": max(0, len(views) - 1),
+            "common_ids_across_adjacent_windows": common,
+            "mean_common_ids_numerator": common,
+            "mean_common_ids_denominator": max(1, len(views) - 1),
+        })
+    return {
+        "union_per_window": unions,
+        "mean_union_size_numerator": sum(unions),
+        "mean_union_size_denominator": len(views),
+        "method_pairs": pairs,
+        "within_method_adjacent_window_membership": changes,
+        "identity_overlap_only": True,
+    }
+
+
 def summary_view(report: dict) -> dict:
     verify_longitudinal(report)
     return {
@@ -285,6 +332,7 @@ def summary_view(report: dict) -> dict:
         "K": K,
         "chain_sha256": report["final_chain_sha256"],
         "summary": report["summary"],
+        "structural_overlap_diagnostics": structural_overlap_diagnostics(report),
         "evidence": "INTERNAL_SYNTHETIC_DEVELOPMENT",
         "limitations": [
             "All rows are synthetic; repeated inspection makes this a development-only record.",
