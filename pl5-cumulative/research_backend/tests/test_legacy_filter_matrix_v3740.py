@@ -42,6 +42,7 @@ def test_matrix_measures_legacy_mapped_structure_and_fixed_pattern_families():
     assert data["static_family_counts"]["dsc_structure"] == 5
     assert data["static_family_counts"]["affine_recurrence"] == 3
     assert data["measured_time_forward_pattern_arms"] == 6
+    assert data["measured_fixed_k_rank_arms"] == 6
     assert data["trusted_real_historical_comparison_complete"] is False
     assert data["source"]["source_kind"] == "INTERNAL_SYNTHETIC_DEMO_NOT_AUTHENTICATED_HISTORY"
     assert len(data["source"]["source_sha256"]) == 64
@@ -68,6 +69,14 @@ def test_complete_ledger_and_exact_count_bounds():
         assert all(len(x["candidate_sha256"]) == 64 for x in family["runs"])
         assert all(len(x["past_sha256"]) == 64 for x in family["runs"])
         assert all(x["past_rows"] < n for x in family["runs"])
+    for arm in data["time_forward_synthetic_fixed_k_rank_arms"]:
+        assert arm["evaluation_periods"] == SAMPLE_PERIODS
+        assert arm["fixed_candidate_budget"] == 100
+        assert len(arm["runs"]) == SAMPLE_PERIODS
+        assert all(x["retained_count"] == 100 for x in arm["runs"])
+        assert arm["total_synthetic_contained"] == sum(
+            int(x["synthetic_contained"]) for x in arm["runs"]
+        )
     assert json.loads(json.dumps(data)) == data
 
 
