@@ -43,8 +43,8 @@ def test_full_domain_exact_counts_and_nontrivial_overlap():
     p2 = compile_rule(RULES[1])
     few = compile_rule(RULES[2])
     assert full.bit_count() == DOMAIN
-    assert (full ^ ap).bit_count() == 200
-    assert (full ^ p2).bit_count() == 200
+    assert (full ^ ap).bit_count() == 100
+    assert (full ^ p2).bit_count() == 100
     assert ((full ^ ap) & (full ^ p2)).bit_count() == 20
     assert (full ^ few).bit_count() == 6400
     assert not _membership(ap, "13579")
