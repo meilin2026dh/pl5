@@ -60,6 +60,92 @@ def rank_prime(matrix: np.ndarray, prime: int) -> int:
     return row
 
 
+
+def contradiction_witness(matrix: np.ndarray, labels: np.ndarray, prime: int) -> dict | None:
+    """Construct a public-training-only, directly verifiable non-fit proof.
+
+    If A*c=y is impossible over F_p, find row weights w with w*A=0 and
+    w*y=1 (mod p). The latter equality disproves every possible c.
+    All indices refer solely to the ordered TRAINING rows. The proof is
+    sufficient to verify independently, without rerunning the solver.
+    """
+    if prime not in PRIMES:
+        raise ValueError("unsupported prime field")
+    x = np.asarray(matrix)
+    y = np.asarray(labels)
+    if (x.ndim != 2 or y.ndim != 1 or len(y) != x.shape[0]
+            or x.shape[0] == 0 or not np.issubdtype(x.dtype, np.integer)
+            or not np.issubdtype(y.dtype, np.integer)):
+        raise ValueError("integer training matrix and matching labels required")
+    m, n = x.shape
+    # Row operations on [A | y | I] accumulate a witness in the last m cols.
+    work = np.column_stack((x.astype(np.int64) % prime,
+                            y.astype(np.int64) % prime,
+                            np.eye(m, dtype=np.int64)))
+    row = 0
+    for col in range(n):
+        pivot = next((k for k in range(row, m) if work[k, col] != 0), None)
+        if pivot is None:
+            continue
+        if pivot != row:
+            work[[row, pivot]] = work[[pivot, row]]
+        work[row] = work[row] * pow(int(work[row, col]), -1, prime) % prime
+        for other in range(m):
+            if other != row and work[other, col]:
+                work[other] = (work[other] - int(work[other, col]) * work[row]) % prime
+        row += 1
+        if row == m:
+            break
+    for k in range(row, m):
+        if not np.any(work[k, :n]) and work[k, n] != 0:
+            scale = pow(int(work[k, n]), -1, prime)
+            weights = (work[k, n+1:] * scale) % prime
+            witness = {
+                "prime": prime,
+                "weighted_target_mod_prime": 1,
+                "nonzero_row_weights": [[int(i), int(c)] for i, c in
+                                        enumerate(weights) if c],
+            }
+            if not verify_contradiction_witness(x, y, witness):
+                raise RuntimeError("invalid modular contradiction witness")
+            return witness
+    return None
+
+
+def verify_contradiction_witness(matrix: np.ndarray, labels: np.ndarray, witness: dict) -> bool:
+    """Public and pure verifier for the two modular identities in a witness."""
+    if not isinstance(witness, dict) or set(witness) != {
+            "prime", "weighted_target_mod_prime", "nonzero_row_weights"}:
+        return False
+    prime = witness["prime"]
+    if type(prime) is not int or prime not in PRIMES:
+        return False
+    if type(witness["weighted_target_mod_prime"]) is not int or witness[
+            "weighted_target_mod_prime"] != 1:
+        return False
+    x = np.asarray(matrix)
+    y = np.asarray(labels)
+    if (x.ndim != 2 or y.ndim != 1 or x.shape[0] != len(y)
+            or not np.issubdtype(x.dtype, np.integer)
+            or not np.issubdtype(y.dtype, np.integer)):
+        return False
+    terms = witness["nonzero_row_weights"]
+    if not isinstance(terms, list) or not terms or len(terms) > len(y):
+        return False
+    weights = np.zeros(len(y), dtype=np.int64)
+    previous = -1
+    for term in terms:
+        if (not isinstance(term, list) or len(term) != 2 or
+                any(type(v) is not int for v in term)):
+            return False
+        idx, coeff = term
+        if not previous < idx < len(y) or not 1 <= coeff < prime:
+            return False
+        previous = idx
+        weights[idx] = coeff
+    return (not np.any((weights @ x.astype(np.int64)) % prime) and
+            int(weights @ y.astype(np.int64)) % prime == 1)
+
 def feasibility_certificate(matrix: np.ndarray, labels: np.ndarray) -> dict:
     x = np.asarray(matrix)
     y = np.asarray(labels)
@@ -70,16 +156,23 @@ def feasibility_certificate(matrix: np.ndarray, labels: np.ndarray) -> dict:
     expanded = np.column_stack((x, y))
     ranks = {}
     possible = True
+    witness = None
     for p in PRIMES:
         base = rank_prime(x, p)
         aug = rank_prime(expanded, p)
         if aug < base or aug > base + 1:
             raise AssertionError("modular augmented rank consistency violation")
+        inconsistent = aug != base
         ranks[str(p)] = {"rank_basis": base, "rank_augmented": aug,
-                         "inconsistent": aug != base}
-        possible = possible and (base == aug)
+                         "inconsistent": inconsistent}
+        if inconsistent and witness is None:
+            witness = contradiction_witness(x, y, p)
+            if witness is None:
+                raise RuntimeError("rank detected contradiction but no witness exists")
+        possible = possible and not inconsistent
     return {"exact_mod10_training_fit_exists": bool(possible),
-            "ranks_mod_primes": ranks}
+            "ranks_mod_primes": ranks,
+            "contradiction_witness": witness}
 
 
 def rank_audit(training: CellDataset) -> dict:
