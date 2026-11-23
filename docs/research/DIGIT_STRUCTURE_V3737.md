@@ -44,7 +44,7 @@ Before touching historical evidence, we can establish exact checks:
   (10 possible starting digits times 10 possible steps).
 - 100 out of 100,000 satisfy all three lag-2 equalities
   (the first two digits determine the remaining three).
-- The two preceding families intersect in exactly 10 constant strings.
+- The two preceding families intersect in exactly 20 strings: 10 constant strings (step 0) plus 10 alternating strings with modular step 5.
 - Exactly 6,400 strings have ≤2 distinct modular adjacent differences:
   10 starting digits × [10 single-symbol difference sequences +
   C(10,2)(2⁴−2) sequences that use both distinct symbols].
