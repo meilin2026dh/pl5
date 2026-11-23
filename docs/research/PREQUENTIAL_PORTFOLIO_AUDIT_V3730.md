@@ -51,6 +51,29 @@ The `historical_report` value must be the full return from
 `run_walk_forward`, including per-period candidate SHA256 and observed
 hit flags. No private source files or signing keys are required.
 
+## Exact conditional-null checks (descriptive, NOT a significance claim)
+
+The updated output records two **unadjusted one-sided exact tests**:
+
+- Binomial tail for selected-arm hits among scored issues, with fixed
+  `p=K/100000`. Under the iid uniform five-digit null, selection from
+  past-only feedback cannot change this conditional hit probability if
+  every arm's target-time candidate set is genuinely frozen and size K.
+- Paired exact discordance/McNemar upper tail comparing selected arm and
+  the mandatory fixed-K random control on *the same issue*. Counts include
+  selected-only, random-only, both-hit and neither-hit periods; zero
+  discordances yield p=1. With equal fixed sizes, uniform target draws
+  imply conditional symmetry of selected-only versus control-only
+  events, even when candidate sets overlap. Post-hoc tuning invalidates
+  the nominal tail calibration.
+
+Neither check adjusts for trying many windows, versions, or algorithms.
+Output deliberately sets `formal_significance_claim=false` and
+`predictive_advantage=NOT_ESTABLISHED` regardless of p-values.
+These checks cannot verify physical pre-draw commitment or source
+authenticity. A complete, well-timestamped independent prospective
+protocol is still mandatory.
+
 ## Scientific limits
 
 - **Evidence**: INTERNAL / developer-authored synthetic tests only in this work
