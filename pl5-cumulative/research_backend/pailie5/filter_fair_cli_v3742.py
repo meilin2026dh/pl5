@@ -70,9 +70,18 @@ def freeze_training_csv(path: Path, *, evaluation_issue: str) -> dict:
         ],
     }
     methods = {}
+    root = Path(__file__).resolve().parent
+    sources = {
+        "recurrence_t3": root / "affine_recurrence_filters_v3739.py",
+        "legacy_positional_k100": root / "engine.py",
+        "uniform_control_k100": root / "filter_fair_cli_v3742.py",
+    }
     for name, ids in refs.items():
-        version = sha256(("v3742|" + name).encode("ascii")).hexdigest()
-        parameters = sha256((name + "|seed=3742|K=100").encode("ascii")).hexdigest()
+        version = sha256(sources[name].read_bytes()).hexdigest()
+        parameters = sha256(json.dumps({
+            "name": name, "seed": 3742, "K": 100,
+            "numpy_version": np.__version__, "use_gate": False,
+        }, sort_keys=True).encode("utf8")).hexdigest()
         methods[name] = {
             "candidates": ids, "version_sha256": version,
             "rule_parameters_sha256": parameters,
