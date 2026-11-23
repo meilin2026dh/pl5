@@ -111,7 +111,8 @@ def test_invalid_feature_definitions_fail_closed(name, feature, operator, thresh
         StructuralRule(name, feature, operator, threshold)
 
 
-@pytest.mark.parametrize("invalid", [-1, 1 << DOMAIN, True, 3.5])
+@pytest.mark.parametrize("invalid", [-1, 1 << DOMAIN, True, 3.5],
+                         ids=["negative", "outside_domain", "bool", "float"])
 def test_invalid_baseline_masks_fail_closed(invalid):
     with pytest.raises(ValueError):
         audit_structural_increment(invalid)
