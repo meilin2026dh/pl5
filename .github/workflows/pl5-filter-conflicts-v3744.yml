@@ -1,0 +1,49 @@
+name: PL5 V3.7.44 exact conflict certificates
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-filter-conflicts-v3744.yml"
+      - "pl5-cumulative/research_backend/pailie5/filter_conflict_certificates_v3744.py"
+      - "pl5-cumulative/research_backend/tests/test_filter_conflict_certificates_v3744.py"
+      - "pl5-cumulative/research_backend/pailie5/filter_fair_longitudinal_v3743.py"
+      - "pl5-cumulative/research_backend/pailie5/legacy_method_census_v3740.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-conflict-audit:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: pl5-cumulative/research_backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test and candidate-generation dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pandas>=2.1,<3" "pytest>=8,<10"
+      - name: Independent 63-subset and adversarial conflict tests
+        run: python -m pytest -q tests/test_filter_conflict_certificates_v3744.py tests/test_filter_fair_longitudinal_v3743.py tests/test_filter_fair_ledger_v3742.py
+      - name: Freeze the source candidate sets using earlier rows only
+        run: python -m pailie5.filter_fair_longitudinal_v3743 --output ../../ci-results/v3744-frozen-${{ matrix.os }}.json
+      - name: Generate exact conflict certificates from frozen input
+        run: python -m pailie5.filter_conflict_certificates_v3744 --frozen-input ../../ci-results/v3744-frozen-${{ matrix.os }}.json --output ../../ci-results/v3744-conflicts-${{ matrix.os }}.json
+      - name: Preserve sealed source and separately checked exact certificates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pl5-v3744-conflicts-${{ matrix.os }}-${{ github.run_id }}
+          path: |
+            ci-results/v3744-frozen-${{ matrix.os }}.json
+            ci-results/v3744-conflicts-${{ matrix.os }}.json
+          retention-days: 30
+          if-no-files-found: warn
