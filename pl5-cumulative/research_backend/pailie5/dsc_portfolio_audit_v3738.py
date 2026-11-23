@@ -7,7 +7,6 @@ operator or change the underlying five-digit identity universe.
 from __future__ import annotations
 
 from hashlib import sha256
-import json
 
 from .digit_structure_v3737 import DOMAIN, RULES, audit_structural_increment, compile_rule, reference_baseline
 from .ga_cs_optimizer_v3715 import SearchProblem
@@ -61,6 +60,14 @@ def run_dsc_portfolio_audit(*, max_candidates: int = 100) -> dict:
                 != baseline.bit_count() - full_mask.bit_count()):
         raise AssertionError("independent DSC auditing methods disagree")
 
+    # Under fixed Boolean AND, the full conjunction has no more retained
+    # identities than any optional subset, giving an exact lower bound.
+    minimum = full_mask.bit_count()
+    mathematically_infeasible = minimum > max_candidates
+    if mathematically_infeasible and (exact["best"] is not None
+                                      or exact["feasible_subset_count"] != 0):
+        raise AssertionError("candidate-budget infeasibility was silently repaired")
+
     # The deliberately equivalent fifth operator must remain an explicit
     # control; exact pruning preserves the full candidate bitmap.
     if kept[0] != kept[4]:
@@ -95,6 +102,13 @@ def run_dsc_portfolio_audit(*, max_candidates: int = 100) -> dict:
         "all_dsc_keep_sha256": final_sha,
         "dsc_incremental_excluded": baseline.bit_count() - full_mask.bit_count(),
         "max_candidates": max_candidates,
+        "cap_infeasibility_certificate": {
+            "full_inventory_is_subset_minimum": True,
+            "minimum_retained_exact": minimum,
+            "target_upper_bound": max_candidates,
+            "mathematically_infeasible": mathematically_infeasible,
+            "subsets_enumerated": exact["subset_count"],
+        },
         "exact_portfolio_subsets": exact["subset_count"],
         "exact_feasible_subsets": exact["feasible_subset_count"],
         "best_under_cap": exact["best"],
@@ -103,6 +117,8 @@ def run_dsc_portfolio_audit(*, max_candidates: int = 100) -> dict:
         "structural_rule_metrics": rule_rows,
         "pairwise_overlap": intersections["pairwise"],
         "minimum_equivalent_rule_count": prune["chosen_rule_count"],
+        "minimum_equivalent_genome": prune["chosen_genome"],
+        "scalar_checks_saved_by_equivalent_pruning": prune["scalar_checks_saved"],
         "equivalent_pruned_rules": prune["chosen_rule_names"],
         "removed_redundant_rules": prune["removed_rule_names"],
         "full_bitmap_equivalence_proven": prune["exact_bitmap_preserved"],
