@@ -240,6 +240,9 @@ def verify_longitudinal(report: object) -> None:
         if (record["issue"] != p["evaluation_issue"] or s["evaluation_issue"] != p["evaluation_issue"]
                 or s["frozen_payload_sha256"] != record["panel"]["payload_sha256"]
                 or s["source_classification"] != "INTERNAL_SYNTHETIC"
+                or type(s.get("observed_id")) is not str
+                or len(s["observed_id"]) != 5 or not s["observed_id"].isascii()
+                or not s["observed_id"].isdigit()
                 or s["external_timestamp_attested"] is not False
                 or [m["method"] for m in p["methods"]] != list(METHODS)
                 or [m["method"] for m in s["results"]] != list(METHODS)
@@ -247,9 +250,14 @@ def verify_longitudinal(report: object) -> None:
                 or any(m["candidate_count"] != K for m in s["results"])):
             raise ValueError("inconsistent frozen/evaluated method panel")
         issues.append(int(record["issue"]))
-        for row in s["results"]:
-            if type(row["retrospective_containment"]) is not bool:
-                raise ValueError("invalid containment")
+        for method, row in zip(p["methods"], s["results"]):
+            if (type(row["retrospective_containment"]) is not bool
+                    or row["retrospective_containment"]
+                    != (s["observed_id"] in method["candidate_ids"])
+                    or row["candidate_bitmap_sha256"] != method["candidate_bitmap_sha256"]
+                    or row["retained_ratio_numerator"] != K
+                    or row["retained_ratio_denominator"] != DOMAIN):
+                raise ValueError("retrospective containment not reproducible from frozen IDs")
             observed[row["method"]] += int(row["retrospective_containment"])
         new = _signature(record, chain)
         if new != record["chain_sha256"]:
