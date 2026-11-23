@@ -1,0 +1,41 @@
+name: PL5 AI100 public-only failure diagnosis CI
+on:
+  push:
+    branches: [research/v3729-independent-blind-prep]
+    paths:
+      - "ci/analyze_ai100_public_failures.py"
+      - "ci/tests/test_ai100_public_failures.py"
+      - ".github/workflows/pl5-ai100-public-diagnosis.yml"
+  pull_request:
+    paths:
+      - "ci/analyze_ai100_public_failures.py"
+      - "ci/tests/test_ai100_public_failures.py"
+      - ".github/workflows/pl5-ai100-public-diagnosis.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnosis:
+    name: Public evidence analyzer / ${{ matrix.os }} / Python 3.12
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile public evidence analyzer
+        run: python -m compileall -q ci/analyze_ai100_public_failures.py ci/tests/test_ai100_public_failures.py
+      - name: Run public-only synthetic tests
+        run: python -m unittest discover -v -s ci/tests -p test_ai100_public_failures.py
+      - name: Evidence boundary
+        shell: bash
+        run: |
+          test ! -e ci/PL5_AI100_PRIVATE_DoNotPublish_20261123.zip
+          echo "Synthetic tests only. Never upload private answers or generator rules."
