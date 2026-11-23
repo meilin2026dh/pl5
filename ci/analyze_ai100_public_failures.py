@@ -85,20 +85,36 @@ def summarize(evidence_zip: Path, review_csv: Path):
         approved_ids = freeze.get("task_ids")
         receipts = freeze.get("freeze_receipt_sha256")
         if (not isinstance(approved_ids, list) or len(approved_ids) != 100 or
-                set(approved_ids) != set(categories) or
-                not isinstance(receipts, dict) or
-                not set(receipts).issubset(set(approved_ids))):
+                len(set(approved_ids)) != 100 or set(approved_ids) != set(categories) or
+                not isinstance(receipts, dict) or set(receipts) != set(approved_ids)):
             raise ValueError("frozen task manifest does not match approved review")
         if freeze.get("task_freeze_statuses") != {
                 "FROZEN": 99, "INTERRUPTED_BEFORE_FREEZE": 1}:
             raise ValueError("unexpected global freeze status")
+        # A receipt exists even for the interrupted task. The receipt HASH is
+        # never evidence that both solver freeze stages actually completed.
+        task_states = {}
+        for task_id in approved_ids:
+            path = SOURCE_PREFIX + task_id + "/freeze_status.json"
+            if path not in z.namelist():
+                raise ValueError("missing individual freeze status")
+            actual_sha = hashlib.sha256(z.read(path)).hexdigest()
+            if actual_sha != receipts[task_id]:
+                raise ValueError("individual freeze-status SHA256 mismatch")
+            state = checked_json(z, path)
+            if state.get("task_id") != task_id or state.get("status") not in (
+                    "FROZEN", "INTERRUPTED_BEFORE_FREEZE"):
+                raise ValueError("unrecognized per-task frozen state")
+            task_states[task_id] = state["status"]
+        if Counter(task_states.values()) != Counter(freeze["task_freeze_statuses"]):
+            raise ValueError("frozen aggregate status inconsistent with individual receipts")
         for task_id, group in categories.items():
             for mode in MODES:
                 for arm in ARMS:
                     c = counts[(group, mode, arm)]
                     c["denominator"] += 1
-                    # Never treat a partially written interrupted study as valid.
-                    if task_id not in receipts:
+                    # Never use partial worker files for the interrupted task.
+                    if task_states[task_id] != "FROZEN":
                         c["interrupted_before_global_freeze"] += 1
                         continue
                     prefix = SOURCE_PREFIX + task_id + "/solver/" + mode + "/" + arm + "/"
