@@ -54,7 +54,7 @@ CATEGORIES = {
         scientific_runtime_v375 scientific_runtime_v376 evolution_v15
         discovery filter_fair_ledger_v3742 filter_fair_cli_v3742
         filter_fair_longitudinal_v3743
-        filter_conflict_certificates_v3744
+        filter_conflict_certificates_v3744 filter_compatible_repairs_v3745
     """,
     "infrastructure": """
         __init__ agents algorithm_registry_v14 ability_lab_v19
