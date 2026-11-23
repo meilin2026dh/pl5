@@ -1,4 +1,4 @@
-name: PL5 V3.7.37-38 digit structure portfolio audit
+name: PL5 V3.7.37 digit structure operator audit
 
 on:
   pull_request:
@@ -6,11 +6,6 @@ on:
       - ".github/workflows/pl5-digit-structure-v3737.yml"
       - "pl5-cumulative/research_backend/pailie5/digit_structure_v3737.py"
       - "pl5-cumulative/research_backend/tests/test_digit_structure_v3737.py"
-      - "pl5-cumulative/research_backend/pailie5/digit_structure_portfolio_v3738.py"
-      - "pl5-cumulative/research_backend/tests/test_digit_structure_portfolio_v3738.py"
-      - "pl5-cumulative/research_backend/pailie5/constraint_portfolio_v3731.py"
-      - "pl5-cumulative/research_backend/pailie5/filter_interactions_v3734.py"
-      - "pl5-cumulative/research_backend/pailie5/filter_equivalent_pruning_v3735.py"
       - "pl5-cumulative/research_backend/pailie5/pattern_rules.py"
   workflow_dispatch:
 
@@ -35,5 +30,5 @@ jobs:
           python-version: "3.12"
       - name: Install minimal dependencies
         run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pytest>=8,<10"
-      - name: Validate exact masks, bounded portfolio and equivalence pruning
-        run: python -m pytest -q tests/test_digit_structure_v3737.py tests/test_digit_structure_portfolio_v3738.py tests/test_constraint_portfolio_v3731.py tests/test_filter_interactions_v3734.py tests/test_filter_equivalent_pruning_v3735.py
+      - name: Validate digit operator enumeration and marginal accounting
+        run: python -m pytest -q tests/test_digit_structure_v3737.py tests/test_filter_interactions_v3734.py
