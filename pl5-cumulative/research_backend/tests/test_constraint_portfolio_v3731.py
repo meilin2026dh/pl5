@@ -42,37 +42,31 @@ def test_all_subsets_and_permutation_oracle_and_exact_frontier():
     assert result["subset_count"] == 16
     assert result["feasible_subset_count"] == len(rows)
     assert result["frontier"]
-    for item in result["frontier"]:
-        matching = [row for row in rows if row[0] == item["genome"]]
-        assert len(matching) == 1
-        genome, count, active, checks, error = matching[0]
-        assert (item["survivor_count"], item["active_rule_count"],
-                item["scalar_evaluation_cost"], item["target_distance"]) == (
-                    count, active, checks, error
-                )
-        assert not any(
-            other[0] != genome and
-            (other[4], other[2], other[3]) <= (error, active, checks)
-            for other in []
-        )  # The genuine componentwise oracle is tested below.
-        assert not any(
-            other[0] != genome and
-            other[4] <= error and other[2] <= active and other[3] <= checks and
-            (other[4], other[2], other[3]) != (error, active, checks)
+    expected_frontier = []
+    for row in rows:
+        genome, count, active, cost, error = row
+        dominated = any(
+            other[0] != genome and other[4] <= error
+            and other[2] <= active and other[3] <= cost
+            and ((other[4], other[2], other[3]) != (error, active, cost)
+                 or other[0] < genome)
             for other in rows
         )
-    # Pareto equal-vector duplicates are deliberately reduced to smallest ID.
-    for row in rows:
-        obj = (row[4], row[2], row[3])
-        if not any(f["genome"] == row[0] for f in result["frontier"]):
-            assert any(
-                (f["target_distance"], f["active_rule_count"],
-                 f["scalar_evaluation_cost"]) <= obj
-                or (f["target_distance"] <= obj[0]
-                    and f["active_rule_count"] <= obj[1]
-                    and f["scalar_evaluation_cost"] <= obj[2])
-                for f in result["frontier"]
-            )
+        if not dominated:
+            expected_frontier.append(row)
+    assert set(x["genome"] for x in result["frontier"]) == set(
+        x[0] for x in expected_frontier
+    )
+    for item in result["frontier"]:
+        genome, count, active, cost, error = next(
+            row for row in rows if row[0] == item["genome"]
+        )
+        assert (item["survivor_count"], item["active_rule_count"],
+                item["scalar_evaluation_cost"], item["target_distance"]) == (
+                    count, active, cost, error
+                )
+    expected_best = min(rows, key=lambda r: (r[4], r[3], r[2], r[0]))
+    assert result["best"]["genome"] == expected_best[0]
 
 
 def test_order_dp_beats_naive_greedy_on_a_concrete_counterexample():
