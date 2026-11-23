@@ -13,6 +13,7 @@ from pailie5.open_grammar_v3725 import fit as fit25
 from pailie5.gate_induction_v3726 import fit as fit26
 from research_frozen_grammar_rank_v3729 import (
     feasibility_certificate, rank_prime, rank_audit, read_public_train, SCHEMA,
+    contradiction_witness, verify_contradiction_witness,
 )
 
 
@@ -80,3 +81,75 @@ def test_tampered_and_nonpublic_task_rejected(tmp_path):
     file.write_text('{"schema":"anything","train":[]}', encoding="utf-8")
     with pytest.raises(ValueError, match="public challenge"):
         read_public_train(file)
+
+
+
+def test_constructive_dual_witness_and_tamper_rejection():
+    # Same feature row cannot produce two different labels.
+    x = np.array([[1, 0], [1, 0]], dtype=np.int64)
+    y = np.array([2, 7], dtype=np.int64)
+    cert = feasibility_certificate(x, y)
+    assert not cert["exact_mod10_training_fit_exists"]
+    witness = cert["contradiction_witness"]
+    assert witness is not None
+    assert verify_contradiction_witness(x, y, witness)
+    assert witness["prime"] == 2  # difference 5 is nonzero mod 2
+    # Cross-check that the other prime (5) is feasible.
+    assert not cert["ranks_mod_primes"]["5"]["inconsistent"]
+    assert contradiction_witness(x, y, 5) is None
+    assert contradiction_witness(x, y, 2) == witness
+    changed = {**witness, "nonzero_row_weights": [[0, 1]]}
+    assert not verify_contradiction_witness(x, y, changed)
+    changed = {**witness, "weighted_target_mod_prime": 0}
+    assert not verify_contradiction_witness(x, y, changed)
+    changed = {**witness, "nonzero_row_weights": [[999, 1]]}
+    assert not verify_contradiction_witness(x, y, changed)
+    changed = {**witness, "nonzero_row_weights": [[0, True]]}
+    assert not verify_contradiction_witness(x, y, changed)
+    with pytest.raises(ValueError, match="prime"):
+        contradiction_witness(x, y, 7)
+
+
+@pytest.mark.parametrize("kind", ["linear", "piecewise_equal", "random_table"])
+def test_every_rank_conflict_has_verified_public_training_proof(kind):
+    from pailie5.open_grammar_v3725 import _features, _stage_names
+    from pailie5.gate_induction_v3726 import _full_bank, predicate_specs
+
+    observed = training(kind)
+    cert = rank_audit(observed)
+    idx = np.array([10 * a + b for a, b, _ in observed.rows], dtype=np.int64)
+    y = np.array([value for _, _, value in observed.rows], dtype=np.int64)
+    features = _features()
+    for stage in cert["v3725_stages"]:
+        matrix = np.column_stack([features[name][idx] for name in
+                                 _stage_names()[stage["stage"]]])
+        witness = stage["contradiction_witness"]
+        if stage["exact_mod10_training_fit_exists"]:
+            assert witness is None
+        else:
+            assert verify_contradiction_witness(matrix, y, witness)
+            assert stage["ranks_mod_primes"][str(witness["prime"])]["inconsistent"]
+    for row, pred in zip(cert["v3726_predicates"], (None,) + predicate_specs()):
+        names, bank = _full_bank(pred)
+        assert len(names) == row["basis_columns"]
+        witness = row["contradiction_witness"]
+        if row["exact_mod10_training_fit_exists"]:
+            assert witness is None
+        else:
+            assert verify_contradiction_witness(bank[idx], y, witness)
+    assert cert["holdout_labels_seen"] is False
+    assert cert["external_blind_verified"] is False
+
+
+def test_constructive_witness_five_only_and_full_rank_consistency():
+    x = np.array([[2], [2]], dtype=np.int64)
+    y = np.array([2, 4], dtype=np.int64)
+    cert = feasibility_certificate(x, y)
+    assert cert["contradiction_witness"]["prime"] == 5
+    assert verify_contradiction_witness(x, y, cert["contradiction_witness"])
+    # A consistent but underdetermined case must NOT acquire a false proof.
+    x = np.array([[1, 0, 0]], dtype=np.int64)
+    y = np.array([4], dtype=np.int64)
+    cert = feasibility_certificate(x, y)
+    assert cert["exact_mod10_training_fit_exists"]
+    assert cert["contradiction_witness"] is None
