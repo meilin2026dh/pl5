@@ -43,7 +43,7 @@ RULES = (
     StructuralRule("exclude_exact_period2", "lag2_matches", "eq", 3),
     StructuralRule("exclude_low_delta_diversity", "mod10_delta_distinct", "le", 2),
     StructuralRule("exclude_near_period2", "lag2_matches", "ge", 2),
-    StructuralRule("exclude_nonzero_mod10_arithmetic", "mod10_curvature_zeros", "eq", 3),
+    StructuralRule("exclude_mod10_arithmetic_duplicate", "mod10_curvature_zeros", "eq", 3),
 )
 
 
