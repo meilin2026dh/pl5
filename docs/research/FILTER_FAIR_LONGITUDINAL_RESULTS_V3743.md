@@ -78,3 +78,53 @@ every method establishes no unique advantage or deficiency.
 
 No changes to original historical source bytes, accepted hashes,
 secrets or `main`.
+
+
+## Full-candidate structural complementarity (independently inspected)
+
+The unchanged **24-window frozen full-membership JSON** from the
+successful cross-platform run #45223203269 was downloaded as a GitHub
+Actions artifact. We recomputed exact pairwise set intersections,
+same-method adjacent-window intersections and six-method unions
+independently from the serialized candidate IDs. These checks do not
+inspect any synthetic target values.
+
+### Distinct methods: intersection sizes at fixed K=100
+
+| Pair of methods | Mean exact common identities / window |
+|---|---:|
+| Existing ensemble vs pairwise statistics | **56.625** |
+| Existing ensemble vs positional statistics | **16.000** |
+| Existing pairwise vs positional statistics | **1.750** |
+| Existing heuristic rank vs modular recurrence | **0.9583** |
+| Any other pair | **0 to 0.167** |
+
+Across all 24 windows, taking the union of the six K=100 sets
+gives a mean of **526.0833 distinct IDs**, minimum **524**,
+maximum **530**, compared with 600 positions before deduplication.
+This describes structural overlap, not historical containment.
+
+### Within-method adjacent-window membership stability
+
+| Method | Mean common retained identities across consecutive windows (out of 100) |
+|---|---:|
+| Ensemble statistics | 96.9130 |
+| Pairwise statistics | 98.0000 |
+| Positional statistics | 93.9565 |
+| Heuristic full-space rank | 96.7826 |
+| Modular recurrence | 100.0000 |
+| Seeded uniform control | 0.0435 |
+
+The fixed mathematical recurrence mask is, as expected, identical
+across windows. The random control changes almost completely under
+the per-issue frozen seed schedule. Other methods exhibit high overlap
+in these 24 synthetic periods. These are **observed facts about the
+method-generated sets**, not evidence that more stable sets are more
+effective. Different seeds, sample windows or rule settings can change
+these numbers.
+
+A follow-up code change `filter_fair_longitudinal_v3743.py` exposes
+these exact membership-only diagnostics as part of the compact CLI
+summary, with independent tests for bounds, pair-count and stable
+recurrence membership. Its own new-head CI must be checked
+separately before declaring that update accepted.
