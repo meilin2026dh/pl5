@@ -23,7 +23,7 @@ CATEGORIES = {
         ga_cs_optimizer_v3715 constraint_portfolio_v3731
         filter_equivalent_pruning_v3735 filter_irredundant_pruning_v3736
         filter_interactions_v3734 filter_search_oracle_v3732
-        filter_search_suite_v3733 dsc_portfolio_audit_v3738
+        filter_search_suite_v3733 dsc_portfolio_audit_v3738 weighted_filter_order_v3746
         prequential_portfolio_audit_v3730 high_throughput_v3714
         ablation_search_v373 ablation_benchmark_v373 ablation_statistics_v373
         codebook_v3713 covering_arrays_v3713 dynamic_budget_v3713
