@@ -58,7 +58,7 @@ CATEGORIES = {
         __init__ agents algorithm_registry_v14 ability_lab_v19
         capability_network data github_rule_parity hdse_registry_v26
         integration_bridge knowledge number_validation parameter_hub_v34
-        sources value_center_v16
+        sources value_center_v16 legacy_method_census_v3740 legacy_filter_matrix_v3740
     """,
 }
 CATALOG = {word: group for group, names in CATEGORIES.items()
