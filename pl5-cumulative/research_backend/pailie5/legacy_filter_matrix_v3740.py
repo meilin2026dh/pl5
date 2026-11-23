@@ -18,7 +18,9 @@ import numpy as np
 from .basic_filters import BasicConstraint, apply_basic_filters
 from .digit_structure_v3737 import RULES, compile_rule
 from .affine_recurrence_filters_v3739 import RULE_NAMES, recurrence_keep_masks
-from .engine import UNIVERSE
+from .engine import UNIVERSE, select_numbers
+from .probability_ranker import rank_target_snapshot_v3717
+from .multispace import multi_space_study
 from .pattern_rules import (Configuration, indicator_table, EXTRA_INDICATORS,
                             indicator_values, filter_next)
 from .space_mapping import register_space_indicators
@@ -204,6 +206,78 @@ def _time_forward_pattern_matrix(rows: list[tuple[str, str]]) -> list[dict]:
     return by_spec
 
 
+
+def _time_forward_rank_matrix(rows: list[tuple[str, str]]) -> list[dict]:
+    """Matched-K=100 chronology-safe subsets from existing ranking engines.
+
+    Actual synthetic demo record is not accessed until all candidate sets
+    for that issue have been frozen, including multiple-space ranking.
+    """
+    methods = ("random", "positional", "pairwise", "ensemble",
+               "heuristic_rank", "multispace_rank")
+    results = {name: [] for name in methods}
+    compact = Configuration(
+        indicators=("sum", "span", "digit_5"),
+        transforms=("raw",), patterns=("constant", "arithmetic", "period2"),
+        windows=(3, 4), min_keep=1000, max_total_remove=0.9,
+        max_rules=25,
+    )
+    spaces = {
+        "pl5": ("sum",),
+        "pick23_6": ("sum",),
+        "pick41_4": ("span",),
+        "ternary11": ("switch_count",),
+    }
+    for idx in range(len(rows) - SAMPLE_PERIODS, len(rows)):
+        prefix = [number for _, number in rows[:idx]]
+        history_sha = _hash_bytes(json.dumps(
+            rows[:idx], ensure_ascii=False, separators=(",", ":")
+        ).encode("utf8"))
+        frozen = {}
+        for j, method in enumerate(methods[:4]):
+            picks = select_numbers(prefix, count=100, model=method,
+                                   seed=374000 + idx * 17 + j,
+                                   use_gate=False).numbers
+            frozen[method] = _mask_from_ids(picks)
+        rank = rank_target_snapshot_v3717(prefix, compact)
+        frozen["heuristic_rank"] = _mask_from_ids(rank.order[:100])
+        multi = multi_space_study(
+            prefix, spaces, windows=(3, 4),
+            patterns=("constant", "arithmetic", "period2"),
+            transforms=("raw",), max_rules=12,
+        )
+        frozen["multispace_rank"] = _mask_from_ids(np.array(
+            [int(x) for x in multi.table["number"].head(100)], dtype=np.int32
+        ))
+        # Do not reveal target before ALL six masks are frozen.
+        actual = int(rows[idx][1])
+        for method in methods:
+            mask = frozen[method]
+            if mask.bit_count() != 100:
+                raise AssertionError("ranking adapter lost fixed K=100")
+            results[method].append({
+                "issue": rows[idx][0], "past_rows": idx,
+                "past_sha256": history_sha,
+                "candidate_sha256": _mask_sha256(mask),
+                "retained_count": 100,
+                "synthetic_contained": bool((mask >> actual) & 1),
+            })
+    return [{
+        "name": f"legacy.{method}.fixed_k100",
+        "family": "history_ranking_fixed_k",
+        "adapter": ("multispace.multi_space_study" if method == "multispace_rank"
+                    else "probability_ranker.rank_target_snapshot_v3717"
+                    if method == "heuristic_rank"
+                    else "engine.select_numbers"),
+        "evaluation_periods": len(results[method]),
+        "fixed_candidate_budget": 100,
+        "total_synthetic_contained": sum(
+            int(x["synthetic_contained"]) for x in results[method]
+        ),
+        "runs": results[method],
+    } for method in methods]
+
+
 def _greedy_compression(masks: list[tuple[str, int]]) -> dict:
     """Greedy structural set reduction, never using demo outcomes.
 
@@ -253,6 +327,7 @@ def run() -> dict:
     if len(names) != len(set(names)):
         raise AssertionError("duplicate method name in unified matrix")
     pattern = _time_forward_pattern_matrix(rows)
+    rank = _time_forward_rank_matrix(rows)
     full_inventory = census["source_rows"]
     # Categorize every source module, but never fabricate missing historical
     # evidence or pretend a meta-optimizer is a direct Boolean filter.
@@ -269,11 +344,13 @@ def run() -> dict:
             for family in sorted(set(x["family"] for x in static))
         },
         "time_forward_synthetic_pattern_arms": pattern,
+        "time_forward_synthetic_fixed_k_rank_arms": rank,
         "time_forward_history_gate": "PAST_ONLY_INTERNAL_SYNTHETIC",
         "greedy_combination": _greedy_compression(old_masks + new_masks),
         "non_direct_filter_components": unsupported,
         "measured_static_arms": len(static),
         "measured_time_forward_pattern_arms": len(pattern),
+        "measured_fixed_k_rank_arms": len(rank),
         "source_data_category": "SYNTHETIC_DEVELOPMENT_ONLY",
         "trusted_real_historical_comparison_complete": False,
         "original_historical_digests_changed": False,
@@ -305,6 +382,7 @@ def main() -> None:
         "source_modules": report["census"]["tracked_package_modules"],
         "static_mask_arms": report["measured_static_arms"],
         "time_forward_pattern_arms": report["measured_time_forward_pattern_arms"],
+        "fixed_k_rank_arms": report["measured_fixed_k_rank_arms"],
         "static_family_counts": report["static_family_counts"],
         "greedy_kept": report["greedy_combination"]["retained"],
         "real_historical_comparison_complete": False,
