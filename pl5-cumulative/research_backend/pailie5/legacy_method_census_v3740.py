@@ -52,7 +52,8 @@ CATEGORIES = {
         mapping_robustness research_agent autonomous_v374
         scientific_methods_v376 scientific_questions_v375
         scientific_runtime_v375 scientific_runtime_v376 evolution_v15
-        discovery
+        discovery filter_fair_ledger_v3742 filter_fair_cli_v3742
+        filter_fair_longitudinal_v3743
     """,
     "infrastructure": """
         __init__ agents algorithm_registry_v14 ability_lab_v19
