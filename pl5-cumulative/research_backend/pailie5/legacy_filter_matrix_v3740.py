@@ -100,7 +100,14 @@ def _mask_summary(name: str, group: str, mask: int,
 
 def _indicator_rules(demo: np.ndarray) -> tuple[list[dict], list[tuple[str, int]]]:
     register_space_indicators()
-    features = {**indicator_table(), **EXTRA_INDICATORS}
+    # Ignore externally registered third-party/test indicators. Freeze the
+    # catalog to the existing basic table and the three declared mappings,
+    # regardless of test collection order or any process-global registrations.
+    prefixes = ("pick23_6__", "pick41_4__", "ternary11__")
+    features = {**indicator_table(), **{
+        key: value for key, value in EXTRA_INDICATORS.items()
+        if key.startswith(prefixes)
+    }}
     rows: list[dict] = []
     masks: list[tuple[str, int]] = []
     for name in sorted(features):
