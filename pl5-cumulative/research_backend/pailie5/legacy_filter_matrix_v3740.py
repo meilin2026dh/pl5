@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from itertools import combinations
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -323,6 +324,90 @@ def _greedy_compression(masks: list[tuple[str, int]]) -> dict:
     }
 
 
+def _minimum_cardinality_certificate(
+    masks: list[tuple[str, int]], selected: list[str], *,
+    domain_size: int = DOMAIN, target: int = 100,
+) -> dict:
+    """Exact minimum-rule certificate for a declared <=3-rule witness.
+
+    Enumerate ALL strictly smaller subsets of the frozen mask inventory.
+    A zero-size intersection is not a feasible nonempty candidate set.
+    This proves only minimum cardinality within these fixed Boolean masks,
+    not optimal historical retention or minimum computational cost.
+    """
+    if not 1 <= target < domain_size or not 1 <= len(selected) <= 3:
+        raise ValueError("invalid target or unsupported proof depth")
+    if not masks or len({name for name, _ in masks}) != len(masks):
+        raise ValueError("missing or duplicate filter names")
+    full = (1 << domain_size) - 1
+    if any(not isinstance(mask, int) or not 0 <= mask <= full
+           for _, mask in masks):
+        raise ValueError("out-of-domain or noninteger mask")
+    index = dict(masks)
+    if len(set(selected)) != len(selected) or any(s not in index for s in selected):
+        raise ValueError("unknown or repeated witness filter")
+    witness = full
+    for name in selected:
+        witness &= index[name]
+    witness_count = witness.bit_count()
+    if not 0 < witness_count <= target:
+        raise ValueError("proposed witness does not meet nonempty target")
+
+    breakdown = []
+    first_smaller = None
+    total = 0
+    for rule_count in range(len(selected)):
+        evaluated = zero = positive = 0
+        smallest_positive = None
+        for subset in combinations(range(len(masks)), rule_count):
+            active = full
+            for i in subset:
+                active &= masks[i][1]
+            kept = active.bit_count()
+            evaluated += 1
+            if kept == 0:
+                zero += 1
+                continue
+            positive += 1
+            smallest_positive = (kept if smallest_positive is None
+                                 else min(smallest_positive, kept))
+            if kept <= target and first_smaller is None:
+                first_smaller = {
+                    "rule_count": rule_count,
+                    "names": [masks[i][0] for i in subset],
+                    "retained": kept,
+                    "mask_sha256": _hash_bytes(active.to_bytes(
+                        (domain_size + 7) // 8, "little")),
+                }
+        total += evaluated
+        breakdown.append({
+            "rule_count": rule_count,
+            "subsets_examined": evaluated,
+            "empty_intersections": zero,
+            "nonempty_intersections": positive,
+            "minimum_nonempty_retained": smallest_positive,
+        })
+    return {
+        "schema": "pl5-exact-minimum-filter-cardinality-v3741-1",
+        "available_frozen_rules": len(masks),
+        "target_positive_at_most": target,
+        "witness_rules": list(selected),
+        "witness_count": witness_count,
+        "witness_sha256": _hash_bytes(witness.to_bytes(
+            (domain_size + 7) // 8, "little")),
+        "strictly_smaller_subsets_examined": total,
+        "smaller_cardinality_audit": breakdown,
+        "first_smaller_feasible_witness": first_smaller,
+        "certified_minimum_rule_count": (
+            len(selected) if first_smaller is None else first_smaller["rule_count"]
+        ),
+        "is_proposed_witness_cardinality_minimal": first_smaller is None,
+        "proof_scope": "FROZEN_BOOLEAN_MASK_LIBRARY_ONLY; POSITIVE_CANDIDATE_COUNT_REQUIRED",
+        "historical_coverage_measured": False,
+        "global_cost_optimality_claim": False,
+    }
+
+
 def run() -> dict:
     census = inventory()
     rows, source = _synthetic_records()
@@ -343,6 +428,12 @@ def run() -> dict:
         "reason": ("REQUIRES_AUTHENTIC_EXTERNAL_CONTEXT" if x["external_data_or_custody_required"]
                    else "SEPARATE_COMPONENT_CONTRACT_NOT_A_SINGLE_STATIC_KEEP_MASK")
     } for x in full_inventory if not x["direct_mask_adapter_in_v3740"]]
+    combined_masks = old_masks + new_masks
+    greedy = _greedy_compression(combined_masks)
+    proof = _minimum_cardinality_certificate(combined_masks, greedy["selected_rules"])
+    if (proof["witness_count"] != greedy["retained"]
+            or proof["witness_sha256"] != greedy["final_mask_sha256"]):
+        raise AssertionError("greedy witness disagrees with exact subset auditor")
     return {
         "schema": SCHEMA, "source": source,
         "census": census, "static_mask_arms": static,
@@ -353,7 +444,8 @@ def run() -> dict:
         "time_forward_synthetic_pattern_arms": pattern,
         "time_forward_synthetic_fixed_k_rank_arms": rank,
         "time_forward_history_gate": "PAST_ONLY_INTERNAL_SYNTHETIC",
-        "greedy_combination": _greedy_compression(old_masks + new_masks),
+        "greedy_combination": greedy,
+        "minimum_rule_cardinality_certificate": proof,
         "non_direct_filter_components": unsupported,
         "measured_static_arms": len(static),
         "measured_time_forward_pattern_arms": len(pattern),
@@ -392,6 +484,8 @@ def main() -> None:
         "fixed_k_rank_arms": report["measured_fixed_k_rank_arms"],
         "static_family_counts": report["static_family_counts"],
         "greedy_kept": report["greedy_combination"]["retained"],
+        "certified_minimum_rules": report["minimum_rule_cardinality_certificate"]["certified_minimum_rule_count"],
+        "smaller_portfolios_audited": report["minimum_rule_cardinality_certificate"]["strictly_smaller_subsets_examined"],
         "real_historical_comparison_complete": False,
     }, sort_keys=True))
 
