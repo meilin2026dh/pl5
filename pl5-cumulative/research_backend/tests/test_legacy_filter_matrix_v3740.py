@@ -8,7 +8,8 @@ import pytest
 from pailie5.basic_filters import BasicConstraint, apply_basic_filters
 from pailie5.legacy_method_census_v3740 import inventory
 from pailie5.legacy_filter_matrix_v3740 import (
-    DOMAIN, SAMPLE_PERIODS, _mask_from_ids, _mask_sha256, _synthetic_records, run,
+    DOMAIN, SAMPLE_PERIODS, _mask_from_ids, _mask_sha256,
+    _minimum_cardinality_certificate, _synthetic_records, run,
 )
 
 
@@ -112,6 +113,79 @@ def test_greedy_combination_only_structural_no_labels_or_hidden_quota_repair():
 def test_reject_wrong_candidate_ids(invalid):
     with pytest.raises(ValueError):
         _mask_from_ids(invalid)
+
+
+
+def test_minimum_rule_certificate_three_rule_small_domain_oracle():
+    # All pair intersections keep two IDs, the triple keeps exactly one.
+    def keep(*ids):
+        return sum(1 << i for i in ids)
+    masks = [
+        ("a", keep(0, 1, 2, 3)),
+        ("b", keep(0, 1, 4, 5)),
+        ("c", keep(0, 2, 4, 6)),
+    ]
+    proof = _minimum_cardinality_certificate(
+        masks, ["a", "b", "c"], domain_size=8, target=1)
+    assert proof["is_proposed_witness_cardinality_minimal"]
+    assert proof["certified_minimum_rule_count"] == 3
+    assert proof["strictly_smaller_subsets_examined"] == 7  # C(3,0)+C(3,1)+C(3,2)
+    assert [x["minimum_nonempty_retained"]
+            for x in proof["smaller_cardinality_audit"]] == [8, 4, 2]
+    assert proof["witness_count"] == 1
+    assert not proof["historical_coverage_measured"]
+
+
+def test_minimum_rule_certificate_rejects_nonminimal_witness_and_empty_shortcuts():
+    def keep(*ids):
+        return sum(1 << i for i in ids)
+    masks = [("a", keep(0, 1)), ("b", keep(2, 3)),
+             ("c", keep(0, 2))]
+    # a & b is empty and MUST NOT be counted as a successful target.
+    proof = _minimum_cardinality_certificate(
+        masks, ["a", "c"], domain_size=4, target=1)
+    assert proof["certified_minimum_rule_count"] == 2
+    assert proof["is_proposed_witness_cardinality_minimal"]
+    assert proof["smaller_cardinality_audit"][1]["minimum_nonempty_retained"] == 2
+    with pytest.raises(ValueError, match="proposed witness"):
+        _minimum_cardinality_certificate(
+            masks, ["a"], domain_size=4, target=1)
+
+    # A redundant third rule cannot conceal a valid two-rule subset.
+    masks2 = [("a", keep(0, 1)), ("b", keep(0, 2)),
+              ("c", keep(0, 3))]
+    nonminimal = _minimum_cardinality_certificate(
+        masks2, ["a", "b", "c"], domain_size=4, target=1)
+    assert nonminimal["certified_minimum_rule_count"] == 2
+    assert not nonminimal["is_proposed_witness_cardinality_minimal"]
+    assert nonminimal["first_smaller_feasible_witness"]["names"] == ["a", "b"]
+
+
+@pytest.mark.parametrize("masks,selected", [
+    ([("a", 3), ("a", 1)], ["a"]),
+    ([("a", -1)], ["a"]),
+    ([("a", 16)], ["a"]),
+    ([("a", 3)], ["missing"]),
+    ([("a", 3)], ["a", "a"]),
+])
+def test_minimum_rule_certificate_fails_closed_on_invalid_inventory(masks, selected):
+    with pytest.raises(ValueError):
+        _minimum_cardinality_certificate(
+            masks, selected, domain_size=4, target=1)
+
+
+def test_full_58_filter_matrix_exact_minimum_cardinality_certificate():
+    data = report()
+    proof = data["minimum_rule_cardinality_certificate"]
+    assert proof["available_frozen_rules"] == data["measured_static_arms"] == 58
+    assert proof["strictly_smaller_subsets_examined"] == 1 + 58 + 58 * 57 // 2
+    assert proof["witness_rules"] == data["greedy_combination"]["selected_rules"]
+    assert proof["witness_count"] == data["greedy_combination"]["retained"] == 100
+    assert proof["witness_sha256"] == data["greedy_combination"]["final_mask_sha256"]
+    assert proof["is_proposed_witness_cardinality_minimal"]
+    assert proof["certified_minimum_rule_count"] == 3
+    assert proof["first_smaller_feasible_witness"] is None
+    assert proof["historical_coverage_measured"] is False
 
 
 def test_synthetic_fixture_digest_and_safety_scope():
