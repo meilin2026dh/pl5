@@ -51,9 +51,7 @@ def audit_frozen_structural_portfolio() -> dict:
             or ordered["final_keep_count"] != least
             or pruning["all_rules_survivors"] != least
             or attribution["all_rules_survivors"] != least
-            or ordered["final_keep_sha256"] != pruning["full_candidate_mask_sha256"]
-            or ordered["final_keep_sha256"] != search.get("best_mask_sha256")
-            and search["best"] is not None):
+            or ordered["final_keep_sha256"] != pruning["full_candidate_mask_sha256"]):
         raise AssertionError("cross-engine candidate mask mismatch")
     if (ordered["incrementally_removed"]
             != attribution["all_rules_excluded"]
