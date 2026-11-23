@@ -186,6 +186,7 @@ def evaluate_panel(
         "schema": "pl5-filter-fair-settlement-v3742-1",
         "frozen_payload_sha256": frozen["payload_sha256"],
         "evaluation_issue": evaluation_issue,
+        "observed_id": observed_id,
         "observation_source_sha256": observation_source_sha256,
         "source_classification": source_classification,
         "source_identity_authenticated_by_this_module": False,
