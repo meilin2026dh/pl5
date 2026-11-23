@@ -30,6 +30,16 @@ def test_four_chronological_windows_all_six_legacy_arms_equal_k_and_reproducible
     assert not r["actual_history_authenticated"]
     assert not r["external_timestamp_attestation"]
     assert not r["independent_external_holdout"]
+    structure = summary["structural_overlap_diagnostics"]
+    assert len(structure["union_per_window"]) == 4
+    assert all(100 <= n <= 600 for n in structure["union_per_window"])
+    assert len(structure["method_pairs"]) == 15
+    assert len(structure["within_method_adjacent_window_membership"]) == 6
+    assert all(0 <= pair["total_common_ids_across_windows"] <= 4 * 100
+               for pair in structure["method_pairs"])
+    fixed = next(x for x in structure["within_method_adjacent_window_membership"]
+                 if x["method"] == "modular_recurrence_k100")
+    assert fixed["common_ids_across_adjacent_windows"] == 300
     assert len(r["final_chain_sha256"]) == 64
 
 
