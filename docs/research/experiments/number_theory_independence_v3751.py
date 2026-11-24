@@ -195,5 +195,8 @@ class TestIndependence(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main(exit=False)
+    suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestIndependence)
+    result = unittest.TextTestRunner().run(suite)
+    if not result.wasSuccessful():
+        raise SystemExit(1)
     print("V3751_INDEPENDENCE_JSON=" + json.dumps(run(), sort_keys=True))
