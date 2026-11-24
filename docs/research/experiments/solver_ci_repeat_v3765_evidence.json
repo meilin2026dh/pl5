@@ -1,0 +1,67 @@
+{
+  "schema": "pl5-solver-ci-repeat-v3765-1",
+  "source": "GitHub Actions",
+  "observed_utc": "2026-11-24",
+  "tested_head": "e20c6747fc680b57f9aeae992708b14f8328ab10",
+  "tested_merge": "8eb4db2",
+  "targeted_command": "pnpm exec vitest run tests/innovation.test.ts",
+  "full_command": "pnpm test && pnpm build",
+  "repeat_run": 45451196589,
+  "application_run": 45451196909,
+  "platforms": [
+    {
+      "platform": "ubuntu-latest",
+      "targeted_job": 138648426649,
+      "targeted": [
+        {
+          "tests_passed": 14,
+          "file_test_ms": 5946
+        },
+        {
+          "tests_passed": 14,
+          "file_test_ms": 5921
+        }
+      ],
+      "full_job": 138648428543,
+      "full_files_passed": 54,
+      "full_tests_passed": 301,
+      "full_innovation_file_ms": 13301,
+      "build": "success"
+    },
+    {
+      "platform": "windows-latest",
+      "targeted_job": 138648427251,
+      "targeted": [
+        {
+          "tests_passed": 14,
+          "file_test_ms": 4659
+        },
+        {
+          "tests_passed": 14,
+          "file_test_ms": 4459
+        }
+      ],
+      "full_job": 138648427251,
+      "full_files_passed": 54,
+      "full_tests_passed": 301,
+      "full_innovation_file_ms": 7026,
+      "build": "success"
+    }
+  ],
+  "previous_aggregate_timeout_runs": [
+    45358260089,
+    45386515677,
+    45416765482
+  ],
+  "prior_ubuntu_full_pass_runs": [
+    45428374048,
+    45439915455
+  ],
+  "limitations": [
+    "Fixed finite repeats do not establish long-run reliability.",
+    "File timing includes all 14 cases; not directly comparable with the original aggregate four-solver deadline.",
+    "Per-case deadlines retained; original aggregate deadline not verified.",
+    "No production speedup or historical coverage claim.",
+    "Runner timings are observational, not controlled cross-platform benchmarks."
+  ]
+}
