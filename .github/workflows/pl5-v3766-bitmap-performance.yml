@@ -4,6 +4,7 @@ on:
     paths:
       - 'docs/research/experiments/bitmap_performance_v3766.py'
       - 'docs/research/experiments/bitmap_output_cost_v3767.py'
+      - 'docs/research/experiments/partial_cache_v3768.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -25,3 +26,4 @@ jobs:
       - run: python docs/research/experiments/bitmap_performance_v3766.py
 
       - run: python docs/research/experiments/bitmap_output_cost_v3767.py
+      - run: python docs/research/experiments/partial_cache_v3768.py
