@@ -111,6 +111,8 @@ def run():
         feature = [n % p for n in range(DOMAIN)]
         row = _partition(groups, feature)
         row["predeclared_category"] = "residue_zero"
+        row["binary_rule_novelty"] = _partition(
+            groups, [int(v == 0) for v in feature])
         row["recurrence_marginal"] = _frozen_marginal(
             feature, recurrence_ids, lambda v: v == 0)
         row["all_static_intersection_marginal"] = _frozen_marginal(
@@ -125,6 +127,8 @@ def run():
         feature = [s[col] for s in factor_rows]
         row = _partition(groups, feature)
         row["predeclared_category"] = name
+        row["binary_rule_novelty"] = _partition(
+            groups, [int(accepts(v)) for v in feature])
         row["recurrence_marginal"] = _frozen_marginal(
             feature, recurrence_ids, accepts)
         row["all_static_intersection_marginal"] = _frozen_marginal(
@@ -151,6 +155,22 @@ def run():
             different = factors.signature_trial(a)[col] != factors.signature_trial(b)[col]
         if not different:
             raise AssertionError("new feature witness mismatch")
+        binary_witness = row["binary_rule_novelty"]["witness_ids"]
+        if binary_witness is not None:
+            u, v = binary_witness
+            if not all(((mask >> u) & 1) == ((mask >> v) & 1)
+                       for _, mask in masks):
+                raise AssertionError("binary witness old-rule mismatch")
+            if name.startswith("residue_mod_"):
+                p = int(name.rsplit("_", 1)[1])
+                predicate_differs = (u % p == 0) != (v % p == 0)
+            else:
+                accepts = next(pred for key, _, pred in factor_specs if key == name)
+                col = next(i for key, i, _ in factor_specs if key == name)
+                predicate_differs = accepts(factors.signature_trial(u)[col]) != accepts(
+                    factors.signature_trial(v)[col])
+            if not predicate_differs:
+                raise AssertionError("binary threshold witness mismatch")
     manifest = [{"name": name,
                  "sha256": sha256(mask.to_bytes(DOMAIN // 8, "little")).hexdigest()}
                 for name, mask in masks]
@@ -182,6 +202,9 @@ class TestIndependence(unittest.TestCase):
             self.assertEqual(row["boolean_novelty_proven"],
                              row["newly_distinguished_pairs"] > 0)
             self.assertEqual(row["boolean_novelty_proven"], row["witness_ids"] is not None)
+            threshold = row["binary_rule_novelty"]
+            self.assertEqual(threshold["boolean_novelty_proven"],
+                             threshold["witness_ids"] is not None)
             self.assertEqual(row["recurrence_marginal"]["baseline"], 100)
             self.assertEqual(row["all_static_intersection_marginal"]["baseline"],
                              result["existing_full_intersection_count"])
