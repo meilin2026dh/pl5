@@ -70,7 +70,7 @@ def witness_check(groups, witness):
         raise AssertionError("invalid witness")
     if not any(a in v and b in v for v in groups.values()):
         raise AssertionError("witness does not share frozen old signatures")
-    if not (spectral_invariants(a)[1] > 0) != (spectral_invariants(b)[1] > 0):
+    if (spectral_invariants(a)[1] > 0) == (spectral_invariants(b)[1] > 0):
         raise AssertionError("spectral witness membership does not differ")
 
 
@@ -89,7 +89,11 @@ def audit():
     # Feature is the exact algebraic pair (A, B), no floating rounding.
     binary = [int(B > 0) for _, B in spectral]
     n_keep = sum(binary)
-    mask = sum((1 << n) for n, keep in enumerate(binary) if keep)
+    packed = bytearray(DOMAIN // 8)
+    for n, keep in enumerate(binary):
+        if keep:
+            packed[n >> 3] |= 1 << (n & 7)
+    mask = int.from_bytes(packed, "little")
     if n_keep != mask.bit_count():
         raise AssertionError("compiled bitmap mismatch")
     full_static = (1 << DOMAIN) - 1
