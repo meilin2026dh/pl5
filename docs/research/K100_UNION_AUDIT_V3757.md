@@ -21,3 +21,25 @@ Three tests assert frozen 308 eligible and 68 empty masks, exact bytewise OR ora
 Historical data provenance remains the same as V3.7.56: 51 primary transcribed records, only 20 terminal records crosschecked with a second table. Original source pages and external historical timestamps are not independently authenticated. Static filters may have been explored against earlier data in prior research; this is not a truly unseen independent holdout. All 308 sets share the same ten fixed predicates, so they are strongly dependent.
 
 No production filtering rule, no historical source/hash changes, no edits to `main`, no automatic merge. Retain negative findings. Full historical validation and per-rule runtime costs remain separate.
+
+## Exact result — Ubuntu Python 3.12 CI, source SHA 4d70c84a2c04a02874ec4eb7b4fcd605a71ad48a
+
+The read-only union audit passed three focused tests on Ubuntu in [Actions #45329240060](https://github.com/meilin2026dh/pl5/actions/runs/45329240060); Windows is a separate verification gate and must be checked.
+
+| Audit metric | Exact result |
+|---|---:|
+| All rule conjunctions | 1,024 |
+| Nonempty with K <= 100 | 308 |
+| **Distinct** candidate masks among those 308 | **92** |
+| Empty candidate masks | 68 |
+| Number of distinct IDs across the union of the 308 sets | **1,215** |
+| Union candidate proportion | 1,215 / 100,000 = 1.215% |
+| Retained retrospective targets in union | 0 / 20 |
+| Expected retained in union, hypothetical iid uniform | 0.243 / 20 |
+| Probability of zero retained, same hypothetical reference | **0.783105** (78.31%) |
+
+Full union bitmap SHA256: `7c08784f030bf4437676fcd109787a43087dda10381288e136d804813ff66e4e`. All 20 frozen retrospective target IDs lie outside this union, independently checked using both bytewise-OR and integer-OR member enumerations.
+
+**Interpretation correction:** 308 individual failures are **not** 308 independent historical tests. The 308 admissible conjunctions collapse to only **92 distinct masks** drawn from the same **1,215 possible IDs**. In the stated hypothetical uniform-ID reference, observing zero union coverage over 20 records has probability 78.31%, so the zero result is unsurprising at this union size. This does not validate the candidate sets or imply any advantage or disadvantage beyond the exact historical observations. The union is a diagnostic counterfactual, not a candidate filter with a K<=100 budget; no union candidate set should be promoted.
+
+No rule or threshold was modified, and no external history was authenticated. Original V3.7.56 evidence and known failure details remain preserved.
