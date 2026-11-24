@@ -408,6 +408,66 @@ def _minimum_cardinality_certificate(
     }
 
 
+
+def _three_rule_frontier(masks: list[tuple[str, int]], *,
+                         domain_size: int = DOMAIN, target: int = 100) -> dict:
+    """Exhaustive, label-free census of all triples in a bounded inventory.
+
+    Group feasible portfolios by exact integer bitmap, not by hash or count.
+    Report every feasible triple; empty intersections are never feasible.
+    """
+    if (type(domain_size) is not int or not 2 <= domain_size <= DOMAIN
+            or type(target) is not int or not 1 <= target < domain_size
+            or not 3 <= len(masks) <= 64):
+        raise ValueError("unsupported domain, target or inventory size")
+    full = (1 << domain_size) - 1
+    if (any(not isinstance(name, str) or not name or type(mask) is not int
+            or not 0 <= mask <= full for name, mask in masks)
+            or len({name for name, _ in masks}) != len(masks)):
+        raise ValueError("invalid or duplicate frozen mask")
+    ordered = sorted(masks, key=lambda item: item[0])
+    width = (domain_size + 7) // 8
+    histogram: dict[int, int] = {}
+    classes: dict[int, list[list[str]]] = {}
+    for a, b, c in combinations(ordered, 3):
+        active = a[1] & b[1] & c[1]
+        kept = active.bit_count()
+        histogram[kept] = histogram.get(kept, 0) + 1
+        if 0 < kept <= target:
+            classes.setdefault(active, []).append([a[0], b[0], c[0]])
+    groups = [{
+        "retained": active.bit_count(),
+        "candidate_sha256": _hash_bytes(active.to_bytes(width, "little")),
+        "portfolios": portfolios,
+    } for active, portfolios in classes.items()]
+    groups.sort(key=lambda group: (-group["retained"], group["portfolios"][0]))
+    total = len(ordered) * (len(ordered)-1) * (len(ordered)-2) // 6
+    if sum(histogram.values()) != total:
+        raise AssertionError("incomplete triple census")
+    feasible = sum(len(group["portfolios"]) for group in groups)
+    if feasible != sum(n for k, n in histogram.items() if 0 < k <= target):
+        raise AssertionError("incomplete equivalence classes")
+    return {
+        "schema": "pl5-exact-three-rule-frontier-v3742-1",
+        "domain_size": domain_size,
+        "target": target,
+        "inventory": [{"name": name,
+                       "mask_sha256": _hash_bytes(mask.to_bytes(width, "little"))}
+                      for name, mask in ordered],
+        "triples_examined": total,
+        "empty_intersections": histogram.get(0, 0),
+        "retained_count_histogram": {str(k): histogram[k] for k in sorted(histogram)},
+        "feasible_portfolios": feasible,
+        "distinct_feasible_candidate_sets": len(groups),
+        "exact_target_portfolios": histogram.get(target, 0),
+        "exact_target_distinct_sets": sum(group["retained"] == target for group in groups),
+        "best_nonempty_retained_at_or_below_target": groups[0]["retained"] if groups else None,
+        "equivalence_classes": groups,
+        "historical_coverage_measured": False,
+        "scope": "FROZEN_STATIC_MASKS_ONLY",
+    }
+
+
 def run() -> dict:
     census = inventory()
     rows, source = _synthetic_records()
@@ -434,8 +494,13 @@ def run() -> dict:
     if (proof["witness_count"] != greedy["retained"]
             or proof["witness_sha256"] != greedy["final_mask_sha256"]):
         raise AssertionError("greedy witness disagrees with exact subset auditor")
+    frontier = _three_rule_frontier(combined_masks)
+    if not any(group["candidate_sha256"] == proof["witness_sha256"]
+               for group in frontier["equivalence_classes"]):
+        raise AssertionError("three-rule witness missing from exact census")
     return {
         "schema": SCHEMA, "source": source,
+        "three_rule_frontier": frontier,
         "census": census, "static_mask_arms": static,
         "static_family_counts": {
             family: sum(x["family"] == family for x in static)
@@ -486,6 +551,10 @@ def main() -> None:
         "greedy_kept": report["greedy_combination"]["retained"],
         "certified_minimum_rules": report["minimum_rule_cardinality_certificate"]["certified_minimum_rule_count"],
         "smaller_portfolios_audited": report["minimum_rule_cardinality_certificate"]["strictly_smaller_subsets_examined"],
+        "triples_examined": report["three_rule_frontier"]["triples_examined"],
+        "feasible_triples": report["three_rule_frontier"]["feasible_portfolios"],
+        "distinct_feasible_sets": report["three_rule_frontier"]["distinct_feasible_candidate_sets"],
+        "exact_target_triples": report["three_rule_frontier"]["exact_target_portfolios"],
         "real_historical_comparison_complete": False,
     }, sort_keys=True))
 
