@@ -1,0 +1,129 @@
+{
+  "verified_head": "823821a04336be967c5c3d05a568e4d5ea023be0",
+  "ci_merge_sha": "601b7d98853f73484d43f507abc3d7dc53d41ec2",
+  "verified_date": "2026-11-24",
+  "specialized_ci": 45406000495,
+  "application_ci": 45406000321,
+  "platforms": [
+    {
+      "os": "ubuntu-latest",
+      "job": 138486780139,
+      "tests": 3,
+      "conclusion": "success"
+    },
+    {
+      "os": "windows-latest",
+      "job": 138486781061,
+      "tests": 3,
+      "conclusion": "success"
+    }
+  ],
+  "cross_platform_json_identical": true,
+  "test_command": "python docs/research/experiments/equivalent_rule_minimization_v3764.py",
+  "result": {
+    "all_subsets_per_atom": 4096,
+    "candidate_membership_preserved": true,
+    "cap": 100,
+    "domain": 100000,
+    "historical_coverage_measured": false,
+    "models": {
+      "heterogeneous_abstract": {
+        "atom_count": 893,
+        "atoms_with_removable_literals": 893,
+        "cost_totals": {
+          "full_optimal_cost": 112358214,
+          "greedy_cost": 118463844,
+          "minimum_cost": 112238440,
+          "shortest_cost": 118189570
+        },
+        "full_literal_count": 10716,
+        "greedy_literal_count": 7737,
+        "greedy_not_cheapest": 321,
+        "greedy_not_shortest": 8,
+        "ledger_sha256": "74989f96ee9aac43a96b210d5017e3266f63cc4335263c8e47016f73e4db69cf",
+        "minimum_cost_literal_count": 8152,
+        "minimum_literal_count": 7729,
+        "weights": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          4,
+          4,
+          4,
+          5,
+          3,
+          8
+        ],
+        "worst_greedy_regret": 242010
+      },
+      "unit": {
+        "atom_count": 893,
+        "atoms_with_removable_literals": 893,
+        "cost_totals": {
+          "full_optimal_cost": 101041383,
+          "greedy_cost": 101597161,
+          "minimum_cost": 101001902,
+          "shortest_cost": 101551144
+        },
+        "full_literal_count": 10716,
+        "greedy_literal_count": 7737,
+        "greedy_not_cheapest": 52,
+        "greedy_not_shortest": 8,
+        "ledger_sha256": "52e5d6597e5ca2fc03c94c04411cb119b8cdfa88031d6e699e1d91fcb2b415bf",
+        "minimum_cost_literal_count": 7759,
+        "minimum_literal_count": 7729,
+        "weights": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "worst_greedy_regret": 40627
+      }
+    },
+    "planning_cost_excluded": true,
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rule_names": [
+      "mod2_zero",
+      "mod3_zero",
+      "mod5_zero",
+      "mod7_zero",
+      "mod11_zero",
+      "mod13_zero",
+      "omega_ge3",
+      "bigomega_ge3",
+      "squarefree_one",
+      "spectral_C1_gt_C2",
+      "det_H_gt_0",
+      "F3_squarefactor"
+    ],
+    "schema": "pl5-equivalent-rule-minimization-v3764-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "wall_clock_performance_measured": false
+  },
+  "interpretation": "All 893 complete classes allow redundant constraint removal while preserving membership. Minimum literal count decreases by 2987/10716; minimum weighted checking cost improves over full optimal order by only 39481/101041383 (unit) and 119774/112358214 (heterogeneous). Planning cost and real wall-clock performance are excluded. No historical inputs or coverage claim. Keep research draft; prior intermittent application timeout remains in failure lineage."
+}
