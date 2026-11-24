@@ -1,0 +1,81 @@
+{
+  "schema": "pl5-solver-ci-isolation-v3765-evidence-1",
+  "audit_date_utc": "2026-11-24",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_head": "11352a827d70dbf26947943a69efbf107bd93aeb",
+  "tested_base": "0179c0a35a3a986b94da470834d38570481e673d",
+  "scope": "filter combination solver test isolation; no production rule changes",
+  "changed_source_files": [
+    "tests/innovation.test.ts"
+  ],
+  "prior_failures": [
+    {
+      "run": 45358260089,
+      "job": 138321446580,
+      "passed": 297,
+      "failed": 1,
+      "timeout_ms": 10000,
+      "test": "all solvers certify their geometric result and preserve fixed cutoff"
+    },
+    {
+      "run": 45386515677,
+      "job": 138418726777,
+      "passed": 297,
+      "failed": 1,
+      "timeout_ms": 10000,
+      "test": "all solvers certify their geometric result and preserve fixed cutoff"
+    },
+    {
+      "run": 45416765482,
+      "job": 138524982656,
+      "passed": 297,
+      "failed": 1,
+      "timeout_ms": 10000,
+      "test": "all solvers certify their geometric result and preserve fixed cutoff"
+    }
+  ],
+  "verified_run": {
+    "run": 45428374048,
+    "job": 138566518384,
+    "platform": "Ubuntu",
+    "status": "success",
+    "test_files_passed": 54,
+    "tests_passed": 301,
+    "tests_failed": 0,
+    "innovation_file_tests": 14,
+    "innovation_file_ms": 12811,
+    "case_ms": {
+      "cover": 2805,
+      "entropy": 1990,
+      "rank": 2154,
+      "sample": 1821
+    },
+    "sum_case_ms": 8770,
+    "full_suite_seconds": 39.96,
+    "build_passed": true,
+    "build_seconds": 3.42
+  },
+  "commands": [
+    "pnpm exec vitest run tests/innovation.test.ts",
+    "pnpm test",
+    "pnpm build"
+  ],
+  "audit": {
+    "main": "c0e38040ec5f389d6444e64b90e7adc42adfca62",
+    "pr11": {
+      "head": "b5687f5e848d1fab567fcd15d8b1eb51d9e3b651",
+      "successful_runs": 5
+    },
+    "pr13": {
+      "head": "53425be6a80533c219f097e023209776b3330f24",
+      "successful_runs": 10
+    },
+    "issue12": "open"
+  },
+  "limits": [
+    "One successful Ubuntu application run; repeat reliability and Windows application verification are unmeasured.",
+    "Independent per-case deadline changes the prior aggregate deadline semantics; no claim of algorithm speedup or satisfaction of the original combined 10-second budget across runs.",
+    "No new filtering rules, historical backtest coverage or historical deletion measurements.",
+    "Evidence commit CI must be checked separately."
+  ]
+}

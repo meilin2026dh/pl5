@@ -1,0 +1,40 @@
+name: PL5 V3.7.65 isolated solver repeat checks
+on:
+  pull_request:
+    branches:
+      - research/audit-equivalent-rule-minimization-v3764
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.head_ref == 'research/audit-solver-ci-isolation-v3765'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Fixed independent invocations, not retries; any failure fails the job.
+      # Existing assertions and per-test deadline remain unchanged.
+      - name: Isolated solver repeat 1
+        run: pnpm exec vitest run tests/innovation.test.ts
+      - name: Isolated solver repeat 2
+        if: success() || failure()
+        run: pnpm exec vitest run tests/innovation.test.ts
+      # Existing Ubuntu full application check remains separate.
+      - name: Windows full application tests
+        if: runner.os == 'Windows' && (success() || failure())
+        run: pnpm test
+      - name: Windows application build
+        if: runner.os == 'Windows' && success()
+        run: pnpm build

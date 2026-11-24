@@ -106,14 +106,16 @@ it("soft rules preserve disagreement; hard rules cannot be rescued", () => {
   expect(soft.numbers).toHaveLength(2);
   expect(soft.audit.guard.ok).toBe(true);
 });
-it("all solvers certify their geometric result and preserve fixed cutoff", () => {
-  const input = {
-    positions: defaultPositions(),
-    rules: [],
-    history,
-    candidates: ["00000", "00001", "11111", "22222"],
-  };
-  for (const solver of ["cover", "entropy", "rank", "sample"] as const) {
+// Independent test deadlines expose the slow solver without weakening any assertion.
+it.each(["cover", "entropy", "rank", "sample"] as const)(
+  "solver %s certifies its geometric result and preserves fixed cutoff",
+  (solver) => {
+    const input = {
+      positions: defaultPositions(),
+      rules: [],
+      history,
+      candidates: ["00000", "00001", "11111", "22222"],
+    };
     const c = {
       ...defaultInnovation,
       solver,
@@ -137,8 +139,8 @@ it("all solvers certify their geometric result and preserve fixed cutoff", () =>
     expect(
       runInnovation({ ...input, history: [...history, extra] }, c),
     ).toEqual(r);
-  }
-});
+  },
+);
 it("validates imported configuration and persists scheme options", async () => {
   const { validateInnovation } =
     await import("../src/domain/innovation/config");
