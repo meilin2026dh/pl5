@@ -27,7 +27,7 @@ CATEGORIES = {
         prequential_portfolio_audit_v3730 high_throughput_v3714
         ablation_search_v373 ablation_benchmark_v373 ablation_statistics_v373
         codebook_v3713 covering_arrays_v3713 dynamic_budget_v3713
-        conformal_audit_v3713
+        conformal_audit_v3713 cafast_covering_bridge_v3741
     """,
     "mathematical_operator_research": """
         adaptive_primitives_v379 adaptive_study_v379 autolift_v28
