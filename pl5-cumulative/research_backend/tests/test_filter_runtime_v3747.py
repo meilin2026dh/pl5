@@ -258,7 +258,12 @@ def test_v3748_redundancy_and_cache_runtime(m):
     expected = int.from_bytes(raw, "little")
     kept, target = prune_equivalent(masks, FULL)
     assert target == expected == direct_and(masks, FULL)
-    assert len(kept) == 3
+    # Forward deletion can replace a strong rule with multiple weaker rules.
+    assert len(kept) == (3 if m == 3 else 6)
+    reverse_kept, reverse_target = prune_equivalent(masks[::-1], FULL)
+    reverse_order = tuple(sorted(m - 1 - i for i in reverse_kept))
+    assert len(reverse_order) == 3
+    assert reverse_target == direct_and(masks, FULL, reverse_order) == target
     assert all(direct_and(masks, FULL, tuple(j for j in kept if j != i))
                != expected for i in kept)
     # Equal inputs, exact tuple equality rather than digest-only cache keys.
@@ -329,7 +334,8 @@ def test_v3748_redundancy_and_cache_runtime(m):
     print("V3748_REDUNDANCY_JSON=" + json.dumps({
         "fixture": "INTERNAL/AI_AUTHORED",
         "platform": platform.platform(), "python": platform.python_version(),
-        "rules": m, "kept_indices": list(kept), "retained": target.bit_count(),
+        "rules": m, "kept_indices": list(kept),
+        "reverse_kept_indices": list(reverse_order), "retained": target.bit_count(),
         "final_mask_sha256": sha256(raw).hexdigest(),
         "historical_coverage_measured": False,
         "acquisition_and_materialization_excluded": True,
