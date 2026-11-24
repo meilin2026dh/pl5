@@ -1,0 +1,25 @@
+name: PL5 V3.7.50 prime factor partition audit
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-prime-factor-v3750.yml"
+      - "docs/research/experiments/prime_factor_partition_v3750.py"
+      - "docs/research/PRIME_FACTOR_PARTITION_V3750.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-factor-audit:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run independent exact factorization checks
+        run: python docs/research/experiments/prime_factor_partition_v3750.py
