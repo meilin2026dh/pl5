@@ -58,3 +58,11 @@ The earlier positive-only conjunction grammar had the smallest historical target
 The union of 200 eligible atoms retains 5,082 IDs and is **not** an eligible K<=100 filter. A Boolean OR of atoms could produce different sets, but any OR that retains a record must include that record's entire atom; hence its candidate size cannot be smaller than its atom's K. This extends the infeasibility certificate to *arbitrary Boolean formulas constructed exclusively from these ten frozen binary feature outputs* for the fixed panel, not to any additional mathematical descriptor or future record. This is a stronger static structural theorem, not evidence of improved historical filtering efficacy.
 
 All outcomes remain retrospective and possibly exposed in previous development; no selection based on this history is permitted.
+
+## Cross-platform verification and acceptance limit
+
+[Targeted GitHub Actions #45332355368](https://github.com/meilin2026dh/pl5/actions/runs/45332355368) **passed on both Windows and Ubuntu Python 3.12**, 3 tests per platform, with byte-identical complete `V3759_SIGNED_JSON` results and identical union/candidate SHA256 digests. The tested code SHA is `3d5e088ee9ff5c5315117280ddf1461720320355`; subsequent documentation commits do not alter that source.
+
+**Separate application CI #45332355318 failed:** `tests/innovation.test.ts` exceeded the known 10-second per-test limit (297 tests passed, one timed out). This is a previously observed intermittent failure, and cannot be silently treated as a successful complete-project acceptance. No production changes or app-test modifications were made in this bounded math experiment.
+
+**Decision:** The ten-feature Boolean-grammar representational boundary is precisely characterized for the fixed retrospective panel; do not extend the same rule algebra or select tiny atoms based on these targets. The next truly new scheme must add genuinely different observable information or a separately specified time-forward adaptive construction, with predeclared controls and historical coverage gates. These conclusions are about engineering expressiveness, not about future outcomes.
