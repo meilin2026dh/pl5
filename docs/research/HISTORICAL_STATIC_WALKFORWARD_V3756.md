@@ -59,3 +59,19 @@ The table reports **20 target rows**; `covered` means the frozen keep set contai
 **Primary engineering conclusion:** Directly intersecting all modular constraints yields only **4** candidates and removes **all 20** crosschecked historical targets. Several multi-family intersections are **empty**, which is invalid for nonempty candidate compression. This is an explicit negative result for indiscriminate AND stacking. Even if a named arm has a numerically higher historical count than a random control, the 20-row retrospective sample and previous algorithm development do **not** justify a superiority claim. The full JSON also preserves results for every one of the 1024 subsets; no after-the-fact best subset is promoted.
 
 No existing source files or hashes changed. Technical acceptance pertains to this focused static-historical audit only; whole-project regression and external independent-source attestation are separate checks.
+
+## Fixed target-cap feasibility certificate — source SHA `6ff514a1206d2cd048184d40f328741d8be7e26b`
+
+In addition to all 1024 exhaustive intersection counts, the audit now explicitly separates **nonempty** subsets with `1 <= K <= 100` from empty/over-budget results. Both Ubuntu and Windows Python 3.12 completed the exact same five tests and produced byte-identical full JSON SHA256 `8ab028b82b5351634412987ef572bad40981df57d8c1f9ee12af533141575de3`, [CI #45323793243](https://github.com/meilin2026dh/pl5/actions/runs/45323793243).
+
+| Exact all-subset property | Result |
+|---|---:|
+| All ten-rule subsets considered | 1,024 |
+| Nonempty subsets satisfying K <= 100 | 308 |
+| Empty intersections (invalid solutions) | 68 |
+| Nonempty K <= 100 subsets retaining >=1 of 20 historical targets | **0** |
+| Maximum historical targets retained by any of those 308 subsets | **0 / 20** |
+
+This is a **complete negative result for the frozen 10-rule AND search space on this specific 20-record crosschecked retrospective panel**, not a finding about any different rule catalog or future windows. The 308 comparisons share the same outcomes and are not independent validation trials. No favorable post-hoc subset is promoted.
+
+The exact report hash changed from the earlier CI because the new cap-feasibility certificate was added; the old report remains an auditable earlier version. No historical data bytes or expected hashes were modified. Complete project-wide regression is not claimed from these focused tests.
