@@ -33,3 +33,28 @@ Three deterministic unittests: toy-domain full signed-atom oracle, full 100,000-
 All rule definitions are already frozen mathematical predicates; all new combinational masks are INTERNAL/AI_AUTHORED. No refitting, target window selection, source file editing, stored historical-hash modification, production promotion, private files or paid APIs. No main changes, automatic merge or forced push.
 
 This exercise tests **expressiveness and feasibility** only. A large new filtered grammar can trivially produce small arbitrary sets. Real engineering utility requires future timestamped frozen candidate sets, matched-K random controls, historical coverage/error evidence from an unseen independent panel, and execution-cost comparisons. Preserve negative results.
+
+## Exact first-platform result — tested source SHA `3d5e088ee9ff5c5315117280ddf1461720320355`
+
+Ubuntu Python 3.12 targeted CI passed its three deterministic tests, [Actions #45332355368](https://github.com/meilin2026dh/pl5/actions/runs/45332355368). Windows remains an independent acceptance gate until verified.
+
+| Exact static property | Measured |
+|---|---:|
+| All possible full-assignment signatures | 1,024 |
+| Nonempty signed Boolean atoms | **319** |
+| Empty atoms | 705 |
+| Nonempty atoms each with K<=100 | **200** |
+| Union of those 200 atom candidate sets | **5,082** IDs |
+| Smallest nonempty atom | K=1 |
+| Largest nonempty atom | K=9,198 |
+| Previously frozen smallest-atom arm | signature 1, K=1 |
+| Frozen arm historical coverage | 0/20 |
+| Historical records in any K<=100 atom | **0/20** |
+| Smallest historic target's atomic floor | **K=160** (issue 26278) |
+| Largest historic target's atomic floor | **K=9,198** (issues 26281 and 26289) |
+
+The earlier positive-only conjunction grammar had the smallest historical target floor K=406. The signed-literal grammar **strictly expands the construction space** and improves the structural minimum to **K=160** within this same retrospective panel, but still cannot retain any of these 20 historical records with K<=100 using **one signed conjunction over the ten frozen predicates**.
+
+The union of 200 eligible atoms retains 5,082 IDs and is **not** an eligible K<=100 filter. A Boolean OR of atoms could produce different sets, but any OR that retains a record must include that record's entire atom; hence its candidate size cannot be smaller than its atom's K. This extends the infeasibility certificate to *arbitrary Boolean formulas constructed exclusively from these ten frozen binary feature outputs* for the fixed panel, not to any additional mathematical descriptor or future record. This is a stronger static structural theorem, not evidence of improved historical filtering efficacy.
+
+All outcomes remain retrospective and possibly exposed in previous development; no selection based on this history is permitted.
