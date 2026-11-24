@@ -45,10 +45,13 @@ def audit():
         unique.add(mask)
     # Independent alternate union oracle: each candidate is admissible
     # iff it belongs to at least one qualifying frozen conjunction.
-    witness_oracle = set()
-    for n in range(DOMAIN):
-        if any((mask >> n) & 1 for _, mask in feasible):
-            witness_oracle.add(n)
+    oracle_bytes = bytearray(DOMAIN // 8)
+    for _, mask in feasible:
+        packed = mask.to_bytes(DOMAIN // 8, "little")
+        for i, value in enumerate(packed):
+            oracle_bytes[i] |= value
+    witness_oracle = {n for n in range(DOMAIN)
+                      if oracle_bytes[n >> 3] & (1 << (n & 7))}
     union_ids = {n for n in range(DOMAIN) if (union >> n) & 1}
     if union_ids != witness_oracle:
         raise AssertionError("independent union oracle disagrees")
