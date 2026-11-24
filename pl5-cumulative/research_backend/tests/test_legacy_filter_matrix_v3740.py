@@ -195,3 +195,76 @@ def test_synthetic_fixture_digest_and_safety_scope():
     assert source["last_issue"] == draws[-1][0]
     assert draws[0][1] == "55096"
     assert source["source_path"] == "data/synthetic_demo.csv"
+
+
+def test_three_rule_frontier_independent_set_oracle():
+    from itertools import combinations
+    from collections import Counter
+    from pailie5.legacy_filter_matrix_v3740 import _three_rule_frontier
+    sets = {"a": {0, 1, 2}, "b": {0, 1, 3}, "c": {0, 1, 4},
+            "d": {0, 1, 2}, "e": {5, 6}, "f": {0, 2, 3}}
+    masks = [(name, sum(1 << x for x in ids)) for name, ids in sets.items()]
+    report = _three_rule_frontier(masks, domain_size=8, target=2)
+    expected = Counter()
+    classes = {}
+    for triple in combinations(sorted(sets), 3):
+        ids = frozenset.intersection(*(frozenset(sets[name]) for name in triple))
+        expected[str(len(ids))] += 1
+        if 0 < len(ids) <= 2:
+            classes.setdefault(ids, []).append(list(triple))
+    assert report["retained_count_histogram"] == dict(expected)
+    assert report["triples_examined"] == 20
+    assert report["empty_intersections"] > 0
+    assert report["feasible_portfolios"] == sum(map(len, classes.values()))
+    assert report["distinct_feasible_candidate_sets"] == len(classes)
+    assert report["feasible_portfolios"] > report["distinct_feasible_candidate_sets"]
+    assert {tuple(tuple(t) for t in group["portfolios"])
+            for group in report["equivalence_classes"]} == {
+            tuple(tuple(t) for t in v) for v in classes.values()}
+    assert report["exact_target_portfolios"] == expected["2"]
+    assert report["exact_target_distinct_sets"] == sum(len(ids) == 2 for ids in classes)
+    assert report["best_nonempty_retained_at_or_below_target"] == 2
+    assert report == _three_rule_frontier(masks[::-1], domain_size=8, target=2)
+
+
+def test_three_rule_frontier_empty_result_and_equal_count_distinct_sets():
+    from pailie5.legacy_filter_matrix_v3740 import _three_rule_frontier
+    no_result = _three_rule_frontier([("a", 1), ("b", 2), ("c", 4)],
+                                     domain_size=8, target=1)
+    assert no_result["empty_intersections"] == 1
+    assert no_result["feasible_portfolios"] == 0
+    assert no_result["best_nonempty_retained_at_or_below_target"] is None
+    result = _three_rule_frontier([("a", 3), ("b", 5), ("c", 6), ("d", 7)],
+                                  domain_size=8, target=1)
+    assert result["feasible_portfolios"] == 3
+    assert result["distinct_feasible_candidate_sets"] == 3
+    assert result["exact_target_distinct_sets"] == 3
+
+
+@pytest.mark.parametrize("masks", [
+    [("a", 1), ("a", 2), ("b", 3)],
+    [("a", True), ("b", 2), ("c", 3)],
+    [("a", 256), ("b", 2), ("c", 3)],
+    [("a", 1), ("b", 2)],
+])
+def test_three_rule_frontier_rejects_invalid_masks(masks):
+    from pailie5.legacy_filter_matrix_v3740 import _three_rule_frontier
+    with pytest.raises(ValueError):
+        _three_rule_frontier(masks, domain_size=8, target=1)
+
+
+def test_full_three_rule_census_contains_existing_certificate():
+    import math
+    data = report()
+    frontier = data["three_rule_frontier"]
+    witness = data["minimum_rule_cardinality_certificate"]
+    assert frontier["triples_examined"] == math.comb(58, 3) == 30856
+    assert sum(frontier["retained_count_histogram"].values()) == 30856
+    assert frontier["best_nonempty_retained_at_or_below_target"] == 100
+    assert frontier["exact_target_portfolios"] >= 1
+    assert frontier["distinct_feasible_candidate_sets"] <= frontier["feasible_portfolios"]
+    assert frontier["exact_target_distinct_sets"] <= frontier["exact_target_portfolios"]
+    assert any(group["candidate_sha256"] == witness["witness_sha256"]
+               and sorted(witness["witness_rules"]) in group["portfolios"]
+               for group in frontier["equivalence_classes"])
+    assert not frontier["historical_coverage_measured"]
