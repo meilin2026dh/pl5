@@ -1,0 +1,45 @@
+name: PL5 V3.7.33 exact-filter-search comparative audit
+
+on:
+  pull_request:
+    paths:
+      - "pl5-cumulative/research_backend/pailie5/filter_search_suite_v3733.py"
+      - "pl5-cumulative/research_backend/pailie5/filter_search_oracle_v3732.py"
+      - "pl5-cumulative/research_backend/pailie5/ga_cs_optimizer_v3715.py"
+      - "pl5-cumulative/research_backend/tests/test_filter_search_suite_v3733.py"
+      - ".github/workflows/pl5-filter-search-suite-v3733.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  filter-comparison:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: pl5-cumulative/research_backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install minimal offline scientific dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pytest>=8,<10"
+      - name: Run source-specific and baseline tests
+        run: python -m pytest -q tests/test_filter_search_suite_v3733.py tests/test_filter_search_oracle_v3732.py tests/test_constraint_portfolio_v3731.py tests/test_ga_cs_optimizer_v3715.py
+      - name: Run fixed predeclared synthetic benchmark, refuse overwrite
+        run: python -m pailie5.filter_search_suite_v3733 --output ../../ci-results/v3733-filter-synthetic-${{ matrix.os }}.json
+      - name: Upload complete evidence regardless of results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3733-filter-engineering-${{ matrix.os }}-${{ github.run_id }}
+          path: ci-results/v3733-filter-synthetic-${{ matrix.os }}.json
+          retention-days: 30
+          if-no-files-found: warn
