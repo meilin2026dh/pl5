@@ -1,0 +1,24 @@
+name: PL5 V3.7.49 modular partition audit
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-residue-partition-v3749.yml"
+      - "docs/research/experiments/residue_partition_v3749.py"
+      - "docs/research/RESIDUE_PARTITION_V3749.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-residue-audit:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run independent exact arithmetic checks
+        run: python docs/research/experiments/residue_partition_v3749.py
