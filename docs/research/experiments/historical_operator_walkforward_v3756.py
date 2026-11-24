@@ -165,6 +165,12 @@ def run():
             })
     if len(rows)-WARMUP != TEST_WINDOWS:
         raise AssertionError("evaluation-window drift")
+    cap_feasible = [
+        (i, frozen[i]["candidate_count"], total)
+        for i, total in enumerate(totals)
+        if 1 <= frozen[i]["candidate_count"] <= 100
+    ]
+    cap_max_coverage = max((covered for _,_,covered in cap_feasible), default=None)
     summary = {
         name: {
             "coalition": s, "candidate_count": frozen[s]["candidate_count"],
@@ -192,6 +198,15 @@ def run():
         "coalition_count": len(coalitions),
         "frozen_coalitions": frozen,
         "all_coalition_retained_targets": totals,
+        "target_cap_100": {
+            "nonempty_feasible_coalitions": len(cap_feasible),
+            "max_historical_retained_across_feasible": cap_max_coverage,
+            "feasible_with_at_least_one_retained": sum(int(covered > 0)
+                                                      for _,_,covered in cap_feasible),
+            "empty_coalitions": sum(int(row["candidate_count"] == 0)
+                                     for row in frozen),
+            "selection_on_this_panel_prohibited": True,
+        },
         "named_arms": summary,
         "historical_coverage_measured": True,
         "no_target_window_rule_fitting": True,
@@ -235,6 +250,10 @@ class TestWalkforward(unittest.TestCase):
             self.assertEqual(arm["candidate_count"],
                              r["frozen_coalitions"][arm["coalition"]]["candidate_count"])
         self.assertEqual(r["all_coalition_retained_targets"][0],20)
+        v = r["target_cap_100"]
+        self.assertEqual(v["nonempty_feasible_coalitions"],sum(
+            int(1<=x["candidate_count"]<=100) for x in r["frozen_coalitions"]))
+        self.assertGreaterEqual(v["empty_coalitions"], 1)
 
 
 if __name__ == "__main__":
@@ -258,3 +277,4 @@ if __name__ == "__main__":
         for name,arm in report["named_arms"].items()}
     print("V3756_REPORT_SHA256="+sha256(raw.encode()).hexdigest())
     print("V3756_SUMMARY_JSON="+json.dumps(compact,sort_keys=True))
+    print("V3756_CAP100_JSON="+json.dumps(report["target_cap_100"],sort_keys=True))
