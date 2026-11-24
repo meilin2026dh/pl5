@@ -49,6 +49,20 @@ The Ubuntu Python 3.12 GitHub Actions job #45301233296 ran the full deterministi
 | big omega >= 3 | 1094322 | 29 | 1 |
 | squarefree = 1 | 652414 | 39 | 0 |
 
-Every descriptor has independently rechecked witness IDs with identical original 58-mask signatures but distinct new descriptor values; consequently none of these **full descriptors** is representable by arbitrary Boolean formulas of those masks. **However** novelty of the full-valued descriptor does not automatically prove that a selected binary threshold is inexpressible by the existing rule masks. The table's specific fixed binary filters therefore carry no such independent-expression guarantee without an additional predicate-specific refinement audit.
+Every descriptor has independently rechecked witness IDs with identical original 58-mask signatures but distinct new descriptor values; consequently none of these **full descriptors** is representable by arbitrary Boolean formulas of those masks. A subsequent predicate-specific audit independently checked all nine fixed binary predicates, each with a separate exact witness against the 58 original masks (source SHA `2c13b7f0cdcd39eaf772ccc698fd97b170c9c2cc`). This proves **Boolean representational novelty of all nine predeclared binary filters** against this frozen static inventory, but not practical filtering benefit.
+
+| Predeclared binary filter | Previously indistinguishable pairs separated | Witness IDs |
+|---|---:|---|
+| mod 2 = 0 | 668209 | 00253,00382 |
+| mod 3 = 0 | 593271 | 00253,99747 |
+| mod 5 = 0 | 303601 | 00265,00354 |
+| mod 7 = 0 | 342861 | 00265,00364 |
+| mod 11 = 0 | 269437 | 00253,00382 |
+| mod 13 = 0 | 190771 | 00265,00364 |
+| omega >= 3 | 647501 | 00262,00264 |
+| big omega >= 3 | 557473 | 00253,99747 |
+| squarefree = 1 | 652414 | 00253,99747 |
+
+The exact counts and independent witnesses are produced by `V3751_INDEPENDENCE_JSON` in GitHub Actions run #45301422613; Ubuntu Python 3.12 passed its 3 tests. Windows and full checks must be separately verified for that source SHA. No hidden or historical data were used.
 
 These exact static results are **not** evidence of useful historical filtering. In particular, three predeclared residue=0 constraints destroy the two-element full static conjunction, and squarefree=1 adds no marginal exclusion there. No new rule is approved for production.
