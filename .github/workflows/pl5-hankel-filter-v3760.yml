@@ -1,0 +1,24 @@
+name: PL5 V3.7.60 Hankel determinant filter audit
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/pl5-hankel-filter-v3760.yml"
+      - "docs/research/experiments/hankel_independence_v3760.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hankel:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "numpy>=1.26,<3" "scipy>=1.11,<2" "pandas>=2.1,<3"
+      - run: python docs/research/experiments/hankel_independence_v3760.py
