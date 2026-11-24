@@ -105,6 +105,7 @@ def run():
     combined = (1 << DOMAIN) - 1
     for _, mask in masks:
         combined &= mask
+    full_ids = [n for n in range(DOMAIN) if (combined >> n) & 1]
     results = {}
     for p in PRIMES:
         feature = [n % p for n in range(DOMAIN)]
@@ -112,6 +113,8 @@ def run():
         row["predeclared_category"] = "residue_zero"
         row["recurrence_marginal"] = _frozen_marginal(
             feature, recurrence_ids, lambda v: v == 0)
+        row["all_static_intersection_marginal"] = _frozen_marginal(
+            feature, full_ids, lambda v: v == 0)
         results["residue_mod_" + str(p)] = row
     factor_specs = (
         ("factor_omega_distinct_ge3", 0, lambda v: v >= 3),
@@ -124,6 +127,8 @@ def run():
         row["predeclared_category"] = name
         row["recurrence_marginal"] = _frozen_marginal(
             feature, recurrence_ids, accepts)
+        row["all_static_intersection_marginal"] = _frozen_marginal(
+            feature, full_ids, accepts)
         results[name] = row
 
     # Independent check of every reported counterexample using 58 original
@@ -178,6 +183,11 @@ class TestIndependence(unittest.TestCase):
                              row["newly_distinguished_pairs"] > 0)
             self.assertEqual(row["boolean_novelty_proven"], row["witness_ids"] is not None)
             self.assertEqual(row["recurrence_marginal"]["baseline"], 100)
+            self.assertEqual(row["all_static_intersection_marginal"]["baseline"],
+                             result["existing_full_intersection_count"])
+            self.assertEqual(row["all_static_intersection_marginal"]["after"] +
+                             row["all_static_intersection_marginal"]["marginal_excluded"],
+                             result["existing_full_intersection_count"])
             self.assertEqual(row["recurrence_marginal"]["after"] +
                              row["recurrence_marginal"]["marginal_excluded"], 100)
 
