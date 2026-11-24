@@ -29,3 +29,33 @@ Five unittest cases validate source dates and crosschecking, tamper refusal, dir
 This answers **retrospective fixed-filter coverage and historical removal rates** on the **20 crosschecked transcript rows** only. It does NOT establish independently archived provenance, an external pre-commitment, or representative long-range performance. These ten rules were developed during earlier research; the same historical records may have been seen during other project development, so this retrospective window must **not** be promoted to a truly unseen independent holdout.
 
 No matched-K arm is promoted merely for looking better in these 20 rows. Searching 1024 coalitions creates severe selection risk; no post-hoc best family is a confirmed breakthrough. To establish independent benefit requires fresh, genuinely unexposed windows and locked choices, with multiple-testing controls and the same compute budget. No new methods, paid calls, historic file edits, main changes or merge.
+
+## Actual 20-window retrospective results — verified exact source SHA
+
+Windows and Ubuntu Python 3.12 both passed **5/5** targeted tests at commit `4c6cbecd28a1e00aa5228ae0bca84dc5873f5a9a`: [GitHub Actions #45323535358](https://github.com/meilin2026dh/pl5/actions/runs/45323535358). Both complete JSON evidence files have byte-identical SHA256 `6df9120cdd978accf2a40c7d87e700da870d241e1d61a10b99c76e674839f1f2`.
+
+The table reports **20 target rows**; `covered` means the frozen keep set contains the historical target, `removed` is its complement. Random is **one** independently seeded matched-K control per named arm, and must not be interpreted as a statistical confidence interval.
+
+| Frozen arm | K retained out of 100000 | History covered / 20 | History removed / 20 | Matched-K random covered / 20 | Exact reference expected / 20 |
+|---|---:|---:|---:|---:|---:|
+| mod2=0 | 50000 | 11 | 9 | 13 | 10 |
+| mod3=0 | 33334 | 10 | 10 | 3 | 6.6668 |
+| mod5=0 | 20000 | 5 | 15 | 3 | 4 |
+| mod7=0 | 14286 | 1 | 19 | 3 | 2.8572 |
+| mod11=0 | 9091 | 1 | 19 | 3 | 1.8182 |
+| mod13=0 | 7693 | 2 | 18 | 2 | 1.5386 |
+| distinct prime factors≥3 | 56540 | 15 | 5 | 12 | 11.308 |
+| total prime factors≥3 | 67028 | 16 | 4 | 14 | 13.4056 |
+| squarefree=1 | 60794 | 12 | 8 | 15 | 12.1588 |
+| spectral C1>C2 | 49330 | 8 | 12 | 8 | 9.866 |
+| modular family AND | 4 | 0 | 20 | 0 | 0.0008 |
+| prime-factor family AND | 27888 | 8 | 12 | 9 | 5.5776 |
+| spectral family | 49330 | 8 | 12 | 5 | 9.866 |
+| modular AND prime-factor | 1 | 0 | 20 | 0 | 0.0002 |
+| modular AND spectral | 0 | 0 | 20 | 0 | 0 |
+| prime-factor AND spectral | 13715 | 4 | 16 | 6 | 2.743 |
+| all three family AND | 0 | 0 | 20 | 0 | 0 |
+
+**Primary engineering conclusion:** Directly intersecting all modular constraints yields only **4** candidates and removes **all 20** crosschecked historical targets. Several multi-family intersections are **empty**, which is invalid for nonempty candidate compression. This is an explicit negative result for indiscriminate AND stacking. Even if a named arm has a numerically higher historical count than a random control, the 20-row retrospective sample and previous algorithm development do **not** justify a superiority claim. The full JSON also preserves results for every one of the 1024 subsets; no after-the-fact best subset is promoted.
+
+No existing source files or hashes changed. Technical acceptance pertains to this focused static-historical audit only; whole-project regression and external independent-source attestation are separate checks.
