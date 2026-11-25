@@ -1,0 +1,301 @@
+{
+  "schema": "pl5-cached-shapley-v3781-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "experiment_commit": "02c7b1b01a9917203173ed2a6992476086427414",
+  "ci_commit": "f74b5f57a1e2db46553a3ef5a3c0d4fed9c66d37",
+  "workflow_run_id": 45714825612,
+  "application_run_id": 45714825571,
+  "verified_at": "2026-11-26",
+  "verification": {
+    "cross_platform_equal_fields": [
+      "analytical_work",
+      "checks",
+      "decomposition_sha256",
+      "domain",
+      "entropy_ledger_sha256",
+      "exact_within_platform_equality",
+      "limitations",
+      "rule_mask_sha256",
+      "rule_names",
+      "schema",
+      "shapley_bits",
+      "source",
+      "source_head",
+      "subsets"
+    ],
+    "paired_ratios_recomputed": true,
+    "alternating_order_checked": true,
+    "tests_per_platform": 4,
+    "ci_conclusion": "success",
+    "application_conclusion": "success"
+  },
+  "reproduction": "python docs/research/experiments/cached_shapley_v3781.py",
+  "platforms": [
+    {
+      "os": "ubuntu",
+      "job_id": 139558075551,
+      "report": {
+        "analytical_work": {
+          "cached_denominator_evaluations": 12,
+          "cached_entropy_differences": 24576,
+          "conditional_mi_checks": 67584,
+          "extra_delta_slots_per_rule": 4096,
+          "marginal_terms": 24576,
+          "reference_denominator_evaluations": 24576,
+          "reference_entropy_differences": 92160
+        },
+        "checks": {
+          "largest_conditional_mi_bits": 0.6062005914221988,
+          "smallest_conditional_mi_bits": -4.440892098500626e-16,
+          "submodularity_violations": 0
+        },
+        "decomposition_sha256": "b839e781f5096a1d450e269abe69819158a3a0080e1ce12f95753738ba566cd2",
+        "domain": 100000,
+        "entropy_ledger_sha256": "771a4885ca6480866cd3321ba0345c0902f173de57f5a954374ea71ccd5b1242",
+        "exact_within_platform_equality": true,
+        "limitations": [
+          "static fixed entropy ledger; no new filtering rules or historical coverage",
+          "only decomposition phase timed; no complete audit speed claim",
+          "six alternating warm pairs; descriptive timing, no timing gate",
+          "analytical work counts are not CPU instruction counts",
+          "extra delta list memory not measured; bounded to 12 rules",
+          "cross-platform fingerprint uses prior quantization"
+        ],
+        "median_paired_ratio": 2.4670726597875303,
+        "paired_trials": [
+          {
+            "cached_ns": 14569270,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 35809164
+          },
+          {
+            "cached_ns": 14498974,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 35679058
+          },
+          {
+            "cached_ns": 14403580,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 35666690
+          },
+          {
+            "cached_ns": 14327726,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 35753320
+          },
+          {
+            "cached_ns": 14470601,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 35607251
+          },
+          {
+            "cached_ns": 14299533,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 35367700
+          }
+        ],
+        "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rule_names": [
+          "mod2_zero",
+          "mod3_zero",
+          "mod5_zero",
+          "mod7_zero",
+          "mod11_zero",
+          "mod13_zero",
+          "omega_ge3",
+          "bigomega_ge3",
+          "squarefree_one",
+          "spectral_C1_gt_C2",
+          "det_H_gt_0",
+          "F3_squarefactor"
+        ],
+        "schema": "pl5-cached-shapley-v3781-1",
+        "shapley_bits": [
+          0.8019806497390747,
+          0.7883531295235915,
+          0.653493409671633,
+          0.5456650379847116,
+          0.4111275005625668,
+          0.36759195078489737,
+          0.5471656416364642,
+          0.4009179658297717,
+          0.7301067069472823,
+          0.9903447317160422,
+          0.5996206910232961,
+          0.9144082581860055
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_head": "5f99d4fc646a6ddc048c98c0e7f08a66d8c3bedc",
+        "subsets": 4096
+      },
+      "recomputed_median": 2.4670726597875303,
+      "all_six_pairs_faster": true
+    },
+    {
+      "os": "windows",
+      "job_id": 139558076143,
+      "report": {
+        "analytical_work": {
+          "cached_denominator_evaluations": 12,
+          "cached_entropy_differences": 24576,
+          "conditional_mi_checks": 67584,
+          "extra_delta_slots_per_rule": 4096,
+          "marginal_terms": 24576,
+          "reference_denominator_evaluations": 24576,
+          "reference_entropy_differences": 92160
+        },
+        "checks": {
+          "largest_conditional_mi_bits": 0.6062005914221988,
+          "smallest_conditional_mi_bits": -4.440892098500626e-16,
+          "submodularity_violations": 0
+        },
+        "decomposition_sha256": "b839e781f5096a1d450e269abe69819158a3a0080e1ce12f95753738ba566cd2",
+        "domain": 100000,
+        "entropy_ledger_sha256": "771a4885ca6480866cd3321ba0345c0902f173de57f5a954374ea71ccd5b1242",
+        "exact_within_platform_equality": true,
+        "limitations": [
+          "static fixed entropy ledger; no new filtering rules or historical coverage",
+          "only decomposition phase timed; no complete audit speed claim",
+          "six alternating warm pairs; descriptive timing, no timing gate",
+          "analytical work counts are not CPU instruction counts",
+          "extra delta list memory not measured; bounded to 12 rules",
+          "cross-platform fingerprint uses prior quantization"
+        ],
+        "median_paired_ratio": 2.3989125518792775,
+        "paired_trials": [
+          {
+            "cached_ns": 9838100,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 23675700
+          },
+          {
+            "cached_ns": 9791400,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 23490400
+          },
+          {
+            "cached_ns": 9955000,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 23696000
+          },
+          {
+            "cached_ns": 9890400,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 23724500
+          },
+          {
+            "cached_ns": 10050400,
+            "order": [
+              "reference",
+              "cached"
+            ],
+            "reference_ns": 23573700
+          },
+          {
+            "cached_ns": 9894400,
+            "order": [
+              "cached",
+              "reference"
+            ],
+            "reference_ns": 23742700
+          }
+        ],
+        "platform": "Windows-2025Server-10.0.26100-SP0",
+        "python": "3.12.10",
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rule_names": [
+          "mod2_zero",
+          "mod3_zero",
+          "mod5_zero",
+          "mod7_zero",
+          "mod11_zero",
+          "mod13_zero",
+          "omega_ge3",
+          "bigomega_ge3",
+          "squarefree_one",
+          "spectral_C1_gt_C2",
+          "det_H_gt_0",
+          "F3_squarefactor"
+        ],
+        "schema": "pl5-cached-shapley-v3781-1",
+        "shapley_bits": [
+          0.8019806497390747,
+          0.7883531295235915,
+          0.653493409671633,
+          0.5456650379847116,
+          0.4111275005625668,
+          0.36759195078489737,
+          0.5471656416364642,
+          0.4009179658297717,
+          0.7301067069472823,
+          0.9903447317160422,
+          0.5996206910232961,
+          0.9144082581860055
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_head": "5f99d4fc646a6ddc048c98c0e7f08a66d8c3bedc",
+        "subsets": 4096
+      },
+      "recomputed_median": 2.3989125518792775,
+      "all_six_pairs_faster": true
+    }
+  ]
+}
