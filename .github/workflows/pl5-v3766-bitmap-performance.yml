@@ -11,6 +11,7 @@ on:
       - 'docs/research/experiments/conflict_pruning_v3772.py'
       - 'docs/research/experiments/static_entropy_v3773.py'
       - 'docs/research/experiments/entropy_search_v3774.py'
+      - 'docs/research/experiments/static_pareto_v3775.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -42,3 +43,5 @@ jobs:
       - run: python docs/research/experiments/static_entropy_v3773.py
 
       - run: python docs/research/experiments/entropy_search_v3774.py
+
+      - run: python docs/research/experiments/static_pareto_v3775.py
