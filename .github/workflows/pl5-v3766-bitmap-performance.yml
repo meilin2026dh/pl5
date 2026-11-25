@@ -17,6 +17,7 @@ on:
       - 'docs/research/experiments/projection_work_v3778.py'
       - 'docs/research/experiments/projection_tree_v3779.py'
       - 'docs/research/experiments/shared_entropy_v3780.py'
+      - 'docs/research/experiments/cached_shapley_v3781.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -60,3 +61,5 @@ jobs:
       - run: python docs/research/experiments/projection_tree_v3779.py
 
       - run: python docs/research/experiments/shared_entropy_v3780.py
+
+      - run: python docs/research/experiments/cached_shapley_v3781.py
