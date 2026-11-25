@@ -1,0 +1,195 @@
+{
+  "tested_head": "55e887cf767fd77bd17408ad9dee0991849dde68",
+  "specialized_run": 45563810950,
+  "application_run": 45563810914,
+  "ubuntu": {
+    "core_count": 668,
+    "counts_sha256": "ab1e118d167b8a80cd47ed0ba341ac678785d81c7f16de708007892f76c0bc62",
+    "domain": 100000,
+    "index_setup_ns": {
+      "full_core": 1531030,
+      "pair_core": 765691
+    },
+    "limitations": [
+      "fixed rule order and full ternary search",
+      "timed output is count ledger, not candidate serialization",
+      "oracle construction excluded; core discovery and index setup separately recorded",
+      "no timing gate; no historical coverage measured"
+    ],
+    "nonempty_at_cap": 135641,
+    "offline_core_discovery_ns": 1087017818,
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "source": "INTERNAL/AI_AUTHORED",
+    "states": 531441,
+    "strategies": {
+      "bitmap_empty": {
+        "counts": {
+          "core_checks": 0,
+          "evaluated_leaves": 332360,
+          "intersections": 352186,
+          "nodes": 508453,
+          "pruned_leaves": 199081,
+          "pruned_subtrees": 19827
+        },
+        "times_ns": [
+          1149727107,
+          1128360663,
+          1129227502
+        ]
+      },
+      "exhaustive": {
+        "counts": {
+          "core_checks": 0,
+          "evaluated_leaves": 531441,
+          "intersections": 531440,
+          "nodes": 797161,
+          "pruned_leaves": 0,
+          "pruned_subtrees": 0
+        },
+        "times_ns": [
+          1226649633,
+          1238109508,
+          1245949783
+        ]
+      },
+      "full_core": {
+        "counts": {
+          "core_checks": 29558418,
+          "evaluated_leaves": 332360,
+          "intersections": 332359,
+          "nodes": 508453,
+          "pruned_leaves": 199081,
+          "pruned_subtrees": 19827
+        },
+        "times_ns": [
+          3330022626,
+          3346608774,
+          3324445192
+        ]
+      },
+      "pair_core": {
+        "counts": {
+          "core_checks": 2187,
+          "evaluated_leaves": 472392,
+          "intersections": 472391,
+          "nodes": 708952,
+          "pruned_leaves": 59049,
+          "pruned_subtrees": 729
+        },
+        "times_ns": [
+          1230338520,
+          1233572924,
+          1251090101
+        ]
+      }
+    }
+  },
+  "windows": {
+    "core_count": 668,
+    "counts_sha256": "ab1e118d167b8a80cd47ed0ba341ac678785d81c7f16de708007892f76c0bc62",
+    "domain": 100000,
+    "index_setup_ns": {
+      "full_core": 1102100,
+      "pair_core": 554700
+    },
+    "limitations": [
+      "fixed rule order and full ternary search",
+      "timed output is count ledger, not candidate serialization",
+      "oracle construction excluded; core discovery and index setup separately recorded",
+      "no timing gate; no historical coverage measured"
+    ],
+    "nonempty_at_cap": 135641,
+    "offline_core_discovery_ns": 776285400,
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "source": "INTERNAL/AI_AUTHORED",
+    "states": 531441,
+    "strategies": {
+      "bitmap_empty": {
+        "counts": {
+          "core_checks": 0,
+          "evaluated_leaves": 332360,
+          "intersections": 352186,
+          "nodes": 508453,
+          "pruned_leaves": 199081,
+          "pruned_subtrees": 19827
+        },
+        "times_ns": [
+          1340263900,
+          1320618300,
+          1291663800
+        ]
+      },
+      "exhaustive": {
+        "counts": {
+          "core_checks": 0,
+          "evaluated_leaves": 531441,
+          "intersections": 531440,
+          "nodes": 797161,
+          "pruned_leaves": 0,
+          "pruned_subtrees": 0
+        },
+        "times_ns": [
+          1444293200,
+          1376300500,
+          1350212100
+        ]
+      },
+      "full_core": {
+        "counts": {
+          "core_checks": 29558418,
+          "evaluated_leaves": 332360,
+          "intersections": 332359,
+          "nodes": 508453,
+          "pruned_leaves": 199081,
+          "pruned_subtrees": 19827
+        },
+        "times_ns": [
+          2891244100,
+          2829632900,
+          2765993900
+        ]
+      },
+      "pair_core": {
+        "counts": {
+          "core_checks": 2187,
+          "evaluated_leaves": 472392,
+          "intersections": 472391,
+          "nodes": 708952,
+          "pruned_leaves": 59049,
+          "pruned_subtrees": 729
+        },
+        "times_ns": [
+          1374600700,
+          1423685000,
+          1341681800
+        ]
+      }
+    }
+  }
+}
