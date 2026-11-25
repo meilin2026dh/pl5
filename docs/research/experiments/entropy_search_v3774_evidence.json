@@ -1,0 +1,3815 @@
+{
+  "tested_head": "b1c7696837d7c6172423095c2a14c9d6a656d02b",
+  "specialized_run": 45569813658,
+  "application_run": 45569813723,
+  "ubuntu": {
+    "comparison_ns": 29509487,
+    "domain": 100000,
+    "limitations": [
+      "same rule-count budget and objective-query ceiling, not identical consumed queries",
+      "exact reference is unrestricted; lookup table precomputed for all methods",
+      "query counts do not measure end-to-end execution costs",
+      "random draws unique subsets per trial; 16 fixed seeds, descriptive only",
+      "static uniform partition entropy, not candidate retention or historical coverage",
+      "no new rules, production changes or timing gates"
+    ],
+    "precompute_ns": 692890667,
+    "rows": [
+      {
+        "exact_reference": {
+          "entropy_bits": 1,
+          "enumerated_subsets": 12,
+          "subset": 1
+        },
+        "greedy": {
+          "entropy_bits": 1,
+          "optimum_within_tolerance": true,
+          "queries": 12,
+          "regret_bits": 0,
+          "subset": 1
+        },
+        "query_ceiling": 12,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 1
+          }
+        ],
+        "rule_budget": 1,
+        "static": {
+          "entropy_bits": 1,
+          "optimum_within_tolerance": true,
+          "queries": 12,
+          "regret_bits": 0,
+          "subset": 1
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 1.9998704709626942,
+          "enumerated_subsets": 66,
+          "subset": 513
+        },
+        "greedy": {
+          "entropy_bits": 1.9998704709626942,
+          "optimum_within_tolerance": true,
+          "queries": 23,
+          "regret_bits": 0,
+          "subset": 513
+        },
+        "query_ceiling": 23,
+        "random_mean_regret_bits": 0.029405119870846638,
+        "random_optimal_trials": 5,
+        "random_trials": [
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 2,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 3,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08169784606097319,
+            "seed": 4,
+            "subset": 514
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 5,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9294121523842813,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.07045831857841289,
+            "seed": 6,
+            "subset": 2049
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 7,
+            "subset": 768
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 10,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9144870974418324,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08538337352086178,
+            "seed": 11,
+            "subset": 640
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 12,
+            "subset": 768
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08169784606097319,
+            "seed": 14,
+            "subset": 514
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 15,
+            "subset": 768
+          }
+        ],
+        "rule_budget": 2,
+        "static": {
+          "entropy_bits": 1.9998704709626942,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 513
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 2.9292668663122914,
+          "enumerated_subsets": 220,
+          "subset": 2561
+        },
+        "greedy": {
+          "entropy_bits": 2.9292668663122914,
+          "optimum_within_tolerance": true,
+          "queries": 33,
+          "regret_bits": 0,
+          "subset": 2561
+        },
+        "query_ceiling": 33,
+        "random_mean_regret_bits": 0.0569641048074542,
+        "random_optimal_trials": 4,
+        "random_trials": [
+          {
+            "entropy_bits": 2.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.10473817145413111,
+            "seed": 0,
+            "subset": 2562
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 2,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.9137474870467024,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.015519379265588995,
+            "seed": 3,
+            "subset": 2624
+          },
+          {
+            "entropy_bits": 2.9003613793837917,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.028905486928499702,
+            "seed": 4,
+            "subset": 832
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 5,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.8370209912565354,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.09224587505575599,
+            "seed": 6,
+            "subset": 769
+          },
+          {
+            "entropy_bits": 2.824698749492518,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.1045681168197734,
+            "seed": 7,
+            "subset": 2051
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.7030043968464934,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.22626246946579798,
+            "seed": 9,
+            "subset": 322
+          },
+          {
+            "entropy_bits": 2.9137474870467024,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.015519379265588995,
+            "seed": 10,
+            "subset": 2624
+          },
+          {
+            "entropy_bits": 2.826319696534712,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.10294716977757945,
+            "seed": 11,
+            "subset": 2368
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 13,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.7418299616574515,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.18743690465483986,
+            "seed": 14,
+            "subset": 642
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 2561
+          }
+        ],
+        "rule_budget": 3,
+        "static": {
+          "entropy_bits": 2.860634882929675,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.06863198338261656,
+          "subset": 577
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 3.8261222858829127,
+          "enumerated_subsets": 495,
+          "subset": 2880
+        },
+        "greedy": {
+          "entropy_bits": 3.8245286948581603,
+          "optimum_within_tolerance": false,
+          "queries": 42,
+          "regret_bits": 0.0015935910247524276,
+          "subset": 2563
+        },
+        "query_ceiling": 42,
+        "random_mean_regret_bits": 0.1261355606756094,
+        "random_optimal_trials": 2,
+        "random_trials": [
+          {
+            "entropy_bits": 3.5474861546003233,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.27863613128258935,
+            "seed": 0,
+            "subset": 773
+          },
+          {
+            "entropy_bits": 3.7644004294369204,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.06172185644599226,
+            "seed": 1,
+            "subset": 2817
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 2,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 3,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.6505198597715016,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.17560242611141108,
+            "seed": 4,
+            "subset": 2565
+          },
+          {
+            "entropy_bits": 3.640099278726461,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.18602300715645148,
+            "seed": 5,
+            "subset": 519
+          },
+          {
+            "entropy_bits": 3.6081917899348603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.21793049594805236,
+            "seed": 6,
+            "subset": 2307
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 7,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 8,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.8261222858829127,
+            "optimum_within_tolerance": true,
+            "queries": 42,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 2880
+          },
+          {
+            "entropy_bits": 3.8261222858829127,
+            "optimum_within_tolerance": true,
+            "queries": 42,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 2880
+          },
+          {
+            "entropy_bits": 3.4847305423607073,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.34139174352220536,
+            "seed": 11,
+            "subset": 2372
+          },
+          {
+            "entropy_bits": 3.563184713412359,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.2629375724705536,
+            "seed": 12,
+            "subset": 774
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 13,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 14,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.5474861546003233,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.27863613128258935,
+            "seed": 15,
+            "subset": 773
+          }
+        ],
+        "rule_budget": 4,
+        "static": {
+          "entropy_bits": 3.6832718425739244,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.14285044330898833,
+          "subset": 833
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 4.6090894758065035,
+          "enumerated_subsets": 792,
+          "subset": 2882
+        },
+        "greedy": {
+          "entropy_bits": 4.607965522474149,
+          "optimum_within_tolerance": false,
+          "queries": 50,
+          "regret_bits": 0.001123953332354155,
+          "subset": 2819
+        },
+        "query_ceiling": 50,
+        "random_mean_regret_bits": 0.19724772375255523,
+        "random_optimal_trials": 2,
+        "random_trials": [
+          {
+            "entropy_bits": 4.3187923782685145,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.29029709753798905,
+            "seed": 0,
+            "subset": 2694
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 1,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.358233042352886,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.25085643345361763,
+            "seed": 2,
+            "subset": 2630
+          },
+          {
+            "entropy_bits": 4.078878125347537,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.5302113504589663,
+            "seed": 3,
+            "subset": 2700
+          },
+          {
+            "entropy_bits": 4.6090894758065035,
+            "optimum_within_tolerance": true,
+            "queries": 50,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 2882
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 5,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.474156579828859,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.13493289597764413,
+            "seed": 6,
+            "subset": 2821
+          },
+          {
+            "entropy_bits": 4.193512778794001,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.41557669701250255,
+            "seed": 7,
+            "subset": 2315
+          },
+          {
+            "entropy_bits": 4.6090894758065035,
+            "optimum_within_tolerance": true,
+            "queries": 50,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 2882
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 9,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.421492867795443,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18759660801106026,
+            "seed": 10,
+            "subset": 3904
+          },
+          {
+            "entropy_bits": 4.406623698029652,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.20246577777685193,
+            "seed": 11,
+            "subset": 775
+          },
+          {
+            "entropy_bits": 4.484516048641093,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.12457342716541042,
+            "seed": 12,
+            "subset": 2884
+          },
+          {
+            "entropy_bits": 4.406623698029652,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.20246577777685193,
+            "seed": 13,
+            "subset": 775
+          },
+          {
+            "entropy_bits": 4.35156337997547,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.25752609583103325,
+            "seed": 14,
+            "subset": 3842
+          },
+          {
+            "entropy_bits": 4.607487489069495,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.0016019867370085095,
+            "seed": 15,
+            "subset": 2881
+          }
+        ],
+        "rule_budget": 5,
+        "static": {
+          "entropy_bits": 4.607487489069495,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.0016019867370085095,
+          "subset": 2881
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 5.329224528803415,
+          "enumerated_subsets": 924,
+          "subset": 2883
+        },
+        "greedy": {
+          "entropy_bits": 5.329224528803415,
+          "optimum_within_tolerance": true,
+          "queries": 57,
+          "regret_bits": 0,
+          "subset": 2883
+        },
+        "query_ceiling": 57,
+        "random_mean_regret_bits": 0.20550954062837118,
+        "random_optimal_trials": 1,
+        "random_trials": [
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 0,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 5.204114990288774,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12510953851464102,
+            "seed": 1,
+            "subset": 3906
+          },
+          {
+            "entropy_bits": 5.016340655273737,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.31288387352967817,
+            "seed": 2,
+            "subset": 2898
+          },
+          {
+            "entropy_bits": 5.149361454691267,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.17986307411214852,
+            "seed": 3,
+            "subset": 2890
+          },
+          {
+            "entropy_bits": 5.137156615121664,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.19206791368175136,
+            "seed": 4,
+            "subset": 2575
+          },
+          {
+            "entropy_bits": 5.141207961173755,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.1880165676296599,
+            "seed": 5,
+            "subset": 2889
+          },
+          {
+            "entropy_bits": 5.329224528803415,
+            "optimum_within_tolerance": true,
+            "queries": 57,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 2883
+          },
+          {
+            "entropy_bits": 4.998025848411758,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.33119868039165734,
+            "seed": 7,
+            "subset": 2851
+          },
+          {
+            "entropy_bits": 4.939994068514629,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.38923046028878616,
+            "seed": 8,
+            "subset": 3850
+          },
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 9,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 5.193210986817624,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.13601354198579152,
+            "seed": 10,
+            "subset": 2827
+          },
+          {
+            "entropy_bits": 4.947038971419108,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.3821855573843074,
+            "seed": 11,
+            "subset": 3849
+          },
+          {
+            "entropy_bits": 5.143631296869378,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.1855932319340372,
+            "seed": 12,
+            "subset": 3651
+          },
+          {
+            "entropy_bits": 5.17332878424708,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.15589574455633493,
+            "seed": 13,
+            "subset": 2631
+          },
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 14,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 4.996688549835841,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.3325359789675746,
+            "seed": 15,
+            "subset": 1799
+          }
+        ],
+        "rule_budget": 6,
+        "static": {
+          "entropy_bits": 5.329224528803415,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 2883
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 5.937698165024127,
+          "enumerated_subsets": 792,
+          "subset": 2887
+        },
+        "greedy": {
+          "entropy_bits": 5.937698165024127,
+          "optimum_within_tolerance": true,
+          "queries": 63,
+          "regret_bits": 0,
+          "subset": 2887
+        },
+        "query_ceiling": 63,
+        "random_mean_regret_bits": 0.16602893434342042,
+        "random_optimal_trials": 0,
+        "random_trials": [
+          {
+            "entropy_bits": 5.7884784835395475,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.14921968148457943,
+            "seed": 0,
+            "subset": 3851
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 1,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.486264332616552,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.4514338324075746,
+            "seed": 2,
+            "subset": 3662
+          },
+          {
+            "entropy_bits": 5.526904793766646,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.4107933712574807,
+            "seed": 3,
+            "subset": 2663
+          },
+          {
+            "entropy_bits": 5.848090556787371,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.08960760823675606,
+            "seed": 4,
+            "subset": 3910
+          },
+          {
+            "entropy_bits": 5.895164464695387,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.0425337003287396,
+            "seed": 5,
+            "subset": 2831
+          },
+          {
+            "entropy_bits": 5.923687794752404,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.01401037027172336,
+            "seed": 6,
+            "subset": 3907
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 7,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.848090556787371,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.08960760823675606,
+            "seed": 8,
+            "subset": 3910
+          },
+          {
+            "entropy_bits": 5.735824286615209,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.20187387840891802,
+            "seed": 9,
+            "subset": 3913
+          },
+          {
+            "entropy_bits": 5.650781247769699,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.2869169172544277,
+            "seed": 10,
+            "subset": 3853
+          },
+          {
+            "entropy_bits": 5.790331008358899,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.14736715666522837,
+            "seed": 11,
+            "subset": 2894
+          },
+          {
+            "entropy_bits": 5.831054818193813,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.10664334683031385,
+            "seed": 12,
+            "subset": 3909
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 13,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.901709198423888,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.03598896660023865,
+            "seed": 14,
+            "subset": 3847
+          },
+          {
+            "entropy_bits": 5.831054818193813,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.10664334683031385,
+            "seed": 15,
+            "subset": 3909
+          }
+        ],
+        "rule_budget": 7,
+        "static": {
+          "entropy_bits": 5.333323837600185,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.6043743274239421,
+          "subset": 3011
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 6.5269543410892625,
+          "enumerated_subsets": 495,
+          "subset": 3911
+        },
+        "greedy": {
+          "entropy_bits": 6.5269543410892625,
+          "optimum_within_tolerance": true,
+          "queries": 68,
+          "regret_bits": 0,
+          "subset": 3911
+        },
+        "query_ceiling": 68,
+        "random_mean_regret_bits": 0.19040811163192217,
+        "random_optimal_trials": 0,
+        "random_trials": [
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 0,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 1,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.48464333542055,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.042311005668712376,
+            "seed": 2,
+            "subset": 3855
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 3,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.282207267781815,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.2447470733074475,
+            "seed": 4,
+            "subset": 2863
+          },
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 5,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.2101079860574275,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.316846355031835,
+            "seed": 6,
+            "subset": 3942
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 7,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.357699077936214,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.1692552631530484,
+            "seed": 8,
+            "subset": 3917
+          },
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 9,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.223895397662706,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.3030589434265565,
+            "seed": 10,
+            "subset": 3867
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 11,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.48464333542055,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.042311005668712376,
+            "seed": 12,
+            "subset": 3855
+          },
+          {
+            "entropy_bits": 6.2909652052643406,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.23598913582492198,
+            "seed": 13,
+            "subset": 3879
+          },
+          {
+            "entropy_bits": 6.443712459795302,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.0832418812939606,
+            "seed": 14,
+            "subset": 2895
+          },
+          {
+            "entropy_bits": 6.280102434238979,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.24685190685028324,
+            "seed": 15,
+            "subset": 3939
+          }
+        ],
+        "rule_budget": 8,
+        "static": {
+          "entropy_bits": 5.94128172499953,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.5856726160897328,
+          "subset": 3015
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.032457391004271,
+          "enumerated_subsets": 220,
+          "subset": 3919
+        },
+        "greedy": {
+          "entropy_bits": 7.032457391004271,
+          "optimum_within_tolerance": true,
+          "queries": 72,
+          "regret_bits": 0,
+          "subset": 3919
+        },
+        "query_ceiling": 72,
+        "random_mean_regret_bits": 0.09924129222574912,
+        "random_optimal_trials": 4,
+        "random_trials": [
+          {
+            "entropy_bits": 6.8778722672787405,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.15458512372553024,
+            "seed": 0,
+            "subset": 3943
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 1,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 3,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.841510264913452,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1909471260908191,
+            "seed": 5,
+            "subset": 3983
+          },
+          {
+            "entropy_bits": 6.8778722672787405,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.15458512372553024,
+            "seed": 6,
+            "subset": 3943
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 8,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 9,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 10,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.914670557310289,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.11778683369398202,
+            "seed": 11,
+            "subset": 3927
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 12,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.870320233458251,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.16213715754601932,
+            "seed": 14,
+            "subset": 3887
+          },
+          {
+            "entropy_bits": 6.914670557310289,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.11778683369398202,
+            "seed": 15,
+            "subset": 3927
+          }
+        ],
+        "rule_budget": 9,
+        "static": {
+          "entropy_bits": 6.530498602258095,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.501958788746176,
+          "subset": 4039
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.4129016228126705,
+          "enumerated_subsets": 66,
+          "subset": 3935
+        },
+        "greedy": {
+          "entropy_bits": 7.4129016228126705,
+          "optimum_within_tolerance": true,
+          "queries": 75,
+          "regret_bits": 0,
+          "subset": 3935
+        },
+        "query_ceiling": 75,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 3935
+          }
+        ],
+        "rule_budget": 10,
+        "static": {
+          "entropy_bits": 7.035600838986117,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.37730078382655385,
+          "subset": 4047
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.748224653332991,
+          "enumerated_subsets": 12,
+          "subset": 3967
+        },
+        "greedy": {
+          "entropy_bits": 7.748224653332991,
+          "optimum_within_tolerance": true,
+          "queries": 77,
+          "regret_bits": 0,
+          "subset": 3967
+        },
+        "query_ceiling": 77,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 3967
+          }
+        ],
+        "rule_budget": 11,
+        "static": {
+          "entropy_bits": 7.415750878461656,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.33247377487133445,
+          "subset": 4063
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.750775673605337,
+          "enumerated_subsets": 1,
+          "subset": 4095
+        },
+        "greedy": {
+          "entropy_bits": 7.750775673605337,
+          "optimum_within_tolerance": true,
+          "queries": 78,
+          "regret_bits": 0,
+          "subset": 4095
+        },
+        "query_ceiling": 78,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 4095
+          }
+        ],
+        "rule_budget": 12,
+        "static": {
+          "entropy_bits": 7.750775673605337,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 4095
+        }
+      }
+    ],
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rule_names": [
+      "mod2_zero",
+      "mod3_zero",
+      "mod5_zero",
+      "mod7_zero",
+      "mod11_zero",
+      "mod13_zero",
+      "omega_ge3",
+      "bigomega_ge3",
+      "squarefree_one",
+      "spectral_C1_gt_C2",
+      "det_H_gt_0",
+      "F3_squarefactor"
+    ],
+    "schema": "pl5-entropy-search-v3774-1",
+    "source": "INTERNAL/AI_AUTHORED"
+  },
+  "windows": {
+    "comparison_ns": 54098600,
+    "domain": 100000,
+    "limitations": [
+      "same rule-count budget and objective-query ceiling, not identical consumed queries",
+      "exact reference is unrestricted; lookup table precomputed for all methods",
+      "query counts do not measure end-to-end execution costs",
+      "random draws unique subsets per trial; 16 fixed seeds, descriptive only",
+      "static uniform partition entropy, not candidate retention or historical coverage",
+      "no new rules, production changes or timing gates"
+    ],
+    "precompute_ns": 989497500,
+    "rows": [
+      {
+        "exact_reference": {
+          "entropy_bits": 1,
+          "enumerated_subsets": 12,
+          "subset": 1
+        },
+        "greedy": {
+          "entropy_bits": 1,
+          "optimum_within_tolerance": true,
+          "queries": 12,
+          "regret_bits": 0,
+          "subset": 1
+        },
+        "query_ceiling": 12,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 1
+          },
+          {
+            "entropy_bits": 1,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 1
+          }
+        ],
+        "rule_budget": 1,
+        "static": {
+          "entropy_bits": 1,
+          "optimum_within_tolerance": true,
+          "queries": 12,
+          "regret_bits": 0,
+          "subset": 1
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 1.9998704709626942,
+          "enumerated_subsets": 66,
+          "subset": 513
+        },
+        "greedy": {
+          "entropy_bits": 1.9998704709626942,
+          "optimum_within_tolerance": true,
+          "queries": 23,
+          "regret_bits": 0,
+          "subset": 513
+        },
+        "query_ceiling": 23,
+        "random_mean_regret_bits": 0.029405119870846638,
+        "random_optimal_trials": 5,
+        "random_trials": [
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 2,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 3,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08169784606097319,
+            "seed": 4,
+            "subset": 514
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 5,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9294121523842813,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.07045831857841289,
+            "seed": 6,
+            "subset": 2049
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 7,
+            "subset": 768
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.9874800174832337,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.01239045347946055,
+            "seed": 10,
+            "subset": 576
+          },
+          {
+            "entropy_bits": 1.9144870974418324,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08538337352086178,
+            "seed": 11,
+            "subset": 640
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 12,
+            "subset": 768
+          },
+          {
+            "entropy_bits": 1.9998704709626942,
+            "optimum_within_tolerance": true,
+            "queries": 23,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 513
+          },
+          {
+            "entropy_bits": 1.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.08169784606097319,
+            "seed": 14,
+            "subset": 514
+          },
+          {
+            "entropy_bits": 1.9659762310312,
+            "optimum_within_tolerance": false,
+            "queries": 23,
+            "regret_bits": 0.03389423993149432,
+            "seed": 15,
+            "subset": 768
+          }
+        ],
+        "rule_budget": 2,
+        "static": {
+          "entropy_bits": 1.9998704709626942,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 513
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 2.9292668663122914,
+          "enumerated_subsets": 220,
+          "subset": 2561
+        },
+        "greedy": {
+          "entropy_bits": 2.9292668663122914,
+          "optimum_within_tolerance": true,
+          "queries": 33,
+          "regret_bits": 0,
+          "subset": 2561
+        },
+        "query_ceiling": 33,
+        "random_mean_regret_bits": 0.0569641048074542,
+        "random_optimal_trials": 4,
+        "random_trials": [
+          {
+            "entropy_bits": 2.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.10473817145413111,
+            "seed": 0,
+            "subset": 2562
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 2,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.9137474870467024,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.015519379265588995,
+            "seed": 3,
+            "subset": 2624
+          },
+          {
+            "entropy_bits": 2.9003613793837917,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.028905486928499702,
+            "seed": 4,
+            "subset": 832
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 5,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.8370209912565354,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.09224587505575599,
+            "seed": 6,
+            "subset": 769
+          },
+          {
+            "entropy_bits": 2.824698749492518,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.1045681168197734,
+            "seed": 7,
+            "subset": 2051
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.7030043968464934,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.22626246946579798,
+            "seed": 9,
+            "subset": 322
+          },
+          {
+            "entropy_bits": 2.9137474870467024,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.015519379265588995,
+            "seed": 10,
+            "subset": 2624
+          },
+          {
+            "entropy_bits": 2.826319696534712,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.10294716977757945,
+            "seed": 11,
+            "subset": 2368
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 2561
+          },
+          {
+            "entropy_bits": 2.918172624901721,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.011094241410570582,
+            "seed": 13,
+            "subset": 515
+          },
+          {
+            "entropy_bits": 2.7418299616574515,
+            "optimum_within_tolerance": false,
+            "queries": 33,
+            "regret_bits": 0.18743690465483986,
+            "seed": 14,
+            "subset": 642
+          },
+          {
+            "entropy_bits": 2.9292668663122914,
+            "optimum_within_tolerance": true,
+            "queries": 33,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 2561
+          }
+        ],
+        "rule_budget": 3,
+        "static": {
+          "entropy_bits": 2.860634882929675,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.06863198338261656,
+          "subset": 577
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 3.8261222858829127,
+          "enumerated_subsets": 495,
+          "subset": 2880
+        },
+        "greedy": {
+          "entropy_bits": 3.8245286948581603,
+          "optimum_within_tolerance": false,
+          "queries": 42,
+          "regret_bits": 0.0015935910247524276,
+          "subset": 2563
+        },
+        "query_ceiling": 42,
+        "random_mean_regret_bits": 0.1261355606756094,
+        "random_optimal_trials": 2,
+        "random_trials": [
+          {
+            "entropy_bits": 3.5474861546003233,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.27863613128258935,
+            "seed": 0,
+            "subset": 773
+          },
+          {
+            "entropy_bits": 3.7644004294369204,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.06172185644599226,
+            "seed": 1,
+            "subset": 2817
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 2,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 3,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.6505198597715016,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.17560242611141108,
+            "seed": 4,
+            "subset": 2565
+          },
+          {
+            "entropy_bits": 3.640099278726461,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.18602300715645148,
+            "seed": 5,
+            "subset": 519
+          },
+          {
+            "entropy_bits": 3.6081917899348603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.21793049594805236,
+            "seed": 6,
+            "subset": 2307
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 7,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 8,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.8261222858829127,
+            "optimum_within_tolerance": true,
+            "queries": 42,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 2880
+          },
+          {
+            "entropy_bits": 3.8261222858829127,
+            "optimum_within_tolerance": true,
+            "queries": 42,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 2880
+          },
+          {
+            "entropy_bits": 3.4847305423607073,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.34139174352220536,
+            "seed": 11,
+            "subset": 2372
+          },
+          {
+            "entropy_bits": 3.563184713412359,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.2629375724705536,
+            "seed": 12,
+            "subset": 774
+          },
+          {
+            "entropy_bits": 3.8245286948581603,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0015935910247524276,
+            "seed": 13,
+            "subset": 2563
+          },
+          {
+            "entropy_bits": 3.75595267471103,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.0701696111718828,
+            "seed": 14,
+            "subset": 2818
+          },
+          {
+            "entropy_bits": 3.5474861546003233,
+            "optimum_within_tolerance": false,
+            "queries": 42,
+            "regret_bits": 0.27863613128258935,
+            "seed": 15,
+            "subset": 773
+          }
+        ],
+        "rule_budget": 4,
+        "static": {
+          "entropy_bits": 3.6832718425739244,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.14285044330898833,
+          "subset": 833
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 4.6090894758065035,
+          "enumerated_subsets": 792,
+          "subset": 2882
+        },
+        "greedy": {
+          "entropy_bits": 4.607965522474149,
+          "optimum_within_tolerance": false,
+          "queries": 50,
+          "regret_bits": 0.001123953332354155,
+          "subset": 2819
+        },
+        "query_ceiling": 50,
+        "random_mean_regret_bits": 0.19724772375255523,
+        "random_optimal_trials": 2,
+        "random_trials": [
+          {
+            "entropy_bits": 4.3187923782685145,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.29029709753798905,
+            "seed": 0,
+            "subset": 2694
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 1,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.358233042352886,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.25085643345361763,
+            "seed": 2,
+            "subset": 2630
+          },
+          {
+            "entropy_bits": 4.078878125347537,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.5302113504589663,
+            "seed": 3,
+            "subset": 2700
+          },
+          {
+            "entropy_bits": 4.6090894758065035,
+            "optimum_within_tolerance": true,
+            "queries": 50,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 2882
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 5,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.474156579828859,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.13493289597764413,
+            "seed": 6,
+            "subset": 2821
+          },
+          {
+            "entropy_bits": 4.193512778794001,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.41557669701250255,
+            "seed": 7,
+            "subset": 2315
+          },
+          {
+            "entropy_bits": 4.6090894758065035,
+            "optimum_within_tolerance": true,
+            "queries": 50,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 2882
+          },
+          {
+            "entropy_bits": 4.423136331705854,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18595314410064923,
+            "seed": 9,
+            "subset": 835
+          },
+          {
+            "entropy_bits": 4.421492867795443,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.18759660801106026,
+            "seed": 10,
+            "subset": 3904
+          },
+          {
+            "entropy_bits": 4.406623698029652,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.20246577777685193,
+            "seed": 11,
+            "subset": 775
+          },
+          {
+            "entropy_bits": 4.484516048641093,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.12457342716541042,
+            "seed": 12,
+            "subset": 2884
+          },
+          {
+            "entropy_bits": 4.406623698029652,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.20246577777685193,
+            "seed": 13,
+            "subset": 775
+          },
+          {
+            "entropy_bits": 4.35156337997547,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.25752609583103325,
+            "seed": 14,
+            "subset": 3842
+          },
+          {
+            "entropy_bits": 4.607487489069495,
+            "optimum_within_tolerance": false,
+            "queries": 50,
+            "regret_bits": 0.0016019867370085095,
+            "seed": 15,
+            "subset": 2881
+          }
+        ],
+        "rule_budget": 5,
+        "static": {
+          "entropy_bits": 4.607487489069495,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.0016019867370085095,
+          "subset": 2881
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 5.329224528803415,
+          "enumerated_subsets": 924,
+          "subset": 2883
+        },
+        "greedy": {
+          "entropy_bits": 5.329224528803415,
+          "optimum_within_tolerance": true,
+          "queries": 57,
+          "regret_bits": 0,
+          "subset": 2883
+        },
+        "query_ceiling": 57,
+        "random_mean_regret_bits": 0.20550954062837118,
+        "random_optimal_trials": 1,
+        "random_trials": [
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 0,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 5.204114990288774,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12510953851464102,
+            "seed": 1,
+            "subset": 3906
+          },
+          {
+            "entropy_bits": 5.016340655273737,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.31288387352967817,
+            "seed": 2,
+            "subset": 2898
+          },
+          {
+            "entropy_bits": 5.149361454691267,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.17986307411214852,
+            "seed": 3,
+            "subset": 2890
+          },
+          {
+            "entropy_bits": 5.137156615121664,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.19206791368175136,
+            "seed": 4,
+            "subset": 2575
+          },
+          {
+            "entropy_bits": 5.141207961173755,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.1880165676296599,
+            "seed": 5,
+            "subset": 2889
+          },
+          {
+            "entropy_bits": 5.329224528803415,
+            "optimum_within_tolerance": true,
+            "queries": 57,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 2883
+          },
+          {
+            "entropy_bits": 4.998025848411758,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.33119868039165734,
+            "seed": 7,
+            "subset": 2851
+          },
+          {
+            "entropy_bits": 4.939994068514629,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.38923046028878616,
+            "seed": 8,
+            "subset": 3850
+          },
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 9,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 5.193210986817624,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.13601354198579152,
+            "seed": 10,
+            "subset": 2827
+          },
+          {
+            "entropy_bits": 4.947038971419108,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.3821855573843074,
+            "seed": 11,
+            "subset": 3849
+          },
+          {
+            "entropy_bits": 5.143631296869378,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.1855932319340372,
+            "seed": 12,
+            "subset": 3651
+          },
+          {
+            "entropy_bits": 5.17332878424708,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.15589574455633493,
+            "seed": 13,
+            "subset": 2631
+          },
+          {
+            "entropy_bits": 5.203371699777558,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.12585282902585693,
+            "seed": 14,
+            "subset": 3843
+          },
+          {
+            "entropy_bits": 4.996688549835841,
+            "optimum_within_tolerance": false,
+            "queries": 57,
+            "regret_bits": 0.3325359789675746,
+            "seed": 15,
+            "subset": 1799
+          }
+        ],
+        "rule_budget": 6,
+        "static": {
+          "entropy_bits": 5.329224528803415,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 2883
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 5.937698165024127,
+          "enumerated_subsets": 792,
+          "subset": 2887
+        },
+        "greedy": {
+          "entropy_bits": 5.937698165024127,
+          "optimum_within_tolerance": true,
+          "queries": 63,
+          "regret_bits": 0,
+          "subset": 2887
+        },
+        "query_ceiling": 63,
+        "random_mean_regret_bits": 0.16602893434342042,
+        "random_optimal_trials": 0,
+        "random_trials": [
+          {
+            "entropy_bits": 5.7884784835395475,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.14921968148457943,
+            "seed": 0,
+            "subset": 3851
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 1,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.486264332616552,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.4514338324075746,
+            "seed": 2,
+            "subset": 3662
+          },
+          {
+            "entropy_bits": 5.526904793766646,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.4107933712574807,
+            "seed": 3,
+            "subset": 2663
+          },
+          {
+            "entropy_bits": 5.848090556787371,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.08960760823675606,
+            "seed": 4,
+            "subset": 3910
+          },
+          {
+            "entropy_bits": 5.895164464695387,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.0425337003287396,
+            "seed": 5,
+            "subset": 2831
+          },
+          {
+            "entropy_bits": 5.923687794752404,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.01401037027172336,
+            "seed": 6,
+            "subset": 3907
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 7,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.848090556787371,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.08960760823675606,
+            "seed": 8,
+            "subset": 3910
+          },
+          {
+            "entropy_bits": 5.735824286615209,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.20187387840891802,
+            "seed": 9,
+            "subset": 3913
+          },
+          {
+            "entropy_bits": 5.650781247769699,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.2869169172544277,
+            "seed": 10,
+            "subset": 3853
+          },
+          {
+            "entropy_bits": 5.790331008358899,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.14736715666522837,
+            "seed": 11,
+            "subset": 2894
+          },
+          {
+            "entropy_bits": 5.831054818193813,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.10664334683031385,
+            "seed": 12,
+            "subset": 3909
+          },
+          {
+            "entropy_bits": 5.763090443463568,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.17460772156055882,
+            "seed": 13,
+            "subset": 3655
+          },
+          {
+            "entropy_bits": 5.901709198423888,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.03598896660023865,
+            "seed": 14,
+            "subset": 3847
+          },
+          {
+            "entropy_bits": 5.831054818193813,
+            "optimum_within_tolerance": false,
+            "queries": 63,
+            "regret_bits": 0.10664334683031385,
+            "seed": 15,
+            "subset": 3909
+          }
+        ],
+        "rule_budget": 7,
+        "static": {
+          "entropy_bits": 5.333323837600185,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.6043743274239421,
+          "subset": 3011
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 6.5269543410892625,
+          "enumerated_subsets": 495,
+          "subset": 3911
+        },
+        "greedy": {
+          "entropy_bits": 6.5269543410892625,
+          "optimum_within_tolerance": true,
+          "queries": 68,
+          "regret_bits": 0,
+          "subset": 3911
+        },
+        "query_ceiling": 68,
+        "random_mean_regret_bits": 0.19040811163192217,
+        "random_optimal_trials": 0,
+        "random_trials": [
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 0,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 1,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.48464333542055,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.042311005668712376,
+            "seed": 2,
+            "subset": 3855
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 3,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.282207267781815,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.2447470733074475,
+            "seed": 4,
+            "subset": 2863
+          },
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 5,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.2101079860574275,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.316846355031835,
+            "seed": 6,
+            "subset": 3942
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 7,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.357699077936214,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.1692552631530484,
+            "seed": 8,
+            "subset": 3917
+          },
+          {
+            "entropy_bits": 6.335656540644365,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19129780044489753,
+            "seed": 9,
+            "subset": 3863
+          },
+          {
+            "entropy_bits": 6.223895397662706,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.3030589434265565,
+            "seed": 10,
+            "subset": 3867
+          },
+          {
+            "entropy_bits": 6.3299483874516165,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.19700595363764606,
+            "seed": 11,
+            "subset": 2847
+          },
+          {
+            "entropy_bits": 6.48464333542055,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.042311005668712376,
+            "seed": 12,
+            "subset": 3855
+          },
+          {
+            "entropy_bits": 6.2909652052643406,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.23598913582492198,
+            "seed": 13,
+            "subset": 3879
+          },
+          {
+            "entropy_bits": 6.443712459795302,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.0832418812939606,
+            "seed": 14,
+            "subset": 2895
+          },
+          {
+            "entropy_bits": 6.280102434238979,
+            "optimum_within_tolerance": false,
+            "queries": 68,
+            "regret_bits": 0.24685190685028324,
+            "seed": 15,
+            "subset": 3939
+          }
+        ],
+        "rule_budget": 8,
+        "static": {
+          "entropy_bits": 5.94128172499953,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.5856726160897328,
+          "subset": 3015
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.032457391004271,
+          "enumerated_subsets": 220,
+          "subset": 3919
+        },
+        "greedy": {
+          "entropy_bits": 7.032457391004271,
+          "optimum_within_tolerance": true,
+          "queries": 72,
+          "regret_bits": 0,
+          "subset": 3919
+        },
+        "query_ceiling": 72,
+        "random_mean_regret_bits": 0.09924129222574912,
+        "random_optimal_trials": 4,
+        "random_trials": [
+          {
+            "entropy_bits": 6.8778722672787405,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.15458512372553024,
+            "seed": 0,
+            "subset": 3943
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 1,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 3,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.841510264913452,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1909471260908191,
+            "seed": 5,
+            "subset": 3983
+          },
+          {
+            "entropy_bits": 6.8778722672787405,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.15458512372553024,
+            "seed": 6,
+            "subset": 3943
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 8,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 9,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 10,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 6.914670557310289,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.11778683369398202,
+            "seed": 11,
+            "subset": 3927
+          },
+          {
+            "entropy_bits": 6.91745197814825,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.1150054128560205,
+            "seed": 12,
+            "subset": 3871
+          },
+          {
+            "entropy_bits": 7.032457391004271,
+            "optimum_within_tolerance": true,
+            "queries": 72,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3919
+          },
+          {
+            "entropy_bits": 6.870320233458251,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.16213715754601932,
+            "seed": 14,
+            "subset": 3887
+          },
+          {
+            "entropy_bits": 6.914670557310289,
+            "optimum_within_tolerance": false,
+            "queries": 72,
+            "regret_bits": 0.11778683369398202,
+            "seed": 15,
+            "subset": 3927
+          }
+        ],
+        "rule_budget": 9,
+        "static": {
+          "entropy_bits": 6.530498602258095,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.501958788746176,
+          "subset": 4039
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.4129016228126705,
+          "enumerated_subsets": 66,
+          "subset": 3935
+        },
+        "greedy": {
+          "entropy_bits": 7.4129016228126705,
+          "optimum_within_tolerance": true,
+          "queries": 75,
+          "regret_bits": 0,
+          "subset": 3935
+        },
+        "query_ceiling": 75,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 3935
+          },
+          {
+            "entropy_bits": 7.4129016228126705,
+            "optimum_within_tolerance": true,
+            "queries": 66,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 3935
+          }
+        ],
+        "rule_budget": 10,
+        "static": {
+          "entropy_bits": 7.035600838986117,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.37730078382655385,
+          "subset": 4047
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.748224653332991,
+          "enumerated_subsets": 12,
+          "subset": 3967
+        },
+        "greedy": {
+          "entropy_bits": 7.748224653332991,
+          "optimum_within_tolerance": true,
+          "queries": 77,
+          "regret_bits": 0,
+          "subset": 3967
+        },
+        "query_ceiling": 77,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 3967
+          },
+          {
+            "entropy_bits": 7.748224653332991,
+            "optimum_within_tolerance": true,
+            "queries": 12,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 3967
+          }
+        ],
+        "rule_budget": 11,
+        "static": {
+          "entropy_bits": 7.415750878461656,
+          "optimum_within_tolerance": false,
+          "queries": 13,
+          "regret_bits": 0.33247377487133445,
+          "subset": 4063
+        }
+      },
+      {
+        "exact_reference": {
+          "entropy_bits": 7.750775673605337,
+          "enumerated_subsets": 1,
+          "subset": 4095
+        },
+        "greedy": {
+          "entropy_bits": 7.750775673605337,
+          "optimum_within_tolerance": true,
+          "queries": 78,
+          "regret_bits": 0,
+          "subset": 4095
+        },
+        "query_ceiling": 78,
+        "random_mean_regret_bits": 0,
+        "random_optimal_trials": 16,
+        "random_trials": [
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 0,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 1,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 2,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 3,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 4,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 5,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 6,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 7,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 8,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 9,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 10,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 11,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 12,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 13,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 14,
+            "subset": 4095
+          },
+          {
+            "entropy_bits": 7.750775673605337,
+            "optimum_within_tolerance": true,
+            "queries": 1,
+            "regret_bits": 0,
+            "seed": 15,
+            "subset": 4095
+          }
+        ],
+        "rule_budget": 12,
+        "static": {
+          "entropy_bits": 7.750775673605337,
+          "optimum_within_tolerance": true,
+          "queries": 13,
+          "regret_bits": 0,
+          "subset": 4095
+        }
+      }
+    ],
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rule_names": [
+      "mod2_zero",
+      "mod3_zero",
+      "mod5_zero",
+      "mod7_zero",
+      "mod11_zero",
+      "mod13_zero",
+      "omega_ge3",
+      "bigomega_ge3",
+      "squarefree_one",
+      "spectral_C1_gt_C2",
+      "det_H_gt_0",
+      "F3_squarefactor"
+    ],
+    "schema": "pl5-entropy-search-v3774-1",
+    "source": "INTERNAL/AI_AUTHORED"
+  }
+}
