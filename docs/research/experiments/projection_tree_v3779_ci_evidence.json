@@ -1,0 +1,389 @@
+{
+  "schema": "pl5-projection-tree-v3779-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "experiment_commit": "aec07b747ded6618524d2610acfca46cb7cea98b",
+  "run_id": 45676981823,
+  "application_run_id": 45676982030,
+  "job_ids": {
+    "ubuntu": 139427002506,
+    "windows": 139427003035
+  },
+  "reproduction": "python docs/research/experiments/projection_tree_v3779.py",
+  "audit": {
+    "deterministic_fields_equal": true,
+    "arithmetic_checks_pass": true,
+    "timing_fields_excluded_from_equality": [
+      "platform",
+      "python",
+      "paired_trials",
+      "median_paired_ratio"
+    ],
+    "scope": "Fixed 12-rule static partition; full subset sweep; no historical coverage or end-to-end performance claim."
+  },
+  "reports": {
+    "ubuntu": {
+      "baseline_entry_visits": 4419584,
+      "domain": 100000,
+      "limitations": [
+        "complete subset sweep including empty subset, not single queries",
+        "entry visits are semantic counts, not CPU instructions",
+        "recursion overhead and allocation included in sweep timing",
+        "partition setup and exact equality checks excluded from timing",
+        "streaming consumer; no full output cache or measured peak memory",
+        "timings descriptive within platform; no historical coverage"
+      ],
+      "median_paired_ratio": 5.392426924018526,
+      "occupied_atoms": 1079,
+      "output_groups": 332360,
+      "paired_trials": [
+        {
+          "independent_ns": 268933676,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 50862021
+        },
+        {
+          "independent_ns": 273706300,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 50964304
+        },
+        {
+          "independent_ns": 273880752,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 50410414
+        },
+        {
+          "independent_ns": 268781348,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 49646178
+        },
+        {
+          "independent_ns": 274877095,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 51178816
+        },
+        {
+          "independent_ns": 304020050,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 51364114
+        }
+      ],
+      "per_rule_budget": [
+        {
+          "baseline_visits": 1079,
+          "budget": 0,
+          "shared_visits": 2,
+          "subsets": 1
+        },
+        {
+          "baseline_visits": 12948,
+          "budget": 1,
+          "shared_visits": 48,
+          "subsets": 12
+        },
+        {
+          "baseline_visits": 71214,
+          "budget": 2,
+          "shared_visits": 526,
+          "subsets": 66
+        },
+        {
+          "baseline_visits": 237380,
+          "budget": 3,
+          "shared_visits": 3474,
+          "subsets": 220
+        },
+        {
+          "baseline_visits": 534105,
+          "budget": 4,
+          "shared_visits": 15098,
+          "subsets": 495
+        },
+        {
+          "baseline_visits": 854568,
+          "budget": 5,
+          "shared_visits": 44951,
+          "subsets": 792
+        },
+        {
+          "baseline_visits": 996996,
+          "budget": 6,
+          "shared_visits": 93501,
+          "subsets": 924
+        },
+        {
+          "baseline_visits": 854568,
+          "budget": 7,
+          "shared_visits": 136866,
+          "subsets": 792
+        },
+        {
+          "baseline_visits": 534105,
+          "budget": 8,
+          "shared_visits": 140191,
+          "subsets": 495
+        },
+        {
+          "baseline_visits": 237380,
+          "budget": 9,
+          "shared_visits": 98498,
+          "subsets": 220
+        },
+        {
+          "baseline_visits": 71214,
+          "budget": 10,
+          "shared_visits": 45656,
+          "subsets": 66
+        },
+        {
+          "baseline_visits": 12948,
+          "budget": 11,
+          "shared_visits": 12948,
+          "subsets": 12
+        },
+        {
+          "baseline_visits": 1079,
+          "budget": 12,
+          "shared_visits": 1079,
+          "subsets": 1
+        }
+      ],
+      "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+      "projection_sha256": "8d1b432db386459fcec368ff8ff3e1ed18ac420b710433b04ecf5185304629ff",
+      "python": "3.12.16",
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "rule_names": [
+        "mod2_zero",
+        "mod3_zero",
+        "mod5_zero",
+        "mod7_zero",
+        "mod11_zero",
+        "mod13_zero",
+        "omega_ge3",
+        "bigomega_ge3",
+        "squarefree_one",
+        "spectral_C1_gt_C2",
+        "det_H_gt_0",
+        "F3_squarefactor"
+      ],
+      "schema": "pl5-projection-tree-v3779-1",
+      "shared_entry_visits": 592838,
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_head": "a82fdfcf6bae2d7fc5d3b33971ea648b02670941",
+      "subsets": 4096,
+      "visit_reduction_fraction": 0.8658611308213624
+    },
+    "windows": {
+      "baseline_entry_visits": 4419584,
+      "domain": 100000,
+      "limitations": [
+        "complete subset sweep including empty subset, not single queries",
+        "entry visits are semantic counts, not CPU instructions",
+        "recursion overhead and allocation included in sweep timing",
+        "partition setup and exact equality checks excluded from timing",
+        "streaming consumer; no full output cache or measured peak memory",
+        "timings descriptive within platform; no historical coverage"
+      ],
+      "median_paired_ratio": 5.475547230072422,
+      "occupied_atoms": 1079,
+      "output_groups": 332360,
+      "paired_trials": [
+        {
+          "independent_ns": 389692400,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 72164100
+        },
+        {
+          "independent_ns": 397830000,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 72300100
+        },
+        {
+          "independent_ns": 400912900,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 72273200
+        },
+        {
+          "independent_ns": 400568900,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 71760400
+        },
+        {
+          "independent_ns": 390870700,
+          "order": [
+            "independent",
+            "shared"
+          ],
+          "shared_ns": 72578800
+        },
+        {
+          "independent_ns": 388848400,
+          "order": [
+            "shared",
+            "independent"
+          ],
+          "shared_ns": 71366500
+        }
+      ],
+      "per_rule_budget": [
+        {
+          "baseline_visits": 1079,
+          "budget": 0,
+          "shared_visits": 2,
+          "subsets": 1
+        },
+        {
+          "baseline_visits": 12948,
+          "budget": 1,
+          "shared_visits": 48,
+          "subsets": 12
+        },
+        {
+          "baseline_visits": 71214,
+          "budget": 2,
+          "shared_visits": 526,
+          "subsets": 66
+        },
+        {
+          "baseline_visits": 237380,
+          "budget": 3,
+          "shared_visits": 3474,
+          "subsets": 220
+        },
+        {
+          "baseline_visits": 534105,
+          "budget": 4,
+          "shared_visits": 15098,
+          "subsets": 495
+        },
+        {
+          "baseline_visits": 854568,
+          "budget": 5,
+          "shared_visits": 44951,
+          "subsets": 792
+        },
+        {
+          "baseline_visits": 996996,
+          "budget": 6,
+          "shared_visits": 93501,
+          "subsets": 924
+        },
+        {
+          "baseline_visits": 854568,
+          "budget": 7,
+          "shared_visits": 136866,
+          "subsets": 792
+        },
+        {
+          "baseline_visits": 534105,
+          "budget": 8,
+          "shared_visits": 140191,
+          "subsets": 495
+        },
+        {
+          "baseline_visits": 237380,
+          "budget": 9,
+          "shared_visits": 98498,
+          "subsets": 220
+        },
+        {
+          "baseline_visits": 71214,
+          "budget": 10,
+          "shared_visits": 45656,
+          "subsets": 66
+        },
+        {
+          "baseline_visits": 12948,
+          "budget": 11,
+          "shared_visits": 12948,
+          "subsets": 12
+        },
+        {
+          "baseline_visits": 1079,
+          "budget": 12,
+          "shared_visits": 1079,
+          "subsets": 1
+        }
+      ],
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "projection_sha256": "8d1b432db386459fcec368ff8ff3e1ed18ac420b710433b04ecf5185304629ff",
+      "python": "3.12.10",
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "rule_names": [
+        "mod2_zero",
+        "mod3_zero",
+        "mod5_zero",
+        "mod7_zero",
+        "mod11_zero",
+        "mod13_zero",
+        "omega_ge3",
+        "bigomega_ge3",
+        "squarefree_one",
+        "spectral_C1_gt_C2",
+        "det_H_gt_0",
+        "F3_squarefactor"
+      ],
+      "schema": "pl5-projection-tree-v3779-1",
+      "shared_entry_visits": 592838,
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_head": "a82fdfcf6bae2d7fc5d3b33971ea648b02670941",
+      "subsets": 4096,
+      "visit_reduction_fraction": 0.8658611308213624
+    }
+  }
+}
