@@ -7,6 +7,7 @@ on:
       - 'docs/research/experiments/partial_cache_v3768.py'
       - 'docs/research/experiments/adaptive_cache_v3769.py'
       - 'docs/research/experiments/byte_prefix_cache_v3770.py'
+      - 'docs/research/experiments/minimal_conflict_v3771.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -31,3 +32,4 @@ jobs:
       - run: python docs/research/experiments/partial_cache_v3768.py
       - run: python docs/research/experiments/adaptive_cache_v3769.py
       - run: python docs/research/experiments/byte_prefix_cache_v3770.py
+      - run: python docs/research/experiments/minimal_conflict_v3771.py
