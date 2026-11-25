@@ -1,0 +1,4047 @@
+{
+  "tested_head": "90d718208048575f3b4a1f23bfc4fa09640cc39d",
+  "specialized_run": 45588352364,
+  "application_run": 45588352684,
+  "summary": {
+    "heterogeneous_abstract": {
+      "frontier_sizes": [
+        1,
+        2,
+        4,
+        12,
+        17,
+        22,
+        22,
+        17,
+        11,
+        5,
+        2,
+        1
+      ],
+      "total_frontier": 116,
+      "static_on_frontier": 4,
+      "greedy_on_frontier": 12
+    },
+    "unit": {
+      "frontier_sizes": [
+        1,
+        1,
+        3,
+        7,
+        9,
+        11,
+        13,
+        10,
+        7,
+        3,
+        1,
+        1
+      ],
+      "total_frontier": 67,
+      "static_on_frontier": 4,
+      "greedy_on_frontier": 11
+    }
+  },
+  "windows": {
+    "compare_ns": 66464700,
+    "domain": 100000,
+    "information_scale": 100000000,
+    "limitations": [
+      "exact dominance on quantized objectives, not unrounded real values",
+      "equal rule count within each frontier; no cross-budget dominance",
+      "unit cost constant within each budget; heterogeneous weights are abstract",
+      "redundancy is total correlation, dependent on joint entropy",
+      "additive cost models full evaluation, not short-circuit or measured time",
+      "static partition structure only, no historical coverage or retained-set selection",
+      "reference computation is unrestricted; baseline search uses prior query ceiling"
+    ],
+    "models": {
+      "heterogeneous_abstract": [
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              1,
+              -100000000,
+              0,
+              1
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 1,
+          "witness_ledger_sha256": "3b21158f92d8d466b1a6617d76aa2b4b1dc2e5976cd3b56c5713ed42b820a016"
+        },
+        {
+          "distinct_objective_vectors": 2,
+          "dominated_size": 64,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 23,
+              "subset": 513
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 513
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              3,
+              -191830250,
+              0,
+              2
+            ],
+            [
+              513,
+              -199987047,
+              0,
+              6
+            ]
+          ],
+          "frontier_size": 2,
+          "rule_budget": 2,
+          "witness_ledger_sha256": "9558e0fa7c7c2e55b7c032014a33081f3c5c70db868972b649329b9c0a5de5ab"
+        },
+        {
+          "distinct_objective_vectors": 4,
+          "dominated_size": 216,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -292926687,
+                1576,
+                14
+              ],
+              "on_frontier": true,
+              "queries": 33,
+              "subset": 2561
+            },
+            "static": {
+              "dominance_witness": 515,
+              "objectives": [
+                -286063488,
+                12685888,
+                10
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 577
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              7,
+              -264023059,
+              0,
+              3
+            ],
+            [
+              259,
+              -270181536,
+              18260322,
+              6
+            ],
+            [
+              515,
+              -291817262,
+              35,
+              7
+            ],
+            [
+              2561,
+              -292926687,
+              1576,
+              14
+            ]
+          ],
+          "frontier_size": 4,
+          "rule_budget": 3,
+          "witness_ledger_sha256": "7c67ad7cb4dc0072ff80ac030eb546dbf74406a17cb12192273bd05fef195e1c"
+        },
+        {
+          "distinct_objective_vectors": 12,
+          "dominated_size": 483,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -382452869,
+                2305643,
+                15
+              ],
+              "on_frontier": true,
+              "queries": 42,
+              "subset": 2563
+            },
+            "static": {
+              "dominance_witness": 771,
+              "objectives": [
+                -368327184,
+                27033800,
+                14
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 833
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              15,
+              -323191074,
+              2,
+              4
+            ],
+            [
+              60,
+              -214437663,
+              1,
+              4
+            ],
+            [
+              263,
+              -340682831,
+              19951836,
+              7
+            ],
+            [
+              267,
+              -328714608,
+              18895266,
+              7
+            ],
+            [
+              519,
+              -364009928,
+              179,
+              8
+            ],
+            [
+              547,
+              -330943989,
+              146,
+              8
+            ],
+            [
+              771,
+              -370166101,
+              18262804,
+              11
+            ],
+            [
+              834,
+              -370283027,
+              16908207,
+              14
+            ],
+            [
+              1031,
+              -324640003,
+              499561,
+              6
+            ],
+            [
+              2563,
+              -382452869,
+              2305643,
+              15
+            ],
+            [
+              2565,
+              -365051986,
+              69086,
+              15
+            ],
+            [
+              2880,
+              -382612229,
+              5689971,
+              21
+            ]
+          ],
+          "frontier_size": 12,
+          "rule_budget": 4,
+          "witness_ledger_sha256": "f51ebd1510caab0a2e8a159196c2d86a0719e2785a3a485700931dbe272ebe22"
+        },
+        {
+          "distinct_objective_vectors": 17,
+          "dominated_size": 775,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -460796552,
+                20573568,
+                19
+              ],
+              "on_frontier": true,
+              "queries": 50,
+              "subset": 2819
+            },
+            "static": {
+              "dominance_witness": 2819,
+              "objectives": [
+                -460748749,
+                27553451,
+                22
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 2881
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              31,
+              -367141059,
+              17,
+              5
+            ],
+            [
+              47,
+              -362317899,
+              15,
+              5
+            ],
+            [
+              61,
+              -314437660,
+              5,
+              5
+            ],
+            [
+              271,
+              -399022474,
+              20780210,
+              8
+            ],
+            [
+              279,
+              -384404450,
+              20180218,
+              8
+            ],
+            [
+              527,
+              -423176578,
+              1545,
+              9
+            ],
+            [
+              551,
+              -403136200,
+              745,
+              9
+            ],
+            [
+              775,
+              -440662370,
+              19959345,
+              12
+            ],
+            [
+              779,
+              -428697695,
+              18899226,
+              12
+            ],
+            [
+              835,
+              -442313633,
+              44877601,
+              15
+            ],
+            [
+              1039,
+              -383806083,
+              501497,
+              7
+            ],
+            [
+              1795,
+              -429719042,
+              19826367,
+              14
+            ],
+            [
+              2567,
+              -454553403,
+              2397919,
+              16
+            ],
+            [
+              2571,
+              -441617074,
+              2309455,
+              16
+            ],
+            [
+              2573,
+              -424216887,
+              72201,
+              16
+            ],
+            [
+              2819,
+              -460796552,
+              20573568,
+              19
+            ],
+            [
+              2882,
+              -460908948,
+              19223502,
+              22
+            ]
+          ],
+          "frontier_size": 17,
+          "rule_budget": 5,
+          "witness_ledger_sha256": "e0bde9f84fb281254167d6376ff5d83dbf44ac53b57544333f7101d1a44101db"
+        },
+        {
+          "distinct_objective_vectors": 22,
+          "dominated_size": 902,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                23
+              ],
+              "on_frontier": true,
+              "queries": 57,
+              "subset": 2883
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                23
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 2883
+            }
+          },
+          "enumerated": 924,
+          "frontier": [
+            [
+              63,
+              -406267648,
+              266,
+              6
+            ],
+            [
+              287,
+              -442684265,
+              21068419,
+              9
+            ],
+            [
+              303,
+              -437970205,
+              20959318,
+              9
+            ],
+            [
+              543,
+              -467094084,
+              34040,
+              10
+            ],
+            [
+              559,
+              -462298851,
+              6110,
+              10
+            ],
+            [
+              783,
+              -498999112,
+              20790619,
+              13
+            ],
+            [
+              791,
+              -484328284,
+              20243431,
+              13
+            ],
+            [
+              839,
+              -503270962,
+              56113082,
+              16
+            ],
+            [
+              1055,
+              -427707553,
+              550028,
+              8
+            ],
+            [
+              1071,
+              -422906320,
+              528099,
+              8
+            ],
+            [
+              1551,
+              -482202750,
+              2091877,
+              12
+            ],
+            [
+              1799,
+              -499668855,
+              22069364,
+              15
+            ],
+            [
+              1803,
+              -488244494,
+              20468932,
+              15
+            ],
+            [
+              2575,
+              -513715662,
+              2403677,
+              17
+            ],
+            [
+              2587,
+              -485475164,
+              2401366,
+              17
+            ],
+            [
+              2589,
+              -468066676,
+              172413,
+              17
+            ],
+            [
+              2823,
+              -531191118,
+              22371812,
+              20
+            ],
+            [
+              2827,
+              -519321099,
+              21217038,
+              20
+            ],
+            [
+              2883,
+              -532922453,
+              47209997,
+              23
+            ],
+            [
+              3597,
+              -483224173,
+              2181419,
+              19
+            ],
+            [
+              3843,
+              -520337170,
+              22149455,
+              22
+            ],
+            [
+              3906,
+              -520411499,
+              20837455,
+              25
+            ]
+          ],
+          "frontier_size": 22,
+          "rule_budget": 6,
+          "witness_ledger_sha256": "97b73096ea7ee08c118a281754d783a26976739d29e5fb4e2fe2c92ced1ddb6f"
+        },
+        {
+          "distinct_objective_vectors": 22,
+          "dominated_size": 770,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -593769817,
+                58555443,
+                24
+              ],
+              "on_frontier": true,
+              "queries": 63,
+              "subset": 2887
+            },
+            "static": {
+              "dominance_witness": 815,
+              "objectives": [
+                -533332384,
+                138264070,
+                27
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3011
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              319,
+              -481604716,
+              21274807,
+              10
+            ],
+            [
+              575,
+              -506109851,
+              145111,
+              11
+            ],
+            [
+              799,
+              -542598887,
+              21140845,
+              14
+            ],
+            [
+              815,
+              -537936685,
+              20979884,
+              14
+            ],
+            [
+              1087,
+              -466755863,
+              628556,
+              9
+            ],
+            [
+              1567,
+              -525987711,
+              2256917,
+              13
+            ],
+            [
+              1583,
+              -521236399,
+              2185066,
+              13
+            ],
+            [
+              1807,
+              -557995261,
+              22910974,
+              16
+            ],
+            [
+              1815,
+              -543187917,
+              22500303,
+              16
+            ],
+            [
+              1819,
+              -531893747,
+              20769680,
+              16
+            ],
+            [
+              1835,
+              -527167858,
+              20672406,
+              16
+            ],
+            [
+              1863,
+              -562249265,
+              58251283,
+              19
+            ],
+            [
+              2591,
+              -557526826,
+              2542513,
+              18
+            ],
+            [
+              2621,
+              -506875943,
+              489984,
+              18
+            ],
+            [
+              2831,
+              -589516446,
+              23214500,
+              21
+            ],
+            [
+              2839,
+              -574752977,
+              22759954,
+              21
+            ],
+            [
+              2887,
+              -593769817,
+              58555443,
+              24
+            ],
+            [
+              3599,
+              -572713874,
+              4521969,
+              20
+            ],
+            [
+              3613,
+              -526932596,
+              2422997,
+              20
+            ],
+            [
+              3847,
+              -590170920,
+              24508514,
+              23
+            ],
+            [
+              3851,
+              -578847848,
+              22806793,
+              23
+            ],
+            [
+              3907,
+              -592368779,
+              48880174,
+              26
+            ]
+          ],
+          "frontier_size": 22,
+          "rule_budget": 7,
+          "witness_ledger_sha256": "163413157c78d4d7ed7290d98f7b6327ced9b73149a75a28bf68b4d1607a886c"
+        },
+        {
+          "distinct_objective_vectors": 17,
+          "dominated_size": 478,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -652695434,
+                60746329,
+                27
+              ],
+              "on_frontier": true,
+              "queries": 68,
+              "subset": 3911
+            },
+            "static": {
+              "dominance_witness": 1839,
+              "objectives": [
+                -594128172,
+                149661091,
+                28
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3015
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              831,
+              -581397609,
+              21468960,
+              15
+            ],
+            [
+              1343,
+              -542039208,
+              21956819,
+              13
+            ],
+            [
+              1599,
+              -564858557,
+              2512910,
+              14
+            ],
+            [
+              1823,
+              -601437952,
+              23418284,
+              17
+            ],
+            [
+              1839,
+              -596829602,
+              23203471,
+              17
+            ],
+            [
+              1847,
+              -582101998,
+              22713060,
+              17
+            ],
+            [
+              1851,
+              -570646266,
+              21143999,
+              17
+            ],
+            [
+              1871,
+              -612866066,
+              66802498,
+              20
+            ],
+            [
+              2623,
+              -596249761,
+              2946416,
+              19
+            ],
+            [
+              2847,
+              -632994839,
+              23686108,
+              22
+            ],
+            [
+              2863,
+              -628220727,
+              23637058,
+              22
+            ],
+            [
+              3615,
+              -616368493,
+              4817350,
+              21
+            ],
+            [
+              3645,
+              -565588714,
+              2893718,
+              21
+            ],
+            [
+              3855,
+              -648464334,
+              25383117,
+              24
+            ],
+            [
+              3863,
+              -633565654,
+              25063781,
+              24
+            ],
+            [
+              3867,
+              -622389540,
+              23215102,
+              24
+            ],
+            [
+              3911,
+              -652695434,
+              60746329,
+              27
+            ]
+          ],
+          "frontier_size": 17,
+          "rule_budget": 8,
+          "witness_ledger_sha256": "72223cb4931a637d273423336f0009ec9883dfe3ea49c58b7905dac609e502a5"
+        },
+        {
+          "distinct_objective_vectors": 11,
+          "dominated_size": 209,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -703245739,
+                69364041,
+                28
+              ],
+              "on_frontier": true,
+              "queries": 72,
+              "subset": 3919
+            },
+            "static": {
+              "dominance_witness": 3647,
+              "objectives": [
+                -653049860,
+                151855907,
+                31
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4039
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              1407,
+              -587098068,
+              75660288,
+              17
+            ],
+            [
+              1855,
+              -640048953,
+              23934121,
+              18
+            ],
+            [
+              1887,
+              -651114001,
+              72504564,
+              21
+            ],
+            [
+              1903,
+              -647418962,
+              71376441,
+              21
+            ],
+            [
+              2879,
+              -671475428,
+              24332358,
+              23
+            ],
+            [
+              3647,
+              -654910997,
+              5401685,
+              22
+            ],
+            [
+              3871,
+              -691745198,
+              26052253,
+              25
+            ],
+            [
+              3887,
+              -687032023,
+              25942265,
+              25
+            ],
+            [
+              3895,
+              -672358110,
+              25398163,
+              25
+            ],
+            [
+              3899,
+              -660858011,
+              23873469,
+              25
+            ],
+            [
+              3919,
+              -703245739,
+              69364041,
+              28
+            ]
+          ],
+          "frontier_size": 11,
+          "rule_budget": 9,
+          "witness_ledger_sha256": "d0e68f59552f11e2b4829f3729c22167ec3605c0da832f2cd302dce00e75eace"
+        },
+        {
+          "distinct_objective_vectors": 5,
+          "dominated_size": 61,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -741290162,
+                75269618,
+                29
+              ],
+              "on_frontier": true,
+              "queries": 75,
+              "subset": 3935
+            },
+            "static": {
+              "dominance_witness": 3903,
+              "objectives": [
+                -703560084,
+                160513700,
+                32
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4047
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              1535,
+              -587380502,
+              166841858,
+              21
+            ],
+            [
+              1919,
+              -685038161,
+              77707242,
+              22
+            ],
+            [
+              3903,
+              -729977627,
+              26946662,
+              26
+            ],
+            [
+              3935,
+              -741290162,
+              75269618,
+              29
+            ],
+            [
+              3951,
+              -737510966,
+              74225651,
+              29
+            ]
+          ],
+          "frontier_size": 5,
+          "rule_budget": 10,
+          "witness_ledger_sha256": "3bdbbc0f59be5c5dd11336f662c6da68b4f2f6a33d5577006d04133268884243"
+        },
+        {
+          "distinct_objective_vectors": 2,
+          "dominated_size": 10,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -774822465,
+                80864153,
+                30
+              ],
+              "on_frontier": true,
+              "queries": 77,
+              "subset": 3967
+            },
+            "static": {
+              "dominance_witness": 3967,
+              "objectives": [
+                -741575088,
+                166448697,
+                33
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4063
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              2047,
+              -685312112,
+              168897295,
+              26
+            ],
+            [
+              3967,
+              -774822465,
+              80864153,
+              30
+            ]
+          ],
+          "frontier_size": 2,
+          "rule_budget": 11,
+          "witness_ledger_sha256": "cfd28a8f6255122ce85da11c734678087efdbc47b88178750ee6e5d85a4e92d7"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 0,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                34
+              ],
+              "on_frontier": true,
+              "queries": 78,
+              "subset": 4095
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                34
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 4095
+            }
+          },
+          "enumerated": 1,
+          "frontier": [
+            [
+              4095,
+              -775077567,
+              172073055,
+              34
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 12,
+          "witness_ledger_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "unit": [
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              1,
+              -100000000,
+              0,
+              1
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 1,
+          "witness_ledger_sha256": "3b21158f92d8d466b1a6617d76aa2b4b1dc2e5976cd3b56c5713ed42b820a016"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 65,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                2
+              ],
+              "on_frontier": true,
+              "queries": 23,
+              "subset": 513
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                2
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 513
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              513,
+              -199987047,
+              0,
+              2
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 2,
+          "witness_ledger_sha256": "3d8a2f23d7ca77be47ba17bb9956c30ceb0e0f3b4d66dcb33d1ad08b6900daae"
+        },
+        {
+          "distinct_objective_vectors": 3,
+          "dominated_size": 217,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -292926687,
+                1576,
+                3
+              ],
+              "on_frontier": true,
+              "queries": 33,
+              "subset": 2561
+            },
+            "static": {
+              "dominance_witness": 515,
+              "objectives": [
+                -286063488,
+                12685888,
+                3
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 577
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              7,
+              -264023059,
+              0,
+              3
+            ],
+            [
+              515,
+              -291817262,
+              35,
+              3
+            ],
+            [
+              2561,
+              -292926687,
+              1576,
+              3
+            ]
+          ],
+          "frontier_size": 3,
+          "rule_budget": 3,
+          "witness_ledger_sha256": "eb965fb03425afbd39cfb7e13f336fb6f10db73d04b74125342152cf5f4eac11"
+        },
+        {
+          "distinct_objective_vectors": 7,
+          "dominated_size": 488,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -382452869,
+                2305643,
+                4
+              ],
+              "on_frontier": true,
+              "queries": 42,
+              "subset": 2563
+            },
+            "static": {
+              "dominance_witness": 2563,
+              "objectives": [
+                -368327184,
+                27033800,
+                4
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 833
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              15,
+              -323191074,
+              2,
+              4
+            ],
+            [
+              60,
+              -214437663,
+              1,
+              4
+            ],
+            [
+              519,
+              -364009928,
+              179,
+              4
+            ],
+            [
+              547,
+              -330943989,
+              146,
+              4
+            ],
+            [
+              2563,
+              -382452869,
+              2305643,
+              4
+            ],
+            [
+              2565,
+              -365051986,
+              69086,
+              4
+            ],
+            [
+              2880,
+              -382612229,
+              5689971,
+              4
+            ]
+          ],
+          "frontier_size": 7,
+          "rule_budget": 4,
+          "witness_ledger_sha256": "0744a66519c60279eca3254766465c55ea12a0ab5bbfa4c30c7d12fc72b87162"
+        },
+        {
+          "distinct_objective_vectors": 9,
+          "dominated_size": 783,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": 2882,
+              "objectives": [
+                -460796552,
+                20573568,
+                5
+              ],
+              "on_frontier": false,
+              "queries": 50,
+              "subset": 2819
+            },
+            "static": {
+              "dominance_witness": 2882,
+              "objectives": [
+                -460748749,
+                27553451,
+                5
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 2881
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              31,
+              -367141059,
+              17,
+              5
+            ],
+            [
+              47,
+              -362317899,
+              15,
+              5
+            ],
+            [
+              61,
+              -314437660,
+              5,
+              5
+            ],
+            [
+              527,
+              -423176578,
+              1545,
+              5
+            ],
+            [
+              551,
+              -403136200,
+              745,
+              5
+            ],
+            [
+              2567,
+              -454553403,
+              2397919,
+              5
+            ],
+            [
+              2571,
+              -441617074,
+              2309455,
+              5
+            ],
+            [
+              2573,
+              -424216887,
+              72201,
+              5
+            ],
+            [
+              2882,
+              -460908948,
+              19223502,
+              5
+            ]
+          ],
+          "frontier_size": 9,
+          "rule_budget": 5,
+          "witness_ledger_sha256": "573f03e4b7e310a7358c106ab77f95029e8e211b5b5d571e45f287f17b6aeec0"
+        },
+        {
+          "distinct_objective_vectors": 11,
+          "dominated_size": 913,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 57,
+              "subset": 2883
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 2883
+            }
+          },
+          "enumerated": 924,
+          "frontier": [
+            [
+              63,
+              -406267648,
+              266,
+              6
+            ],
+            [
+              543,
+              -467094084,
+              34040,
+              6
+            ],
+            [
+              559,
+              -462298851,
+              6110,
+              6
+            ],
+            [
+              1551,
+              -482202750,
+              2091877,
+              6
+            ],
+            [
+              2575,
+              -513715662,
+              2403677,
+              6
+            ],
+            [
+              2587,
+              -485475164,
+              2401366,
+              6
+            ],
+            [
+              2589,
+              -468066676,
+              172413,
+              6
+            ],
+            [
+              2823,
+              -531191118,
+              22371812,
+              6
+            ],
+            [
+              2883,
+              -532922453,
+              47209997,
+              6
+            ],
+            [
+              3597,
+              -483224173,
+              2181419,
+              6
+            ],
+            [
+              3906,
+              -520411499,
+              20837455,
+              6
+            ]
+          ],
+          "frontier_size": 11,
+          "rule_budget": 6,
+          "witness_ledger_sha256": "b09c187b90f30697f2035d07cc3b1f5a479f73e25340a55b8e89d92778997335"
+        },
+        {
+          "distinct_objective_vectors": 13,
+          "dominated_size": 779,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -593769817,
+                58555443,
+                7
+              ],
+              "on_frontier": true,
+              "queries": 63,
+              "subset": 2887
+            },
+            "static": {
+              "dominance_witness": 2591,
+              "objectives": [
+                -533332384,
+                138264070,
+                7
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3011
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              575,
+              -506109851,
+              145111,
+              7
+            ],
+            [
+              1567,
+              -525987711,
+              2256917,
+              7
+            ],
+            [
+              1583,
+              -521236399,
+              2185066,
+              7
+            ],
+            [
+              2591,
+              -557526826,
+              2542513,
+              7
+            ],
+            [
+              2621,
+              -506875943,
+              489984,
+              7
+            ],
+            [
+              2831,
+              -589516446,
+              23214500,
+              7
+            ],
+            [
+              2839,
+              -574752977,
+              22759954,
+              7
+            ],
+            [
+              2887,
+              -593769817,
+              58555443,
+              7
+            ],
+            [
+              3599,
+              -572713874,
+              4521969,
+              7
+            ],
+            [
+              3613,
+              -526932596,
+              2422997,
+              7
+            ],
+            [
+              3847,
+              -590170920,
+              24508514,
+              7
+            ],
+            [
+              3851,
+              -578847848,
+              22806793,
+              7
+            ],
+            [
+              3907,
+              -592368779,
+              48880174,
+              7
+            ]
+          ],
+          "frontier_size": 13,
+          "rule_budget": 7,
+          "witness_ledger_sha256": "7056b567fca6a7e23f43d29fe2caee7f17859382edaff1d56b3fe8541a45a48f"
+        },
+        {
+          "distinct_objective_vectors": 10,
+          "dominated_size": 485,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -652695434,
+                60746329,
+                8
+              ],
+              "on_frontier": true,
+              "queries": 68,
+              "subset": 3911
+            },
+            "static": {
+              "dominance_witness": 2623,
+              "objectives": [
+                -594128172,
+                149661091,
+                8
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3015
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              1599,
+              -564858557,
+              2512910,
+              8
+            ],
+            [
+              2623,
+              -596249761,
+              2946416,
+              8
+            ],
+            [
+              2847,
+              -632994839,
+              23686108,
+              8
+            ],
+            [
+              2863,
+              -628220727,
+              23637058,
+              8
+            ],
+            [
+              3615,
+              -616368493,
+              4817350,
+              8
+            ],
+            [
+              3645,
+              -565588714,
+              2893718,
+              8
+            ],
+            [
+              3855,
+              -648464334,
+              25383117,
+              8
+            ],
+            [
+              3863,
+              -633565654,
+              25063781,
+              8
+            ],
+            [
+              3867,
+              -622389540,
+              23215102,
+              8
+            ],
+            [
+              3911,
+              -652695434,
+              60746329,
+              8
+            ]
+          ],
+          "frontier_size": 10,
+          "rule_budget": 8,
+          "witness_ledger_sha256": "b8ac3219cba8b76cd691bae1ad46760a14725475a1a989b4a9e34c6555f0b69d"
+        },
+        {
+          "distinct_objective_vectors": 7,
+          "dominated_size": 213,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -703245739,
+                69364041,
+                9
+              ],
+              "on_frontier": true,
+              "queries": 72,
+              "subset": 3919
+            },
+            "static": {
+              "dominance_witness": 3647,
+              "objectives": [
+                -653049860,
+                151855907,
+                9
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4039
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              2879,
+              -671475428,
+              24332358,
+              9
+            ],
+            [
+              3647,
+              -654910997,
+              5401685,
+              9
+            ],
+            [
+              3871,
+              -691745198,
+              26052253,
+              9
+            ],
+            [
+              3887,
+              -687032023,
+              25942265,
+              9
+            ],
+            [
+              3895,
+              -672358110,
+              25398163,
+              9
+            ],
+            [
+              3899,
+              -660858011,
+              23873469,
+              9
+            ],
+            [
+              3919,
+              -703245739,
+              69364041,
+              9
+            ]
+          ],
+          "frontier_size": 7,
+          "rule_budget": 9,
+          "witness_ledger_sha256": "bb825b56c6221c60f901349f9682eb002d98bf970150f5e63f23d19adcb20ee9"
+        },
+        {
+          "distinct_objective_vectors": 3,
+          "dominated_size": 63,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -741290162,
+                75269618,
+                10
+              ],
+              "on_frontier": true,
+              "queries": 75,
+              "subset": 3935
+            },
+            "static": {
+              "dominance_witness": 3903,
+              "objectives": [
+                -703560084,
+                160513700,
+                10
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4047
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              3903,
+              -729977627,
+              26946662,
+              10
+            ],
+            [
+              3935,
+              -741290162,
+              75269618,
+              10
+            ],
+            [
+              3951,
+              -737510966,
+              74225651,
+              10
+            ]
+          ],
+          "frontier_size": 3,
+          "rule_budget": 10,
+          "witness_ledger_sha256": "e994db387148cfe1d46857c9c877ad9e46f9f29c5212d46c0a4ae5d780ac7294"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -774822465,
+                80864153,
+                11
+              ],
+              "on_frontier": true,
+              "queries": 77,
+              "subset": 3967
+            },
+            "static": {
+              "dominance_witness": 3967,
+              "objectives": [
+                -741575088,
+                166448697,
+                11
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4063
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              3967,
+              -774822465,
+              80864153,
+              11
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 11,
+          "witness_ledger_sha256": "b3c5d7924679cf4b903161ccab5edec749ad94d68d887ba770a4714f3f1adf6a"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 0,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                12
+              ],
+              "on_frontier": true,
+              "queries": 78,
+              "subset": 4095
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                12
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 4095
+            }
+          },
+          "enumerated": 1,
+          "frontier": [
+            [
+              4095,
+              -775077567,
+              172073055,
+              12
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 12,
+          "witness_ledger_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ]
+    },
+    "objective_columns": [
+      "subset",
+      "negative_information_scaled",
+      "redundancy_scaled",
+      "abstract_additive_cost"
+    ],
+    "precompute_ns": 535587800,
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rule_names": [
+      "mod2_zero",
+      "mod3_zero",
+      "mod5_zero",
+      "mod7_zero",
+      "mod11_zero",
+      "mod13_zero",
+      "omega_ge3",
+      "bigomega_ge3",
+      "squarefree_one",
+      "spectral_C1_gt_C2",
+      "det_H_gt_0",
+      "F3_squarefactor"
+    ],
+    "schema": "pl5-static-pareto-v3775-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "weights": {
+      "heterogeneous_abstract": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        5,
+        3,
+        8
+      ],
+      "unit": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "ubuntu": {
+    "compare_ns": 111246567,
+    "domain": 100000,
+    "information_scale": 100000000,
+    "limitations": [
+      "exact dominance on quantized objectives, not unrounded real values",
+      "equal rule count within each frontier; no cross-budget dominance",
+      "unit cost constant within each budget; heterogeneous weights are abstract",
+      "redundancy is total correlation, dependent on joint entropy",
+      "additive cost models full evaluation, not short-circuit or measured time",
+      "static partition structure only, no historical coverage or retained-set selection",
+      "reference computation is unrestricted; baseline search uses prior query ceiling"
+    ],
+    "models": {
+      "heterogeneous_abstract": [
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              1,
+              -100000000,
+              0,
+              1
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 1,
+          "witness_ledger_sha256": "3b21158f92d8d466b1a6617d76aa2b4b1dc2e5976cd3b56c5713ed42b820a016"
+        },
+        {
+          "distinct_objective_vectors": 2,
+          "dominated_size": 64,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 23,
+              "subset": 513
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 513
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              3,
+              -191830250,
+              0,
+              2
+            ],
+            [
+              513,
+              -199987047,
+              0,
+              6
+            ]
+          ],
+          "frontier_size": 2,
+          "rule_budget": 2,
+          "witness_ledger_sha256": "9558e0fa7c7c2e55b7c032014a33081f3c5c70db868972b649329b9c0a5de5ab"
+        },
+        {
+          "distinct_objective_vectors": 4,
+          "dominated_size": 216,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -292926687,
+                1576,
+                14
+              ],
+              "on_frontier": true,
+              "queries": 33,
+              "subset": 2561
+            },
+            "static": {
+              "dominance_witness": 515,
+              "objectives": [
+                -286063488,
+                12685888,
+                10
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 577
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              7,
+              -264023059,
+              0,
+              3
+            ],
+            [
+              259,
+              -270181536,
+              18260322,
+              6
+            ],
+            [
+              515,
+              -291817262,
+              35,
+              7
+            ],
+            [
+              2561,
+              -292926687,
+              1576,
+              14
+            ]
+          ],
+          "frontier_size": 4,
+          "rule_budget": 3,
+          "witness_ledger_sha256": "7c67ad7cb4dc0072ff80ac030eb546dbf74406a17cb12192273bd05fef195e1c"
+        },
+        {
+          "distinct_objective_vectors": 12,
+          "dominated_size": 483,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -382452869,
+                2305643,
+                15
+              ],
+              "on_frontier": true,
+              "queries": 42,
+              "subset": 2563
+            },
+            "static": {
+              "dominance_witness": 771,
+              "objectives": [
+                -368327184,
+                27033800,
+                14
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 833
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              15,
+              -323191074,
+              2,
+              4
+            ],
+            [
+              60,
+              -214437663,
+              1,
+              4
+            ],
+            [
+              263,
+              -340682831,
+              19951836,
+              7
+            ],
+            [
+              267,
+              -328714608,
+              18895266,
+              7
+            ],
+            [
+              519,
+              -364009928,
+              179,
+              8
+            ],
+            [
+              547,
+              -330943989,
+              146,
+              8
+            ],
+            [
+              771,
+              -370166101,
+              18262804,
+              11
+            ],
+            [
+              834,
+              -370283027,
+              16908207,
+              14
+            ],
+            [
+              1031,
+              -324640003,
+              499561,
+              6
+            ],
+            [
+              2563,
+              -382452869,
+              2305643,
+              15
+            ],
+            [
+              2565,
+              -365051986,
+              69086,
+              15
+            ],
+            [
+              2880,
+              -382612229,
+              5689971,
+              21
+            ]
+          ],
+          "frontier_size": 12,
+          "rule_budget": 4,
+          "witness_ledger_sha256": "f51ebd1510caab0a2e8a159196c2d86a0719e2785a3a485700931dbe272ebe22"
+        },
+        {
+          "distinct_objective_vectors": 17,
+          "dominated_size": 775,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -460796552,
+                20573568,
+                19
+              ],
+              "on_frontier": true,
+              "queries": 50,
+              "subset": 2819
+            },
+            "static": {
+              "dominance_witness": 2819,
+              "objectives": [
+                -460748749,
+                27553451,
+                22
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 2881
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              31,
+              -367141059,
+              17,
+              5
+            ],
+            [
+              47,
+              -362317899,
+              15,
+              5
+            ],
+            [
+              61,
+              -314437660,
+              5,
+              5
+            ],
+            [
+              271,
+              -399022474,
+              20780210,
+              8
+            ],
+            [
+              279,
+              -384404450,
+              20180218,
+              8
+            ],
+            [
+              527,
+              -423176578,
+              1545,
+              9
+            ],
+            [
+              551,
+              -403136200,
+              745,
+              9
+            ],
+            [
+              775,
+              -440662370,
+              19959345,
+              12
+            ],
+            [
+              779,
+              -428697695,
+              18899226,
+              12
+            ],
+            [
+              835,
+              -442313633,
+              44877601,
+              15
+            ],
+            [
+              1039,
+              -383806083,
+              501497,
+              7
+            ],
+            [
+              1795,
+              -429719042,
+              19826367,
+              14
+            ],
+            [
+              2567,
+              -454553403,
+              2397919,
+              16
+            ],
+            [
+              2571,
+              -441617074,
+              2309455,
+              16
+            ],
+            [
+              2573,
+              -424216887,
+              72201,
+              16
+            ],
+            [
+              2819,
+              -460796552,
+              20573568,
+              19
+            ],
+            [
+              2882,
+              -460908948,
+              19223502,
+              22
+            ]
+          ],
+          "frontier_size": 17,
+          "rule_budget": 5,
+          "witness_ledger_sha256": "e0bde9f84fb281254167d6376ff5d83dbf44ac53b57544333f7101d1a44101db"
+        },
+        {
+          "distinct_objective_vectors": 22,
+          "dominated_size": 902,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                23
+              ],
+              "on_frontier": true,
+              "queries": 57,
+              "subset": 2883
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                23
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 2883
+            }
+          },
+          "enumerated": 924,
+          "frontier": [
+            [
+              63,
+              -406267648,
+              266,
+              6
+            ],
+            [
+              287,
+              -442684265,
+              21068419,
+              9
+            ],
+            [
+              303,
+              -437970205,
+              20959318,
+              9
+            ],
+            [
+              543,
+              -467094084,
+              34040,
+              10
+            ],
+            [
+              559,
+              -462298851,
+              6110,
+              10
+            ],
+            [
+              783,
+              -498999112,
+              20790619,
+              13
+            ],
+            [
+              791,
+              -484328284,
+              20243431,
+              13
+            ],
+            [
+              839,
+              -503270962,
+              56113082,
+              16
+            ],
+            [
+              1055,
+              -427707553,
+              550028,
+              8
+            ],
+            [
+              1071,
+              -422906320,
+              528099,
+              8
+            ],
+            [
+              1551,
+              -482202750,
+              2091877,
+              12
+            ],
+            [
+              1799,
+              -499668855,
+              22069364,
+              15
+            ],
+            [
+              1803,
+              -488244494,
+              20468932,
+              15
+            ],
+            [
+              2575,
+              -513715662,
+              2403677,
+              17
+            ],
+            [
+              2587,
+              -485475164,
+              2401366,
+              17
+            ],
+            [
+              2589,
+              -468066676,
+              172413,
+              17
+            ],
+            [
+              2823,
+              -531191118,
+              22371812,
+              20
+            ],
+            [
+              2827,
+              -519321099,
+              21217038,
+              20
+            ],
+            [
+              2883,
+              -532922453,
+              47209997,
+              23
+            ],
+            [
+              3597,
+              -483224173,
+              2181419,
+              19
+            ],
+            [
+              3843,
+              -520337170,
+              22149455,
+              22
+            ],
+            [
+              3906,
+              -520411499,
+              20837455,
+              25
+            ]
+          ],
+          "frontier_size": 22,
+          "rule_budget": 6,
+          "witness_ledger_sha256": "97b73096ea7ee08c118a281754d783a26976739d29e5fb4e2fe2c92ced1ddb6f"
+        },
+        {
+          "distinct_objective_vectors": 22,
+          "dominated_size": 770,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -593769817,
+                58555443,
+                24
+              ],
+              "on_frontier": true,
+              "queries": 63,
+              "subset": 2887
+            },
+            "static": {
+              "dominance_witness": 815,
+              "objectives": [
+                -533332384,
+                138264070,
+                27
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3011
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              319,
+              -481604716,
+              21274807,
+              10
+            ],
+            [
+              575,
+              -506109851,
+              145111,
+              11
+            ],
+            [
+              799,
+              -542598887,
+              21140845,
+              14
+            ],
+            [
+              815,
+              -537936685,
+              20979884,
+              14
+            ],
+            [
+              1087,
+              -466755863,
+              628556,
+              9
+            ],
+            [
+              1567,
+              -525987711,
+              2256917,
+              13
+            ],
+            [
+              1583,
+              -521236399,
+              2185066,
+              13
+            ],
+            [
+              1807,
+              -557995261,
+              22910974,
+              16
+            ],
+            [
+              1815,
+              -543187917,
+              22500303,
+              16
+            ],
+            [
+              1819,
+              -531893747,
+              20769680,
+              16
+            ],
+            [
+              1835,
+              -527167858,
+              20672406,
+              16
+            ],
+            [
+              1863,
+              -562249265,
+              58251283,
+              19
+            ],
+            [
+              2591,
+              -557526826,
+              2542513,
+              18
+            ],
+            [
+              2621,
+              -506875943,
+              489984,
+              18
+            ],
+            [
+              2831,
+              -589516446,
+              23214500,
+              21
+            ],
+            [
+              2839,
+              -574752977,
+              22759954,
+              21
+            ],
+            [
+              2887,
+              -593769817,
+              58555443,
+              24
+            ],
+            [
+              3599,
+              -572713874,
+              4521969,
+              20
+            ],
+            [
+              3613,
+              -526932596,
+              2422997,
+              20
+            ],
+            [
+              3847,
+              -590170920,
+              24508514,
+              23
+            ],
+            [
+              3851,
+              -578847848,
+              22806793,
+              23
+            ],
+            [
+              3907,
+              -592368779,
+              48880174,
+              26
+            ]
+          ],
+          "frontier_size": 22,
+          "rule_budget": 7,
+          "witness_ledger_sha256": "163413157c78d4d7ed7290d98f7b6327ced9b73149a75a28bf68b4d1607a886c"
+        },
+        {
+          "distinct_objective_vectors": 17,
+          "dominated_size": 478,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -652695434,
+                60746329,
+                27
+              ],
+              "on_frontier": true,
+              "queries": 68,
+              "subset": 3911
+            },
+            "static": {
+              "dominance_witness": 1839,
+              "objectives": [
+                -594128172,
+                149661091,
+                28
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3015
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              831,
+              -581397609,
+              21468960,
+              15
+            ],
+            [
+              1343,
+              -542039208,
+              21956819,
+              13
+            ],
+            [
+              1599,
+              -564858557,
+              2512910,
+              14
+            ],
+            [
+              1823,
+              -601437952,
+              23418284,
+              17
+            ],
+            [
+              1839,
+              -596829602,
+              23203471,
+              17
+            ],
+            [
+              1847,
+              -582101998,
+              22713060,
+              17
+            ],
+            [
+              1851,
+              -570646266,
+              21143999,
+              17
+            ],
+            [
+              1871,
+              -612866066,
+              66802498,
+              20
+            ],
+            [
+              2623,
+              -596249761,
+              2946416,
+              19
+            ],
+            [
+              2847,
+              -632994839,
+              23686108,
+              22
+            ],
+            [
+              2863,
+              -628220727,
+              23637058,
+              22
+            ],
+            [
+              3615,
+              -616368493,
+              4817350,
+              21
+            ],
+            [
+              3645,
+              -565588714,
+              2893718,
+              21
+            ],
+            [
+              3855,
+              -648464334,
+              25383117,
+              24
+            ],
+            [
+              3863,
+              -633565654,
+              25063781,
+              24
+            ],
+            [
+              3867,
+              -622389540,
+              23215102,
+              24
+            ],
+            [
+              3911,
+              -652695434,
+              60746329,
+              27
+            ]
+          ],
+          "frontier_size": 17,
+          "rule_budget": 8,
+          "witness_ledger_sha256": "72223cb4931a637d273423336f0009ec9883dfe3ea49c58b7905dac609e502a5"
+        },
+        {
+          "distinct_objective_vectors": 11,
+          "dominated_size": 209,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -703245739,
+                69364041,
+                28
+              ],
+              "on_frontier": true,
+              "queries": 72,
+              "subset": 3919
+            },
+            "static": {
+              "dominance_witness": 3647,
+              "objectives": [
+                -653049860,
+                151855907,
+                31
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4039
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              1407,
+              -587098068,
+              75660288,
+              17
+            ],
+            [
+              1855,
+              -640048953,
+              23934121,
+              18
+            ],
+            [
+              1887,
+              -651114001,
+              72504564,
+              21
+            ],
+            [
+              1903,
+              -647418962,
+              71376441,
+              21
+            ],
+            [
+              2879,
+              -671475428,
+              24332358,
+              23
+            ],
+            [
+              3647,
+              -654910997,
+              5401685,
+              22
+            ],
+            [
+              3871,
+              -691745198,
+              26052253,
+              25
+            ],
+            [
+              3887,
+              -687032023,
+              25942265,
+              25
+            ],
+            [
+              3895,
+              -672358110,
+              25398163,
+              25
+            ],
+            [
+              3899,
+              -660858011,
+              23873469,
+              25
+            ],
+            [
+              3919,
+              -703245739,
+              69364041,
+              28
+            ]
+          ],
+          "frontier_size": 11,
+          "rule_budget": 9,
+          "witness_ledger_sha256": "d0e68f59552f11e2b4829f3729c22167ec3605c0da832f2cd302dce00e75eace"
+        },
+        {
+          "distinct_objective_vectors": 5,
+          "dominated_size": 61,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -741290162,
+                75269618,
+                29
+              ],
+              "on_frontier": true,
+              "queries": 75,
+              "subset": 3935
+            },
+            "static": {
+              "dominance_witness": 3903,
+              "objectives": [
+                -703560084,
+                160513700,
+                32
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4047
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              1535,
+              -587380502,
+              166841858,
+              21
+            ],
+            [
+              1919,
+              -685038161,
+              77707242,
+              22
+            ],
+            [
+              3903,
+              -729977627,
+              26946662,
+              26
+            ],
+            [
+              3935,
+              -741290162,
+              75269618,
+              29
+            ],
+            [
+              3951,
+              -737510966,
+              74225651,
+              29
+            ]
+          ],
+          "frontier_size": 5,
+          "rule_budget": 10,
+          "witness_ledger_sha256": "3bdbbc0f59be5c5dd11336f662c6da68b4f2f6a33d5577006d04133268884243"
+        },
+        {
+          "distinct_objective_vectors": 2,
+          "dominated_size": 10,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -774822465,
+                80864153,
+                30
+              ],
+              "on_frontier": true,
+              "queries": 77,
+              "subset": 3967
+            },
+            "static": {
+              "dominance_witness": 3967,
+              "objectives": [
+                -741575088,
+                166448697,
+                33
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4063
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              2047,
+              -685312112,
+              168897295,
+              26
+            ],
+            [
+              3967,
+              -774822465,
+              80864153,
+              30
+            ]
+          ],
+          "frontier_size": 2,
+          "rule_budget": 11,
+          "witness_ledger_sha256": "cfd28a8f6255122ce85da11c734678087efdbc47b88178750ee6e5d85a4e92d7"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 0,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                34
+              ],
+              "on_frontier": true,
+              "queries": 78,
+              "subset": 4095
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                34
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 4095
+            }
+          },
+          "enumerated": 1,
+          "frontier": [
+            [
+              4095,
+              -775077567,
+              172073055,
+              34
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 12,
+          "witness_ledger_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "unit": [
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -100000000,
+                0,
+                1
+              ],
+              "on_frontier": true,
+              "queries": 12,
+              "subset": 1
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              1,
+              -100000000,
+              0,
+              1
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 1,
+          "witness_ledger_sha256": "3b21158f92d8d466b1a6617d76aa2b4b1dc2e5976cd3b56c5713ed42b820a016"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 65,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                2
+              ],
+              "on_frontier": true,
+              "queries": 23,
+              "subset": 513
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -199987047,
+                0,
+                2
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 513
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              513,
+              -199987047,
+              0,
+              2
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 2,
+          "witness_ledger_sha256": "3d8a2f23d7ca77be47ba17bb9956c30ceb0e0f3b4d66dcb33d1ad08b6900daae"
+        },
+        {
+          "distinct_objective_vectors": 3,
+          "dominated_size": 217,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -292926687,
+                1576,
+                3
+              ],
+              "on_frontier": true,
+              "queries": 33,
+              "subset": 2561
+            },
+            "static": {
+              "dominance_witness": 515,
+              "objectives": [
+                -286063488,
+                12685888,
+                3
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 577
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              7,
+              -264023059,
+              0,
+              3
+            ],
+            [
+              515,
+              -291817262,
+              35,
+              3
+            ],
+            [
+              2561,
+              -292926687,
+              1576,
+              3
+            ]
+          ],
+          "frontier_size": 3,
+          "rule_budget": 3,
+          "witness_ledger_sha256": "eb965fb03425afbd39cfb7e13f336fb6f10db73d04b74125342152cf5f4eac11"
+        },
+        {
+          "distinct_objective_vectors": 7,
+          "dominated_size": 488,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -382452869,
+                2305643,
+                4
+              ],
+              "on_frontier": true,
+              "queries": 42,
+              "subset": 2563
+            },
+            "static": {
+              "dominance_witness": 2563,
+              "objectives": [
+                -368327184,
+                27033800,
+                4
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 833
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              15,
+              -323191074,
+              2,
+              4
+            ],
+            [
+              60,
+              -214437663,
+              1,
+              4
+            ],
+            [
+              519,
+              -364009928,
+              179,
+              4
+            ],
+            [
+              547,
+              -330943989,
+              146,
+              4
+            ],
+            [
+              2563,
+              -382452869,
+              2305643,
+              4
+            ],
+            [
+              2565,
+              -365051986,
+              69086,
+              4
+            ],
+            [
+              2880,
+              -382612229,
+              5689971,
+              4
+            ]
+          ],
+          "frontier_size": 7,
+          "rule_budget": 4,
+          "witness_ledger_sha256": "0744a66519c60279eca3254766465c55ea12a0ab5bbfa4c30c7d12fc72b87162"
+        },
+        {
+          "distinct_objective_vectors": 9,
+          "dominated_size": 783,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": 2882,
+              "objectives": [
+                -460796552,
+                20573568,
+                5
+              ],
+              "on_frontier": false,
+              "queries": 50,
+              "subset": 2819
+            },
+            "static": {
+              "dominance_witness": 2882,
+              "objectives": [
+                -460748749,
+                27553451,
+                5
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 2881
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              31,
+              -367141059,
+              17,
+              5
+            ],
+            [
+              47,
+              -362317899,
+              15,
+              5
+            ],
+            [
+              61,
+              -314437660,
+              5,
+              5
+            ],
+            [
+              527,
+              -423176578,
+              1545,
+              5
+            ],
+            [
+              551,
+              -403136200,
+              745,
+              5
+            ],
+            [
+              2567,
+              -454553403,
+              2397919,
+              5
+            ],
+            [
+              2571,
+              -441617074,
+              2309455,
+              5
+            ],
+            [
+              2573,
+              -424216887,
+              72201,
+              5
+            ],
+            [
+              2882,
+              -460908948,
+              19223502,
+              5
+            ]
+          ],
+          "frontier_size": 9,
+          "rule_budget": 5,
+          "witness_ledger_sha256": "573f03e4b7e310a7358c106ab77f95029e8e211b5b5d571e45f287f17b6aeec0"
+        },
+        {
+          "distinct_objective_vectors": 11,
+          "dominated_size": 913,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 57,
+              "subset": 2883
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -532922453,
+                47209997,
+                6
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 2883
+            }
+          },
+          "enumerated": 924,
+          "frontier": [
+            [
+              63,
+              -406267648,
+              266,
+              6
+            ],
+            [
+              543,
+              -467094084,
+              34040,
+              6
+            ],
+            [
+              559,
+              -462298851,
+              6110,
+              6
+            ],
+            [
+              1551,
+              -482202750,
+              2091877,
+              6
+            ],
+            [
+              2575,
+              -513715662,
+              2403677,
+              6
+            ],
+            [
+              2587,
+              -485475164,
+              2401366,
+              6
+            ],
+            [
+              2589,
+              -468066676,
+              172413,
+              6
+            ],
+            [
+              2823,
+              -531191118,
+              22371812,
+              6
+            ],
+            [
+              2883,
+              -532922453,
+              47209997,
+              6
+            ],
+            [
+              3597,
+              -483224173,
+              2181419,
+              6
+            ],
+            [
+              3906,
+              -520411499,
+              20837455,
+              6
+            ]
+          ],
+          "frontier_size": 11,
+          "rule_budget": 6,
+          "witness_ledger_sha256": "b09c187b90f30697f2035d07cc3b1f5a479f73e25340a55b8e89d92778997335"
+        },
+        {
+          "distinct_objective_vectors": 13,
+          "dominated_size": 779,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -593769817,
+                58555443,
+                7
+              ],
+              "on_frontier": true,
+              "queries": 63,
+              "subset": 2887
+            },
+            "static": {
+              "dominance_witness": 2591,
+              "objectives": [
+                -533332384,
+                138264070,
+                7
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3011
+            }
+          },
+          "enumerated": 792,
+          "frontier": [
+            [
+              575,
+              -506109851,
+              145111,
+              7
+            ],
+            [
+              1567,
+              -525987711,
+              2256917,
+              7
+            ],
+            [
+              1583,
+              -521236399,
+              2185066,
+              7
+            ],
+            [
+              2591,
+              -557526826,
+              2542513,
+              7
+            ],
+            [
+              2621,
+              -506875943,
+              489984,
+              7
+            ],
+            [
+              2831,
+              -589516446,
+              23214500,
+              7
+            ],
+            [
+              2839,
+              -574752977,
+              22759954,
+              7
+            ],
+            [
+              2887,
+              -593769817,
+              58555443,
+              7
+            ],
+            [
+              3599,
+              -572713874,
+              4521969,
+              7
+            ],
+            [
+              3613,
+              -526932596,
+              2422997,
+              7
+            ],
+            [
+              3847,
+              -590170920,
+              24508514,
+              7
+            ],
+            [
+              3851,
+              -578847848,
+              22806793,
+              7
+            ],
+            [
+              3907,
+              -592368779,
+              48880174,
+              7
+            ]
+          ],
+          "frontier_size": 13,
+          "rule_budget": 7,
+          "witness_ledger_sha256": "7056b567fca6a7e23f43d29fe2caee7f17859382edaff1d56b3fe8541a45a48f"
+        },
+        {
+          "distinct_objective_vectors": 10,
+          "dominated_size": 485,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -652695434,
+                60746329,
+                8
+              ],
+              "on_frontier": true,
+              "queries": 68,
+              "subset": 3911
+            },
+            "static": {
+              "dominance_witness": 2623,
+              "objectives": [
+                -594128172,
+                149661091,
+                8
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 3015
+            }
+          },
+          "enumerated": 495,
+          "frontier": [
+            [
+              1599,
+              -564858557,
+              2512910,
+              8
+            ],
+            [
+              2623,
+              -596249761,
+              2946416,
+              8
+            ],
+            [
+              2847,
+              -632994839,
+              23686108,
+              8
+            ],
+            [
+              2863,
+              -628220727,
+              23637058,
+              8
+            ],
+            [
+              3615,
+              -616368493,
+              4817350,
+              8
+            ],
+            [
+              3645,
+              -565588714,
+              2893718,
+              8
+            ],
+            [
+              3855,
+              -648464334,
+              25383117,
+              8
+            ],
+            [
+              3863,
+              -633565654,
+              25063781,
+              8
+            ],
+            [
+              3867,
+              -622389540,
+              23215102,
+              8
+            ],
+            [
+              3911,
+              -652695434,
+              60746329,
+              8
+            ]
+          ],
+          "frontier_size": 10,
+          "rule_budget": 8,
+          "witness_ledger_sha256": "b8ac3219cba8b76cd691bae1ad46760a14725475a1a989b4a9e34c6555f0b69d"
+        },
+        {
+          "distinct_objective_vectors": 7,
+          "dominated_size": 213,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -703245739,
+                69364041,
+                9
+              ],
+              "on_frontier": true,
+              "queries": 72,
+              "subset": 3919
+            },
+            "static": {
+              "dominance_witness": 3647,
+              "objectives": [
+                -653049860,
+                151855907,
+                9
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4039
+            }
+          },
+          "enumerated": 220,
+          "frontier": [
+            [
+              2879,
+              -671475428,
+              24332358,
+              9
+            ],
+            [
+              3647,
+              -654910997,
+              5401685,
+              9
+            ],
+            [
+              3871,
+              -691745198,
+              26052253,
+              9
+            ],
+            [
+              3887,
+              -687032023,
+              25942265,
+              9
+            ],
+            [
+              3895,
+              -672358110,
+              25398163,
+              9
+            ],
+            [
+              3899,
+              -660858011,
+              23873469,
+              9
+            ],
+            [
+              3919,
+              -703245739,
+              69364041,
+              9
+            ]
+          ],
+          "frontier_size": 7,
+          "rule_budget": 9,
+          "witness_ledger_sha256": "bb825b56c6221c60f901349f9682eb002d98bf970150f5e63f23d19adcb20ee9"
+        },
+        {
+          "distinct_objective_vectors": 3,
+          "dominated_size": 63,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -741290162,
+                75269618,
+                10
+              ],
+              "on_frontier": true,
+              "queries": 75,
+              "subset": 3935
+            },
+            "static": {
+              "dominance_witness": 3903,
+              "objectives": [
+                -703560084,
+                160513700,
+                10
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4047
+            }
+          },
+          "enumerated": 66,
+          "frontier": [
+            [
+              3903,
+              -729977627,
+              26946662,
+              10
+            ],
+            [
+              3935,
+              -741290162,
+              75269618,
+              10
+            ],
+            [
+              3951,
+              -737510966,
+              74225651,
+              10
+            ]
+          ],
+          "frontier_size": 3,
+          "rule_budget": 10,
+          "witness_ledger_sha256": "e994db387148cfe1d46857c9c877ad9e46f9f29c5212d46c0a4ae5d780ac7294"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 11,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -774822465,
+                80864153,
+                11
+              ],
+              "on_frontier": true,
+              "queries": 77,
+              "subset": 3967
+            },
+            "static": {
+              "dominance_witness": 3967,
+              "objectives": [
+                -741575088,
+                166448697,
+                11
+              ],
+              "on_frontier": false,
+              "queries": 13,
+              "subset": 4063
+            }
+          },
+          "enumerated": 12,
+          "frontier": [
+            [
+              3967,
+              -774822465,
+              80864153,
+              11
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 11,
+          "witness_ledger_sha256": "b3c5d7924679cf4b903161ccab5edec749ad94d68d887ba770a4714f3f1adf6a"
+        },
+        {
+          "distinct_objective_vectors": 1,
+          "dominated_size": 0,
+          "entropy_baselines": {
+            "greedy": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                12
+              ],
+              "on_frontier": true,
+              "queries": 78,
+              "subset": 4095
+            },
+            "static": {
+              "dominance_witness": null,
+              "objectives": [
+                -775077567,
+                172073055,
+                12
+              ],
+              "on_frontier": true,
+              "queries": 13,
+              "subset": 4095
+            }
+          },
+          "enumerated": 1,
+          "frontier": [
+            [
+              4095,
+              -775077567,
+              172073055,
+              12
+            ]
+          ],
+          "frontier_size": 1,
+          "rule_budget": 12,
+          "witness_ledger_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ]
+    },
+    "objective_columns": [
+      "subset",
+      "negative_information_scaled",
+      "redundancy_scaled",
+      "abstract_additive_cost"
+    ],
+    "precompute_ns": 1049733480,
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rule_names": [
+      "mod2_zero",
+      "mod3_zero",
+      "mod5_zero",
+      "mod7_zero",
+      "mod11_zero",
+      "mod13_zero",
+      "omega_ge3",
+      "bigomega_ge3",
+      "squarefree_one",
+      "spectral_C1_gt_C2",
+      "det_H_gt_0",
+      "F3_squarefactor"
+    ],
+    "schema": "pl5-static-pareto-v3775-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "weights": {
+      "heterogeneous_abstract": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        5,
+        3,
+        8
+      ],
+      "unit": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}
