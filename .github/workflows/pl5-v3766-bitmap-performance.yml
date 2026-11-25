@@ -13,6 +13,7 @@ on:
       - 'docs/research/experiments/entropy_search_v3774.py'
       - 'docs/research/experiments/static_pareto_v3775.py'
       - 'docs/research/experiments/projection_cost_v3776.py'
+      - 'docs/research/experiments/robust_projection_v3777.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -48,3 +49,5 @@ jobs:
       - run: python docs/research/experiments/static_pareto_v3775.py
 
       - run: python docs/research/experiments/projection_cost_v3776.py
+
+      - run: python docs/research/experiments/robust_projection_v3777.py
