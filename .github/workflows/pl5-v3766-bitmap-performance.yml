@@ -9,6 +9,7 @@ on:
       - 'docs/research/experiments/byte_prefix_cache_v3770.py'
       - 'docs/research/experiments/minimal_conflict_v3771.py'
       - 'docs/research/experiments/conflict_pruning_v3772.py'
+      - 'docs/research/experiments/static_entropy_v3773.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -36,3 +37,5 @@ jobs:
       - run: python docs/research/experiments/minimal_conflict_v3771.py
 
       - run: python docs/research/experiments/conflict_pruning_v3772.py
+
+      - run: python docs/research/experiments/static_entropy_v3773.py
