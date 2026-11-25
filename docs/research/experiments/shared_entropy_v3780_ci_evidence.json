@@ -1,0 +1,369 @@
+{
+  "schema": "pl5-shared-entropy-v3780-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "experiment_commit": "0c8fb91d64e9217425cce563b26fa87d141cff9a",
+  "ci_commit": "148012fc224953052b52dbb7450b4de991f03f96",
+  "workflow_run_id": 45697667092,
+  "application_run_id": 45697667246,
+  "verified_at": "2026-11-26",
+  "verification": {
+    "cross_platform_equal_fields": [
+      "domain",
+      "downstream_ledger_sha256",
+      "entropy_ledger_sha256",
+      "exact_within_platform_equality",
+      "frontier_counts",
+      "limitations",
+      "rule_mask_sha256",
+      "rule_names",
+      "schema",
+      "shapley_bits",
+      "source",
+      "source_head",
+      "subsets"
+    ],
+    "paired_ratios_recomputed": true,
+    "phase_totals_checked": true,
+    "alternating_order_checked": true,
+    "tests_per_platform": 3,
+    "ci_conclusion": "success",
+    "application_conclusion": "success"
+  },
+  "reproduction": "python docs/research/experiments/shared_entropy_v3780.py",
+  "platforms": [
+    {
+      "os": "ubuntu",
+      "job_id": 139499202889,
+      "report": {
+        "domain": 100000,
+        "downstream_ledger_sha256": "9713c3e938454e8b25bf6e102a18f3d49980d48fdb9cdc7fb1e57054c33d1db7",
+        "entropy_ledger_sha256": "771a4885ca6480866cd3321ba0345c0902f173de57f5a954374ea71ccd5b1242",
+        "exact_within_platform_equality": true,
+        "frontier_counts": {
+          "heterogeneous_abstract": [
+            1,
+            2,
+            4,
+            12,
+            17,
+            22,
+            22,
+            17,
+            11,
+            5,
+            2,
+            1
+          ],
+          "unit": [
+            1,
+            1,
+            3,
+            7,
+            9,
+            11,
+            13,
+            10,
+            7,
+            3,
+            1,
+            1
+          ]
+        },
+        "limitations": [
+          "same fixed static partition; no historical coverage or new filtering rules",
+          "total pipeline includes exact Pareto reference and Shapley audits",
+          "common freeze and partition construction excluded from timing",
+          "four paired warm runs; descriptive times, no timing gate",
+          "ledger float quantization 1e-8; within-platform equality is exact",
+          "no measured peak memory or complete filtering execution cost"
+        ],
+        "median_paired_ratios": {
+          "downstream_ns": 0.9959121097550887,
+          "precompute_ns": 6.640783695811452,
+          "total_ns": 3.833851032510779
+        },
+        "paired_trials": [
+          {
+            "independent": {
+              "downstream_ns": 160178061,
+              "precompute_ns": 1070854996,
+              "total_ns": 1231033057
+            },
+            "order": [
+              "independent",
+              "shared"
+            ],
+            "shared": {
+              "downstream_ns": 160295361,
+              "precompute_ns": 160488591,
+              "total_ns": 320783952
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 160721838,
+              "precompute_ns": 1077909636,
+              "total_ns": 1238631474
+            },
+            "order": [
+              "shared",
+              "independent"
+            ],
+            "shared": {
+              "downstream_ns": 160297113,
+              "precompute_ns": 163094785,
+              "total_ns": 323391898
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 161222900,
+              "precompute_ns": 1072091593,
+              "total_ns": 1233314493
+            },
+            "order": [
+              "independent",
+              "shared"
+            ],
+            "shared": {
+              "downstream_ns": 163811231,
+              "precompute_ns": 163156167,
+              "total_ns": 326967398
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 162045828,
+              "precompute_ns": 1087741426,
+              "total_ns": 1249787254
+            },
+            "order": [
+              "shared",
+              "independent"
+            ],
+            "shared": {
+              "downstream_ns": 163261145,
+              "precompute_ns": 162078099,
+              "total_ns": 325339244
+            }
+          }
+        ],
+        "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rule_names": [
+          "mod2_zero",
+          "mod3_zero",
+          "mod5_zero",
+          "mod7_zero",
+          "mod11_zero",
+          "mod13_zero",
+          "omega_ge3",
+          "bigomega_ge3",
+          "squarefree_one",
+          "spectral_C1_gt_C2",
+          "det_H_gt_0",
+          "F3_squarefactor"
+        ],
+        "schema": "pl5-shared-entropy-v3780-1",
+        "shapley_bits": [
+          0.8019806497390747,
+          0.7883531295235915,
+          0.653493409671633,
+          0.5456650379847116,
+          0.4111275005625668,
+          0.36759195078489737,
+          0.5471656416364642,
+          0.4009179658297717,
+          0.7301067069472823,
+          0.9903447317160422,
+          0.5996206910232961,
+          0.9144082581860055
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_head": "407888519ec56afdf7a2c43aee1cd577b3e78a2c",
+        "subsets": 4096
+      }
+    },
+    {
+      "os": "windows",
+      "job_id": 139499204057,
+      "report": {
+        "domain": 100000,
+        "downstream_ledger_sha256": "9713c3e938454e8b25bf6e102a18f3d49980d48fdb9cdc7fb1e57054c33d1db7",
+        "entropy_ledger_sha256": "771a4885ca6480866cd3321ba0345c0902f173de57f5a954374ea71ccd5b1242",
+        "exact_within_platform_equality": true,
+        "frontier_counts": {
+          "heterogeneous_abstract": [
+            1,
+            2,
+            4,
+            12,
+            17,
+            22,
+            22,
+            17,
+            11,
+            5,
+            2,
+            1
+          ],
+          "unit": [
+            1,
+            1,
+            3,
+            7,
+            9,
+            11,
+            13,
+            10,
+            7,
+            3,
+            1,
+            1
+          ]
+        },
+        "limitations": [
+          "same fixed static partition; no historical coverage or new filtering rules",
+          "total pipeline includes exact Pareto reference and Shapley audits",
+          "common freeze and partition construction excluded from timing",
+          "four paired warm runs; descriptive times, no timing gate",
+          "ledger float quantization 1e-8; within-platform equality is exact",
+          "no measured peak memory or complete filtering execution cost"
+        ],
+        "median_paired_ratios": {
+          "downstream_ns": 0.9970355208427071,
+          "precompute_ns": 5.363834422209622,
+          "total_ns": 3.295649623566671
+        },
+        "paired_trials": [
+          {
+            "independent": {
+              "downstream_ns": 130906600,
+              "precompute_ns": 807172800,
+              "total_ns": 938079400
+            },
+            "order": [
+              "independent",
+              "shared"
+            ],
+            "shared": {
+              "downstream_ns": 131751600,
+              "precompute_ns": 143767600,
+              "total_ns": 275519200
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 131711700,
+              "precompute_ns": 779099500,
+              "total_ns": 910811200
+            },
+            "order": [
+              "shared",
+              "independent"
+            ],
+            "shared": {
+              "downstream_ns": 131647900,
+              "precompute_ns": 144846300,
+              "total_ns": 276494200
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 131561400,
+              "precompute_ns": 771958600,
+              "total_ns": 903520000
+            },
+            "order": [
+              "independent",
+              "shared"
+            ],
+            "shared": {
+              "downstream_ns": 136914600,
+              "precompute_ns": 145164700,
+              "total_ns": 282079300
+            }
+          },
+          {
+            "independent": {
+              "downstream_ns": 132343000,
+              "precompute_ns": 785057000,
+              "total_ns": 917400000
+            },
+            "order": [
+              "shared",
+              "independent"
+            ],
+            "shared": {
+              "downstream_ns": 131469000,
+              "precompute_ns": 146770700,
+              "total_ns": 278239700
+            }
+          }
+        ],
+        "platform": "Windows-2025Server-10.0.26100-SP0",
+        "python": "3.12.10",
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rule_names": [
+          "mod2_zero",
+          "mod3_zero",
+          "mod5_zero",
+          "mod7_zero",
+          "mod11_zero",
+          "mod13_zero",
+          "omega_ge3",
+          "bigomega_ge3",
+          "squarefree_one",
+          "spectral_C1_gt_C2",
+          "det_H_gt_0",
+          "F3_squarefactor"
+        ],
+        "schema": "pl5-shared-entropy-v3780-1",
+        "shapley_bits": [
+          0.8019806497390747,
+          0.7883531295235915,
+          0.653493409671633,
+          0.5456650379847116,
+          0.4111275005625668,
+          0.36759195078489737,
+          0.5471656416364642,
+          0.4009179658297717,
+          0.7301067069472823,
+          0.9903447317160422,
+          0.5996206910232961,
+          0.9144082581860055
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_head": "407888519ec56afdf7a2c43aee1cd577b3e78a2c",
+        "subsets": 4096
+      }
+    }
+  ]
+}
