@@ -1,0 +1,886 @@
+{
+  "tested_head": "8c006ca60a00c569b5f2f95b5086e0d054445d23",
+  "specialized_run": 45564627557,
+  "application_run": 45564627522,
+  "ubuntu_job": 139036325879,
+  "windows_job": 139036325537,
+  "comparison_tolerance": 1e-10,
+  "ubuntu": {
+    "checks": {
+      "largest_conditional_mi_bits": 0.6062005914221988,
+      "smallest_conditional_mi_bits": -4.440892098500626e-16,
+      "submodularity_violations": 0
+    },
+    "domain": 100000,
+    "joint_entropy_bits": 7.750775673605337,
+    "limitations": [
+      "uniform finite domain, not empirical temporal distribution",
+      "entropy is monotone submodular, not evidence of superadditive synergy",
+      "Shapley allocation depends on frozen inventory and objective",
+      "floating point tolerance 1e-10; no historical coverage or search policy"
+    ],
+    "pairwise_mutual_information": [
+      {
+        "i": "mod2_zero",
+        "j": "mod3_zero",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod5_zero",
+        "mutual_information_bits": 2.220446049250313e-16
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.220446049250313e-16
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 8.728227030019298e-10
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.0158138774585268e-9
+      },
+      {
+        "i": "mod2_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.12684230797998164
+      },
+      {
+        "i": "mod2_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.18054650348725598
+      },
+      {
+        "i": "mod2_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.12895149653599325
+      },
+      {
+        "i": "mod2_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod2_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00021900573846433957
+      },
+      {
+        "i": "mod2_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod5_zero",
+        "mutual_information_bits": 8.115041971734627e-11
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.4045432311936565e-11
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 1.442621799796484e-9
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.7309846889190794e-9
+      },
+      {
+        "i": "mod3_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.10234872119185323
+      },
+      {
+        "i": "mod3_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.09095344411974882
+      },
+      {
+        "i": "mod3_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.03465470691334094
+      },
+      {
+        "i": "mod3_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 3.466378604155551e-7
+      },
+      {
+        "i": "mod3_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 5.7694202304503506e-8
+      },
+      {
+        "i": "mod3_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.023015903468650567
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.356225214938945e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 3.490945088557851e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.0157534813259872e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.06231687800750341
+      },
+      {
+        "i": "mod5_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.04416871478437323
+      },
+      {
+        "i": "mod5_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.0076268415557427804
+      },
+      {
+        "i": "mod5_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 7.214780328723691e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.001454050088197878
+      },
+      {
+        "i": "mod5_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.00002580182222411409
+      },
+      {
+        "i": "mod7_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 4.808611286932774e-10
+      },
+      {
+        "i": "mod7_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 4.0077940965943526e-12
+      },
+      {
+        "i": "mod7_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.04351300184798235
+      },
+      {
+        "i": "mod7_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.02849693781668594
+      },
+      {
+        "i": "mod7_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.002875957488131853
+      },
+      {
+        "i": "mod7_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 7.040552949533208e-7
+      },
+      {
+        "i": "mod7_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.0000012563575966240137
+      },
+      {
+        "i": "mod7_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 2.2779405250972218e-8
+      },
+      {
+        "i": "mod11_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 4.867436342870235e-9
+      },
+      {
+        "i": "mod11_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.02639358179605078
+      },
+      {
+        "i": "mod11_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.016058391874586464
+      },
+      {
+        "i": "mod11_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.0007682508588608972
+      },
+      {
+        "i": "mod11_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.00011394512928064593
+      },
+      {
+        "i": "mod11_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00014677059242629298
+      },
+      {
+        "i": "mod11_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000500568416620828
+      },
+      {
+        "i": "mod13_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.021820481938492398
+      },
+      {
+        "i": "mod13_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.012989187542117309
+      },
+      {
+        "i": "mod13_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.00046726221942061663
+      },
+      {
+        "i": "mod13_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 4.029119062831654e-7
+      },
+      {
+        "i": "mod13_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 2.830244378859703e-7
+      },
+      {
+        "i": "mod13_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 6.29671781160468e-7
+      },
+      {
+        "i": "omega_ge3",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.5681606843639775
+      },
+      {
+        "i": "omega_ge3",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.05322448518952538
+      },
+      {
+        "i": "omega_ge3",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.000013744976977925205
+      },
+      {
+        "i": "omega_ge3",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00026797640301956527
+      },
+      {
+        "i": "omega_ge3",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.0031185809358524885
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.3026583242883092
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.000023415860837205926
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00020653022165473267
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.002861130479691276
+      },
+      {
+        "i": "squarefree_one",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.00001031969132014865
+      },
+      {
+        "i": "squarefree_one",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00007758873663488153
+      },
+      {
+        "i": "squarefree_one",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.0012940009442423683
+      },
+      {
+        "i": "spectral_C1_gt_C2",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.015334556596614535
+      },
+      {
+        "i": "spectral_C1_gt_C2",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000015757034684149573
+      },
+      {
+        "i": "det_H_gt_0",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000056361289706430284
+      }
+    ],
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rules": [
+      {
+        "leave_one_out_bits": 0.6110731642759024,
+        "name": "mod2_zero",
+        "shapley_bits": 0.8019806497390747,
+        "singleton_bits": 1
+      },
+      {
+        "leave_one_out_bits": 0.6430009435913862,
+        "name": "mod3_zero",
+        "shapley_bits": 0.7883531295235915,
+        "singleton_bits": 0.9183025005768872
+      },
+      {
+        "leave_one_out_bits": 0.5672903449823901,
+        "name": "mod5_zero",
+        "shapley_bits": 0.653493409671633,
+        "singleton_bits": 0.7219280948873623
+      },
+      {
+        "leave_one_out_bits": 0.4858977616079505,
+        "name": "mod7_zero",
+        "shapley_bits": 0.5456650379847116,
+        "singleton_bits": 0.5916801641413827
+      },
+      {
+        "leave_one_out_bits": 0.37271362138544895,
+        "name": "mod11_zero",
+        "shapley_bits": 0.4111275005625668,
+        "singleton_bits": 0.43950000684893165
+      },
+      {
+        "leave_one_out_bits": 0.33502479514368044,
+        "name": "mod13_zero",
+        "shapley_bits": 0.36759195078489737,
+        "singleton_bits": 0.3912683821135184
+      },
+      {
+        "leave_one_out_bits": 0.15725292594744023,
+        "name": "omega_ge3",
+        "shapley_bits": 0.5471656416364642,
+        "singleton_bits": 0.9876232914975174
+      },
+      {
+        "leave_one_out_bits": 0.002551020272345994,
+        "name": "bigomega_ge3",
+        "shapley_bits": 0.4009179658297717,
+        "singleton_bits": 0.9146400423399754
+      },
+      {
+        "leave_one_out_bits": 0.5049711025898729,
+        "name": "squarefree_one",
+        "shapley_bits": 0.7301067069472823,
+        "singleton_bits": 0.9661160797598258
+      },
+      {
+        "leave_one_out_bits": 0.9769223528048805,
+        "name": "spectral_C1_gt_C2",
+        "shapley_bits": 0.9903447317160422,
+        "singleton_bits": 0.9998704709626942
+      },
+      {
+        "leave_one_out_bits": 0.5839406088879828,
+        "name": "det_H_gt_0",
+        "shapley_bits": 0.5996206910232961,
+        "singleton_bits": 0.6111650422079116
+      },
+      {
+        "leave_one_out_bits": 0.8976545516135728,
+        "name": "F3_squarefactor",
+        "shapley_bits": 0.9144082581860055,
+        "singleton_bits": 0.9294121523842814
+      }
+    ],
+    "schema": "pl5-static-entropy-v3773-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "subset_count": 4096,
+    "total_correlation_bits": 1.7207305541149518
+  },
+  "windows": {
+    "checks": {
+      "largest_conditional_mi_bits": 0.6062005914221988,
+      "smallest_conditional_mi_bits": -4.440892098500626e-16,
+      "submodularity_violations": 0
+    },
+    "domain": 100000,
+    "joint_entropy_bits": 7.750775673605337,
+    "limitations": [
+      "uniform finite domain, not empirical temporal distribution",
+      "entropy is monotone submodular, not evidence of superadditive synergy",
+      "Shapley allocation depends on frozen inventory and objective",
+      "floating point tolerance 1e-10; no historical coverage or search policy"
+    ],
+    "pairwise_mutual_information": [
+      {
+        "i": "mod2_zero",
+        "j": "mod3_zero",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod5_zero",
+        "mutual_information_bits": 2.220446049250313e-16
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.220446049250313e-16
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 8.728227030019298e-10
+      },
+      {
+        "i": "mod2_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.0158138774585268e-9
+      },
+      {
+        "i": "mod2_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.12684230797998164
+      },
+      {
+        "i": "mod2_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.18054650348725598
+      },
+      {
+        "i": "mod2_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.12895149653599325
+      },
+      {
+        "i": "mod2_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod2_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00021900573846433957
+      },
+      {
+        "i": "mod2_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod5_zero",
+        "mutual_information_bits": 8.115041971734627e-11
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.4045432311936565e-11
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 1.442621799796484e-9
+      },
+      {
+        "i": "mod3_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.7309846889190794e-9
+      },
+      {
+        "i": "mod3_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.10234872119185323
+      },
+      {
+        "i": "mod3_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.09095344411974882
+      },
+      {
+        "i": "mod3_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.03465470691334094
+      },
+      {
+        "i": "mod3_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 3.466378604155551e-7
+      },
+      {
+        "i": "mod3_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 5.7694202304503506e-8
+      },
+      {
+        "i": "mod3_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.023015903468650567
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod7_zero",
+        "mutual_information_bits": 2.356225214938945e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 3.490945088557851e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 1.0157534813259872e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.06231687800750341
+      },
+      {
+        "i": "mod5_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.04416871478437323
+      },
+      {
+        "i": "mod5_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.0076268415557427804
+      },
+      {
+        "i": "mod5_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 7.214780328723691e-9
+      },
+      {
+        "i": "mod5_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.001454050088197878
+      },
+      {
+        "i": "mod5_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.00002580182222411409
+      },
+      {
+        "i": "mod7_zero",
+        "j": "mod11_zero",
+        "mutual_information_bits": 4.808611286932774e-10
+      },
+      {
+        "i": "mod7_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 4.0077940965943526e-12
+      },
+      {
+        "i": "mod7_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.04351300184798235
+      },
+      {
+        "i": "mod7_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.02849693781668594
+      },
+      {
+        "i": "mod7_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.002875957488131853
+      },
+      {
+        "i": "mod7_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 7.040552949533208e-7
+      },
+      {
+        "i": "mod7_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.0000012563575966240137
+      },
+      {
+        "i": "mod7_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 2.2779405250972218e-8
+      },
+      {
+        "i": "mod11_zero",
+        "j": "mod13_zero",
+        "mutual_information_bits": 4.867436342870235e-9
+      },
+      {
+        "i": "mod11_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.02639358179605078
+      },
+      {
+        "i": "mod11_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.016058391874586464
+      },
+      {
+        "i": "mod11_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.0007682508588608972
+      },
+      {
+        "i": "mod11_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.00011394512928064593
+      },
+      {
+        "i": "mod11_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00014677059242629298
+      },
+      {
+        "i": "mod11_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000500568416620828
+      },
+      {
+        "i": "mod13_zero",
+        "j": "omega_ge3",
+        "mutual_information_bits": 0.021820481938492398
+      },
+      {
+        "i": "mod13_zero",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.012989187542117309
+      },
+      {
+        "i": "mod13_zero",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.00046726221942061663
+      },
+      {
+        "i": "mod13_zero",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 4.029119062831654e-7
+      },
+      {
+        "i": "mod13_zero",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 2.830244378859703e-7
+      },
+      {
+        "i": "mod13_zero",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 6.29671781160468e-7
+      },
+      {
+        "i": "omega_ge3",
+        "j": "bigomega_ge3",
+        "mutual_information_bits": 0.5681606843639775
+      },
+      {
+        "i": "omega_ge3",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.05322448518952538
+      },
+      {
+        "i": "omega_ge3",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.000013744976977925205
+      },
+      {
+        "i": "omega_ge3",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00026797640301956527
+      },
+      {
+        "i": "omega_ge3",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.0031185809358524885
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "squarefree_one",
+        "mutual_information_bits": 0.3026583242883092
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.000023415860837205926
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00020653022165473267
+      },
+      {
+        "i": "bigomega_ge3",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.002861130479691276
+      },
+      {
+        "i": "squarefree_one",
+        "j": "spectral_C1_gt_C2",
+        "mutual_information_bits": 0.00001031969132014865
+      },
+      {
+        "i": "squarefree_one",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.00007758873663488153
+      },
+      {
+        "i": "squarefree_one",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.0012940009442423683
+      },
+      {
+        "i": "spectral_C1_gt_C2",
+        "j": "det_H_gt_0",
+        "mutual_information_bits": 0.015334556596614535
+      },
+      {
+        "i": "spectral_C1_gt_C2",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000015757034684149573
+      },
+      {
+        "i": "det_H_gt_0",
+        "j": "F3_squarefactor",
+        "mutual_information_bits": 0.000056361289706430284
+      }
+    ],
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "rules": [
+      {
+        "leave_one_out_bits": 0.6110731642759024,
+        "name": "mod2_zero",
+        "shapley_bits": 0.8019806497390747,
+        "singleton_bits": 1
+      },
+      {
+        "leave_one_out_bits": 0.6430009435913862,
+        "name": "mod3_zero",
+        "shapley_bits": 0.7883531295235915,
+        "singleton_bits": 0.9183025005768872
+      },
+      {
+        "leave_one_out_bits": 0.5672903449823901,
+        "name": "mod5_zero",
+        "shapley_bits": 0.653493409671633,
+        "singleton_bits": 0.7219280948873623
+      },
+      {
+        "leave_one_out_bits": 0.4858977616079505,
+        "name": "mod7_zero",
+        "shapley_bits": 0.5456650379847116,
+        "singleton_bits": 0.5916801641413827
+      },
+      {
+        "leave_one_out_bits": 0.37271362138544895,
+        "name": "mod11_zero",
+        "shapley_bits": 0.4111275005625668,
+        "singleton_bits": 0.43950000684893165
+      },
+      {
+        "leave_one_out_bits": 0.33502479514368044,
+        "name": "mod13_zero",
+        "shapley_bits": 0.36759195078489737,
+        "singleton_bits": 0.3912683821135184
+      },
+      {
+        "leave_one_out_bits": 0.15725292594744023,
+        "name": "omega_ge3",
+        "shapley_bits": 0.5471656416364642,
+        "singleton_bits": 0.9876232914975174
+      },
+      {
+        "leave_one_out_bits": 0.002551020272345994,
+        "name": "bigomega_ge3",
+        "shapley_bits": 0.4009179658297717,
+        "singleton_bits": 0.9146400423399754
+      },
+      {
+        "leave_one_out_bits": 0.5049711025898729,
+        "name": "squarefree_one",
+        "shapley_bits": 0.7301067069472823,
+        "singleton_bits": 0.9661160797598258
+      },
+      {
+        "leave_one_out_bits": 0.9769223528048805,
+        "name": "spectral_C1_gt_C2",
+        "shapley_bits": 0.9903447317160422,
+        "singleton_bits": 0.9998704709626942
+      },
+      {
+        "leave_one_out_bits": 0.5839406088879828,
+        "name": "det_H_gt_0",
+        "shapley_bits": 0.5996206910232961,
+        "singleton_bits": 0.6111650422079116
+      },
+      {
+        "leave_one_out_bits": 0.8976545516135728,
+        "name": "F3_squarefactor",
+        "shapley_bits": 0.9144082581860055,
+        "singleton_bits": 0.9294121523842814
+      }
+    ],
+    "schema": "pl5-static-entropy-v3773-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "subset_count": 4096,
+    "total_correlation_bits": 1.7207305541149518
+  }
+}
