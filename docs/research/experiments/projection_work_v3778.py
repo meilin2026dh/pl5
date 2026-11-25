@@ -17,6 +17,11 @@ from robust_projection_v3777 import EVIDENCE
 SOURCE_HEAD = "0ce2d79df6af3be601d0c03445dd8dd9dc088728"
 
 
+def normalized_evidence_hash(raw):
+    """Normalize actual CRLF line endings; preserve literal JSON escapes."""
+    return sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+
+
 def work(occupied, s):
     """Each input atom incurs one AND, lookup, addition and assignment.
     Distinguish logical new-key assignments from existing-key updates.
@@ -101,7 +106,7 @@ def audit():
     assert len(results)==2
     return {"schema":"pl5-projection-work-v3778-1","source":"INTERNAL/AI_AUTHORED",
         "source_head":SOURCE_HEAD,"evidence_normalized_sha256":
-            sha256(raw_evidence.replace(b"\\r\\n",b"\\n")).hexdigest(),
+            normalized_evidence_hash(raw_evidence),
         "projection_ledger_sha256":projection_hash,
         "rule_mask_sha256":[digest(m) for m in raw],
         "scan_steps_per_subset":len(occupied),
@@ -118,6 +123,15 @@ def audit():
 
 
 class Tests(unittest.TestCase):
+    def test_evidence_line_endings(self):
+        lf = b'{"escaped":"\\r\\n"}\n'
+        crlf = lf.replace(b"\n", b"\r\n")
+        self.assertNotEqual(sha256(lf).hexdigest(), sha256(crlf).hexdigest())
+        self.assertEqual(normalized_evidence_hash(lf), sha256(lf).hexdigest())
+        self.assertEqual(normalized_evidence_hash(crlf), sha256(lf).hexdigest())
+        self.assertNotEqual(normalized_evidence_hash(lf),
+                            normalized_evidence_hash(lf.replace(b"\\r\\n", b"\\n")))
+
     def test_work(self):
         occupied=((0,2),(1,3),(2,4),(3,1))
         self.assertEqual(work(occupied,0),(4,1,3))
