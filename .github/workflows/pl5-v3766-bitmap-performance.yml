@@ -20,6 +20,7 @@ on:
       - 'docs/research/experiments/cached_shapley_v3781.py'
       - 'docs/research/experiments/static_exclusion_v3782.py'
       - 'docs/research/experiments/boolean_rank_v3801.py'
+      - 'docs/research/experiments/linear_quotient_v3802.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -69,3 +70,5 @@ jobs:
       - run: python docs/research/experiments/static_exclusion_v3782.py
 
       - run: python docs/research/experiments/boolean_rank_v3801.py
+
+      - run: python docs/research/experiments/linear_quotient_v3802.py
