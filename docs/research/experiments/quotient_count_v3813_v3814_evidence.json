@@ -1,0 +1,430 @@
+{
+  "schema": "pl5-quotient-count-cross-platform-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_head": "7d3c85e154a5f52458f8faec7afdc4d95c7d5586",
+  "source_commits": {
+    "uniform": "cb9c23302a19fc59278005729d9958e5a8adcfe5",
+    "nonuniform": "8517f752d9edf645c114b4eeae2724e307b506c9"
+  },
+  "specialized_run": 45804478237,
+  "application_run": 45804478255,
+  "previous_uniform_run": 45804058514,
+  "previous_uniform_application_run": 45804058648,
+  "cross_platform_reports_equal": true,
+  "windows": {
+    "job": 139855966350,
+    "test_lines": [
+      "2026-11-26T10:50:48.6429271Z Ran 4 tests in 1.170s",
+      "2026-11-26T10:50:52.7312630Z Ran 4 tests in 3.690s"
+    ]
+  },
+  "ubuntu": {
+    "job": 139855966673,
+    "test_lines": [
+      "2026-11-26T10:50:28.5943041Z Ran 4 tests in 1.840s",
+      "2026-11-26T10:50:34.2878930Z Ran 4 tests in 5.626s"
+    ]
+  },
+  "reports": [
+    {
+      "coefficient_rows": [
+        [
+          0,
+          0,
+          [
+            1
+          ],
+          1
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1
+          ],
+          15
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            1
+          ],
+          18
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          7
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          7
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            2
+          ],
+          36
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            1,
+            3
+          ],
+          8
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            2
+          ],
+          54
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            2,
+            2
+          ],
+          10
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            3
+          ],
+          28
+        ],
+        [
+          0,
+          0,
+          [
+            1,
+            4
+          ],
+          5
+        ],
+        [
+          0,
+          0,
+          [
+            2
+          ],
+          15
+        ],
+        [
+          0,
+          0,
+          [
+            2,
+            2
+          ],
+          21
+        ],
+        [
+          0,
+          0,
+          [
+            2,
+            3
+          ],
+          10
+        ],
+        [
+          0,
+          0,
+          [
+            3
+          ],
+          18
+        ],
+        [
+          0,
+          0,
+          [
+            4
+          ],
+          7
+        ],
+        [
+          0,
+          0,
+          [
+            5
+          ],
+          1
+        ],
+        [
+          0,
+          1,
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          3
+        ],
+        [
+          0,
+          1,
+          [
+            1,
+            1,
+            2
+          ],
+          6
+        ],
+        [
+          0,
+          1,
+          [
+            1,
+            1,
+            3
+          ],
+          2
+        ],
+        [
+          0,
+          1,
+          [
+            1,
+            2,
+            2
+          ],
+          5
+        ],
+        [
+          1,
+          0,
+          [
+            1,
+            1,
+            2
+          ],
+          8
+        ],
+        [
+          1,
+          0,
+          [
+            1,
+            2
+          ],
+          21
+        ],
+        [
+          1,
+          0,
+          [
+            1,
+            3
+          ],
+          12
+        ],
+        [
+          1,
+          0,
+          [
+            2,
+            2
+          ],
+          9
+        ],
+        [
+          1,
+          0,
+          [
+            3
+          ],
+          7
+        ],
+        [
+          1,
+          0,
+          [
+            4
+          ],
+          3
+        ],
+        [
+          1,
+          1,
+          [
+            1,
+            1,
+            1
+          ],
+          7
+        ],
+        [
+          1,
+          1,
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          3
+        ],
+        [
+          1,
+          1,
+          [
+            1,
+            1,
+            2
+          ],
+          10
+        ]
+      ],
+      "decimal_specialization": [
+        68800,
+        11040,
+        6240,
+        13920
+      ],
+      "full_word_oracle_cases": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "limitations": [
+        "five-symbol words with uniform finite fibers only",
+        "static structural counting, not a new filter rule",
+        "no coverage or computation-cost advantage established"
+      ],
+      "nested_patterns": 358,
+      "schema": "uniform-quotient-count-v3813-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    {
+      "limitations": [
+        "static counting only",
+        "no historical data",
+        "no measured cost advantage"
+      ],
+      "nested_patterns": 358,
+      "source": "INTERNAL/AI_AUTHORED",
+      "unequal_small": [
+        5472,
+        384,
+        1308,
+        612
+      ]
+    }
+  ],
+  "commands": [
+    "python docs/research/experiments/uniform_quotient_count_v3813.py",
+    "python docs/research/experiments/nonuniform_quotient_count_v3814.py"
+  ],
+  "scope": "Static mathematical counting certificates only; no new filter rule, historical coverage, or measured cost advantage.",
+  "repo_check": {
+    "main": "c0e38040ec5f389d6444e64b90e7adc42adfca62",
+    "pr11": {
+      "head": "b5687f5e848d1fab567fcd15d8b1eb51d9e3b651",
+      "draft": true,
+      "successful_runs": 5
+    },
+    "pr13": {
+      "head": "53425be6a80533c219f097e023209776b3330f24",
+      "draft": true,
+      "successful_runs": 10
+    },
+    "issue12": "open",
+    "known_previous_failure": "Application tests/innovation.test.ts intermittent 10-second timeout; previous PR #11/#13 records retain lineage. Current application check successful; no claim of permanent resolution."
+  }
+}
