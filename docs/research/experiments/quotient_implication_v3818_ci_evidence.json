@@ -1,0 +1,85 @@
+{
+  "schema": "pairwise-implication-ci-evidence-v1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "0db1d6120f8285cc830d73b43c5f3f08910061ac",
+  "certificate_commit": "0140780c1742f8138ea9e0b4b649b25e1803e02a",
+  "certificate_blob": "804e5d5bf876b656121f3a0a22b14331dbc2c9f4",
+  "reproduce": "python docs/research/experiments/quotient_implication_v3818.py",
+  "specialized_run": {
+    "id": 45860231825,
+    "conclusion": "success",
+    "url": "https://github.com/meilin2026dh/pl5/actions/runs/45860231825"
+  },
+  "application_run": {
+    "id": 45860231887,
+    "conclusion": "success",
+    "url": "https://github.com/meilin2026dh/pl5/actions/runs/45860231887"
+  },
+  "jobs": [
+    {
+      "id": 140049022907,
+      "os": "ubuntu-latest",
+      "python": "3.12.16",
+      "conclusion": "success",
+      "tests": 2,
+      "test_seconds": 1.255
+    },
+    {
+      "id": 140049023355,
+      "os": "windows-latest",
+      "python": "3.12.10",
+      "conclusion": "success",
+      "tests": 2,
+      "test_seconds": 1.338
+    }
+  ],
+  "identical_audit": {
+    "1": {
+      "nonempty": 0,
+      "ordered_pairs": 1,
+      "partitions": 1
+    },
+    "2": {
+      "nonempty": 0,
+      "ordered_pairs": 4,
+      "partitions": 2
+    },
+    "3": {
+      "nonempty": 1,
+      "ordered_pairs": 25,
+      "partitions": 5
+    },
+    "4": {
+      "nonempty": 7,
+      "ordered_pairs": 225,
+      "partitions": 15
+    },
+    "5": {
+      "nonempty": 36,
+      "ordered_pairs": 2704,
+      "partitions": 52
+    }
+  },
+  "ordered_pairs_total": 2959,
+  "failure_lineage": {
+    "windows_cancellations": [
+      45822187609,
+      45822852044
+    ],
+    "cap_minutes": 6,
+    "prior_source_runs_without_explicit_certificate": [
+      45852024710,
+      45852024720
+    ],
+    "prior_count_evidence_runs": [
+      45842225967,
+      45842225960
+    ]
+  },
+  "limitations": [
+    "Static pairwise implication only; not independence from a portfolio.",
+    "No new filtering rule, candidate-set compression, historical coverage or measured computation-cost advantage established.",
+    "Test times are not performance benchmarks.",
+    "Evidence archive commit itself not covered by these runs."
+  ]
+}
