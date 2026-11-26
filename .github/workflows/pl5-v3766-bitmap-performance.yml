@@ -30,6 +30,7 @@ on:
       - 'docs/research/experiments/unified_static_audit_v3809.py'
       - 'docs/research/experiments/stratified_comparator_v3810.py'
       - 'docs/research/experiments/curvature_rank_v3811.py'
+      - 'docs/research/experiments/quotient_graph_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -99,3 +100,5 @@ jobs:
       - run: python docs/research/experiments/stratified_comparator_v3810.py
 
       - run: python docs/research/experiments/curvature_rank_v3811.py
+
+      - run: python docs/research/experiments/quotient_graph_v3812.py
