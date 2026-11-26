@@ -21,6 +21,7 @@ on:
       - 'docs/research/experiments/static_exclusion_v3782.py'
       - 'docs/research/experiments/boolean_rank_v3801.py'
       - 'docs/research/experiments/linear_quotient_v3802.py'
+      - 'docs/research/experiments/partition_equivalence_v3803.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -72,3 +73,5 @@ jobs:
       - run: python docs/research/experiments/boolean_rank_v3801.py
 
       - run: python docs/research/experiments/linear_quotient_v3802.py
+
+      - run: python docs/research/experiments/partition_equivalence_v3803.py
