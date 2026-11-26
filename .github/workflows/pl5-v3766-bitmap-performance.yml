@@ -34,6 +34,7 @@ on:
       - 'docs/research/experiments/uniform_quotient_count_v3813.py'
       - 'docs/research/experiments/nonuniform_quotient_count_v3814.py'
       - 'docs/research/experiments/moment_quotient_count_v3815.py'
+      - 'docs/research/experiments/closed_quotient_count_v3816.py'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -46,7 +47,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
+    # Windows reached the five-minute job cap twice near the final certificates.
+    # Keep one runner per OS and all existing checks; allow one bounded minute.
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -112,3 +115,5 @@ jobs:
       - run: python docs/research/experiments/nonuniform_quotient_count_v3814.py
 
       - run: python docs/research/experiments/moment_quotient_count_v3815.py
+
+      - run: python docs/research/experiments/closed_quotient_count_v3816.py
