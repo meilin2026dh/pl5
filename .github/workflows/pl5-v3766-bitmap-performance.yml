@@ -37,6 +37,7 @@ on:
       - 'docs/research/experiments/closed_quotient_count_v3816.py'
       - 'docs/research/experiments/count_cost_v3817.py'
       - 'docs/research/experiments/quotient_implication_v3818.py'
+      - 'docs/research/experiments/quotient_portfolio_v3819.py'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -125,3 +126,6 @@ jobs:
 
       - name: V3.8.18 pairwise implication certificate
         run: python docs/research/experiments/quotient_implication_v3818.py
+
+      - name: V3.8.19 collective redundancy certificate
+        run: python docs/research/experiments/quotient_portfolio_v3819.py
