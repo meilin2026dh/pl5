@@ -40,6 +40,7 @@ on:
       - 'docs/research/experiments/quotient_portfolio_v3819.py'
       - 'docs/research/experiments/quotient_minimal_portfolio_v3820.js'
       - 'docs/research/experiments/quotient_shared_cost_v3821.js'
+      - 'docs/research/experiments/quotient_order_cost_v3822.js'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -141,3 +142,8 @@ jobs:
         run: |
           node --version
           python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_shared_cost_v3821.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['portfolios'],x['feasible']) for x in r['audit']]==[(1,1,1),(2,2,2),(3,8,0),(4,64,38),(5,1024,958),(6,32768,32627)]; assert [[(y['optimal'],y['singleton']) for y in x['results']] for x in r['audit']]==[[(0,0)]*6,[(0,0)]*6,[(None,None)]*6,[(0,0),(7,7),(14,14),(15,17),(14,14),(5,13)],[(0,0),(4,4),(13,13),(16,16),(11,11),(5,13)],[(0,0),(2,2),(13,13),(13,13),(10,10),(5,13)]]"
+
+      - name: V3.8.22 dynamic ordered-cover cost certificate
+        run: |
+          node --version
+          python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_order_cost_v3822.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['words'],x['states'],x['signatures'],x['positive']) for x in r['audit']]==[(1,1,1,0,0),(2,32,2,0,0),(3,243,8,1,42),(4,1024,64,7,240),(5,3125,1024,25,780),(6,7776,32768,65,1920)]; assert all([y['profile'] for y in x['results']]==['uniform','skew','zero','endpoint','mixed','setup_only'] for x in r['audit']); assert [[y['cost'] for y in x['results']] for x in r['audit']]==[[0]*6,[0]*6,[None]*6,[364,904,0,562,572,50],[1010,1422,0,1114,1334,50],[2288,2296,0,2386,2488,50]]"
