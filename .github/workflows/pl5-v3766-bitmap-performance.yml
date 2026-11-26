@@ -23,6 +23,7 @@ on:
       - 'docs/research/experiments/linear_quotient_v3802.py'
       - 'docs/research/experiments/partition_equivalence_v3803.py'
       - 'docs/research/experiments/graph_refinement_v3804.py'
+      - 'docs/research/experiments/conditional_graph_v3805.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -78,3 +79,5 @@ jobs:
       - run: python docs/research/experiments/partition_equivalence_v3803.py
 
       - run: python docs/research/experiments/graph_refinement_v3804.py
+
+      - run: python docs/research/experiments/conditional_graph_v3805.py
