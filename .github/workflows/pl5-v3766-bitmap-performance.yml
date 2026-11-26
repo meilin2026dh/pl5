@@ -26,6 +26,7 @@ on:
       - 'docs/research/experiments/conditional_graph_v3805.py'
       - 'docs/research/experiments/reciprocal_redundancy_v3806.py'
       - 'docs/research/experiments/local_return_refinement_v3807.py'
+      - 'docs/research/experiments/partition_moments_v3808.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -87,3 +88,5 @@ jobs:
       - run: python docs/research/experiments/reciprocal_redundancy_v3806.py
 
       - run: python docs/research/experiments/local_return_refinement_v3807.py
+
+      - run: python docs/research/experiments/partition_moments_v3808.py
