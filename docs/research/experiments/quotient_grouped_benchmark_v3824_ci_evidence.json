@@ -1,0 +1,1389 @@
+{
+  "schema": "pl5-v3824-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "validated_commit": "9a5684753b83ea1784916d7ccd0f8319a73ff100",
+  "specialized_run": 45906457940,
+  "application_run": 45906457957,
+  "prior_failed_run": 45899235175,
+  "reproduction": "node docs/research/experiments/quotient_grouped_benchmark_v3824.js",
+  "structural_results_equal": true,
+  "paired_trials_per_platform": 70,
+  "reports": [
+    {
+      "job_id": 140204248690,
+      "report": {
+        "arch": "x64",
+        "cpu": "AMD EPYC 9V45 96-Core Processor                ",
+        "n": 10,
+        "node": "v22.23.5",
+        "platform": "win32",
+        "rows": [
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 11864100,
+            "median_grouped_ns": 555400,
+            "median_paired_speedup": 21.361361181130718,
+            "optimum": 21400,
+            "profile": "uniform",
+            "trials": [
+              {
+                "cubic_ns": 13192200,
+                "grouped_ns": 923300,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11992700,
+                "grouped_ns": 1432500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11864100,
+                "grouped_ns": 555400,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11896700,
+                "grouped_ns": 521200,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11837900,
+                "grouped_ns": 560600,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11715100,
+                "grouped_ns": 541900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 10726600,
+                "grouped_ns": 479000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 11058700,
+            "median_grouped_ns": 488600,
+            "median_paired_speedup": 22.573946515397083,
+            "optimum": 21400,
+            "profile": "skew",
+            "trials": [
+              {
+                "cubic_ns": 10769800,
+                "grouped_ns": 480900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11068000,
+                "grouped_ns": 483600,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 10790300,
+                "grouped_ns": 476300,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11058700,
+                "grouped_ns": 496200,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11118200,
+                "grouped_ns": 488600,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11142500,
+                "grouped_ns": 493600,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 10922700,
+                "grouped_ns": 522900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 11031300,
+            "median_grouped_ns": 490700,
+            "median_paired_speedup": 22.635826370491134,
+            "optimum": 0,
+            "profile": "zero",
+            "trials": [
+              {
+                "cubic_ns": 10921700,
+                "grouped_ns": 513800,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 10997100,
+                "grouped_ns": 482600,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 10946000,
+                "grouped_ns": 492900,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11135800,
+                "grouped_ns": 480700,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11107400,
+                "grouped_ns": 490700,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 11031300,
+                "grouped_ns": 496500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 11129900,
+                "grouped_ns": 473100,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 84420,
+            "median_cubic_ns": 20255000,
+            "median_grouped_ns": 22279000,
+            "median_paired_speedup": 0.9097074384470973,
+            "optimum": 21501,
+            "profile": "endpoint",
+            "trials": [
+              {
+                "cubic_ns": 20156100,
+                "grouped_ns": 22835200,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 19823500,
+                "grouped_ns": 22124000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 20489400,
+                "grouped_ns": 22959300,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 20255000,
+                "grouped_ns": 22265400,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 20407900,
+                "grouped_ns": 22331900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 20483400,
+                "grouped_ns": 22279000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 20066800,
+                "grouped_ns": 22042900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 11880,
+            "median_cubic_ns": 15506100,
+            "median_grouped_ns": 2732300,
+            "median_paired_speedup": 5.6751088826263585,
+            "optimum": 21498,
+            "profile": "mixed",
+            "trials": [
+              {
+                "cubic_ns": 15505000,
+                "grouped_ns": 2927200,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 15506100,
+                "grouped_ns": 2732300,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 15446000,
+                "grouped_ns": 2703800,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 15486600,
+                "grouped_ns": 2690200,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 15614800,
+                "grouped_ns": 2805200,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 15535600,
+                "grouped_ns": 2707500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 15727300,
+                "grouped_ns": 2771800,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 3954,
+            "median_cubic_ns": 12268500,
+            "median_grouped_ns": 839700,
+            "median_paired_speedup": 14.409431939978564,
+            "optimum": 50,
+            "profile": "setup_only",
+            "trials": [
+              {
+                "cubic_ns": 12268500,
+                "grouped_ns": 833500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 12228600,
+                "grouped_ns": 882800,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 12261600,
+                "grouped_ns": 825400,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 12343700,
+                "grouped_ns": 914900,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 12543700,
+                "grouped_ns": 837500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 12371500,
+                "grouped_ns": 896100,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 12099600,
+                "grouped_ns": 839700,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 13228100,
+            "median_grouped_ns": 532800,
+            "median_paired_speedup": 24.58137347130762,
+            "optimum": 637,
+            "profile": "triangle_first",
+            "trials": [
+              {
+                "cubic_ns": 13781900,
+                "grouped_ns": 572700,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 13518500,
+                "grouped_ns": 531900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 13036100,
+                "grouped_ns": 568000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 13065000,
+                "grouped_ns": 531500,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 13119800,
+                "grouped_ns": 532000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 13228100,
+                "grouped_ns": 532800,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 13301300,
+                "grouped_ns": 542300,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38858,
+            "median_cubic_ns": 27958200,
+            "median_grouped_ns": 14152000,
+            "median_paired_speedup": 1.9681879568693863,
+            "optimum": 1278,
+            "profile": "fixed_0",
+            "trials": [
+              {
+                "cubic_ns": 27553100,
+                "grouped_ns": 14615300,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 28299100,
+                "grouped_ns": 14145500,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 28072300,
+                "grouped_ns": 14152000,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 27945700,
+                "grouped_ns": 13935400,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 27544200,
+                "grouped_ns": 13994700,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 27958200,
+                "grouped_ns": 14237500,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 30687900,
+                "grouped_ns": 17933800,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 40526,
+            "median_cubic_ns": 26637800,
+            "median_grouped_ns": 14283000,
+            "median_paired_speedup": 1.9112507568007684,
+            "optimum": 67,
+            "profile": "fixed_1",
+            "trials": [
+              {
+                "cubic_ns": 27464100,
+                "grouped_ns": 14369700,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 27363300,
+                "grouped_ns": 14283000,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 27646100,
+                "grouped_ns": 16595500,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26440600,
+                "grouped_ns": 13746200,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26471000,
+                "grouped_ns": 14053200,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26359200,
+                "grouped_ns": 16413600,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26637800,
+                "grouped_ns": 13784400,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38752,
+            "median_cubic_ns": 26651600,
+            "median_grouped_ns": 13350400,
+            "median_paired_speedup": 1.9997298838500555,
+            "optimum": 58,
+            "profile": "fixed_2",
+            "trials": [
+              {
+                "cubic_ns": 34350700,
+                "grouped_ns": 14842000,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 34414000,
+                "grouped_ns": 13635000,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26303500,
+                "grouped_ns": 13216900,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 27340300,
+                "grouped_ns": 16547200,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26327900,
+                "grouped_ns": 13350400,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26520400,
+                "grouped_ns": 13102900,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26651600,
+                "grouped_ns": 13327600,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "fea49f50bd55e72cc37c4535a9da66b52a3e232b"
+      }
+    },
+    {
+      "job_id": 140204248925,
+      "report": {
+        "arch": "x64",
+        "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+        "n": 10,
+        "node": "v24.22.3",
+        "platform": "linux",
+        "rows": [
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 23380179,
+            "median_grouped_ns": 910872,
+            "median_paired_speedup": 26.033659772290733,
+            "optimum": 21400,
+            "profile": "uniform",
+            "trials": [
+              {
+                "cubic_ns": 24653190,
+                "grouped_ns": 998732,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23380179,
+                "grouped_ns": 898075,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23285164,
+                "grouped_ns": 966256,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23356854,
+                "grouped_ns": 892846,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23834279,
+                "grouped_ns": 924953,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23363263,
+                "grouped_ns": 890753,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23766673,
+                "grouped_ns": 910872,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 23284903,
+            "median_grouped_ns": 900706,
+            "median_paired_speedup": 25.936186696636284,
+            "optimum": 21400,
+            "profile": "skew",
+            "trials": [
+              {
+                "cubic_ns": 23249433,
+                "grouped_ns": 883422,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23284903,
+                "grouped_ns": 900706,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23531805,
+                "grouped_ns": 870209,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 24070104,
+                "grouped_ns": 928051,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23234569,
+                "grouped_ns": 944694,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23607505,
+                "grouped_ns": 897424,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23240156,
+                "grouped_ns": 943548,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 23295234,
+            "median_grouped_ns": 956952,
+            "median_paired_speedup": 24.286496083398124,
+            "optimum": 0,
+            "profile": "zero",
+            "trials": [
+              {
+                "cubic_ns": 23226254,
+                "grouped_ns": 976808,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23385496,
+                "grouped_ns": 995416,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23315643,
+                "grouped_ns": 897374,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23388436,
+                "grouped_ns": 943252,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23241011,
+                "grouped_ns": 956952,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 23235823,
+                "grouped_ns": 876712,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 23295234,
+                "grouped_ns": 978945,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 84420,
+            "median_cubic_ns": 38150355,
+            "median_grouped_ns": 33687318,
+            "median_paired_speedup": 1.1333435782389898,
+            "optimum": 21501,
+            "profile": "endpoint",
+            "trials": [
+              {
+                "cubic_ns": 38058783,
+                "grouped_ns": 33687318,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 38178851,
+                "grouped_ns": 33516304,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 38163905,
+                "grouped_ns": 33570815,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 38202530,
+                "grouped_ns": 33707810,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 38129545,
+                "grouped_ns": 33580564,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 37990041,
+                "grouped_ns": 33705817,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 38150355,
+                "grouped_ns": 34135760,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 11880,
+            "median_cubic_ns": 31591374,
+            "median_grouped_ns": 4436304,
+            "median_paired_speedup": 7.122814171436403,
+            "optimum": 21498,
+            "profile": "mixed",
+            "trials": [
+              {
+                "cubic_ns": 31598969,
+                "grouped_ns": 4436304,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 31653464,
+                "grouped_ns": 4818558,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 31591374,
+                "grouped_ns": 4605495,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 31472581,
+                "grouped_ns": 4407797,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 31634141,
+                "grouped_ns": 4467196,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 31535092,
+                "grouped_ns": 4406351,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 31589244,
+                "grouped_ns": 4419645,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 3954,
+            "median_cubic_ns": 26780513,
+            "median_grouped_ns": 1475975,
+            "median_paired_speedup": 18.096007046189808,
+            "optimum": 50,
+            "profile": "setup_only",
+            "trials": [
+              {
+                "cubic_ns": 26709254,
+                "grouped_ns": 1475975,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26799246,
+                "grouped_ns": 1508282,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26780513,
+                "grouped_ns": 1481081,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26653672,
+                "grouped_ns": 1511121,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26856007,
+                "grouped_ns": 1470074,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 26776433,
+                "grouped_ns": 1457803,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 26917517,
+                "grouped_ns": 1472837,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "median_cubic_ns": 29169310,
+            "median_grouped_ns": 1001227,
+            "median_paired_speedup": 29.146120332033362,
+            "optimum": 637,
+            "profile": "triangle_first",
+            "trials": [
+              {
+                "cubic_ns": 29297926,
+                "grouped_ns": 1001227,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 29034135,
+                "grouped_ns": 1068839,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 29101126,
+                "grouped_ns": 1085690,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 29169310,
+                "grouped_ns": 989761,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 29087012,
+                "grouped_ns": 997972,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 29193281,
+                "grouped_ns": 993709,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 29274489,
+                "grouped_ns": 1142293,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38858,
+            "median_cubic_ns": 50132945,
+            "median_grouped_ns": 25094846,
+            "median_paired_speedup": 1.9966701413490937,
+            "optimum": 1278,
+            "profile": "fixed_0",
+            "trials": [
+              {
+                "cubic_ns": 49869665,
+                "grouped_ns": 23893203,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 52101866,
+                "grouped_ns": 38110790,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 50241695,
+                "grouped_ns": 25081060,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 50152127,
+                "grouped_ns": 25117883,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 50079950,
+                "grouped_ns": 25094846,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 50016598,
+                "grouped_ns": 25178607,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 50132945,
+                "grouped_ns": 25085087,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 40526,
+            "median_cubic_ns": 47458969,
+            "median_grouped_ns": 24560491,
+            "median_paired_speedup": 1.934939044988962,
+            "optimum": 67,
+            "profile": "fixed_1",
+            "trials": [
+              {
+                "cubic_ns": 47523053,
+                "grouped_ns": 24560491,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 47445160,
+                "grouped_ns": 24488285,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 47383722,
+                "grouped_ns": 24632079,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 48436851,
+                "grouped_ns": 24600729,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 47418536,
+                "grouped_ns": 24548327,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 47718821,
+                "grouped_ns": 24535906,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 47458969,
+                "grouped_ns": 24685211,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38752,
+            "median_cubic_ns": 47739834,
+            "median_grouped_ns": 23847718,
+            "median_paired_speedup": 2.007314318890529,
+            "optimum": 58,
+            "profile": "fixed_2",
+            "trials": [
+              {
+                "cubic_ns": 48353927,
+                "grouped_ns": 23885761,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 47739834,
+                "grouped_ns": 23782939,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 48005581,
+                "grouped_ns": 23875576,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 48429348,
+                "grouped_ns": 24265063,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 47697070,
+                "grouped_ns": 23802507,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              },
+              {
+                "cubic_ns": 47659745,
+                "grouped_ns": 23630728,
+                "order": [
+                  "cubic",
+                  "grouped"
+                ]
+              },
+              {
+                "cubic_ns": 47489017,
+                "grouped_ns": 23847718,
+                "order": [
+                  "grouped",
+                  "cubic"
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "fea49f50bd55e72cc37c4535a9da66b52a3e232b"
+      }
+    }
+  ],
+  "limitations": [
+    "Fixed ten cost profiles, n=10; descriptive within-platform timings only.",
+    "Different CPU and Node versions; no cross-machine ranking.",
+    "Endpoint profile has no reduction in cost evaluations; Windows median paired ratio below 1 retained.",
+    "No cold-start, peak-memory or end-to-end filtering performance measured.",
+    "No new filtering rules, candidate compression or historical replay coverage evaluated.",
+    "Evidence-only commit not itself validated by the cited runs."
+  ]
+}
