@@ -28,6 +28,7 @@ on:
       - 'docs/research/experiments/local_return_refinement_v3807.py'
       - 'docs/research/experiments/partition_moments_v3808.py'
       - 'docs/research/experiments/unified_static_audit_v3809.py'
+      - 'docs/research/experiments/stratified_comparator_v3810.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
   contents: read
@@ -93,3 +94,5 @@ jobs:
       - run: python docs/research/experiments/partition_moments_v3808.py
 
       - run: python docs/research/experiments/unified_static_audit_v3809.py
+
+      - run: python docs/research/experiments/stratified_comparator_v3810.py
