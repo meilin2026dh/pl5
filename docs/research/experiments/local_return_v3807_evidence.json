@@ -1,0 +1,110 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_head": "c9832cf0b4b19277accee8c9c4b4d3f6c515a388",
+  "specialized_run": 45781377159,
+  "application_run": 45781377161,
+  "ubuntu_job": 139777409627,
+  "windows_job": 139777409939,
+  "cross_platform_equal": true,
+  "results": {
+    "v3806": {
+      "count_from_patterns": 26190,
+      "domain": 100000,
+      "equality_patterns": 52,
+      "limitations": [
+        "exact equivalence on words of length at most five only",
+        "no new independent graph predicate relative to local-return control",
+        "no timing, historical coverage or production changes"
+      ],
+      "local_return_positive": 26190,
+      "mismatch": 0,
+      "positive_patterns": 28,
+      "positive_patterns_by_symbol_count": {
+        "2": 11,
+        "3": 14,
+        "4": 3
+      },
+      "reciprocal_positive": 26190,
+      "schema": "pl5-reciprocal-redundancy-v3806-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    "v3807": {
+      "baseline_rule_count": 14,
+      "domain": 100000,
+      "limitations": [
+        "conditional static partition refinement only",
+        "baseline is 12 frozen mathematical rules plus repeat and cycle, not full inventory",
+        "direct ABA is a one-predicate control, not equal marginal size or measured cost",
+        "random comparator is analytic expectation for pair distinction, not historical coverage",
+        "capped-class union is not a single capped candidate set",
+        "no historical inputs, operational selection or production changes"
+      ],
+      "original_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "result": {
+        "category_sizes": [
+          73810,
+          1710,
+          24480
+        ],
+        "direct_ABA": {
+          "capped_class_union_after": 42453,
+          "capped_class_union_before": 34666,
+          "capped_class_union_gain": 7787,
+          "newly_distinguished_unordered_pairs": 6609122,
+          "original_classes": 2634,
+          "positive_mask_size": 24480,
+          "refined_classes": 3443,
+          "remaining_indistinguishable_pairs": 16134989,
+          "split_classes": 809
+        },
+        "local_given_direct": {
+          "capped_class_union_after": 43945,
+          "capped_class_union_before": 42453,
+          "capped_class_union_gain": 1492,
+          "newly_distinguished_unordered_pairs": 518125,
+          "original_classes": 3443,
+          "positive_mask_size": 1710,
+          "refined_classes": 3760,
+          "remaining_indistinguishable_pairs": 15616864,
+          "split_classes": 317
+        },
+        "local_return": {
+          "capped_class_union_after": 42712,
+          "capped_class_union_before": 34666,
+          "capped_class_union_gain": 8046,
+          "newly_distinguished_unordered_pairs": 6643035,
+          "original_classes": 2634,
+          "positive_mask_size": 26190,
+          "refined_classes": 3447,
+          "remaining_indistinguishable_pairs": 16101076,
+          "split_classes": 813
+        },
+        "matched_size_random_pair_expectation_exact": "48851416437681/5555500"
+      },
+      "schema": "pl5-local-return-refinement-v3807-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    }
+  },
+  "derived": {
+    "overlap_pairs": 6124910,
+    "direct_given_local_pairs": 484212,
+    "joint_pairs": 7127247,
+    "local_given_direct_pairs": 518125,
+    "matched_size_random_expectation": "48851416437681/5555500",
+    "local_below_random_expectation": true
+  },
+  "decision": "Retain as experimental structural refinement only. Reciprocal edge and collapsed local return are equivalent on this domain. Local return has additional static distinction beyond direct ABA but falls below the analytic equal-size random partition expectation. No operational or historical coverage advantage established."
+}
