@@ -33,6 +33,7 @@ on:
       - 'docs/research/experiments/quotient_graph_v3812.py'
       - 'docs/research/experiments/uniform_quotient_count_v3813.py'
       - 'docs/research/experiments/nonuniform_quotient_count_v3814.py'
+      - 'docs/research/experiments/moment_quotient_count_v3815.py'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -109,3 +110,5 @@ jobs:
       - run: python docs/research/experiments/uniform_quotient_count_v3813.py
 
       - run: python docs/research/experiments/nonuniform_quotient_count_v3814.py
+
+      - run: python docs/research/experiments/moment_quotient_count_v3815.py
