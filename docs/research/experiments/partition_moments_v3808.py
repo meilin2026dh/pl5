@@ -79,8 +79,8 @@ class Tests(unittest.TestCase):
 
     def test_equal_mean_different_variance(self):
         # Same N=6 and M=3, different shared-vertex configuration.
-        a=moments((3,1,1,1),2)
-        b=moments((2,2,2),2)
+        a=moments((3,1,1,1),3)
+        b=moments((2,2,2),3)
         self.assertEqual(a[0],b[0])
         self.assertNotEqual(a[2],b[2])
 
