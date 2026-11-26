@@ -38,6 +38,7 @@ on:
       - 'docs/research/experiments/count_cost_v3817.py'
       - 'docs/research/experiments/quotient_implication_v3818.py'
       - 'docs/research/experiments/quotient_portfolio_v3819.py'
+      - 'docs/research/experiments/quotient_minimal_portfolio_v3820.js'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -129,3 +130,8 @@ jobs:
 
       - name: V3.8.19 collective redundancy certificate
         run: python docs/research/experiments/quotient_portfolio_v3819.py
+
+      - name: V3.8.20 minimum-cost portfolio certificate
+        run: |
+          node --version
+          python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_minimal_portfolio_v3820.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['portfolios'],x['valid'],x['minimal'],x['cost_profiles']) for x in r['audit']]==[(1,1,1,1,6),(2,2,2,1,6),(3,8,0,0,6),(4,64,38,16,6),(5,1024,958,110,6),(6,32768,32627,435,6)]"
