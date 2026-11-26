@@ -39,6 +39,7 @@ on:
       - 'docs/research/experiments/quotient_implication_v3818.py'
       - 'docs/research/experiments/quotient_portfolio_v3819.py'
       - 'docs/research/experiments/quotient_minimal_portfolio_v3820.js'
+      - 'docs/research/experiments/quotient_shared_cost_v3821.js'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -135,3 +136,8 @@ jobs:
         run: |
           node --version
           python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_minimal_portfolio_v3820.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['portfolios'],x['valid'],x['minimal'],x['cost_profiles']) for x in r['audit']]==[(1,1,1,1,6),(2,2,2,1,6),(3,8,0,0,6),(4,64,38,16,6),(5,1024,958,110,6),(6,32768,32627,435,6)]"
+
+      - name: V3.8.21 shared-resource cost certificate
+        run: |
+          node --version
+          python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_shared_cost_v3821.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['portfolios'],x['feasible']) for x in r['audit']]==[(1,1,1),(2,2,2),(3,8,0),(4,64,38),(5,1024,958),(6,32768,32627)]; assert [[(y['optimal'],y['singleton']) for y in x['results']] for x in r['audit']]==[[(0,0)]*6,[(0,0)]*6,[(None,None)]*6,[(0,0),(7,7),(14,14),(15,17),(14,14),(5,13)],[(0,0),(4,4),(13,13),(16,16),(11,11),(5,13)],[(0,0),(2,2),(13,13),(13,13),(10,10),(5,13)]]"
