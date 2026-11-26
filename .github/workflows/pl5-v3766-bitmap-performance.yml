@@ -36,6 +36,7 @@ on:
       - 'docs/research/experiments/moment_quotient_count_v3815.py'
       - 'docs/research/experiments/closed_quotient_count_v3816.py'
       - 'docs/research/experiments/count_cost_v3817.py'
+      - 'docs/research/experiments/quotient_implication_v3818.py'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -121,3 +122,6 @@ jobs:
 
       - name: V3.8.17 count-only benchmark and frozen histogram verification
         run: python -c "import sys,json; sys.path.insert(0,'docs/research/experiments'); from count_cost_v3817 import run; r=run(); print(json.dumps(r,sort_keys=True)); assert {k:v['histogram_sha256'] for k,v in r['results'].items()} == {'sum10':'cc6588ba417bae40a8bac15a263d743d71d4ac633140321b487166ffd24e1f65','abstract_large':'0572f69544cb09189e9b2fef9d43d1054368cc7333fc6a84c13ac8b7bb86c166'}"
+
+      - name: V3.8.18 pairwise implication certificate
+        run: python docs/research/experiments/quotient_implication_v3818.py
