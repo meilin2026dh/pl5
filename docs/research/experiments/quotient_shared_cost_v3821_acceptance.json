@@ -1,0 +1,267 @@
+{
+  "schema": "shared-resource-cost-v3821-acceptance-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "9ba753af518df796d7133615e875ea9b4426508c",
+  "source_commit": "9ac18241cfea3c76679754530b2a03ebd2c5d8af",
+  "source_blob": "3b9bdf7bc6fdea24694b76e33a1ec38adefda80a",
+  "specialized_run": 45885682740,
+  "application_run": 45885682727,
+  "jobs": [
+    {
+      "os": "ubuntu-latest",
+      "id": 140135684430,
+      "node": "24.22.3",
+      "step": 42,
+      "result": "success"
+    },
+    {
+      "os": "windows-latest",
+      "id": 140135684707,
+      "node": "22.23.5",
+      "step": 42,
+      "result": "success"
+    }
+  ],
+  "matching_report": {
+    "audit": [
+      {
+        "feasible": 1,
+        "n": 1,
+        "portfolios": 1,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "additive",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "global_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": 0,
+            "singleton": 0
+          }
+        ]
+      },
+      {
+        "feasible": 2,
+        "n": 2,
+        "portfolios": 2,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "additive",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "global_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": 0,
+            "singleton": 0
+          }
+        ]
+      },
+      {
+        "feasible": 0,
+        "n": 3,
+        "portfolios": 8,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": null,
+            "singleton": null
+          },
+          {
+            "name": "additive",
+            "optimal": null,
+            "singleton": null
+          },
+          {
+            "name": "global_setup",
+            "optimal": null,
+            "singleton": null
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": null,
+            "singleton": null
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": null,
+            "singleton": null
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": null,
+            "singleton": null
+          }
+        ]
+      },
+      {
+        "feasible": 38,
+        "n": 4,
+        "portfolios": 64,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "additive",
+            "optimal": 7,
+            "singleton": 7
+          },
+          {
+            "name": "global_setup",
+            "optimal": 14,
+            "singleton": 14
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": 15,
+            "singleton": 17
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": 14,
+            "singleton": 14
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": 5,
+            "singleton": 13
+          }
+        ]
+      },
+      {
+        "feasible": 958,
+        "n": 5,
+        "portfolios": 1024,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "additive",
+            "optimal": 4,
+            "singleton": 4
+          },
+          {
+            "name": "global_setup",
+            "optimal": 13,
+            "singleton": 13
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": 16,
+            "singleton": 16
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": 11,
+            "singleton": 11
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": 5,
+            "singleton": 13
+          }
+        ]
+      },
+      {
+        "feasible": 32627,
+        "n": 6,
+        "portfolios": 32768,
+        "results": [
+          {
+            "name": "zero",
+            "optimal": 0,
+            "singleton": 0
+          },
+          {
+            "name": "additive",
+            "optimal": 2,
+            "singleton": 2
+          },
+          {
+            "name": "global_setup",
+            "optimal": 13,
+            "singleton": 13
+          },
+          {
+            "name": "endpoint_setup",
+            "optimal": 13,
+            "singleton": 13
+          },
+          {
+            "name": "mixed_setup",
+            "optimal": 10,
+            "singleton": 10
+          },
+          {
+            "name": "forced_overlap",
+            "optimal": 5,
+            "singleton": 13
+          }
+        ]
+      }
+    ],
+    "source": "INTERNAL/AI_AUTHORED"
+  },
+  "historical_failure_runs": [
+    45822187609,
+    45822852044
+  ],
+  "prior_source_head_runs_without_explicit_invocation": [
+    45885000870,
+    45885000867
+  ],
+  "reproduce": "node docs/research/experiments/quotient_shared_cost_v3821.js",
+  "limitations": [
+    "Static union implication for elementary coarsenings; not equality of entire union.",
+    "Nonnegative shared-resource model; not measured runtime.",
+    "No candidate-set compression or historical coverage advantage established.",
+    "Archive commit itself not covered by tested runs."
+  ]
+}
