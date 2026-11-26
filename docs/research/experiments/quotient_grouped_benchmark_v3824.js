@@ -8,15 +8,13 @@ Exact results and work counts checked outside timing; no timing gate.
 The source loader removes only the frozen final CLI print invocation.
 No cold-start, peak-memory, end-to-end or cross-platform speed claim.
 */
-'use strict';
-const fs=require('node:fs');
-const path=require('node:path');
-const vm=require('node:vm');
-const crypto=require('node:crypto');
-const os=require('node:os');
-const assert=require('node:assert/strict');
+import fs from 'node:fs';
+import vm from 'node:vm';
+import crypto from 'node:crypto';
+import os from 'node:os';
+import assert from 'node:assert/strict';
 const sourceBlob='fea49f50bd55e72cc37c4535a9da66b52a3e232b';
-const raw=fs.readFileSync(path.join(__dirname,'quotient_grouped_order_v3823.js'));
+const raw=fs.readFileSync(new URL('./quotient_grouped_order_v3823.js',import.meta.url));
 // Git uses LF blobs; Windows checkout may translate CRLF.
 const source=raw.toString('utf8').replace(/\r\n/g,'\n');
 const bytes=Buffer.from(source,'utf8');
