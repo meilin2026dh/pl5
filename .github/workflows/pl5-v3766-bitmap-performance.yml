@@ -41,6 +41,7 @@ on:
       - 'docs/research/experiments/quotient_minimal_portfolio_v3820.js'
       - 'docs/research/experiments/quotient_shared_cost_v3821.js'
       - 'docs/research/experiments/quotient_order_cost_v3822.js'
+      - 'docs/research/experiments/quotient_grouped_order_v3823.js'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -147,3 +148,8 @@ jobs:
         run: |
           node --version
           python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_order_cost_v3822.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['words'],x['states'],x['signatures'],x['positive']) for x in r['audit']]==[(1,1,1,0,0),(2,32,2,0,0),(3,243,8,1,42),(4,1024,64,7,240),(5,3125,1024,25,780),(6,7776,32768,65,1920)]; assert all([y['profile'] for y in x['results']]==['uniform','skew','zero','endpoint','mixed','setup_only'] for x in r['audit']); assert [[y['cost'] for y in x['results']] for x in r['audit']]==[[0]*6,[0]*6,[None]*6,[364,904,0,562,572,50],[1010,1422,0,1114,1334,50],[2288,2296,0,2386,2488,50]]"
+
+      - name: V3.8.23 exact resource-signature pruning certificate
+        run: |
+          node --version
+          python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_grouped_order_v3823.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED'; assert [(x['n'],x['rules'],len(x['cases'])) for x in r['audit']]==[(1,0,10),(2,1,10),(3,3,10),(4,6,10),(5,10,10),(6,15,10),(8,28,10),(10,45,10)]; assert all([y['profile'] for y in x['cases']]==['uniform','skew','zero','endpoint','mixed','setup_only','triangle_first','fixed_0','fixed_1','fixed_2'] for x in r['audit']); assert [(sum(y['cubic_checks'] for y in x['cases']),sum(y['grouped_checks'] for y in x['cases'])) for x in r['audit']]==[(0,0),(0,0),(0,0),(960,630),(6600,3384),(26100,11466),(193200,63470),(844200,226310)]; assert [(y['optimum'],y['groups'],y['cubic_checks'],y['grouped_checks']) for y in r['audit'][-1]['cases']]==[(21400,1,84420,1980),(21400,1,84420,1980),(0,1,84420,1980),(21501,45,84420,84420),(21498,6,84420,11880),(50,2,84420,3954),(637,1,84420,1980),(1278,20,84420,38858),(67,21,84420,40526),(58,20,84420,38752)]"
