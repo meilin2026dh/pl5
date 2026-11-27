@@ -1,0 +1,439 @@
+{
+  "version": "V3.8.31",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_head": "84bac7a4dbabfa882c405283212f05fbc6762b55",
+  "experiment_blob": "92c23dde66a3779ee792ad4830e9f2868f7765d4",
+  "command": "node docs/research/experiments/quotient_subset_sorted_fallback_v3831.mjs",
+  "specialized_run": 45975411493,
+  "application_run": 45975411460,
+  "application_job": 140425790145,
+  "application_conclusion": "success",
+  "specialized_conclusions": {
+    "ubuntu": "success",
+    "windows": "success"
+  },
+  "audit": {
+    "exact_json_equality_excluding_platform_node_and_job_id": true,
+    "frozen_counts_verified": true,
+    "wide_profiles": 10,
+    "wide_totals": {
+      "comparisons": 4547,
+      "sets_avoided": 324,
+      "elements_avoided": 2856
+    }
+  },
+  "results": [
+    {
+      "job_id": 140425790202,
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+      "baseline_blob": "d6a5638fa51a30ef00442238e223ebb80b7e9dde",
+      "node": "v24.22.3",
+      "platform": "linux",
+      "cases": 104,
+      "tests": 9857,
+      "predicates": 7292,
+      "exhaustive": 1024,
+      "boundary": [
+        {
+          "profile": "boundary_0",
+          "mode": "mask32",
+          "retained": 4,
+          "tests": 22,
+          "predicates": 22,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_0",
+          "mode": "mask32",
+          "retained": 4,
+          "tests": 22,
+          "predicates": 22,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_1",
+          "mode": "mask32",
+          "retained": 5,
+          "tests": 22,
+          "predicates": 18,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_1",
+          "mode": "mask32",
+          "retained": 5,
+          "tests": 23,
+          "predicates": 20,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_31",
+          "mode": "mask32",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_31",
+          "mode": "mask32",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 16,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_32",
+          "mode": "mask32",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_32",
+          "mode": "mask32",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 17,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_33",
+          "mode": "fallback",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 142,
+          "sets_avoided": 8,
+          "elements_avoided": 71
+        },
+        {
+          "profile": "sparse_33",
+          "mode": "fallback",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 18,
+          "comparisons": 119,
+          "sets_avoided": 8,
+          "elements_avoided": 99
+        },
+        {
+          "profile": "boundary_64",
+          "mode": "fallback",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 266,
+          "sets_avoided": 8,
+          "elements_avoided": 133
+        },
+        {
+          "profile": "sparse_64",
+          "mode": "fallback",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 16,
+          "comparisons": 208,
+          "sets_avoided": 8,
+          "elements_avoided": 192
+        }
+      ],
+      "distributed": [
+        {
+          "profile": "distributed_33",
+          "mode": "fallback",
+          "retained": 33,
+          "tests": 528,
+          "predicates": 528,
+          "comparisons": 725,
+          "sets_avoided": 33,
+          "elements_avoided": 66
+        },
+        {
+          "profile": "distributed_empty_33",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 138,
+          "predicates": 138,
+          "comparisons": 0,
+          "sets_avoided": 37,
+          "elements_avoided": 33
+        },
+        {
+          "profile": "distributed_64",
+          "mode": "fallback",
+          "retained": 64,
+          "tests": 2016,
+          "predicates": 2016,
+          "comparisons": 2667,
+          "sets_avoided": 64,
+          "elements_avoided": 128
+        },
+        {
+          "profile": "distributed_empty_64",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 262,
+          "predicates": 262,
+          "comparisons": 0,
+          "sets_avoided": 68,
+          "elements_avoided": 64
+        }
+      ],
+      "fallback": [
+        {
+          "n": 10,
+          "profile": "nested_unique",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 170,
+          "predicates": 170,
+          "comparisons": 420,
+          "sets_avoided": 45,
+          "elements_avoided": 1035
+        },
+        {
+          "n": 10,
+          "profile": "nested_reverse_cost",
+          "mode": "fallback",
+          "retained": 45,
+          "tests": 990,
+          "predicates": 0,
+          "comparisons": 0,
+          "sets_avoided": 45,
+          "elements_avoided": 1035
+        }
+      ]
+    },
+    {
+      "job_id": 140425790671,
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+      "baseline_blob": "d6a5638fa51a30ef00442238e223ebb80b7e9dde",
+      "node": "v22.23.5",
+      "platform": "win32",
+      "cases": 104,
+      "tests": 9857,
+      "predicates": 7292,
+      "exhaustive": 1024,
+      "boundary": [
+        {
+          "profile": "boundary_0",
+          "mode": "mask32",
+          "retained": 4,
+          "tests": 22,
+          "predicates": 22,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_0",
+          "mode": "mask32",
+          "retained": 4,
+          "tests": 22,
+          "predicates": 22,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_1",
+          "mode": "mask32",
+          "retained": 5,
+          "tests": 22,
+          "predicates": 18,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_1",
+          "mode": "mask32",
+          "retained": 5,
+          "tests": 23,
+          "predicates": 20,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_31",
+          "mode": "mask32",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_31",
+          "mode": "mask32",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 16,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_32",
+          "mode": "mask32",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "sparse_32",
+          "mode": "mask32",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 17,
+          "comparisons": 0,
+          "sets_avoided": 0,
+          "elements_avoided": 0
+        },
+        {
+          "profile": "boundary_33",
+          "mode": "fallback",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 142,
+          "sets_avoided": 8,
+          "elements_avoided": 71
+        },
+        {
+          "profile": "sparse_33",
+          "mode": "fallback",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 18,
+          "comparisons": 119,
+          "sets_avoided": 8,
+          "elements_avoided": 99
+        },
+        {
+          "profile": "boundary_64",
+          "mode": "fallback",
+          "retained": 6,
+          "tests": 24,
+          "predicates": 14,
+          "comparisons": 266,
+          "sets_avoided": 8,
+          "elements_avoided": 133
+        },
+        {
+          "profile": "sparse_64",
+          "mode": "fallback",
+          "retained": 8,
+          "tests": 28,
+          "predicates": 16,
+          "comparisons": 208,
+          "sets_avoided": 8,
+          "elements_avoided": 192
+        }
+      ],
+      "distributed": [
+        {
+          "profile": "distributed_33",
+          "mode": "fallback",
+          "retained": 33,
+          "tests": 528,
+          "predicates": 528,
+          "comparisons": 725,
+          "sets_avoided": 33,
+          "elements_avoided": 66
+        },
+        {
+          "profile": "distributed_empty_33",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 138,
+          "predicates": 138,
+          "comparisons": 0,
+          "sets_avoided": 37,
+          "elements_avoided": 33
+        },
+        {
+          "profile": "distributed_64",
+          "mode": "fallback",
+          "retained": 64,
+          "tests": 2016,
+          "predicates": 2016,
+          "comparisons": 2667,
+          "sets_avoided": 64,
+          "elements_avoided": 128
+        },
+        {
+          "profile": "distributed_empty_64",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 262,
+          "predicates": 262,
+          "comparisons": 0,
+          "sets_avoided": 68,
+          "elements_avoided": 64
+        }
+      ],
+      "fallback": [
+        {
+          "n": 10,
+          "profile": "nested_unique",
+          "mode": "fallback",
+          "retained": 4,
+          "tests": 170,
+          "predicates": 170,
+          "comparisons": 420,
+          "sets_avoided": 45,
+          "elements_avoided": 1035
+        },
+        {
+          "n": 10,
+          "profile": "nested_reverse_cost",
+          "mode": "fallback",
+          "retained": 45,
+          "tests": 990,
+          "predicates": 0,
+          "comparisons": 0,
+          "sets_avoided": 45,
+          "elements_avoided": 1035
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Fixed synthetic filtering-rule combination configurations only.",
+    "Set construction and insertion counts are structural operation counts, not measurements of memory, elapsed time, or total allocation.",
+    "No additional timing batches; wide-resource adverse scan comparisons preserved. No demonstrated candidate-set compression or historical coverage improvement.",
+    "No production filtering rule or historical data changes; no external independent test."
+  ],
+  "scope": {
+    "main": "c0e38040ec5f389d6444e64b90e7adc42adfca62",
+    "pr11": "draft",
+    "pr13": "draft",
+    "issue12": "open"
+  }
+}
