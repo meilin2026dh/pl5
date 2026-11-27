@@ -1,0 +1,1533 @@
+{
+  "version": "3.8.33",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_sha": "a98245da5d504e14ad94eb5685963845c3e9db24",
+  "specialized_run": 46009711010,
+  "application_run": 46009710890,
+  "command": "node docs/research/experiments/quotient_subset_integrated_v3833.mjs",
+  "audit": "Independently parsed the exact JSON record in each job log and recomputed all paired medians, orders, positive integer timings, totals, and cross-platform deterministic fields. CI jobs and application checks passed. Ratios reference/hybrid >1 indicate lower measured hybrid cost. Five measured pairs per profile; no speed gate.",
+  "limits": [
+    "Fixed reused internal development configurations; no independent test panel.",
+    "Hosted runners, two warm pairs; timing noise and order effects possible; no cross-machine speed ranking.",
+    "Whole solve includes normalization, grouping, pruning, objective and allocation; excludes production filtering and historical data.",
+    "No change to candidate membership or historical coverage demonstrated. All adverse timings retained."
+  ],
+  "panels": [
+    {
+      "job_id": 140541806276,
+      "log_timestamp": "2026-11-27T13:47:31.1607410Z",
+      "data": {
+        "arch": "x64",
+        "cpu": "Intel(R) Xeon(R) 6975P-C",
+        "fallback_blob": "92c23dde66a3779ee792ad4830e9f2868f7765d4",
+        "measured_pairs": 5,
+        "node": "v24.22.3",
+        "platform": "linux",
+        "rows": [
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 0.6283924100730621,
+            "mode": "mask32",
+            "optimum": 21400,
+            "pairs": 1980,
+            "profile": "uniform",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 254854,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 147874
+              },
+              {
+                "hybrid_ns": 141231,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 143992
+              },
+              {
+                "hybrid_ns": 144231,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 208234
+              },
+              {
+                "hybrid_ns": 241276,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 139981
+              },
+              {
+                "hybrid_ns": 224877,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 141311
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 1.0046829002552722,
+            "mode": "mask32",
+            "optimum": 21400,
+            "pairs": 1980,
+            "profile": "skew",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 213171,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 254995
+              },
+              {
+                "hybrid_ns": 149360,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 145591
+              },
+              {
+                "hybrid_ns": 286361,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 287702
+              },
+              {
+                "hybrid_ns": 359121,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 225678
+              },
+              {
+                "hybrid_ns": 245548,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 355321
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 0.9533797577029476,
+            "mode": "mask32",
+            "optimum": 0,
+            "pairs": 1980,
+            "profile": "zero",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 262075,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 249857
+              },
+              {
+                "hybrid_ns": 227488,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 141781
+              },
+              {
+                "hybrid_ns": 153109,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 213229
+              },
+              {
+                "hybrid_ns": 165922,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 230461
+              },
+              {
+                "hybrid_ns": 250697,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 142336
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 1.0038191639580962,
+            "mode": "mask32",
+            "optimum": 21501,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "pruned_checks": 84420,
+            "subset_tests": 990,
+            "trials": [
+              {
+                "hybrid_ns": 13096702,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 15825269
+              },
+              {
+                "hybrid_ns": 12577360,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 12625395
+              },
+              {
+                "hybrid_ns": 12498646,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 12592129
+              },
+              {
+                "hybrid_ns": 12603536,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 12646363
+              },
+              {
+                "hybrid_ns": 13014740,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 12512606
+              }
+            ]
+          },
+          {
+            "grouped_checks": 11880,
+            "median_paired_ratio": 0.9717489115962656,
+            "mode": "mask32",
+            "optimum": 21498,
+            "pairs": 1980,
+            "profile": "mixed",
+            "pruned_checks": 11670,
+            "subset_tests": 393,
+            "trials": [
+              {
+                "hybrid_ns": 2370633,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 1569094
+              },
+              {
+                "hybrid_ns": 2082512,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 2376560
+              },
+              {
+                "hybrid_ns": 3824840,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 2392254
+              },
+              {
+                "hybrid_ns": 4007704,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 3894482
+              },
+              {
+                "hybrid_ns": 2367727,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 3972609
+              }
+            ]
+          },
+          {
+            "grouped_checks": 3954,
+            "median_paired_ratio": 1.0758317949148275,
+            "mode": "mask32",
+            "optimum": 50,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "pruned_checks": 3948,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 576141,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 677234
+              },
+              {
+                "hybrid_ns": 619857,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 810815
+              },
+              {
+                "hybrid_ns": 381344,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 410262
+              },
+              {
+                "hybrid_ns": 736891,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 561368
+              },
+              {
+                "hybrid_ns": 537504,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 399238
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 0.8455503302839584,
+            "mode": "mask32",
+            "optimum": 637,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 246005,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 217414
+              },
+              {
+                "hybrid_ns": 339240,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 208521
+              },
+              {
+                "hybrid_ns": 252034,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 214963
+              },
+              {
+                "hybrid_ns": 308613,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 210916
+              },
+              {
+                "hybrid_ns": 256446,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 216838
+              }
+            ]
+          },
+          {
+            "grouped_checks": 38858,
+            "median_paired_ratio": 0.9908615220180587,
+            "mode": "mask32",
+            "optimum": 1278,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "pruned_checks": 32814,
+            "subset_tests": 692,
+            "trials": [
+              {
+                "hybrid_ns": 7142400,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6977675
+              },
+              {
+                "hybrid_ns": 7108733,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 7043770
+              },
+              {
+                "hybrid_ns": 7164666,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 7058328
+              },
+              {
+                "hybrid_ns": 7043227,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 7072359
+              },
+              {
+                "hybrid_ns": 7002597,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 7080660
+              }
+            ]
+          },
+          {
+            "grouped_checks": 40526,
+            "median_paired_ratio": 1.0023975281297146,
+            "mode": "mask32",
+            "optimum": 67,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "pruned_checks": 36460,
+            "subset_tests": 696,
+            "trials": [
+              {
+                "hybrid_ns": 7846914,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 7876762
+              },
+              {
+                "hybrid_ns": 7779243,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 7852134
+              },
+              {
+                "hybrid_ns": 7941469,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 7823509
+              },
+              {
+                "hybrid_ns": 7836981,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 7768606
+              },
+              {
+                "hybrid_ns": 7825977,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 7844740
+              }
+            ]
+          },
+          {
+            "grouped_checks": 38752,
+            "median_paired_ratio": 0.992225508695366,
+            "mode": "mask32",
+            "optimum": 58,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "pruned_checks": 30934,
+            "subset_tests": 606,
+            "trials": [
+              {
+                "hybrid_ns": 6750512,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6673555
+              },
+              {
+                "hybrid_ns": 6649227,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6893406
+              },
+              {
+                "hybrid_ns": 6728929,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6676615
+              },
+              {
+                "hybrid_ns": 6800222,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6687325
+              },
+              {
+                "hybrid_ns": 6690410,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6725996
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 0.9856483871437852,
+            "mode": "fallback",
+            "optimum": 1487,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "pruned_checks": 7504,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 8440027,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 8318899
+              },
+              {
+                "hybrid_ns": 13036653,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 10097778
+              },
+              {
+                "hybrid_ns": 8279619,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 8252695
+              },
+              {
+                "hybrid_ns": 8194925,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 8209098
+              },
+              {
+                "hybrid_ns": 8259445,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 8134842
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 1.0004902758271585,
+            "mode": "fallback",
+            "optimum": 23173,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "pruned_checks": 84420,
+            "subset_tests": 990,
+            "trials": [
+              {
+                "hybrid_ns": 111582087,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 111636793
+              },
+              {
+                "hybrid_ns": 112001372,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 111601495
+              },
+              {
+                "hybrid_ns": 111619531,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 111779673
+              },
+              {
+                "hybrid_ns": 111842038,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 111812311
+              },
+              {
+                "hybrid_ns": 111514198,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 114540478
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 1.0334906762630276,
+            "mode": "mask32",
+            "optimum": 378,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 213397,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 237282
+              },
+              {
+                "hybrid_ns": 213970,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 221136
+              },
+              {
+                "hybrid_ns": 215372,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 211820
+              },
+              {
+                "hybrid_ns": 207670,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 303110
+              },
+              {
+                "hybrid_ns": 208759,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 208058
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "warm_pairs": 2
+      },
+      "summary": {
+        "faster_pairs": 30,
+        "slower_pairs": 35,
+        "tied_pairs": 0,
+        "faster_profiles": 6,
+        "slower_profiles": 7,
+        "tied_profiles": 0,
+        "median_ratio": 0.992225508695366,
+        "min_ratio": 0.6283924100730621,
+        "max_ratio": 1.0758317949148275,
+        "ratios": [
+          {
+            "profile": "uniform",
+            "ratio": 0.6283924100730621
+          },
+          {
+            "profile": "skew",
+            "ratio": 1.0046829002552722
+          },
+          {
+            "profile": "zero",
+            "ratio": 0.9533797577029476
+          },
+          {
+            "profile": "endpoint",
+            "ratio": 1.0038191639580962
+          },
+          {
+            "profile": "mixed",
+            "ratio": 0.9717489115962656
+          },
+          {
+            "profile": "setup_only",
+            "ratio": 1.0758317949148275
+          },
+          {
+            "profile": "triangle_first",
+            "ratio": 0.8455503302839584
+          },
+          {
+            "profile": "fixed_0",
+            "ratio": 0.9908615220180587
+          },
+          {
+            "profile": "fixed_1",
+            "ratio": 1.0023975281297146
+          },
+          {
+            "profile": "fixed_2",
+            "ratio": 0.992225508695366
+          },
+          {
+            "profile": "nested_unique",
+            "ratio": 0.9856483871437852
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "ratio": 1.0004902758271585
+          },
+          {
+            "profile": "forbidden_three",
+            "ratio": 1.0334906762630276
+          }
+        ]
+      }
+    },
+    {
+      "job_id": 140541806807,
+      "log_timestamp": "2026-11-27T13:48:14.0284495Z",
+      "data": {
+        "arch": "x64",
+        "cpu": "AMD EPYC 9V45 96-Core Processor                ",
+        "fallback_blob": "92c23dde66a3779ee792ad4830e9f2868f7765d4",
+        "measured_pairs": 5,
+        "node": "v22.23.5",
+        "platform": "win32",
+        "rows": [
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 1.5110913930789707,
+            "mode": "mask32",
+            "optimum": 21400,
+            "pairs": 1980,
+            "profile": "uniform",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 99100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 178900
+              },
+              {
+                "hybrid_ns": 98300,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 99200
+              },
+              {
+                "hybrid_ns": 100100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 176100
+              },
+              {
+                "hybrid_ns": 114000,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 99000
+              },
+              {
+                "hybrid_ns": 112700,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 170300
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 1.3105639396346307,
+            "mode": "mask32",
+            "optimum": 21400,
+            "pairs": 1980,
+            "profile": "skew",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 103400,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 232300
+              },
+              {
+                "hybrid_ns": 205200,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 104800
+              },
+              {
+                "hybrid_ns": 351500,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 226300
+              },
+              {
+                "hybrid_ns": 125900,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 165000
+              },
+              {
+                "hybrid_ns": 121900,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 194400
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 0.9898819561551433,
+            "mode": "mask32",
+            "optimum": 0,
+            "pairs": 1980,
+            "profile": "zero",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 118600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 117400
+              },
+              {
+                "hybrid_ns": 186900,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 119700
+              },
+              {
+                "hybrid_ns": 125200,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 120100
+              },
+              {
+                "hybrid_ns": 129800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 272200
+              },
+              {
+                "hybrid_ns": 123300,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 143800
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 0.9964490642477262,
+            "mode": "mask32",
+            "optimum": 21501,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "pruned_checks": 84420,
+            "subset_tests": 990,
+            "trials": [
+              {
+                "hybrid_ns": 12138700,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 12541100
+              },
+              {
+                "hybrid_ns": 12391100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 12347100
+              },
+              {
+                "hybrid_ns": 12858800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 12319500
+              },
+              {
+                "hybrid_ns": 11962700,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 13766400
+              },
+              {
+                "hybrid_ns": 11955500,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 11875200
+              }
+            ]
+          },
+          {
+            "grouped_checks": 11880,
+            "median_paired_ratio": 0.9941377625793845,
+            "mode": "mask32",
+            "optimum": 21498,
+            "pairs": 1980,
+            "profile": "mixed",
+            "pruned_checks": 11670,
+            "subset_tests": 393,
+            "trials": [
+              {
+                "hybrid_ns": 1228200,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 1221000
+              },
+              {
+                "hybrid_ns": 1158800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 1195400
+              },
+              {
+                "hybrid_ns": 1196000,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 1300600
+              },
+              {
+                "hybrid_ns": 1208800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 1157300
+              },
+              {
+                "hybrid_ns": 1211000,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 1181100
+              }
+            ]
+          },
+          {
+            "grouped_checks": 3954,
+            "median_paired_ratio": 0.928755641521599,
+            "mode": "mask32",
+            "optimum": 50,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "pruned_checks": 3948,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 357600,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 375500
+              },
+              {
+                "hybrid_ns": 364500,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 287700
+              },
+              {
+                "hybrid_ns": 310200,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 288100
+              },
+              {
+                "hybrid_ns": 341800,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 284300
+              },
+              {
+                "hybrid_ns": 283500,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 284500
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 0.7371218315617334,
+            "mode": "mask32",
+            "optimum": 637,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 179700,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 178900
+              },
+              {
+                "hybrid_ns": 285400,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 182800
+              },
+              {
+                "hybrid_ns": 248500,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 182200
+              },
+              {
+                "hybrid_ns": 200800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 182200
+              },
+              {
+                "hybrid_ns": 244600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 180300
+              }
+            ]
+          },
+          {
+            "grouped_checks": 38858,
+            "median_paired_ratio": 1.0032210506073522,
+            "mode": "mask32",
+            "optimum": 1278,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "pruned_checks": 32814,
+            "subset_tests": 692,
+            "trials": [
+              {
+                "hybrid_ns": 6240200,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6260300
+              },
+              {
+                "hybrid_ns": 6261600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6163500
+              },
+              {
+                "hybrid_ns": 6239300,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6332700
+              },
+              {
+                "hybrid_ns": 6256400,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6655600
+              },
+              {
+                "hybrid_ns": 6312600,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6299900
+              }
+            ]
+          },
+          {
+            "grouped_checks": 40526,
+            "median_paired_ratio": 0.9892506008302382,
+            "mode": "mask32",
+            "optimum": 67,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "pruned_checks": 36460,
+            "subset_tests": 696,
+            "trials": [
+              {
+                "hybrid_ns": 7065600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6886100
+              },
+              {
+                "hybrid_ns": 7134400,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 7013900
+              },
+              {
+                "hybrid_ns": 6872200,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6925600
+              },
+              {
+                "hybrid_ns": 6735800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6880500
+              },
+              {
+                "hybrid_ns": 6865500,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6791700
+              }
+            ]
+          },
+          {
+            "grouped_checks": 38752,
+            "median_paired_ratio": 1.006874597852958,
+            "mode": "mask32",
+            "optimum": 58,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "pruned_checks": 30934,
+            "subset_tests": 606,
+            "trials": [
+              {
+                "hybrid_ns": 5953200,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 5986100
+              },
+              {
+                "hybrid_ns": 5892900,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 5989600
+              },
+              {
+                "hybrid_ns": 5962200,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 5880800
+              },
+              {
+                "hybrid_ns": 5905800,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 5946400
+              },
+              {
+                "hybrid_ns": 5948300,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 5997200
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 0.9811339447463768,
+            "mode": "fallback",
+            "optimum": 1487,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "pruned_checks": 7504,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 7088100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6909800
+              },
+              {
+                "hybrid_ns": 7065600,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6932300
+              },
+              {
+                "hybrid_ns": 7017400,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6851200
+              },
+              {
+                "hybrid_ns": 6895000,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 6842800
+              },
+              {
+                "hybrid_ns": 6930600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 6938000
+              }
+            ]
+          },
+          {
+            "grouped_checks": 84420,
+            "median_paired_ratio": 1.010710050472877,
+            "mode": "fallback",
+            "optimum": 23173,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "pruned_checks": 84420,
+            "subset_tests": 990,
+            "trials": [
+              {
+                "hybrid_ns": 102035000,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 103127800
+              },
+              {
+                "hybrid_ns": 103853100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 105724900
+              },
+              {
+                "hybrid_ns": 105563500,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 101464900
+              },
+              {
+                "hybrid_ns": 100829600,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 101339100
+              },
+              {
+                "hybrid_ns": 100612200,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 105332900
+              }
+            ]
+          },
+          {
+            "grouped_checks": 1980,
+            "median_paired_ratio": 1.002988047808765,
+            "mode": "mask32",
+            "optimum": 378,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "pruned_checks": 1980,
+            "subset_tests": 170,
+            "trials": [
+              {
+                "hybrid_ns": 202100,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 202600
+              },
+              {
+                "hybrid_ns": 200800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 201400
+              },
+              {
+                "hybrid_ns": 351200,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 576100
+              },
+              {
+                "hybrid_ns": 218800,
+                "order": [
+                  "hybrid",
+                  "reference"
+                ],
+                "reference_ns": 214300
+              },
+              {
+                "hybrid_ns": 203500,
+                "order": [
+                  "reference",
+                  "hybrid"
+                ],
+                "reference_ns": 209300
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "warm_pairs": 2
+      },
+      "summary": {
+        "faster_pairs": 33,
+        "slower_pairs": 32,
+        "tied_pairs": 0,
+        "faster_profiles": 6,
+        "slower_profiles": 7,
+        "tied_profiles": 0,
+        "median_ratio": 0.9964490642477262,
+        "min_ratio": 0.7371218315617334,
+        "max_ratio": 1.5110913930789707,
+        "ratios": [
+          {
+            "profile": "uniform",
+            "ratio": 1.5110913930789707
+          },
+          {
+            "profile": "skew",
+            "ratio": 1.3105639396346307
+          },
+          {
+            "profile": "zero",
+            "ratio": 0.9898819561551433
+          },
+          {
+            "profile": "endpoint",
+            "ratio": 0.9964490642477262
+          },
+          {
+            "profile": "mixed",
+            "ratio": 0.9941377625793845
+          },
+          {
+            "profile": "setup_only",
+            "ratio": 0.928755641521599
+          },
+          {
+            "profile": "triangle_first",
+            "ratio": 0.7371218315617334
+          },
+          {
+            "profile": "fixed_0",
+            "ratio": 1.0032210506073522
+          },
+          {
+            "profile": "fixed_1",
+            "ratio": 0.9892506008302382
+          },
+          {
+            "profile": "fixed_2",
+            "ratio": 1.006874597852958
+          },
+          {
+            "profile": "nested_unique",
+            "ratio": 0.9811339447463768
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "ratio": 1.010710050472877
+          },
+          {
+            "profile": "forbidden_three",
+            "ratio": 1.002988047808765
+          }
+        ]
+      }
+    }
+  ]
+}
