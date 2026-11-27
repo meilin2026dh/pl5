@@ -1,0 +1,1644 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "6e656f7fd8f130d246d167eff29d47aa8612c19b",
+  "workflow_run": 45960086912,
+  "application_run": 45960086910,
+  "scope": "fixed developer configurations, preprocessing only; no general acceleration claim; all timings including negative results retained",
+  "replay": "node docs/research/experiments/quotient_subset_mask_v3830.mjs",
+  "platforms": [
+    {
+      "job_id": 140375597872,
+      "data": {
+        "arch": "x64",
+        "batch_size": 100,
+        "boundary": [
+          {
+            "mode": "mask32",
+            "profile": "boundary_0",
+            "retained": 4,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_0",
+            "retained": 4,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_1",
+            "retained": 5,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_1",
+            "retained": 5,
+            "tests": 23
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_31",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_31",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_32",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_32",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "fallback",
+            "profile": "boundary_33",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "fallback",
+            "profile": "sparse_33",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "fallback",
+            "profile": "boundary_64",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "fallback",
+            "profile": "sparse_64",
+            "retained": 8,
+            "tests": 28
+          }
+        ],
+        "cases": 104,
+        "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+        "exhaustive": 1024,
+        "n": 10,
+        "node": "v24.22.3",
+        "platform": "linux",
+        "predicates": 7292,
+        "rows": [
+          {
+            "median_paired_ratio": 0.881296547019201,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "uniform",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 1087325,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1071382
+              },
+              {
+                "masked_ns": 1417935,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1331277
+              },
+              {
+                "masked_ns": 1438919,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1230813
+              },
+              {
+                "masked_ns": 1424769,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1255644
+              },
+              {
+                "masked_ns": 1571591,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1262405
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4534515159937005,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "skew",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 641635,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 953832
+              },
+              {
+                "masked_ns": 722337,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 923067
+              },
+              {
+                "masked_ns": 604488,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 878594
+              },
+              {
+                "masked_ns": 590666,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 858910
+              },
+              {
+                "masked_ns": 684435,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 867245
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.3693818777211906,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "zero",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 417858,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 684645
+              },
+              {
+                "masked_ns": 512672,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 685128
+              },
+              {
+                "masked_ns": 405409,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 670257
+              },
+              {
+                "masked_ns": 514251,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 704206
+              },
+              {
+                "masked_ns": 500684,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 593565
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.7225551114452318,
+            "mode": "mask32",
+            "predicates": 990,
+            "profile": "endpoint",
+            "retained": 45,
+            "tests": 990,
+            "trials": [
+              {
+                "masked_ns": 1687557,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2954451
+              },
+              {
+                "masked_ns": 1571480,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2740697
+              },
+              {
+                "masked_ns": 1703494,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2792691
+              },
+              {
+                "masked_ns": 1578937,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2719806
+              },
+              {
+                "masked_ns": 1736805,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2839386
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.3447714467805252,
+            "mode": "mask32",
+            "predicates": 325,
+            "profile": "mixed",
+            "retained": 16,
+            "tests": 393,
+            "trials": [
+              {
+                "masked_ns": 1169221,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1641557
+              },
+              {
+                "masked_ns": 1896071,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1780607
+              },
+              {
+                "masked_ns": 1262171,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1784988
+              },
+              {
+                "masked_ns": 1266824,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1658667
+              },
+              {
+                "masked_ns": 1179944,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1586755
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.362818163709129,
+            "mode": "mask32",
+            "predicates": 168,
+            "profile": "setup_only",
+            "retained": 5,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 597727,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 787052
+              },
+              {
+                "masked_ns": 517091,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 784241
+              },
+              {
+                "masked_ns": 592623,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 780789
+              },
+              {
+                "masked_ns": 547498,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 785991
+              },
+              {
+                "masked_ns": 607431,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 827818
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4505043905268926,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "triangle_first",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 682606,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 990123
+              },
+              {
+                "masked_ns": 800319,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1022528
+              },
+              {
+                "masked_ns": 683220,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1012403
+              },
+              {
+                "masked_ns": 768656,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1049131
+              },
+              {
+                "masked_ns": 666762,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 979970
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4509281192333967,
+            "mode": "mask32",
+            "predicates": 548,
+            "profile": "fixed_0",
+            "retained": 31,
+            "tests": 692,
+            "trials": [
+              {
+                "masked_ns": 2289703,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3426692
+              },
+              {
+                "masked_ns": 1648703,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2806510
+              },
+              {
+                "masked_ns": 1807216,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2487195
+              },
+              {
+                "masked_ns": 1683535,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2416805
+              },
+              {
+                "masked_ns": 1665842,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2417017
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.392247277420542,
+            "mode": "mask32",
+            "predicates": 505,
+            "profile": "fixed_1",
+            "retained": 29,
+            "tests": 696,
+            "trials": [
+              {
+                "masked_ns": 1511062,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2281310
+              },
+              {
+                "masked_ns": 1629094,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2247527
+              },
+              {
+                "masked_ns": 1608493,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2239420
+              },
+              {
+                "masked_ns": 1649571,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2297858
+              },
+              {
+                "masked_ns": 1692742,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2298371
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4106005375750212,
+            "mode": "mask32",
+            "predicates": 481,
+            "profile": "fixed_2",
+            "retained": 27,
+            "tests": 606,
+            "trials": [
+              {
+                "masked_ns": 1691204,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2435802
+              },
+              {
+                "masked_ns": 1788509,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2437109
+              },
+              {
+                "masked_ns": 1792494,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2528493
+              },
+              {
+                "masked_ns": 1782903,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2465556
+              },
+              {
+                "masked_ns": 1637961,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2559392
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 0.9000212531074478,
+            "mode": "fallback",
+            "predicates": 170,
+            "profile": "nested_unique",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 8425110,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 7508130
+              },
+              {
+                "masked_ns": 8088229,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 7279578
+              },
+              {
+                "masked_ns": 8330450,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 7807084
+              },
+              {
+                "masked_ns": 8180549,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 7717998
+              },
+              {
+                "masked_ns": 8294882,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 7392822
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 0.882761759326883,
+            "mode": "fallback",
+            "predicates": 0,
+            "profile": "nested_reverse_cost",
+            "retained": 45,
+            "tests": 990,
+            "trials": [
+              {
+                "masked_ns": 8679427,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 7414570
+              },
+              {
+                "masked_ns": 8125352,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 7546521
+              },
+              {
+                "masked_ns": 8283850,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 7312666
+              },
+              {
+                "masked_ns": 8145512,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 7786345
+              },
+              {
+                "masked_ns": 8259517,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 7269026
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.2222514805227946,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "forbidden_three",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 690964,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1084722
+              },
+              {
+                "masked_ns": 688521,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 998781
+              },
+              {
+                "masked_ns": 736733,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 900473
+              },
+              {
+                "masked_ns": 819440,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 907297
+              },
+              {
+                "masked_ns": 1115220,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1343838
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+        "tests": 9857
+      }
+    },
+    {
+      "job_id": 140375598231,
+      "data": {
+        "arch": "x64",
+        "batch_size": 100,
+        "boundary": [
+          {
+            "mode": "mask32",
+            "profile": "boundary_0",
+            "retained": 4,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_0",
+            "retained": 4,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_1",
+            "retained": 5,
+            "tests": 22
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_1",
+            "retained": 5,
+            "tests": 23
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_31",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_31",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "mask32",
+            "profile": "boundary_32",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "mask32",
+            "profile": "sparse_32",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "fallback",
+            "profile": "boundary_33",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "fallback",
+            "profile": "sparse_33",
+            "retained": 8,
+            "tests": 28
+          },
+          {
+            "mode": "fallback",
+            "profile": "boundary_64",
+            "retained": 6,
+            "tests": 24
+          },
+          {
+            "mode": "fallback",
+            "profile": "sparse_64",
+            "retained": 8,
+            "tests": 28
+          }
+        ],
+        "cases": 104,
+        "cpu": "AMD EPYC 7763 64-Core Processor                ",
+        "exhaustive": 1024,
+        "n": 10,
+        "node": "v22.23.5",
+        "platform": "win32",
+        "predicates": 7292,
+        "rows": [
+          {
+            "median_paired_ratio": 1.2126295017266897,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "uniform",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 668400,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 791000
+              },
+              {
+                "masked_ns": 467800,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1043100
+              },
+              {
+                "masked_ns": 2737200,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1419000
+              },
+              {
+                "masked_ns": 3243200,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3932800
+              },
+              {
+                "masked_ns": 2407200,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3297200
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4689282058780524,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "skew",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 689100,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 982300
+              },
+              {
+                "masked_ns": 907000,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1552600
+              },
+              {
+                "masked_ns": 683900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1004600
+              },
+              {
+                "masked_ns": 871300,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 938300
+              },
+              {
+                "masked_ns": 689300,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1018200
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.6396697902722,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "zero",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 446300,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 741300
+              },
+              {
+                "masked_ns": 448200,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 734900
+              },
+              {
+                "masked_ns": 487800,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 686600
+              },
+              {
+                "masked_ns": 560700,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 750500
+              },
+              {
+                "masked_ns": 443500,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 741900
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.8122945961963257,
+            "mode": "mask32",
+            "predicates": 990,
+            "profile": "endpoint",
+            "retained": 45,
+            "tests": 990,
+            "trials": [
+              {
+                "masked_ns": 1856100,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3363800
+              },
+              {
+                "masked_ns": 1977000,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3443200
+              },
+              {
+                "masked_ns": 1843100,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3581600
+              },
+              {
+                "masked_ns": 1869100,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3880200
+              },
+              {
+                "masked_ns": 1956600,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3519400
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.469004290575529,
+            "mode": "mask32",
+            "predicates": 325,
+            "profile": "mixed",
+            "retained": 16,
+            "tests": 393,
+            "trials": [
+              {
+                "masked_ns": 1421900,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1846900
+              },
+              {
+                "masked_ns": 1390100,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 2014800
+              },
+              {
+                "masked_ns": 1398800,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2058400
+              },
+              {
+                "masked_ns": 1351800,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1985800
+              },
+              {
+                "masked_ns": 1344600,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 2035700
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4344724618447247,
+            "mode": "mask32",
+            "predicates": 168,
+            "profile": "setup_only",
+            "retained": 5,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 602800,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 864700
+              },
+              {
+                "masked_ns": 677200,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 933900
+              },
+              {
+                "masked_ns": 557300,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 892100
+              },
+              {
+                "masked_ns": 863300,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 843100
+              },
+              {
+                "masked_ns": 557000,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 976400
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.294912728820775,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "triangle_first",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 871400,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1070200
+              },
+              {
+                "masked_ns": 742900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1545500
+              },
+              {
+                "masked_ns": 939600,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1216700
+              },
+              {
+                "masked_ns": 860000,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1099300
+              },
+              {
+                "masked_ns": 841900,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1105200
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.7885317029878711,
+            "mode": "mask32",
+            "predicates": 548,
+            "profile": "fixed_0",
+            "retained": 31,
+            "tests": 692,
+            "trials": [
+              {
+                "masked_ns": 2156200,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3646900
+              },
+              {
+                "masked_ns": 2285900,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3559600
+              },
+              {
+                "masked_ns": 2153200,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 4523400
+              },
+              {
+                "masked_ns": 2198300,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 4120600
+              },
+              {
+                "masked_ns": 2028200,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3627500
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.6330237779365242,
+            "mode": "mask32",
+            "predicates": 505,
+            "profile": "fixed_1",
+            "retained": 29,
+            "tests": 696,
+            "trials": [
+              {
+                "masked_ns": 2141100,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3239400
+              },
+              {
+                "masked_ns": 1959800,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3200400
+              },
+              {
+                "masked_ns": 1983700,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3396600
+              },
+              {
+                "masked_ns": 2115600,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3254200
+              },
+              {
+                "masked_ns": 1963900,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3396200
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4862196434420476,
+            "mode": "mask32",
+            "predicates": 481,
+            "profile": "fixed_2",
+            "retained": 27,
+            "tests": 606,
+            "trials": [
+              {
+                "masked_ns": 2107900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3167700
+              },
+              {
+                "masked_ns": 2139300,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3126600
+              },
+              {
+                "masked_ns": 2102400,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3135800
+              },
+              {
+                "masked_ns": 2142000,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 3138700
+              },
+              {
+                "masked_ns": 2137100,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 3176200
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 0.915282761555648,
+            "mode": "fallback",
+            "predicates": 170,
+            "profile": "nested_unique",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 10166000,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 9324600
+              },
+              {
+                "masked_ns": 10364400,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 9301900
+              },
+              {
+                "masked_ns": 10339100,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 9463200
+              },
+              {
+                "masked_ns": 10184300,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 9425100
+              },
+              {
+                "masked_ns": 10364700,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 9396600
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 0.9147908572970993,
+            "mode": "fallback",
+            "predicates": 0,
+            "profile": "nested_reverse_cost",
+            "retained": 45,
+            "tests": 990,
+            "trials": [
+              {
+                "masked_ns": 11499500,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 9561400
+              },
+              {
+                "masked_ns": 10788400,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 9580200
+              },
+              {
+                "masked_ns": 10373300,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 9489400
+              },
+              {
+                "masked_ns": 10259800,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 9433800
+              },
+              {
+                "masked_ns": 10283900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 9750800
+              }
+            ]
+          },
+          {
+            "median_paired_ratio": 1.4315669081204727,
+            "mode": "mask32",
+            "predicates": 170,
+            "profile": "forbidden_three",
+            "retained": 4,
+            "tests": 170,
+            "trials": [
+              {
+                "masked_ns": 754000,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1245300
+              },
+              {
+                "masked_ns": 786900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1126500
+              },
+              {
+                "masked_ns": 753500,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1040200
+              },
+              {
+                "masked_ns": 909900,
+                "order": [
+                  "masked",
+                  "reference"
+                ],
+                "reference_ns": 1000500
+              },
+              {
+                "masked_ns": 751500,
+                "order": [
+                  "reference",
+                  "masked"
+                ],
+                "reference_ns": 1192100
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+        "tests": 9857
+      }
+    }
+  ],
+  "summary": [
+    {
+      "job_id": 140375597872,
+      "platform": "linux",
+      "improved": 10,
+      "not_improved": 3,
+      "rows": [
+        {
+          "profile": "uniform",
+          "mode": "mask32",
+          "median": 0.881296547019201
+        },
+        {
+          "profile": "skew",
+          "mode": "mask32",
+          "median": 1.4534515159937005
+        },
+        {
+          "profile": "zero",
+          "mode": "mask32",
+          "median": 1.3693818777211906
+        },
+        {
+          "profile": "endpoint",
+          "mode": "mask32",
+          "median": 1.7225551114452318
+        },
+        {
+          "profile": "mixed",
+          "mode": "mask32",
+          "median": 1.3447714467805252
+        },
+        {
+          "profile": "setup_only",
+          "mode": "mask32",
+          "median": 1.362818163709129
+        },
+        {
+          "profile": "triangle_first",
+          "mode": "mask32",
+          "median": 1.4505043905268926
+        },
+        {
+          "profile": "fixed_0",
+          "mode": "mask32",
+          "median": 1.4509281192333967
+        },
+        {
+          "profile": "fixed_1",
+          "mode": "mask32",
+          "median": 1.392247277420542
+        },
+        {
+          "profile": "fixed_2",
+          "mode": "mask32",
+          "median": 1.4106005375750212
+        },
+        {
+          "profile": "nested_unique",
+          "mode": "fallback",
+          "median": 0.9000212531074478
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "mode": "fallback",
+          "median": 0.882761759326883
+        },
+        {
+          "profile": "forbidden_three",
+          "mode": "mask32",
+          "median": 1.2222514805227946
+        }
+      ]
+    },
+    {
+      "job_id": 140375598231,
+      "platform": "win32",
+      "improved": 11,
+      "not_improved": 2,
+      "rows": [
+        {
+          "profile": "uniform",
+          "mode": "mask32",
+          "median": 1.2126295017266897
+        },
+        {
+          "profile": "skew",
+          "mode": "mask32",
+          "median": 1.4689282058780524
+        },
+        {
+          "profile": "zero",
+          "mode": "mask32",
+          "median": 1.6396697902722
+        },
+        {
+          "profile": "endpoint",
+          "mode": "mask32",
+          "median": 1.8122945961963257
+        },
+        {
+          "profile": "mixed",
+          "mode": "mask32",
+          "median": 1.469004290575529
+        },
+        {
+          "profile": "setup_only",
+          "mode": "mask32",
+          "median": 1.4344724618447247
+        },
+        {
+          "profile": "triangle_first",
+          "mode": "mask32",
+          "median": 1.294912728820775
+        },
+        {
+          "profile": "fixed_0",
+          "mode": "mask32",
+          "median": 1.7885317029878711
+        },
+        {
+          "profile": "fixed_1",
+          "mode": "mask32",
+          "median": 1.6330237779365242
+        },
+        {
+          "profile": "fixed_2",
+          "mode": "mask32",
+          "median": 1.4862196434420476
+        },
+        {
+          "profile": "nested_unique",
+          "mode": "fallback",
+          "median": 0.915282761555648
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "mode": "fallback",
+          "median": 0.9147908572970993
+        },
+        {
+          "profile": "forbidden_three",
+          "mode": "mask32",
+          "median": 1.4315669081204727
+        }
+      ]
+    }
+  ]
+}
