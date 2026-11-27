@@ -56,6 +56,7 @@ on:
       - 'docs/research/experiments/quotient_cost_lower_bound_benchmark_v3835.mjs'
       - 'docs/research/experiments/quotient_cost_structural_gate_v3836.mjs'
       - 'docs/research/experiments/quotient_cost_structural_gate_benchmark_v3837.mjs'
+      - 'docs/research/experiments/quotient_pair_symmetry_v3838.mjs'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -222,3 +223,4 @@ jobs:
       - name: V3.8.36 structural gate and V3.8.37 paired combination cost audit
         run: |
           node docs/research/experiments/quotient_cost_structural_gate_benchmark_v3837.mjs
+          node docs/research/experiments/quotient_pair_symmetry_v3838.mjs
