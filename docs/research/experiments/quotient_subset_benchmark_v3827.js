@@ -5,8 +5,8 @@ pruned path also includes all subset tests. Input generation/verification
 are outside timing. Fixed 2 warmups and 5 alternating-order pairs; no speed gate.
 Reference: V3.8.26 blob e7fa32e221924a07f132ff720092d1928bca9a7e.
 This measures this implementation, not the old interleaved audit or full workflow. */
-const assert=require('node:assert/strict');
-const os=require('node:os');
+import assert from 'node:assert/strict';
+import os from 'node:os';
 const n=10,e=[];for(let a=0;a<n;a++)for(let b=a+1;b<n;b++)e.push([a,b]);
 const m=e.length,vm=e.map(([a,b])=>(1<<a)|(1<<b));
 const make=(name,direct,resources,weights)=>({name,direct,resources,weights});
