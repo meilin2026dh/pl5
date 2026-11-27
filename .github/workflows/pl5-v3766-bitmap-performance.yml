@@ -46,6 +46,7 @@ on:
       - 'docs/research/experiments/quotient_adaptive_order_v3825.mjs'
       - 'docs/research/experiments/quotient_subset_dominance_v3826.js'
       - 'docs/research/experiments/quotient_subset_benchmark_v3827.js'
+      - 'docs/research/experiments/quotient_subset_index_v3828.js'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -177,3 +178,8 @@ jobs:
         run: |
           node --version
           python -c "import json,subprocess,statistics,math; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_subset_benchmark_v3827.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED' and r['reference_blob']=='e7fa32e221924a07f132ff720092d1928bca9a7e' and r['n']==10; rows=r['rows']; assert [(x['profile'],x['optimum'],x['grouped_checks'],x['pruned_checks'],x['subset_tests']) for x in rows]==[('uniform',21400,1980,1980,170),('skew',21400,1980,1980,170),('zero',0,1980,1980,170),('endpoint',21501,84420,84420,990),('mixed',21498,11880,11670,393),('setup_only',50,3954,3948,170),('triangle_first',637,1980,1980,170),('fixed_0',1278,38858,32814,692),('fixed_1',67,40526,36460,696),('fixed_2',58,38752,30934,606),('nested_unique',1487,84420,7504,170),('nested_reverse_cost',23173,84420,84420,990),('forbidden_three',378,1980,1980,170)]; assert all(x['pairs']==1980 and len(x['trials'])==5 for x in rows); assert all(t['order']==(['grouped','pruned'] if (i+j)%2==0 else ['pruned','grouped']) and all(type(t[k]) is int and t[k]>0 for k in ('grouped_ns','pruned_ns')) for i,x in enumerate(rows) for j,t in enumerate(x['trials'])); assert all(math.isclose(x['median_paired_ratio'],statistics.median(t['grouped_ns']/t['pruned_ns'] for t in x['trials']),rel_tol=1e-12) for x in rows)"
+
+      - name: V3.8.28 cardinality-indexed subset preprocessing certificate
+        run: |
+          node --version
+          python -c "import json,subprocess; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_subset_index_v3828.js'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED' and r['reference_blob']=='e7fa32e221924a07f132ff720092d1928bca9a7e' and r['exhaustive']==1024; rows=r['rows']; assert len(rows)==104 and len({(x['n'],x['profile']) for x in rows})==104; assert r['totals']=={'reference_tests':9857,'reference_predicates':7292,'indexed_predicates':1659,'bucket_visits':3027,'signature_lookups':1404}; assert all(r['totals'][k]==sum(x[k] for x in rows) for k in r['totals']); assert [(x['profile'],x['retained'],x['indexed_predicates']) for x in rows if x['n']==10]==[('uniform',4,0),('skew',4,0),('zero',4,0),('endpoint',45,0),('mixed',16,90),('setup_only',5,84),('triangle_first',4,0),('fixed_0',31,187),('fixed_1',29,165),('fixed_2',27,205),('nested_unique',4,170),('nested_reverse_cost',45,0),('forbidden_three',4,0)]"
