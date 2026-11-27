@@ -48,6 +48,7 @@ on:
       - 'docs/research/experiments/quotient_subset_benchmark_v3827.js'
       - 'docs/research/experiments/quotient_subset_index_v3828.js'
       - 'docs/research/experiments/quotient_subset_index_benchmark_v3829.mjs'
+      - 'docs/research/experiments/quotient_subset_mask_v3830.mjs'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -189,3 +190,8 @@ jobs:
         run: |
           node --version
           python -c "import json,subprocess,statistics,math; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_subset_index_benchmark_v3829.mjs'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED' and r['source_blob']=='d7d9a4209293f0aec993f08f9c4afa67692f164b' and r['n']==10 and r['batch_size']==100; rows=r['rows']; assert [(x['profile'],x['retained'],x['reference_tests'],x['reference_predicates'],x['indexed_predicates'],x['bucket_visits'],x['signature_lookups']) for x in rows]==[('uniform',4,170,170,0,3,45),('skew',4,170,170,0,3,45),('zero',4,170,170,0,3,45),('endpoint',45,990,990,0,44,45),('mixed',16,393,325,90,74,45),('setup_only',5,170,168,84,46,45),('triangle_first',4,170,170,0,3,45),('fixed_0',31,692,548,187,86,45),('fixed_1',29,696,505,165,106,45),('fixed_2',27,606,481,205,107,45),('nested_unique',4,170,170,170,170,45),('nested_reverse_cost',45,990,0,0,990,45),('forbidden_three',4,170,170,0,3,45)]; assert all(len(x['trials'])==5 for x in rows); assert all(t['order']==(['reference','indexed'] if (i+j)%2==0 else ['indexed','reference']) and all(type(t[k]) is int and t[k]>0 for k in ('reference_ns','indexed_ns')) for i,x in enumerate(rows) for j,t in enumerate(x['trials'])); assert all(math.isclose(x['median_paired_ratio'],statistics.median(t['reference_ns']/t['indexed_ns'] for t in x['trials']),rel_tol=1e-12) for x in rows)"
+
+      - name: V3.8.30 exact bounded-resource mask and paired preprocessing audit
+        run: |
+          node --version
+          python -c "import json,subprocess,statistics,math; r=json.loads(subprocess.check_output(['node','docs/research/experiments/quotient_subset_mask_v3830.mjs'],text=True)); print(json.dumps(r,sort_keys=True)); assert r['source']=='INTERNAL/AI_AUTHORED' and r['source_blob']=='d7d9a4209293f0aec993f08f9c4afa67692f164b'; assert (r['cases'],r['tests'],r['predicates'],r['exhaustive'],r['n'],r['batch_size'])==(104,9857,7292,1024,10,100); assert len(r['boundary'])==12 and sum(x['mode']=='fallback' for x in r['boundary'])==4; rows=r['rows']; assert [x['profile'] for x in rows]==['uniform','skew','zero','endpoint','mixed','setup_only','triangle_first','fixed_0','fixed_1','fixed_2','nested_unique','nested_reverse_cost','forbidden_three']; assert [x['profile'] for x in rows if x['mode']=='fallback']==['nested_unique','nested_reverse_cost']; assert all(len(x['trials'])==5 for x in rows); assert all(t['order']==(['reference','masked'] if (i+j)%2==0 else ['masked','reference']) and all(type(t[k]) is int and t[k]>0 for k in ('reference_ns','masked_ns')) for i,x in enumerate(rows) for j,t in enumerate(x['trials'])); assert all(math.isclose(x['median_paired_ratio'],statistics.median(t['reference_ns']/t['masked_ns'] for t in x['trials']),rel_tol=1e-12) for x in rows)"
