@@ -1,0 +1,390 @@
+{
+  "version": "3.8.36",
+  "classification": "INTERNAL/AI_AUTHORED",
+  "tested_sha": "dea37f6055cce1f12f06c210fc7b2649e2b1fff4",
+  "experiment": "docs/research/experiments/quotient_cost_structural_gate_v3836.mjs",
+  "experiment_blob": "3a263dc8b943a4d02033f7ef8efd81bf4a98560e",
+  "reproduce": "node docs/research/experiments/quotient_cost_structural_gate_v3836.mjs",
+  "specialized_ci": {
+    "run_id": 46065457001,
+    "conclusion": "success",
+    "jobs": [
+      {
+        "platform": "Windows",
+        "id": 140729559461,
+        "step": 56,
+        "conclusion": "success"
+      },
+      {
+        "platform": "Ubuntu",
+        "id": 140729559902,
+        "step": 56,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "application_ci": {
+    "run_id": 46065457008,
+    "conclusion": "success"
+  },
+  "verification": {
+    "method": "Parse the exact V3.8.36 step JSON from each job log, compare complete parsed objects, independently sum all six counters and validate per-row route and evaluation invariants.",
+    "complete_parsed_objects_equal": true,
+    "independent_totals": {
+      "pairs": 25740,
+      "reference_checks": 302070,
+      "bounded_checks": 52130,
+      "adaptive_checks": 52130,
+      "paid_builds": 15840,
+      "paid_builds_avoided": 9900
+    },
+    "full_cost_evaluation_reduction": 0.8274241069950674,
+    "paid_build_reduction": 0.38461538461538464
+  },
+  "platform_outputs": {
+    "windows": {
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+      "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+      "rows": [
+        {
+          "profile": "uniform",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "skew",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "zero",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "endpoint",
+          "groups": 45,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 84420,
+          "bounded_checks": 21886,
+          "adaptive_checks": 21886,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "mixed",
+          "groups": 6,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 11670,
+          "bounded_checks": 3578,
+          "adaptive_checks": 3578,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "setup_only",
+          "groups": 2,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 3948,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "triangle_first",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "fixed_0",
+          "groups": 17,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 32814,
+          "bounded_checks": 3456,
+          "adaptive_checks": 3456,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "fixed_1",
+          "groups": 19,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 36460,
+          "bounded_checks": 2556,
+          "adaptive_checks": 2556,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "fixed_2",
+          "groups": 16,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 30934,
+          "bounded_checks": 3364,
+          "adaptive_checks": 3364,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "nested_unique",
+          "groups": 4,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 7504,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "groups": 45,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 84420,
+          "bounded_checks": 3430,
+          "adaptive_checks": 3430,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "forbidden_three",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        }
+      ],
+      "totals": {
+        "pairs": 25740,
+        "reference_checks": 302070,
+        "bounded_checks": 52130,
+        "adaptive_checks": 52130,
+        "paid_builds": 15840,
+        "paid_builds_avoided": 9900
+      }
+    },
+    "ubuntu": {
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+      "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+      "rows": [
+        {
+          "profile": "uniform",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "skew",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "zero",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "endpoint",
+          "groups": 45,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 84420,
+          "bounded_checks": 21886,
+          "adaptive_checks": 21886,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "mixed",
+          "groups": 6,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 11670,
+          "bounded_checks": 3578,
+          "adaptive_checks": 3578,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "setup_only",
+          "groups": 2,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 3948,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "triangle_first",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        },
+        {
+          "profile": "fixed_0",
+          "groups": 17,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 32814,
+          "bounded_checks": 3456,
+          "adaptive_checks": 3456,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "fixed_1",
+          "groups": 19,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 36460,
+          "bounded_checks": 2556,
+          "adaptive_checks": 2556,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "fixed_2",
+          "groups": 16,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 30934,
+          "bounded_checks": 3364,
+          "adaptive_checks": 3364,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "nested_unique",
+          "groups": 4,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 7504,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "groups": 45,
+          "route": "bounded",
+          "pairs": 1980,
+          "reference_checks": 84420,
+          "bounded_checks": 3430,
+          "adaptive_checks": 3430,
+          "paid_builds": 1980,
+          "paid_builds_avoided": 0
+        },
+        {
+          "profile": "forbidden_three",
+          "groups": 1,
+          "route": "singleton",
+          "pairs": 1980,
+          "reference_checks": 1980,
+          "bounded_checks": 1980,
+          "adaptive_checks": 1980,
+          "paid_builds": 0,
+          "paid_builds_avoided": 1980
+        }
+      ],
+      "totals": {
+        "pairs": 25740,
+        "reference_checks": 302070,
+        "bounded_checks": 52130,
+        "adaptive_checks": 52130,
+        "paid_builds": 15840,
+        "paid_builds_avoided": 9900
+      }
+    }
+  },
+  "repository_audit": {
+    "main": "c0e38040ec5f389d6444e64b90e7adc42adfca62",
+    "pr11": {
+      "head": "b5687f5e848d1fab567fcd15d8b1eb51d9e3b651",
+      "draft": true,
+      "workflow_runs_success": 5
+    },
+    "pr13": {
+      "head": "53425be6a80533c219f097e023209776b3330f24",
+      "draft": true,
+      "workflow_runs_success": 10
+    },
+    "issue12": "open",
+    "historical_failure_lineage": [
+      "PR #33: solver CI timeout isolation and finite repeat checks",
+      "V3.8.33: no stable integrated speedup",
+      "V3.8.34: Windows timeout before target step; targeted retry passed",
+      "V3.8.35: mixed timing results including regressions retained"
+    ]
+  },
+  "limitations": [
+    "Reused 13 frozen internal development profiles; no independent external evaluation.",
+    "Structural operation counts only: the V3.8.36 step has no paired timing comparison, so no wall-time acceleration claim.",
+    "Platform Node versions differ; structural equality is not timing equivalence.",
+    "No new filtering rules, candidate compression, historical coverage or historical exclusion evidence.",
+    "No changes to main, production code, history or computational limits.",
+    "Archive commit CI not yet verified."
+  ]
+}
