@@ -1,0 +1,1533 @@
+{
+  "schema": "pl5-v3837-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "validated_commit": "d2eb7c22e3933b670f163d3404898b4bc3bbf441",
+  "specialized_run": 46078315009,
+  "application_run": 46078314920,
+  "previous_timeout_run": 46026961142,
+  "reproduction": "node docs/research/experiments/quotient_cost_structural_gate_benchmark_v3837.mjs",
+  "structural_results_equal": true,
+  "statistics_recomputed": true,
+  "stats": [
+    {
+      "platform": "win32",
+      "overall": 8,
+      "paired_wins": 36,
+      "median": 1.0178223607323724,
+      "routes": [
+        {
+          "route": "singleton",
+          "n": 5,
+          "wins": 2,
+          "pairs": 12,
+          "range": [
+            0.381478102189781,
+            3.4386574074074074
+          ]
+        },
+        {
+          "route": "bounded",
+          "n": 8,
+          "wins": 6,
+          "pairs": 24,
+          "range": [
+            0.8465179175118324,
+            1.3055031218237259
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "linux",
+      "overall": 8,
+      "paired_wins": 38,
+      "median": 1.0138904451763766,
+      "routes": [
+        {
+          "route": "singleton",
+          "n": 5,
+          "wins": 5,
+          "pairs": 22,
+          "range": [
+            1.21670180431632,
+            2.425587747014406
+          ]
+        },
+        {
+          "route": "bounded",
+          "n": 8,
+          "wins": 3,
+          "pairs": 16,
+          "range": [
+            0.6989618453198413,
+            1.0185258407389024
+          ]
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "job_id": 140771161292,
+      "report": {
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "rows": [
+          {
+            "profile": "uniform",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1999900,
+                "adaptive_ns": 1287900
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1147100,
+                "bounded_ns": 2165500
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 2115200,
+                "adaptive_ns": 363800
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 184800,
+                "bounded_ns": 2158800
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 891300,
+                "adaptive_ns": 259200
+              }
+            ],
+            "median_paired_ratio": 3.4386574074074074
+          },
+          {
+            "profile": "skew",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 292700,
+                "bounded_ns": 462800
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 442800,
+                "adaptive_ns": 209700
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 267200,
+                "bounded_ns": 536200
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 354800,
+                "adaptive_ns": 248100
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 191000,
+                "bounded_ns": 1097400
+              }
+            ],
+            "median_paired_ratio": 2.0067365269461077
+          },
+          {
+            "profile": "zero",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 346500,
+                "adaptive_ns": 1160300
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1096000,
+                "bounded_ns": 418100
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 409600,
+                "adaptive_ns": 1948900
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 953000,
+                "bounded_ns": 2071600
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1881600,
+                "adaptive_ns": 1105000
+              }
+            ],
+            "median_paired_ratio": 0.381478102189781
+          },
+          {
+            "profile": "endpoint",
+            "groups": 45,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 84420,
+            "bounded_checks": 21886,
+            "adaptive_checks": 21886,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6641900,
+                "bounded_ns": 3382400
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 3841500,
+                "adaptive_ns": 3947100
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 4220400,
+                "bounded_ns": 4595900
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 3364900,
+                "adaptive_ns": 3857500
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 3777500,
+                "bounded_ns": 3329600
+              }
+            ],
+            "median_paired_ratio": 0.8814295168762409
+          },
+          {
+            "profile": "mixed",
+            "groups": 6,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 11670,
+            "bounded_checks": 3578,
+            "adaptive_checks": 3578,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 5307600,
+                "adaptive_ns": 3331700
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1633400,
+                "bounded_ns": 3887800
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 752300,
+                "adaptive_ns": 785600
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 688700,
+                "bounded_ns": 899100
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 764600,
+                "adaptive_ns": 742500
+              }
+            ],
+            "median_paired_ratio": 1.3055031218237259
+          },
+          {
+            "profile": "setup_only",
+            "groups": 2,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 3948,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 506100,
+                "bounded_ns": 533000
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1256900,
+                "adaptive_ns": 396700
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 438700,
+                "bounded_ns": 381000
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 437800,
+                "adaptive_ns": 378200
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 355100,
+                "bounded_ns": 357300
+              }
+            ],
+            "median_paired_ratio": 1.0531515510768623
+          },
+          {
+            "profile": "triangle_first",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 663600,
+                "adaptive_ns": 1401800
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1543900,
+                "bounded_ns": 711300
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 543200,
+                "adaptive_ns": 661200
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1109400,
+                "bounded_ns": 914900
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 770100,
+                "adaptive_ns": 2078200
+              }
+            ],
+            "median_paired_ratio": 0.4733913539734627
+          },
+          {
+            "profile": "fixed_0",
+            "groups": 17,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 32814,
+            "bounded_checks": 3456,
+            "adaptive_checks": 3456,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6280500,
+                "bounded_ns": 1781400
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 2306300,
+                "adaptive_ns": 3749500
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1751400,
+                "bounded_ns": 2210200
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1627600,
+                "adaptive_ns": 1922700
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1206800,
+                "bounded_ns": 1140600
+              }
+            ],
+            "median_paired_ratio": 0.8465179175118324
+          },
+          {
+            "profile": "fixed_1",
+            "groups": 19,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 36460,
+            "bounded_checks": 2556,
+            "adaptive_checks": 2556,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 826600,
+                "adaptive_ns": 913600
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 813400,
+                "bounded_ns": 851500
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 821100,
+                "adaptive_ns": 880200
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 770700,
+                "bounded_ns": 826700
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 898100,
+                "adaptive_ns": 842700
+              }
+            ],
+            "median_paired_ratio": 1.0468404229161543
+          },
+          {
+            "profile": "fixed_2",
+            "groups": 16,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 30934,
+            "bounded_checks": 3364,
+            "adaptive_checks": 3364,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1054900,
+                "bounded_ns": 1059300
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1046300,
+                "adaptive_ns": 1068000
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1001700,
+                "bounded_ns": 1071200
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1050100,
+                "adaptive_ns": 1020100
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1026800,
+                "bounded_ns": 1045100
+              }
+            ],
+            "median_paired_ratio": 1.0178223607323724
+          },
+          {
+            "profile": "nested_unique",
+            "groups": 4,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 7504,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 3789700,
+                "adaptive_ns": 3398600
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 3392500,
+                "bounded_ns": 3364700
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 3497900,
+                "adaptive_ns": 3313800
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 3347600,
+                "bounded_ns": 3385600
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 3335900,
+                "adaptive_ns": 3441500
+              }
+            ],
+            "median_paired_ratio": 1.0113514159397778
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "groups": 45,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 84420,
+            "bounded_checks": 3430,
+            "adaptive_checks": 3430,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6441700,
+                "bounded_ns": 6597200
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 6543800,
+                "adaptive_ns": 6424000
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6438400,
+                "bounded_ns": 6462700
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 6759500,
+                "adaptive_ns": 6955100
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6686100,
+                "bounded_ns": 6859600
+              }
+            ],
+            "median_paired_ratio": 1.0186488169364882
+          },
+          {
+            "profile": "forbidden_three",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 520400,
+                "adaptive_ns": 782900
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1015500,
+                "bounded_ns": 632400
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 742600,
+                "adaptive_ns": 1535800
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1658500,
+                "bounded_ns": 767500
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 334600,
+                "adaptive_ns": 882100
+              }
+            ],
+            "median_paired_ratio": 0.48352650084646437
+          }
+        ],
+        "totals": {
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "bounded_checks": 52130,
+          "adaptive_checks": 52130,
+          "paid_builds": 15840,
+          "paid_builds_avoided": 9900
+        },
+        "gate_blob": "3a263dc8b943a4d02033f7ef8efd81bf4a98560e",
+        "node": "v22.23.5",
+        "platform": "win32",
+        "arch": "x64",
+        "cpu": "AMD EPYC 9V45 96-Core Processor                ",
+        "warm_pairs": 2,
+        "measured_pairs": 5
+      }
+    },
+    {
+      "job_id": 140771161565,
+      "report": {
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "rows": [
+          {
+            "profile": "uniform",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1309793,
+                "adaptive_ns": 408933
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 554707,
+                "bounded_ns": 1031213
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1051909,
+                "adaptive_ns": 618027
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 561828,
+                "bounded_ns": 858701
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1213367,
+                "adaptive_ns": 250562
+              }
+            ],
+            "median_paired_ratio": 1.859022871533981
+          },
+          {
+            "profile": "skew",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 411505,
+                "bounded_ns": 590923
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 513267,
+                "adaptive_ns": 232794
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 328818,
+                "bounded_ns": 588855
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 509698,
+                "adaptive_ns": 335359
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 133628,
+                "bounded_ns": 669308
+              }
+            ],
+            "median_paired_ratio": 1.7908234950641388
+          },
+          {
+            "profile": "zero",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 543516,
+                "adaptive_ns": 224076
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 330457,
+                "bounded_ns": 677028
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 636565,
+                "adaptive_ns": 234885
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 302287,
+                "bounded_ns": 2308759
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 2360794,
+                "adaptive_ns": 1398218
+              }
+            ],
+            "median_paired_ratio": 2.425587747014406
+          },
+          {
+            "profile": "endpoint",
+            "groups": 45,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 84420,
+            "bounded_checks": 21886,
+            "adaptive_checks": 21886,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6574203,
+                "bounded_ns": 6395848
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 10743923,
+                "adaptive_ns": 16378499
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 20942953,
+                "bounded_ns": 5316421
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 5104287,
+                "adaptive_ns": 7302669
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 6404203,
+                "bounded_ns": 5130481
+              }
+            ],
+            "median_paired_ratio": 0.6989618453198413
+          },
+          {
+            "profile": "mixed",
+            "groups": 6,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 11670,
+            "bounded_checks": 3578,
+            "adaptive_checks": 3578,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1292404,
+                "adaptive_ns": 4718920
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 2517183,
+                "bounded_ns": 2007761
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1497533,
+                "adaptive_ns": 1252231
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1365055,
+                "bounded_ns": 2071472
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1959227,
+                "adaptive_ns": 2094704
+              }
+            ],
+            "median_paired_ratio": 0.935324036236146
+          },
+          {
+            "profile": "setup_only",
+            "groups": 2,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 3948,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1095921,
+                "bounded_ns": 1198665
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1457733,
+                "adaptive_ns": 1173671
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1069803,
+                "bounded_ns": 1089622
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1322657,
+                "adaptive_ns": 1339412
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 2184170,
+                "bounded_ns": 1482027
+              }
+            ],
+            "median_paired_ratio": 1.0185258407389024
+          },
+          {
+            "profile": "triangle_first",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 795722,
+                "adaptive_ns": 670892
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 819470,
+                "bounded_ns": 747756
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 938359,
+                "adaptive_ns": 559981
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 582404,
+                "bounded_ns": 891984
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 656946,
+                "adaptive_ns": 528452
+              }
+            ],
+            "median_paired_ratio": 1.2431516958966944
+          },
+          {
+            "profile": "fixed_0",
+            "groups": 17,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 32814,
+            "bounded_checks": 3456,
+            "adaptive_checks": 3456,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 3992241,
+                "bounded_ns": 2716202
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 2734086,
+                "adaptive_ns": 2659287
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 2700020,
+                "bounded_ns": 2962763
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1841009,
+                "adaptive_ns": 2238163
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 2700853,
+                "bounded_ns": 2688689
+              }
+            ],
+            "median_paired_ratio": 0.9954962376700991
+          },
+          {
+            "profile": "fixed_1",
+            "groups": 19,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 36460,
+            "bounded_checks": 2556,
+            "adaptive_checks": 2556,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1671477,
+                "adaptive_ns": 2085004
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1530774,
+                "bounded_ns": 1100954
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1099812,
+                "adaptive_ns": 1357317
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1410006,
+                "bounded_ns": 1084092
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 972570,
+                "adaptive_ns": 1469469
+              }
+            ],
+            "median_paired_ratio": 0.7688563027391373
+          },
+          {
+            "profile": "fixed_2",
+            "groups": 16,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 30934,
+            "bounded_checks": 3364,
+            "adaptive_checks": 3364,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1243996,
+                "bounded_ns": 1132089
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1235533,
+                "adaptive_ns": 1233123
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1246291,
+                "bounded_ns": 1458959
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1269424,
+                "adaptive_ns": 1139229
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 1222639,
+                "bounded_ns": 1239622
+              }
+            ],
+            "median_paired_ratio": 1.0138904451763766
+          },
+          {
+            "profile": "nested_unique",
+            "groups": 4,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 7504,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 4204742,
+                "adaptive_ns": 4271751
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 4120549,
+                "bounded_ns": 4308583
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 4225355,
+                "adaptive_ns": 4203224
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 4265014,
+                "bounded_ns": 4253956
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 4229980,
+                "adaptive_ns": 4212980
+              }
+            ],
+            "median_paired_ratio": 1.0040351485172017
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "groups": 45,
+            "route": "bounded",
+            "pairs": 1980,
+            "reference_checks": 84420,
+            "bounded_checks": 3430,
+            "adaptive_checks": 3430,
+            "paid_builds": 1980,
+            "paid_builds_avoided": 0,
+            "trials": [
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 8580849,
+                "bounded_ns": 8303491
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 8214609,
+                "adaptive_ns": 8358004
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 8442947,
+                "bounded_ns": 8352361
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 8531544,
+                "adaptive_ns": 8410868
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 8205385,
+                "bounded_ns": 8240405
+              }
+            ],
+            "median_paired_ratio": 0.9892708079299799
+          },
+          {
+            "profile": "forbidden_three",
+            "groups": 1,
+            "route": "singleton",
+            "pairs": 1980,
+            "reference_checks": 1980,
+            "bounded_checks": 1980,
+            "adaptive_checks": 1980,
+            "paid_builds": 0,
+            "paid_builds_avoided": 1980,
+            "trials": [
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 509590,
+                "adaptive_ns": 418829
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 340950,
+                "bounded_ns": 1059447
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 1275165,
+                "adaptive_ns": 1026350
+              },
+              {
+                "order": [
+                  "adaptive",
+                  "bounded"
+                ],
+                "adaptive_ns": 873036,
+                "bounded_ns": 674785
+              },
+              {
+                "order": [
+                  "bounded",
+                  "adaptive"
+                ],
+                "bounded_ns": 815763,
+                "adaptive_ns": 1054325
+              }
+            ],
+            "median_paired_ratio": 1.21670180431632
+          }
+        ],
+        "totals": {
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "bounded_checks": 52130,
+          "adaptive_checks": 52130,
+          "paid_builds": 15840,
+          "paid_builds_avoided": 9900
+        },
+        "gate_blob": "3a263dc8b943a4d02033f7ef8efd81bf4a98560e",
+        "node": "v24.22.3",
+        "platform": "linux",
+        "arch": "x64",
+        "cpu": "Intel(R) Xeon(R) 6975P-C",
+        "warm_pairs": 2,
+        "measured_pairs": 5
+      }
+    }
+  ],
+  "limitations": [
+    "Fixed previously seen configurations, not independent validation.",
+    "Single-resource route does not consistently improve runtime across platforms.",
+    "Multi-resource path has mixed timings despite unchanged evaluation counts.",
+    "No universal runtime improvement or default-path recommendation.",
+    "No new candidate compression or historical replay coverage evidence.",
+    "Evidence commit itself not validated by cited CI."
+  ]
+}
