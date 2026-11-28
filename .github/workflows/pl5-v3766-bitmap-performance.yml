@@ -60,6 +60,7 @@ on:
       - 'docs/research/experiments/quotient_triangle_residual_cache_v3839.mjs'
       - 'docs/research/experiments/quotient_disjoint_top3_audit_v3840.mjs'
       - 'docs/research/experiments/quotient_order_statistic_theorem_v3841.mjs'
+      - 'docs/research/experiments/quotient_top3_cost_audit_v3842.mjs'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -256,3 +257,50 @@ jobs:
           }
           if report != expected:
               raise RuntimeError('V3.8.41 combination optimization ledger mismatch')
+
+      - name: V3.8.42 paired combination optimization cache cost audit (report only)
+        shell: python
+        run: |
+          import json
+          import math
+          import statistics
+          import subprocess
+
+          script = 'docs/research/experiments/quotient_top3_cost_audit_v3842.mjs'
+          report = json.loads(subprocess.check_output(['node', script], text=True))
+          print(json.dumps(report, sort_keys=True), flush=True)
+          assert report['classification'] == 'INTERNAL/AI_AUTHORED'
+          profiles = ['uniform','skew','zero','endpoint','mixed','setup_only',
+                      'triangle_first','fixed_0','fixed_1','fixed_2','nested_unique',
+                      'nested_reverse_cost','forbidden_three']
+          assert report['profiles'] == profiles
+          trials = report['trials']
+          methods = ['baseline', 'top3']
+          assert len(trials) == 5
+          def check_row(row, method):
+              assert row['checks'] == (20529 if method == 'baseline' else 9520)
+              assert row['entries'] == (0 if method == 'baseline' else 366)
+              assert row['max_profile_entries'] == (0 if method == 'baseline' else 210)
+              ns = row['profile_ns']
+              assert len(ns) == len(profiles)
+              assert all(type(v) is int and v > 0 for v in ns)
+              assert type(row['ns']) is int and row['ns'] == sum(ns)
+          for i, trial in enumerate(trials):
+              assert trial['order'] == (methods if i % 2 == 0 else methods[::-1])
+              for method in methods:
+                  check_row(trial[method], method)
+          ratio = statistics.median(t['baseline']['ns']/t['top3']['ns'] for t in trials)
+          assert math.isclose(report['median_paired_ratio'], ratio, rel_tol=1e-12)
+          rows = report['profile_median_ratios']
+          assert [x['name'] for x in rows] == profiles
+          for i, row in enumerate(rows):
+              ratio = statistics.median(t['baseline']['profile_ns'][i]/
+                                        t['top3']['profile_ns'][i] for t in trials)
+              assert math.isclose(row['ratio'], ratio, rel_tol=1e-12)
+          assert [x['method'] for x in report['rss']] == methods
+          for row in report['rss']:
+              check_row(row, row['method'])
+              assert all(type(row[k]) is int and row[k] >= 0
+                         for k in ('before_max_rss_kib','after_max_rss_kib'))
+              assert row['after_max_rss_kib'] >= row['before_max_rss_kib']
+          # No timing or RSS improvement gate: retain negative observations.
