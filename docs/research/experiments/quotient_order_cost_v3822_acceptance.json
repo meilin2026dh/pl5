@@ -1,0 +1,249 @@
+{
+  "schema": "ordered-cover-v3822-acceptance-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "35fe79d456f245a92f5e05ca29a9449b04c0324c",
+  "source_commit": "aace57812c0bbae172812df1efbbfd6229b46dfd",
+  "source_blob": "2758cdde38a3115a445011b7112b346b044ae5e2",
+  "specialized_run": 45891394404,
+  "application_run": 45891394481,
+  "jobs": [
+    {
+      "os": "windows-latest",
+      "id": 140154698089,
+      "node": "22.23.5",
+      "step": 43,
+      "result": "success"
+    },
+    {
+      "os": "ubuntu-latest",
+      "id": 140154698373,
+      "node": "24.22.3",
+      "step": 43,
+      "result": "success"
+    }
+  ],
+  "totals": {
+    "words": 12201,
+    "states": 33867,
+    "cases": 36
+  },
+  "matching_report": {
+    "audit": [
+      {
+        "n": 1,
+        "positive": 0,
+        "results": [
+          {
+            "cost": 0,
+            "profile": "uniform"
+          },
+          {
+            "cost": 0,
+            "profile": "skew"
+          },
+          {
+            "cost": 0,
+            "profile": "zero"
+          },
+          {
+            "cost": 0,
+            "profile": "endpoint"
+          },
+          {
+            "cost": 0,
+            "profile": "mixed"
+          },
+          {
+            "cost": 0,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 0,
+        "states": 1,
+        "words": 1
+      },
+      {
+        "n": 2,
+        "positive": 0,
+        "results": [
+          {
+            "cost": 0,
+            "profile": "uniform"
+          },
+          {
+            "cost": 0,
+            "profile": "skew"
+          },
+          {
+            "cost": 0,
+            "profile": "zero"
+          },
+          {
+            "cost": 0,
+            "profile": "endpoint"
+          },
+          {
+            "cost": 0,
+            "profile": "mixed"
+          },
+          {
+            "cost": 0,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 0,
+        "states": 2,
+        "words": 32
+      },
+      {
+        "n": 3,
+        "positive": 42,
+        "results": [
+          {
+            "cost": null,
+            "profile": "uniform"
+          },
+          {
+            "cost": null,
+            "profile": "skew"
+          },
+          {
+            "cost": null,
+            "profile": "zero"
+          },
+          {
+            "cost": null,
+            "profile": "endpoint"
+          },
+          {
+            "cost": null,
+            "profile": "mixed"
+          },
+          {
+            "cost": null,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 1,
+        "states": 8,
+        "words": 243
+      },
+      {
+        "n": 4,
+        "positive": 240,
+        "results": [
+          {
+            "cost": 364,
+            "profile": "uniform"
+          },
+          {
+            "cost": 904,
+            "profile": "skew"
+          },
+          {
+            "cost": 0,
+            "profile": "zero"
+          },
+          {
+            "cost": 562,
+            "profile": "endpoint"
+          },
+          {
+            "cost": 572,
+            "profile": "mixed"
+          },
+          {
+            "cost": 50,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 7,
+        "states": 64,
+        "words": 1024
+      },
+      {
+        "n": 5,
+        "positive": 780,
+        "results": [
+          {
+            "cost": 1010,
+            "profile": "uniform"
+          },
+          {
+            "cost": 1422,
+            "profile": "skew"
+          },
+          {
+            "cost": 0,
+            "profile": "zero"
+          },
+          {
+            "cost": 1114,
+            "profile": "endpoint"
+          },
+          {
+            "cost": 1334,
+            "profile": "mixed"
+          },
+          {
+            "cost": 50,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 25,
+        "states": 1024,
+        "words": 3125
+      },
+      {
+        "n": 6,
+        "positive": 1920,
+        "results": [
+          {
+            "cost": 2288,
+            "profile": "uniform"
+          },
+          {
+            "cost": 2296,
+            "profile": "skew"
+          },
+          {
+            "cost": 0,
+            "profile": "zero"
+          },
+          {
+            "cost": 2386,
+            "profile": "endpoint"
+          },
+          {
+            "cost": 2488,
+            "profile": "mixed"
+          },
+          {
+            "cost": 50,
+            "profile": "setup_only"
+          }
+        ],
+        "signatures": 65,
+        "states": 32768,
+        "words": 7776
+      }
+    ],
+    "source": "INTERNAL/AI_AUTHORED"
+  },
+  "prior_source_head_runs_without_explicit_invocation": [
+    45890843310,
+    45890843056
+  ],
+  "historical_failure_runs": [
+    45822187609,
+    45822852044
+  ],
+  "reproduce": "node docs/research/experiments/quotient_order_cost_v3822.js",
+  "limitations": [
+    "Abstract identity-positive target only, not entire union equality.",
+    "Nonnegative per-object charges and persistent one-time shared setup; no evictions.",
+    "Modeled cost is not measured runtime.",
+    "No candidate-set compression or historical coverage advantage established.",
+    "Archive commit itself not covered by tested runs."
+  ]
+}

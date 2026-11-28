@@ -1,0 +1,1433 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "version": "V3.8.27",
+  "tested_commit": "9047a2004cfe2c468e0e5b49434eeb42d66ab5c5",
+  "benchmark_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+  "reproduce": "node docs/research/experiments/quotient_subset_benchmark_v3827.js",
+  "ci": {
+    "application": {
+      "run": 45929587577,
+      "conclusion": "success"
+    },
+    "audit": {
+      "run": 45929587472,
+      "conclusion": "success"
+    }
+  },
+  "scope": "Fixed n=10 abstract combination optimization profiles; per-pair optimum equality and paired runtime. No full filtering pipeline, candidate-set compression or historical retrospective coverage evidence. Different Node and CPU environments; compare paths within each job only. All profiles retained; no timing gate.",
+  "failure_lineage": "Previous V3.8.27 module-format incompatibility on both platforms; repaired in tested commit; audit step verified successful on both platforms.",
+  "summary": [
+    {
+      "platform": "linux",
+      "node": "v24.22.3",
+      "pairs": 25740,
+      "timed_pairs": 65,
+      "grouped_checks": 397130,
+      "pruned_checks": 302070,
+      "subset_tests": 5557,
+      "slower": [
+        "uniform",
+        "skew",
+        "zero",
+        "mixed",
+        "forbidden_three"
+      ],
+      "ratios": {
+        "uniform": 0.9882403077560987,
+        "skew": 0.8487284802936292,
+        "zero": 0.8829571756708875,
+        "endpoint": 1.004064773259383,
+        "mixed": 0.9869755518810516,
+        "setup_only": 1.1071797916643085,
+        "triangle_first": 1.4514138233288965,
+        "fixed_0": 1.2102875456803066,
+        "fixed_1": 1.1020701751597204,
+        "fixed_2": 1.240454321585503,
+        "nested_unique": 13.691010733610327,
+        "nested_reverse_cost": 1.0000984232976475,
+        "forbidden_three": 0.9314654358903969
+      }
+    },
+    {
+      "platform": "win32",
+      "node": "v22.23.5",
+      "pairs": 25740,
+      "timed_pairs": 65,
+      "grouped_checks": 397130,
+      "pruned_checks": 302070,
+      "subset_tests": 5557,
+      "slower": [
+        "skew",
+        "zero",
+        "triangle_first"
+      ],
+      "ratios": {
+        "uniform": 1.175919925109815,
+        "skew": 0.917351598173516,
+        "zero": 0.96,
+        "endpoint": 1.0092004555701892,
+        "mixed": 1.0263596424784123,
+        "setup_only": 1.0237426243326777,
+        "triangle_first": 0.6536837165649929,
+        "fixed_0": 1.2007801405359546,
+        "fixed_1": 1.1141531283282335,
+        "fixed_2": 1.2403675656612165,
+        "nested_unique": 13.513327345917599,
+        "nested_reverse_cost": 1.001447016918967,
+        "forbidden_three": 1.0160342063067878
+      }
+    }
+  ],
+  "results": [
+    {
+      "job_id": 140278860085,
+      "arch": "x64",
+      "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+      "n": 10,
+      "node": "v24.22.3",
+      "platform": "linux",
+      "reference_blob": "e7fa32e221924a07f132ff720092d1928bca9a7e",
+      "rows": [
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.9882403077560987,
+          "optimum": 21400,
+          "pairs": 1980,
+          "profile": "uniform",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 570921,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 1059434
+            },
+            {
+              "grouped_ns": 967906,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 843069
+            },
+            {
+              "grouped_ns": 519234,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 720603
+            },
+            {
+              "grouped_ns": 508807,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 364656
+            },
+            {
+              "grouped_ns": 514806,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 520932
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.8487284802936292,
+          "optimum": 21400,
+          "pairs": 1980,
+          "profile": "skew",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 474951,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 472500
+            },
+            {
+              "grouped_ns": 339147,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 481984
+            },
+            {
+              "grouped_ns": 441918,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 448003
+            },
+            {
+              "grouped_ns": 446752,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 526378
+            },
+            {
+              "grouped_ns": 361594,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 487017
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.8829571756708875,
+          "optimum": 0,
+          "pairs": 1980,
+          "profile": "zero",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 2229587,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2004156
+            },
+            {
+              "grouped_ns": 1071907,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 1481114
+            },
+            {
+              "grouped_ns": 500876,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 567271
+            },
+            {
+              "grouped_ns": 467493,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 383546
+            },
+            {
+              "grouped_ns": 402093,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 505679
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 1.004064773259383,
+          "optimum": 21501,
+          "pairs": 1980,
+          "profile": "endpoint",
+          "pruned_checks": 84420,
+          "subset_tests": 990,
+          "trials": [
+            {
+              "grouped_ns": 19556680,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 18969199
+            },
+            {
+              "grouped_ns": 18256225,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 18182318
+            },
+            {
+              "grouped_ns": 24447811,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 18424828
+            },
+            {
+              "grouped_ns": 19646638,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 20364496
+            },
+            {
+              "grouped_ns": 20024738,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 20696858
+            }
+          ]
+        },
+        {
+          "grouped_checks": 11880,
+          "median_paired_ratio": 0.9869755518810516,
+          "optimum": 21498,
+          "pairs": 1980,
+          "profile": "mixed",
+          "pruned_checks": 11670,
+          "subset_tests": 393,
+          "trials": [
+            {
+              "grouped_ns": 2390404,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2268937
+            },
+            {
+              "grouped_ns": 2307387,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2298412
+            },
+            {
+              "grouped_ns": 2408644,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2442398
+            },
+            {
+              "grouped_ns": 2320116,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2350733
+            },
+            {
+              "grouped_ns": 2313915,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2345993
+            }
+          ]
+        },
+        {
+          "grouped_checks": 3954,
+          "median_paired_ratio": 1.1071797916643085,
+          "optimum": 50,
+          "pairs": 1980,
+          "profile": "setup_only",
+          "pruned_checks": 3948,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 604211,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2303937
+            },
+            {
+              "grouped_ns": 2199272,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 811833
+            },
+            {
+              "grouped_ns": 795388,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 1095572
+            },
+            {
+              "grouped_ns": 1075954,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 971797
+            },
+            {
+              "grouped_ns": 932744,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 823189
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 1.4514138233288965,
+          "optimum": 637,
+          "pairs": 1980,
+          "profile": "triangle_first",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 550848,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 283454
+            },
+            {
+              "grouped_ns": 503336,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 323561
+            },
+            {
+              "grouped_ns": 290157,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 300535
+            },
+            {
+              "grouped_ns": 447079,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 308030
+            },
+            {
+              "grouped_ns": 309441,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 279316
+            }
+          ]
+        },
+        {
+          "grouped_checks": 38858,
+          "median_paired_ratio": 1.2102875456803066,
+          "optimum": 1278,
+          "pairs": 1980,
+          "profile": "fixed_0",
+          "pruned_checks": 32814,
+          "subset_tests": 692,
+          "trials": [
+            {
+              "grouped_ns": 11201855,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9321433
+            },
+            {
+              "grouped_ns": 11120502,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 9188314
+            },
+            {
+              "grouped_ns": 10884265,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9534198
+            },
+            {
+              "grouped_ns": 11566865,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 9529505
+            },
+            {
+              "grouped_ns": 11285375,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9260007
+            }
+          ]
+        },
+        {
+          "grouped_checks": 40526,
+          "median_paired_ratio": 1.1020701751597204,
+          "optimum": 67,
+          "pairs": 1980,
+          "profile": "fixed_1",
+          "pruned_checks": 36460,
+          "subset_tests": 696,
+          "trials": [
+            {
+              "grouped_ns": 12045673,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10515251
+            },
+            {
+              "grouped_ns": 11370166,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10317098
+            },
+            {
+              "grouped_ns": 11784483,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10786497
+            },
+            {
+              "grouped_ns": 11845983,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10544239
+            },
+            {
+              "grouped_ns": 11636472,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10835181
+            }
+          ]
+        },
+        {
+          "grouped_checks": 38752,
+          "median_paired_ratio": 1.240454321585503,
+          "optimum": 58,
+          "pairs": 1980,
+          "profile": "fixed_2",
+          "pruned_checks": 30934,
+          "subset_tests": 606,
+          "trials": [
+            {
+              "grouped_ns": 10990906,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9229873
+            },
+            {
+              "grouped_ns": 11076999,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 8831942
+            },
+            {
+              "grouped_ns": 11270861,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9086075
+            },
+            {
+              "grouped_ns": 11542921,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 8874817
+            },
+            {
+              "grouped_ns": 11404356,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9212103
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 13.691010733610327,
+          "optimum": 1487,
+          "pairs": 1980,
+          "profile": "nested_unique",
+          "pruned_checks": 7504,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 133880588,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 9589278
+            },
+            {
+              "grouped_ns": 131983890,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 9640186
+            },
+            {
+              "grouped_ns": 129914476,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10405055
+            },
+            {
+              "grouped_ns": 133809898,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 16607577
+            },
+            {
+              "grouped_ns": 133423031,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 9526626
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 1.0000984232976475,
+          "optimum": 23173,
+          "pairs": 1980,
+          "profile": "nested_reverse_cost",
+          "pruned_checks": 84420,
+          "subset_tests": 990,
+          "trials": [
+            {
+              "grouped_ns": 133772146,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 133758981
+            },
+            {
+              "grouped_ns": 131928214,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 130588446
+            },
+            {
+              "grouped_ns": 135359146,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 132813420
+            },
+            {
+              "grouped_ns": 132632639,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 139160685
+            },
+            {
+              "grouped_ns": 133305100,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 137461708
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.9314654358903969,
+          "optimum": 378,
+          "pairs": 1980,
+          "profile": "forbidden_three",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 274549,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 293085
+            },
+            {
+              "grouped_ns": 415985,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 312467
+            },
+            {
+              "grouped_ns": 275433,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 307495
+            },
+            {
+              "grouped_ns": 271443,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 291415
+            },
+            {
+              "grouped_ns": 298889,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 320938
+            }
+          ]
+        }
+      ],
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    {
+      "job_id": 140278860347,
+      "arch": "x64",
+      "cpu": "AMD EPYC 7763 64-Core Processor                ",
+      "n": 10,
+      "node": "v22.23.5",
+      "platform": "win32",
+      "reference_blob": "e7fa32e221924a07f132ff720092d1928bca9a7e",
+      "rows": [
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 1.175919925109815,
+          "optimum": 21400,
+          "pairs": 1980,
+          "profile": "uniform",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 3266000,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2777400
+            },
+            {
+              "grouped_ns": 390700,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 458400
+            },
+            {
+              "grouped_ns": 427400,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 213300
+            },
+            {
+              "grouped_ns": 205400,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 340200
+            },
+            {
+              "grouped_ns": 359400,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 208600
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.917351598173516,
+          "optimum": 21400,
+          "pairs": 1980,
+          "profile": "skew",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 278500,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 230000
+            },
+            {
+              "grouped_ns": 223300,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 413300
+            },
+            {
+              "grouped_ns": 286300,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 223100
+            },
+            {
+              "grouped_ns": 494900,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 658700
+            },
+            {
+              "grouped_ns": 200900,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 219000
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.96,
+          "optimum": 0,
+          "pairs": 1980,
+          "profile": "zero",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 1240900,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 1397500
+            },
+            {
+              "grouped_ns": 2909300,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 1487000
+            },
+            {
+              "grouped_ns": 2798400,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2915000
+            },
+            {
+              "grouped_ns": 1370600,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2941100
+            },
+            {
+              "grouped_ns": 449900,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 215100
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 1.0092004555701892,
+          "optimum": 21501,
+          "pairs": 1980,
+          "profile": "endpoint",
+          "pruned_checks": 84420,
+          "subset_tests": 990,
+          "trials": [
+            {
+              "grouped_ns": 17251200,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 21468600
+            },
+            {
+              "grouped_ns": 17687200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 17217700
+            },
+            {
+              "grouped_ns": 18699500,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 17961800
+            },
+            {
+              "grouped_ns": 21428900,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 22057700
+            },
+            {
+              "grouped_ns": 21532200,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 21335900
+            }
+          ]
+        },
+        {
+          "grouped_checks": 11880,
+          "median_paired_ratio": 1.0263596424784123,
+          "optimum": 21498,
+          "pairs": 1980,
+          "profile": "mixed",
+          "pruned_checks": 11670,
+          "subset_tests": 393,
+          "trials": [
+            {
+              "grouped_ns": 2735100,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2710900
+            },
+            {
+              "grouped_ns": 2798200,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2690700
+            },
+            {
+              "grouped_ns": 2710000,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 2640400
+            },
+            {
+              "grouped_ns": 2801900,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 2694800
+            },
+            {
+              "grouped_ns": 2771600,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 3044900
+            }
+          ]
+        },
+        {
+          "grouped_checks": 3954,
+          "median_paired_ratio": 1.0237426243326777,
+          "optimum": 50,
+          "pairs": 1980,
+          "profile": "setup_only",
+          "pruned_checks": 3948,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 728700,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 711800
+            },
+            {
+              "grouped_ns": 770200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 766300
+            },
+            {
+              "grouped_ns": 823100,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 758400
+            },
+            {
+              "grouped_ns": 742100,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 661700
+            },
+            {
+              "grouped_ns": 744100,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 756800
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 0.6536837165649929,
+          "optimum": 637,
+          "pairs": 1980,
+          "profile": "triangle_first",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 752500,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 848000
+            },
+            {
+              "grouped_ns": 1159900,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 726100
+            },
+            {
+              "grouped_ns": 422300,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 851400
+            },
+            {
+              "grouped_ns": 381000,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 782500
+            },
+            {
+              "grouped_ns": 557200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 852400
+            }
+          ]
+        },
+        {
+          "grouped_checks": 38858,
+          "median_paired_ratio": 1.2007801405359546,
+          "optimum": 1278,
+          "pairs": 1980,
+          "profile": "fixed_0",
+          "pruned_checks": 32814,
+          "subset_tests": 692,
+          "trials": [
+            {
+              "grouped_ns": 13189500,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10837900
+            },
+            {
+              "grouped_ns": 12860500,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10787000
+            },
+            {
+              "grouped_ns": 13021500,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10844200
+            },
+            {
+              "grouped_ns": 13089700,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10863800
+            },
+            {
+              "grouped_ns": 12821300,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10835000
+            }
+          ]
+        },
+        {
+          "grouped_checks": 40526,
+          "median_paired_ratio": 1.1141531283282335,
+          "optimum": 67,
+          "pairs": 1980,
+          "profile": "fixed_1",
+          "pruned_checks": 36460,
+          "subset_tests": 696,
+          "trials": [
+            {
+              "grouped_ns": 13104500,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 11817900
+            },
+            {
+              "grouped_ns": 13181100,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 11830600
+            },
+            {
+              "grouped_ns": 13185200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 11803100
+            },
+            {
+              "grouped_ns": 13098400,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 11780300
+            },
+            {
+              "grouped_ns": 13231800,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 11812200
+            }
+          ]
+        },
+        {
+          "grouped_checks": 38752,
+          "median_paired_ratio": 1.2403675656612165,
+          "optimum": 58,
+          "pairs": 1980,
+          "profile": "fixed_2",
+          "pruned_checks": 30934,
+          "subset_tests": 606,
+          "trials": [
+            {
+              "grouped_ns": 12661300,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10207700
+            },
+            {
+              "grouped_ns": 12817300,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10103300
+            },
+            {
+              "grouped_ns": 12979000,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10596900
+            },
+            {
+              "grouped_ns": 12731300,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 10401000
+            },
+            {
+              "grouped_ns": 12775300,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 10180600
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 13.513327345917599,
+          "optimum": 1487,
+          "pairs": 1980,
+          "profile": "nested_unique",
+          "pruned_checks": 7504,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 165956800,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 12335400
+            },
+            {
+              "grouped_ns": 167589000,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 12388700
+            },
+            {
+              "grouped_ns": 168087200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 12519200
+            },
+            {
+              "grouped_ns": 171341900,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 12593900
+            },
+            {
+              "grouped_ns": 168519300,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 12470600
+            }
+          ]
+        },
+        {
+          "grouped_checks": 84420,
+          "median_paired_ratio": 1.001447016918967,
+          "optimum": 23173,
+          "pairs": 1980,
+          "profile": "nested_reverse_cost",
+          "pruned_checks": 84420,
+          "subset_tests": 990,
+          "trials": [
+            {
+              "grouped_ns": 171620200,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 164970600
+            },
+            {
+              "grouped_ns": 168243900,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 168000800
+            },
+            {
+              "grouped_ns": 168022700,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 169525000
+            },
+            {
+              "grouped_ns": 165488800,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 170155500
+            },
+            {
+              "grouped_ns": 166872600,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 165297700
+            }
+          ]
+        },
+        {
+          "grouped_checks": 1980,
+          "median_paired_ratio": 1.0160342063067878,
+          "optimum": 378,
+          "pairs": 1980,
+          "profile": "forbidden_three",
+          "pruned_checks": 1980,
+          "subset_tests": 170,
+          "trials": [
+            {
+              "grouped_ns": 380200,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 374200
+            },
+            {
+              "grouped_ns": 487200,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 373200
+            },
+            {
+              "grouped_ns": 380400,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 451300
+            },
+            {
+              "grouped_ns": 378500,
+              "order": [
+                "pruned",
+                "grouped"
+              ],
+              "pruned_ns": 618900
+            },
+            {
+              "grouped_ns": 414100,
+              "order": [
+                "grouped",
+                "pruned"
+              ],
+              "pruned_ns": 373500
+            }
+          ]
+        }
+      ],
+      "source": "INTERNAL/AI_AUTHORED"
+    }
+  ]
+}

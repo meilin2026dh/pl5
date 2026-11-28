@@ -1,0 +1,577 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "f382415f6860ae493bd02322be3dd9fb66adb6e0",
+  "benchmark_commit": "f7d71491e7fbe349fc4bb650ff2a713384bc5ce1",
+  "benchmark_blob": "02c31e5bb7624c9836fac659548789ede639894d",
+  "specialized_run": 45834781556,
+  "application_run": 45834781508,
+  "frozen_histogram_sha256": {
+    "sum10": "cc6588ba417bae40a8bac15a263d743d71d4ac633140321b487166ffd24e1f65",
+    "abstract_large": "0572f69544cb09189e9b2fef9d43d1054368cc7333fc6a84c13ac8b7bb86c166"
+  },
+  "jobs": [
+    {
+      "job_id": 139960632428,
+      "job_name": "verify (ubuntu-latest)",
+      "conclusion": "success",
+      "raw": {
+        "limitations": [
+          "warm count-only workload",
+          "shared table setup excluded",
+          "no candidate enumeration or historical coverage",
+          "no cross-platform timing ranking"
+        ],
+        "machine": "x86_64",
+        "python": "3.12.16",
+        "results": {
+          "abstract_large": {
+            "batch_ns": {
+              "closed_with_moments": [
+                48326,
+                45457,
+                49775,
+                45651,
+                44980,
+                47170,
+                46230
+              ],
+              "inversion_cached": [
+                255461,
+                237418,
+                253159,
+                247361,
+                236124,
+                260886,
+                243831
+              ],
+              "subset_dp_cached": [
+                12509297,
+                12755263,
+                12526609,
+                12471983,
+                12398616,
+                12447216,
+                12876198
+              ]
+            },
+            "histogram_sha256": "0572f69544cb09189e9b2fef9d43d1054368cc7333fc6a84c13ac8b7bb86c166",
+            "inputs": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+              ],
+              [
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4
+              ]
+            ],
+            "median_ns": {
+              "closed_with_moments": 46230,
+              "inversion_cached": 247361,
+              "subset_dp_cached": 12509297
+            }
+          },
+          "sum10": {
+            "batch_ns": {
+              "closed_with_moments": [
+                29824,
+                28770,
+                28509,
+                27639,
+                26764,
+                28506,
+                28174
+              ],
+              "inversion_cached": [
+                349314,
+                345760,
+                346899,
+                350957,
+                330947,
+                355372,
+                346418
+              ],
+              "subset_dp_cached": [
+                2121345,
+                2155544,
+                2130925,
+                2104055,
+                2113571,
+                2092800,
+                2225463
+              ]
+            },
+            "histogram_sha256": "cc6588ba417bae40a8bac15a263d743d71d4ac633140321b487166ffd24e1f65",
+            "inputs": [
+              [
+                10
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "median_ns": {
+              "closed_with_moments": 28506,
+              "inversion_cached": 346899,
+              "subset_dp_cached": 2121345
+            }
+          }
+        },
+        "source": "INTERNAL/AI_AUTHORED",
+        "system": "Linux"
+      },
+      "within_runner_ratios": {
+        "abstract_large": {
+          "vs_dp": 270.58829764222367,
+          "vs_inversion": 5.350659744754489
+        },
+        "sum10": {
+          "vs_dp": 74.41749105451484,
+          "vs_inversion": 12.16933277204799
+        }
+      }
+    },
+    {
+      "job_id": 139960632882,
+      "job_name": "verify (windows-latest)",
+      "conclusion": "success",
+      "raw": {
+        "limitations": [
+          "warm count-only workload",
+          "shared table setup excluded",
+          "no candidate enumeration or historical coverage",
+          "no cross-platform timing ranking"
+        ],
+        "machine": "AMD64",
+        "python": "3.12.10",
+        "results": {
+          "abstract_large": {
+            "batch_ns": {
+              "closed_with_moments": [
+                72500,
+                69800,
+                75400,
+                70100,
+                67500,
+                76600,
+                78600
+              ],
+              "inversion_cached": [
+                349900,
+                294100,
+                338700,
+                327300,
+                295400,
+                339300,
+                385800
+              ],
+              "subset_dp_cached": [
+                17367600,
+                17312200,
+                17289300,
+                17291700,
+                17284900,
+                17263500,
+                17408200
+              ]
+            },
+            "histogram_sha256": "0572f69544cb09189e9b2fef9d43d1054368cc7333fc6a84c13ac8b7bb86c166",
+            "inputs": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+              ],
+              [
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4,
+                1,
+                2,
+                3,
+                4
+              ]
+            ],
+            "median_ns": {
+              "closed_with_moments": 72500,
+              "inversion_cached": 338700,
+              "subset_dp_cached": 17291700
+            }
+          },
+          "sum10": {
+            "batch_ns": {
+              "closed_with_moments": [
+                34700,
+                33100,
+                35400,
+                33600,
+                46200,
+                35300,
+                33300
+              ],
+              "inversion_cached": [
+                412800,
+                390600,
+                545400,
+                406400,
+                419400,
+                436300,
+                442400
+              ],
+              "subset_dp_cached": [
+                2938600,
+                2926500,
+                2925700,
+                2942700,
+                2893200,
+                2905500,
+                2929700
+              ]
+            },
+            "histogram_sha256": "cc6588ba417bae40a8bac15a263d743d71d4ac633140321b487166ffd24e1f65",
+            "inputs": [
+              [
+                10
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "median_ns": {
+              "closed_with_moments": 34700,
+              "inversion_cached": 419400,
+              "subset_dp_cached": 2926500
+            }
+          }
+        },
+        "source": "INTERNAL/AI_AUTHORED",
+        "system": "Windows"
+      },
+      "within_runner_ratios": {
+        "abstract_large": {
+          "vs_dp": 238.50620689655173,
+          "vs_inversion": 4.671724137931035
+        },
+        "sum10": {
+          "vs_dp": 84.33717579250721,
+          "vs_inversion": 12.086455331412104
+        }
+      }
+    }
+  ],
+  "verified_prior_runs": [
+    45834323712,
+    45834323693,
+    45834578952,
+    45834578933
+  ],
+  "retained_timeout_lineage": [
+    45822187609,
+    45822852044
+  ],
+  "reproduce": "python docs/research/experiments/count_cost_v3817.py",
+  "limitations": [
+    "fixed warm count-only workload; shared table setup and imports excluded",
+    "within-runner ratios only; no hardware-normalized cross-platform comparison",
+    "no end-to-end filter engine speed, candidate-set compression or historical coverage improvement established",
+    "archive commit itself not covered by these runs"
+  ]
+}

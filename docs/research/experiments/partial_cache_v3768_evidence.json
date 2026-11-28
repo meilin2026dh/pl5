@@ -1,0 +1,1113 @@
+{
+  "schema": "pl5-partial-cache-v3768-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_sha": "4ba8520e44b6030534463ff6cbe5aacbeeb9fdd4",
+  "source_sha": "ed24c6f8238ca5beed6282b6a5acc8fcb405c1bd",
+  "specialized_run": 45511992256,
+  "application_run": 45511992136,
+  "application_job": 138861770410,
+  "application_test_files_passed": 54,
+  "application_tests_passed": 301,
+  "application_build": "success",
+  "reproduce": "python docs/research/experiments/partial_cache_v3768.py",
+  "cross_platform_ledger_and_counters_match": true,
+  "results": {
+    "windows": {
+      "job_id": 138861767099,
+      "report": {
+        "candidate_membership_preserved": true,
+        "capacity_entries": 128,
+        "domain": 100000,
+        "epochs": 8,
+        "historical_coverage_measured": false,
+        "limitations": [
+          "synthetic single-bit mutations and request locality",
+          "partial conjunctions include unconstrained and large outputs, no cap imposed",
+          "entry limit not byte limit; no RSS or serialized output measurement",
+          "shared rule construction and oracle verification excluded from timing",
+          "single-threaded in-process execution; timing observations not acceptance gates"
+        ],
+        "platform": "Windows-2025Server-10.0.26100-SP0",
+        "queries_per_epoch": 512,
+        "repeats": 7,
+        "results": {
+          "0": {
+            "candidate_count_max": 100000,
+            "candidate_count_min": 0,
+            "ledger_sha256": "5994a1bde33ba6a4a23b1927c13807b9eb7030f8cfb5e02ff0d669e7642a2412",
+            "strategies": {
+              "fixed": {
+                "median_total_ns": 35781800,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 36092000,
+                    "retained_entries": 0,
+                    "setup_ns": 131700,
+                    "total_ns": 36567200,
+                    "update_ns": 343500
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 35208300,
+                    "retained_entries": 0,
+                    "setup_ns": 35700,
+                    "total_ns": 35551300,
+                    "update_ns": 307300
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 35654000,
+                    "retained_entries": 0,
+                    "setup_ns": 36100,
+                    "total_ns": 35980100,
+                    "update_ns": 290000
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 35445500,
+                    "retained_entries": 0,
+                    "setup_ns": 36600,
+                    "total_ns": 35781800,
+                    "update_ns": 299700
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 34800000,
+                    "retained_entries": 0,
+                    "setup_ns": 34900,
+                    "total_ns": 35129600,
+                    "update_ns": 294700
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 35392800,
+                    "retained_entries": 0,
+                    "setup_ns": 45900,
+                    "total_ns": 35740300,
+                    "update_ns": 301600
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 35810900,
+                    "retained_entries": 0,
+                    "setup_ns": 39500,
+                    "total_ns": 36159100,
+                    "update_ns": 308700
+                  }
+                ]
+              },
+              "flush": {
+                "median_total_ns": 35978200,
+                "raw": [
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35905800,
+                    "retained_entries": 128,
+                    "setup_ns": 35800,
+                    "total_ns": 36343500,
+                    "update_ns": 401900
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35856500,
+                    "retained_entries": 128,
+                    "setup_ns": 40900,
+                    "total_ns": 36222100,
+                    "update_ns": 324700
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35015500,
+                    "retained_entries": 128,
+                    "setup_ns": 37100,
+                    "total_ns": 35419900,
+                    "update_ns": 367300
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35576700,
+                    "retained_entries": 128,
+                    "setup_ns": 36200,
+                    "total_ns": 35978200,
+                    "update_ns": 365300
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35266700,
+                    "retained_entries": 128,
+                    "setup_ns": 36200,
+                    "total_ns": 35696600,
+                    "update_ns": 393700
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 35621000,
+                    "retained_entries": 128,
+                    "setup_ns": 36300,
+                    "total_ns": 36032600,
+                    "update_ns": 375300
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 34202000,
+                    "retained_entries": 128,
+                    "setup_ns": 39300,
+                    "total_ns": 34558600,
+                    "update_ns": 317300
+                  }
+                ]
+              },
+              "selective": {
+                "median_total_ns": 35953600,
+                "raw": [
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 36757400,
+                    "retained_entries": 128,
+                    "setup_ns": 37500,
+                    "total_ns": 37482100,
+                    "update_ns": 687200
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 35304800,
+                    "retained_entries": 128,
+                    "setup_ns": 38400,
+                    "total_ns": 35953600,
+                    "update_ns": 610400
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 35114800,
+                    "retained_entries": 128,
+                    "setup_ns": 35100,
+                    "total_ns": 35706800,
+                    "update_ns": 556900
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 34995000,
+                    "retained_entries": 128,
+                    "setup_ns": 38600,
+                    "total_ns": 35568100,
+                    "update_ns": 534500
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 35811200,
+                    "retained_entries": 128,
+                    "setup_ns": 36800,
+                    "total_ns": 36371100,
+                    "update_ns": 523100
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 35871300,
+                    "retained_entries": 128,
+                    "setup_ns": 34300,
+                    "total_ns": 36456500,
+                    "update_ns": 550900
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 35323400,
+                    "retained_entries": 128,
+                    "setup_ns": 40600,
+                    "total_ns": 35858000,
+                    "update_ns": 494000
+                  }
+                ]
+              }
+            }
+          },
+          "90": {
+            "candidate_count_max": 100000,
+            "candidate_count_min": 0,
+            "ledger_sha256": "35e65cedd6fa45493cfa893ff4f66c72d9c6264b75f1d5df214d87762f176357",
+            "strategies": {
+              "fixed": {
+                "median_total_ns": 31557000,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 34668100,
+                    "retained_entries": 0,
+                    "setup_ns": 57500,
+                    "total_ns": 35087900,
+                    "update_ns": 362300
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 36638500,
+                    "retained_entries": 0,
+                    "setup_ns": 41200,
+                    "total_ns": 37048900,
+                    "update_ns": 369200
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 33918500,
+                    "retained_entries": 0,
+                    "setup_ns": 31700,
+                    "total_ns": 34286000,
+                    "update_ns": 335800
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 30905400,
+                    "retained_entries": 0,
+                    "setup_ns": 32400,
+                    "total_ns": 31178800,
+                    "update_ns": 241000
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 31226400,
+                    "retained_entries": 0,
+                    "setup_ns": 30900,
+                    "total_ns": 31557000,
+                    "update_ns": 299700
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 31057000,
+                    "retained_entries": 0,
+                    "setup_ns": 30800,
+                    "total_ns": 31341300,
+                    "update_ns": 253500
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 30963900,
+                    "retained_entries": 0,
+                    "setup_ns": 32200,
+                    "total_ns": 31252400,
+                    "update_ns": 256300
+                  }
+                ]
+              },
+              "flush": {
+                "median_total_ns": 8392700,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8068900,
+                    "retained_entries": 86,
+                    "setup_ns": 40000,
+                    "total_ns": 8377800,
+                    "update_ns": 268900
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8897500,
+                    "retained_entries": 86,
+                    "setup_ns": 29200,
+                    "total_ns": 9188500,
+                    "update_ns": 261800
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8427900,
+                    "retained_entries": 86,
+                    "setup_ns": 36100,
+                    "total_ns": 8704900,
+                    "update_ns": 240900
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8125600,
+                    "retained_entries": 86,
+                    "setup_ns": 33000,
+                    "total_ns": 8404100,
+                    "update_ns": 245500
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8065400,
+                    "retained_entries": 86,
+                    "setup_ns": 29600,
+                    "total_ns": 8365900,
+                    "update_ns": 270900
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 8071200,
+                    "retained_entries": 86,
+                    "setup_ns": 35500,
+                    "total_ns": 8392700,
+                    "update_ns": 286000
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 7966400,
+                    "retained_entries": 86,
+                    "setup_ns": 33500,
+                    "total_ns": 8250800,
+                    "update_ns": 250900
+                  }
+                ]
+              },
+              "selective": {
+                "median_total_ns": 7633000,
+                "raw": [
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7216000,
+                    "retained_entries": 128,
+                    "setup_ns": 30800,
+                    "total_ns": 7652200,
+                    "update_ns": 405400
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 8144300,
+                    "retained_entries": 128,
+                    "setup_ns": 33400,
+                    "total_ns": 8640300,
+                    "update_ns": 462600
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7441600,
+                    "retained_entries": 128,
+                    "setup_ns": 36800,
+                    "total_ns": 7945400,
+                    "update_ns": 467000
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7058500,
+                    "retained_entries": 128,
+                    "setup_ns": 31500,
+                    "total_ns": 7487900,
+                    "update_ns": 397900
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7099000,
+                    "retained_entries": 128,
+                    "setup_ns": 28700,
+                    "total_ns": 7531900,
+                    "update_ns": 404200
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7128300,
+                    "retained_entries": 128,
+                    "setup_ns": 32800,
+                    "total_ns": 7633000,
+                    "update_ns": 471900
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 7056200,
+                    "retained_entries": 128,
+                    "setup_ns": 32100,
+                    "total_ns": 7495200,
+                    "update_ns": 406900
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "schema": "pl5-partial-cache-v3768-1",
+        "source": "INTERNAL/AI_AUTHORED"
+      }
+    },
+    "ubuntu": {
+      "job_id": 138861767699,
+      "report": {
+        "candidate_membership_preserved": true,
+        "capacity_entries": 128,
+        "domain": 100000,
+        "epochs": 8,
+        "historical_coverage_measured": false,
+        "limitations": [
+          "synthetic single-bit mutations and request locality",
+          "partial conjunctions include unconstrained and large outputs, no cap imposed",
+          "entry limit not byte limit; no RSS or serialized output measurement",
+          "shared rule construction and oracle verification excluded from timing",
+          "single-threaded in-process execution; timing observations not acceptance gates"
+        ],
+        "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+        "queries_per_epoch": 512,
+        "repeats": 7,
+        "results": {
+          "0": {
+            "candidate_count_max": 100000,
+            "candidate_count_min": 0,
+            "ledger_sha256": "5994a1bde33ba6a4a23b1927c13807b9eb7030f8cfb5e02ff0d669e7642a2412",
+            "strategies": {
+              "fixed": {
+                "median_total_ns": 48384229,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 51899054,
+                    "retained_entries": 0,
+                    "setup_ns": 136336,
+                    "total_ns": 52301272,
+                    "update_ns": 265882
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48214259,
+                    "retained_entries": 0,
+                    "setup_ns": 18124,
+                    "total_ns": 48384229,
+                    "update_ns": 151846
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48186997,
+                    "retained_entries": 0,
+                    "setup_ns": 18544,
+                    "total_ns": 48335507,
+                    "update_ns": 129966
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48031123,
+                    "retained_entries": 0,
+                    "setup_ns": 19477,
+                    "total_ns": 48188193,
+                    "update_ns": 137593
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48156138,
+                    "retained_entries": 0,
+                    "setup_ns": 19307,
+                    "total_ns": 48307866,
+                    "update_ns": 132421
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48608753,
+                    "retained_entries": 0,
+                    "setup_ns": 22643,
+                    "total_ns": 48795214,
+                    "update_ns": 163818
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 48450128,
+                    "retained_entries": 0,
+                    "setup_ns": 21070,
+                    "total_ns": 48624246,
+                    "update_ns": 153048
+                  }
+                ]
+              },
+              "flush": {
+                "median_total_ns": 49592514,
+                "raw": [
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 51385306,
+                    "retained_entries": 128,
+                    "setup_ns": 42349,
+                    "total_ns": 51642260,
+                    "update_ns": 214605
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 47847225,
+                    "retained_entries": 128,
+                    "setup_ns": 20488,
+                    "total_ns": 48030739,
+                    "update_ns": 163026
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 49400892,
+                    "retained_entries": 128,
+                    "setup_ns": 22242,
+                    "total_ns": 49592514,
+                    "update_ns": 169380
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 49366085,
+                    "retained_entries": 128,
+                    "setup_ns": 19697,
+                    "total_ns": 49560632,
+                    "update_ns": 174850
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 47882803,
+                    "retained_entries": 128,
+                    "setup_ns": 21000,
+                    "total_ns": 48071268,
+                    "update_ns": 167465
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 49500389,
+                    "retained_entries": 128,
+                    "setup_ns": 22623,
+                    "total_ns": 49705183,
+                    "update_ns": 182171
+                  },
+                  {
+                    "evictions": 2141,
+                    "hits": 931,
+                    "invalidations": 896,
+                    "misses": 3165,
+                    "query_ns": 49515132,
+                    "retained_entries": 128,
+                    "setup_ns": 24766,
+                    "total_ns": 49715528,
+                    "update_ns": 175630
+                  }
+                ]
+              },
+              "selective": {
+                "median_total_ns": 49715704,
+                "raw": [
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 52295327,
+                    "retained_entries": 128,
+                    "setup_ns": 21580,
+                    "total_ns": 52784407,
+                    "update_ns": 467500
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 47799227,
+                    "retained_entries": 128,
+                    "setup_ns": 19085,
+                    "total_ns": 48118048,
+                    "update_ns": 299736
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 49389349,
+                    "retained_entries": 128,
+                    "setup_ns": 20478,
+                    "total_ns": 49715704,
+                    "update_ns": 305877
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 47853188,
+                    "retained_entries": 128,
+                    "setup_ns": 19387,
+                    "total_ns": 48172639,
+                    "update_ns": 300064
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 48118538,
+                    "retained_entries": 128,
+                    "setup_ns": 19236,
+                    "total_ns": 48439573,
+                    "update_ns": 301799
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 49571913,
+                    "retained_entries": 128,
+                    "setup_ns": 22512,
+                    "total_ns": 49935898,
+                    "update_ns": 341473
+                  },
+                  {
+                    "evictions": 2533,
+                    "hits": 955,
+                    "invalidations": 480,
+                    "misses": 3141,
+                    "query_ns": 50139018,
+                    "retained_entries": 128,
+                    "setup_ns": 18855,
+                    "total_ns": 50469829,
+                    "update_ns": 311956
+                  }
+                ]
+              }
+            }
+          },
+          "90": {
+            "candidate_count_max": 100000,
+            "candidate_count_min": 0,
+            "ledger_sha256": "35e65cedd6fa45493cfa893ff4f66c72d9c6264b75f1d5df214d87762f176357",
+            "strategies": {
+              "fixed": {
+                "median_total_ns": 47710409,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47803123,
+                    "retained_entries": 0,
+                    "setup_ns": 30798,
+                    "total_ns": 47990364,
+                    "update_ns": 156443
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47511835,
+                    "retained_entries": 0,
+                    "setup_ns": 18114,
+                    "total_ns": 47662827,
+                    "update_ns": 132878
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47560516,
+                    "retained_entries": 0,
+                    "setup_ns": 18365,
+                    "total_ns": 47710409,
+                    "update_ns": 131528
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47474895,
+                    "retained_entries": 0,
+                    "setup_ns": 19467,
+                    "total_ns": 47634025,
+                    "update_ns": 139663
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47685323,
+                    "retained_entries": 0,
+                    "setup_ns": 18274,
+                    "total_ns": 47840836,
+                    "update_ns": 137239
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47355022,
+                    "retained_entries": 0,
+                    "setup_ns": 17743,
+                    "total_ns": 47501138,
+                    "update_ns": 128373
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 0,
+                    "invalidations": 0,
+                    "misses": 4096,
+                    "query_ns": 47599369,
+                    "retained_entries": 0,
+                    "setup_ns": 19256,
+                    "total_ns": 47751784,
+                    "update_ns": 133159
+                  }
+                ]
+              },
+              "flush": {
+                "median_total_ns": 12238285,
+                "raw": [
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12124850,
+                    "retained_entries": 86,
+                    "setup_ns": 21942,
+                    "total_ns": 12308515,
+                    "update_ns": 161723
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12081470,
+                    "retained_entries": 86,
+                    "setup_ns": 21531,
+                    "total_ns": 12238285,
+                    "update_ns": 135284
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12087100,
+                    "retained_entries": 86,
+                    "setup_ns": 21229,
+                    "total_ns": 12245186,
+                    "update_ns": 136857
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12070880,
+                    "retained_entries": 86,
+                    "setup_ns": 21249,
+                    "total_ns": 12228034,
+                    "update_ns": 135905
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12088893,
+                    "retained_entries": 86,
+                    "setup_ns": 17764,
+                    "total_ns": 12256170,
+                    "update_ns": 149513
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12047215,
+                    "retained_entries": 86,
+                    "setup_ns": 19296,
+                    "total_ns": 12204604,
+                    "update_ns": 138093
+                  },
+                  {
+                    "evictions": 0,
+                    "hits": 3374,
+                    "invalidations": 636,
+                    "misses": 722,
+                    "query_ns": 12036114,
+                    "retained_entries": 86,
+                    "setup_ns": 20328,
+                    "total_ns": 12189273,
+                    "update_ns": 132831
+                  }
+                ]
+              },
+              "selective": {
+                "median_total_ns": 10619244,
+                "raw": [
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10313190,
+                    "retained_entries": 128,
+                    "setup_ns": 20278,
+                    "total_ns": 10619244,
+                    "update_ns": 285776
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10367896,
+                    "retained_entries": 128,
+                    "setup_ns": 18165,
+                    "total_ns": 10660959,
+                    "update_ns": 274898
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10285820,
+                    "retained_entries": 128,
+                    "setup_ns": 20509,
+                    "total_ns": 10604051,
+                    "update_ns": 297722
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10387041,
+                    "retained_entries": 128,
+                    "setup_ns": 18295,
+                    "total_ns": 10685845,
+                    "update_ns": 280509
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10346453,
+                    "retained_entries": 128,
+                    "setup_ns": 20829,
+                    "total_ns": 10674169,
+                    "update_ns": 306887
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10305657,
+                    "retained_entries": 128,
+                    "setup_ns": 19757,
+                    "total_ns": 10606513,
+                    "update_ns": 281099
+                  },
+                  {
+                    "evictions": 14,
+                    "hits": 3544,
+                    "invalidations": 410,
+                    "misses": 552,
+                    "query_ns": 10286351,
+                    "retained_entries": 128,
+                    "setup_ns": 18916,
+                    "total_ns": 10590796,
+                    "update_ns": 285529
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "schema": "pl5-partial-cache-v3768-1",
+        "source": "INTERNAL/AI_AUTHORED"
+      }
+    }
+  },
+  "derived": {
+    "0": {
+      "ledger_sha256": "5994a1bde33ba6a4a23b1927c13807b9eb7030f8cfb5e02ff0d669e7642a2412",
+      "platforms": {
+        "windows": {
+          "selective_vs_fixed_ratio": 0.9952216189755685,
+          "selective_vs_flush_ratio": 1.000684215210716,
+          "selective_hit_rate": 0.233154296875,
+          "flush_hit_rate": 0.227294921875
+        },
+        "ubuntu": {
+          "selective_vs_fixed_ratio": 0.9732182209468461,
+          "selective_vs_flush_ratio": 0.9975221109209276,
+          "selective_hit_rate": 0.233154296875,
+          "flush_hit_rate": 0.227294921875
+        }
+      }
+    },
+    "90": {
+      "ledger_sha256": "35e65cedd6fa45493cfa893ff4f66c72d9c6264b75f1d5df214d87762f176357",
+      "platforms": {
+        "windows": {
+          "selective_vs_fixed_ratio": 4.134285339971178,
+          "selective_vs_flush_ratio": 1.0995283636840036,
+          "selective_hit_rate": 0.865234375,
+          "flush_hit_rate": 0.82373046875
+        },
+        "ubuntu": {
+          "selective_vs_fixed_ratio": 4.492825383803216,
+          "selective_vs_flush_ratio": 1.1524629248560443,
+          "selective_hit_rate": 0.865234375,
+          "flush_hit_rate": 0.82373046875
+        }
+      }
+    }
+  },
+  "interpretation": "High locality reduces recomputation; low locality shows no observed end-to-end benefit versus uncached fixed intersections. Selective invalidation retains more hits but is not uniformly faster than flush. Synthetic single-bit changes and 128-entry limit; no output serialization, byte-budget, concurrency, historical coverage, or general workload claim. Timings are observations, not gates."
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "structural-count-ci-evidence-v1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "ccff39bc966c47fbbc2038095035410d17753613",
+  "certificate_source": "9a703c0baf17bfa9da1ebb9a07053a0ef51e032e",
+  "moment_source": "cc197c2e7526188808d5d6c5c2c1e6e3cbf1ab42",
+  "specialized_run": {
+    "id": 45832093425,
+    "conclusion": "success",
+    "url": "https://github.com/meilin2026dh/pl5/actions/runs/45832093425"
+  },
+  "application_run": {
+    "id": 45832093501,
+    "conclusion": "success",
+    "url": "https://github.com/meilin2026dh/pl5/actions/runs/45832093501"
+  },
+  "jobs": [
+    {
+      "os": "windows-latest",
+      "id": 139951214609,
+      "python": "3.12.10",
+      "conclusion": "success",
+      "moment_tests": 4,
+      "moment_seconds": 2.451,
+      "closed_tests": 3,
+      "closed_seconds": 1.651
+    },
+    {
+      "os": "ubuntu-latest",
+      "id": 139951214984,
+      "python": "3.12.16",
+      "conclusion": "success",
+      "moment_tests": 4,
+      "moment_seconds": 3.473,
+      "closed_tests": 3,
+      "closed_seconds": 2.192
+    }
+  ],
+  "identical_moment_output": {
+    "equivalent_histogram": [
+      31223787776,
+      2353516800,
+      55133952,
+      727299840
+    ],
+    "moments": [
+      128,
+      560,
+      2624,
+      12992,
+      67328
+    ],
+    "partition_cases": 271,
+    "sixth_moments": [
+      362960,
+      362240
+    ],
+    "source": "INTERNAL/AI_AUTHORED",
+    "limitations": [
+      "static aggregate certificate only",
+      "not equality of candidate sets",
+      "no measured runtime or historical coverage advantage"
+    ]
+  },
+  "failure_lineage": {
+    "previous_runs": [
+      45822187609,
+      45822852044
+    ],
+    "prior_windows_job_cap_minutes": 5,
+    "repaired_cap_minutes": 6,
+    "interpretation": "Two preceding Windows cancellations at the job cap; no observed assertion failure in those runs. This run succeeded; permanent elimination of timeouts not established."
+  },
+  "reproduce": [
+    "python docs/research/experiments/moment_quotient_count_v3815.py",
+    "python docs/research/experiments/closed_quotient_count_v3816.py"
+  ],
+  "limitations": [
+    "Only tested commit accepted for these static certificates and associated workflow checks.",
+    "V3.8.16 logs show test pass, not a separately printed structured histogram.",
+    "Test durations are not algorithm benchmark measurements.",
+    "No new filter rules, candidate-set compression benefit or historical coverage benefit established.",
+    "Historical data and main unchanged.",
+    "Evidence commit itself not tested by these runs."
+  ]
+}

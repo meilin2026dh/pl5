@@ -1,0 +1,424 @@
+{
+  "schema": "pl5-bitmap-output-cost-v3767-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_head": "acf7aed310d929e6d18125803d7a22a16a3daeb5",
+  "tested_base": "5b2e2da400ff063ea5000eec81bbb59ba0a9ee68",
+  "tested_merge_prefix": "d52a515",
+  "specialized_run": 45493565855,
+  "application_run": 45493565842,
+  "application": {
+    "test_files_passed": 54,
+    "tests_passed": 301,
+    "build": "success"
+  },
+  "jobs": [
+    138797979763,
+    138797980226
+  ],
+  "raw": [
+    {
+      "candidate_ledger_sha256": "ce3bf2c3ab1e336334420357320a613e6d334dcfc04cec423fd24f12834735f6",
+      "candidate_membership_preserved": true,
+      "cap": 100,
+      "cold_repeats": 3,
+      "domain": 100000,
+      "historical_coverage_measured": false,
+      "limitations": [
+        "complete frozen signatures only",
+        "memory is incremental Python tracemalloc, not process RSS",
+        "separate memory pass; no traced timing comparisons",
+        "cold process wall includes common freeze and process exit",
+        "binary output built in memory, no network or disk transfer",
+        "packed cache precomputes output and is restricted to fixed workload",
+        "no timing gates or cross-machine speed ranking"
+      ],
+      "memory_repeats": 1,
+      "output_bytes": 68548,
+      "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+      "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+      "python": "3.12.16",
+      "query_count": 893,
+      "schema": "pl5-bitmap-output-cost-v3767-1",
+      "source": "INTERNAL/AI_AUTHORED",
+      "strategies": {
+        "bitmap": {
+          "cold": [
+            {
+              "first_output_ns": 63615558,
+              "fresh_process_wall_ns": 1820663115,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 10275827,
+              "through_first_output_ns": 1665087720
+            },
+            {
+              "first_output_ns": 64136201,
+              "fresh_process_wall_ns": 1830862495,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 10396624,
+              "through_first_output_ns": 1687071607
+            },
+            {
+              "first_output_ns": 63240202,
+              "fresh_process_wall_ns": 1837697538,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 9954204,
+              "through_first_output_ns": 1675447629
+            }
+          ],
+          "median_fresh_process_wall_ns": 1830862495,
+          "memory": {
+            "first_output_current_bytes": 12735412,
+            "first_output_peak_bytes": 12912901,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 12666296,
+            "setup_peak_bytes": 19766804
+          },
+          "warm": {
+            "first_output_ns": 73218763,
+            "median_warm_output_ns": 63079479,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 9955968,
+            "through_first_output_ns": 1704225332,
+            "warm_output_ns": [
+              62389047,
+              64064746,
+              64600335,
+              63079479,
+              63048803,
+              62980120,
+              63684202
+            ]
+          }
+        },
+        "fixed": {
+          "cold": [
+            {
+              "first_output_ns": 71360050,
+              "fresh_process_wall_ns": 1802276323,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 38057,
+              "through_first_output_ns": 1632287235
+            },
+            {
+              "first_output_ns": 71627715,
+              "fresh_process_wall_ns": 1877787528,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 48724,
+              "through_first_output_ns": 1720363047
+            },
+            {
+              "first_output_ns": 71876336,
+              "fresh_process_wall_ns": 1880622613,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 41433,
+              "through_first_output_ns": 1739343465
+            }
+          ],
+          "median_fresh_process_wall_ns": 1877787528,
+          "memory": {
+            "first_output_current_bytes": 244260,
+            "first_output_peak_bytes": 421749,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 175032,
+            "setup_peak_bytes": 175216
+          },
+          "warm": {
+            "first_output_ns": 72796420,
+            "median_warm_output_ns": 71914369,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 43135,
+            "through_first_output_ns": 1712326804,
+            "warm_output_ns": [
+              71914369,
+              71959327,
+              72145138,
+              71148514,
+              71360725,
+              72418290,
+              71229577
+            ]
+          }
+        },
+        "packed": {
+          "cold": [
+            {
+              "first_output_ns": 126571,
+              "fresh_process_wall_ns": 1835718779,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 71919535,
+              "through_first_output_ns": 1669602373
+            },
+            {
+              "first_output_ns": 132009,
+              "fresh_process_wall_ns": 1797664416,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 71196986,
+              "through_first_output_ns": 1655569355
+            },
+            {
+              "first_output_ns": 126230,
+              "fresh_process_wall_ns": 1859846907,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 71298809,
+              "through_first_output_ns": 1668927664
+            }
+          ],
+          "median_fresh_process_wall_ns": 1835718779,
+          "memory": {
+            "first_output_current_bytes": 204389,
+            "first_output_peak_bytes": 283861,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 135744,
+            "setup_peak_bytes": 19766804
+          },
+          "warm": {
+            "first_output_ns": 142445,
+            "median_warm_output_ns": 35714,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 76031378,
+            "through_first_output_ns": 1699024904,
+            "warm_output_ns": [
+              45078,
+              36546,
+              35714,
+              36305,
+              35484,
+              34592,
+              35534
+            ]
+          }
+        }
+      },
+      "warm_repeats": 7
+    },
+    {
+      "candidate_ledger_sha256": "ce3bf2c3ab1e336334420357320a613e6d334dcfc04cec423fd24f12834735f6",
+      "candidate_membership_preserved": true,
+      "cap": 100,
+      "cold_repeats": 3,
+      "domain": 100000,
+      "historical_coverage_measured": false,
+      "limitations": [
+        "complete frozen signatures only",
+        "memory is incremental Python tracemalloc, not process RSS",
+        "separate memory pass; no traced timing comparisons",
+        "cold process wall includes common freeze and process exit",
+        "binary output built in memory, no network or disk transfer",
+        "packed cache precomputes output and is restricted to fixed workload",
+        "no timing gates or cross-machine speed ranking"
+      ],
+      "memory_repeats": 1,
+      "output_bytes": 68548,
+      "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "python": "3.12.10",
+      "query_count": 893,
+      "schema": "pl5-bitmap-output-cost-v3767-1",
+      "source": "INTERNAL/AI_AUTHORED",
+      "strategies": {
+        "bitmap": {
+          "cold": [
+            {
+              "first_output_ns": 99352600,
+              "fresh_process_wall_ns": 2468197600,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 27541600,
+              "through_first_output_ns": 2369156200
+            },
+            {
+              "first_output_ns": 99338800,
+              "fresh_process_wall_ns": 2500418400,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 27768400,
+              "through_first_output_ns": 2400173400
+            },
+            {
+              "first_output_ns": 99233500,
+              "fresh_process_wall_ns": 2453774900,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 27619100,
+              "through_first_output_ns": 2350351700
+            }
+          ],
+          "median_fresh_process_wall_ns": 2468197600,
+          "memory": {
+            "first_output_current_bytes": 12735404,
+            "first_output_peak_bytes": 12912893,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 12666296,
+            "setup_peak_bytes": 19766804
+          },
+          "warm": {
+            "first_output_ns": 99530200,
+            "median_warm_output_ns": 98786000,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 27808400,
+            "through_first_output_ns": 2326193700,
+            "warm_output_ns": [
+              99126400,
+              99268900,
+              99459100,
+              98786000,
+              98697500,
+              98631900,
+              98578600
+            ]
+          }
+        },
+        "fixed": {
+          "cold": [
+            {
+              "first_output_ns": 115191400,
+              "fresh_process_wall_ns": 2420583000,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 47700,
+              "through_first_output_ns": 2317035800
+            },
+            {
+              "first_output_ns": 115504700,
+              "fresh_process_wall_ns": 2436441700,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 46500,
+              "through_first_output_ns": 2333547700
+            },
+            {
+              "first_output_ns": 122270000,
+              "fresh_process_wall_ns": 2473787100,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 47000,
+              "through_first_output_ns": 2372773300
+            }
+          ],
+          "median_fresh_process_wall_ns": 2436441700,
+          "memory": {
+            "first_output_current_bytes": 244252,
+            "first_output_peak_bytes": 421741,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 175032,
+            "setup_peak_bytes": 175216
+          },
+          "warm": {
+            "first_output_ns": 119937400,
+            "median_warm_output_ns": 114879400,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 48700,
+            "through_first_output_ns": 2333955000,
+            "warm_output_ns": [
+              114984500,
+              115205300,
+              114879400,
+              114836700,
+              125320500,
+              114701600,
+              114251000
+            ]
+          }
+        },
+        "packed": {
+          "cold": [
+            {
+              "first_output_ns": 182500,
+              "fresh_process_wall_ns": 2442467800,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 127701600,
+              "through_first_output_ns": 2338692600
+            },
+            {
+              "first_output_ns": 168700,
+              "fresh_process_wall_ns": 2443779600,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 128261400,
+              "through_first_output_ns": 2343613700
+            },
+            {
+              "first_output_ns": 190100,
+              "fresh_process_wall_ns": 2440837500,
+              "output_bytes": 68548,
+              "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+              "setup_ns": 133618400,
+              "through_first_output_ns": 2341195200
+            }
+          ],
+          "median_fresh_process_wall_ns": 2442467800,
+          "memory": {
+            "first_output_current_bytes": 204381,
+            "first_output_peak_bytes": 283853,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "retained_setup_bytes": 135744,
+            "setup_peak_bytes": 19766804
+          },
+          "warm": {
+            "first_output_ns": 180200,
+            "median_warm_output_ns": 64600,
+            "output_bytes": 68548,
+            "output_sha256": "22d7b9dfaf7fc0913016cae893005eec1fe22df36f51ac0de81832eecf814dae",
+            "setup_ns": 127605500,
+            "through_first_output_ns": 2351540400,
+            "warm_output_ns": [
+              92800,
+              67800,
+              65200,
+              63600,
+              64600,
+              62800,
+              61600
+            ]
+          }
+        }
+      },
+      "warm_repeats": 7
+    }
+  ],
+  "derived": [
+    {
+      "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+      "warm_fixed_over_packed": 2013.6184409475277,
+      "packed_retained_reduction_vs_bitmap": 0.9892830548093934,
+      "packed_cold_relative_to_fixed": 0.9775966405289704,
+      "packed_peak_setup_bytes": 19766804,
+      "packed_retained_setup_bytes": 135744
+    },
+    {
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "warm_fixed_over_packed": 1778.3188854489165,
+      "packed_retained_reduction_vs_bitmap": 0.9892830548093934,
+      "packed_cold_relative_to_fixed": 1.0024733200059743,
+      "packed_peak_setup_bytes": 19766804,
+      "packed_retained_setup_bytes": 135744
+    }
+  ],
+  "interpretation": [
+    "Packed retrieval accelerates warm in-memory output for the fixed static workload only.",
+    "Cold wall medians are close and direction differs across platforms; three samples do not establish a cold advantage.",
+    "Packed retained setup allocation is lower than bitmap; peak setup allocation is identical. Incremental tracemalloc is not RSS.",
+    "No historical coverage measured. No production change."
+  ]
+}

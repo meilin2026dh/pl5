@@ -1,0 +1,658 @@
+{
+  "schema": "resource-signature-pruning-v3823-acceptance-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "3db24e715435d1a5b00cb559d4b4060a47b17f80",
+  "source_commit": "3b041c54f90e53dc49245861ec78071e2d858696",
+  "source_blob": "fea49f50bd55e72cc37c4535a9da66b52a3e232b",
+  "specialized_run": 45893426191,
+  "application_run": 45893426200,
+  "jobs": [
+    {
+      "os": "windows-latest",
+      "id": 140161386764,
+      "node": "22.23.5",
+      "step": 44,
+      "result": "success"
+    },
+    {
+      "os": "ubuntu-latest",
+      "id": 140161387129,
+      "node": "24.22.3",
+      "step": 44,
+      "result": "success"
+    }
+  ],
+  "matching_report": {
+    "audit": [
+      {
+        "cases": [
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 1,
+        "rules": 0
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": 0,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 2,
+        "rules": 1
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 0,
+            "grouped_checks": 0,
+            "groups": 0,
+            "optimum": null,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 3,
+        "rules": 3
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 30,
+            "groups": 1,
+            "optimum": 364,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 30,
+            "groups": 1,
+            "optimum": 904,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 30,
+            "groups": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 96,
+            "groups": 6,
+            "optimum": 562,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 96,
+            "groups": 6,
+            "optimum": 572,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 54,
+            "groups": 2,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 30,
+            "groups": 1,
+            "optimum": 277,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 80,
+            "groups": 4,
+            "optimum": 758,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 88,
+            "groups": 5,
+            "optimum": 818,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 96,
+            "grouped_checks": 96,
+            "groups": 6,
+            "optimum": 1029,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 4,
+        "rules": 6
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 90,
+            "groups": 1,
+            "optimum": 1010,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 90,
+            "groups": 1,
+            "optimum": 1422,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 90,
+            "groups": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 660,
+            "groups": 10,
+            "optimum": 1114,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 394,
+            "groups": 5,
+            "optimum": 1334,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 174,
+            "groups": 2,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 90,
+            "groups": 1,
+            "optimum": 337,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 616,
+            "groups": 9,
+            "optimum": 3318,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 612,
+            "groups": 9,
+            "optimum": 1522,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 660,
+            "grouped_checks": 568,
+            "groups": 8,
+            "optimum": 736,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 5,
+        "rules": 10
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 210,
+            "groups": 1,
+            "optimum": 2288,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 210,
+            "groups": 1,
+            "optimum": 2296,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 210,
+            "groups": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 2610,
+            "groups": 15,
+            "optimum": 2386,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 1216,
+            "groups": 6,
+            "optimum": 2488,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 414,
+            "groups": 2,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 210,
+            "groups": 1,
+            "optimum": 397,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 2186,
+            "groups": 12,
+            "optimum": 7617,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 2046,
+            "groups": 11,
+            "optimum": 785,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 2610,
+            "grouped_checks": 2154,
+            "groups": 12,
+            "optimum": 50,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 6,
+        "rules": 15
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 756,
+            "groups": 1,
+            "optimum": 8132,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 756,
+            "groups": 1,
+            "optimum": 8132,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 756,
+            "groups": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 19320,
+            "groups": 28,
+            "optimum": 8236,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 4464,
+            "groups": 6,
+            "optimum": 8292,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 1506,
+            "groups": 2,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 756,
+            "groups": 1,
+            "optimum": 517,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 10734,
+            "groups": 15,
+            "optimum": 46,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 12866,
+            "groups": 18,
+            "optimum": 8185,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 19320,
+            "grouped_checks": 11556,
+            "groups": 16,
+            "optimum": 2791,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 8,
+        "rules": 28
+      },
+      {
+        "cases": [
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "groups": 1,
+            "optimum": 21400,
+            "profile": "uniform"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "groups": 1,
+            "optimum": 21400,
+            "profile": "skew"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "groups": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 84420,
+            "groups": 45,
+            "optimum": 21501,
+            "profile": "endpoint"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 11880,
+            "groups": 6,
+            "optimum": 21498,
+            "profile": "mixed"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 3954,
+            "groups": 2,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 1980,
+            "groups": 1,
+            "optimum": 637,
+            "profile": "triangle_first"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38858,
+            "groups": 20,
+            "optimum": 1278,
+            "profile": "fixed_0"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 40526,
+            "groups": 21,
+            "optimum": 67,
+            "profile": "fixed_1"
+          },
+          {
+            "cubic_checks": 84420,
+            "grouped_checks": 38752,
+            "groups": 20,
+            "optimum": 58,
+            "profile": "fixed_2"
+          }
+        ],
+        "n": 10,
+        "rules": 45
+      }
+    ],
+    "source": "INTERNAL/AI_AUTHORED"
+  },
+  "totals": {
+    "cubic": 1071060,
+    "grouped": 305260
+  },
+  "historical_failure_runs": [
+    45822187609,
+    45822852044
+  ],
+  "prior_source_head_runs_without_explicit_invocation": [
+    45892912157,
+    45892912084
+  ],
+  "reproduce": "node docs/research/experiments/quotient_grouped_order_v3823.js",
+  "limitations": [
+    "Fixed abstract ordered target-cover objective.",
+    "Complete objective evaluations exclude preprocessing and other operations; not measured runtime.",
+    "No reduction for distinct-resource endpoint profile.",
+    "No candidate-set compression or historical coverage advantage established.",
+    "Archive commit itself not covered by tested runs."
+  ]
+}

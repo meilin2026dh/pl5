@@ -1,0 +1,349 @@
+{
+  "tested_head": "a83c553fbd1dc7497b844a40f05c5dee1a8dc427",
+  "specialized_run": 45797281584,
+  "application_run": 45797281483,
+  "windows_job": 139831073179,
+  "ubuntu_job": 139831073362,
+  "cross_platform_equal": true,
+  "results": {
+    "V3809_UNIFIED_JSON": {
+      "base_classes": 1079,
+      "domain": 100000,
+      "limitations": [
+        "fixed static inventory; retrospective descriptive comparison",
+        "global uniform fixed-size comparator ignores dependencies on conditioning predicates",
+        "squared standardized difference is descriptive, not a p-value or normal approximation",
+        "no multiple-testing inference, no operational selection, no historical coverage",
+        "no measured computation cost or full-inventory nonredundancy claim"
+      ],
+      "result": {
+        "distinction_multiplicity": [
+          15616864,
+          15965201,
+          14108891,
+          14049062,
+          620687
+        ],
+        "joint_distinguished_pairs": 44743841,
+        "pairwise_overlap_matrix": [
+          [
+            25666025,
+            7527541,
+            9138984,
+            9781248
+          ],
+          [
+            7527541,
+            19478110,
+            6187398,
+            6550369
+          ],
+          [
+            9138984,
+            6187398,
+            21314817,
+            20794659
+          ],
+          [
+            9781248,
+            6550369,
+            20794659,
+            22353965
+          ]
+        ],
+        "rules": {
+          "collapsed_return": {
+            "given_other_three": {
+              "classes_before": 3443,
+              "difference_from_mean_exact": "-31777431520919/5555500",
+              "direction": -1,
+              "fixed_size_mean_exact": "34655874958419/5555500",
+              "fixed_size_variance_exact": "149495279757146351030797912291317/154310185447528240750000",
+              "positive_count": 26190,
+              "ratio_to_mean_exact": "2878443437500/34655874958419",
+              "separated_pairs": 518125,
+              "split_classes": 317,
+              "squared_standardized_difference_exact": "5048773322074380935765728442463563683/149495279757146351030797912291317",
+              "zero_variance": false
+            },
+            "standalone": {
+              "classes_before": 1079,
+              "difference_from_mean_exact": "-1091911050311/1111100",
+              "direction": -1,
+              "fixed_size_mean_exact": "25929401561811/1111100",
+              "fixed_size_variance_exact": "74847097756074629825638325483517/6172407417901129630000",
+              "positive_count": 26190,
+              "ratio_to_mean_exact": "24837490511500/25929401561811",
+              "separated_pairs": 22353965,
+              "split_classes": 809,
+              "squared_standardized_difference_exact": "5961050645097717273564119339340163/74847097756074629825638325483517",
+              "zero_variance": false
+            }
+          },
+          "cycle": {
+            "given_other_three": {
+              "classes_before": 2986,
+              "difference_from_mean_exact": "-269183698269/277775",
+              "direction": -1,
+              "fixed_size_mean_exact": "1931650684544/277775",
+              "fixed_size_variance_exact": "44848451531665650352828756608/20303971769411610625",
+              "positive_count": 20160,
+              "ratio_to_mean_exact": "1662466986275/1931650684544",
+              "separated_pairs": 5984941,
+              "split_classes": 774,
+              "squared_standardized_difference_exact": "2118603522341557393068619944673/4983161281296183372536528512",
+              "zero_variance": false
+            },
+            "standalone": {
+              "classes_before": 1079,
+              "difference_from_mean_exact": "13029475586/277775",
+              "direction": 1,
+              "fixed_size_mean_exact": "5397502529664/277775",
+              "fixed_size_variance_exact": "321882606745133832732838387968/20303971769411610625",
+              "positive_count": 20160,
+              "ratio_to_mean_exact": "2705266002625/2698751264832",
+              "separated_pairs": 19478110,
+              "split_classes": 734,
+              "squared_standardized_difference_exact": "11168338538574215481679751713/80470651686283458183209596992",
+              "zero_variance": false
+            }
+          },
+          "direct_ABA": {
+            "given_other_three": {
+              "classes_before": 3447,
+              "difference_from_mean_exact": "-7595972223236/1388875",
+              "direction": -1,
+              "fixed_size_mean_exact": "8268482164736/1388875",
+              "fixed_size_variance_exact": "10288081713884051751736484134912/9644386590470515046875",
+              "positive_count": 24480,
+              "ratio_to_mean_exact": "168127485375/2067120541184",
+              "separated_pairs": 484212,
+              "split_classes": 313,
+              "squared_standardized_difference_exact": "18029971597216040120307655245683443/643005107117753234483530258432",
+              "zero_variance": false
+            },
+            "standalone": {
+              "classes_before": 1079,
+              "difference_from_mean_exact": "-278755708401/277775",
+              "direction": -1,
+              "fixed_size_mean_exact": "6199479000576/277775",
+              "fixed_size_variance_exact": "5138888842017570760197234619392/385775463618820601875",
+              "positive_count": 24480,
+              "ratio_to_mean_exact": "657858143575/688831000064",
+              "separated_pairs": 21314817,
+              "split_classes": 796,
+              "squared_standardized_difference_exact": "43167144319732156549660091742267/570987649113063417799692735488",
+              "zero_variance": false
+            }
+          },
+          "repeat": {
+            "given_other_three": {
+              "classes_before": 3039,
+              "difference_from_mean_exact": "-1942938858783/1388875",
+              "direction": -1,
+              "fixed_size_mean_exact": "14412151665408/1388875",
+              "fixed_size_variance_exact": "19551956193731106197793871108608/9644386590470515046875",
+              "positive_count": 69760,
+              "ratio_to_mean_exact": "4156404268875/4804050555136",
+              "separated_pairs": 8977923,
+              "split_classes": 721,
+              "squared_standardized_difference_exact": "6291371101105908020502781325491089/6517318731243702065931290369536",
+              "zero_variance": false
+            },
+            "standalone": {
+              "classes_before": 1079,
+              "difference_from_mean_exact": "55298622631/277775",
+              "direction": 1,
+              "fixed_size_mean_exact": "7074081471744/277775",
+              "fixed_size_variance_exact": "3517430493904503778818934083072/385775463618820601875",
+              "positive_count": 69760,
+              "ratio_to_mean_exact": "1018482870625/1010583067392",
+              "separated_pairs": 25666025,
+              "split_classes": 833,
+              "squared_standardized_difference_exact": "2184131978455188338445956548069/502490070557786254116990583296",
+              "zero_variance": false
+            }
+          }
+        }
+      },
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "rule_names": [
+        "repeat",
+        "cycle",
+        "direct_ABA",
+        "collapsed_return"
+      ],
+      "schema": "pl5-unified-static-audit-v3809-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    "V3810_STRATIFIED_JSON": {
+      "base_classes": 1079,
+      "domain": 100000,
+      "limitations": [
+        "conditional comparator chosen after prior development audits",
+        "uniform independent draws within fixed response strata",
+        "not a significance test, not a tail probability",
+        "static descriptive comparison only; no historical inputs or operational policy"
+      ],
+      "results": {
+        "collapsed_return": {
+          "deterministic_stratum_count": 4,
+          "global_direction": -1,
+          "global_mean_exact": "34655874958419/5555500",
+          "global_variance_exact": "149495279757146351030797912291317/154310185447528240750000",
+          "observed": 518125,
+          "stratified_difference_exact": "-33252747575/979732",
+          "stratified_direction": -1,
+          "stratified_mean_exact": "540876390075/979732",
+          "stratified_variance_exact": "13494751727182267649601830325/48357176023753529296",
+          "stratum_count": 5
+        },
+        "cycle": {
+          "deterministic_stratum_count": 2,
+          "global_direction": -1,
+          "global_mean_exact": "1931650684544/277775",
+          "global_variance_exact": "44848451531665650352828756608/20303971769411610625",
+          "observed": 5984941,
+          "stratified_difference_exact": "-1164377897360639929/8777386781891",
+          "stratified_direction": -1,
+          "stratified_mean_exact": "53696519921158143360/8777386781891",
+          "stratified_variance_exact": "52602778661038057169108606121360530929741466072400/130382888294999019357527998401402455582003",
+          "stratum_count": 4
+        },
+        "direct_ABA": {
+          "deterministic_stratum_count": 4,
+          "global_direction": -1,
+          "global_mean_exact": "8268482164736/1388875",
+          "global_variance_exact": "10288081713884051751736484134912/9644386590470515046875",
+          "observed": 484212,
+          "stratified_difference_exact": "-64523109252/1361195",
+          "stratified_direction": -1,
+          "stratified_mean_exact": "723630062592/1361195",
+          "stratified_variance_exact": "27887651196745169352419140608/94563189050663078075",
+          "stratum_count": 5
+        },
+        "repeat": {
+          "deterministic_stratum_count": 4,
+          "global_direction": -1,
+          "global_mean_exact": "14412151665408/1388875",
+          "global_variance_exact": "19551956193731106197793871108608/9644386590470515046875",
+          "observed": 8977923,
+          "stratified_difference_exact": "-1610043438879/4817227",
+          "stratified_direction": -1,
+          "stratified_mean_exact": "44858736518400/4817227",
+          "stratified_variance_exact": "49066251096961889493715252800/400117625577767979199",
+          "stratum_count": 5
+        }
+      },
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "schema": "pl5-stratified-comparator-v3810-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    "V3811_CURVATURE_JSON": {
+      "base_classes": 3760,
+      "baseline_coordinate_count": 16,
+      "domain": 100000,
+      "limitations": [
+        "fixed 12 mathematical rules plus four experimental predicates, not full inventory",
+        "equal marginal size and one binary predicate each, not matched measured cost",
+        "static partition refinement only; capped-class union is not one capped candidate set",
+        "no historical inputs, operational selection, or novelty claim"
+      ],
+      "original_rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "result": {
+        "category_sizes": [
+          67200,
+          12800,
+          12800,
+          7200
+        ],
+        "control": {
+          "capped_class_union_after": 56051,
+          "capped_class_union_before": 43945,
+          "capped_class_union_gain": 12106,
+          "newly_distinguished_unordered_pairs": 4971580,
+          "original_classes": 3760,
+          "positive_mask_size": 20000,
+          "refined_classes": 5935,
+          "remaining_indistinguishable_pairs": 10645284,
+          "split_classes": 2175
+        },
+        "control_given_determinant": {
+          "capped_class_union_after": 64630,
+          "capped_class_union_before": 56449,
+          "capped_class_union_gain": 8181,
+          "newly_distinguished_unordered_pairs": 2922737,
+          "original_classes": 5912,
+          "positive_mask_size": 20000,
+          "refined_classes": 8879,
+          "remaining_indistinguishable_pairs": 7688750,
+          "split_classes": 2967
+        },
+        "determinant": {
+          "capped_class_union_after": 56449,
+          "capped_class_union_before": 43945,
+          "capped_class_union_gain": 12504,
+          "newly_distinguished_unordered_pairs": 5005377,
+          "original_classes": 3760,
+          "positive_mask_size": 20000,
+          "refined_classes": 5912,
+          "remaining_indistinguishable_pairs": 10611487,
+          "split_classes": 2152
+        },
+        "determinant_given_control": {
+          "capped_class_union_after": 64630,
+          "capped_class_union_before": 56051,
+          "capped_class_union_gain": 8579,
+          "newly_distinguished_unordered_pairs": 2956534,
+          "original_classes": 5935,
+          "positive_mask_size": 20000,
+          "refined_classes": 8879,
+          "remaining_indistinguishable_pairs": 7688750,
+          "split_classes": 2944
+        },
+        "joint_distinguished_pairs": 7928114
+      },
+      "schema": "pl5-curvature-rank-v3811-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    }
+  }
+}

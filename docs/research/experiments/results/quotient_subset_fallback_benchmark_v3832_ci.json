@@ -1,0 +1,1191 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_commit": "25b7ffbd1e15a0d4313826355863c7958c6b754f",
+  "branch": "research/audit-bitmap-performance-v3766",
+  "pr": 34,
+  "verification_date": "2026-11-27",
+  "specialized_ci": {
+    "run_id": 45992095893,
+    "conclusion": "success",
+    "step": 53,
+    "job_ids": [
+      140482205559,
+      140482205949
+    ]
+  },
+  "application_ci": {
+    "run_id": 45992095881,
+    "conclusion": "success",
+    "job_id": 140482205491
+  },
+  "command": "node docs/research/experiments/quotient_subset_fallback_benchmark_v3832.mjs",
+  "independent_validation": {
+    "source_blobs": true,
+    "frozen_counts": true,
+    "exact_retained_list_checked_in_ci": true,
+    "alternating_order": true,
+    "positive_safe_integer_timings": true,
+    "median_ratios_recomputed": true,
+    "measured_pairs_total": 100
+  },
+  "summary": [
+    {
+      "platform": "linux",
+      "node": "v24.22.3",
+      "accelerated": 10,
+      "slower": 0,
+      "profiles": [
+        {
+          "profile": "nested_unique",
+          "ratio": 1.6448866539931726,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "ratio": 1.4507973545441475,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "boundary_33",
+          "ratio": 1.1212262891958804,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "sparse_33",
+          "ratio": 1.3721190593130226,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "boundary_64",
+          "ratio": 1.5294599117974028,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "sparse_64",
+          "ratio": 1.5447147680890083,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_33",
+          "ratio": 1.3950695732484562,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_empty_33",
+          "ratio": 1.2585522271161604,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_64",
+          "ratio": 1.6470795119214492,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_empty_64",
+          "ratio": 1.377698322398849,
+          "positive_pairs": 5
+        }
+      ]
+    },
+    {
+      "platform": "win32",
+      "node": "v22.23.5",
+      "accelerated": 10,
+      "slower": 0,
+      "profiles": [
+        {
+          "profile": "nested_unique",
+          "ratio": 1.5113721077431606,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "nested_reverse_cost",
+          "ratio": 1.4545977168824769,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "boundary_33",
+          "ratio": 1.3247032337290217,
+          "positive_pairs": 4
+        },
+        {
+          "profile": "sparse_33",
+          "ratio": 1.5837885910303646,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "boundary_64",
+          "ratio": 1.546329057938965,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "sparse_64",
+          "ratio": 1.3196109943544732,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_33",
+          "ratio": 1.511137162954279,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_empty_33",
+          "ratio": 1.2972563286342276,
+          "positive_pairs": 4
+        },
+        {
+          "profile": "distributed_64",
+          "ratio": 1.666346805147889,
+          "positive_pairs": 5
+        },
+        {
+          "profile": "distributed_empty_64",
+          "ratio": 1.534946552331728,
+          "positive_pairs": 5
+        }
+      ]
+    }
+  ],
+  "both_platforms_accelerated": 10,
+  "platforms": [
+    {
+      "job_id": 140482205559,
+      "arch": "x64",
+      "batch_size": 100,
+      "cpu": "AMD EPYC 9V74 80-Core Processor",
+      "fallback_blob": "92c23dde66a3779ee792ad4830e9f2868f7765d4",
+      "measured_pairs": 5,
+      "node": "v24.22.3",
+      "platform": "linux",
+      "rows": [
+        {
+          "median_paired_ratio": 1.6448866539931726,
+          "mode": "fallback",
+          "predicates": 170,
+          "profile": "nested_unique",
+          "retained": 4,
+          "tests": 170,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 8754578,
+              "sorted_ns": 5111698
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 7886011,
+              "sorted_ns": 4794258
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 8121951,
+              "sorted_ns": 4954465
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 7443074,
+              "sorted_ns": 4667319
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 8704624,
+              "sorted_ns": 4491489
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.4507973545441475,
+          "mode": "fallback",
+          "predicates": 0,
+          "profile": "nested_reverse_cost",
+          "retained": 45,
+          "tests": 990,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 7013908,
+              "sorted_ns": 4827107
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 7132143,
+              "sorted_ns": 4782410
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 7037303,
+              "sorted_ns": 6357025
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 6922703,
+              "sorted_ns": 4771654
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 6897115,
+              "sorted_ns": 4776311
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.1212262891958804,
+          "mode": "fallback",
+          "predicates": 14,
+          "profile": "boundary_33",
+          "retained": 6,
+          "tests": 24,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 616674,
+              "sorted_ns": 613770
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 697785,
+              "sorted_ns": 458019
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 609123,
+              "sorted_ns": 543265
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 668521,
+              "sorted_ns": 471239
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 587070,
+              "sorted_ns": 535864
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.3721190593130226,
+          "mode": "fallback",
+          "predicates": 18,
+          "profile": "sparse_33",
+          "retained": 8,
+          "tests": 28,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 794768,
+              "sorted_ns": 576915
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 829730,
+              "sorted_ns": 604707
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 739236,
+              "sorted_ns": 668581
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 926774,
+              "sorted_ns": 610936
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 753197,
+              "sorted_ns": 655903
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.5294599117974028,
+          "mode": "fallback",
+          "predicates": 14,
+          "profile": "boundary_64",
+          "retained": 6,
+          "tests": 24,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 926294,
+              "sorted_ns": 583505
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 789660,
+              "sorted_ns": 677685
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 868097,
+              "sorted_ns": 574061
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 876379,
+              "sorted_ns": 572999
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 888447,
+              "sorted_ns": 563606
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.5447147680890083,
+          "mode": "fallback",
+          "predicates": 16,
+          "profile": "sparse_64",
+          "retained": 8,
+          "tests": 28,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1253448,
+              "sorted_ns": 805143
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1258426,
+              "sorted_ns": 891482
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1257594,
+              "sorted_ns": 814127
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1259698,
+              "sorted_ns": 876970
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1256533,
+              "sorted_ns": 800266
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.3950695732484562,
+          "mode": "fallback",
+          "predicates": 528,
+          "profile": "distributed_33",
+          "retained": 33,
+          "tests": 528,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 3236397,
+              "sorted_ns": 2527738
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1541476,
+              "sorted_ns": 1393036
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1547805,
+              "sorted_ns": 987684
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1482027,
+              "sorted_ns": 1027413
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1462178,
+              "sorted_ns": 1048104
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.2585522271161604,
+          "mode": "fallback",
+          "predicates": 138,
+          "profile": "distributed_empty_33",
+          "retained": 4,
+          "tests": 138,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 575784,
+              "sorted_ns": 566279
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 581202,
+              "sorted_ns": 457639
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 712337,
+              "sorted_ns": 438720
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 597767,
+              "sorted_ns": 474964
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 580080,
+              "sorted_ns": 542104
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.6470795119214492,
+          "mode": "fallback",
+          "predicates": 2016,
+          "profile": "distributed_64",
+          "retained": 64,
+          "tests": 2016,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 3941823,
+              "sorted_ns": 2323494
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 3827304,
+              "sorted_ns": 2324826
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 3895575,
+              "sorted_ns": 2356023
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 3771812,
+              "sorted_ns": 2308973
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 3887022,
+              "sorted_ns": 2359948
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.377698322398849,
+          "mode": "fallback",
+          "predicates": 262,
+          "profile": "distributed_empty_64",
+          "retained": 4,
+          "tests": 262,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 954155,
+              "sorted_ns": 783161
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1052941,
+              "sorted_ns": 697584
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1061934,
+              "sorted_ns": 770803
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 957559,
+              "sorted_ns": 831022
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1038420,
+              "sorted_ns": 737874
+            }
+          ]
+        }
+      ],
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+      "warm_pairs": 2
+    },
+    {
+      "job_id": 140482205949,
+      "arch": "x64",
+      "batch_size": 100,
+      "cpu": "AMD EPYC 7763 64-Core Processor                ",
+      "fallback_blob": "92c23dde66a3779ee792ad4830e9f2868f7765d4",
+      "measured_pairs": 5,
+      "node": "v22.23.5",
+      "platform": "win32",
+      "rows": [
+        {
+          "median_paired_ratio": 1.5113721077431606,
+          "mode": "fallback",
+          "predicates": 170,
+          "profile": "nested_unique",
+          "retained": 4,
+          "tests": 170,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 11118200,
+              "sorted_ns": 7010800
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 10745100,
+              "sorted_ns": 7109500
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 10881100,
+              "sorted_ns": 7117600
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 10938800,
+              "sorted_ns": 7256800
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 10970500,
+              "sorted_ns": 7759200
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.4545977168824769,
+          "mode": "fallback",
+          "predicates": 0,
+          "profile": "nested_reverse_cost",
+          "retained": 45,
+          "tests": 990,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 10462600,
+              "sorted_ns": 7351100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 10560700,
+              "sorted_ns": 7219800
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 10627000,
+              "sorted_ns": 7305800
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 10482400,
+              "sorted_ns": 7313800
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 10578000,
+              "sorted_ns": 7196100
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.3247032337290217,
+          "mode": "fallback",
+          "predicates": 14,
+          "profile": "boundary_33",
+          "retained": 6,
+          "tests": 24,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1067100,
+              "sorted_ns": 1796300
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 2267100,
+              "sorted_ns": 1689000
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1281900,
+              "sorted_ns": 1161200
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1294500,
+              "sorted_ns": 977200
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1414500,
+              "sorted_ns": 984000
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.5837885910303646,
+          "mode": "fallback",
+          "predicates": 18,
+          "profile": "sparse_33",
+          "retained": 8,
+          "tests": 28,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1289100,
+              "sorted_ns": 781700
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1130100,
+              "sorted_ns": 921700
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1246600,
+              "sorted_ns": 787100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1276600,
+              "sorted_ns": 783300
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1125600,
+              "sorted_ns": 923600
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.546329057938965,
+          "mode": "fallback",
+          "predicates": 14,
+          "profile": "boundary_64",
+          "retained": 6,
+          "tests": 24,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1398500,
+              "sorted_ns": 904400
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1299400,
+              "sorted_ns": 894300
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1399700,
+              "sorted_ns": 885700
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1706100,
+              "sorted_ns": 855000
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1585700,
+              "sorted_ns": 1245100
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.3196109943544732,
+          "mode": "fallback",
+          "predicates": 16,
+          "profile": "sparse_64",
+          "retained": 8,
+          "tests": 28,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 3194900,
+              "sorted_ns": 3191100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 2081300,
+              "sorted_ns": 1214100
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 3435800,
+              "sorted_ns": 2369600
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 3202300,
+              "sorted_ns": 2426700
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 2067600,
+              "sorted_ns": 2005200
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.511137162954279,
+          "mode": "fallback",
+          "predicates": 528,
+          "profile": "distributed_33",
+          "retained": 33,
+          "tests": 528,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 2300200,
+              "sorted_ns": 1585200
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 2208100,
+              "sorted_ns": 1574100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 2320200,
+              "sorted_ns": 1535400
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 2947000,
+              "sorted_ns": 1837100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 2921500,
+              "sorted_ns": 1439800
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.2972563286342276,
+          "mode": "fallback",
+          "predicates": 138,
+          "profile": "distributed_empty_33",
+          "retained": 4,
+          "tests": 138,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 797600,
+              "sorted_ns": 583800
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 855800,
+              "sorted_ns": 659700
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 979400,
+              "sorted_ns": 722600
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 751200,
+              "sorted_ns": 595000
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 758900,
+              "sorted_ns": 770800
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.666346805147889,
+          "mode": "fallback",
+          "predicates": 2016,
+          "profile": "distributed_64",
+          "retained": 64,
+          "tests": 2016,
+          "trials": [
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 5904200,
+              "sorted_ns": 3543200
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 5908200,
+              "sorted_ns": 3611500
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 6115300,
+              "sorted_ns": 3541100
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 5958100,
+              "sorted_ns": 3544100
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 5925800,
+              "sorted_ns": 3588800
+            }
+          ]
+        },
+        {
+          "median_paired_ratio": 1.534946552331728,
+          "mode": "fallback",
+          "predicates": 262,
+          "profile": "distributed_empty_64",
+          "retained": 4,
+          "tests": 262,
+          "trials": [
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1305000,
+              "sorted_ns": 826400
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1323300,
+              "sorted_ns": 827000
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1137700,
+              "sorted_ns": 992700
+            },
+            {
+              "order": [
+                "set",
+                "sorted"
+              ],
+              "set_ns": 1293700,
+              "sorted_ns": 976200
+            },
+            {
+              "order": [
+                "sorted",
+                "set"
+              ],
+              "set_ns": 1306700,
+              "sorted_ns": 851300
+            }
+          ]
+        }
+      ],
+      "source": "INTERNAL/AI_AUTHORED",
+      "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b",
+      "warm_pairs": 2
+    }
+  ],
+  "limitations": [
+    "Fixed ten wide-resource profiles; no generalization to other resource distributions.",
+    "Two platform/runtime/CPU combinations, not a controlled operating-system comparison.",
+    "Five measured warm pairs per profile, descriptive only; no speed gate, no fitted threshold.",
+    "Batch includes canonicalization, sorting, mask attempt, dispatch and retained-witness search; excludes result equality assertions.",
+    "No new filtering rules, candidate-set compression or historical replay coverage evidence.",
+    "V3.8.29 cardinality-index overhead and V3.8.30 wide fallback regressions retained; no overall filtering speed claim.",
+    "No additional timing budget consumed by the evidence audit; archive commit CI not yet checked."
+  ]
+}

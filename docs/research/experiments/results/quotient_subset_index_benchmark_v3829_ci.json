@@ -1,0 +1,1504 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "version": "3.8.29",
+  "tested_commit": "fe9b4f531e1b1b304cce6a5466ae9273ac9c5e18",
+  "benchmark_blob": "b11925b944134d2b20744fac970068ea8ea51f5c",
+  "specialized_run": 45947187326,
+  "application_run": 45947187359,
+  "command": "node docs/research/experiments/quotient_subset_index_benchmark_v3829.mjs",
+  "scope": "Preprocessing-only runtime; fixed 13 profiles at n=10; 5 paired trials of 100 invocations per method per profile on each platform. All timings from CI logs; no new run. Ratio reference/indexed; above one favors indexed. No speed gate. No full-flow acceleration, candidate compression or historical coverage evidence.",
+  "validation": "Reparsed both successful CI job logs and recomputed each median ratio; checked all 13 frozen count tuples, timing positivity and alternating order. 130 paired trials total. Results are development profiles, not independent validation.",
+  "summary": {
+    "win32": {
+      "improved": 4,
+      "slower": 9
+    },
+    "linux": {
+      "improved": 3,
+      "slower": 10
+    }
+  },
+  "common": [
+    {
+      "profile": "uniform",
+      "ratios": {
+        "win32": 0.43616703209089097,
+        "linux": 0.8803347054768937
+      }
+    },
+    {
+      "profile": "skew",
+      "ratios": {
+        "win32": 0.8404824726724462,
+        "linux": 0.6938952629249402
+      }
+    },
+    {
+      "profile": "zero",
+      "ratios": {
+        "win32": 0.8151662971175166,
+        "linux": 0.8960066826942668
+      }
+    },
+    {
+      "profile": "endpoint",
+      "ratios": {
+        "win32": 1.7784704743465634,
+        "linux": 1.5341785624791697
+      }
+    },
+    {
+      "profile": "mixed",
+      "ratios": {
+        "win32": 0.7048318347282287,
+        "linux": 0.7116124033274367
+      }
+    },
+    {
+      "profile": "setup_only",
+      "ratios": {
+        "win32": 0.6405246075379214,
+        "linux": 0.6638864469318013
+      }
+    },
+    {
+      "profile": "triangle_first",
+      "ratios": {
+        "win32": 0.853790878427922,
+        "linux": 0.831191921877443
+      }
+    },
+    {
+      "profile": "fixed_0",
+      "ratios": {
+        "win32": 1.1396733489921889,
+        "linux": 1.0877149450678338
+      }
+    },
+    {
+      "profile": "fixed_1",
+      "ratios": {
+        "win32": 1.1567076826448168,
+        "linux": 1.0413787724938037
+      }
+    },
+    {
+      "profile": "fixed_2",
+      "ratios": {
+        "win32": 1.053228259366791,
+        "linux": 0.980114249174542
+      }
+    },
+    {
+      "profile": "nested_unique",
+      "ratios": {
+        "win32": 0.7664873198665911,
+        "linux": 0.8092110458452616
+      }
+    },
+    {
+      "profile": "nested_reverse_cost",
+      "ratios": {
+        "win32": 0.6842352079135373,
+        "linux": 0.6266111380172215
+      }
+    },
+    {
+      "profile": "forbidden_three",
+      "ratios": {
+        "win32": 0.817797217840241,
+        "linux": 0.8386013340439327
+      }
+    }
+  ],
+  "records": [
+    {
+      "job_id": 140334472878,
+      "job_name": "verify (windows-latest)",
+      "conclusion": "success",
+      "job_url": "https://github.com/meilin2026dh/pl5/actions/runs/45947187326/job/140334472878",
+      "benchmark": {
+        "arch": "x64",
+        "batch_size": 100,
+        "cpu": "AMD EPYC 7763 64-Core Processor                ",
+        "n": 10,
+        "node": "v22.23.5",
+        "platform": "win32",
+        "rows": [
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.43616703209089097,
+            "profile": "uniform",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1878100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 942300
+              },
+              {
+                "indexed_ns": 2024000,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1176800
+              },
+              {
+                "indexed_ns": 2409300,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 920500
+              },
+              {
+                "indexed_ns": 3590800,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 898500
+              },
+              {
+                "indexed_ns": 2006800,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 875300
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.8404824726724462,
+            "profile": "skew",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1312300,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1127100
+              },
+              {
+                "indexed_ns": 1474200,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1362300
+              },
+              {
+                "indexed_ns": 1315800,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1064500
+              },
+              {
+                "indexed_ns": 1326500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1114900
+              },
+              {
+                "indexed_ns": 1423400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1058900
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.8151662971175166,
+            "profile": "zero",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1311500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 2820200
+              },
+              {
+                "indexed_ns": 1057400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 2221800
+              },
+              {
+                "indexed_ns": 1127500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 919100
+              },
+              {
+                "indexed_ns": 1162500,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 906800
+              },
+              {
+                "indexed_ns": 1134100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 829100
+              }
+            ]
+          },
+          {
+            "bucket_visits": 44,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 1.7784704743465634,
+            "profile": "endpoint",
+            "reference_predicates": 990,
+            "reference_tests": 990,
+            "retained": 45,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 2600200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4515100
+              },
+              {
+                "indexed_ns": 2582500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4592900
+              },
+              {
+                "indexed_ns": 3108200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4614300
+              },
+              {
+                "indexed_ns": 2562600,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4583400
+              },
+              {
+                "indexed_ns": 2605900,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4654800
+              }
+            ]
+          },
+          {
+            "bucket_visits": 74,
+            "indexed_predicates": 90,
+            "median_paired_ratio": 0.7048318347282287,
+            "profile": "mixed",
+            "reference_predicates": 325,
+            "reference_tests": 393,
+            "retained": 16,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 2922300,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4212800
+              },
+              {
+                "indexed_ns": 2502200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 2482400
+              },
+              {
+                "indexed_ns": 4964300,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 2200200
+              },
+              {
+                "indexed_ns": 4863500,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 2398000
+              },
+              {
+                "indexed_ns": 3214100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 2265400
+              }
+            ]
+          },
+          {
+            "bucket_visits": 46,
+            "indexed_predicates": 84,
+            "median_paired_ratio": 0.6405246075379214,
+            "profile": "setup_only",
+            "reference_predicates": 168,
+            "reference_tests": 170,
+            "retained": 5,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1422400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1226700
+              },
+              {
+                "indexed_ns": 1509700,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 967000
+              },
+              {
+                "indexed_ns": 1620000,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 929000
+              },
+              {
+                "indexed_ns": 1437700,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 963800
+              },
+              {
+                "indexed_ns": 1589700,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 970000
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.853790878427922,
+            "profile": "triangle_first",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1305500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1135200
+              },
+              {
+                "indexed_ns": 1401600,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1158400
+              },
+              {
+                "indexed_ns": 1363800,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1164400
+              },
+              {
+                "indexed_ns": 1356200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1195000
+              },
+              {
+                "indexed_ns": 1437500,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1171000
+              }
+            ]
+          },
+          {
+            "bucket_visits": 86,
+            "indexed_predicates": 187,
+            "median_paired_ratio": 1.1396733489921889,
+            "profile": "fixed_0",
+            "reference_predicates": 548,
+            "reference_tests": 692,
+            "retained": 31,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 4321400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4276600
+              },
+              {
+                "indexed_ns": 3701200,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4117000
+              },
+              {
+                "indexed_ns": 3539600,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4197300
+              },
+              {
+                "indexed_ns": 3661400,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4172800
+              },
+              {
+                "indexed_ns": 3521200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4230500
+              }
+            ]
+          },
+          {
+            "bucket_visits": 106,
+            "indexed_predicates": 165,
+            "median_paired_ratio": 1.1567076826448168,
+            "profile": "fixed_1",
+            "reference_predicates": 505,
+            "reference_tests": 696,
+            "retained": 29,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 3474900,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4043600
+              },
+              {
+                "indexed_ns": 3469200,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3911700
+              },
+              {
+                "indexed_ns": 3589000,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4173100
+              },
+              {
+                "indexed_ns": 3502700,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4051600
+              },
+              {
+                "indexed_ns": 3479100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 4003900
+              }
+            ]
+          },
+          {
+            "bucket_visits": 107,
+            "indexed_predicates": 205,
+            "median_paired_ratio": 1.053228259366791,
+            "profile": "fixed_2",
+            "reference_predicates": 481,
+            "reference_tests": 606,
+            "retained": 27,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 3462100,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3941800
+              },
+              {
+                "indexed_ns": 3450400,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3714800
+              },
+              {
+                "indexed_ns": 3577400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3703500
+              },
+              {
+                "indexed_ns": 3517100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3645500
+              },
+              {
+                "indexed_ns": 3616500,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3809000
+              }
+            ]
+          },
+          {
+            "bucket_visits": 170,
+            "indexed_predicates": 170,
+            "median_paired_ratio": 0.7664873198665911,
+            "profile": "nested_unique",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 12583100,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 9725200
+              },
+              {
+                "indexed_ns": 12449800,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9657000
+              },
+              {
+                "indexed_ns": 12780400,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 9658900
+              },
+              {
+                "indexed_ns": 12708400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9607700
+              },
+              {
+                "indexed_ns": 12712800,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 9744200
+              }
+            ]
+          },
+          {
+            "bucket_visits": 990,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.6842352079135373,
+            "profile": "nested_reverse_cost",
+            "reference_predicates": 0,
+            "reference_tests": 990,
+            "retained": 45,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 13647500,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9338100
+              },
+              {
+                "indexed_ns": 13827800,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 9313200
+              },
+              {
+                "indexed_ns": 14263400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9522300
+              },
+              {
+                "indexed_ns": 13815300,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 9509300
+              },
+              {
+                "indexed_ns": 13819400,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9669300
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.817797217840241,
+            "profile": "forbidden_three",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1664300,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1155100
+              },
+              {
+                "indexed_ns": 1366700,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1247900
+              },
+              {
+                "indexed_ns": 1394600,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1140500
+              },
+              {
+                "indexed_ns": 1537100,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1144800
+              },
+              {
+                "indexed_ns": 1318400,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1335400
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b"
+      }
+    },
+    {
+      "job_id": 140334473127,
+      "job_name": "verify (ubuntu-latest)",
+      "conclusion": "success",
+      "job_url": "https://github.com/meilin2026dh/pl5/actions/runs/45947187326/job/140334473127",
+      "benchmark": {
+        "arch": "x64",
+        "batch_size": 100,
+        "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+        "n": 10,
+        "node": "v24.22.3",
+        "platform": "linux",
+        "rows": [
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.8803347054768937,
+            "profile": "uniform",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1558146,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1371690
+              },
+              {
+                "indexed_ns": 1349338,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1349552
+              },
+              {
+                "indexed_ns": 1181331,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1246027
+              },
+              {
+                "indexed_ns": 1209381,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 829405
+              },
+              {
+                "indexed_ns": 1202597,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 821796
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.6938952629249402,
+            "profile": "skew",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1441438,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1000207
+              },
+              {
+                "indexed_ns": 1406282,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 903813
+              },
+              {
+                "indexed_ns": 1552450,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1074201
+              },
+              {
+                "indexed_ns": 1335400,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1038269
+              },
+              {
+                "indexed_ns": 1420313,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1039074
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.8960066826942668,
+            "profile": "zero",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 981640,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 879556
+              },
+              {
+                "indexed_ns": 1088731,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 827531
+              },
+              {
+                "indexed_ns": 958268,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 796201
+              },
+              {
+                "indexed_ns": 1253316,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1361432
+              },
+              {
+                "indexed_ns": 1052212,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1343409
+              }
+            ]
+          },
+          {
+            "bucket_visits": 44,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 1.5341785624791697,
+            "profile": "endpoint",
+            "reference_predicates": 990,
+            "reference_tests": 990,
+            "retained": 45,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 3165705,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3782915
+              },
+              {
+                "indexed_ns": 2418358,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3710193
+              },
+              {
+                "indexed_ns": 2425687,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3710797
+              },
+              {
+                "indexed_ns": 2368819,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3661783
+              },
+              {
+                "indexed_ns": 2372368,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3676879
+              }
+            ]
+          },
+          {
+            "bucket_visits": 74,
+            "indexed_predicates": 90,
+            "median_paired_ratio": 0.7116124033274367,
+            "profile": "mixed",
+            "reference_predicates": 325,
+            "reference_tests": 393,
+            "retained": 16,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 2941243,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 2093025
+              },
+              {
+                "indexed_ns": 2831144,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 2003208
+              },
+              {
+                "indexed_ns": 2798114,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1972668
+              },
+              {
+                "indexed_ns": 2457815,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 2022721
+              },
+              {
+                "indexed_ns": 2159735,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1890244
+              }
+            ]
+          },
+          {
+            "bucket_visits": 46,
+            "indexed_predicates": 84,
+            "median_paired_ratio": 0.6638864469318013,
+            "profile": "setup_only",
+            "reference_predicates": 168,
+            "reference_tests": 170,
+            "retained": 5,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1414050,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 903605
+              },
+              {
+                "indexed_ns": 1315163,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 882084
+              },
+              {
+                "indexed_ns": 1316940,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 899319
+              },
+              {
+                "indexed_ns": 1313315,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 867338
+              },
+              {
+                "indexed_ns": 1292224,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 857890
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.831191921877443,
+            "profile": "triangle_first",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1327970,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1120040
+              },
+              {
+                "indexed_ns": 1233835,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1092477
+              },
+              {
+                "indexed_ns": 1323971,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1100474
+              },
+              {
+                "indexed_ns": 1421888,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1167951
+              },
+              {
+                "indexed_ns": 1349148,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1112115
+              }
+            ]
+          },
+          {
+            "bucket_visits": 86,
+            "indexed_predicates": 187,
+            "median_paired_ratio": 1.0877149450678338,
+            "profile": "fixed_0",
+            "reference_predicates": 548,
+            "reference_tests": 692,
+            "retained": 31,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 4572468,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3913117
+              },
+              {
+                "indexed_ns": 3336132,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3660264
+              },
+              {
+                "indexed_ns": 3271166,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3827681
+              },
+              {
+                "indexed_ns": 3820413,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3632453
+              },
+              {
+                "indexed_ns": 3393367,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3691016
+              }
+            ]
+          },
+          {
+            "bucket_visits": 106,
+            "indexed_predicates": 165,
+            "median_paired_ratio": 1.0413787724938037,
+            "profile": "fixed_1",
+            "reference_predicates": 505,
+            "reference_tests": 696,
+            "retained": 29,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 3267725,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3503607
+              },
+              {
+                "indexed_ns": 3205605,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3338249
+              },
+              {
+                "indexed_ns": 3393436,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3285716
+              },
+              {
+                "indexed_ns": 3322364,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 4712530
+              },
+              {
+                "indexed_ns": 3506071,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3504925
+              }
+            ]
+          },
+          {
+            "bucket_visits": 107,
+            "indexed_predicates": 205,
+            "median_paired_ratio": 0.980114249174542,
+            "profile": "fixed_2",
+            "reference_predicates": 481,
+            "reference_tests": 606,
+            "retained": 27,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 3354851,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3316082
+              },
+              {
+                "indexed_ns": 3544135,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3295748
+              },
+              {
+                "indexed_ns": 3384182,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3316885
+              },
+              {
+                "indexed_ns": 3326000,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 3271200
+              },
+              {
+                "indexed_ns": 3422146,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 3324762
+              }
+            ]
+          },
+          {
+            "bucket_visits": 170,
+            "indexed_predicates": 170,
+            "median_paired_ratio": 0.8092110458452616,
+            "profile": "nested_unique",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 10839768,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 8771660
+              },
+              {
+                "indexed_ns": 10946070,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 8488220
+              },
+              {
+                "indexed_ns": 10723088,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 8476118
+              },
+              {
+                "indexed_ns": 10607749,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 9149896
+              },
+              {
+                "indexed_ns": 10820575,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 8782790
+              }
+            ]
+          },
+          {
+            "bucket_visits": 990,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.6266111380172215,
+            "profile": "nested_reverse_cost",
+            "reference_predicates": 0,
+            "reference_tests": 990,
+            "retained": 45,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 13774245,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 8142232
+              },
+              {
+                "indexed_ns": 12409710,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 8201094
+              },
+              {
+                "indexed_ns": 13502774,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 7872457
+              },
+              {
+                "indexed_ns": 12944189,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 8110973
+              },
+              {
+                "indexed_ns": 12783218,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 8201858
+              }
+            ]
+          },
+          {
+            "bucket_visits": 3,
+            "indexed_predicates": 0,
+            "median_paired_ratio": 0.8386013340439327,
+            "profile": "forbidden_three",
+            "reference_predicates": 170,
+            "reference_tests": 170,
+            "retained": 4,
+            "signature_lookups": 45,
+            "trials": [
+              {
+                "indexed_ns": 1412853,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1109259
+              },
+              {
+                "indexed_ns": 1343289,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1259115
+              },
+              {
+                "indexed_ns": 1460877,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1117515
+              },
+              {
+                "indexed_ns": 1317198,
+                "order": [
+                  "indexed",
+                  "reference"
+                ],
+                "reference_ns": 1104604
+              },
+              {
+                "indexed_ns": 1346205,
+                "order": [
+                  "reference",
+                  "indexed"
+                ],
+                "reference_ns": 1228389
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "d7d9a4209293f0aec993f08f9c4afa67692f164b"
+      }
+    }
+  ]
+}

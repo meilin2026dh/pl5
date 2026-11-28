@@ -1,0 +1,362 @@
+{
+  "version": "V3.8.34",
+  "source": "INTERNAL/AI_AUTHORED",
+  "source_commit": "38c8e8775aaebf7509e52c0ec2b4c89e2a866daf",
+  "tested_ci_head": "aa125c720432d48712dcd91ab1195d1938da9ca9",
+  "reference_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+  "experiment_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+  "replay": "node docs/research/experiments/quotient_cost_lower_bound_v3834.mjs",
+  "specialized_run_id": 46026961142,
+  "application_run_id": 46026961167,
+  "application_conclusion": "success",
+  "failure_lineage": {
+    "first_attempt": 1,
+    "windows_job_id": 140600728853,
+    "conclusion": "cancelled",
+    "last_step": "V3.8.20",
+    "detail": "V3.8.34 not executed in first Windows attempt; cancellation near existing six-minute job limit; root cause unconfirmed. One targeted retry succeeded without increasing time limit."
+  },
+  "platforms": {
+    "windows": {
+      "job_id": 140630834056,
+      "log_timestamp_utc": "2026-11-27T16:47:48.3249719Z",
+      "result": {
+        "rows": [
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "uniform",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "skew",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "zero",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 21886,
+            "group_visits": 25018,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 66062
+          },
+          {
+            "bounded_checks": 3578,
+            "group_visits": 5692,
+            "grouped_checks": 11880,
+            "individual_skips": 18,
+            "pairs": 1980,
+            "profile": "mixed",
+            "reference_checks": 11670,
+            "subset_tests": 393,
+            "tail_skips": 8124
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 3960,
+            "grouped_checks": 3954,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "reference_checks": 3948,
+            "subset_tests": 170,
+            "tail_skips": 1974
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 3456,
+            "group_visits": 5522,
+            "grouped_checks": 38858,
+            "individual_skips": 80,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "reference_checks": 32814,
+            "subset_tests": 692,
+            "tail_skips": 30118
+          },
+          {
+            "bounded_checks": 2556,
+            "group_visits": 4666,
+            "grouped_checks": 40526,
+            "individual_skips": 22,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "reference_checks": 36460,
+            "subset_tests": 696,
+            "tail_skips": 34934
+          },
+          {
+            "bounded_checks": 3364,
+            "group_visits": 5556,
+            "grouped_checks": 38752,
+            "individual_skips": 78,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "reference_checks": 30934,
+            "subset_tests": 606,
+            "tail_skips": 28104
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 4070,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "reference_checks": 7504,
+            "subset_tests": 170,
+            "tail_skips": 5830
+          },
+          {
+            "bounded_checks": 3430,
+            "group_visits": 5526,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 85554
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "totals": {
+          "bounded_checks": 52130,
+          "group_visits": 69910,
+          "grouped_checks": 397130,
+          "individual_skips": 198,
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "subset_tests": 5557,
+          "tail_skips": 260700
+        }
+      }
+    },
+    "ubuntu": {
+      "job_id": 140630836385,
+      "log_timestamp_utc": "2026-11-27T15:44:31.3925603Z",
+      "result": {
+        "rows": [
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "uniform",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "skew",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "zero",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 21886,
+            "group_visits": 25018,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 66062
+          },
+          {
+            "bounded_checks": 3578,
+            "group_visits": 5692,
+            "grouped_checks": 11880,
+            "individual_skips": 18,
+            "pairs": 1980,
+            "profile": "mixed",
+            "reference_checks": 11670,
+            "subset_tests": 393,
+            "tail_skips": 8124
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 3960,
+            "grouped_checks": 3954,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "reference_checks": 3948,
+            "subset_tests": 170,
+            "tail_skips": 1974
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          },
+          {
+            "bounded_checks": 3456,
+            "group_visits": 5522,
+            "grouped_checks": 38858,
+            "individual_skips": 80,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "reference_checks": 32814,
+            "subset_tests": 692,
+            "tail_skips": 30118
+          },
+          {
+            "bounded_checks": 2556,
+            "group_visits": 4666,
+            "grouped_checks": 40526,
+            "individual_skips": 22,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "reference_checks": 36460,
+            "subset_tests": 696,
+            "tail_skips": 34934
+          },
+          {
+            "bounded_checks": 3364,
+            "group_visits": 5556,
+            "grouped_checks": 38752,
+            "individual_skips": 78,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "reference_checks": 30934,
+            "subset_tests": 606,
+            "tail_skips": 28104
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 4070,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "reference_checks": 7504,
+            "subset_tests": 170,
+            "tail_skips": 5830
+          },
+          {
+            "bounded_checks": 3430,
+            "group_visits": 5526,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 85554
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "totals": {
+          "bounded_checks": 52130,
+          "group_visits": 69910,
+          "grouped_checks": 397130,
+          "individual_skips": 198,
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "subset_tests": 5557,
+          "tail_skips": 260700
+        }
+      }
+    }
+  },
+  "independent_recomputation": {
+    "exact_json_match": true,
+    "improved_profiles": 8,
+    "tied_profiles": 5,
+    "regressed_profiles": 0,
+    "full_evaluation_reduction": 0.8274241069950674,
+    "all_totals_recomputed": true
+  },
+  "limitations": [
+    "Frozen development configurations, not an independent test set.",
+    "Exact pair-minimum equality asserted by experiment on each platform; no enumeration of tied witnesses.",
+    "Structural evaluation counts only; sorting, paid-resource union and bound checks add work; no actual runtime claim.",
+    "No new evidence of candidate compression or historical replay coverage.",
+    "No changes to production filtering rules, historical data or main; no timing trials added. Archive commit CI separate."
+  ]
+}

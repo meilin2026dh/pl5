@@ -1,0 +1,175 @@
+{
+  "tested_head": "83faadfc42eef5d05422038db808877b67851e7b",
+  "specialized_run": 45800161514,
+  "application_run": 45800161527,
+  "windows_job": 139840997166,
+  "ubuntu_job": 139840997381,
+  "cross_platform_equal": true,
+  "result": {
+    "base_classes": 8879,
+    "baseline_coordinate_count": 18,
+    "domain": 100000,
+    "limitations": [
+      "static aggregate refinement only",
+      "fixed 12-rule baseline plus six experimental predicates, not full inventory",
+      "position permutation is a matched-marginal structural control, not matched cost",
+      "collision control not equal-sized; global comparator does not preserve dependencies",
+      "capped-class union is not one capped candidate set",
+      "no historical inputs, operational selection, or mathematical novelty claim"
+    ],
+    "result": {
+      "category_sizes": [
+        36250,
+        0,
+        0,
+        0,
+        47910,
+        4800,
+        4800,
+        6240
+      ],
+      "collision_control": {
+        "capped_class_union_after": 76280,
+        "capped_class_union_before": 64630,
+        "capped_class_union_gain": 11650,
+        "global_fixed_size_mean_exact": "236909609375/66666",
+        "global_fixed_size_variance_exact": "2890811968289087224038837875/22220666704444066668",
+        "global_mean_direction": -1,
+        "newly_distinguished_unordered_pairs": 2971773,
+        "original_classes": 8879,
+        "positive_mask_size": 63750,
+        "refined_classes": 12814,
+        "remaining_indistinguishable_pairs": 4716977,
+        "split_classes": 3935
+      },
+      "gain_given_collision": {
+        "capped_class_union_after": 81010,
+        "capped_class_union_before": 76280,
+        "capped_class_union_gain": 4730,
+        "global_fixed_size_mean_exact": "3860524920064/4166625",
+        "global_fixed_size_variance_exact": "903916643040676669458912021248/4568393648117612390625",
+        "global_mean_direction": 1,
+        "newly_distinguished_unordered_pairs": 1044578,
+        "original_classes": 12814,
+        "positive_mask_size": 11040,
+        "refined_classes": 14760,
+        "remaining_indistinguishable_pairs": 3672399,
+        "split_classes": 1946
+      },
+      "gain_given_position_and_collision": {
+        "capped_class_union_after": 82783,
+        "capped_class_union_before": 80765,
+        "capped_class_union_gain": 2018,
+        "global_fixed_size_mean_exact": "3020310352384/4166625",
+        "global_fixed_size_variance_exact": "535510669974363553023078748928/4568393648117612390625",
+        "global_mean_direction": -1,
+        "newly_distinguished_unordered_pairs": 476648,
+        "original_classes": 15071,
+        "positive_mask_size": 11040,
+        "refined_classes": 17162,
+        "remaining_indistinguishable_pairs": 3213714,
+        "split_classes": 2091
+      },
+      "position_control": {
+        "capped_class_union_after": 69750,
+        "capped_class_union_before": 64630,
+        "capped_class_union_gain": 5120,
+        "global_fixed_size_mean_exact": "50341752320/33333",
+        "global_fixed_size_variance_exact": "16030926998174760495347941888/36547149184940899125",
+        "global_mean_direction": -1,
+        "newly_distinguished_unordered_pairs": 1380659,
+        "original_classes": 8879,
+        "positive_mask_size": 11040,
+        "refined_classes": 11258,
+        "remaining_indistinguishable_pairs": 6308091,
+        "split_classes": 2379
+      },
+      "position_given_gain_and_collision": {
+        "capped_class_union_after": 82783,
+        "capped_class_union_before": 81010,
+        "capped_class_union_gain": 1773,
+        "global_fixed_size_mean_exact": "1001869619456/1388875",
+        "global_fixed_size_variance_exact": "57830123654013910983771047168/507599294235290265625",
+        "global_mean_direction": -1,
+        "newly_distinguished_unordered_pairs": 458685,
+        "original_classes": 14760,
+        "positive_mask_size": 11040,
+        "refined_classes": 17162,
+        "remaining_indistinguishable_pairs": 3213714,
+        "split_classes": 2402
+      },
+      "quotient_gain": {
+        "capped_class_union_after": 69952,
+        "capped_class_union_before": 64630,
+        "capped_class_union_gain": 5322,
+        "global_fixed_size_mean_exact": "50341752320/33333",
+        "global_fixed_size_variance_exact": "16030926998174760495347941888/36547149184940899125",
+        "global_mean_direction": -1,
+        "newly_distinguished_unordered_pairs": 1435084,
+        "original_classes": 8879,
+        "positive_mask_size": 11040,
+        "refined_classes": 10937,
+        "remaining_indistinguishable_pairs": 6253666,
+        "split_classes": 2058
+      }
+    },
+    "rule_mask_sha256": [
+      "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+      "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+      "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+      "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+      "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+      "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+      "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+      "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+      "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+      "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+      "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+      "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+    ],
+    "schema": "pl5-quotient-graph-v3812-1",
+    "source": "INTERNAL/AI_AUTHORED",
+    "transitions": {
+      "0->0": 68800,
+      "0->1": 11040,
+      "1->0": 6240,
+      "1->1": 13920
+    }
+  },
+  "supplementary_certificate": {
+    "head": "5d5e26295c23f4cf059bc91455085ea9a2e02a34",
+    "independent_js_coefficient_rows": [
+      [
+        32,
+        0,
+        0,
+        0
+      ],
+      [
+        360,
+        0,
+        120,
+        0
+      ],
+      [
+        512,
+        88,
+        64,
+        136
+      ],
+      [
+        224,
+        48,
+        0,
+        48
+      ],
+      [
+        32,
+        0,
+        0,
+        0
+      ]
+    ],
+    "separate_ci_verified": false
+  }
+}

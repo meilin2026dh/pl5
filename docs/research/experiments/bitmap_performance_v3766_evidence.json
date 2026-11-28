@@ -1,0 +1,386 @@
+{
+  "schema": "pl5-bitmap-performance-evidence-v3766-1",
+  "source_head": "0ca00659ddebd7a6e3a101604195c020d90dbcaf",
+  "source_code": "87f00b00e2e25de3619922b5e63c539f9c6c0c99",
+  "ci": {
+    "specialized_run": 45472834881,
+    "application_run": 45472835016,
+    "conclusion": "success",
+    "jobs": [
+      138725089131,
+      138725089172
+    ]
+  },
+  "reproduce": "python docs/research/experiments/bitmap_performance_v3766.py",
+  "results": {
+    "ubuntu": {
+      "candidate_ledger_sha256": "ce3bf2c3ab1e336334420357320a613e6d334dcfc04cec423fd24f12834735f6",
+      "candidate_membership_preserved": true,
+      "cap": 100,
+      "domain": 100000,
+      "historical_coverage_measured": false,
+      "limitations": [
+        "warmup excluded from timings",
+        "setup plus batches is an estimate, not a measured cold run",
+        "all caches coexist; memory not benchmarked",
+        "no cross-machine speed ranking or timing gate"
+      ],
+      "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+      "python": "3.12.16",
+      "query_count": 893,
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "rule_names": [
+        "mod2_zero",
+        "mod3_zero",
+        "mod5_zero",
+        "mod7_zero",
+        "mod11_zero",
+        "mod13_zero",
+        "omega_ge3",
+        "bigomega_ge3",
+        "squarefree_one",
+        "spectral_C1_gt_C2",
+        "det_H_gt_0",
+        "F3_squarefactor"
+      ],
+      "schema": "pl5-bitmap-performance-v3766-1",
+      "scope": "cached bitmaps, full signed queries only",
+      "setup_repeats": 1,
+      "shared_freeze_ns": 1360498806,
+      "source": "INTERNAL/AI_AUTHORED",
+      "strategies": {
+        "adaptive_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 305731712,
+            "10": 532962983,
+            "100": 2805275693
+          },
+          "median_warm_batch_ns": 25247919,
+          "setup_ns": 280483793,
+          "warm_batch_ns": [
+            25787751,
+            25566805,
+            24894866,
+            26277966,
+            24638410,
+            25247919,
+            24368271
+          ]
+        },
+        "adaptive_online": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 298636974,
+            "10": 1400419413,
+            "100": 12418243803
+          },
+          "median_warm_batch_ns": 122420271,
+          "setup_ns": 176216703,
+          "warm_batch_ns": [
+            124532637,
+            121814539,
+            123770099,
+            121625832,
+            123350696,
+            122420271,
+            120974050
+          ]
+        },
+        "atom_lookup": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 16288007,
+            "10": 18186377,
+            "100": 37170077
+          },
+          "median_warm_batch_ns": 210930,
+          "setup_ns": 16077077,
+          "warm_batch_ns": [
+            215220,
+            210930,
+            206348,
+            198047,
+            199361,
+            223890,
+            266512
+          ]
+        },
+        "fixed": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 28371518,
+            "10": 283355603,
+            "100": 2833196453
+          },
+          "median_warm_batch_ns": 28331565,
+          "setup_ns": 39953,
+          "warm_batch_ns": [
+            28488147,
+            28331565,
+            27052611,
+            26987589,
+            28571888,
+            29720393,
+            28112959
+          ]
+        },
+        "minimized_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 1849048987,
+            "10": 2034802228,
+            "100": 3892334638
+          },
+          "median_warm_batch_ns": 20639249,
+          "setup_ns": 1828409738,
+          "warm_batch_ns": [
+            21030256,
+            20639249,
+            19752871,
+            18948150,
+            20784587,
+            20540792,
+            21549466
+          ]
+        },
+        "optimal_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 1556667404,
+            "10": 1782067733,
+            "100": 4036071023
+          },
+          "median_warm_batch_ns": 25044481,
+          "setup_ns": 1531622923,
+          "warm_batch_ns": [
+            25479193,
+            25383550,
+            22275220,
+            22587585,
+            24444965,
+            25044481,
+            25294404
+          ]
+        }
+      },
+      "warm_repeats": 7,
+      "weights_abstract_not_measured": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        5,
+        3,
+        8
+      ]
+    },
+    "windows": {
+      "candidate_ledger_sha256": "ce3bf2c3ab1e336334420357320a613e6d334dcfc04cec423fd24f12834735f6",
+      "candidate_membership_preserved": true,
+      "cap": 100,
+      "domain": 100000,
+      "historical_coverage_measured": false,
+      "limitations": [
+        "warmup excluded from timings",
+        "setup plus batches is an estimate, not a measured cold run",
+        "all caches coexist; memory not benchmarked",
+        "no cross-machine speed ranking or timing gate"
+      ],
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "python": "3.12.10",
+      "query_count": 893,
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "rule_names": [
+        "mod2_zero",
+        "mod3_zero",
+        "mod5_zero",
+        "mod7_zero",
+        "mod11_zero",
+        "mod13_zero",
+        "omega_ge3",
+        "bigomega_ge3",
+        "squarefree_one",
+        "spectral_C1_gt_C2",
+        "det_H_gt_0",
+        "F3_squarefactor"
+      ],
+      "schema": "pl5-bitmap-performance-v3766-1",
+      "scope": "cached bitmaps, full signed queries only",
+      "setup_repeats": 1,
+      "shared_freeze_ns": 1751167400,
+      "source": "INTERNAL/AI_AUTHORED",
+      "strategies": {
+        "adaptive_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 390284300,
+            "10": 579681200,
+            "100": 2473650200
+          },
+          "median_warm_batch_ns": 21044100,
+          "setup_ns": 369240200,
+          "warm_batch_ns": [
+            20333000,
+            32051200,
+            26525100,
+            21622700,
+            21019600,
+            21044100,
+            20578100
+          ]
+        },
+        "adaptive_online": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 380124200,
+            "10": 1678723400,
+            "100": 14664715400
+          },
+          "median_warm_batch_ns": 144288800,
+          "setup_ns": 235835400,
+          "warm_batch_ns": [
+            146412900,
+            142941700,
+            146312300,
+            144288800,
+            145796000,
+            144035200,
+            142101500
+          ]
+        },
+        "atom_lookup": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 34567500,
+            "10": 48711900,
+            "100": 190155900
+          },
+          "median_warm_batch_ns": 1571600,
+          "setup_ns": 32995900,
+          "warm_batch_ns": [
+            1733600,
+            1581500,
+            1369000,
+            1490000,
+            1571600,
+            1267200,
+            1801200
+          ]
+        },
+        "fixed": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 25308800,
+            "10": 252698300,
+            "100": 2526593300
+          },
+          "median_warm_batch_ns": 25265500,
+          "setup_ns": 43300,
+          "warm_batch_ns": [
+            24776800,
+            25676700,
+            25200700,
+            25490800,
+            25265500,
+            24409100,
+            29706500
+          ]
+        },
+        "minimized_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 2336344400,
+            "10": 2499394700,
+            "100": 4129897700
+          },
+          "median_warm_batch_ns": 18116700,
+          "setup_ns": 2318227700,
+          "warm_batch_ns": [
+            17031100,
+            18588500,
+            18185900,
+            18116700,
+            19476900,
+            16652000,
+            17484300
+          ]
+        },
+        "optimal_cached": {
+          "estimated_setup_plus_batches_ns": {
+            "1": 1878937400,
+            "10": 2070774200,
+            "100": 3989142200
+          },
+          "median_warm_batch_ns": 21315200,
+          "setup_ns": 1857622200,
+          "warm_batch_ns": [
+            20479600,
+            21359700,
+            20373000,
+            21315200,
+            22585500,
+            21937300,
+            19662800
+          ]
+        }
+      },
+      "warm_repeats": 7,
+      "weights_abstract_not_measured": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        5,
+        3,
+        8
+      ]
+    }
+  },
+  "derived": [
+    {
+      "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+      "warm_fixed_over_lookup": 134.31738017351728,
+      "lookup_estimated_first_batch_beats_fixed": true,
+      "lookup_estimated_ten_batches_beats_fixed": true,
+      "minimized_estimated_100_batches_beats_fixed": false
+    },
+    {
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "warm_fixed_over_lookup": 16.07629167727157,
+      "lookup_estimated_first_batch_beats_fixed": false,
+      "lookup_estimated_ten_batches_beats_fixed": true,
+      "minimized_estimated_100_batches_beats_fixed": false
+    }
+  ],
+  "interpretation": [
+    "Direct atom lookup is a precomputed result cache for complete frozen signatures, not an improvement in general filtering or query selection.",
+    "Both platforms favor fixed over online adaptive execution and over cached exact/minimized plans at estimated 100 batches; direct lookup wins at estimated ten batches. First-batch winner differs by platform.",
+    "Returning precomputed integer masks is not the same as enumerating or serializing candidates; no memory or measured cold-start comparison. No historical coverage measurement."
+  ]
+}

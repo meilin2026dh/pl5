@@ -1,0 +1,1706 @@
+{
+  "version": "3.8.35",
+  "source": "INTERNAL/AI_AUTHORED",
+  "tested_sha": "d0b439ed40bd297d593f1ec6cef7c3575c7ed443",
+  "workflow_run": 46050945537,
+  "application_run": 46050945533,
+  "workflow_conclusions": {
+    "windows": "success",
+    "ubuntu": "success",
+    "application": "success"
+  },
+  "command": "node docs/research/experiments/quotient_cost_lower_bound_benchmark_v3835.mjs",
+  "independent_log_checks": "Unique JSON record per job; source and frozen blob identifiers; profile ordering; all eight structural counters; all 130 positive integer timing pairs and alternating order; per-configuration median ratios independently recomputed; cross-platform row counts compared.",
+  "results": [
+    {
+      "job_id": 140681790907,
+      "raw": {
+        "arch": "x64",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+        "measured_pairs": 5,
+        "node": "v22.23.5",
+        "platform": "win32",
+        "rows": [
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.12112909062710024,
+            "pairs": 1980,
+            "profile": "uniform",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 5802900,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 702900
+              },
+              {
+                "bounded_ns": 3606900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 348600
+              },
+              {
+                "bounded_ns": 3284600,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 695700
+              },
+              {
+                "bounded_ns": 3540800,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 343700
+              },
+              {
+                "bounded_ns": 3136700,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 499600
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 2.4773627314567057,
+            "pairs": 1980,
+            "profile": "skew",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 934300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2314600
+              },
+              {
+                "bounded_ns": 596800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 2429000
+              },
+              {
+                "bounded_ns": 801900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2436400
+              },
+              {
+                "bounded_ns": 4204200,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 3793600
+              },
+              {
+                "bounded_ns": 2938200,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2286800
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.8328003654636821,
+            "pairs": 1980,
+            "profile": "zero",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 4296900,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 413000
+              },
+              {
+                "bounded_ns": 4970800,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 506000
+              },
+              {
+                "bounded_ns": 437800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 364600
+              },
+              {
+                "bounded_ns": 439400,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 643200
+              },
+              {
+                "bounded_ns": 314200,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 277700
+              }
+            ]
+          },
+          {
+            "bounded_checks": 21886,
+            "group_visits": 25018,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 3.1770469212153807,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 66062,
+            "trials": [
+              {
+                "bounded_ns": 5896300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 15696500
+              },
+              {
+                "bounded_ns": 7739400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 27580800
+              },
+              {
+                "bounded_ns": 6689300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 19576400
+              },
+              {
+                "bounded_ns": 5950400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 18904700
+              },
+              {
+                "bounded_ns": 6105300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 20344500
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3578,
+            "group_visits": 5692,
+            "grouped_checks": 11880,
+            "individual_skips": 18,
+            "median_paired_ratio": 2.1875055938422983,
+            "pairs": 1980,
+            "profile": "mixed",
+            "reference_checks": 11670,
+            "subset_tests": 393,
+            "tail_skips": 8124,
+            "trials": [
+              {
+                "bounded_ns": 7078200,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 4712600
+              },
+              {
+                "bounded_ns": 1353700,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 3750200
+              },
+              {
+                "bounded_ns": 1410700,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 3110500
+              },
+              {
+                "bounded_ns": 1117300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2444100
+              },
+              {
+                "bounded_ns": 1268300,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 2683900
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 3960,
+            "grouped_checks": 3954,
+            "individual_skips": 0,
+            "median_paired_ratio": 1.0926744553204926,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "reference_checks": 3948,
+            "subset_tests": 170,
+            "tail_skips": 1974,
+            "trials": [
+              {
+                "bounded_ns": 633400,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 692100
+              },
+              {
+                "bounded_ns": 643400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 740800
+              },
+              {
+                "bounded_ns": 626000,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 678500
+              },
+              {
+                "bounded_ns": 767700,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 656100
+              },
+              {
+                "bounded_ns": 605100,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 696600
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.6271296446535778,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 564500,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 288100
+              },
+              {
+                "bounded_ns": 575900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 383300
+              },
+              {
+                "bounded_ns": 559400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 289800
+              },
+              {
+                "bounded_ns": 616300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 386500
+              },
+              {
+                "bounded_ns": 478900,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 369500
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3456,
+            "group_visits": 5522,
+            "grouped_checks": 38858,
+            "individual_skips": 80,
+            "median_paired_ratio": 5.562117433688506,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "reference_checks": 32814,
+            "subset_tests": 692,
+            "tail_skips": 30118,
+            "trials": [
+              {
+                "bounded_ns": 1753600,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10923400
+              },
+              {
+                "bounded_ns": 1901500,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10469400
+              },
+              {
+                "bounded_ns": 1946600,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10151800
+              },
+              {
+                "bounded_ns": 1764400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 9813800
+              },
+              {
+                "bounded_ns": 1721200,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 9807600
+              }
+            ]
+          },
+          {
+            "bounded_checks": 2556,
+            "group_visits": 4666,
+            "grouped_checks": 40526,
+            "individual_skips": 22,
+            "median_paired_ratio": 6.781948272828573,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "reference_checks": 36460,
+            "subset_tests": 696,
+            "tail_skips": 34934,
+            "trials": [
+              {
+                "bounded_ns": 1652500,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 11255900
+              },
+              {
+                "bounded_ns": 1397900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 11087600
+              },
+              {
+                "bounded_ns": 1997800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10967400
+              },
+              {
+                "bounded_ns": 1705100,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 11563900
+              },
+              {
+                "bounded_ns": 1604800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10738100
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3364,
+            "group_visits": 5556,
+            "grouped_checks": 38752,
+            "individual_skips": 78,
+            "median_paired_ratio": 6.416237523046602,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "reference_checks": 30934,
+            "subset_tests": 606,
+            "tail_skips": 28104,
+            "trials": [
+              {
+                "bounded_ns": 1572900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10092100
+              },
+              {
+                "bounded_ns": 1546800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10171600
+              },
+              {
+                "bounded_ns": 1684900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 9113400
+              },
+              {
+                "bounded_ns": 2072100,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 12038400
+              },
+              {
+                "bounded_ns": 1801200,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 12959600
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 4070,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 2.020659115445845,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "reference_checks": 7504,
+            "subset_tests": 170,
+            "tail_skips": 5830,
+            "trials": [
+              {
+                "bounded_ns": 5369400,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 11324500
+              },
+              {
+                "bounded_ns": 5332600,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 11007200
+              },
+              {
+                "bounded_ns": 5352700,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10769000
+              },
+              {
+                "bounded_ns": 5464900,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 11042700
+              },
+              {
+                "bounded_ns": 5709500,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 11237000
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3430,
+            "group_visits": 5526,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 14.965652340682022,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 85554,
+            "trials": [
+              {
+                "bounded_ns": 11479300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 175511000
+              },
+              {
+                "bounded_ns": 10902000,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 160079600
+              },
+              {
+                "bounded_ns": 11166200,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 162660800
+              },
+              {
+                "bounded_ns": 10949800,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 163870900
+              },
+              {
+                "bounded_ns": 10701800,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 184327000
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.5755373902512867,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 676000,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 402400
+              },
+              {
+                "bounded_ns": 987300,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 440700
+              },
+              {
+                "bounded_ns": 660600,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 380200
+              },
+              {
+                "bounded_ns": 726700,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 593300
+              },
+              {
+                "bounded_ns": 691000,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 383600
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "totals": {
+          "bounded_checks": 52130,
+          "group_visits": 69910,
+          "grouped_checks": 397130,
+          "individual_skips": 198,
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "subset_tests": 5557,
+          "tail_skips": 260700
+        },
+        "warm_pairs": 2
+      },
+      "summary": {
+        "platform": "win32",
+        "config_wins": 9,
+        "config_losses": 4,
+        "paired_wins": 42,
+        "paired_losses": 23,
+        "median_of_config_medians": 2.1875055938422983,
+        "ratios": [
+          {
+            "profile": "uniform",
+            "median": 0.12112909062710024,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "skew",
+            "median": 2.4773627314567057,
+            "wins": 3,
+            "losses": 2,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "zero",
+            "median": 0.8328003654636821,
+            "wins": 1,
+            "losses": 4,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "endpoint",
+            "median": 3.1770469212153807,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 84420,
+            "bounded_checks": 21886
+          },
+          {
+            "profile": "mixed",
+            "median": 2.1875055938422983,
+            "wins": 4,
+            "losses": 1,
+            "reference_checks": 11670,
+            "bounded_checks": 3578
+          },
+          {
+            "profile": "setup_only",
+            "median": 1.0926744553204926,
+            "wins": 4,
+            "losses": 1,
+            "reference_checks": 3948,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "triangle_first",
+            "median": 0.6271296446535778,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "fixed_0",
+            "median": 5.562117433688506,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 32814,
+            "bounded_checks": 3456
+          },
+          {
+            "profile": "fixed_1",
+            "median": 6.781948272828573,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 36460,
+            "bounded_checks": 2556
+          },
+          {
+            "profile": "fixed_2",
+            "median": 6.416237523046602,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 30934,
+            "bounded_checks": 3364
+          },
+          {
+            "profile": "nested_unique",
+            "median": 2.020659115445845,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 7504,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "median": 14.965652340682022,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 84420,
+            "bounded_checks": 3430
+          },
+          {
+            "profile": "forbidden_three",
+            "median": 0.5755373902512867,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          }
+        ]
+      }
+    },
+    {
+      "job_id": 140681791247,
+      "raw": {
+        "arch": "x64",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "cpu": "AMD EPYC 7763 64-Core Processor",
+        "measured_pairs": 5,
+        "node": "v24.22.3",
+        "platform": "linux",
+        "rows": [
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.34795563894835746,
+            "pairs": 1980,
+            "profile": "uniform",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 1939405,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 997795
+              },
+              {
+                "bounded_ns": 1505218,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 437693
+              },
+              {
+                "bounded_ns": 1491412,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 568697
+              },
+              {
+                "bounded_ns": 1623217,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 406215
+              },
+              {
+                "bounded_ns": 1746487,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 607700
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.45175782687964255,
+            "pairs": 1980,
+            "profile": "skew",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 1668622,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 408710
+              },
+              {
+                "bounded_ns": 1263179,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 570651
+              },
+              {
+                "bounded_ns": 511290,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2465202
+              },
+              {
+                "bounded_ns": 2114080,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 3113027
+              },
+              {
+                "bounded_ns": 2451006,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 505389
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.6245470708445279,
+            "pairs": 1980,
+            "profile": "zero",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 806419,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 443525
+              },
+              {
+                "bounded_ns": 672349,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 593043
+              },
+              {
+                "bounded_ns": 1463711,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 442333
+              },
+              {
+                "bounded_ns": 1269480,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 885696
+              },
+              {
+                "bounded_ns": 1287453,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 804075
+              }
+            ]
+          },
+          {
+            "bounded_checks": 21886,
+            "group_visits": 25018,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 2.918335046736597,
+            "pairs": 1980,
+            "profile": "endpoint",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 66062,
+            "trials": [
+              {
+                "bounded_ns": 17711895,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 28219889
+              },
+              {
+                "bounded_ns": 6740970,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 19672409
+              },
+              {
+                "bounded_ns": 6246802,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 19622046
+              },
+              {
+                "bounded_ns": 7096162,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 19784948
+              },
+              {
+                "bounded_ns": 6295763,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 20073345
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3578,
+            "group_visits": 5692,
+            "grouped_checks": 11880,
+            "individual_skips": 18,
+            "median_paired_ratio": 1.2202559088735154,
+            "pairs": 1980,
+            "profile": "mixed",
+            "reference_checks": 11670,
+            "subset_tests": 393,
+            "tail_skips": 8124,
+            "trials": [
+              {
+                "bounded_ns": 2096067,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 2596968
+              },
+              {
+                "bounded_ns": 2118478,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2552775
+              },
+              {
+                "bounded_ns": 2002322,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 2669062
+              },
+              {
+                "bounded_ns": 2055341,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 2508042
+              },
+              {
+                "bounded_ns": 3797720,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 2488926
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 3960,
+            "grouped_checks": 3954,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.6606802256085459,
+            "pairs": 1980,
+            "profile": "setup_only",
+            "reference_checks": 3948,
+            "subset_tests": 170,
+            "tail_skips": 1974,
+            "trials": [
+              {
+                "bounded_ns": 1212845,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 566573
+              },
+              {
+                "bounded_ns": 1086539,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 724206
+              },
+              {
+                "bounded_ns": 1095156,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 755545
+              },
+              {
+                "bounded_ns": 1123539,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 742300
+              },
+              {
+                "bounded_ns": 1090999,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 692337
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.49697840333572757,
+            "pairs": 1980,
+            "profile": "triangle_first",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 1120373,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 424760
+              },
+              {
+                "bounded_ns": 1067584,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 651822
+              },
+              {
+                "bounded_ns": 1101738,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 471426
+              },
+              {
+                "bounded_ns": 1088203,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 1144688
+              },
+              {
+                "bounded_ns": 764331,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 379856
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3456,
+            "group_visits": 5522,
+            "grouped_checks": 38858,
+            "individual_skips": 80,
+            "median_paired_ratio": 3.9986594264966766,
+            "pairs": 1980,
+            "profile": "fixed_0",
+            "reference_checks": 32814,
+            "subset_tests": 692,
+            "tail_skips": 30118,
+            "trials": [
+              {
+                "bounded_ns": 2560489,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10302541
+              },
+              {
+                "bounded_ns": 2595625,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10344820
+              },
+              {
+                "bounded_ns": 2609331,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10433826
+              },
+              {
+                "bounded_ns": 2527639,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10698848
+              },
+              {
+                "bounded_ns": 3469089,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 12142000
+              }
+            ]
+          },
+          {
+            "bounded_checks": 2556,
+            "group_visits": 4666,
+            "grouped_checks": 40526,
+            "individual_skips": 22,
+            "median_paired_ratio": 7.09087838274984,
+            "pairs": 1980,
+            "profile": "fixed_1",
+            "reference_checks": 36460,
+            "subset_tests": 696,
+            "tail_skips": 34934,
+            "trials": [
+              {
+                "bounded_ns": 1488807,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10348847
+              },
+              {
+                "bounded_ns": 1539622,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10348918
+              },
+              {
+                "bounded_ns": 1468369,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10412026
+              },
+              {
+                "bounded_ns": 1380175,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10318331
+              },
+              {
+                "bounded_ns": 1384734,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10473285
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3364,
+            "group_visits": 5556,
+            "grouped_checks": 38752,
+            "individual_skips": 78,
+            "median_paired_ratio": 5.0991043146069455,
+            "pairs": 1980,
+            "profile": "fixed_2",
+            "reference_checks": 30934,
+            "subset_tests": 606,
+            "tail_skips": 28104,
+            "trials": [
+              {
+                "bounded_ns": 1828118,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 8964054
+              },
+              {
+                "bounded_ns": 1747559,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 9002315
+              },
+              {
+                "bounded_ns": 1784777,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 8908049
+              },
+              {
+                "bounded_ns": 1683439,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 9152043
+              },
+              {
+                "bounded_ns": 1765352,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 9001714
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 4070,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 1.873489256348234,
+            "pairs": 1980,
+            "profile": "nested_unique",
+            "reference_checks": 7504,
+            "subset_tests": 170,
+            "tail_skips": 5830,
+            "trials": [
+              {
+                "bounded_ns": 5644843,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10562034
+              },
+              {
+                "bounded_ns": 5691310,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10751426
+              },
+              {
+                "bounded_ns": 5636885,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10572109
+              },
+              {
+                "bounded_ns": 5780913,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 10634352
+              },
+              {
+                "bounded_ns": 5690244,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 10660611
+              }
+            ]
+          },
+          {
+            "bounded_checks": 3430,
+            "group_visits": 5526,
+            "grouped_checks": 84420,
+            "individual_skips": 0,
+            "median_paired_ratio": 12.80295978709585,
+            "pairs": 1980,
+            "profile": "nested_reverse_cost",
+            "reference_checks": 84420,
+            "subset_tests": 990,
+            "tail_skips": 85554,
+            "trials": [
+              {
+                "bounded_ns": 11234727,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 143837758
+              },
+              {
+                "bounded_ns": 11079079,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 143091451
+              },
+              {
+                "bounded_ns": 10911137,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 143402880
+              },
+              {
+                "bounded_ns": 12076632,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 143277106
+              },
+              {
+                "bounded_ns": 16131267,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 145217592
+              }
+            ]
+          },
+          {
+            "bounded_checks": 1980,
+            "group_visits": 1980,
+            "grouped_checks": 1980,
+            "individual_skips": 0,
+            "median_paired_ratio": 0.35541690496882905,
+            "pairs": 1980,
+            "profile": "forbidden_three",
+            "reference_checks": 1980,
+            "subset_tests": 170,
+            "tail_skips": 0,
+            "trials": [
+              {
+                "bounded_ns": 982646,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 349249
+              },
+              {
+                "bounded_ns": 975343,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 346443
+              },
+              {
+                "bounded_ns": 993937,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 560922
+              },
+              {
+                "bounded_ns": 970112,
+                "order": [
+                  "bounded",
+                  "reference"
+                ],
+                "reference_ns": 336365
+              },
+              {
+                "bounded_ns": 979600,
+                "order": [
+                  "reference",
+                  "bounded"
+                ],
+                "reference_ns": 351493
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "totals": {
+          "bounded_checks": 52130,
+          "group_visits": 69910,
+          "grouped_checks": 397130,
+          "individual_skips": 198,
+          "pairs": 25740,
+          "reference_checks": 302070,
+          "subset_tests": 5557,
+          "tail_skips": 260700
+        },
+        "warm_pairs": 2
+      },
+      "summary": {
+        "platform": "linux",
+        "config_wins": 7,
+        "config_losses": 6,
+        "paired_wins": 37,
+        "paired_losses": 28,
+        "median_of_config_medians": 1.2202559088735154,
+        "ratios": [
+          {
+            "profile": "uniform",
+            "median": 0.34795563894835746,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "skew",
+            "median": 0.45175782687964255,
+            "wins": 2,
+            "losses": 3,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "zero",
+            "median": 0.6245470708445279,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "endpoint",
+            "median": 2.918335046736597,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 84420,
+            "bounded_checks": 21886
+          },
+          {
+            "profile": "mixed",
+            "median": 1.2202559088735154,
+            "wins": 4,
+            "losses": 1,
+            "reference_checks": 11670,
+            "bounded_checks": 3578
+          },
+          {
+            "profile": "setup_only",
+            "median": 0.6606802256085459,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 3948,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "triangle_first",
+            "median": 0.49697840333572757,
+            "wins": 1,
+            "losses": 4,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "fixed_0",
+            "median": 3.9986594264966766,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 32814,
+            "bounded_checks": 3456
+          },
+          {
+            "profile": "fixed_1",
+            "median": 7.09087838274984,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 36460,
+            "bounded_checks": 2556
+          },
+          {
+            "profile": "fixed_2",
+            "median": 5.0991043146069455,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 30934,
+            "bounded_checks": 3364
+          },
+          {
+            "profile": "nested_unique",
+            "median": 1.873489256348234,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 7504,
+            "bounded_checks": 1980
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "median": 12.80295978709585,
+            "wins": 5,
+            "losses": 0,
+            "reference_checks": 84420,
+            "bounded_checks": 3430
+          },
+          {
+            "profile": "forbidden_three",
+            "median": 0.35541690496882905,
+            "wins": 0,
+            "losses": 5,
+            "reference_checks": 1980,
+            "bounded_checks": 1980
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Fixed development configurations; not independent external validation. All timing losses retained.",
+    "Different runner CPUs and Node versions; within-platform ratios only. No universal speedup or default dispatch claim.",
+    "No new candidate compression or historical replay coverage evidence.",
+    "No new experiment execution or timing budget increase."
+  ]
+}

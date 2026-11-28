@@ -1,0 +1,322 @@
+{
+  "schema": "pl5-v3838-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "validated_commit": "bd5bdd00bb9c27f9f5efaa06cd3b3aaa164ea756",
+  "experiment_blob": "a8ce7324e17199268f90e19beb6497f3235b31dd",
+  "specialized_run": 46084122964,
+  "application_run": 46084122924,
+  "prior_attempt": "Windows cancelled during V3.8.29 check, one targeted retry succeeded; Ubuntu original result retained.",
+  "reproduction": "node docs/research/experiments/quotient_pair_symmetry_v3838.mjs",
+  "all_structural_counts_equal": true,
+  "row_aggregates_recomputed": true,
+  "reports": [
+    {
+      "job_id": 140806500963,
+      "platform": "windows-latest",
+      "report": {
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "rows": [
+          {
+            "profile": "uniform",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "skew",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "zero",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "endpoint",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 21886,
+            "new_checks": 10943,
+            "old_group_visits": 25018,
+            "new_group_visits": 12509,
+            "subset_tests": 990
+          },
+          {
+            "profile": "mixed",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3578,
+            "new_checks": 1789,
+            "old_group_visits": 5692,
+            "new_group_visits": 2846,
+            "subset_tests": 393
+          },
+          {
+            "profile": "setup_only",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 3960,
+            "new_group_visits": 1980,
+            "subset_tests": 170
+          },
+          {
+            "profile": "triangle_first",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "fixed_0",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3456,
+            "new_checks": 1728,
+            "old_group_visits": 5522,
+            "new_group_visits": 2761,
+            "subset_tests": 692
+          },
+          {
+            "profile": "fixed_1",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 2556,
+            "new_checks": 1278,
+            "old_group_visits": 4666,
+            "new_group_visits": 2333,
+            "subset_tests": 696
+          },
+          {
+            "profile": "fixed_2",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3364,
+            "new_checks": 1682,
+            "old_group_visits": 5556,
+            "new_group_visits": 2778,
+            "subset_tests": 606
+          },
+          {
+            "profile": "nested_unique",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 4070,
+            "new_group_visits": 2035,
+            "subset_tests": 170
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3430,
+            "new_checks": 1715,
+            "old_group_visits": 5526,
+            "new_group_visits": 2763,
+            "subset_tests": 990
+          },
+          {
+            "profile": "forbidden_three",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          }
+        ],
+        "totals": {
+          "pairs": 25740,
+          "searches": 12870,
+          "old_checks": 52130,
+          "new_checks": 26065,
+          "old_group_visits": 69910,
+          "new_group_visits": 34955,
+          "subset_tests": 5557
+        }
+      }
+    },
+    {
+      "job_id": 140806502491,
+      "platform": "ubuntu-latest",
+      "report": {
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "c0492072047a10cc2e56a5fa61f45ea8bb322ba2",
+        "audit_blob": "4febd2b09abc3e95d40efb38dde40cdc983eb572",
+        "rows": [
+          {
+            "profile": "uniform",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "skew",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "zero",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "endpoint",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 21886,
+            "new_checks": 10943,
+            "old_group_visits": 25018,
+            "new_group_visits": 12509,
+            "subset_tests": 990
+          },
+          {
+            "profile": "mixed",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3578,
+            "new_checks": 1789,
+            "old_group_visits": 5692,
+            "new_group_visits": 2846,
+            "subset_tests": 393
+          },
+          {
+            "profile": "setup_only",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 3960,
+            "new_group_visits": 1980,
+            "subset_tests": 170
+          },
+          {
+            "profile": "triangle_first",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          },
+          {
+            "profile": "fixed_0",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3456,
+            "new_checks": 1728,
+            "old_group_visits": 5522,
+            "new_group_visits": 2761,
+            "subset_tests": 692
+          },
+          {
+            "profile": "fixed_1",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 2556,
+            "new_checks": 1278,
+            "old_group_visits": 4666,
+            "new_group_visits": 2333,
+            "subset_tests": 696
+          },
+          {
+            "profile": "fixed_2",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3364,
+            "new_checks": 1682,
+            "old_group_visits": 5556,
+            "new_group_visits": 2778,
+            "subset_tests": 606
+          },
+          {
+            "profile": "nested_unique",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 4070,
+            "new_group_visits": 2035,
+            "subset_tests": 170
+          },
+          {
+            "profile": "nested_reverse_cost",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 3430,
+            "new_checks": 1715,
+            "old_group_visits": 5526,
+            "new_group_visits": 2763,
+            "subset_tests": 990
+          },
+          {
+            "profile": "forbidden_three",
+            "pairs": 1980,
+            "searches": 990,
+            "old_checks": 1980,
+            "new_checks": 990,
+            "old_group_visits": 1980,
+            "new_group_visits": 990,
+            "subset_tests": 170
+          }
+        ],
+        "totals": {
+          "pairs": 25740,
+          "searches": 12870,
+          "old_checks": 52130,
+          "new_checks": 26065,
+          "old_group_visits": 69910,
+          "new_group_visits": 34955,
+          "subset_tests": 5557
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Frozen internal development profiles only.",
+    "All ordered minimum costs checked by the experiment assertions; minimizing witness identity is not checked.",
+    "Subset preprocessing tests unchanged (5557).",
+    "No paired timing of exchange symmetry; no runtime claim.",
+    "No new candidate compression or historical replay coverage evidence.",
+    "Evidence commit itself not validated by the cited CI."
+  ]
+}

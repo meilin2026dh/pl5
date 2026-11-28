@@ -1,0 +1,365 @@
+{
+  "source": "INTERNAL/AI_AUTHORED",
+  "verified_commit": "a5e51976604603558b165de6e7a36a077f180020",
+  "specialized_run": 45727707166,
+  "application_run": 45727707118,
+  "records": [
+    {
+      "platform": "windows",
+      "job_id": 139601640855,
+      "payload": {
+        "coalitions": 4096,
+        "domain": 100000,
+        "exclusion_multiplicity": [
+          0,
+          0,
+          49,
+          369,
+          2168,
+          7684,
+          15514,
+          19389,
+          16232,
+          16608,
+          15944,
+          6025,
+          18
+        ],
+        "intersection_retained": 0,
+        "limitations": [
+          "fixed positive retention sets only; polarity changes attribution",
+          "coverage objective is monotone submodular; shared removal is not unique contribution",
+          "empty intersection is not a useful compression solution",
+          "entropy and exclusion attribution are different objectives",
+          "static set analysis only; no historical coverage or removal policy"
+        ],
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rules": [
+          {
+            "entropy_shapley_bits": 0.8019806497390747,
+            "exclusive_excluded": 0,
+            "name": "mod2_zero",
+            "overlapping_excluded": 50000,
+            "shapley_exact": "85201967/13860",
+            "shapley_float": 6147.328066378066,
+            "singleton_excluded": 50000
+          },
+          {
+            "entropy_shapley_bits": 0.7883531295235915,
+            "exclusive_excluded": 0,
+            "name": "mod3_zero",
+            "overlapping_excluded": 66666,
+            "shapley_exact": "231453559/27720",
+            "shapley_float": 8349.69549062049,
+            "singleton_excluded": 66666
+          },
+          {
+            "entropy_shapley_bits": 0.653493409671633,
+            "exclusive_excluded": 0,
+            "name": "mod5_zero",
+            "overlapping_excluded": 80000,
+            "shapley_exact": "35967922/3465",
+            "shapley_float": 10380.352669552669,
+            "singleton_excluded": 80000
+          },
+          {
+            "entropy_shapley_bits": 0.5456650379847116,
+            "exclusive_excluded": 0,
+            "name": "mod7_zero",
+            "overlapping_excluded": 85714,
+            "shapley_exact": "52106741/4620",
+            "shapley_float": 11278.515367965369,
+            "singleton_excluded": 85714
+          },
+          {
+            "entropy_shapley_bits": 0.4111275005625668,
+            "exclusive_excluded": 0,
+            "name": "mod11_zero",
+            "overlapping_excluded": 90909,
+            "shapley_exact": "335179501/27720",
+            "shapley_float": 12091.61259018759,
+            "singleton_excluded": 90909
+          },
+          {
+            "entropy_shapley_bits": 0.36759195078489737,
+            "exclusive_excluded": 0,
+            "name": "mod13_zero",
+            "overlapping_excluded": 92307,
+            "shapley_exact": "341643343/27720",
+            "shapley_float": 12324.795923520924,
+            "singleton_excluded": 92307
+          },
+          {
+            "entropy_shapley_bits": 0.5471656416364642,
+            "exclusive_excluded": 0,
+            "name": "omega_ge3",
+            "overlapping_excluded": 43460,
+            "shapley_exact": "510249/110",
+            "shapley_float": 4638.627272727273,
+            "singleton_excluded": 43460
+          },
+          {
+            "entropy_shapley_bits": 0.4009179658297717,
+            "exclusive_excluded": 0,
+            "name": "bigomega_ge3",
+            "overlapping_excluded": 32972,
+            "shapley_exact": "24014911/6930",
+            "shapley_float": 3465.3551226551226,
+            "singleton_excluded": 32972
+          },
+          {
+            "entropy_shapley_bits": 0.7301067069472823,
+            "exclusive_excluded": 0,
+            "name": "squarefree_one",
+            "overlapping_excluded": 39206,
+            "shapley_exact": "6371903/1155",
+            "shapley_float": 5516.799134199135,
+            "singleton_excluded": 39206
+          },
+          {
+            "entropy_shapley_bits": 0.9903447317160422,
+            "exclusive_excluded": 0,
+            "name": "spectral_C1_gt_C2",
+            "overlapping_excluded": 50670,
+            "shapley_exact": "35179687/5544",
+            "shapley_float": 6345.542388167388,
+            "singleton_excluded": 50670
+          },
+          {
+            "entropy_shapley_bits": 0.5996206910232961,
+            "exclusive_excluded": 0,
+            "name": "det_H_gt_0",
+            "overlapping_excluded": 84947,
+            "shapley_exact": "309117397/27720",
+            "shapley_float": 11151.421248196248,
+            "singleton_excluded": 84947
+          },
+          {
+            "entropy_shapley_bits": 0.9144082581860055,
+            "exclusive_excluded": 0,
+            "name": "F3_squarefactor",
+            "overlapping_excluded": 65512,
+            "shapley_exact": "46070389/5544",
+            "shapley_float": 8309.954725829726,
+            "singleton_excluded": 65512
+          }
+        ],
+        "schema": "pl5-static-exclusion-v3782-1",
+        "source": "INTERNAL/AI_AUTHORED",
+        "union_excluded": 100000
+      },
+      "test_summary": [
+        "2026-11-26T00:21:24.3919124Z Ran 3 tests in 3.411s\r"
+      ]
+    },
+    {
+      "platform": "ubuntu",
+      "job_id": 139601641221,
+      "payload": {
+        "coalitions": 4096,
+        "domain": 100000,
+        "exclusion_multiplicity": [
+          0,
+          0,
+          49,
+          369,
+          2168,
+          7684,
+          15514,
+          19389,
+          16232,
+          16608,
+          15944,
+          6025,
+          18
+        ],
+        "intersection_retained": 0,
+        "limitations": [
+          "fixed positive retention sets only; polarity changes attribution",
+          "coverage objective is monotone submodular; shared removal is not unique contribution",
+          "empty intersection is not a useful compression solution",
+          "entropy and exclusion attribution are different objectives",
+          "static set analysis only; no historical coverage or removal policy"
+        ],
+        "rule_mask_sha256": [
+          "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+          "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+          "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+          "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+          "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+          "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+          "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+          "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+          "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+          "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+          "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+          "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+        ],
+        "rules": [
+          {
+            "entropy_shapley_bits": 0.8019806497390747,
+            "exclusive_excluded": 0,
+            "name": "mod2_zero",
+            "overlapping_excluded": 50000,
+            "shapley_exact": "85201967/13860",
+            "shapley_float": 6147.328066378066,
+            "singleton_excluded": 50000
+          },
+          {
+            "entropy_shapley_bits": 0.7883531295235915,
+            "exclusive_excluded": 0,
+            "name": "mod3_zero",
+            "overlapping_excluded": 66666,
+            "shapley_exact": "231453559/27720",
+            "shapley_float": 8349.69549062049,
+            "singleton_excluded": 66666
+          },
+          {
+            "entropy_shapley_bits": 0.653493409671633,
+            "exclusive_excluded": 0,
+            "name": "mod5_zero",
+            "overlapping_excluded": 80000,
+            "shapley_exact": "35967922/3465",
+            "shapley_float": 10380.352669552669,
+            "singleton_excluded": 80000
+          },
+          {
+            "entropy_shapley_bits": 0.5456650379847116,
+            "exclusive_excluded": 0,
+            "name": "mod7_zero",
+            "overlapping_excluded": 85714,
+            "shapley_exact": "52106741/4620",
+            "shapley_float": 11278.515367965369,
+            "singleton_excluded": 85714
+          },
+          {
+            "entropy_shapley_bits": 0.4111275005625668,
+            "exclusive_excluded": 0,
+            "name": "mod11_zero",
+            "overlapping_excluded": 90909,
+            "shapley_exact": "335179501/27720",
+            "shapley_float": 12091.61259018759,
+            "singleton_excluded": 90909
+          },
+          {
+            "entropy_shapley_bits": 0.36759195078489737,
+            "exclusive_excluded": 0,
+            "name": "mod13_zero",
+            "overlapping_excluded": 92307,
+            "shapley_exact": "341643343/27720",
+            "shapley_float": 12324.795923520924,
+            "singleton_excluded": 92307
+          },
+          {
+            "entropy_shapley_bits": 0.5471656416364642,
+            "exclusive_excluded": 0,
+            "name": "omega_ge3",
+            "overlapping_excluded": 43460,
+            "shapley_exact": "510249/110",
+            "shapley_float": 4638.627272727273,
+            "singleton_excluded": 43460
+          },
+          {
+            "entropy_shapley_bits": 0.4009179658297717,
+            "exclusive_excluded": 0,
+            "name": "bigomega_ge3",
+            "overlapping_excluded": 32972,
+            "shapley_exact": "24014911/6930",
+            "shapley_float": 3465.3551226551226,
+            "singleton_excluded": 32972
+          },
+          {
+            "entropy_shapley_bits": 0.7301067069472823,
+            "exclusive_excluded": 0,
+            "name": "squarefree_one",
+            "overlapping_excluded": 39206,
+            "shapley_exact": "6371903/1155",
+            "shapley_float": 5516.799134199135,
+            "singleton_excluded": 39206
+          },
+          {
+            "entropy_shapley_bits": 0.9903447317160422,
+            "exclusive_excluded": 0,
+            "name": "spectral_C1_gt_C2",
+            "overlapping_excluded": 50670,
+            "shapley_exact": "35179687/5544",
+            "shapley_float": 6345.542388167388,
+            "singleton_excluded": 50670
+          },
+          {
+            "entropy_shapley_bits": 0.5996206910232961,
+            "exclusive_excluded": 0,
+            "name": "det_H_gt_0",
+            "overlapping_excluded": 84947,
+            "shapley_exact": "309117397/27720",
+            "shapley_float": 11151.421248196248,
+            "singleton_excluded": 84947
+          },
+          {
+            "entropy_shapley_bits": 0.9144082581860055,
+            "exclusive_excluded": 0,
+            "name": "F3_squarefactor",
+            "overlapping_excluded": 65512,
+            "shapley_exact": "46070389/5544",
+            "shapley_float": 8309.954725829726,
+            "singleton_excluded": 65512
+          }
+        ],
+        "schema": "pl5-static-exclusion-v3782-1",
+        "source": "INTERNAL/AI_AUTHORED",
+        "union_excluded": 100000
+      },
+      "test_summary": [
+        "2026-11-26T00:19:54.9508941Z Ran 3 tests in 2.403s"
+      ]
+    }
+  ],
+  "independent_checks": {
+    "identical_platform_payloads": true,
+    "exact_rational_sum": 100000,
+    "multiplicity_sum": 100000,
+    "exclusive_sum": 0,
+    "exclusion_rank": [
+      "mod13_zero",
+      "mod11_zero",
+      "mod7_zero",
+      "det_H_gt_0",
+      "mod5_zero",
+      "mod3_zero",
+      "F3_squarefactor",
+      "spectral_C1_gt_C2",
+      "mod2_zero",
+      "squarefree_one",
+      "omega_ge3",
+      "bigomega_ge3"
+    ],
+    "entropy_rank": [
+      "spectral_C1_gt_C2",
+      "F3_squarefactor",
+      "mod2_zero",
+      "mod3_zero",
+      "squarefree_one",
+      "mod5_zero",
+      "det_H_gt_0",
+      "omega_ge3",
+      "mod7_zero",
+      "mod11_zero",
+      "bigomega_ge3",
+      "mod13_zero"
+    ]
+  },
+  "interpretation": "The positive-only conjunction has zero retained identities and every identity is removed by at least two rules. Zero full-inventory exclusive contribution is a saturated-objective result, not proof that individual rules are redundant in feasible subsets. Entropy and exclusion rankings differ. No new rule or feasible compression advantage established. Preserve this negative result; evaluate future operators on nonempty fixed contexts."
+}

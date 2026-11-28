@@ -1,0 +1,2500 @@
+{
+  "schema": "pl5-v3825-ci-evidence-1",
+  "source": "INTERNAL/AI_AUTHORED",
+  "validated_commit": "c4121bb519afb8b7796d9e1fc6d7cc4a18b0ab91",
+  "script_blob": "c7fb3bceb3fdf9aab538d68f98058d33b8b514a0",
+  "specialized_run": 45908090631,
+  "application_run": 45908090653,
+  "reproduction": "node docs/research/experiments/quotient_adaptive_order_v3825.mjs",
+  "structural_records_per_platform": 82,
+  "structural_results_equal": true,
+  "paired_trials_per_platform": 70,
+  "reports": [
+    {
+      "job_id": 140209610084,
+      "report": {
+        "arch": "x64",
+        "correctness": [
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 364,
+            "profile": "uniform"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 904,
+            "profile": "skew"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 562,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 572,
+            "profile": "mixed"
+          },
+          {
+            "checks": 54,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 277,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 80,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 758,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 88,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 818,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 1029,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 88,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 227,
+            "profile": "canonical_collision"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 227,
+            "profile": "canonical_distinct"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1010,
+            "profile": "uniform"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1422,
+            "profile": "skew"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 660,
+            "method": "cubic",
+            "n": 5,
+            "optimum": 1114,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 394,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1334,
+            "profile": "mixed"
+          },
+          {
+            "checks": 174,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 337,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 616,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 3318,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 612,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1522,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 568,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 736,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2288,
+            "profile": "uniform"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2296,
+            "profile": "skew"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 2610,
+            "method": "cubic",
+            "n": 6,
+            "optimum": 2386,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 1216,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2488,
+            "profile": "mixed"
+          },
+          {
+            "checks": 414,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 397,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 2186,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 7617,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 2046,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 785,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 2154,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 50,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8132,
+            "profile": "uniform"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8132,
+            "profile": "skew"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 19320,
+            "method": "cubic",
+            "n": 8,
+            "optimum": 8236,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 4464,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8292,
+            "profile": "mixed"
+          },
+          {
+            "checks": 1506,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 517,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 10734,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 46,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 12866,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8185,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 11556,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 2791,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21400,
+            "profile": "uniform"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21400,
+            "profile": "skew"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 84420,
+            "method": "cubic",
+            "n": 10,
+            "optimum": 21501,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 11880,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21498,
+            "profile": "mixed"
+          },
+          {
+            "checks": 3954,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 637,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 38858,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 1278,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 40526,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 67,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 38752,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 58,
+            "profile": "fixed_2"
+          }
+        ],
+        "cpu": "AMD EPYC 9V74 80-Core Processor",
+        "node": "v24.22.3",
+        "platform": "linux",
+        "rows": [
+          {
+            "checks": 1980,
+            "median_paired_ratio": 0.9950546182979123,
+            "method": "grouped",
+            "optimum": 21400,
+            "profile": "uniform",
+            "trials": [
+              {
+                "adaptive_ns": 702878,
+                "grouped_ns": 699402,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 724370,
+                "grouped_ns": 676438,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 727995,
+                "grouped_ns": 691370,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 668867,
+                "grouped_ns": 680644,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 665742,
+                "grouped_ns": 737179,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 677890,
+                "grouped_ns": 730139,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 679743,
+                "grouped_ns": 671451,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 0.9860456793527683,
+            "method": "grouped",
+            "optimum": 21400,
+            "profile": "skew",
+            "trials": [
+              {
+                "adaptive_ns": 675877,
+                "grouped_ns": 655517,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 687855,
+                "grouped_ns": 736948,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 677459,
+                "grouped_ns": 717519,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 681796,
+                "grouped_ns": 672282,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 719913,
+                "grouped_ns": 677259,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 731991,
+                "grouped_ns": 681115,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 672833,
+                "grouped_ns": 677580,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 1.0057362387544166,
+            "method": "grouped",
+            "optimum": 0,
+            "profile": "zero",
+            "trials": [
+              {
+                "adaptive_ns": 670790,
+                "grouped_ns": 714425,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 685582,
+                "grouped_ns": 711441,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 680934,
+                "grouped_ns": 684840,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 729968,
+                "grouped_ns": 656188,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 723358,
+                "grouped_ns": 674916,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 671471,
+                "grouped_ns": 672032,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 655256,
+                "grouped_ns": 738391,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 84420,
+            "median_paired_ratio": 1.088642976753032,
+            "method": "cubic",
+            "optimum": 21501,
+            "profile": "endpoint",
+            "trials": [
+              {
+                "adaptive_ns": 30504180,
+                "grouped_ns": 33261970,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 30370231,
+                "grouped_ns": 33187569,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 30281109,
+                "grouped_ns": 33134881,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 30383650,
+                "grouped_ns": 32980270,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 30325394,
+                "grouped_ns": 32959720,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 30350131,
+                "grouped_ns": 32830287,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 30285885,
+                "grouped_ns": 32970516,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 11880,
+            "median_paired_ratio": 0.9991516324018106,
+            "method": "grouped",
+            "optimum": 21498,
+            "profile": "mixed",
+            "trials": [
+              {
+                "adaptive_ns": 4498294,
+                "grouped_ns": 4258276,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 4321240,
+                "grouped_ns": 4317574,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 4331796,
+                "grouped_ns": 4276333,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 4292828,
+                "grouped_ns": 4318115,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 4290254,
+                "grouped_ns": 4328051,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 4349312,
+                "grouped_ns": 4273458,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 4273118,
+                "grouped_ns": 4310524,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 3954,
+            "median_paired_ratio": 1.0038021728966409,
+            "method": "grouped",
+            "optimum": 50,
+            "profile": "setup_only",
+            "trials": [
+              {
+                "adaptive_ns": 1289692,
+                "grouped_ns": 1275360,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1254590,
+                "grouped_ns": 1282461,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1254810,
+                "grouped_ns": 1355650,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1261910,
+                "grouped_ns": 1266708,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1257664,
+                "grouped_ns": 1293357,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1409180,
+                "grouped_ns": 1257665,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1312285,
+                "grouped_ns": 1275771,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 1.0153111256905598,
+            "method": "grouped",
+            "optimum": 637,
+            "profile": "triangle_first",
+            "trials": [
+              {
+                "adaptive_ns": 804920,
+                "grouped_ns": 859962,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 852400,
+                "grouped_ns": 824178,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 862706,
+                "grouped_ns": 875915,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 810368,
+                "grouped_ns": 890877,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 852550,
+                "grouped_ns": 814054,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 858219,
+                "grouped_ns": 821084,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 812511,
+                "grouped_ns": 885720,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 38858,
+            "median_paired_ratio": 1.0035620673648644,
+            "method": "grouped",
+            "optimum": 1278,
+            "profile": "fixed_0",
+            "trials": [
+              {
+                "adaptive_ns": 16706848,
+                "grouped_ns": 16614351,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 16472389,
+                "grouped_ns": 16606739,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 16588632,
+                "grouped_ns": 16523005,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 15500550,
+                "grouped_ns": 18370898,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 15536764,
+                "grouped_ns": 15592107,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 15494391,
+                "grouped_ns": 15580159,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 15564666,
+                "grouped_ns": 15555573,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 40526,
+            "median_paired_ratio": 0.9961603830116214,
+            "method": "grouped",
+            "optimum": 67,
+            "profile": "fixed_1",
+            "trials": [
+              {
+                "adaptive_ns": 16118622,
+                "grouped_ns": 16286623,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 16103950,
+                "grouped_ns": 16042117,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 16196408,
+                "grouped_ns": 16229277,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 16181115,
+                "grouped_ns": 16108847,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 16295225,
+                "grouped_ns": 16154035,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 16086614,
+                "grouped_ns": 16118802,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 16159683,
+                "grouped_ns": 16017091,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 38752,
+            "median_paired_ratio": 0.9962659738798033,
+            "method": "grouped",
+            "optimum": 58,
+            "profile": "fixed_2",
+            "trials": [
+              {
+                "adaptive_ns": 15753337,
+                "grouped_ns": 15503374,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 15574370,
+                "grouped_ns": 15622442,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 15549463,
+                "grouped_ns": 15581591,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 15986835,
+                "grouped_ns": 15482414,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 15603524,
+                "grouped_ns": 15479369,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 15646649,
+                "grouped_ns": 15617314,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 15623083,
+                "grouped_ns": 15564746,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "fea49f50bd55e72cc37c4535a9da66b52a3e232b"
+      }
+    },
+    {
+      "job_id": 140209610323,
+      "report": {
+        "arch": "x64",
+        "correctness": [
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 1,
+            "optimum": 0,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 2,
+            "optimum": 0,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "uniform"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "skew"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "zero"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "mixed"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 0,
+            "method": "cubic",
+            "n": 3,
+            "optimum": null,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 364,
+            "profile": "uniform"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 904,
+            "profile": "skew"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 562,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 572,
+            "profile": "mixed"
+          },
+          {
+            "checks": 54,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 30,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 277,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 80,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 758,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 88,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 818,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 1029,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 88,
+            "method": "grouped",
+            "n": 4,
+            "optimum": 227,
+            "profile": "canonical_collision"
+          },
+          {
+            "checks": 96,
+            "method": "cubic",
+            "n": 4,
+            "optimum": 227,
+            "profile": "canonical_distinct"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1010,
+            "profile": "uniform"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1422,
+            "profile": "skew"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 660,
+            "method": "cubic",
+            "n": 5,
+            "optimum": 1114,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 394,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1334,
+            "profile": "mixed"
+          },
+          {
+            "checks": 174,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 90,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 337,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 616,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 3318,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 612,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 1522,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 568,
+            "method": "grouped",
+            "n": 5,
+            "optimum": 736,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2288,
+            "profile": "uniform"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2296,
+            "profile": "skew"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 2610,
+            "method": "cubic",
+            "n": 6,
+            "optimum": 2386,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 1216,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 2488,
+            "profile": "mixed"
+          },
+          {
+            "checks": 414,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 210,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 397,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 2186,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 7617,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 2046,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 785,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 2154,
+            "method": "grouped",
+            "n": 6,
+            "optimum": 50,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8132,
+            "profile": "uniform"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8132,
+            "profile": "skew"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 19320,
+            "method": "cubic",
+            "n": 8,
+            "optimum": 8236,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 4464,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8292,
+            "profile": "mixed"
+          },
+          {
+            "checks": 1506,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 756,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 517,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 10734,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 46,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 12866,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 8185,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 11556,
+            "method": "grouped",
+            "n": 8,
+            "optimum": 2791,
+            "profile": "fixed_2"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21400,
+            "profile": "uniform"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21400,
+            "profile": "skew"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 0,
+            "profile": "zero"
+          },
+          {
+            "checks": 84420,
+            "method": "cubic",
+            "n": 10,
+            "optimum": 21501,
+            "profile": "endpoint"
+          },
+          {
+            "checks": 11880,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 21498,
+            "profile": "mixed"
+          },
+          {
+            "checks": 3954,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 50,
+            "profile": "setup_only"
+          },
+          {
+            "checks": 1980,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 637,
+            "profile": "triangle_first"
+          },
+          {
+            "checks": 38858,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 1278,
+            "profile": "fixed_0"
+          },
+          {
+            "checks": 40526,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 67,
+            "profile": "fixed_1"
+          },
+          {
+            "checks": 38752,
+            "method": "grouped",
+            "n": 10,
+            "optimum": 58,
+            "profile": "fixed_2"
+          }
+        ],
+        "cpu": "AMD EPYC 7763 64-Core Processor                ",
+        "node": "v22.23.5",
+        "platform": "win32",
+        "rows": [
+          {
+            "checks": 1980,
+            "median_paired_ratio": 0.89573501136165,
+            "method": "grouped",
+            "optimum": 21400,
+            "profile": "uniform",
+            "trials": [
+              {
+                "adaptive_ns": 1144200,
+                "grouped_ns": 1024900,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1766800,
+                "grouped_ns": 1364700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 991900,
+                "grouped_ns": 970300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1026500,
+                "grouped_ns": 915900,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 912800,
+                "grouped_ns": 1037500,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 915800,
+                "grouped_ns": 1017200,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1069400,
+                "grouped_ns": 919100,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 1.0154314507663238,
+            "method": "grouped",
+            "optimum": 21400,
+            "profile": "skew",
+            "trials": [
+              {
+                "adaptive_ns": 922000,
+                "grouped_ns": 1009800,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1020100,
+                "grouped_ns": 994500,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 910800,
+                "grouped_ns": 952500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 952600,
+                "grouped_ns": 967300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 918800,
+                "grouped_ns": 1031700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 951500,
+                "grouped_ns": 912700,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1012600,
+                "grouped_ns": 1003500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 1.0259753917341465,
+            "method": "grouped",
+            "optimum": 0,
+            "profile": "zero",
+            "trials": [
+              {
+                "adaptive_ns": 914300,
+                "grouped_ns": 942400,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1081800,
+                "grouped_ns": 914600,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 905000,
+                "grouped_ns": 1017700,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 950900,
+                "grouped_ns": 975600,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 918500,
+                "grouped_ns": 997300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1012300,
+                "grouped_ns": 904600,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1033100,
+                "grouped_ns": 940700,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 84420,
+            "median_paired_ratio": 1.088412165521552,
+            "method": "cubic",
+            "optimum": 21501,
+            "profile": "endpoint",
+            "trials": [
+              {
+                "adaptive_ns": 48141100,
+                "grouped_ns": 47365200,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 47737200,
+                "grouped_ns": 54333300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 45194800,
+                "grouped_ns": 65931600,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 55891000,
+                "grouped_ns": 54541600,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 46795800,
+                "grouped_ns": 48847900,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 42443200,
+                "grouped_ns": 47304100,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 42237400,
+                "grouped_ns": 45971700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 11880,
+            "median_paired_ratio": 1.0039721037506177,
+            "method": "grouped",
+            "optimum": 21498,
+            "profile": "mixed",
+            "trials": [
+              {
+                "adaptive_ns": 5481300,
+                "grouped_ns": 5400100,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 5463100,
+                "grouped_ns": 5484800,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 5478000,
+                "grouped_ns": 5391500,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 5448400,
+                "grouped_ns": 5459000,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 5467900,
+                "grouped_ns": 5561600,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 5549500,
+                "grouped_ns": 5921500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 5518800,
+                "grouped_ns": 5554600,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 3954,
+            "median_paired_ratio": 1.0389362071962454,
+            "method": "grouped",
+            "optimum": 50,
+            "profile": "setup_only",
+            "trials": [
+              {
+                "adaptive_ns": 1725900,
+                "grouped_ns": 1793100,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1746800,
+                "grouped_ns": 1790000,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1683800,
+                "grouped_ns": 1753700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1714400,
+                "grouped_ns": 1804200,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1714400,
+                "grouped_ns": 1707900,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1737900,
+                "grouped_ns": 1766500,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1670800,
+                "grouped_ns": 1740500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 1980,
+            "median_paired_ratio": 0.9923773652587212,
+            "method": "grouped",
+            "optimum": 637,
+            "profile": "triangle_first",
+            "trials": [
+              {
+                "adaptive_ns": 1115100,
+                "grouped_ns": 1106600,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1165000,
+                "grouped_ns": 1108100,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1174000,
+                "grouped_ns": 1272800,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1070600,
+                "grouped_ns": 1160300,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1120000,
+                "grouped_ns": 1114300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 1141700,
+                "grouped_ns": 1093700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 1183400,
+                "grouped_ns": 1129300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 38858,
+            "median_paired_ratio": 1.0015850797468604,
+            "method": "grouped",
+            "optimum": 1278,
+            "profile": "fixed_0",
+            "trials": [
+              {
+                "adaptive_ns": 25486400,
+                "grouped_ns": 25443500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 25501800,
+                "grouped_ns": 25445700,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 25361500,
+                "grouped_ns": 25401700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 25361200,
+                "grouped_ns": 25424700,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 25448200,
+                "grouped_ns": 25306400,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 24818300,
+                "grouped_ns": 25421300,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 24435500,
+                "grouped_ns": 24701500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 40526,
+            "median_paired_ratio": 0.9928789621930416,
+            "method": "grouped",
+            "optimum": 67,
+            "profile": "fixed_1",
+            "trials": [
+              {
+                "adaptive_ns": 25115800,
+                "grouped_ns": 25083000,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 25206700,
+                "grouped_ns": 24979200,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 25109600,
+                "grouped_ns": 25181200,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 25207000,
+                "grouped_ns": 25027500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 25306200,
+                "grouped_ns": 25024200,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 25028600,
+                "grouped_ns": 25249900,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 28173200,
+                "grouped_ns": 25270900,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              }
+            ]
+          },
+          {
+            "checks": 38752,
+            "median_paired_ratio": 0.9901827611755989,
+            "method": "grouped",
+            "optimum": 58,
+            "profile": "fixed_2",
+            "trials": [
+              {
+                "adaptive_ns": 24195500,
+                "grouped_ns": 24352900,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 24087700,
+                "grouped_ns": 24020900,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 24294000,
+                "grouped_ns": 24055500,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 24270900,
+                "grouped_ns": 24020000,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 24189800,
+                "grouped_ns": 24032300,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              },
+              {
+                "adaptive_ns": 24287100,
+                "grouped_ns": 24028600,
+                "order": [
+                  "grouped",
+                  "adaptive"
+                ]
+              },
+              {
+                "adaptive_ns": 24267200,
+                "grouped_ns": 24026700,
+                "order": [
+                  "adaptive",
+                  "grouped"
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "INTERNAL/AI_AUTHORED",
+        "source_blob": "fea49f50bd55e72cc37c4535a9da66b52a3e232b"
+      }
+    }
+  ],
+  "limitations": [
+    "Fixed input profiles and sizes; no general speed guarantee.",
+    "Dispatch scan included; baseline is V3.8.23 grouped exact search; not an end-to-end filtering benchmark.",
+    "Different CPU and Node versions; within-platform comparisons only.",
+    "No historical replay coverage or candidate compression measurement.",
+    "Retain every slowdown; no timing gate.",
+    "Evidence-only commit is not itself validated by these runs."
+  ]
+}

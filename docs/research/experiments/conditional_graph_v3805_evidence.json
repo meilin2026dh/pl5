@@ -1,0 +1,138 @@
+{
+  "tested_head": "0e493a6a001a76c15fe2a58657826e21af7aae69",
+  "specialized_run": 45778622052,
+  "application_run": 45778622113,
+  "windows_job": 139768323860,
+  "ubuntu_job": 139768324260,
+  "cross_platform_equal": true,
+  "results": {
+    "v3804": {
+      "baseline_rule_count": 12,
+      "domain": 100000,
+      "graph_cycle": {
+        "capped_class_union_after": 24339,
+        "capped_class_union_before": 16244,
+        "capped_class_union_gain": 8095,
+        "newly_distinguished_unordered_pairs": 19478110,
+        "original_classes": 1079,
+        "positive_mask_size": 20160,
+        "refined_classes": 1813,
+        "remaining_indistinguishable_pairs": 40882595,
+        "split_classes": 734
+      },
+      "limitations": [
+        "static partition refinement only",
+        "one binary predicate each, not matched marginal size or measured cost",
+        "capped-class union is not one capped candidate set",
+        "independence relative to frozen 12 rules only, not full repository inventory",
+        "no historical coverage, no operational selection, no claim of mathematical novelty"
+      ],
+      "repeat_symbol_control": {
+        "capped_class_union_after": 26518,
+        "capped_class_union_before": 16244,
+        "capped_class_union_gain": 10274,
+        "newly_distinguished_unordered_pairs": 25666025,
+        "original_classes": 1079,
+        "positive_mask_size": 69760,
+        "refined_classes": 1912,
+        "remaining_indistinguishable_pairs": 34694680,
+        "split_classes": 833
+      },
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "schema": "pl5-static-graph-refinement-v3804-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    },
+    "v3805": {
+      "baseline_rule_count": 12,
+      "domain": 100000,
+      "limitations": [
+        "conditional structural contribution, not an operational filtering policy",
+        "only frozen 12-rule baseline plus repeat predicate, not whole inventory",
+        "capped-class union is not one capped candidate set",
+        "no historical inputs, matched-cost performance or generalization claims"
+      ],
+      "result": {
+        "category_sizes": [
+          30240,
+          49600,
+          20160
+        ],
+        "cycle_alone": {
+          "capped_class_union_after": 24339,
+          "capped_class_union_before": 16244,
+          "capped_class_union_gain": 8095,
+          "newly_distinguished_unordered_pairs": 19478110,
+          "original_classes": 1079,
+          "positive_mask_size": 20160,
+          "refined_classes": 1813,
+          "remaining_indistinguishable_pairs": 40882595,
+          "split_classes": 734
+        },
+        "cycle_given_repeat": {
+          "capped_class_union_after": 34666,
+          "capped_class_union_before": 26518,
+          "capped_class_union_gain": 8148,
+          "newly_distinguished_unordered_pairs": 11950569,
+          "original_classes": 1912,
+          "positive_mask_size": 20160,
+          "refined_classes": 2634,
+          "remaining_indistinguishable_pairs": 22744111,
+          "split_classes": 722
+        },
+        "joint_newly_distinguished_pairs": 37616594,
+        "repeat_alone": {
+          "capped_class_union_after": 26518,
+          "capped_class_union_before": 16244,
+          "capped_class_union_gain": 10274,
+          "newly_distinguished_unordered_pairs": 25666025,
+          "original_classes": 1079,
+          "positive_mask_size": 69760,
+          "refined_classes": 1912,
+          "remaining_indistinguishable_pairs": 34694680,
+          "split_classes": 833
+        },
+        "repeat_given_cycle": {
+          "capped_class_union_after": 34666,
+          "capped_class_union_before": 24339,
+          "capped_class_union_gain": 10327,
+          "newly_distinguished_unordered_pairs": 18138484,
+          "original_classes": 1813,
+          "positive_mask_size": 69760,
+          "refined_classes": 2634,
+          "remaining_indistinguishable_pairs": 22744111,
+          "split_classes": 821
+        },
+        "shared_distinguished_pairs": 7527541
+      },
+      "rule_mask_sha256": [
+        "08a36d3e68efc65f25518ceb7e5d6257da1f65b90234a3af6667f04f478de880",
+        "fdc130107904e8963650d35fcfcb37da457b154908afc038186e9bb14049b4eb",
+        "a84402c183cef24981f911f3809d7624ddb34311b5aafaac9a17b272649aea48",
+        "e69ff3ea78c61c5f028e1dc8cab9ddb9b7b062acbbaf72bf6eee633c5a00de53",
+        "1d2db7b4757e9cd502ad7552a6db181dcafe5dadd78bb7ba16219cb18bd8af61",
+        "182efc79462e0ee4f30e5dcc9b62880a33ccfe58f9a067d3fe7d19716f629fd3",
+        "81f9a06309cc767642ce3537e88e287fc35f15365bc84ff28f57efaa675458ec",
+        "c5100fc20864148c5dcf5c1a267f2c97c284819d3637ebecc0496a466f1ab075",
+        "95e91457b62a786ef8fc85f78b153ab88b4c56f59789525fa9f3d5ac415c8214",
+        "104a690fdb96ebfd10778f5a47c3f5c2be8930ab25b2cd1e67d637a5b409ee6d",
+        "37df0bd077a846f9295b9ca70fc6301d5b5bd4c4e91a200ee7f50a2aa50cc300",
+        "add6821f47298fa40d5be931593426c2eceabb87f7959619c002daf64c03b724"
+      ],
+      "schema": "pl5-conditional-graph-v3805-1",
+      "source": "INTERNAL/AI_AUTHORED"
+    }
+  }
+}
