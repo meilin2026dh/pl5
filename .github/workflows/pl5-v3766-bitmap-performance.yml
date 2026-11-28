@@ -57,6 +57,7 @@ on:
       - 'docs/research/experiments/quotient_cost_structural_gate_v3836.mjs'
       - 'docs/research/experiments/quotient_cost_structural_gate_benchmark_v3837.mjs'
       - 'docs/research/experiments/quotient_pair_symmetry_v3838.mjs'
+      - 'docs/research/experiments/quotient_triangle_residual_cache_v3839.mjs'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -224,3 +225,4 @@ jobs:
         run: |
           node docs/research/experiments/quotient_cost_structural_gate_benchmark_v3837.mjs
           node docs/research/experiments/quotient_pair_symmetry_v3838.mjs
+          node docs/research/experiments/quotient_triangle_residual_cache_v3839.mjs
