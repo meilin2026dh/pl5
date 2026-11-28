@@ -61,6 +61,7 @@ on:
       - 'docs/research/experiments/quotient_disjoint_top3_audit_v3840.mjs'
       - 'docs/research/experiments/quotient_order_statistic_theorem_v3841.mjs'
       - 'docs/research/experiments/quotient_top3_cost_audit_v3842.mjs'
+      - 'docs/research/experiments/quotient_cache_break_even_v3843.mjs'
       - 'docs/research/experiments/quotient_graph_count_v3812.py'
       - '.github/workflows/pl5-v3766-bitmap-performance.yml'
 permissions:
@@ -243,7 +244,7 @@ jobs:
           if report != expected:
               raise RuntimeError('V3.8.41 combination optimization ledger mismatch')
 
-      - name: V3.8.42 paired combination optimization cache cost audit (report only)
+      - name: V3.8.42-V3.8.43 combination optimization cache cost and break-even audits
         shell: python
         run: |
           import json
@@ -289,3 +290,36 @@ jobs:
                          for k in ('before_max_rss_kib','after_max_rss_kib'))
               assert row['after_max_rss_kib'] >= row['before_max_rss_kib']
           # No timing or RSS improvement gate: retain negative observations.
+
+          # V3.8.43: exact accounting only, no extra timing trials.
+          script = 'docs/research/experiments/quotient_cache_break_even_v3843.mjs'
+          print('Combination optimization audit: ' + script, flush=True)
+          report = json.loads(subprocess.check_output(['node', script], text=True))
+          print(json.dumps(report, sort_keys=True), flush=True)
+          assert report['classification'] == 'INTERNAL/AI_AUTHORED'
+          assert report['orderedPairs'] == 25740
+          expected = {
+              'keys': 366, 'queries': 8190, 'oldChecks': 16023,
+              'newChecks': 5014, 'oldVisits': 21503, 'newVisits': 5176,
+              'lookups': 8873, 'builds': 366, 'positive': 279,
+              'tied': 13, 'negative': 74, 'singletons': 6,
+              'singletonPositive': 0,
+          }
+          assert report['total'] == expected
+          rows = report['rows']
+          assert [row['profile'] for row in rows] == profiles
+          assert all(sum(row[k] for row in rows) == v for k, v in expected.items())
+          for row in rows:
+              assert row['queries'] == 630
+              assert row['keys'] == row['builds']
+              assert row['keys'] == row['positive'] + row['tied'] + row['negative']
+              assert row['queries'] <= row['lookups'] <= 3 * row['queries']
+              assert 0 <= row['singletonPositive'] <= row['singletons'] <= row['keys']
+          sensitivity = report['sensitivity']
+          assert [z['h'] for z in sensitivity] == [0, 1, 2, 4, 8]
+          assert [z['positiveKeys'] for z in sensitivity] == [279, 183, 136, 67, 38]
+          assert [z['oracleNet'] for z in sensitivity] == [11486, 3797, 2160, 1051, 405]
+          for z in sensitivity:
+              assert z['allCacheNet'] == expected['oldChecks'] - expected['newChecks'] - z['h'] * expected['queries']
+              assert z['oracleNet'] >= max(0, z['allCacheNet'])
+          # Sensitivity is hypothetical; never gate on actual speed or memory.
